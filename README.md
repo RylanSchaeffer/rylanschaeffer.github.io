@@ -1,1 +1,1 @@
-# Rylan Schaeffer
+# Rylan Schaeffer's Blog
