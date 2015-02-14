@@ -9,7 +9,18 @@
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
 
     <title>rylanschaeffer.github.io</title>
+
+    <script type="text/javascript" 
+        src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+    <script type="text/javascript" 
+        src="http://www.your-domain.com/easy-comment/jquery.easy-comment.min.js"></script>
+    jQuery(document).ready(function(){
+      $("#my-comment").EasyComment();
+      moderate:false,
+      maxReply:0
+    });
   </head>
+
 
   <body>
 
@@ -78,6 +89,8 @@ $ git checkout gh-pages
     </div>
 -->
     <!-- FOOTER-->
+    <div id="id_of_your_comment_container" style="width:1024px;height:800px;"></div>
+    
     <div id="footer_wrap" class="outer">
       <footer class="inner">
         <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
