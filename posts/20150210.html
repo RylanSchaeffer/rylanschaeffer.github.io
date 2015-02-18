@@ -5,6 +5,8 @@
 		</head>
 
 		<body>
+
+<section id = "content" class="body">
 <h1> Jon Stewart </h1>
 <p>
 Jon Stewart announced today that he plans to end his seventeen year stretch as the host of The Daily Show at the end of the year.  TDS holds a special place in my heart, and I am extremely disappointed to see him leave.  My two best high school friends and I bonded through memorizing his witty quips and infrequent yet powerful monologues.  He (along with Colbert) were influential in developing my sense of humor, and I wrote about the two for UWP (University Writing Program) 101:
@@ -31,14 +33,34 @@ On a separate topic, I had my second SLSP class today.  I'll talk more about thi
 The study goes on to suggest a reason (that white, male managers feel targeted by the trainings), but I want to voice my own reason.  In the diversity trainings that I've attended (PEACE, SafeZone, STEAD), the discussions focused on categorizable traits i.e. gender, race, sexual preference.  I feel that this reinforces divisions between groups instead of removing them, by reducing the dimensionality of a person into a handful of checkboxes.  As I stated then, I stop seeing my co-instructor as a asexual, transgender, transfer-student computer scientist who chose to come to UC Davis and who wants to someday be a professor; instead, I viewed her only by her gender and orientation.  The best conversations I have had on topics concerning diversity come not from categorizing people in meetings, but from building friendships through similarities.  I have learned more from befriending two PEACE coordinators than I have from three mandatory training sessions, and I think organizations would do well to institutionalize practices more aligned with this philosophy.
 </p>
 
-		<script>
-			var GU_comment_box_id = "i6a6fdki";
-			var GU_comment_box_theme = "style";
-			var GU_comment_box_pos = "top";
-			var GU_comment_box_mode = "noinline";
-			var GU_comment_box_server = "minichat.first-jump.com";
-		</script>
-		<script src="http://minichat.first-jump.com/i/comm/comment_box_code.js"></script>
+</section>
+
+<section id = "comments" class="body">
+	<div id="respond">
+
+    <form action="post_comment.php" method="post" id="commentform">
+		<h1>Comments</h1>
+
+		<p>
+		<label for="name" class="required">Name: </label>
+		<input type="text" name="name" id="comment_author" value = "" tabindex = "1" required ="required" maxlength="50" style="width:120px;">
+		</p>
+
+		<p>
+		<label for="comment" class="required">Comments:</label>
+		<br>
+		<textarea name="comment" id="comment" required ="required" maxlength="1000" rows="8" style="width:75%">
+		</textarea>
+		<br>
+
+		<input type="hidden" name="comment_post_ID" value="1" id="comment_post_ID" />
+		<input name = "submit" type="submit" value="Submit" /></label>
+		</p>
+
+	</form>
+
+	</div>
+</section>
 
 		</body>
 	</html>
