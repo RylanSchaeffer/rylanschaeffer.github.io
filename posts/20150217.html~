@@ -48,19 +48,5 @@
 			Let me take a minute to explain why I think Student Led Courses are so important. (I say Student Led Courses, not Student Led Seminars, because the ultimate goal is to have courses, not 1 unit Pass/No Pass seminars.)  The reasons I publicly list are that students are passionate, educated, and capable of teaching other students.  But the real reason is that UCD engineering professors are terrible at teaching.  If CS professors refuse to teach languages or frameworks that are in demand, then I'll take as few of their classes as possible and learn from others who are just as knowledgeable (if not more so) and better at teaching.  When I discussed this with Sean Davis, he likened UCD's Academic Senate to a giant sieve that selects for the best possible researchers at the cost of decent (or heaven forbid, excellent) teachers.  I have a number of reasons for believing this, independent of Sean's perspective, which I'll state and substantiate later.
 		</p>
 
-<div id="disqus_thread"></div>
-    <script type="text/javascript">
-        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-        var disqus_shortname = 'rylanschaeffer'; // required: replace example with your forum shortname
-
-        /* * * DON'T EDIT BELOW THIS LINE * * */
-        (function() {
-            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-        })();
-    </script>
-    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-
 	</body>
 </html>
