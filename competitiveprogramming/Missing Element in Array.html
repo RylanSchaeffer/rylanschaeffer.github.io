@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> Missing Element in Array</title>
+	</head>
+
+	<body>
+	<section id = "content" class="body">
+		<h1>Explanation</h1>
+		<p>
+			Jason Pang introduced me to an undergraduate course at CMU titled <a href="http://cs.nyu.edu/courses/spring14/CSCI-UA.0480-004/">Algorithmic Problem Solving</a>.  It teaches algorithms through direct application to problems.  To get better at both programming and interview questions, we decided to work through the class on our own time.
+		</p>
+
+		<h1>Missing Element in Array</h1>
+		<p>
+			The first problem is stated as follows: "You are given some permutation of the numbers 1 through n, inclusive, as an array with one number missing. Determine which number is missing."  We considered four solutions, three that were straightforward and one that was unusual.
+		</p>
+
+		<p>
+			Solution 1: Brute force.  Create an array with the numbers 1 through n, inclusive.  For each element in this complete array, search linearly through the given array for that element.  Searching will take O(n), and with n values in the complete array, the total runtime will be O(n^2).
+		</p>
+
+		<p>
+			Solution 2: Sort and search.  Use a sorting algorithm to order the elements of the array in O(n log n) time.  Then iterate linearly through the array, checking that each element minus one matches its location in the array (i.e. element 0 contains the value 1, assuming zero-based arrays), in O(n) time.  The total runtime will be O(n log n).
+		</p>
+
+		<p>
+			Solution 3: Sum and subtract.  If we consider an array of some permutation of the numbers 1 through n, but without one number missing, the result will have always have the value (n+1)n/2.  To see this, consider the sum of the first and last elements: n + 1.  If we move inward from both directions, the sum remains the same i.e. 2 + n - 1 = n + 1.  How many pairs do we have?  n/2.  But if we iterate through our array, calculating the sum of the elements, this sum will be less than (n+1)n/2.  How much less?  By the value of the missing number.  The total runtime will be O(n).
+		</p>
+
+		<p>
+			Solution 4: XOR.  This solution is by far the most interesting, primarily because I had never considered how XOR could be used outside of elementary boolean calculations, and yet is remarkably similar to solution 3.  Recall that the XOR operator has the following property: if p1 through pk are boolean variables, then p1 XOR p2 XOR ... XOR pk = (p1 + p2 + ... + pk) mod 2.  Like before, consider an array of some permutation of the numbers 1 through n, but without one number missing.  If we apply the XOR operation just as we did with addition, column by column, then we can apply the above property and we will be left with some value (i.e. 10110).  If we repeat the process using the given array, the value will be different (i.e. 10011).  If we then apply the XOR operator bitwise, the remaining number will be the value that is missing (in this example, 10110 XOR 10011 = 101, or 5, for those who prefer decimal).  What's not clear to me is the advantage of this solution over solution 3.  However, I did find that you can do some pretty cool things with XOR, such as swapping the value of two variables x and y without using an intermediate variable (usually referred to as temp.)  Here's how:
+		</p>
+
+		<p>
+			x = x XOR y<br>
+			y = x XOR y<br>
+			x = x XOR y<br>
+			<br>
+			The first step determines which bits between x and y differ.  The second step uses that information to convert y into x by changing the bits that differ.  The third step converts x into the original y in the same manner.  That's pretty cool.
+		</p>
+
+	</section>
+
+	<div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'rylanschaeffer'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+	</body>
+</html>
