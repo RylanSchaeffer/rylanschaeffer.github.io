@@ -1,0 +1,310 @@
+
+<head>
+    <meta charset="utf-8">
+    <title>Rylan's Read Books</title>
+
+    <!-- Bootstrap 3 -->
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap-theme.min.css">
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <style type="text/css" media="screen">
+        body {
+            padding-top: 80px;
+        }
+        .hanging-close {
+            position: absolute;
+            top: -12px;
+            right: -12px;
+            z-index: 9001;
+        }
+        .book-tile {
+            margin-bottom: 20px;
+            padding-top: 20px;
+        }
+        .book-tile:hover {
+            background-color: #EEE;
+            cursor: pointer;
+        }
+        .scale-media {
+            padding-bottom: 56.25%;
+            position: relative;
+        }
+        .scale-media iframe {
+            border: none;
+            height: 100%;
+            position: absolute;
+            width: 100%;
+            left: 0;
+            top: 0;
+            background-color: white;
+        }
+    </style>
+    <script type="text/javascript" charset="utf-8">
+        // Animate in the books when the page loads
+        $(document).ready(function () {
+          $('.book-tile').hide().first().show("fast", function showNext() {
+            $(this).next("div").show("fast", showNext);
+          });
+        });
+    </script>
+</head>
+
+<!DOCTYPE html>
+<html lang="en">
+  <body>
+    <!-- Main Page Content -->
+    <div class="container">
+      <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#">Rylan's Read Books</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      
+<div class="col-md-6 col-lg-4 col-lg-4 book-tile text-center">
+    <a href="http://www.goodreads.com/book/show/227463.A_Clockwork_Orange"><img src="http://images.gr-assets.com/books/1348339306l/227463.jpg" width="220" height="342"></a>
+    <h2>A Clockwork Orange</h2>
+</div>
+
+<div class="col-md-6 col-lg-4 col-lg-4 book-tile text-center">
+    <a href="http://www.goodreads.com/book/show/7619398-american-vampire-vol-1"><img src="http://images.gr-assets.com/books/1389666348l/7619398.jpg" width="220" height="342"></a>
+    <h2>American Vampire, Vol. 1</h2>
+</div>
+
+<div class="col-md-6 col-lg-4 col-lg-4 book-tile text-center">
+    <a href="http://www.goodreads.com/book/show/12153951-american-vampire-vol-3"><img src="http://images.gr-assets.com/books/1329038804l/12153951.jpg" width="220" height="342"></a>
+    <h2>American Vampire, Vol. 3</h2>
+</div>
+
+<div class="col-md-6 col-lg-4 col-lg-4 book-tile text-center">
+    <a href="http://www.goodreads.com/book/show/18373339-american-vampire-vol-6"><img src="http://images.gr-assets.com/books/1396190716l/18373339.jpg" width="220" height="342"></a>
+    <h2>American Vampire, Vol. 6</h2>
+</div>
+
+<div class="col-md-6 col-lg-4 col-lg-4 book-tile text-center">
+    <a href="http://www.goodreads.com/book/show/22079941-american-vampire-vol-7"><img src="http://images.gr-assets.com/books/1417986543l/22079941.jpg" width="220" height="342"></a>
+    <h2>American Vampire, Vol. 7</h2>
+</div>
+
+<div class="col-md-6 col-lg-4 col-lg-4 book-tile text-center">
+    <a href="http://www.goodreads.com/book/show/23602578-american-vampire-vol-8"><img src="http://images.gr-assets.com/books/1453060428l/23602578.jpg" width="220" height="342"></a>
+    <h2>American Vampire, Vol. 8</h2>
+</div>
+
+<div class="col-md-6 col-lg-4 col-lg-4 book-tile text-center">
+    <a href="http://www.goodreads.com/book/show/9908518-american-vampire-volume-2"><img src="http://images.gr-assets.com/books/1308881625l/9908518.jpg" width="220" height="342"></a>
+    <h2>American Vampire, Volume 2</h2>
+</div>
+
+<div class="col-md-6 col-lg-4 col-lg-4 book-tile text-center">
+    <a href="http://www.goodreads.com/book/show/13532244-american-vampire-volume-4"><img src="http://images.gr-assets.com/books/1346376061l/13532244.jpg" width="220" height="342"></a>
+    <h2>American Vampire, Volume 4</h2>
+</div>
+
+<div class="col-md-6 col-lg-4 col-lg-4 book-tile text-center">
+    <a href="http://www.goodreads.com/book/show/15791600-american-vampire-volume-5"><img src="http://images.gr-assets.com/books/1365518491l/15791600.jpg" width="220" height="342"></a>
+    <h2>American Vampire, Volume 5</h2>
+</div>
+
+<div class="col-md-6 col-lg-4 col-lg-4 book-tile text-center">
+    <a href="http://www.goodreads.com/book/show/960.Angels_Demons"><img src="http://images.gr-assets.com/books/1303390735l/960.jpg" width="220" height="342"></a>
+    <h2>Angels & Demons</h2>
+</div>
+
+<div class="col-md-6 col-lg-4 col-lg-4 book-tile text-center">
+    <a href="http://www.goodreads.com/book/show/976.Deception_Point"><img src="http://images.gr-assets.com/books/1386924347l/976.jpg" width="220" height="342"></a>
+    <h2>Deception Point</h2>
+</div>
+
+<div class="col-md-6 col-lg-4 col-lg-4 book-tile text-center">
+    <a href="http://www.goodreads.com/book/show/11125.Digital_Fortress"><img src="http://images.gr-assets.com/books/1360095966l/11125.jpg" width="220" height="342"></a>
+    <h2>Digital Fortress</h2>
+</div>
+
+<div class="col-md-6 col-lg-4 col-lg-4 book-tile text-center">
+    <a href="http://www.goodreads.com/book/show/216353.Edenborn"><img src="http://images.gr-assets.com/books/1440859299l/216353.jpg" width="220" height="342"></a>
+    <h2>Edenborn</h2>
+</div>
+
+<div class="col-md-6 col-lg-4 col-lg-4 book-tile text-center">
+    <a href="http://www.goodreads.com/book/show/10829455-embodiment-and-the-inner-life"><img src="http://images.gr-assets.com/books/1348553141l/10829455.jpg" width="220" height="342"></a>
+    <h2>Embodiment and the Inner Life: Cognition and Consciousness in the Space of Possible Minds</h2>
+</div>
+
+<div class="col-md-6 col-lg-4 col-lg-4 book-tile text-center">
+    <a href="http://www.goodreads.com/book/show/375802.Ender_s_Game"><img src="http://images.gr-assets.com/books/1408303130l/375802.jpg" width="220" height="342"></a>
+    <h2>Ender's Game</h2>
+</div>
+
+<div class="col-md-6 col-lg-4 col-lg-4 book-tile text-center">
+    <a href="http://www.goodreads.com/book/show/9532.Ender_s_Shadow"><img src="http://images.gr-assets.com/books/1424904668l/9532.jpg" width="220" height="342"></a>
+    <h2>Ender's Shadow</h2>
+</div>
+
+<div class="col-md-6 col-lg-4 col-lg-4 book-tile text-center">
+    <a href="http://www.goodreads.com/book/show/216352.Everfree"><img src="http://images.gr-assets.com/books/1386921572l/216352.jpg" width="220" height="342"></a>
+    <h2>Everfree</h2>
+</div>
+
+<div class="col-md-6 col-lg-4 col-lg-4 book-tile text-center">
+    <a href="http://www.goodreads.com/book/show/216351.Idlewild"><img src="http://images.gr-assets.com/books/1303080693l/216351.jpg" width="220" height="342"></a>
+    <h2>Idlewild</h2>
+</div>
+
+<div class="col-md-6 col-lg-4 col-lg-4 book-tile text-center">
+    <a href="http://www.goodreads.com/book/show/8855321-leviathan-wakes"><img src="http://images.gr-assets.com/books/1411013134l/8855321.jpg" width="220" height="342"></a>
+    <h2>Leviathan Wakes</h2>
+</div>
+
+<div class="col-md-6 col-lg-4 col-lg-4 book-tile text-center">
+    <a href="http://www.goodreads.com/book/show/4981.Slaughterhouse_Five"><img src="http://images.gr-assets.com/books/1440319389l/4981.jpg" width="220" height="342"></a>
+    <h2>Slaughterhouse-Five</h2>
+</div>
+
+<div class="col-md-6 col-lg-4 col-lg-4 book-tile text-center">
+    <a href="http://www.goodreads.com/book/show/18215192-sword-of-destiny"><img src="http://images.gr-assets.com/books/1443434136l/18215192.jpg" width="220" height="342"></a>
+    <h2>Sword of Destiny</h2>
+</div>
+
+<div class="col-md-6 col-lg-4 col-lg-4 book-tile text-center">
+    <a href="http://www.goodreads.com/book/show/17256056-the-adjacent"><img src="http://images.gr-assets.com/books/1361225441l/17256056.jpg" width="220" height="342"></a>
+    <h2>The Adjacent</h2>
+</div>
+
+<div class="col-md-6 col-lg-4 col-lg-4 book-tile text-center">
+    <a href="http://www.goodreads.com/book/show/26889576-the-big-short"><img src="http://images.gr-assets.com/books/1446581171l/26889576.jpg" width="220" height="342"></a>
+    <h2>The Big Short: Inside the Doomsday Machine</h2>
+</div>
+
+<div class="col-md-6 col-lg-4 col-lg-4 book-tile text-center">
+    <a href="http://www.goodreads.com/book/show/5107.The_Catcher_in_the_Rye"><img src="http://images.gr-assets.com/books/1398034300l/5107.jpg" width="220" height="342"></a>
+    <h2>The Catcher in the Rye</h2>
+</div>
+
+<div class="col-md-6 col-lg-4 col-lg-4 book-tile text-center">
+    <a href="http://www.goodreads.com/book/show/968.The_Da_Vinci_Code"><img src="http://images.gr-assets.com/books/1303252999l/968.jpg" width="220" height="342"></a>
+    <h2>The Da Vinci Code</h2>
+</div>
+
+<div class="col-md-6 col-lg-4 col-lg-4 book-tile text-center">
+    <a href="http://www.goodreads.com/book/show/23168817-the-dark-forest"><img src="http://images.gr-assets.com/books/1412064931l/23168817.jpg" width="220" height="342"></a>
+    <h2>The Dark Forest</h2>
+</div>
+
+<div class="col-md-6 col-lg-4 col-lg-4 book-tile text-center">
+    <a href="http://www.goodreads.com/book/show/2213661.The_Graveyard_Book"><img src="http://images.gr-assets.com/books/1303859949l/2213661.jpg" width="220" height="342"></a>
+    <h2>The Graveyard Book</h2>
+</div>
+
+<div class="col-md-6 col-lg-4 col-lg-4 book-tile text-center">
+    <a href="http://www.goodreads.com/book/show/4671.The_Great_Gatsby"><img src="http://images.gr-assets.com/books/1480580717l/4671.jpg" width="220" height="342"></a>
+    <h2>The Great Gatsby</h2>
+</div>
+
+<div class="col-md-6 col-lg-4 col-lg-4 book-tile text-center">
+    <a href="http://www.goodreads.com/book/show/739687.The_Idea_Factory"><img src="http://images.gr-assets.com/books/1347552364l/739687.jpg" width="220" height="342"></a>
+    <h2>The Idea Factory: Learning to Think at MIT</h2>
+</div>
+
+<div class="col-md-6 col-lg-4 col-lg-4 book-tile text-center">
+    <a href="http://www.goodreads.com/book/show/1128434.The_Last_Wish"><img src="http://images.gr-assets.com/books/1181224890l/1128434.jpg" width="220" height="342"></a>
+    <h2>The Last Wish</h2>
+</div>
+
+<div class="col-md-6 col-lg-4 col-lg-4 book-tile text-center">
+    <a href="http://www.goodreads.com/book/show/25104.The_Sandman_Vol_10"><img src="http://images.gr-assets.com/books/1339922545l/25104.jpg" width="220" height="342"></a>
+    <h2>The Sandman, Vol. 10: The Wake</h2>
+</div>
+
+<div class="col-md-6 col-lg-4 col-lg-4 book-tile text-center">
+    <a href="http://www.goodreads.com/book/show/23754.The_Sandman_Vol_1"><img src="http://images.gr-assets.com/books/1411609637l/23754.jpg" width="220" height="342"></a>
+    <h2>The Sandman, Vol. 1: Preludes and Nocturnes</h2>
+</div>
+
+<div class="col-md-6 col-lg-4 col-lg-4 book-tile text-center">
+    <a href="http://www.goodreads.com/book/show/25099.The_Sandman_Vol_2"><img src="http://images.gr-assets.com/books/1298566119l/25099.jpg" width="220" height="342"></a>
+    <h2>The Sandman, Vol. 2: The Doll's House</h2>
+</div>
+
+<div class="col-md-6 col-lg-4 col-lg-4 book-tile text-center">
+    <a href="http://www.goodreads.com/book/show/25100.The_Sandman_Vol_3"><img src="http://images.gr-assets.com/books/1402485052l/25100.jpg" width="220" height="342"></a>
+    <h2>The Sandman, Vol. 3: Dream Country</h2>
+</div>
+
+<div class="col-md-6 col-lg-4 col-lg-4 book-tile text-center">
+    <a href="http://www.goodreads.com/book/show/25101.The_Sandman_Vol_4"><img src="http://images.gr-assets.com/books/1327937313l/25101.jpg" width="220" height="342"></a>
+    <h2>The Sandman, Vol. 4: Season of Mists</h2>
+</div>
+
+<div class="col-md-6 col-lg-4 col-lg-4 book-tile text-center">
+    <a href="http://www.goodreads.com/book/show/25102.The_Sandman_Vol_5"><img src="http://images.gr-assets.com/books/1312279891l/25102.jpg" width="220" height="342"></a>
+    <h2>The Sandman, Vol. 5: A Game of You</h2>
+</div>
+
+<div class="col-md-6 col-lg-4 col-lg-4 book-tile text-center">
+    <a href="http://www.goodreads.com/book/show/25106.The_Sandman_Vol_6"><img src="http://images.gr-assets.com/books/1311961999l/25106.jpg" width="220" height="342"></a>
+    <h2>The Sandman, Vol. 6: Fables and Reflections</h2>
+</div>
+
+<div class="col-md-6 col-lg-4 col-lg-4 book-tile text-center">
+    <a href="http://www.goodreads.com/book/show/25105.The_Sandman_Vol_7"><img src="http://images.gr-assets.com/books/1339922078l/25105.jpg" width="220" height="342"></a>
+    <h2>The Sandman, Vol. 7: Brief Lives</h2>
+</div>
+
+<div class="col-md-6 col-lg-4 col-lg-4 book-tile text-center">
+    <a href="http://www.goodreads.com/book/show/25103.The_Sandman_Vol_8"><img src="http://images.gr-assets.com/books/1339922260l/25103.jpg" width="220" height="342"></a>
+    <h2>The Sandman, Vol. 8: Worlds' End</h2>
+</div>
+
+<div class="col-md-6 col-lg-4 col-lg-4 book-tile text-center">
+    <a href="http://www.goodreads.com/book/show/71252.The_Sandman_Vol_9"><img src="http://images.gr-assets.com/books/1339922887l/71252.jpg" width="220" height="342"></a>
+    <h2>The Sandman, Vol. 9: The Kindly Ones</h2>
+</div>
+
+<div class="col-md-6 col-lg-4 col-lg-4 book-tile text-center">
+    <a href="http://www.goodreads.com/book/show/18310944-the-sandman"><img src="http://images.gr-assets.com/books/1444878181l/18310944.jpg" width="220" height="342"></a>
+    <h2>The Sandman: Overture</h2>
+</div>
+
+<div class="col-md-6 col-lg-4 col-lg-4 book-tile text-center">
+    <a href="http://www.goodreads.com/book/show/9778945-the-shallows"><img src="http://images.gr-assets.com/books/1349066787l/9778945.jpg" width="220" height="342"></a>
+    <h2>The Shallows: What the Internet Is Doing to Our Brains</h2>
+</div>
+
+<div class="col-md-6 col-lg-4 col-lg-4 book-tile text-center">
+    <a href="http://www.goodreads.com/book/show/13588394-the-signal-and-the-noise"><img src="http://images.gr-assets.com/books/1355058876l/13588394.jpg" width="220" height="342"></a>
+    <h2>The Signal and the Noise: Why So Many Predictions Fail - But Some Don't</h2>
+</div>
+
+<div class="col-md-6 col-lg-4 col-lg-4 book-tile text-center">
+    <a href="http://www.goodreads.com/book/show/20518872-the-three-body-problem"><img src="http://images.gr-assets.com/books/1415428227l/20518872.jpg" width="220" height="342"></a>
+    <h2>The Three Body Problem</h2>
+</div>
+
+<div class="col-md-6 col-lg-4 col-lg-4 book-tile text-center">
+    <a href="http://www.goodreads.com/book/show/16703.The_Yiddish_Policemen_s_Union"><img src="http://images.gr-assets.com/books/1386925449l/16703.jpg" width="220" height="342"></a>
+    <h2>The Yiddish Policemen's Union</h2>
+</div>
+
+<div class="col-md-6 col-lg-4 col-lg-4 book-tile text-center">
+    <a href="http://www.goodreads.com/book/show/7669.Timeline"><img src="http://images.gr-assets.com/books/1405420745l/7669.jpg" width="220" height="342"></a>
+    <h2>Timeline</h2>
+</div>
+
+<div class="col-md-6 col-lg-4 col-lg-4 book-tile text-center">
+    <a href="http://www.goodreads.com/book/show/5805.V_for_Vendetta"><img src="http://images.gr-assets.com/books/1343668985l/5805.jpg" width="220" height="342"></a>
+    <h2>V for Vendetta</h2>
+</div>
+
+<div class="col-md-6 col-lg-4 col-lg-4 book-tile text-center">
+    <a href="http://www.goodreads.com/book/show/472331.Watchmen"><img src="http://images.gr-assets.com/books/1442239711l/472331.jpg" width="220" height="342"></a>
+    <h2>Watchmen</h2>
+</div>
+
+    </div>
+  </body>
+</html>
