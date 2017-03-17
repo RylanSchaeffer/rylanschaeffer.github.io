@@ -37,7 +37,7 @@ footer, header, hgroup, menu, nav, section {
 
 sup { 
     vertical-align: super;
-    font-size: xx-small;
+    font-size: small;
 }
 
 ol, ul {
