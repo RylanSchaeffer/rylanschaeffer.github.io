@@ -109,8 +109,8 @@ main_page_content = '''
 
 # A single book entry html template
 book_tile_content = '''
-<div class="col-sm-2 col-sm-2 col-sm-2 col-sm-2 col-sm-2 book-tile text-center">
-    <a href="{book_goodreads_url}"><img src="{book_cover_url}" width="220" height="342"></a>
+<div class="col-sm-2 col-sm-2 col-sm-2 col-sm-2 col-sm-2 col-sm-2 book-tile text-center">
+    <a href="{book_goodreads_url}"><img src="{book_cover_url}" width="200" height="311"></a>
     <h2>{book_title}</h2>
 </div>
 '''

@@ -325,6 +325,47 @@ Full-Width Styles
   background: url('../images/icon_download.png') no-repeat 0% 90%;
 }
 
+.email {
+  display: block;
+  float: right;
+  height: 70px; 
+  width: 70px; 
+  text-indent: -5000px;
+  overflow: hidden;
+  background: url(../icons/mail.png) no-repeat bottom left;
+  background-size:contain;
+}
+
+.linked_in {
+  display: block;
+  float: right;
+  height: 70px; 
+  width: 70px; 
+  text-indent: -5000px;
+  overflow: hidden;
+  background: url(../icons/linkedin.png) no-repeat bottom left;
+  background-size:contain;
+}
+
+.github {
+  display: block;
+  float: right;
+  height: 70px; 
+  width: 70px; 
+  text-indent: -5000px;
+  overflow: hidden;
+  background: url(../icons/github.png) no-repeat bottom left;
+  background-size:contain;
+}
+
+img.personal_photo {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  background: url(../photos/personal.jpg) no-repeat bottom left;
+  background-size:contain;
+}
+
 .zip_download_link {
   display: block;
   float: right;
