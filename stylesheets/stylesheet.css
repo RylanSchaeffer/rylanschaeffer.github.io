@@ -35,6 +35,11 @@ footer, header, hgroup, menu, nav, section {
   display: block;
 }
 
+sup { 
+    vertical-align: super;
+    font-size: xx-small;
+}
+
 ol, ul {
   list-style: none;
 }
