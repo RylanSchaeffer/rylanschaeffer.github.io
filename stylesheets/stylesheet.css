@@ -14,7 +14,7 @@ h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
 small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
+ center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
@@ -100,6 +100,7 @@ h6 {
 
 p {
   margin: 10px 0 15px 0;
+  text-align:justify;
 }
 
 footer p {
@@ -341,6 +342,28 @@ Full-Width Styles
   background-size:contain;
 }
 
+.resume {
+  display: block;
+  float: right;
+  height: 70px; 
+  width: 70px; 
+  text-indent: -5000px;
+  overflow: hidden;
+  background: url(../icons/resume.png) no-repeat bottom left;
+  background-size:contain;
+}
+
+.back {
+  display: block;
+  float: right;
+  height: 70px; 
+  width: 70px; 
+  text-indent: -5000px;
+  overflow: hidden;
+  background: url(../icons/back.png) no-repeat bottom left;
+  background-size:contain;
+}
+
 .linked_in {
   display: block;
   float: right;
@@ -363,11 +386,10 @@ Full-Width Styles
   background-size:contain;
 }
 
-img.personal_photo {
-  width: 100%;
+img.photo {
+  width: 99%;
   height: auto;
   overflow: hidden;
-  background: url(../photos/personal.jpg) no-repeat bottom left;
   background-size:contain;
 }
 
