@@ -58,7 +58,7 @@
 
         <h2>Motivation</h2>
         <p>
-          One of the current limitations of deep learning is the need for tremendous amounts of data. To give you a rough sense of just how much data is required, consider how much training DeepMind's DQN required to surpass human performance at a number of Atari games: as <a href="https://arxiv.org/abs/1604.00289">Lake et al.</a> write, "The DQN was trained on 200 million frames from each of the games, which equates to approximately 924 hours of game time (about 38 days), or almost 500 times as much experience as the human received. Additionally, the DQN incorporates experience replay, where each of these frames is replayed approximately 8 more times on average over the course of learning."
+          One of the current limitations of deep learning is the need for tremendous amounts of data. To give you a rough sense of just how much data are required, consider how much training DeepMind's DQN required to surpass human performance at a number of Atari games: as <a href="https://arxiv.org/abs/1604.00289">Lake et al.</a> write, "The DQN was trained on 200 million frames from each of the games, which equates to approximately 924 hours of game time (about 38 days), or almost 500 times as much experience as the human received. Additionally, the DQN incorporates experience replay, where each of these frames is replayed approximately 8 more times on average over the course of learning."
         </p><br>
         
 
@@ -79,21 +79,21 @@
         <img class="photo" src="nec_memory_hierarchy.png" width = "device-width" maximum-scale=2>
 
         <p>
-          Humans have two types of long-term memory: <a href="https://en.wikipedia.org/wiki/Explicit_memory">explicit (declarative) memory</a> and <a href="https://en.wikipedia.org/wiki/Implicit_memory">implicit (procedural) memory</a>. Explicit memory stores the recollections that you can intentionally bring to the front of your mind, and is further divided into two subcategories: <a href="https://en.wikipedia.org/wiki/Episodic_memory">episodic memory</a> and <a href="https://en.wikipedia.org/wiki/Semantic_memory">semantic memory</a>. Episodic memory contains specific personal experiences, including people, places, emotions, communicative exchanges - I like to think of episodic memory as little video clips that you can play in your head. This differs from semantic memory, which contains generalized understanding, such as knowing all the words to bohemian rhapsody or that human activity is a substantial causal factor towards climate change. Put another way, the question is asking, "Why do we remember specific memories in addition to remembering generalizable information?"
+          Humans have two types of long-term memory: <a href="https://en.wikipedia.org/wiki/Explicit_memory">explicit (declarative) memory</a> and <a href="https://en.wikipedia.org/wiki/Implicit_memory">implicit (procedural) memory</a>. Explicit memory stores the recollections that you can intentionally bring to the front of your mind, and is further divided into two subcategories: <a href="https://en.wikipedia.org/wiki/Episodic_memory">episodic memory</a> and <a href="https://en.wikipedia.org/wiki/Semantic_memory">semantic memory</a>. Episodic memory contains specific personal experiences, including people, places, emotions, communicative exchanges - I like to think of episodic memory as little video clips that you can play in your head. This differs from semantic memory, which contains generalized understanding, such as knowing all the words to Bohemian Rhapsody or that human activity is a substantial causal factor towards climate change. Put another way, the question is asking, "Why do we remember specific memories in addition to remembering generalizable information?"
         </p><br>
 
         <p>
-          Lengyel and Dayan hypothesize that for agents trying to maximize long-term rewards in sequential decision-making problems, there's a tradeoff to be had: semantic memory makes better use of experiences (i.e. more efficient), but episodic memory requires fewer experiences (i.e. more accurate). They suggest that the two explicit memory systems exist because the systems supplement the others' deficiency; episodic memory can select good actions when data are scarce, and semantic memory can generalize well once more data have been collected.
+          Lengyel and Dayan hypothesize that for agents trying to maximize long-term rewards in sequential decision-making problems, there's a tradeoff to be had: semantic memory makes better use of experiences (i.e. more efficient), but episodic memory requires fewer experiences (i.e. more accurate). They suggest that the two explicit memory systems exist because the systems supplement the other's deficiency; episodic memory can select good actions when data are scarce, and semantic memory can generalize well once more data have been collected.
         </p><br>
 
         <p>
-          To analyze this tradeoff, Lengyel and Dayan perform theoretical analysis on tree-structured Markov Decision Process (tMDPs). As the name implies, a tMDP is just a <a href="https://en.wikipedia.org/wiki/Markov_decision_process">Markov Decision Process (MDP)</a> without cycles. I couldn't find a simple picture of a tMDP, so I'm going to use the paper's psychadelic picture. In the below example tMDP, the agent takes two actions to complete an episode. The agent starts on the left, chooses one of four possible actions, and is then blown to a second state based on the transition probabilities, where the agent again chooses one of four possible actions and is then given a reward. Each terminal state gives a reward generated by a Gaussian distribution, each with equal variance.
+          To analyze this tradeoff, Lengyel and Dayan perform theoretical analysis on tree-structured Markov Decision Process (tMDPs). As the name implies, a tMDP is just a <a href="https://en.wikipedia.org/wiki/Markov_decision_process">Markov Decision Process (MDP)</a> without cycles. I couldn't find a simple picture of a tMDP, so I'm going to use the paper's psychadelic picture. In the below example tMDP, the agent takes two actions to complete an episode. The agent starts on the left, chooses one of four possible actions, and is then blown to a second state based on the transition probabilities, where the agent again chooses one of four possible actions and is then given a reward. Each terminal state gives a reward generated by a Gaussian distribution, each with equal variance. We could succinctly describe this tMDP as having depth = 2, branching factor = 3 and number of actions = 4. The transition function and the reward function are both probabilistic.
         </p>
 
         <img class="photo" src="nec_tmdp.png" width = "device-width" maximum-scale=2>
 
         <p>
-          We could succinctly describe this tMDP as having depth = 2, branching factor = 3 and number of actions = 4. The transition function and the reward function are both stochastic. tMDPs are advantageous because they're more analytically tractable than MDPs and they're almost equivalent - think of a tMDP as a MDP unfolded in time. <b>What the authors wanted to find out is how the performance of an episodic memory and a semantic memory compare as a function of environment complexity and amount of data.</b> To do this, the authors created three agents (or controllers, as they call them):
+          tMDPs are advantageous because they're more analytically tractable than MDPs and they're almost equivalent - think of a tMDP as a MDP unfolded in time. <b>What the authors wanted to find out is how the performance of an episodic memory and a semantic memory compare as a function of environment complexity and amount of data.</b> To do this, the authors created three agents (or controllers, as they call them):
           <ol>
             <li>Model-based controller without computational noise (theoretical upper limit on performance in a given environment)</li>
             <li>Model-based controller with computational noise (semantic memory)</li>
@@ -112,7 +112,7 @@
         <img class="photo" src="nec_normalized_model_based.png" width = "device-width" maximum-scale=2>
 
         <p>
-          Second, an episodic agent outperforms the semantic agent when data is limited, and the episodic agent holds its competitive edge for longer in more complex and more noisy environments. The following three images show the two agents' performance as the branching factor of the environment increase from 2 to 4.
+          Second, an episodic agent outperforms the semantic agent when data are limited, and the episodic agent holds its competitive edge for longer in more complex and more noisy environments. The following three images show the two agents' performance as the branching factor of the environment increase from 2 to 4.
         </p>
 
         <center><b>Branching Factor = 2</b></center>
@@ -127,8 +127,7 @@
         <h3>Paper #2 - <a href="https://arxiv.org/abs/1606.04460">Model-Free Episodic Control (2016)</a></h3>
 
         <p>
-          Lengyel and Dayan's results are significant because they suggest how human brains might find good solutions without requiring millions of datum first. 
-          DeepMind sought to test Lengyel and Dayan's insight by creating a more sophisticated version of the episodic agent, called a <b>Model-Free Episodic Controller (MFEC)</b>, and then observing how the algorithm performs in tougher environments.
+          Lengyel and Dayan's results are significant because they suggest how human brains might find good solutions without requiring millions of examples first. DeepMind sought to test Lengyel and Dayan's insight by creating a more sophisticated version of the episodic agent, called a <b>Model-Free Episodic Controller (MFEC)</b>, and then observing how the algorithm performs in more challenging environments.
         </p><br>
 
         <p>
@@ -146,7 +145,7 @@
         </p><br>
 
         <p>
-          However, agents using tabular methods like $Q^{EC}$ as described have no way to intelligently choose actions in newly encountered states. The authors point out that this shortcoming can be overcome by assuming the state space $\mathcal{S}$ has a distance function; if it does, k-nearest-neighbors can be used to choose actions by considering the best actions in similar states. Formally, we can generalize action selection to newly seen states by using a modified version of $Q^{EC}$:
+          However, agents using tabular methods as described like $Q^{EC}$ have no way to intelligently choose actions in newly encountered states. The authors point out that this shortcoming can be overcome by assuming the state space $\mathcal{S}$ has a distance function; if it does, k-nearest-neighbors can be used to choose actions by considering the best actions in similar states. Formally, we can generalize action selection to newly seen states by using a modified version of $Q^{EC}$:
 
                     <center>
             $
@@ -161,11 +160,11 @@
         </p><br>
 
         <p>
-          Before testing an MFEC agent, the authors needed to take one additional step. <a href="https://arxiv.org/pdf/1512.08457.pdf">Prior work</a> demonstrated that the hippocampus, the brain region largely responsible for episodic memory, doesn't operates on sensory data directly, but rather a representation of that data as output from the ventral stream. Similarly, rather than allowing the agent to interact directly with the environment, the authors tried using two types of representations (also known as feature mappings) $\phi$. Thus, for observation $o_t$, the agent's state $s_t = \phi(o_t)$.
+          Before testing an MFEC agent, the authors needed to take one additional step. <a href="https://arxiv.org/pdf/1512.08457.pdf">Prior work</a> demonstrated that the hippocampus, the brain region largely responsible for episodic memory, doesn't operates on sensory data directly, but rather a representation of that data as output from the ventral stream. Similarly, rather than allowing the agent to directly observe the environment, the authors tried using two types of representations (also known as feature mappings) $\phi$. Thus, for observation $o_t$, the agent's state $s_t = \phi(o_t)$.
         </p><br>
 
         <p>
-          The authors tried two different feature mappings. The first mapping is a random project of the original observation into a smaller dimensional space (Model-Free Episodic Controller Random Projection, or MFEC-RP for short). This is accomplished using the <a href="https://link.springer.com/article/10.1007/BF02764938">Johnson-Lindenstrauss lemma</a> (TODO: maybe add an explanation?), which states that for a random matrix $\mathbf{A}$ with entries drawn from a standard Gaussian, a transformation $\phi : o \rightarrow \mathbf{A} o$ will approximately preserve relative distances in the original space. The second mapping uses a variational autoencoder (Model-Free Episodic Controller Variational Autoencoder, or MFEC-VAE for short).
+          The authors tried two different feature mappings. The first mapping is a random projection of the original observation into a smaller dimensional space (Model-Free Episodic Controller Random Projection, or MFEC-RP for short). This is accomplished using the <a href="https://link.springer.com/article/10.1007/BF02764938">Johnson-Lindenstrauss lemma</a> (TODO: maybe add an explanation?), which states that for a random matrix $\mathbf{A}$ with entries drawn from a standard Gaussian, a transformation $\phi : o \rightarrow \mathbf{A} o$ will approximately preserve relative distances in the original space. The second mapping uses a variational autoencoder (Model-Free Episodic Controller Variational Autoencoder, or MFEC-VAE for short). (TODO: Add or link explanation of VAE)
         </p><br>
 
         <p>
@@ -187,13 +186,13 @@
         </p><br>
 
         <p>
-          The paper introduces an improved version of MFEC called <b>Neural Episodic Control (NEC)</b> with two key modifications. First, rather than using variational autoencoders or a random projection, Pritzel et a. use a convolutional neural network (CNN) that can learn an embedding well suited for selecting actions. Second, they replace the $Q^{EC}$ table with a more sophisticated alternative called <b>Differentiable Neural Dictionaries (DNDs)</b>. DNDs are very similar to associative arrays (think Java HashMaps or Python dictionaries), but modified to be differentiable. With these two modifications, the algorithm becomes entirely differentiable and thus end-to-end trainable by gradient descent.
+          The paper introduces an improved version of MFEC called <b>Neural Episodic Control (NEC)</b>. The goal is to make an algorithm that is entirely differentiable, and thus end-to-end trainable by gradient descent. To accomplish this, two modifications are made to MFEC. First, rather than using variational autoencoders or a random projection, Pritzel et al. use a convolutional neural network (CNN) that can learn an embedding well suited for selecting actions. Second, they replace the $Q^{EC}$ table with a more sophisticated alternative called <b>Differentiable Neural Dictionaries (DNDs)</b>. DNDs are basically differentiable associative arrays.
         </p><br>
        
         <h2>Mathematics</h2>
         <h3>Differential Neural Dictionaries</h3>
         <p>
-          Like a Python dictionary, a DND is composed of keys $K_a$ and corresponding values $V_a$ and has two operations: lookup and write. NEC uses one one DND for each action $a \in \mathcal{A}$, hence why $K_a$ and $V_a$ are indexed by $a$. The paper uses $h$ to denote a key because $k$ will later be used to refer to a kernel function (more on that later). To find the output value $o$ corresponding to key $h$, the DND makes use of a distance metric like $Q^{EC}$, but in a more sophisticated manner. The output $o$ will be a weighted sum of values in the DND, where the weighting coefficients are determined by the similarity of $h$ to the keys in the DND. Specifically, for queried key $h$ and for each key-value pair $(h_i, v_i)$ currently in the DND:
+          Like a Python dictionary or Java HashMap, a DND is composed of keys $K_a$ and corresponding values $V_a$ and has two operations: lookup and write. NEC uses one one DND for each action $a \in \mathcal{A}$, hence why $K_a$ and $V_a$ are indexed by $a$. The paper uses $h$ to denote a key because $k$ will later be used to refer to a kernel function (more on that later). To find the output value $o$ corresponding to key $h$, the DND makes use of a distance metric like $Q^{EC}$, but in a more sophisticated manner. The output $o$ will be a weighted sum of values in the DND, where the weighting coefficients are determined by the similarity of $h$ to the keys in the DND. Specifically, for queried key $h$ and for each key-value pair $(h_i, v_i)$ currently in the DND:
 
           <center>
           $
@@ -241,7 +240,7 @@
         <img class="photo" src=nec_writing.png width="device-width" maximum-scale=2>
 
         <p>
-          Remember, <b>a DND exists for each action $a \in \mathcal{A}$</b>. Keeping that in mind, the image below shows NEC using <b>one</b> DND; in practice, the output of the CNN would be fed in as input to multiple DNDs and the NEC agent would select the action corresponding to the DND that produces the highest $Q(s,a)$ value.
+          Remember, a DND exists for each action $a \in \mathcal{A}$. Keeping that in mind, the image below shows NEC using one DND; for environments with more than one available action, the output of the CNN would be fed in as input to multiple DNDs and the NEC agent would select the action corresponding to the DND that produces the highest $Q(s,a)$ value.
         </p>
 
         <img class="photo" src="nec_complete.png" width = "device-width" maximum-scale=2>
@@ -290,7 +289,7 @@
         <h2>Discussion</h2>
         <h3>Missing Controls</h3>
         <p>
-          Unfortunately, the authors don't compare NEC to MFEC augmented with DNDs instead of $Q^{EC}$, so ambiguity surrounds how much of NEC's improved performance is due to a superior memory architecture as opposed to an improved representation as learned by the CNN. Similarly, the authors don't compare NEC to MFEC augmented with its own CNN, but as for how that might work, I'm not sure, as training the CNN is only possible if the tabular memory is differentiable and $Q^{EC}$ is not.
+          Unfortunately, the authors don't compare NEC to MFEC augmented with DNDs instead of $Q^{EC}$, so ambiguity surrounds how much of NEC's improved performance is due to a superior memory architecture as opposed to an improved representation as learned by the CNN. To compare $Q^{EC}$ against DNDs, the authors could have fed a random projection-based or VAE-based state representation into the DNDs, and trained from the DNDs onward. Similarly, the authors don't compare NEC to MFEC augmented with its own CNN, but as for how that might work, I'm not sure, as training the CNN is only possible if the tabular memory is differentiable and $Q^{EC}$ is not.
         </p><br>
 
         <h3>Complementary Learning Systems</h3>
