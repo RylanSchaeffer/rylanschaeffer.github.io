@@ -192,7 +192,7 @@
         <h2>Mathematics</h2>
         <h3>Differential Neural Dictionaries</h3>
         <p>
-          Like a Python dictionary or Java HashMap, a DND is composed of keys $K_a$ and corresponding values $V_a$ and has two operations: lookup and write. NEC uses one one DND for each action $a \in \mathcal{A}$, hence why $K_a$ and $V_a$ are indexed by $a$. The paper uses $h$ to denote a key because $k$ will later be used to refer to a kernel function (more on that later). To find the output value $o$ corresponding to key $h$, the DND makes use of a distance metric like $Q^{EC}$, but in a more sophisticated manner. The output $o$ will be a weighted sum of values in the DND, where the weighting coefficients are determined by the similarity of $h$ to the keys in the DND. Specifically, for queried key $h$ and for each key-value pair $(h_i, v_i)$ currently in the DND:
+          Like a Python dictionary or Java HashMap, a DND is composed of keys $K_a$ and corresponding values $V_a$ and has two operations: lookup and write. NEC uses one DND for each action $a \in \mathcal{A}$, hence why $K_a$ and $V_a$ are indexed by $a$. The paper uses $h$ to denote a key because $k$ will later be used to refer to a kernel function (more on that later). To find the output value $o$ corresponding to key $h$, the DND makes use of a distance metric like $Q^{EC}$, but in a more sophisticated manner. The output $o$ will be a weighted sum of values in the DND, where the weighting coefficients are determined by the similarity of $h$ to the keys in the DND. Specifically, for queried key $h$ and for each key-value pair $(h_i, v_i)$ currently in the DND:
 
           <center>
           $
