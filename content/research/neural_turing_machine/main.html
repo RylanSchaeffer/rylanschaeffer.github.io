@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width,maximum-scale=2">
+    <meta name="description" content="Rylan Schaeffer">
+
+    <link rel="stylesheet" type="text/css" media="all" href="../../../stylesheets/stylesheet.css">
+
+    <title>Neural Turing Machine</title>
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-94033137-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+    </script>
+
+    <script type="text/javascript"
+      src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({ TeX: { equationNumbers: {autoNumber: "AMS"} } });
+    </script>
+
+    $\DeclareMathOperator*{\argmax}{argmax}$
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+      <header class="inner">
+        <h1 id="project_title">Neural Turing Machines</h1>
+        <h3 id="project_tagline"><a href="https://arxiv.org/abs/1410.5401">Graves, Wayne and Danihelka 2014.</a></h3>
+          <section id="quick_links">
+            <a class="back" href="../../research.html"></a>
+          </section>
+      </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <p>
+          I've found that the overwhelming majority of online information on artificial intelligence research falls into one of two categories: the first is aimed at explaining advances to lay audiences, and the second is aimed at explaining advances to other researchers. I haven't found a good resource for people with a technical background who are unfamiliar with the more advanced concepts and are looking for someone to fill them in. This is my attempt to bridge that gap, by providing approachable yet (relatively) detailed explanations. In this post, I explain the titular paper - <a href="https://arxiv.org/abs/1410.5401">Neural Turing Machines</a>.
+        </p><br>
+
+        <p>
+          I initially didn't intend to cover this paper, but another paper that I did want to cover wasn't making any sense to me, and since it used a modification of the NTM architecture, I decided to make sure that I really understood NTMs before moving on. Having done that, I'm now of the opinion that the other paper is just poorly motivated. In constrast, the NTM paper is very well written and I highly recommend reading it.
+        </p><br>
+
+        <h2>Motivation</h2>
+        <p>
+          For the first thirty years of artificial intelligence research, neural networks were largely seen as an unpromising research direction. From the 1950s to the late 1980s, AI was dominated by a <a href="https://en.wikipedia.org/wiki/Symbolic_artificial_intelligence">symbolic approach</a>, which attempted to explain how information processing systems like the human brain might function in terms of symbols, structures and rules that could manipulate said symbols and structures. It wasn't until 1986 that a serious alternative theory emerged to challenge symbolic AI; its authors used the term Parallel Distributed Processing, but the more commonly used term today is <a href="https://en.wikipedia.org/wiki/Connectionism">connectionism</a>. You might not have heard of this approach, but you've likely heard of its most famous modeling technique - artificial neural networks.
+        </p><br>
+
+        <p>
+          <a href="http://ruccs.rutgers.edu/images/personal-zenon-pylyshyn/proseminars/Proseminar13/ConnectionistArchitecture.pdf">Two criticisms</a> were made against neural networks as tools capable of helping us better understanding intelligence. First, neural networks with fixed-size inputs are seemingly unable to solve problems with variable-size inputs. Second, neural networks seem unable bind values to specific locations in data structures. This ability of writing to and reading from memory is critical in the two information processing systems we have available to study: brains and computers. How could these two criticisms be answered?
+        </p><br>
+
+        <p>
+          The first was answered with the creation of <a href="https://en.wikipedia.org/wiki/Recurrent_neural_network">recurrent neural networks</a> (RNNs). RNNs can process variable-size inputs without needing to be modified by adding a time component to their operation - when translating a sentence, or recognizing handwritten text, an RNN repeatedly receives a fixed-size input for as many time steps as is necessary. In this paper, Graves et al. seek to answer the second criticism by giving a neural network an external memory and the capacity to learn how to use it. They call their system a <b>Neural Turing Machine (NTM)</b>.
+        </p><br>
+
+        <h2>Background</h2>
+        <p>
+          For computer scientists, the need for a memory system is clear. Computers have advanced tremendously over the past half century, but they are still composed of the three components: memory, control flow and arithmetic/logical operations.
+        </p><br>
+
+        <h2>Intuition</h2>
+        <p>
+          A NTM is fundamentally composed of a neural network, called the <b>controller</b>, and a 2D matrix called the memory bank, memory matrix or just plain <b>memory</b>. At each time step, the neural network receives some input from the outside world, and sends some output to the outside world. However, the network also has the ability to read from select memory locations and the ability to write to select memory locations. Graves et al. draw inspiration from the traditional <a href="https://en.wikipedia.org/wiki/Turing_machine">Turing machine</a> and use the term "head" to describe the specification of memory location(s). In the below image, the dotted line demarcates which parts of the architecture are "inside" the system as opposed to the outside world.
+        </p>
+
+        <img class="photo" src="ntm_architecture.png" width = "device-width" maximum-scale=2>
+
+        <p>
+          Understanding why the neural network is called the controller is key to understanding the entire system. Suppose that we index the memory $\mathcal{M}$ by specifying the row and the column, just like a typical matrix. We'd like to train our NTM using backpropagation and our favorite optimization method (e.g. stochastic gradient descent), but how do we take the gradient of 
+        </p><br>
+
+        <p>
+          Both reading and writing rely on vectors of weightings of the elements in memory. Following the paper's lead, I'll save explainining how these weight vectors are generated after explaining how they're used because doing so makes understanding the system easier.
+        </p><br>
+
+        <h2>Mathematics</h2>
+        <h3>Reading</h3>
+        <p>
+          I'll $\mathcal{M}_t$ is the memory matrix at time $t$ with $R$ rows and $C$ elements per row. If we have some length-R normalized weight vector $w_t$ (normalized meaning that $\sum\limits_{i=1}^R w_t(i) = 1$ and $0 \leq w_t(i) \leq 1$ for all i) at time $t$, a "read head" will return a linear combination of the current rows in the memory scaled by their respective scalar values in the weight vector. Specifically, the read head will return a length-C vector $r_t$:
+
+          <center>
+          $
+          \begin{align} \tag{2}
+          r_t \leftarrow \sum\limit_i w_t(i) \mathcal{M}_t(i)
+          \end{align}
+          $
+          </center>
+        </p><br>
+
+        <h3>Writing</h3>
+        <p>
+          Writing is a little trickier than reading, since two separate steps are necessary to write: erasing and then adding. In order to erase old data, a "write head" will need a new vector, the length-C erase vector $e_t$, in addition to our length-R normalized weight vector $w_t$. The erase vector has elements between 0 and 1, exclusive, and is used to specify which elements in a row should be erased, left unchanged, or something in between.
+
+          <center>
+          $
+          \begin{align} \tag{3}
+          \mathcal{M}_t^{erased}(i) \leftarrow \mathcal{M}_{t-1}(i)\[\mathbf{1} - w_t(i) e_t \]
+          \end{align}
+          $
+          </center>
+        </p><br>
+
+        <h3>Addressing</h3>
+        <p>
+          
+        </p>
+
+        <img class="photo" src="ntm_addr_1.png" width = "device-width" maximum-scale=2>
+
+        <img class="photo" src="ntm_addr_2.png" width = "device-width" maximum-scale=2>
+
+        <img class="photo" src="ntm_addr_3.png" width = "device-width" maximum-scale=2>
+
+        <img class="photo" src="ntm_addr_4.png" width = "device-width" maximum-scale=2>
+        
+        
+        <h2>Experiments and Results</h2>
+
+        
+        <img class="photo" src="ntm_copy_learning_curve.png" width = "device-width" maximum-scale=2>
+
+        <h2>Discussion</h2>
+
+        <h2>Summary</h2>
+
+        <h2>Notes</h2>
+        <p>
+          I appreciate any and all feedback. If I've made an error or if you have a suggestion, you can <a href="mailto:ryschaeffer@ucdavis.edu">email me</a> or comment on the <a href="">Reddit</a> or <a href="">HackerNews</a> threads.
+        </p>
+
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        
+        <p class="copyright">Slate theme maintained by <a href="https://github.com/pages-themes">pages-themes</a></p>
+        
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+  </body>
+</html>
