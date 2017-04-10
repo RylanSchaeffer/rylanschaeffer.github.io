@@ -75,7 +75,7 @@
 
         <h2>Background</h2>
         <p>
-          For computer scientists, the need for a memory system is clear. Computers have advanced tremendously over the past half century, but they are still composed of the three components: memory, control flow and arithmetic/logical operations.
+          For computer scientists, the need for a memory system is clear. Computers have advanced tremendously over the past half century, but they are still composed of the three components: memory, control flow and arithmetic/logical operations. However, there's also biological evidence to suggest that having a memory system for quick storage and retrieval of information is helpful. This memory system has been termed <a href="https://en.wikipedia.org/wiki/Working_memory">working memory</a>, and the NTM paper lists several earlier papers that have studied working memory from a computational neuroscience perspective.
         </p><br>
 
         <h2>Intuition</h2>
@@ -96,12 +96,26 @@
         <h2>Mathematics</h2>
         <h3>Reading</h3>
         <p>
-          I'll $\mathcal{M}_t$ is the memory matrix at time $t$ with $R$ rows and $C$ elements per row. If we have some length-R normalized weight vector $w_t$ (normalized meaning that $\sum\limits_{i=1}^R w_t(i) = 1$ and $0 \leq w_t(i) \leq 1$ for all i) at time $t$, a "read head" will return a linear combination of the current rows in the memory scaled by their respective scalar values in the weight vector. Specifically, the read head will return a length-C vector $r_t$:
+          Let's refer to the memory matrix, with $R$ rows and $C$ elements per row, at time $t$ as $\mathcal{M}_t$. In order to read (and write), we'll need an attention mechanism that dictates where the head should read from. The attention mechanism will be a length-$R$ normalized weight vector $w_t$. We'll refer to individual elements in the weight vector as $w_t(i)$. By "normalized," the authors mean that the following two constraints hold:
+
+          <center>
+          $
+          \begin{align} \tag{1}
+          &0 \leq w_t(i) \leq 1 \\
+          &\sum\limits_{i=1}^R w_t(i) = 1
+          \end{align}
+          $
+          </center>
+        </p><br>
+
+        <p>
+
+          The read head will return a linear combination of the memory's rows, indicated by $M_t(i)$, scaled by the weight vector. Specifically, the read head will return a length-$C$ vector $r_t$:
 
           <center>
           $
           \begin{align} \tag{2}
-          r_t \leftarrow \sum\limit_i w_t(i) \mathcal{M}_t(i)
+          r_t \leftarrow \sum\limits_i^R w_t(i) \mathcal{M}_t(i)
           \end{align}
           $
           </center>
@@ -109,12 +123,23 @@
 
         <h3>Writing</h3>
         <p>
-          Writing is a little trickier than reading, since two separate steps are necessary to write: erasing and then adding. In order to erase old data, a "write head" will need a new vector, the length-C erase vector $e_t$, in addition to our length-R normalized weight vector $w_t$. The erase vector has elements between 0 and 1, exclusive, and is used to specify which elements in a row should be erased, left unchanged, or something in between.
-
+          Writing is a little trickier than reading, since writing involves two separate steps: erasing, then adding. In order to erase old data, a write head will need a new vector, the length-C erase vector $e_t$, in addition to our length-R normalized weight vector $w_t$. The erase vector is used in conjunction with the weight vector to specify which elements in a row should be erased, left unchanged, or something in between. If the weight vector tells us to focus on a row, and the erase vector tells us to erase an element, the element in that row will be erased.
           <center>
           $
           \begin{align} \tag{3}
-          \mathcal{M}_t^{erased}(i) \leftarrow \mathcal{M}_{t-1}(i)\[\mathbf{1} - w_t(i) e_t \]
+          \mathcal{M}_t^{erased}(i) \leftarrow \mathcal{M}_{t-1}(i)[\mathbf{1} - w_t(i) e_t ]
+          \end{align}
+          $
+          </center>
+        </p><br>
+
+        <p>
+          After $\mathcal{M}_{t-1}$ has been converted to $\mathcal{M}_t^{erased}$, the write head uses a length-$C$ add vector $a_t$ to complete the writing step.
+
+          <center>
+          $
+          \begin{align} \tag{4}
+          \mathcal{M}_t(i) \leftarrow \mathcal{M}_t^{erased}(i) + w_t(i) a_t
           \end{align}
           $
           </center>
@@ -122,30 +147,184 @@
 
         <h3>Addressing</h3>
         <p>
-          
+          Creating these weight vectors to determine where to read and write is tricky, so I'd like to step through the four-stage process. Each stage generates an intermediate weight vector that get passed to the next stage. The first stage's goal is to generate a weight vector based on how similar each row in memory is to a value $k_t$ emitted by the controller. I'll refer to this intermediary $w_t^c$ as the content weight vector. Another parameter, $\beta_t$, will be explained in just a second.
         </p>
 
         <img class="photo" src="ntm_addr_1.png" width = "device-width" maximum-scale=2>
 
+        <p>
+
+          This content weight vector allows the controller to select values similar to previously seen values, which is called content-based addressing. For each head, the controller produces a key vector $k_t$ that is compared to each row of $M_t$ using a similarity measure. In this paper, the authors use cosine similarity, defined as:
+
+          <center>
+          $
+          \begin{align} \tag{6}
+          K(u, v) = \frac{u \cdot v}{\|u\| \cdot \|v\|}
+          \end{align}
+          $
+          </center>
+        </p><br>
+
+        <p>
+          A positive scalar parameter $\beta_t > 0$, called the key strength, is used to determine how concentrated the content weight vector should be. For small values of beta, the weight vector will be diffuse, but for larger values of beta, the weight vector will be concentrated on the most similar row in memory. To visualize this, if a a key and memory matrix produces a similarity vector <code>[0.1, 0.5, 0.25, 0.1, 0.05]</code>, here's how the content weight vector varies as a function of beta.
+        </p>
+
+        <img class="photo" src="ntm_effect_of_beta.png" width = "device-width" maximum-scale=2>
+
+        <p>
+          The content weight vector thus is calculated as follows:
+
+          <center>
+          $
+          \begin{align} \tag{5}
+          w_t^c(i) = \frac{exp\Big(\beta_t K (k_t, M_t(i))\Big)}{\sum_j exp\Big(\beta_t K(k_t, M_t(j))\Big)}
+          \end{align}
+          $
+          </center>
+        </p><br>
+
+        <p>
+          However, in some cases, we may want to read from specific memory locations instead of reading specific memory values. The example the authors give is the function $f(x, y) = x * y$. In this case, we don't care what the values of x and y are, just that x and y are consistently read from the same memory locations. This is called location-based addressing, and to implement it, we'll need three more stages. In the second stage, a scalar parameter $g_t \in (0, 1)$, called the interpolation gate, blends the content weight vector $w_t^c$ with the previous time step's weight vector $w_{t-1}$ to produce the gated weighting $w_t^g$. This allows the system learn when to use (or ignore) content-based addressing.
+
+          <center>
+          $
+          \begin{align} \tag{7}
+          w_t^g \leftarrow g_t w_t^c + (1- g_t) w_{t-1}
+          \end{align}
+          $
+          </center>
+        </p>
+
         <img class="photo" src="ntm_addr_2.png" width = "device-width" maximum-scale=2>
+
+        <p>
+          After interpolation has finished, each head emits a vector 
+          <center>
+          $
+          \begin{align} \tag{8}
+          \tilde{w}_t(i) \leftarrow \sum\limits_{j=0}^{R-1} w_t^g(j) s_t(i-j)
+          \end{align}
+          $
+          </center>
+        </p>
 
         <img class="photo" src="ntm_addr_3.png" width = "device-width" maximum-scale=2>
 
+        <p>
+          The fourth and final stage, sharpening, is used to prevent the shifted weight $\tilde{w}_t$ from blurring by using a scalar $\gamma \geq 1$.
+
+          <center>
+          $
+          \begin{align} \tag{9}
+          w_t(i) \leftarrow \frac{\tilde{w}_t(i)^{\gamma_t}}{\sum\limits_j \tilde{w}_t(j)^{\gamma_t}}
+          \end{align}
+          $
+          </center>
+        </p>
+
         <img class="photo" src="ntm_addr_4.png" width = "device-width" maximum-scale=2>
         
+        <p>
+          And that's it! A weight vector can be computed that determines where to read from and write to, and better yet, the system is entirely differentiable and thus end-to-end trainable.
+        </p>
         
         <h2>Experiments and Results</h2>
-
+        <h3>Copying</h3>
+        <p>
+          RNNs have historically struggled to remember information over long periods. The first experiment was designed to test whether having an external memory system allows for better performance. In the experiment, three systems were given a sequence of random eight bit vectors followed by a delimiter flag, and then ask to repeat the input sequence. An <font color="blue">LSTM</font> was compared against two NTMs, one that used a <font color="green">LSTM controller</font> and another that used a <font color="red">feedforward controller</font>. In the figure below, "cost per sequence" refers to the number of bits that a system incorrectly recalls over an entire sequence (sequence lengths. As you can see, both NTM architectures significantly outperform the LSTM.
+        </p>
         
         <img class="photo" src="ntm_copy_learning_curve.png" width = "device-width" maximum-scale=2>
 
-        <h2>Discussion</h2>
+        <p>
+          Obviously, both the LSTM and the NTMs had learned some rudimentary copy algorithm. The researchers visualized how the NTM read from and wrote to (shown below). White is weight $1$, and black is weight $0$. The picture clearly displays that weightings over memory location were very focused.
+        </p>
+
+        <img class="photo" src="ntm_copy_memory_trace.png" width = "device-width" maximum-scale=2>
+        
+
+        <p>
+          Next, the researchers want to know how well the LSTM's and NTMs' algorithms could scale to sequences longer than anything the systems had been trained on. Since the training sequences had between 1 and 20 random vectors, the LSTM and NTMs were compared using sequences of lengths 10, 20, 30, 50 and 120. The next two images need a little explanation. There are eight blocks. The four top blocks represent the target sequences of lengths 10, 20, 30, and 50. Within the each block, a column of eight red and blue squares is used to visually indicate 1s and 0s. The brightly colored squares are used to indicate bits that had values other than 0.0 or 1.0.
+        </p>
+
+        <center><b>LSTM Copy Performance on Sequence Lengths 10, 20, 30, 50</b></center>
+        <img class="photo" src="ntm_copy_generalization_lstm_shorter.png" width = "device-width" maximum-scale=2>
+
+        <center><b>NTM Copy Performance on Sequence Lengths 10, 20, 30, 50</b></center>
+        <img class="photo" src="ntm_copy_generalization_ntm_shorter.png" width = "device-width" maximum-scale=2>
+
+        <p>
+          As you can tell, the NTM produces far fewer errors for longer sequences. I couldn't find in the paper which NTM (the RNN controller or the feedforward controller) was used to produce the above image. The difference between the NTM and LSTM becomes more pronounced for longer sequences, as shown below for the 120 vector-long sequence.
+        </p>
+
+        <center><b>LSTM Copy Performance on Sequence Length 120</b></center>
+        <img class="photo" src="ntm_copy_generalization_lstm_longer.png" width = "device-width" maximum-scale=2>
+
+        <center><b>NTM Copy Performance on Sequence Length 120</b></center>
+        <img class="photo" src="ntm_copy_generalization_ntm_longer.png" width = "device-width" maximum-scale=2>
+
+
+
+        <h3>Repeat Copying</h3>
+        <p>
+          The second experiment was to determine whether a NTM could learn a nested function (in this case, a nested for loop). In addition to being passed a sequence, the NTM was also passed a scalar value indicating how many times the NTM should output the copied input sequence. As you would expect, both NTMs outperformed the LSTM.
+        </p>
+
+        <img class="photo" src="ntm_repeat_copy_learning_curve.png" width = "device-width" maximum-scale=2>
+
+        <p>
+          And, like before, the LSTM struggles to generalize its repeat copying algorithm, while the NTM does not.
+        </p>
+
+        <img class="photo" src="ntm_repeat_copy_generalization.png" width = "device-width" maximum-scale=2>
+
+        <h3>Associative Recall</h3>
+        <p>
+          The third experiment was to determine whether NTMs can learn indirection i.e. one data item pointing to another. The authors fed in a list of items, and then queried one of the items in the list, with the expectation that the next item in the list be returned. As the authors point out, the fact that the feedforward-controller NTM outperforms the LSTM-controller NTM suggests that the NTM's memory is a superior data storage system than the LSTM's internal state.
+        </p>
+
+        <img class="photo" src="ntm_associative_recall_curve.png" width = "device-width" maximum-scale=2>
+
+        <p>
+          And again, the NTMs outperform the LSTM when generalizing to a larger number of items in the list.
+        </p>
+
+        <img class="photo" src="ntm_associative_recall_generalization.png" width="device-width" maximum-scale=2>
+
+        <h3>Dynamic N-Grams</h3>
+        <p>
+          The fourth task was designed to determine whether NTMs could learn <a href="https://en.wikipedia.org/wiki/Posterior_predictive_distribution">posterior predictive distributions</a>. The researchers designed N-grams (sequences of N items), which given previous items in the sequence, determine some probability distribution over the next item in the sequence. In this case, the researchers used binary 6-Grams. The optimal solution to an agent's ability to predict the next bit has a closed-form solution, and the NTMs both outperformed the LSTM and approached the optimal estimator.
+        </p>
+
+
+        <img class="photo" src="ntm_dynamic_n_gram.png" width="device-width" maximum-scale=2>
+        
+        <h3>Priority Sort</h3>
+        <p>
+          The fifth and final experiment tested whether the NTM can learn to sort data. 20 binary vectors were each given a scalar "priority rating" drawn uniformly from the range [-1, 1], and each system's objective was to return the 16 highest priority vectors in the input. By examining the NTMs' memories writes and reads, the researchers learned that the NTM used the priorities to determine approximately where each vector should be stored in order. Then, to produce the 16 highest priority vectors, the memory locations were read sequentially. This is visible in sequence of memory writes and reads.
+        </p>
+
+        <img class="photo" src="ntm_priority_sort_memory_access.png" width="device-width" maximum-scale=2>
+
+        <p>
+          For the last time, the NTMs outperform the LSTM.
+        </p>
+
+        <img class="photo" src="ntm_priority_sort_curve.png" width="device-width" maximum-scale=2>
 
         <h2>Summary</h2>
+        <p>
+          <ul>
+            <li>Neuroscience models of working memory and digital computer architecture suggest function might depend having an external memory</li>
+            <li>Neural networks augmented with external memory offers a possible solution to a key criticism of connectionism, that neural networks are incapable of variable-binding</li>
+            <li>Blurry reads and writes are differentiable, which are critical in allowing the controller to learn how to use its memory</li>
+            <li>Evidence from five tasks demonstrates that NTMs can outperform LSTMs and learn more generalizable algorithms than LSTMs</li>
+          </ul>
+        </p>
 
         <h2>Notes</h2>
         <p>
-          I appreciate any and all feedback. If I've made an error or if you have a suggestion, you can <a href="mailto:ryschaeffer@ucdavis.edu">email me</a> or comment on the <a href="">Reddit</a> or <a href="">HackerNews</a> threads.
+          I appreciate any and all feedback. If I've made an error or if you have a suggestion, you can <a href="mailto:ryschaeffer@ucdavis.edu">email me</a> or comment on the <a href="">Reddit</a> or <a href="">HackerNews</a> threads. I intend to create a mailing list (shoutout to Ben) and integrate RSS (shoutout to Uri) in the near future.
         </p>
 
       </section>
