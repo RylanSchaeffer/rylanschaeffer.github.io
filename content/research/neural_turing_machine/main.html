@@ -86,7 +86,7 @@
         <img class="photo" src="ntm_architecture.png" width = "device-width" maximum-scale=2>
 
         <p>
-          But there's a catch. Suppose that we index the memory $\mathcal{M}$ by specifying the row and the column, just like a typical matrix. We'd like to train our NTM using backpropagation and our favorite optimization method (e.g. stochastic gradient descent), but how do we take the gradient of a specific index? We can't. Instead, the controller will read and write using "blurry" operations that interact with all elements in memory to varying degrees. The Controller will produce weightings over memory locations that allow it to specify memory location in a differentiable manner. Following the paper's lead, I'll explain how these weight vectors are generated after explaining how they're used (doing so makes understanding the system easier).
+          But there's a catch. Suppose that we index the memory $\mathcal{M}$ by specifying the row and the column, just like a typical matrix. We'd like to train our NTM using backpropagation and our favorite optimization method (e.g. stochastic gradient descent), but how do we take the gradient of a specific index? We can't. Instead, the controller will read and write using "blurry" operations that interact with all elements in memory to varying degrees. The Controller will produce weightings over memory locations that allow it to specify memory locations in a differentiable manner. Following the paper's lead, I'll explain how these weight vectors are generated after explaining how they're used (doing so makes understanding the system easier).
         </p><br>
 
         <h2>Mathematics</h2>
@@ -321,7 +321,7 @@
 
         <h2>Notes</h2>
         <p>
-          I appreciate any and all feedback. If I've made an error or if you have a suggestion, you can <a href="mailto:ryschaeffer@ucdavis.edu">email me</a> or comment on the <a href="">Reddit</a> or <a href="">HackerNews</a> threads. I intend to create a mailing list (shoutout to Ben) and integrate RSS (shoutout to Uri) in the near future.
+          I appreciate any and all feedback. If I've made an error or if you have a suggestion, you can <a href="mailto:ryschaeffer@ucdavis.edu">email me</a> or comment on the <a href="https://www.reddit.com/r/MachineLearning/comments/64lkry/d_explanation_of_deepminds_neural_turing_machine/">Reddit</a> or <a href="https://news.ycombinator.com/item?id=14081483">HackerNews</a> threads. I intend to create a mailing list (shoutout to Ben) and integrate RSS (shoutout to Uri) in the near future.
         </p>
 
       </section>
