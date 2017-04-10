@@ -86,11 +86,7 @@
         <img class="photo" src="ntm_architecture.png" width = "device-width" maximum-scale=2>
 
         <p>
-          Understanding why the neural network is called the controller is key to understanding the entire system. Suppose that we index the memory $\mathcal{M}$ by specifying the row and the column, just like a typical matrix. We'd like to train our NTM using backpropagation and our favorite optimization method (e.g. stochastic gradient descent), but how do we take the gradient of 
-        </p><br>
-
-        <p>
-          Both reading and writing rely on vectors of weightings of the elements in memory. Following the paper's lead, I'll save explainining how these weight vectors are generated after explaining how they're used because doing so makes understanding the system easier.
+          Understanding why the neural network is called the controller is helpful towards understanding the entire system. Suppose that we index the memory $\mathcal{M}$ by specifying the row and the column, just like a typical matrix. We'd like to train our NTM using backpropagation and our favorite optimization method (e.g. stochastic gradient descent), but how do we take the gradient of a specific index? We can't. Instead, the controller will read and write using "blurry" operations that interact with all elements in memory to varying degrees. The Controller will produce weightings over memory locations that allow it to specify memory location in a differentiable manner. Following the paper's lead, I'll explain how these weight vectors are generated after explaining how they're used ( doing so makes understanding the system easier).
         </p><br>
 
         <h2>Mathematics</h2>
@@ -198,7 +194,8 @@
         <img class="photo" src="ntm_addr_2.png" width = "device-width" maximum-scale=2>
 
         <p>
-          After interpolation has finished, each head emits a vector 
+          We'd like the controller to be able to shift focus to other rows. Let's suppose that as one of the system's parameters, the range of allowable shifts is specified. For example, a head's attention could shift forward a row (+1), stay still (0), or shift backward a row(-1). We'll perform the shifts modulo $R$ so that a shift forward at the bottom row of memory moves the head's attention to the top row, and similarly for a shift backward at the top row. After interpolation, each head emits a normalized shift weighting $s_t$, and the following convolutional shift is performed to produce the shifted weight $\tilde{w}_t$.
+
           <center>
           $
           \begin{align} \tag{8}
@@ -211,7 +208,7 @@
         <img class="photo" src="ntm_addr_3.png" width = "device-width" maximum-scale=2>
 
         <p>
-          The fourth and final stage, sharpening, is used to prevent the shifted weight $\tilde{w}_t$ from blurring by using a scalar $\gamma \geq 1$.
+          The fourth and final stage, sharpening, is used to prevent the shifted weight $\tilde{w}_t$ from blurring. To do this, a scalar $\gamma \geq 1$ is required.
 
           <center>
           $
