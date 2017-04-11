@@ -143,7 +143,7 @@
 
         <h3>Addressing</h3>
         <p>
-          Creating these weight vectors to determine where to read and write is tricky, so I'd like to step through the four-stage process. Each stage generates an intermediate weight vector that get passed to the next stage. The first stage's goal is to generate a weight vector based on how similar each row in memory is to a value $k_t$ emitted by the controller. I'll refer to this intermediary $w_t^c$ as the content weight vector. Another parameter, $\beta_t$, will be explained in just a second.
+          Creating these weight vectors to determine where to read and write is tricky, so I'd like to step through the four-stage process. Each stage generates an intermediate weight vector that gets passed to the next stage. The first stage's goal is to generate a weight vector based on how similar each row in memory is to a length-$C$ vector $k_t$ emitted by the controller. I'll refer to this intermediary $w_t^c$ as the content weight vector. Another parameter, $\beta_t$, will be explained in just a second.
         </p>
 
         <img class="photo" src="ntm_addr_1.png" width = "device-width" maximum-scale=2>
