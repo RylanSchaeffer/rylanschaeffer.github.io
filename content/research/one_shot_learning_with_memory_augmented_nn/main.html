@@ -41,7 +41,7 @@
     <!-- HEADER -->
     <div id="header_wrap" class="outer">
       <header class="inner">
-        <h1 id="project_title">(WORK IN PROGRESS) Explanation of<br>One-shot Learning with Memory-Augmented Neural Networks</h1>
+        <h1 id="project_title">Explanation of<br>One-shot Learning with Memory-Augmented Neural Networks</h1>
         <h3 id="project_tagline"><a href="https://arxiv.org/abs/1605.06065">Santoro et al. 2016.</a></h3>
           <section id="quick_links">
             <a class="back" href="../../research.html"></a>
@@ -56,40 +56,195 @@
           I've found that the overwhelming majority of online information on artificial intelligence research falls into one of two categories: the first is aimed at explaining advances to lay audiences, and the second is aimed at explaining advances to other researchers. I haven't found a good resource for people with a technical background who are unfamiliar with the more advanced concepts and are looking for someone to fill them in. This is my attempt to bridge that gap, by providing approachable yet (relatively) detailed explanations. In this post, I explain the titular paper - <a href="https://arxiv.org/abs/1605.06065">One-shot Learning with Memory-Augmented Neural Networks</a>.
         </p><br>
 
+        <p>
+          In my <a href="http://rylanschaeffer.github.io/content/research/neural_turing_machine/main.html">last post</a>, I criticized this paper as poorly motivated. After taking time to crystallize my thoughts and to email the authors, I'm less critical of it now, but I still have a few concerns. My goal is to try explaining the paper and my concerns in tandem.
+        </p><br>
+
         <h2>Motivation</h2>
         <p>
-          One-shot learning,
-
+          In an <a href="http://rylanschaeffer.github.io/content/research/neural_episodic_control/main.html">earlier post</a>, I wrote about the need for massive amounts of data to train deep neural networks. In contrast, humans require comparatively little data to learn a new behavior, or to rapidly shift away from an old behavior. For example, after running into a handful a street signs, the modern teenager quickly learns to be careful texting while walking. As Santoro et al. write, "This kind of flexible adaptation is a celebrated aspect of human learning (Jankowski et al., 2011), manifesting in settings ranging from motor control (Braun et al., 2009) to the acquisition of abstract concepts (Lake et al., 2015). Generating novel behavior based on inference from a few scraps of information – e.g., inferring the full range of applicability for a new word, heard in only one or two contexts – is something that has remained stubbornly beyond the reach of contemporary machine intelligence."
         </p><br>
 
         <p>
-          I suppose that I should warn readers: this post has a substantial background section that might not be entirely necessary, but that I feel provides the larger context absent from the paper.
-        </p>
+          The term <b>one-shot learning</b> has been introduced to capture this phenomenon of rapid behavior change given only a small number of experiences, or even just one experience. In an earlier paper, a neural network was given an external memory and the ability to learn how to use its new memory in solving specific tasks. This paper classifies that previous model, the Neural Turing Machine (NTM), as a subclass of the more general class of <b>Memory-Augmented Neural Networks</b> (MANNs), and suggests an alternative memory system capable of outperforming humans in certain one-shot learning tasks.
+        </p><br>
+
 
         <h2>Background</h2>
-        
-
         <p>
-          LSTMS have problems. Graves et al. created Neural Turing Machine to give a recurrent neural network an explicit memory. Memory was structured in a way that reading and writing would be differentiable, and thus learnable. Inspired by neuroscience to some degree. Working memory different from episodic memory.
+          If you haven't read the <a href="https://arxiv.org/abs/1410.5401">NTM paper</a> or <a href="http://rylanschaeffer.github.io/content/research/neural_turing_machine/main.html">my walkthrough</a> of it, set this aside and go read one (or both). Since a MANN is a modified NTM, understanding NTMs will help in understanding MANNs.
+        </p><br>
+      
+        <h2>Intuition</h2>
+        <p>
+          The goal is to modify a NTM to excel at one-shot learning. To accomplish this, the authors modify the NTM's controller's memory access capabilities. However, the paper is rather terse in justifying their specific change. A NTM controller is capable of using content-based addressing, location-based addressing or both, so when Santoro et al. suggest using a pure content-based memory writer, I was confused why this would offer any improvement. The only explanation the paper offers is that "[The NTM's memory access method] was advantageous for sequence-based prediction tasks. However, this type of access is not optimal for tasks that emphasize a conjunctive coding of information independent of sequence."
         </p><br>
 
         <p>
-          LSTMs were suggested in a subsequent paper (2001) of being a promising approach towards solving meta-learning. This paper modifies Neural Turing Machines to improve on LSTM results with respect to one-shot learning.
+          To their credit, three of the four authors I emailed wrote back in less than a day with more detailed explanations. The answer is that there's a tradeoff when training memory-augmented networks; more sophisticated memory access capabilities are more powerful, but the controller requires more training. Santoro et al. propose hamstringing the controller's ability to write to memory using location-based addressing so that the controller will learn more quickly. They point out that location-based addressing isn't necessary to excel at one-shot learning. Only content-based addressing is needed as there are only two actions the controller might need to do for a given input. One option is that the input is very similar to a previously seen input; in this case, we might want to update whatever we wrote to memory. The other option is that the input isn't similar to a previously seen input; in this case, we don't want to overwrite recent information, so we'll instead write to the least used memory location.
+        </p><br>
+
+        <p>
+          The authors call this hamstrung memory system the <b>Least Recently Used Access (LRUA)</b> module. What confused me at first is that Santoro et al. describe the LRUA as "a pure content-based memory writer," and then in the same sentence, state that the LRUA will write "to either the least used memory location or the most recently used memory location," which sounds an awful lot like location-based addressing. I reconciled the discrepancy when I realized that the most recently used memory location is determined by which memory location was most recently read, and reading is determined using content similarity.
         </p>
 
-        <h2>Intuition</h2>
-
         <h2>Mathematics</h2>
+        <h3>Reading</h3>
+        <p>
+          Just like the NTM, for a given input $x_t$ and memory matrix $M_t$ with $R$ rows and $C$ elements per row, the controller will read from memory a length-$C$ vector $r_t$ that is a linear combination of the memory's rows $M_t(i)$ scaled by a normalized read-weight vector $w_t^r$.
+
+          <center>
+          $
+          \begin{align} \tag{4}
+          r_t \leftarrow \sum\limits_i^R w_t^r(i) \mathcal{M}_t(i)
+          \end{align}
+          $
+          </center>
+        </p><br>
+
+        <p>
+          The read-weight vector is almost identical to the NTM's content weight vector. For a given input $x_t$, the controller will produce a key $k_t$. As with the NTM, this key will be compared against each row $M_t(i)$ in memory using the cosine similarity measure $K(\cdot, \cdot)$. A <a href="https://en.wikipedia.org/wiki/Similarity_measure">similarity measure</a> is "a real-valued function that quantifies the similarity between two objects" (in this case two vectors). Cosine similarity is based on the angle between the two vectors, and is thus advantageous because it doesn't depend on the magnitude of the vectors (which may vary).
+
+          <center>
+          $
+          \begin{align} \tag{2}
+          K(k_t, M_t(i)) = \frac{k_t \cdot M_t(i)}{\|k_t\| \cdot \|M_t(i)\|}
+          \end{align}
+          $
+          </center>
+        </p><br>
+
+        <p>
+          The similarity measure is used to produce the read-weight vector $w_t^r$ that specifies how much each row should contribute to $r_t$. The only difference between the LRUA and the NTM is that there is no parameter $\beta_t$ to control the read-weight vector's concentration; I do not know why Santoro et al. decided to remove this parameter.
+
+          <center>
+          $
+          \begin{align} \tag{3}
+          w_t^r(i) = \frac{exp\Big(K (k_t, M_t(i))\Big)}{\sum_j exp\Big(K(k_t, M_t(j))\Big)}
+          \end{align}
+          $
+          </center>
+        </p><br>
+
+        <h3>Writing</h3>
+        <p>
+          To write to memory, the controller will interpolate between writing to the most recently read memory rows and writing to the least used memory rows. If $w_{t-1}^r$ is the read-weight vector at the previous time step, and $w_{t-1}^{lu}$ is a weight vector that captures the least used memory location (more on this in just a second), then the controller can choose a convex combination of the two weight vectors using a scalar parameter $\alpha$ and the sigmoid function $\sigma(\cdot)$ to create a write-weight vector $w_t^w$:
+
+          <center>
+          $
+          \begin{align} \tag{7}
+          w_t^w \leftarrow \sigma(\alpha) w_{t-1}^r + (1 - \sigma(\alpha)) w_{t-1}^{lu}
+          \end{align}
+          $
+          </center>
+        </p><br>
+
+        <p>
+          Each row in memory is then updated using the write-weight vector and the key $k_t$ issued by the controller.
+
+          <center>
+          $
+          \begin{align} \tag{8}
+          M_t(i) \leftarrow M_{t-1}(i) + w_t^w(i) k_t
+          \end{align}
+          $  
+          </center>
+        </p><br>
+
+        <p>
+          To create the least used weight vector $w_{t-1}^{lu}$, the controller maintains another weight vector, the usage-weight vector $w_t^u$, that is updated after every read and write step. A scalar parameter, $\gamma$, is used to determine how quickly previous usage values should decay:
+
+          <center>
+          $
+          \begin{align} \tag{5}
+          w_t^u \leftarrow \gamma w_{t-1}^u + w_t^r + w_t^w
+          \end{align}
+          $  
+          </center>
+        </p><br>
+
+        <p>
+          The least used weight vector $w_{t-1}^{lu}$ is generated from the usage weight vector $w_{t-1}^u$ by setting the index of the usage weight vector's minimum element in the least used weight vector to 1, and all other elements in the least used weight vector to 0. In other words, the least used weight vector is really just an indicator vector for the smallest element in the usage weight vector. For concreteness, if the usage weight vector is <code>[0.7, 0.25, 0.05]</code>, the least used weight vector will be <code>[0, 0, 1]</code>.
+        </p><br>
         
         <h2>Experiments and Results</h2>
+        <h3>Omniglot Classification</h3>
+        <p>
+          The first test for the LRUA MANN was a classification test using the <a href="http://www.omniglot.com/">Omniglot</a> dataset. If you're not familiar, it's a collection of symbols from a number of different written languages, with over 1600 separate classes and only a few examples per class, making it perfect for one shot learning. To reduce the risk of overfitting, the authors perturbed the symbol images with small, random translations and rotations. They also created new classes by rotating the initial classes' images by 90, 180 and 270 degrees. 
+        </p><br>
+
+        <p>
+          The first test involved randomly selecting five classes and then randomly assigning each class a label 1 through 5 (in practice, the class labels were one-hot vectors). The objective was to infer the label that corresponds to each class. For concreteness, the five classes could be the first five letters of the English alphabet <code>['a', 'b', 'c', 'd', 'e']</code> and the corresponding labels are <code>[2, 5, 4, 1, 3]</code>; each model would be shown an instance of one class, submit a guess as to what the correct label is, and then it would be informed what the true label is. This would be repeated until the model had seen 10 instances of each of the five classes.
+        </p><br>
+
+        <p>
+          A LRUA MANN, a LSTM and a vanilla feedforward neural network were all trained at this task. To establish a baseline, nine humans each performed the task twice. As the table below shows, the LRUA MANN outperformed its three competitors. It managed to correctly label over a third of class instances it had never seen before. The LRUA MANN learned that if a key was a poor match to keys it had seen previously, then it should try guessing a class label it hadn't already seen before e.g. if the controller sees 'd' and already knows that 'a' is 2, 'b' is 5 and 'c' is 4 and can recognize 'd' as distinct from 'a', 'b', and 'c', it should guess a new label like 1 or 3.
+        </p>
+
+        <img class="photo" src="mann_five_label_results.png" width = "device-width" maximum-scale=2>
+
+        <p>
+          Below are two plots comparing the LSTM's performance against the LRUA MANN's performance (the paper doesn't explicitly state this, but the LRUA MANN used a LSTM controller) as functions of training episodes. Note that the MANN quickly learns to outperform the LSTM.
+        </p>
+
+        <img class="photo" src="mann_lstm_five_class.png" width = "device-width" maximum-scale=2>
+        <img class="photo" src="mann_mann_five_class.png" width = "device-width" maximum-scale=2>
+
+        <p>
+          The same experiment was repeated, but with fifteen classes instead of five classes. Humans weren't included as a baseline because human working memory struggles to hold more than <a href="https://en.wikipedia.org/wiki/The_Magical_Number_Seven,_Plus_or_Minus_Two">seven items</a> and as the authors put it, "[trying to learn fifeen or more classes] proved much too difficult and highly demotivating." Instead, two additional models were considered. The first was a k-nearest-neighbors non-parametric model that used the raw input pixels. The second was a k-nearest-neighbors non-parametric model that instead used features extracted by an autoencoder; the autoencoder's encoder and decoder each had two 200-unit layers and a bottleneck layer of 32 units.
+        </p>
+
+        <img class="photo" src="mann_five_char_label_results.png" width = "device-width" maximum-scale=2>
+
+        <p>
+          As before, the LRUA MANN with a LSTM controller outperformed its competitors. Interestingly, the NTM almost performed as well as the LRUA MANN, confirming the early hypothesis that by reducing the ability of the controller to write to memory, the LRUA MANN will learn faster. The LRUA MANN also continued to outperform the LSTM. both in the limit and with fewer training episodes
+        </p>
+
+        <img class="photo" src="mann_lstm_fifteen_class.png" width = "device-width" maximum-scale=2>
+        <img class="photo" src="mann_mann_fifteen_class.png" width = "device-width" maximum-scale=2>
+
+        <h3>Gaussian Process</h3>
+        <p>
+          For the next test, the authors shifted from classification to regression. They sampled functions from a <a href="https://en.wikipedia.org/wiki/Gaussian_process">Gaussian Process</a> (GP) with fixed hyperparameters, and then tested whether the LRUA MANN could learn to predict function values by interpolating from previously seen points. Each training episode consisted of the x-value $x_t$ and the time-offset function value i.e. $f(x_{t-1})$. As a baseline, the LRUA was compared with a Gaussian process given access to the same hyper-parameters used to generate the function. The figure below shows how closely matched the two models' predictions are.
+        </p>
+
+        <img class="photo" src="mann_gaussian_process_1d.png" width = "device-width" maximum-scale=2>
+
+        <p>
+          The LRUA MANN also performed well against the GP in two and three dimensions.
+        </p>
+
+        <img class="photo" src="mann_gaussian_process_2d_3d.png" width = "device-width" maximum-scale=2>
+        
+        <img class="photo" src="mann_increasing_curriculum.png" width = "device-width" maximum-scale=2>
 
         <h2>Discussion</h2>
 
+        <h3>Is a MANN a meta-learner?</h3>
+        <p>
+          I think a large part of the cognitive dissonnance I experienced reading this paper was due to the introduction, which frames the MANN as a meta-learner. <b>Meta-learning</b> is the idea of a learning system with two collaborative learning processes that learn across different time scales: in the short term, one learning system quickly learns how to perform well at an immediate task, and in the long term, the other learning system slowly learns common structure across tasks.
+        </p><br>
+
+        <p>
+          The authors argue that meta-learning is a possible way to achieve one-shot learning, and then argue that memory-augmented neural networks are excellent candidates for meta-learning: "This ability [of rapid encoding, storage and retrieval] makes the NTM a perfect candidate for meta-learning and low-shot prediction, as it is capable of both long-term storage via slow updates of its weights, and short-term storage via its external memory module."
+          However, when I think of "learning" in the context of neural networks or machine learning, I don't think of data storage; I think of updating model parameter values in accordance with newly observed data. I'm forced to ask whether storing data in external memory represents a form of short term learning, and I'm not at all confident that it does.
+        </p><br>
+
+        <h3>Memory Wiping</h3>
+        <p>
+          The earlier comparison of the LRUA MANN with the human test subjects wasn't entirely fair. In order to surpass human performance, the LRUA MANN's memory had to be wiped between episodes. Without that added code, the LRUA MANN was much less successful at beating the humans as the image below shows. The authors say that the LRUA MANN was still successful under certain setups (they specifically mention ten classes with episodes of length 75), but they don't provide the percentage of setups in which the LRUA MANN outperforms humans without the memory wipe.
+        </p>
+
+        <img class="photo" src="mann_memory_wipe.png" width = "device-width" maximum-scale=2>
+
         <h2>Summary</h2>
         <p>
+
           <ul>
-            <li>Two key challenges for connectionist approaches to AI are </li>
-            <li>RNNs can solve the first. </li>
+          <li>A key feature of human intelligence, one-shot learning, refers to the ability of humans to substantially shift behavior following as little as a single experience</li>
+          <li>Deep learning has historically struggled to achieve one-shot learning</li>
+          <li>Memory-augmented neural networks can display one-shot learning capabilities on par with humans in specific tasks</li>
+          <li>More advanced memory-access capabilities appear to require more training</li>
           </ul>
         </p>
 
