@@ -1,0 +1,7 @@
+name: "Rylan Schaeffer's Blog"
+author:
+	name: "Rylan Schaeffer"
+	email: "ryschaeffer@ucdavis.edu"
+	twitter: "RylanSchaeffer"
+gems:
+  - jekyll-feed
