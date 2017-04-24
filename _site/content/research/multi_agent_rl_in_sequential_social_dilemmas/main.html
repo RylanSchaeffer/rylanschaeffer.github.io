@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width,maximum-scale=2">
+    <meta name="description" content="Rylan Schaeffer">
+
+    <link rel="stylesheet" type="text/css" media="all" href="../../../stylesheets/stylesheet.css">
+
+    <title>(WORK IN PROGRESS) Multi-agent Reinforcement Learning in Sequential Social Dilemmas</title>
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-94033137-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+    </script>
+
+    <script type="text/javascript"
+      src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({ TeX: { equationNumbers: {autoNumber: "AMS"} } });
+    </script>
+
+    $\DeclareMathOperator*{\argmax}{argmax}$
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+      <header class="inner">
+        <h1 id="project_title">Explanation of:<br>Multi-agent Reinforcement Learning in Sequential Social Dilemmas</h1>
+        <h3 id="project_tagline"><a href="https://arxiv.org/abs/1702.03037">Leibo et al. 2017.</a></h3>
+          <section id="quick_links">
+            <a class="back" href="../../research.html"></a>
+          </section>
+      </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <p>
+          I've found that the overwhelming majority of online information on artificial intelligence research falls into one of two categories: the first is aimed at explaining advances to lay audiences, and the second is aimed at explaining advances to other researchers. I haven't found a good resource for people with a technical background who are unfamiliar with the more advanced concepts and are looking for someone to fill them in. This is my attempt to bridge that gap, by providing approachable yet (relatively) detailed explanations. In this post, I explain the titular paper - <a href="https://arxiv.org/abs/1702.03037">Multi-agent Reinforcement Learning in Sequential Social Dilemmas</a>.
+        </p><br>
+
+        <h2>Motivation</h2>
+        <p>
+          Game theory, "the study of mathematical models of conflict and cooperation between intelligent rational decision-makers," fascinating field. evolved from von neumann. social dillemas - rational for the group to do 
+
+          economics, political science, international relations, biology
+        </p><br>
+
+        <p>
+          At the heart of game theory is the idea of modeling agents' expected rewards using a matrix that assigns payoffs to specific actions (that usually depend on other agents' actions). The canonical <a href="https://en.wikipedia.org/wiki/Prisoner%27s_dilemma">Prisoner's dilemma</a> is one such example. If you aren't familiar with this example, Wikipedia explains it far better than I could; what's important to understand is that in the Prisoner's dilemma, if each agent acts rationally i.e. to improve his or her own outcome, the group will collectively receive a worse outcome than if each agent had chosen a subpar action. Because we can construct matrices that capture these expected values, this type of situation is often referred to as a <b>Matrix Game Social Dilemma (MGSD)</b>.
+        </p><br>
+
+        <p>       
+          Leibo et al.'s paper argues that MGSDs fail to capture many essential aspects of real world social dilemmas. They outline four reasons:
+
+          <ol>
+            <li><b>"Real world social dilemas are temporally extended."</b> I don't think that this is a valid criticism of MGSDs</li>
+            <li><b>Cooperation and defection are labels that apply to policies implementing strategic decisions.</b></li>
+            <li><b>Cooperativeness may be a graded quantity.</b></li>
+            <li><b>Decisions to cooperate or defect occur only quasi-simultaneously since some information about what player 2 is starting to do can inform player 1’s decision and vice versa.</b></li>
+            <li>Decisions must be made despite only having partial information about the state of the world and the activities of the other players.</li>
+          </ol>
+        </p>
+
+        <h2>Background</h2>
+
+        <h2>Intuition</h2>
+
+        <h2>Mathematics</h2>
+        <h3>Markov Games</h3>
+        <p>
+          Honestly, 
+        </p><br>
+
+        <h3>Sequential Social Dilemma</h3>
+        <p>
+          
+        </p><br>
+
+        <h3>Deep Multiagent Reinforcement Learning</h3>
+        <p>
+          
+        </p><br>
+
+        <h2>Experiments and Results</h2>
+
+        <h3>Gathering</h3>
+
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/F97lqqpcqsM" frameborder="0" allowfullscreen></iframe>
+
+        <h3>Wolfpack</h3>
+
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/kXudpMfecs4" frameborder="0" allowfullscreen></iframe>
+
+        <h2>Discussion</h2>
+
+        <h2>Summary</h2>
+
+        <h2>Notes</h2>
+        <p>
+          I appreciate any and all feedback. If I've made an error or if you have a suggestion, you can <a href="mailto:ryschaeffer@ucdavis.edu">email me</a> or comment on the <a href="">Reddit</a> or <a href="">HackerNews</a> threads.
+        </p>
+
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        
+        <p class="copyright">Slate theme maintained by <a href="https://github.com/pages-themes">pages-themes</a></p>
+        
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+  </body>
+</html>

@@ -14,7 +14,7 @@ h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
 small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
+ center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
@@ -33,6 +33,11 @@ time, mark, audio, video {
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
   display: block;
+}
+
+sup { 
+    vertical-align: super;
+    font-size: small;
 }
 
 ol, ul {
@@ -95,6 +100,7 @@ h6 {
 
 p {
   margin: 10px 0 15px 0;
+  text-align:justify;
 }
 
 footer p {
@@ -323,6 +329,68 @@ Full-Width Styles
   right: 0;
   height: 70px;
   background: url('../images/icon_download.png') no-repeat 0% 90%;
+}
+
+.email {
+  display: block;
+  float: right;
+  height: 70px; 
+  width: 70px; 
+  text-indent: -5000px;
+  overflow: hidden;
+  background: url(../icons/mail.png) no-repeat bottom left;
+  background-size:contain;
+}
+
+.resume {
+  display: block;
+  float: right;
+  height: 70px; 
+  width: 70px; 
+  text-indent: -5000px;
+  overflow: hidden;
+  background: url(../icons/resume.png) no-repeat bottom left;
+  background-size:contain;
+}
+
+.back {
+  display: block;
+  float: right;
+  height: 70px; 
+  width: 70px; 
+  text-indent: -5000px;
+  overflow: hidden;
+  background: url(../icons/back.png) no-repeat bottom left;
+  background-size:contain;
+}
+
+.linked_in {
+  display: block;
+  float: right;
+  height: 70px; 
+  width: 70px; 
+  text-indent: -5000px;
+  overflow: hidden;
+  background: url(../icons/linkedin.png) no-repeat bottom left;
+  background-size:contain;
+}
+
+.github {
+  display: block;
+  float: right;
+  height: 70px; 
+  width: 70px; 
+  text-indent: -5000px;
+  overflow: hidden;
+  background: url(../icons/github.png) no-repeat bottom left;
+  background-size:contain;
+}
+
+img.photo {
+  width: 99%;
+  height: auto;
+  overflow: hidden;
+  background-size:contain;
 }
 
 .zip_download_link {

@@ -1,8 +1,8 @@
 name: "Rylan Schaeffer's Blog"
 description: "Machine Learning through Computational Neuroscience"
 author:
-	name: "Rylan Schaeffer"
-	email: "ryschaeffer@ucdavis.edu"
-	twitter: "RylanSchaeffer"
+  name: "Rylan Schaeffer"
+  email: "ryschaeffer@ucdavis.edu"
+  twitter: "RylanSchaeffer"
 gems:
   - jekyll-feed
