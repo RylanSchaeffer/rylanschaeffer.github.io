@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width,maximum-scale=2">
+    <meta name="description" content="Rylan Schaeffer">
+
+    <link rel="stylesheet" type="text/css" media="all" href="../../../stylesheets/stylesheet.css">
+
+    <title>Early Visual Concept Learning with Unsupervised Deep Learning</title>
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-94033137-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+    </script>
+
+    <script type="text/javascript"
+      src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({ TeX: { equationNumbers: {autoNumber: "AMS"} } });
+    </script>
+
+    $\DeclareMathOperator*{\argmax}{argmax}$
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+      <header class="inner">
+        <h1 id="project_title"> (WORK IN PROGRESS) Explanation of:<br>Early Visual Concept Learning with Unsupervised Deep Learning</h1>
+        <h3 id="project_tagline"><a href="https://arxiv.org/abs/1606.05579">Higgins et al. 2016.</a></h3>
+          <section id="quick_links">
+            <a class="back" href="../../research.html"></a>
+          </section>
+      </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <p>
+			I've found that the overwhelming majority of online information on artificial intelligence research falls into one of two categories: the first is aimed at explaining advances to lay audiences, and the second is aimed at explaining advances to other researchers. I haven't found a good resource for people with a technical background who are unfamiliar with the more advanced concepts and are looking for someone to fill them in. This is my attempt to bridge that gap, by providing approachable yet (relatively) detailed explanations. In this post, I explain the titular paper - <a href="https://arxiv.org/abs/1606.05579">Early Visual Concept Learning with Unsupervised Deep Learning</a>.
+        </p><br>
+
+        <h2>Motivation</h2>
+        <p>
+        	There's a fascinating <a href="https://www.youtube.com/watch?v=hfoeRiZU5YQ">talk</a> by Josh Tenebaum in which he cites a number of studies demonstrating that within months of being born, human infants develop rudimentary understanding of physical objects, intentional agents and their interactions. From a computational perspective, this is a remarkable accomplishment. These models of objects that compose the world, their relations and their interactions are developed prior to language acquisition, meaning infants learn all this in an unsupervised manner. Although Tenebaum's ultimate point was that computer scientists and statisticians can learn much about the development of intelligence through research in childhood cognitive development, the more specific question of how human infants are capable of even beginning to extract early visual concepts without supervision went unanswered.
+        </p><br>
+
+        <p>
+        	Higgins et al.'s paper aims to answer this question. To do so, they draw inspiration from prior neuroscience work studying the visual ventral stream, a component of a widely accepted <a href="https://en.wikipedia.org/wiki/Two-streams_hypothesis#Ventral_stream">model</a><sup><a href="#fn1" id="ref1">1</a></sup> of how visual information is converted to object recognition and form representation. They use this work to formulate a computational argument for what a visual unsupervised learning system needs in order to independently learn objects and their properties, and then implement such a system to collect evidence through a number of experiments that their argument is valid. Although the paper seemingly presents little math, it is deceptively complicated, as we will need a solid understanding of <b>Variational Autoencoders (VAEs)</b>.
+        </p><br>
+
+        <h2>Intuition</h2>
+        <p>
+        	Imagine you're two months old. You're unable to focus on anything <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3972638/">more than 10 inches away</a>. You can only watch a continuous stream of strange visuals, maybe something like the following psychedelic clip:
+        </p>
+
+        <div class="video-container">
+			<iframe src="https://www.youtube.com/embed/G2uCNd1AVJo" allowfullscreen></iframe>
+		</div>
+
+        <p>
+        	How do you start to make sense of a world like this? You can't communicate (yet), so no one can teach you what you're seeing. You need some way to bootstrap understanding yourself. Higgins et al. suggest three learning constraints, but .
+        </p><br>
+
+        <h3>Constraint 1: Prefer Statistically Independent Features</h3>
+        <p>
+        	To understand the first learning constraint, we can turn to neuroscience research on the human visual system. One well-studied aspect of visual processing is that humans develop neurons that respond specifically to independent visual features (e.g. position, size, contrast, lighting). Perry, Rolls and Stringer's 2009 <a href="http://www.oxcns.org/papers/485_Perry+Rolls+10%20Continuous%20transformation%20learning%20of%20translation%20invariant%20representations.pdf">paper</a> starts with a review of this evidence, and follows the review by arguing that <b>learning statistically independent features is critical to understanding new visuals with previously-unseen combinations</b>. Jumping briefly back to the initial paper, Higgins et al. offer an intuitive visual justification: consider a baby trying to learn to recognize a fixed-radius <font color="green">green</font> circle that is defined by two factors: x position and y position. Suppose the baby is shown lots of circles with different (x, y) pairs, but the training examples are sampled from only specific combinations of x and y coordinates (i.e. the baby is not given data from outside the <font color="blue">convex training hull</font>).
+        </p><br>
+
+        <img class="photo" src="evcl_indep_gen_factors_1.png" width = "device-width" maximum-scale=2>
+
+        <p>
+        	We might then show the baby similar circles, but this time, some circles will be sampled from outside the convex training hull. We'll call the previously-unseen data <b>Zero-shot transfer</b>, because we're exploring the infant's ability to transfer recognition of these circles to never-before-seen circles.
+        </p><br>
+
+        <img class="photo" src="evcl_indep_gen_factors_2.png" width = "device-width" maximum-scale=2>
+
+        <p>
+        	In order to recognize these new circles, the learning agent must be capable of separating the x-coordinate from the y-coordinate, so that these factors can be recombined in novel ways so as to recognize data from outside the <font color="blue">convex training hull</font>. To quote Perry, Rolls and Stringer, "It is crucially important that the visual system builds invariant representations, for only then can associative learning on one trial about an object generalize usefully to other transforms of the same object."
+        </p><br>
+
+        <h3>Constraint 2: Learn from Continuously Transformed Data</h3>
+        <p>
+        	Perry, Rolls and Stringer's main contribution is to suggest that learning translation-invariant representations
+        </p>
+
+        <h2>Mathematics</h2>
+        <h3>Variational Autoencoders (VAEs)</h3>
+        <p>
+        	If it helps, break it down. We use the data $x$ and the approximation function $q_\phi(z | x)$ to determine which values of the latent variables $z$ most likely generated $x$. Then, we use the conditional probability $p_\theta(x|z)$
+        </p><br>
+
+        <h3>VAEs for Early Visual Concept Learning</h3>
+        <p>
+        	Now that we have a (shaky) grasp of VAEs, we're going to design one with the goal of reducing redundancy and learning statistically independent features. Like in the general VAE setting, we want to maximize the probability of the observed data $x$ given the latent variables most likely to have generated the observed data.
+
+        	<center>
+            $
+            \max_\limits{\phi, \theta} \mathbb{E}_{q_\phi(z | x)} [\log p_\theta(x|z)]
+            $
+          </center>
+        </p><br>
+
+        <p>
+        	The next step is relatively straightforward. We can constrain
+        </p>
+        
+        <h2>Experiments and Results</h2>
+
+        <h2>Discussion</h2>
+
+        <h2>Summary</h2>
+
+        <h2>Notes</h2>
+        <p>
+          I appreciate any and all feedback. If I've made an error or if you have a suggestion, you can <a href="mailto:ryschaeffer@ucdavis.edu">email me</a> or comment on the <a href="">Reddit</a> or <a href="">HackerNews</a> threads.
+        </p>
+
+		<sup id="fn1">1. Interestingly, the two-streams hypothesis was inspired by work on <a href="https://en.wikipedia.org/wiki/Blindsight">blindsight</a>, the title of a criminally underappreciated <a href="https://en.wikipedia.org/wiki/Blindsight_(Watts_novel)">book</a> (available for free on the author's <a href="http://www.rifters.com/real/Blindsight.htm">website</a>). <a href="#ref1" title="Jump back to footnote 1 in the text.">↩</a></sup><br>
+
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        
+        <p class="copyright">Slate theme maintained by <a href="https://github.com/pages-themes">pages-themes</a></p>
+        
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+  </body>
+</html>
