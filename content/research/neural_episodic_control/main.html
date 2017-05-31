@@ -166,7 +166,7 @@
         </p><br>
 
         <p>
-          The authors tried two different feature mappings. The first mapping is a random projection of the original observation into a smaller dimensional space (Model-Free Episodic Controller Random Projection, or MFEC-RP for short). This is accomplished using the <a href="https://link.springer.com/article/10.1007/BF02764938">Johnson-Lindenstrauss lemma</a> (TODO: maybe add an explanation?), which states that for a random matrix $\mathbf{A}$ with entries drawn from a standard Gaussian, a transformation $\phi : o \rightarrow \mathbf{A} o$ will approximately preserve relative distances in the original space. The second mapping uses a variational autoencoder (Model-Free Episodic Controller Variational Autoencoder, or MFEC-VAE for short). (TODO: Add or link explanation of VAE)
+          The authors tried two different feature mappings. The first mapping is a random projection of the original observation into a smaller dimensional space (Model-Free Episodic Controller Random Projection, or MFEC-RP for short). This is accomplished using the <a href="https://link.springer.com/article/10.1007/BF02764938">Johnson-Lindenstrauss lemma</a>, which states that for a random matrix $\mathbf{A}$ with entries drawn from a standard Gaussian, a transformation $\phi : o \rightarrow \mathbf{A} o$ will approximately preserve relative distances in the original space. The second mapping uses a <a href="../../tools/variational_autoencoders/main.html">variational autoencoder</a> (Model-Free Episodic Controller Variational Autoencoder, or MFEC-VAE for short).
         </p><br>
 
         <p>
@@ -188,7 +188,7 @@
         </p><br>
 
         <p>
-          The paper introduces an improved version of MFEC called <b>Neural Episodic Control (NEC)</b>. The goal is to make an algorithm that is entirely differentiable, and thus end-to-end trainable by gradient descent. To accomplish this, two modifications are made to MFEC. First, rather than using variational autoencoders or a random projection, Pritzel et al. use a convolutional neural network (CNN) that can learn an embedding well suited for selecting actions. Second, they replace the $Q^{EC}$ table with a more sophisticated alternative called <b>Differentiable Neural Dictionaries (DNDs)</b>. DNDs are basically differentiable associative arrays.
+          However, MFEC is limited by its feature mapping strategy. Neither the random projection nor the variational autoencoder are capable of being trained to learn representations that help an agent's performance. To change that, this paper introduces an end-to-end trainable version of MFEC called <b>Neural Episodic Control (NEC)</b>. To accomplish this, two modifications are made to MFEC. First, rather than using variational autoencoders or a random projection, Pritzel et al. use a convolutional neural network (CNN) that can learn an embedding well suited for selecting actions. Second, they replace the $Q^{EC}$ table with a more sophisticated alternative called <b>Differentiable Neural Dictionaries (DNDs)</b> that allow error signals to backpropagate. Together, these two changes will let the agent learn a good feature mapping.
         </p><br>
        
         <h2>Mathematics</h2>
@@ -289,11 +289,6 @@
         <img class="photo" src="nec_human_norm_score.png" width = "device-width" maximum-scale=2>
 
         <h2>Discussion</h2>
-        <h3>Missing Controls</h3>
-        <p>
-          Unfortunately, the authors don't compare NEC to MFEC augmented with DNDs instead of $Q^{EC}$, so ambiguity surrounds how much of NEC's improved performance is due to a superior memory architecture as opposed to an improved representation as learned by the CNN. To compare $Q^{EC}$ against DNDs, the authors could have fed a random projection-based or VAE-based state representation into the DNDs, and trained from the DNDs onward. Similarly, the authors don't compare NEC to MFEC augmented with its own CNN, but as for how that might work, I'm not sure, as training the CNN is only possible if the tabular memory is differentiable and $Q^{EC}$ is not.
-        </p><br>
-
         <h3>Complementary Learning Systems</h3>
         <p>
           <a href="http://www.cell.com/trends/cognitive-sciences/fulltext/S1364-6613(16)30043-2">Kumaran, Hassabis and McClelland</a> note the similarities between animals replaying episodic memories while sleeping and training on replayed experiences in DQN (TODO: fully flesh this out).
