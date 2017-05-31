@@ -103,22 +103,35 @@
         <h2>Mathematics</h2>
         <h3>Variational Autoencoders (VAEs)</h3>
         <p>
+        	Let's start with an explanation of autoencoders. An autoencoder consists of two neural networks that work together to try to learn a compressed representation of the observed data. The first, called the <b>encoder</b>, attempts to find a lower dimensional representation of a data point, and the second, called the <b>decoder</b>, attempts to reconstruct the input data point given only the lower dimensional representation; using a visual I stole from <a href="http://multithreaded.stitchfix.com/blog/2015/09/17/deep-style/">MultiThreaded</a>, an autoencoder looks like this:
+        </p><br>
+
+        <img class="photo" src="evcl_vae.png" width = "device-width" maximum-scale=2>
+
+        <p>
+        	Variational Autoencoders are a powerful extension of autoencoders. VAEs were first introduced by <a href="https://arxiv.org/abs/1312.6114">Kingma and Welling</a> in 2014, but the paper is so dense that I had to walk through Carl Doersch's <a href="https://arxiv.org/abs/1606.05908">tutorial</a> before I could approach initial paper.
+        </p><br>
+
+        <p>
+
+generative modeling technique first 
+
         	If it helps, break it down. We use the data $x$ and the approximation function $q_\phi(z | x)$ to determine which values of the latent variables $z$ most likely generated $x$. Then, we use the conditional probability $p_\theta(x|z)$
         </p><br>
 
         <h3>VAEs for Early Visual Concept Learning</h3>
         <p>
-        	Now that we have a (shaky) grasp of VAEs, we're going to design one with the goal of reducing redundancy and learning statistically independent features. Like in the general VAE setting, we want to maximize the probability of the observed data $x$ given the latent variables most likely to have generated the observed data.
+        	Now that we have a (shaky) grasp of VAEs, we're going to design one with the goal of reducing redundancy and learning statistically independent features. Like in the general VAE setting, we want to maximize the probability of the observed data $x$ given the latent variables most likely to have generated the observed data. To do this, we'll train a neural network with parameters $\phi$, $q_\phi(q|z)$, to generate likely $z$ values from the observed $x$ values. Then, we'll attempt to find the parameters 
 
         	<center>
             $
-            \max_\limits{\phi, \theta} \mathbb{E}_{q_\phi(z | x)} [\log p_\theta(x|z)]
+            \max_\limits{\phi, \theta} \mathbb{E}_{q_\phi(z | x)} \big[\log p_\theta(x|z)\big]
             $
           </center>
         </p><br>
 
         <p>
-        	The next step is relatively straightforward. We can constrain
+        	How will we pressure the VAE to learn non-redundant, statistically independent features? We'll define by requiring that the latent variables remain relatively close to the 
         </p>
         
         <h2>Experiments and Results</h2>
