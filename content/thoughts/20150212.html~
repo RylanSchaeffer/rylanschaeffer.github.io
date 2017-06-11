@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Rylan's Blog - 2/12/2015</title>
+	</head>
+
+	<body>
+		<h1>Lack of Campus Seminars</h1>
+		<p>
+		After reading through dozens of Aaron Swartz's posts, I've noticed that he attends seminars unrelated to his classes almost daily.  I have no evidence for this, but I suspect Stanford does a much better job than Davis at publicizing such seminars in an organized fashion.  Some departments here don't even host seminars (including my own department, Computer Science), and the departments that do don't post to a common area, forcing students to constantly check a multitude of websites.  Something the campus could stand to improve, I think.
+		</p>
+
+		<h1>Creative Commons</h1>
+		<p>I also found out (1) that Creative Commons exists and that (2) it's headquartered in my hometown.  Aaron Swartz knew that before going to college.</p>
+
+		<h1>"I resolve to do more things that make me look stupid."</h1>
+		<p>Good lesson from Aaron.</p>
+
+		<h1>Academic Senate Rules</h1>
+		<p>I got into an argument today with one of my professors over his grading of my midterm.  Two of the questions required understanding the distinction between a framework and an application.  I didn't know that there was a difference before the test, and as a result, lost a number of points.  I argued that test questions should be limited to material covered in the course (or the course prerequisites). The professor disagreed and said that he should be able to test material that (in his eyes) should be common knowledge.  I checked with the Academic Senate and I cannot find regulations that prevent a professor from doing what he has done.  In other words, if a computer science professor thinks that students should have read the Aeneid, he or she could make the final exclusively on that epic and no one could do anything.  I'm going to write more about the structural problems with the Academic Senate, but I think this is one of its top three problems.  The saddest part of all this is that the reason why I didn't know that the two are different is because Davis's computer science department shys away from teaching industry-relevant skills.  If it wasn't enough to punish me after I graduate, the professor decided to start while he could.
+		</p>
+
+		<h1>Alt+Tab to Facebook</h1>
+		<p>I noticed today while programming that I have a tendency to alt+tab over to Facebook unconsciously, almost all the time.  I wonder if other students have similar issues.</p>
+
+		<h1>Miscellaneous</h1>
+		<p>Wrote the next draft of my course syllabus.  Planned on setting up another 193.  I went over the projects that students passed over and noticed a clear trend - students choose projects not based on social utility, but what sounds cool.  Two proposals to reduce water consumption were left untouched.  The proposals to develop technologies to help people with disabilities were left untouched.  The project to fly a quadcopter using Google Glass was hotly contested.  Sigh.</p>
+
+
+	</body>
+</html>
