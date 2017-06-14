@@ -41,7 +41,7 @@
     <!-- HEADER -->
     <div id="header_wrap" class="outer">
       <header class="inner">
-        <h1 id="project_title"> (WORK IN PROGRESS) Explanation of:<br>Early Visual Concept Learning with Unsupervised Deep Learning</h1>
+        <h1 id="project_title">Explanation of:<br>Early Visual Concept Learning with Unsupervised Deep Learning</h1>
         <h3 id="project_tagline"><a href="https://arxiv.org/abs/1606.05579">Higgins et al. 2016.</a></h3>
           <section id="quick_links">
             <a class="back" href="../../research.html"></a>
@@ -58,65 +58,96 @@
 
         <h2>Motivation</h2>
         <p>
-        	There's a fascinating <a href="https://www.youtube.com/watch?v=hfoeRiZU5YQ">talk</a> by Josh Tenebaum in which he cites a number of studies demonstrating that within months of being born, human infants develop rudimentary understanding of physical objects, intentional agents and their interactions. From a computational perspective, this is a remarkable accomplishment. These models of objects that compose the world, their relations and their interactions are developed prior to language acquisition, meaning infants learn all this in an unsupervised manner. Although Tenebaum's ultimate point was that computer scientists and statisticians can learn much about the development of intelligence through research in childhood cognitive development, the more specific question of how human infants are capable of even beginning to extract early visual concepts without supervision went unanswered.
+        	There's a fascinating <a href="https://www.youtube.com/watch?v=hfoeRiZU5YQ">talk</a> by Josh Tenebaum in which he cites a number of studies demonstrating that within months of being born, human infants develop rudimentary understanding of physical objects, intentional agents and their interactions. From a computational perspective, this is a remarkable accomplishment. These infants' internal models of the world are developed prior to language acquisition, meaning infants learn all this in an unsupervised manner. Although Tenebaum's ultimate point was that computer scientists and statisticians can learn much about the development of intelligence through research in childhood cognitive development, the more specific question of how human infants are capable of even beginning to extract early visual concepts without supervision went unanswered.
         </p><br>
 
         <p>
-        	Higgins et al.'s paper aims to answer this question. To do so, they draw inspiration from prior neuroscience work studying the visual ventral stream, a component of a widely accepted <a href="https://en.wikipedia.org/wiki/Two-streams_hypothesis#Ventral_stream">model</a><sup><a href="#fn1" id="ref1">1</a></sup> of how visual information is converted to object recognition and form representation. They use this work to formulate a computational argument for what a visual unsupervised learning system needs in order to independently learn objects and their properties, and then implement such a system to collect evidence through a number of experiments that their argument is valid. Although the paper seemingly presents little math, it is deceptively complicated, as we will need a solid understanding of <b>Variational Autoencoders (VAEs)</b>.
+        	Higgins et al.'s paper aims to answer this question. To do so, they draw inspiration from prior neuroscience work studying the visual ventral stream, a component of a widely accepted <a href="https://en.wikipedia.org/wiki/Two-streams_hypothesis#Ventral_stream">model</a><sup><a href="#fn1" id="ref1">1</a></sup> of how visual information is converted to object recognition and form representation. They use this work to formulate a computational argument for what a visual unsupervised learning system needs in order to independently begin learning objects and their properties, and provide prima facie evidence that their argument is valid by implementing such a system<sup><a href="#fn2" id="ref2"><b>2</b></a></sup>.
         </p><br>
 
-        <h2>Intuition</h2>
+        <h2>Background</h2>
         <p>
-        	Imagine you're two months old. You're unable to focus on anything <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3972638/">more than 10 inches away</a>. You can only watch a continuous stream of strange visuals, maybe something like the following psychedelic clip:
-        </p>
-
-        <div class="video-container">
-			<iframe src="https://www.youtube.com/embed/G2uCNd1AVJo" allowfullscreen></iframe>
-		</div>
-
-        <p>
-        	How do you start to make sense of a world like this? You can't communicate (yet), so no one can teach you what you're seeing. You need some way to bootstrap understanding yourself. Higgins et al. suggest three learning constraints, but .
+          I think that the best way to understand Higgin et al.'s paper is to start with an explanation of two earlier papers in the field of neuroscience that inspired Higgin et al.'s paper.
         </p><br>
 
-        <h3>Constraint 1: Prefer Statistically Independent Features</h3>
+        <h3>Paper #1 - <a href="http://www.oxcns.org/papers/485_Perry+Rolls+10%20Continuous%20transformation%20learning%20of%20translation%20invariant%20representations.pdf">Continuous transformation learning of translation invariant representations (2009)</a></h3>
+
         <p>
-        	To understand the first learning constraint, we can turn to neuroscience research on the human visual system. One well-studied aspect of visual processing is that humans develop neurons that respond specifically to independent visual features (e.g. position, size, contrast, lighting). Perry, Rolls and Stringer's 2009 <a href="http://www.oxcns.org/papers/485_Perry+Rolls+10%20Continuous%20transformation%20learning%20of%20translation%20invariant%20representations.pdf">paper</a> starts with a review of this evidence, and follows the review by arguing that <b>learning statistically independent features is critical to understanding new visuals with previously-unseen combinations</b>. Jumping briefly back to the initial paper, Higgins et al. offer an intuitive visual justification: consider a baby trying to learn to recognize a fixed-radius <font color="green">green</font> circle that is defined by two factors: x position and y position. Suppose the baby is shown lots of circles with different (x, y) pairs, but the training examples are sampled from only specific combinations of x and y coordinates (i.e. the baby is not given data from outside the <font color="blue">convex training hull</font>).
+          In 2009, Perry, Rolls and Stringer at Oxford's Centre for Computational Neuroscience published a paper that started with a short review of a well-understood aspect of human visual processing: over time, certain neurons learn to respond to specific visual stimuli, regardless of perturbations of those stimuli. The authors write, "Over successive stages, the visual system develops neurons that respond with position (i.e. translation), view, and size invariance to objects or faces. For example, it has been shown that the inferior temporal visual cortex has neurons that respond to faces and objects invariantly with respect to translation, size, contrast, lighting, spatial frequency."
+        </p><br>
+
+        <p>
+          In simpler terms, Perry et al. are noting that visual neurons fire when certain objects (e.g. a face) are within view, regardless of how the subject's perspective of the object is altered or warped (e.g dimly lit or rotated). In the literature's terminology, we refer to that perception as a <b>translation invariant representation</b>. One can intuit that developing translation invariant representations is a critical early step to visual processing - after all, how can I start to understand the world in terms of objects if I perceive an object as completely distinct from the same object shifted slightly a few seconds later?
+        </p><br>
+
+        <p>
+          Perry et al.'s contribution is to demonstrate that a system can learn translation invariant representations in an unsupervised manner, provided that system densely samples from continuous transformations. In simpler terms, the system can learn translation invariant representations if it receives lots of input stimuli in which new stimuli change very slightly from previous stimuli. To understand why, consider a simple neural network with only two layers, perhaps initialized with random weights. When a stimulus is presented, some of the input neurons will fire. As a consequence, perhaps an output neuron will fire, as shown below:
+        </p><br>
+
+        <img class="photo" src="evcl_stim_pos_1.png" width = "device-width" maximum-scale=2>
+
+        <p>
+          If we suppose that the system has some kind of <a href="https://en.wikipedia.org/wiki/Hebbian_theory">Hebbian learning rule</a>, in which connections are strengthened after firing, then the above connections will be strengthened. Then, if the same stimulus is presented again, but shifted only slightly, enough of the same input neurons will fire again that the same output neuron will fire again. However, a new input neuron will also fire, and its connection to the output neuron will be strengthened (as shown below with the dotted connection).
+        </p><br>
+
+        <img class="photo" src="evcl_stim_pos_2.png" width = "device-width" maximum-scale=2>
+
+        <p>
+          <b>With sufficiently small strides and sufficiently dense sampling, this output neuron will learn to recognize a specific stimulus regardless of where the stimulus appears in the input.</b> This learning happens without the need for any supervisory signal. They call this <b>Continuous Transform Learning</b>. Perry et al. have some nice plots of how learning performance rapidly degrades as the stride increases, and their paper actually covers much more material, but I'll leave that to the interested reader to cover on her own. Higgen et al. extend Continuous Transform Learning to manifold learning, arguing that sparsely sampled data creates ambiguities when learning manifolds (below left), whereas densely sampled data reduces that ambiguity (below right).
+        </p><br>
+
+        <img class="photo" src="evcl_smooth_sampling.png" width = "device-width" maximum-scale=2>
+
+        <h3>Paper #2 - <a href="https://pdfs.semanticscholar.org/7389/2a702915dd41c39ed04d54896abf1004b49c.pdf">Adaptation and Decorrelation in the Cortex (1989)</a></h3>
+
+        <p>
+          You won't find this paper by Barlow and Foldiak cited in Higgin et al.'s work. I only found it because Higgin et al. cite <a href="http://trin-hosts.trin.cam.ac.uk/fellows/horacebarlow/142.pdf">Finding Minimum Entropy Codes</a> by the same authors, and to paraphrase that paper, "Go look in the other paper if you want to understand what we're doing and why."
+        </p><br>
+
+        <p>
+          Barlow and Foldiak's paper Adaptation and Decorrelation covers a lot of material, but their key contribution is to demonstrate that decorrelation of the factors underlying sensory inputs may be a critical step towards unsupervised learning. In the simplest sense, having neurons learn independent features makes the network use its available resources more efficiently; as the authors write, "Suppose that, for whatever reason, two neurons very nearly always respond together; the available response space spanned by the two neurons will not be properly utilized." Consider two stimuli A and B that are correlated. As the plot below shows, many distinguishable response states (the squares) will never occur.
+        </p><br>
+
+        <img class="photo" src="evcl_corr_features_1.png" width = "device-width" maximum-scale=2>
+
+        <p>
+          However, if the neurons learn responses $\Psi_A$ and $\Psi_B$ in a way that decorrelates A and B, then every distinguishable response state will occur and the network will be able to more accurately discern specific stimuli. This is demonstrated in the two figures below. The first figure displays two neurons learning new response axes (that are oblique projections). In the second figure, we can see that the new responses axes give the network a stronger capability to distinguish stimuli.
+        </p><br>
+
+        <img class="photo" src="evcl_corr_features_2.png" width = "device-width" maximum-scale=2>
+
+        <img class="photo" src="evcl_corr_features_3.png" width = "device-width" maximum-scale=2>
+
+        <p>
+          In a more advanced sense, learning independent features is critical for generalizing understanding to new inputs. Higgins et al. provide an intuitive visual explanation for why this might be the case. Consider a baby trying to learn to recognize a fixed-radius <font color="green">green circle</font> that is defined by two factors: x position and y position. Suppose the baby is shown circles with different (x, y) pairs, but the training examples are sampled from only specific combinations of x and y coordinates (i.e. the baby is not given data from outside a <font color="blue"> blue convex training hull</font>).
         </p><br>
 
         <img class="photo" src="evcl_indep_gen_factors_1.png" width = "device-width" maximum-scale=2>
 
         <p>
-        	We might then show the baby similar circles, but this time, some circles will be sampled from outside the convex training hull. We'll call the previously-unseen data <b>Zero-shot transfer</b>, because we're exploring the infant's ability to transfer recognition of these circles to never-before-seen circles.
+          But sometime in the infant's future, it may encounter circles that have been sampled from outside the convex training hull. We'll call the previously-unseen data <b>zero-shot transfer</b>, because we're exploring the infant's ability to transfer recognition of previously-seen circles to never-before-seen circles.
         </p><br>
 
         <img class="photo" src="evcl_indep_gen_factors_2.png" width = "device-width" maximum-scale=2>
 
         <p>
-        	In order to recognize these new circles, the learning agent must be capable of separating the x-coordinate from the y-coordinate, so that these factors can be recombined in novel ways so as to recognize data from outside the <font color="blue">convex training hull</font>. To quote Perry, Rolls and Stringer, "It is crucially important that the visual system builds invariant representations, for only then can associative learning on one trial about an object generalize usefully to other transforms of the same object."
+          <b>In order to recognize these new circles, the baby must be capable of recombining factors in novel ways to recognize data from outside the training hull</b>. This necessitates separating the x-coordinate from the y-coordinate. Perry, Rolls and Stringer's finish their review of the evidence by stating, "It is crucially important that the visual system builds invariant representations, for only then can associative learning on one trial about an object generalize usefully to other transforms of the same object."
         </p><br>
 
-        <h3>Constraint 2: Learn from Continuously Transformed Data</h3>
+        <h2>Intuition</h2>
         <p>
-        	Perry, Rolls and Stringer's main contribution is to suggest that learning translation-invariant representations
+          To summarize, we'd like to create a system that can start to learn properties of visual stimuli in an unsupervised manner. We've heard two suggestions for how this unsupervised learning can occur: first, learn translational invariant representations, and second, learn the independent factors that generate/compose those representations. How can we do this?
+        </p><br>
+
+        <p>
+          The tool that Higgins et al. use is called a <b>Variational Autoencoder (VAEs)</b>. It's a hybrid tool, derived from 
         </p>
 
         <h2>Mathematics</h2>
+        <p>To summarize, </p>
         <h3>Variational Autoencoders (VAEs)</h3>
         <p>
-        	Let's start with an explanation of autoencoders. An autoencoder consists of two neural networks that work together to try to learn a compressed representation of the observed data. The first, called the <b>encoder</b>, attempts to find a lower dimensional representation of a data point, and the second, called the <b>decoder</b>, attempts to reconstruct the input data point given only the lower dimensional representation; using a visual I stole from <a href="http://multithreaded.stitchfix.com/blog/2015/09/17/deep-style/">MultiThreaded</a>, an autoencoder looks like this:
-        </p><br>
-
-        <img class="photo" src="evcl_vae.png" width = "device-width" maximum-scale=2>
-
-        <p>
-        	Variational Autoencoders are a powerful extension of autoencoders. VAEs were first introduced by <a href="https://arxiv.org/abs/1312.6114">Kingma and Welling</a> in 2014, but the paper is so dense that I had to walk through Carl Doersch's <a href="https://arxiv.org/abs/1606.05908">tutorial</a> before I could approach initial paper.
-        </p><br>
-
-        <p>
-
-generative modeling technique first 
-
-        	If it helps, break it down. We use the data $x$ and the approximation function $q_\phi(z | x)$ to determine which values of the latent variables $z$ most likely generated $x$. Then, we use the conditional probability $p_\theta(x|z)$
+        	
         </p><br>
 
         <h3>VAEs for Early Visual Concept Learning</h3>
@@ -145,7 +176,9 @@ generative modeling technique first
           I appreciate any and all feedback. If I've made an error or if you have a suggestion, you can <a href="mailto:ryschaeffer@ucdavis.edu">email me</a> or comment on the <a href="">Reddit</a> or <a href="">HackerNews</a> threads.
         </p>
 
-		<sup id="fn1">1. Interestingly, the two-streams hypothesis was inspired by work on <a href="https://en.wikipedia.org/wiki/Blindsight">blindsight</a>, the title of a criminally underappreciated <a href="https://en.wikipedia.org/wiki/Blindsight_(Watts_novel)">book</a> (available for free on the author's <a href="http://www.rifters.com/real/Blindsight.htm">website</a>). <a href="#ref1" title="Jump back to footnote 1 in the text.">↩</a></sup><br>
+		<sup id="fn1">1. Interestingly, I learned that the two-streams hypothesis was inspired by work on <a href="https://en.wikipedia.org/wiki/Blindsight">blindsight</a>, the title of a criminally underappreciated <a href="https://en.wikipedia.org/wiki/Blindsight_(Watts_novel)">book</a> (available for free on the author's <a href="http://www.rifters.com/real/Blindsight.htm">website</a>). <a href="#ref1" title="Jump back to footnote 1 in the text.">↩</a></sup><br>
+
+    <sup id="fn2">2. The system this paper implements makes use of variational autoencoders (VAEs). If you aren't familiar with the term or concept, I recommend reading Carl Doersch's <a href="https://arxiv.org/abs/1606.05908">tutorial</a>. Doersch's tutorial starts with directed probabilistic graphs, instead of autoencoders, which I feel is the correct perspective. Originally, I had intended to provide a quick tutorial on what VAEs are, but as I wrote more and more, I kept having to dive further and further into adjacent topics; ultimately, I had to shelve that pursuit to finish this post. <a href="#ref2" title="Jump back to footnote 2 in the text.">↩</a></sup>
 
       </section>
     </div>
