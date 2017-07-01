@@ -34,6 +34,7 @@
     </script>
 
     $\DeclareMathOperator*{\argmax}{argmax}$
+    $\DeclareMathOperator*{\argmin}{argmin}$
   </head>
 
   <body>
@@ -62,38 +63,38 @@
         </p><br>
 
         <p>
-        	Higgins et al.'s paper aims to answer this question. To do so, they draw inspiration from prior neuroscience work studying the visual ventral stream, a component of a widely accepted <a href="https://en.wikipedia.org/wiki/Two-streams_hypothesis#Ventral_stream">model</a><sup><a href="#fn1" id="ref1">1</a></sup> of how visual information is converted to object recognition and form representation. They use this work to formulate a computational argument for what a visual unsupervised learning system needs in order to independently begin learning objects and their properties, and provide prima facie evidence that their argument is valid by implementing such a system<sup><a href="#fn2" id="ref2"><b>2</b></a></sup>.
+        	Higgins et al.'s paper aims to answer this question. To do so, they draw inspiration from prior neuroscience work studying the visual ventral stream, a component of a widely accepted <a href="https://en.wikipedia.org/wiki/Two-streams_hypothesis#Ventral_stream">model</a><sup><a href="#fn1" id="ref1">1</a></sup> of how visual information is converted to object recognition and form representation. They use this work to formulate a computational argument for what a visual unsupervised learning system needs, and provide prima facie evidence that their argument is valid by implementing such a system<sup><a href="#fn2" id="ref2"><b>2</b></a></sup>.
         </p><br>
 
         <h2>Background</h2>
         <p>
-          I think that the best way to understand Higgin et al.'s paper is to start with an explanation of two earlier papers in the field of neuroscience that inspired Higgin et al.'s paper.
+          I think that the best way to understand Higgin et al.'s paper is to start with the two key neuroscience papers that inspired Higgin et al.'s work.
         </p><br>
 
         <h3>Paper #1 - <a href="http://www.oxcns.org/papers/485_Perry+Rolls+10%20Continuous%20transformation%20learning%20of%20translation%20invariant%20representations.pdf">Continuous transformation learning of translation invariant representations (2009)</a></h3>
 
         <p>
-          In 2009, Perry, Rolls and Stringer at Oxford's Centre for Computational Neuroscience published a paper that started with a short review of a well-understood aspect of human visual processing: over time, certain neurons learn to respond to specific visual stimuli, regardless of perturbations of those stimuli. The authors write, "Over successive stages, the visual system develops neurons that respond with position (i.e. translation), view, and size invariance to objects or faces. For example, it has been shown that the inferior temporal visual cortex has neurons that respond to faces and objects invariantly with respect to translation, size, contrast, lighting, spatial frequency."
+          Perry, Rolls and Stringer's paper begins with a short review of one well-understood aspect of human visual processing: over time, certain neurons learn to respond to specific visual stimuli, regardless of deformations of those stimuli. The authors write, "Over successive stages, the visual system develops neurons that respond with position (i.e. translation), view, and size invariance to objects or faces. For example, it has been shown that the inferior temporal visual cortex has neurons that respond to faces and objects invariantly with respect to translation, size, contrast, lighting, spatial frequency."
         </p><br>
 
         <p>
-          In simpler terms, Perry et al. are noting that visual neurons fire when certain objects (e.g. a face) are within view, regardless of how the subject's perspective of the object is altered or warped (e.g dimly lit or rotated). In the literature's terminology, we refer to that perception as a <b>translation invariant representation</b>. One can intuit that developing translation invariant representations is a critical early step to visual processing - after all, how can I start to understand the world in terms of objects if I perceive an object as completely distinct from the same object shifted slightly a few seconds later?
+          In the literature's terminology, we refer to this perception, in which certain neurons fire regardless of how the stimulus is altered or warped, as a <b>translation invariant representation</b>. Learning translation invariant representations is a critical component of unsupervised learning. One can easily intuit why - consider how difficult understanding the world would be if you or I couldn't understand that an object and same object moved slightly a minute later are one and the same.
         </p><br>
 
         <p>
-          Perry et al.'s contribution is to demonstrate that a system can learn translation invariant representations in an unsupervised manner, provided that system densely samples from continuous transformations. In simpler terms, the system can learn translation invariant representations if it receives lots of input stimuli in which new stimuli change very slightly from previous stimuli. To understand why, consider a simple neural network with only two layers, perhaps initialized with random weights. When a stimulus is presented, some of the input neurons will fire. As a consequence, perhaps an output neuron will fire, as shown below:
+          Perry et al.'s contribution is to demonstrate that a system can learn translation invariant representations in an unsupervised manner, provided that system densely samples from continuous transformations. To understand why, consider a simple neural network with only two layers and initialized with random weights. When a stimulus is presented, some of the input neurons will fire. As a consequence, perhaps an output neuron will fire, as shown below:
         </p><br>
 
         <img class="photo" src="evcl_stim_pos_1.png" width = "device-width" maximum-scale=2>
 
         <p>
-          If we suppose that the system has some kind of <a href="https://en.wikipedia.org/wiki/Hebbian_theory">Hebbian learning rule</a>, in which connections are strengthened after firing, then the above connections will be strengthened. Then, if the same stimulus is presented again, but shifted only slightly, enough of the same input neurons will fire again that the same output neuron will fire again. However, a new input neuron will also fire, and its connection to the output neuron will be strengthened (as shown below with the dotted connection).
+          If we suppose that the system has some kind of <a href="https://en.wikipedia.org/wiki/Hebbian_theory">Hebbian learning rule</a>, in which connections are strengthened after firing, then the above connections will be strengthened. Later, if the same stimulus is presented again, but shifted only slightly, enough of the same input neurons will fire again that the same output neuron will fire again. However, a new input neuron will also fire, and its connection to the output neuron will be strengthened (as shown below with the dotted connection).
         </p><br>
 
         <img class="photo" src="evcl_stim_pos_2.png" width = "device-width" maximum-scale=2>
 
         <p>
-          <b>With sufficiently small strides and sufficiently dense sampling, this output neuron will learn to recognize a specific stimulus regardless of where the stimulus appears in the input.</b> This learning happens without the need for any supervisory signal. They call this <b>Continuous Transform Learning</b>. Perry et al. have some nice plots of how learning performance rapidly degrades as the stride increases, and their paper actually covers much more material, but I'll leave that to the interested reader to cover on her own. Higgen et al. extend Continuous Transform Learning to manifold learning, arguing that sparsely sampled data creates ambiguities when learning manifolds (below left), whereas densely sampled data reduces that ambiguity (below right).
+          This learning happens without the need for any supervisory signal. <b>With sufficiently small strides and sufficiently dense sampling, this output neuron will learn to recognize a specific stimulus regardless of where the stimulus appears in the input</b>; Perry et al call this <b>Continuous Transform Learning</b>. The paper has some nice plots of how learning performance rapidly degrades as the stride increases, and their paper actually covers much more material, but I'll leave that to the interested reader to cover on her own. Higgen et al. extend Continuous Transform Learning to manifold learning, arguing that sparsely sampled data creates ambiguities when learning manifolds (below left), whereas densely sampled data reduces that ambiguity (below right).
         </p><br>
 
         <img class="photo" src="evcl_smooth_sampling.png" width = "device-width" maximum-scale=2>
@@ -101,11 +102,11 @@
         <h3>Paper #2 - <a href="https://pdfs.semanticscholar.org/7389/2a702915dd41c39ed04d54896abf1004b49c.pdf">Adaptation and Decorrelation in the Cortex (1989)</a></h3>
 
         <p>
-          You won't find this paper by Barlow and Foldiak cited in Higgin et al.'s work. I only found it because Higgin et al. cite <a href="http://trin-hosts.trin.cam.ac.uk/fellows/horacebarlow/142.pdf">Finding Minimum Entropy Codes</a> by the same authors, and to paraphrase that paper, "Go look in the other paper if you want to understand what we're doing and why."
+          You won't find this paper by Barlow and Foldiak cited in Higgin et al.'s work. I only found it because Higgin et al. cite <a href="http://trin-hosts.trin.cam.ac.uk/fellows/horacebarlow/142.pdf">Finding Minimum Entropy Codes</a> by Barlow, Kaushal and Mitchison which states (paraphrased), "Go look in the other paper if you want to understand what we're doing and why." Barlow and Foldiak's paper covers a lot of material, but their key contribution is to demonstrate that decorrelation of the factors underlying sensory inputs may be a critical step towards unsupervised learning.
         </p><br>
 
         <p>
-          Barlow and Foldiak's paper Adaptation and Decorrelation covers a lot of material, but their key contribution is to demonstrate that decorrelation of the factors underlying sensory inputs may be a critical step towards unsupervised learning. In the simplest sense, having neurons learn independent features makes the network use its available resources more efficiently; as the authors write, "Suppose that, for whatever reason, two neurons very nearly always respond together; the available response space spanned by the two neurons will not be properly utilized." Consider two stimuli A and B that are correlated. As the plot below shows, many distinguishable response states (the squares) will never occur.
+          What does that actually mean? When we receive some stimulus (e.g. a visual scene), that image is generated by a number of factors - the objects in the image, the color scheme of those objects, the lighting of the scene, the objects' positions relative to us, etc. Barlow and Foldiak argue that learning factors with the objective of minimizes the correlation between factors aids unsupervised learning. In the simplest sense, having neurons learn independent features makes the network use its available resources more efficiently. This is relatively easy to visualize. Consider two neurons that receive two correlated stimuli, A and B. As the plot below shows, many distinguishable response states (i.e. squares) will never occur.
         </p><br>
 
         <img class="photo" src="evcl_corr_features_1.png" width = "device-width" maximum-scale=2>
@@ -131,24 +132,108 @@
         <img class="photo" src="evcl_indep_gen_factors_2.png" width = "device-width" maximum-scale=2>
 
         <p>
-          <b>In order to recognize these new circles, the baby must be capable of recombining factors in novel ways to recognize data from outside the training hull</b>. This necessitates separating the x-coordinate from the y-coordinate. Perry, Rolls and Stringer's finish their review of the evidence by stating, "It is crucially important that the visual system builds invariant representations, for only then can associative learning on one trial about an object generalize usefully to other transforms of the same object."
+          <b>In order to recognize these new circles, the baby must be capable of recombining factors in novel ways to recognize data from outside the training hull</b>. This necessitates separating the x-coordinate from the y-coordinate.
         </p><br>
 
         <h2>Intuition</h2>
         <p>
-          To summarize, we'd like to create a system that can start to learn properties of visual stimuli in an unsupervised manner. We've heard two suggestions for how this unsupervised learning can occur: first, learn translational invariant representations, and second, learn the independent factors that generate/compose those representations. How can we do this?
+          To summarize, we'd like to create a system that can start to understand visual stimuli in an unsupervised manner. We've heard two suggestions for how this unsupervised learning can occur: first, learn translational invariant representations, and second, learn the factors underlying those those representations by minimizing the correlation between stimuli. How can we do this computationally?
         </p><br>
 
         <p>
-          The tool that Higgins et al. use is called a <b>Variational Autoencoder (VAEs)</b>. It's a hybrid tool, derived from 
-        </p>
+          Higgins et al.'s answer is a tool introduced by <a href="https://arxiv.org/abs/1312.6114">Kingma and Welling</a> in 2014 called <b>Variational Autoencoders (VAEs)</b>. Personally, I found understanding VAEs to be deceptively difficult because VAEs are a Frankensteinian creation of two, very separate fields:
+
+          <ol>
+            <li><a href="https://en.wikipedia.org/wiki/Autoencoder">Autoencoders</a>:</b> one neural network, called the <b>encoder</b> is learns a compressed representation $z$ of some input $X$, while another neural network, called the <b>decoder</b>, learns to reconstruct $X$ given only $z$ (hence the term autoencoder)</li>
+            <li><a href="https://en.wikipedia.org/wiki/Variational_Bayesian_methods">Variational Inference</a> in <a href="https://en.wikipedia.org/wiki/Graphical_model">Directed Probabilistic Models</a>:</b> a directed graph is constructed to capture the conditional dependence structure between random variables, and then Bayesian techniques are used to infer posterior distributions of said variables</li>
+          </ol>
+
+          Let's cover both in turn.
+        </p><br>
 
         <h2>Mathematics</h2>
-        <p>To summarize, </p>
-        <h3>Variational Autoencoders (VAEs)</h3>
+        <h3>Autoencoders</h3>
         <p>
-        	
+          Visually and mathematically, autoencoders are relatively simple. The encoder is a neural network that learns a function $\mathcal{E}$ that maps from some input space to a lower dimensional space, and the decoder is a neural network that learns a function $\mathcal{D}$ that maps from the lower dimensional space to the input space. Stealing Wikipedia's picture:
+        </p>
+
+        <img class="photo" src="evcl_autoencoder.png" width = "device-width">
+
+        <p>
+          The two networks are trained in tandem to minimize the distance between the input $x$ and the decoder's output $(\mathcal{D} \circ \mathcal{E})x$. If $x \in R^n$, $z \in R^m$, $n > m$, and $d(\cdot, \cdot)$ is a distance function, then the optimal encoder function $\mathcal{E}^*$ and the optimal decoder function $\mathcal{D}^*$ are defined as follows:
+
+          <center>
+            $
+            \begin{align*}
+            \mathcal{E}^*, \mathcal{D}^*& = \argmin_{\mathcal{E}, \mathcal{D}} d(x, (\mathcal{D} \circ \mathcal{E})x)
+            \end{align*}
+            $
+          </center>
         </p><br>
+
+        <h3>Directed Probabilistic Models</h3>
+        <p>
+        	The concept of graphical models arises in cases in which we have a number of random variables and we would like to infer the relationships between them. For example, suppose $z$ is a random variable that specifies which class an image belongs to (e.g. airplane, dog) and $x$ is a random variable that describes what some image looks like (e.g. values for a 32x32x3 color image). The discrete class labels $z$ would have some probability distribution parameterized by $\theta$, $p_\theta(z)$. Similarly, $x$ has its own distribution, $p_\theta(x)$. Since class labels influence the probability of specific images, we can describe the influence of label on image with the likelihood probability $p_\theta(x|z)$. To understand why this is true, ask yourself whether dog image or an airplane image is more likely to contain a winged cylindrical white body against a blue backdrop. We can graphically depict this scenario as follows (ignore the box and the $N$)
+        </p><br>
+
+        <img class="photo" src="evcl_vae_setting_1.png" width = "device-width">
+
+        <h3>Variational Inference (Variational Bayesian Approach)</h3>
+
+        <p>
+          However, in some cases, we cannot directly observe all the variables. For instance, we might be given a new image but the corresponding class label is withheld. In cases like these, we'd like to use the posterior distribution $p_\theta(z|x)$ to infer the values of the hidden variables $z$, which are referred to as <b>latent variables</b>.
+        </p><br>
+
+        <p>
+          However, frequently, posterior distributions are analytically intractable and must be approximated. Why? Let's start with the <a href="https://en.wikipedia.org/wiki/Bayes%27_theorem">definition</a> of the posterior distribution:
+
+          <center>
+            $
+            \begin{align*}
+            p_\theta(z|x) &= \frac{p_\theta(x|z) p_\theta(z)}{p_\theta(x)}
+            \end{align*}
+            $
+          </center>
+        </p><br>
+
+        <p>
+          In order to compute the marginal distribution $p_\theta(x)$, we would need to compute the following integral (assuming $z$ is continuous):
+
+          <center>
+            $
+            \begin{align*}
+            p_\theta(x) &= \int p_\theta(x|z) p_\theta(z) dz
+            \end{align*}
+            $
+          </center>
+        </p>
+
+        <p>
+          If $z$ is continuous or the conditional probability distribution is complicated or the data is large, which is frequently the case for interesting problems, that integral may not have an analytical solution. In such cases, the posterior distribution $p_\theta(z|x)$ may need to be approximated. As explained by <a href="https://arxiv.org/abs/1601.00670">Blei, Kucukelbir and McAullife</a>, the dominant approach for decades was to use <a href="https://en.wikipedia.org/wiki/Markov_chain_Monte_Carlo">Markov Chain Monte Carlo</a> (MCMC) sampling. Although MCMC sampling provides strong theoretical guarantees regarding convergence to the true distribution, for complex models convergence requires enormous numbers of samples to be drawn, which can be slow and computationally expensive.
+        </p><br>
+
+        <p>
+          Variational inference is an alternative approach to approximating the posterior distribution that replaces sampling with optimization. Variational inference doesn't enjoy the sample asymptotic guarantees that MCMC sampling does, but it is frequently faster on large datasets and complex models. The main idea is to specify a family of probability distributions $Q$, and then find the member of the family that minimizes the <a href="https://en.wikipedia.org/wiki/Statistical_distance">distance</a> between the member and the true posterior:
+
+          <center>
+            $
+            \begin{align*}
+            q^*(z) &= \argmin_{q(z) \in Q} \text{distance}(q(z), p_\theta(z|x))
+            \end{align*} 
+            $
+          </center>
+
+        </p><br>
+
+        <p>
+          Usually, we use a specific distance measure called the <a href="https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence">Kullback-Leibler divergence</a>, denoted $D_{KL}(\cdot, \cdot)$. The KL divergence, as the name implies, belongs to a special type of statistical distance functions called <a href="https://en.wikipedia.org/wiki/Divergence_(statistics)">divergences</a>. These are non-symm
+        </p>
+
+        <h3>Variational Autoencoders</h3>
+
+        <p>
+          
+        </p>
 
         <h3>VAEs for Early Visual Concept Learning</h3>
         <p>
@@ -178,7 +263,7 @@
 
 		<sup id="fn1">1. Interestingly, I learned that the two-streams hypothesis was inspired by work on <a href="https://en.wikipedia.org/wiki/Blindsight">blindsight</a>, the title of a criminally underappreciated <a href="https://en.wikipedia.org/wiki/Blindsight_(Watts_novel)">book</a> (available for free on the author's <a href="http://www.rifters.com/real/Blindsight.htm">website</a>). <a href="#ref1" title="Jump back to footnote 1 in the text.">↩</a></sup><br>
 
-    <sup id="fn2">2. The system this paper implements makes use of variational autoencoders (VAEs). If you aren't familiar with the term or concept, I recommend reading Carl Doersch's <a href="https://arxiv.org/abs/1606.05908">tutorial</a>. Doersch's tutorial starts with directed probabilistic graphs, instead of autoencoders, which I feel is the correct perspective. Originally, I had intended to provide a quick tutorial on what VAEs are, but as I wrote more and more, I kept having to dive further and further into adjacent topics; ultimately, I had to shelve that pursuit to finish this post. <a href="#ref2" title="Jump back to footnote 2 in the text.">↩</a></sup>
+    <sup id="fn2">2. This paper makes heavy use of variational autoencoders (VAEs). If you aren't familiar with the term or concept, I recommend reading Carl Doersch's <a href="https://arxiv.org/abs/1606.05908">tutorial</a>. Originally, I had intended to provide a quick tutorial on what VAEs are, but as I wrote more and more, I kept having to dive further and further into adjacent topics; ultimately, I had to shelve that pursuit to finish this post. <a href="#ref2" title="Jump back to footnote 2 in the text.">↩</a></sup>
 
       </section>
     </div>
