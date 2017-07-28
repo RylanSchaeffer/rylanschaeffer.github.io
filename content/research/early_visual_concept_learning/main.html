@@ -52,49 +52,85 @@
 
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
+      <p id="main_content" class="inner">
         <p>
 			I've found that the overwhelming majority of online information on artificial intelligence research falls into one of two categories: the first is aimed at explaining advances to lay audiences, and the second is aimed at explaining advances to other researchers. I haven't found a good resource for people with a technical background who are unfamiliar with the more advanced concepts and are looking for someone to fill them in. This is my attempt to bridge that gap, by providing approachable yet (relatively) detailed explanations. In this post, I explain the titular paper - <a href="https://arxiv.org/abs/1606.05579">Early Visual Concept Learning with Unsupervised Deep Learning</a>.
         </p><br>
 
         <h2>Motivation</h2>
         <p>
-        	There's a fascinating <a href="https://www.youtube.com/watch?v=hfoeRiZU5YQ">talk</a> by Josh Tenebaum in which he cites a number of studies demonstrating that within months of being born, human infants develop rudimentary understanding of physical objects, intentional agents and their interactions. From a computational perspective, this is a remarkable accomplishment. These infants' internal models of the world are developed prior to language acquisition, meaning infants learn all this in an unsupervised manner. Although Tenebaum's ultimate point was that computer scientists and statisticians can learn much about the development of intelligence through research in childhood cognitive development, the more specific question of how human infants are capable of even beginning to extract early visual concepts without supervision went unanswered.
+          There's a fascinating <a href="https://www.youtube.com/watch?v=hfoeRiZU5YQ">talk</a> by Josh Tenebaum in
+          which he cites a number of studies demonstrating that within months of being born, human infants develop
+          rudimentary understanding of physical objects, intentional agents and their interactions. From a computational
+          perspective, this is a remarkable accomplishment. These infants' internal models of the world are developed in
+          an unsupervised manner, prior to language acquisition. Although Tenebaum's ultimate point was that computer
+          scientists and statisticians can learn much about the development of intelligence through research in
+          childhood cognitive development, the more specific question of how human infants are capable of even beginning
+          to extract early visual concepts without supervision went unanswered.
         </p><br>
 
         <p>
-        	Higgins et al.'s paper aims to answer this question. To do so, they draw inspiration from prior neuroscience work studying the visual ventral stream, a component of a widely accepted <a href="https://en.wikipedia.org/wiki/Two-streams_hypothesis#Ventral_stream">model</a><sup><a href="#fn1" id="ref1">1</a></sup> of how visual information is converted to object recognition and form representation. They use this work to formulate a computational argument for what a visual unsupervised learning system needs, and provide prima facie evidence that their argument is valid by implementing such a system<sup><a href="#fn2" id="ref2"><b>2</b></a></sup>.
+          Higgins et al.'s paper aims to answer this question. To do so, they draw inspiration from prior neuroscience
+          work studying the visual ventral stream, a component of a widely accepted
+          <a href="https://en.wikipedia.org/wiki/Two-streams_hypothesis#Ventral_stream">model</a><sup><a href="#fn1" id="ref1">1</a></sup>
+          of how visual information is converted to object recognition and form representation. They use this work to
+          formulate a computational argument for what an unsupervised visual learning system needs, and provide prima
+          facie evidence that their argument is valid by implementing such a system.
         </p><br>
 
         <h2>Background</h2>
         <p>
-          I think that the best way to understand Higgin et al.'s paper is to start with the two key neuroscience papers that inspired Higgin et al.'s work.
+          A good approach to understand Higgin et al.'s paper is to start with the two key neuroscience papers that inspired Higgin et al.'s work.
         </p><br>
 
         <h3>Paper #1 - <a href="http://www.oxcns.org/papers/485_Perry+Rolls+10%20Continuous%20transformation%20learning%20of%20translation%20invariant%20representations.pdf">Continuous transformation learning of translation invariant representations (2009)</a></h3>
 
         <p>
-          Perry, Rolls and Stringer's paper begins with a short review of one well-understood aspect of human visual processing: over time, certain neurons learn to respond to specific visual stimuli, regardless of deformations of those stimuli. The authors write, "Over successive stages, the visual system develops neurons that respond with position (i.e. translation), view, and size invariance to objects or faces. For example, it has been shown that the inferior temporal visual cortex has neurons that respond to faces and objects invariantly with respect to translation, size, contrast, lighting, spatial frequency."
+          One well-understood aspect of human visual processing is that over time, certain neurons learn to respond to specific visual stimuli, regardless of deformations
+          of those stimuli. At the start of the paper Perry, Rolls and Stringer write, "Over successive stages, the visual system develops neurons that respond
+          with position (i.e. translation), view, and size invariance to objects or faces. For example, it has been
+          shown that the inferior temporal visual cortex has neurons that respond to faces and objects invariantly with
+          respect to translation, size, contrast, lighting, spatial frequency."
         </p><br>
 
         <p>
-          In the literature's terminology, we refer to this perception, in which certain neurons fire regardless of how the stimulus is altered or warped, as a <b>translation invariant representation</b>. Learning translation invariant representations is a critical component of unsupervised learning. One can easily intuit why - consider how difficult understanding the world would be if you or I couldn't understand that an object and same object moved slightly a minute later are one and the same.
+          In the literature's terminology, we refer to this recognition as a <b>translation invariant representation</b>. Learning translation
+          invariant representations is a critical component of unsupervised learning. One can easily intuit why -
+          consider how difficult understanding the world would be if you or I couldn't understand that an object and
+          same object moved slightly to the left or rotated 90 degrees are one and the same.
         </p><br>
 
         <p>
-          Perry et al.'s contribution is to demonstrate that a system can learn translation invariant representations in an unsupervised manner, provided that system densely samples from continuous transformations. To understand why, consider a simple neural network with only two layers and initialized with random weights. When a stimulus is presented, some of the input neurons will fire. As a consequence, perhaps an output neuron will fire, as shown below:
+          Perry et al.'s contribution is to demonstrate that a system can learn translation invariant representations in
+          an unsupervised manner by using a specific sampling technique. This sampling technique is relatively
+          straightforward: densely sample from continuous transformations. To understand
+          why, consider a simple neural network with only two layers and initialized with random weights. When a
+          stimulus is presented, some of the input neurons will fire. As a consequence, perhaps an output neuron will
+          fire, as shown below:
         </p><br>
 
         <img class="photo" src="evcl_stim_pos_1.png" width = "device-width" maximum-scale=2>
 
         <p>
-          If we suppose that the system has some kind of <a href="https://en.wikipedia.org/wiki/Hebbian_theory">Hebbian learning rule</a>, in which connections are strengthened after firing, then the above connections will be strengthened. Later, if the same stimulus is presented again, but shifted only slightly, enough of the same input neurons will fire again that the same output neuron will fire again. However, a new input neuron will also fire, and its connection to the output neuron will be strengthened (as shown below with the dotted connection).
+          If we suppose that the system strengths connections after neurons fire (i.e. some kind of
+          <a href="https://en.wikipedia.org/wiki/Hebbian_theory">Hebbian learning rule</a>), then the above connections
+          will be strengthened. Later, if the same stimulus is presented again but shifted slightly, enough of the same
+          input neurons will fire again that the same output neuron will fire again. However, a new input neuron will
+          also fire, and its connection to the output neuron will be strengthened (as shown below with the dotted
+          connection).
         </p><br>
 
         <img class="photo" src="evcl_stim_pos_2.png" width = "device-width" maximum-scale=2>
 
         <p>
-          This learning happens without the need for any supervisory signal. <b>With sufficiently small strides and sufficiently dense sampling, this output neuron will learn to recognize a specific stimulus regardless of where the stimulus appears in the input</b>; Perry et al call this <b>Continuous Transform Learning</b>. The paper has some nice plots of how learning performance rapidly degrades as the stride increases, and their paper actually covers much more material, but I'll leave that to the interested reader to cover on her own. Higgen et al. extend Continuous Transform Learning to manifold learning, arguing that sparsely sampled data creates ambiguities when learning manifolds (below left), whereas densely sampled data reduces that ambiguity (below right).
+          This learning happens without the need for any supervisory signal. <b>With sufficiently small strides and
+          sufficiently dense sampling, this output neuron will learn to recognize a specific stimulus regardless of
+          where the stimulus appears in the input</b>; Perry et al call this <b>Continuous Transform Learning</b>. The
+          paper has some nice plots of how learning performance rapidly degrades as the stride increases, and their
+          paper actually covers much more material, but I'll leave that to the interested reader to cover on her own.
+          Higgen et al. extend Continuous Transform Learning to manifold learning, arguing that sparsely sampled data
+          creates ambiguities when learning manifolds (below left), whereas densely sampled data reduces that ambiguity
+          (below right).
         </p><br>
 
         <img class="photo" src="evcl_smooth_sampling.png" width = "device-width" maximum-scale=2>
@@ -102,17 +138,32 @@
         <h3>Paper #2 - <a href="https://pdfs.semanticscholar.org/7389/2a702915dd41c39ed04d54896abf1004b49c.pdf">Adaptation and Decorrelation in the Cortex (1989)</a></h3>
 
         <p>
-          You won't find this paper by Barlow and Foldiak cited in Higgin et al.'s work. I only found it because Higgin et al. cite <a href="http://trin-hosts.trin.cam.ac.uk/fellows/horacebarlow/142.pdf">Finding Minimum Entropy Codes</a> by Barlow, Kaushal and Mitchison which states (paraphrased), "Go look in the other paper if you want to understand what we're doing and why." Barlow and Foldiak's paper covers a lot of material, but their key contribution is to demonstrate that decorrelation of the factors underlying sensory inputs may be a critical step towards unsupervised learning.
+          You won't find this paper by Barlow and Foldiak cited in Higgin et al.'s work. I only found it because Higgin
+          et al. cite <a href="http://trin-hosts.trin.cam.ac.uk/fellows/horacebarlow/142.pdf">Finding Minimum Entropy Codes</a>
+          by Barlow, Kaushal and Mitchison which states (paraphrased), "Go look at Barlow's other paper if you want to
+          understand what we're doing and why." Barlow and Foldiak's paper covers a lot of material, but their key
+          contribution is to demonstrate that decorrelating the factors underlying sensory inputs may also be important
+          towards unsupervised learning.
         </p><br>
 
         <p>
-          What does that actually mean? When we receive some stimulus (e.g. a visual scene), that image is generated by a number of factors - the objects in the image, the color scheme of those objects, the lighting of the scene, the objects' positions relative to us, etc. Barlow and Foldiak argue that learning factors with the objective of minimizes the correlation between factors aids unsupervised learning. In the simplest sense, having neurons learn independent features makes the network use its available resources more efficiently. This is relatively easy to visualize. Consider two neurons that receive two correlated stimuli, A and B. As the plot below shows, many distinguishable response states (i.e. squares) will never occur.
+          What does that actually mean? When we receive some stimulus (e.g. a visual scene), that image is generated by
+          a number of factors - the objects in the image, the color scheme of those objects, the lighting of the scene,
+          the objects' positions relative to us, etc. Barlow and Foldiak argue that learning independent factors aids
+          unsupervised learning. In the simplest sense, having neurons learn independent features makes the network use
+          its available resources more efficiently. This is relatively easy to visualize. Consider two neurons that
+          receive two correlated stimuli, A and B. As the plot below shows, many distinguishable response states (i.e. squares) will never occur.
         </p><br>
 
         <img class="photo" src="evcl_corr_features_1.png" width = "device-width" maximum-scale=2>
 
         <p>
-          However, if the neurons learn responses $\Psi_A$ and $\Psi_B$ in a way that decorrelates A and B, then every distinguishable response state will occur and the network will be able to more accurately discern specific stimuli. This is demonstrated in the two figures below. The first figure displays two neurons learning new response axes (that are oblique projections). In the second figure, we can see that the new responses axes give the network a stronger capability to distinguish stimuli.
+          However, if the neurons learn responses $\Psi_A$ and $\Psi_B$ in a way that decorrelates A and B, then every
+          distinguishable response state will occur and the network will be able to more accurately discern specific
+          stimuli. This is demonstrated in the two figures below. The first figure displays two neurons learning new
+          response axes (that are <a href="https://en.wikipedia.org/wiki/Oblique_projection">oblique projections</a>).
+          In the second figure, we can see that the new responses axes give the network a stronger capability to
+          distinguish stimuli.
         </p><br>
 
         <img class="photo" src="evcl_corr_features_2.png" width = "device-width" maximum-scale=2>
@@ -120,47 +171,85 @@
         <img class="photo" src="evcl_corr_features_3.png" width = "device-width" maximum-scale=2>
 
         <p>
-          In a more advanced sense, learning independent features is critical for generalizing understanding to new inputs. Higgins et al. provide an intuitive visual explanation for why this might be the case. Consider a baby trying to learn to recognize a fixed-radius <font color="green">green circle</font> that is defined by two factors: x position and y position. Suppose the baby is shown circles with different (x, y) pairs, but the training examples are sampled from only specific combinations of x and y coordinates (i.e. the baby is not given data from outside a <font color="blue"> blue convex training hull</font>).
+          In a more advanced sense, learning independent features is critical for generalizing understanding to new
+          inputs. Higgins et al. provide an intuitive visual explanation for why this might be the case. Consider a baby
+          trying to learn to recognize a fixed-radius <font color="green">green circle</font> that is defined by two
+          factors: x position and y position. Suppose the baby is shown circles with different (x, y) pairs, but the
+          training examples are sampled from only specific combinations of x and y coordinates (i.e. the baby is not
+          given data from outside a <font color="blue"> blue convex training hull</font>).
         </p><br>
 
         <img class="photo" src="evcl_indep_gen_factors_1.png" width = "device-width" maximum-scale=2>
 
         <p>
-          But sometime in the infant's future, it may encounter circles that have been sampled from outside the convex training hull. We'll call the previously-unseen data <b>zero-shot transfer</b>, because we're exploring the infant's ability to transfer recognition of previously-seen circles to never-before-seen circles.
+          But sometime in the infant's future, it may encounter circles that have been sampled from outside the convex
+          training hull. We'll call the previously-unseen data <b>zero-shot transfer</b>, because we're exploring the
+          infant's ability to transfer recognition of previously-seen circles to never-before-seen circles.
         </p><br>
 
         <img class="photo" src="evcl_indep_gen_factors_2.png" width = "device-width" maximum-scale=2>
 
         <p>
-          <b>In order to recognize these new circles, the baby must be capable of recombining factors in novel ways to recognize data from outside the training hull</b>. This necessitates separating the x-coordinate from the y-coordinate.
+          In order to recognize these new circles, the baby must be capable of recombining factors in novel ways to
+            recognize data from outside the training hull. This necessitates separating the x-coordinate from the
+          y-coordinate.
         </p><br>
 
         <h2>Intuition</h2>
         <p>
-          To summarize, we'd like to create a system that can start to understand visual stimuli in an unsupervised manner. We've heard two suggestions for how this unsupervised learning can occur: first, learn translational invariant representations, and second, learn the factors underlying those those representations by minimizing the correlation between stimuli. How can we do this computationally?
+          To summarize, we'd like to create a system that can start to recognize objects in visual stimuli in an
+          unsupervised manner. We've heard two suggestions for how this unsupervised learning can occur: first, learn
+          translational invariant representations, and second, learn independent factors underlying those those
+          representations. How can we do this computationally?
         </p><br>
 
         <p>
-          Higgins et al.'s answer is a tool introduced by <a href="https://arxiv.org/abs/1312.6114">Kingma and Welling</a> in 2014 called <b>Variational Autoencoders (VAEs)</b>. Personally, I found understanding VAEs to be deceptively difficult because VAEs are a Frankensteinian creation of two, very separate fields:
+          Higgins et al.'s answer is a tool introduced by <a href="https://arxiv.org/abs/1312.6114">Kingma and Welling</a>
+          in 2014 called <b>Variational Autoencoders (VAEs)</b>. VAEs are like a rabbit hole that you fall down and emerge
+          a long way from where you started. At a high level, a VAE is a special type of autoencoder (AE). An autoencoder
+          is a pair of neural networks used in an unsupervised setting, in which the first network (the encoder)
+          reduces the dimensionality of the input and the second network (the decoder) restores the dimensionality of
+          the propagating information back to the dimensionality of the input; the two networks are then jointly trained
+          to match the output to the input. A VAE is a much more sophisticated version of an autoencoder, with a
+          theoretical basis in Bayesian inference, but the practical difference is that the nodes in the middle (at the
+          bottleneck layer) are pressured to be close to zero and independent from one another. This will help the
+          network learn the minimum number of independent latent variables, which will achieve the second goal. Then, we
+          can train the VAE using densely sampled inputs, which will achieve the first goal.
+        </p><br>
 
-          <ol>
-            <li><a href="https://en.wikipedia.org/wiki/Autoencoder">Autoencoders</a>:</b> one neural network, called the <b>encoder</b> is learns a compressed representation $z$ of some input $X$, while another neural network, called the <b>decoder</b>, learns to reconstruct $X$ given only $z$ (hence the term autoencoder)</li>
-            <li><a href="https://en.wikipedia.org/wiki/Variational_Bayesian_methods">Variational Inference</a> in <a href="https://en.wikipedia.org/wiki/Graphical_model">Directed Probabilistic Models</a>:</b> a directed graph is constructed to capture the conditional dependence structure between random variables, and then Bayesian techniques are used to infer posterior distributions of said variables</li>
-          </ol>
-
-          Let's cover both in turn.
+        <p>
+          At this point, I'll offer you a choice. The prior paragraph should give you sufficient intuition to understand
+          the rest of the paper, in which case, you can skip ahead to Experiments and Results. But if you want to better
+          understand VAEs without investing the time to read Carl Doersch's
+          <a href="https://arxiv.org/abs/1606.05908">excellent tutorial</a>, don't skip ahead.
         </p><br>
 
         <h2>Mathematics</h2>
+        <p>
+          In order to understand VAEs, we'll need to understand the two fields that VAEs originate from:
+
+        <ol>
+          <li><a href="https://en.wikipedia.org/wiki/Autoencoder">Autoencoders</a></li>
+          <li><a href="https://en.wikipedia.org/wiki/Variational_Bayesian_methods">Variational Inference</a> in
+            <a href="https://en.wikipedia.org/wiki/Graphical_model">Directed Probabilistic Models</a></li>
+        </ol>
+        </p><br>
+
         <h3>Autoencoders</h3>
         <p>
-          Visually and mathematically, autoencoders are relatively simple. The encoder is a neural network that learns a function $\mathcal{E}$ that maps from some input space to a lower dimensional space, and the decoder is a neural network that learns a function $\mathcal{D}$ that maps from the lower dimensional space to the input space. Stealing Wikipedia's picture:
+          Visually and mathematically, autoencoders are relatively simple. The encoder is a neural network that learns a
+          function $\mathcal{E}$ that maps from some input space to a lower dimensional space, and the decoder is a
+          neural network that learns a function $\mathcal{D}$ that maps from the lower dimensional space to the input
+          space. Stealing Wikipedia's picture:
         </p>
 
         <img class="photo" src="evcl_autoencoder.png" width = "device-width">
 
         <p>
-          The two networks are trained in tandem to minimize the distance between the input $x$ and the decoder's output $(\mathcal{D} \circ \mathcal{E})x$. If $x \in R^n$, $z \in R^m$, $n > m$, and $d(\cdot, \cdot)$ is a distance function, then the optimal encoder function $\mathcal{E}^*$ and the optimal decoder function $\mathcal{D}^*$ are defined as follows:
+          The two networks are trained in tandem to minimize the distance between the input $x$ and the decoder's output
+          $(\mathcal{D} \circ \mathcal{E})x$. If $x \in R^n$, $z \in R^m$, $n > m$, and $d(\cdot, \cdot)$ is a distance
+          function, then the optimal encoder function $\mathcal{E}^*$ and the optimal decoder function $\mathcal{D}^*$
+          are understood as follows:
 
           <center>
             $
@@ -173,84 +262,307 @@
 
         <h3>Directed Probabilistic Models</h3>
         <p>
-        	The concept of graphical models arises in cases in which we have a number of random variables and we would like to infer the relationships between them. For example, suppose $z$ is a random variable that specifies which class an image belongs to (e.g. airplane, dog) and $x$ is a random variable that describes what some image looks like (e.g. values for a 32x32x3 color image). The discrete class labels $z$ would have some probability distribution parameterized by $\theta$, $p_\theta(z)$. Similarly, $x$ has its own distribution, $p_\theta(x)$. Since class labels influence the probability of specific images, we can describe the influence of label on image with the likelihood probability $p_\theta(x|z)$. To understand why this is true, ask yourself whether dog image or an airplane image is more likely to contain a winged cylindrical white body against a blue backdrop. We can graphically depict this scenario as follows (ignore the box and the $N$)
+          Graphical models are a tool for solving problems in which we have a number of random variables and we would
+          like to infer the relationships between them. For example, suppose we have a number of images and we would
+          like to categorize them. Let's use the random variable $z$ to specify which class (e.g. airplane, dog) an
+          image belongs to, and the random variable $x$ to describes what an image looks like (e.g. real values for a
+          32x32x3 color image). One could reasonably assume that the class label influences the
+          values that $x$ can take - that is, it's much more likely for an image labeled "plane" to contain a winged
+          white cylindrical body than an image labeled "dog."
+        </p><br>
+
+        <p>
+          Assuming that the class label has a <a href="https://en.wikipedia.org/wiki/Parametric_statistics">parametric distribution</a>,
+          we can describe the probability of a particular label class with a prior probability distribution
+          parameterized by $\theta$, $p_\theta(z)$. Similarly, $x$ has its own distribution,
+          $p_\theta(x)$. Since class labels influence the probability of specific images, we can describe the influence
+          of a label on an image with the likelihood probability $p_\theta(x|z)$ and then graphically depict this
+          scenario like below (ignore the box and the $N$):
         </p><br>
 
         <img class="photo" src="evcl_vae_setting_1.png" width = "device-width">
 
+        <p>
+          However, in some cases, we don't have the luxury of directly observing all the variables. For instance, we
+          might be given a new image but the corresponding class label is withheld. In cases like these, we'd like to
+          use the observable variable $x$ and the posterior distribution $p_\theta(z|x)$ to infer the value of the
+          hidden variable $z$, often referred to as the <b>latent variable</b>.
+        </p><br>
+
+        <p>
+          However, frequently, posterior distributions are analytically intractable and must be approximated. Why? Let's
+          start with the <a href="https://en.wikipedia.org/wiki/Bayes%27_theorem">definition</a> of the posterior distribution:
+
+        <center>
+          $
+          \begin{align*}
+          p_\theta(z|x) &= \frac{p_\theta(x|z) p_\theta(z)}{p_\theta(x)}
+          \end{align*}
+          $
+        </center>
+        </p><br>
+
+        <p>
+          In order to compute the marginal distribution $p_\theta(x)$, we would need to compute the following integral
+          (assuming $z$ is continuous):
+
+        <center>
+          $
+          \begin{align*}
+          p_\theta(x) &= \int p_\theta(x|z) p_\theta(z) dz
+          \end{align*}
+          $
+        </center>
+        </p><br>
+
+        <p>
+          If $z$ is continuous or the conditional probability distribution is complicated or the data is large, which is
+          frequently the case for interesting problems, that integral may not have an analytical solution. In such
+          cases, the posterior distribution $p_\theta(z|x)$ may need to be approximated.
+        </p><br>
+
+        <p>
+          As <a href="https://arxiv.org/abs/1601.00670">Blei, Kucukelbir and McAullife</a> explain, for decades, the
+          dominant approach was to use <a href="https://en.wikipedia.org/wiki/Markov_chain_Monte_Carlo">Markov Chain Monte Carlo</a>
+          (MCMC) sampling. This basically means generating lots and lots of samples to asymptotically approximate the
+          posterior distribution. Although MCMC sampling provides strong theoretical guarantees regarding convergence to
+          the true distribution, convergence in complex models requires enormous numbers of samples to be drawn, which
+          can be slow and computationally expensive.
+        </p><br>
+
         <h3>Variational Inference (Variational Bayesian Approach)</h3>
 
         <p>
-          However, in some cases, we cannot directly observe all the variables. For instance, we might be given a new image but the corresponding class label is withheld. In cases like these, we'd like to use the posterior distribution $p_\theta(z|x)$ to infer the values of the hidden variables $z$, which are referred to as <b>latent variables</b>.
-        </p><br>
-
-        <p>
-          However, frequently, posterior distributions are analytically intractable and must be approximated. Why? Let's start with the <a href="https://en.wikipedia.org/wiki/Bayes%27_theorem">definition</a> of the posterior distribution:
+          Variational inference emerged as an alternative approach to approximating the posterior distribution that
+          replaces sampling with optimization. Variational inference doesn't enjoy the sample asymptotic guarantees
+          that MCMC sampling does, but it is frequently faster on large datasets and complex models. The idea is to find
+          a good approximation for the true posterior. This is achieved by specifying a family of parametric probability
+          distributions $Q$ parameterized by $\phi$, and then finding which member of the family has the smallest
+          <a href="https://en.wikipedia.org/wiki/Statistical_distance">distance</a> between the member and the true posterior:
 
           <center>
             $
-            \begin{align*}
-            p_\theta(z|x) &= \frac{p_\theta(x|z) p_\theta(z)}{p_\theta(x)}
+            \argmin_{q_\phi \in Q_\phi} \text{distance}(q_\phi(z | x), p_\theta(z|x))
+            $
+          </center>
+
+        </p><br>
+
+        <p>
+          The distribution $q_\phi(z|x)$ is our approximation to the intractable true posterior $p_\theta(z|x)$.
+          Commonly, we use a specific distance measure called the <a href="https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence">Kullback-Leibler divergence</a>,
+          denoted $D_{KL}(\cdot || \cdot)$. The KL divergence measures how much the first distribution diverges from the second distribution, and is
+          defined as follows:
+
+          <center>
+          $
+          \begin{align*}
+          D_{KL}(q_\phi(z|x) || p_\theta(z|x)) &= \int_{-\infty}^\infty q_\phi(z|x) \log \frac{q_\phi(z|x)}{p_\theta(z|x)} dz \\
+           &= \int_{-\infty}^\infty q_\phi(z|x) \big[\log q_\phi(z|x) - \log p_\theta(z|x)\big] dz
+          \end{align*}
+          $
+          </center>
+        </p><br>
+
+        <p>
+            (TODO: is $dz$ really the correct differential?) Recalling the definition of expected value, notice that we
+            can redefine the KL divergence as an expectation:
+
+            <center>
+            $
+            \begin{align*}\tag{1}
+            D_{KL}(q_\phi(z|x) || p_\theta(z|x)) &= \mathbb{E}_{z \sim q_\phi(z|x)} \big[\log q_\phi(z|x) - \log p_\theta(z|x)\big]
             \end{align*}
             $
-          </center>
+            </center>
         </p><br>
 
-        <p>
-          In order to compute the marginal distribution $p_\theta(x)$, we would need to compute the following integral (assuming $z$ is continuous):
-
-          <center>
-            $
-            \begin{align*}
-            p_\theta(x) &= \int p_\theta(x|z) p_\theta(z) dz
-            \end{align*}
-            $
-          </center>
-        </p>
-
-        <p>
-          If $z$ is continuous or the conditional probability distribution is complicated or the data is large, which is frequently the case for interesting problems, that integral may not have an analytical solution. In such cases, the posterior distribution $p_\theta(z|x)$ may need to be approximated. As explained by <a href="https://arxiv.org/abs/1601.00670">Blei, Kucukelbir and McAullife</a>, the dominant approach for decades was to use <a href="https://en.wikipedia.org/wiki/Markov_chain_Monte_Carlo">Markov Chain Monte Carlo</a> (MCMC) sampling. Although MCMC sampling provides strong theoretical guarantees regarding convergence to the true distribution, for complex models convergence requires enormous numbers of samples to be drawn, which can be slow and computationally expensive.
-        </p><br>
-
-        <p>
-          Variational inference is an alternative approach to approximating the posterior distribution that replaces sampling with optimization. Variational inference doesn't enjoy the sample asymptotic guarantees that MCMC sampling does, but it is frequently faster on large datasets and complex models. The main idea is to specify a family of probability distributions $Q$, and then find the member of the family that minimizes the <a href="https://en.wikipedia.org/wiki/Statistical_distance">distance</a> between the member and the true posterior:
-
-          <center>
-            $
-            \begin{align*}
-            q^*(z) &= \argmin_{q(z) \in Q} \text{distance}(q(z), p_\theta(z|x))
-            \end{align*} 
-            $
-          </center>
-
-        </p><br>
-
-        <p>
-          Usually, we use a specific distance measure called the <a href="https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence">Kullback-Leibler divergence</a>, denoted $D_{KL}(\cdot, \cdot)$. The KL divergence, as the name implies, belongs to a special type of statistical distance functions called <a href="https://en.wikipedia.org/wiki/Divergence_(statistics)">divergences</a>. These are non-symm
-        </p>
 
         <h3>Variational Autoencoders</h3>
-
         <p>
-          
-        </p>
+          To understand how these new "variational" parameters $\phi$ come into play, let's return to our graphical
+          probabilistic model and modify it. The new model looks like this:
+        </p><br>
+
+        <img class="photo" src="evcl_vae_setting_2.png" width = "device-width">
+
+          <p>
+              As a reminder, our goal is to infer the distributions of $z$ and $\theta$ from the observable variable $x$.
+              The best distributions for $z$ and $\theta$ would be distributions that made our $x$ values maximally likely:
+
+              <center>
+                $
+                \begin{align*}
+                \max p_\theta(x)
+                \end{align*}
+                $
+            </center>
+          </p>
+
+          <p>
+               This is the same goal as maximizing the log transform of $p_\theta(x)$
+
+              <center>
+                  $
+                  \begin{align*}
+                  \max \log p_\theta(x)
+                  \end{align*}
+                  $
+              </center>
+          </p>
+
+
+          <p>
+              How can we find the best value of $\theta$? The answer lies in an extensive manipulation of equation (1).
+              Going back to equation (1), if we replace $p_\theta(z|x)$ using Bayes' Theorem, we reach the following equation:
+
+          <center>
+              $
+              \begin{align*}
+              &= \mathbb{E}_{z \sim q_\phi(z|x)} \big[\log q_\phi(z|x) - \log p_\theta(x|z) - \log p_\theta(z)\big] + \log p_\theta(x)
+              \end{align*}
+              $
+          </center>
+          </p><br>
+
+          <p>
+              The marginal distribution $p_\theta(x)$ isn't included in the expectation, as it doesn't depend on $z$.
+              Similar to equation (1), we can group $q_\phi(z|x)$ and $p_\theta(z)$ into their own KL divergence:
+
+          <center>
+              $
+              \begin{align*}
+              &= \mathbb{E}_{z \sim q_\phi(z|x)} \big[- \log p_\theta(x|z)\big] + \mathbb{E}_{z \sim q_\phi(z|x)} \big[\log q_\phi(z|x) - \log p_\theta(z) \big] + \log p_\theta(x)\\
+              &= -\mathbb{E}_{z \sim q_\phi(z|x)} \big[\log p_\theta(x|z)\big] + D_{KL}\big( q_\phi(z|x) || p_\theta(z) \big) + \log p_\theta(x)
+              \end{align*}
+              $
+          </center>
+          </p><br>
+
+          <p>
+              Then, if we negate and rearrange, we have the resulting equation:
+          <center>
+              $
+              \begin{align*}\tag{2}
+              \log p_\theta(x) - D_{KL}\big( q_\phi(z|x) || p_\theta(z|x) \big) = \mathbb{E}_{z \sim q_\phi(z|x)} \big[\log p_\theta(x|z)\big] - D_{KL}\big( q_\phi(z|x) || p_\theta(z) \big)
+              \end{align*}
+              $
+          </center>
+          </p><br>
+
+          <p>
+            What does this equation actually tell us? Let's consider the left hand side first.
+              <ol>
+                <li>
+                  The first term is a quantity that we want to maximize - the (log) probability of observing the data
+                  that we have. Unfortunately, as mentioned earlier, this is intractable.
+                </li>
+
+                <li>
+                  The second term is a measure of how far our approximation of the intractable posterior diverges from
+                  the true posterior. We want to minimize this. However, this term is also intractable, as we don't know
+                  what the posterior is and thus can't compute the KL divergence.
+                </li>
+              </ol>
+          </p><br>
+
+          <p>
+            The brilliance of the VAE framework is that we can accomplish both intractable goals by maximizing the right
+            hand side, which is tractable using common optimization algorithms (e.g. SGD, Adam).
+              <ol>
+                <li>
+                  The third term is the expected value of observing our data if we have two powerful function approximators
+                  (such as neural networks) and we jointly train the encoder to produce likely $z$ values from $x$ values
+                  (i.e. $q_\phi(z|x)$) and train the decoder to reconstruct $x$ values from $z$ values
+                  (i.e. $p_\theta(z|x))$.
+                </li>
+
+                <li>
+                  The fourth term acts as a regularization term, anchoring our posterior approximation $q_\phi(z|x)$ to
+                  $z$ values that are likely under the prior $p_\theta(z)$.
+                </li>
+              </ol>
+          </p><br>
+
+
+          <p>
+            So how do we actually
+          </p>
 
         <h3>VAEs for Early Visual Concept Learning</h3>
         <p>
-        	Now that we have a (shaky) grasp of VAEs, we're going to design one with the goal of reducing redundancy and learning statistically independent features. Like in the general VAE setting, we want to maximize the probability of the observed data $x$ given the latent variables most likely to have generated the observed data. To do this, we'll train a neural network with parameters $\phi$, $q_\phi(q|z)$, to generate likely $z$ values from the observed $x$ values. Then, we'll attempt to find the parameters 
+        	Now that we have a (shaky) grasp of VAEs, we're going to design one with the goal of learning statistically
+            independent latent variables. Like in the general VAE setting, we want to maximize the probability of the
+            observed data $x$ given the latent variables most likely to have generated the observed data. To do this,
+            we'll use one neural network as $q_\phi(z|x)$ that will learn how to generate likely $z$ values from the
+            observed $x$ values, and another neural network $p_\theta(x|z)$ that will learn how to reconstruct $x$ using
+            the output of the first neural network.
 
         	<center>
             $
-            \max_\limits{\phi, \theta} \mathbb{E}_{q_\phi(z | x)} \big[\log p_\theta(x|z)\big]
+            \argmax_\limits{\phi, \theta} \mathbb{E}_{z \sim q_\phi(z | x)} \big[\log p_\theta(x|z)\big]
             $
           </center>
         </p><br>
 
         <p>
+            In order to use gradient descent
+        </p>
+
+        <p>
+
         	How will we pressure the VAE to learn non-redundant, statistically independent features? We'll define by requiring that the latent variables remain relatively close to the 
         </p>
         
         <h2>Experiments and Results</h2>
+          <h3>Disentangled Factors in 2D</h3>
+          <p>
+              The first test the authors throw at their model is to see whether it is capable of learning simple
+              disentangled generative factors. To do this, they take generate an artificial dataset of 2D images by
+              taking the cross product of 3 shapes (heart, oval and square), 32 X coordinate positions, 32 Y coordinate
+              positions, 6 scaling scalars and 40 rotations values (over the $2\pi$ range). A fully-connected VAE with 10 latent units was trained using data that
+              was densely sampled; in this case, densely sampled means that for each input image, it was followed by two
+              input images with only slightly modified latent variable values (e.g. shifted slightly, rotated slight).
+          </p><br>
+
+          <p>
+              Of the the ten latent variables $z_1, ..., z_{10}$, five had near-zero KL divergences from the unit Gaussian prior $p(z) =
+              \mathcal{N} (0, 1)$, implying that the prior distribution anchored those variables well. The remaining five
+              variables each learned to respond to one of the generative factors. By averaging over shapes, rotations
+              and scaling, the authors could see that $z_5$ responded to Y coordinate, firing <font color="red">high values</font>
+              when Y was high and firing <font color="blue">low values</font> when Y was low. Similarly, $z_7$ learned
+              to respond to X coordinate. By averaging over position and rotations, the authors could see that $z_4$
+              learned the scaling parameter, and lastly, by averaging over positions and scaling, the authors could see
+              that $z_9$ and $z_{10}$ respond to rotation.
+          </p><br>
+
+          <img class="photo" src="evcl_disentangled_2d.png" width = "device-width" maximum-scale=2>
+
+          <p>
+              The authors point out that the two latent variables appear to encode $cos$ and $sin$ rotational information,
+              explaining why one latent variable wasn't sufficient. In contrast, a VAE that lacked pressure to learn a disentangled representation (i.e. $\beta = 0$) failed
+              to learn the data's generative factors:
+          </p><br>
+
+          <img class="photo" src="evcl_entangled_2d.png" width = "device-width" maximum-scale=2>
+
+          <h3>Quantifying Disentanglement</h3>
+          <p>
+              The authors propose a metric to capture how well learned latent representations disentangle generative
+              factors, which basically consists of taking an image, changing a single generative factor and then seeing
+              how well the learnt representations can determine which generative factor was changed between the original
+              and the modified image. I don't really want to get into this because I feel like it requires already knowing
+              the data's generative factors, which undermines the motivation of the article, but I understand wanting
+              something more concrete than "our plots visually look correct." Using their metric, the authors demonstrate
+              that their trained VAE with $\beta=4$ (below in blue) beats an untrained VAE with $\beta=4$ a VAE with
+              $\beta=1$ (i.e. the Bayes solution), a VAE with $\beta = 0$ (the maximum likelihood solution), the raw pixels,
+              the top ten principal components from <a href="https://en.wikipedia.org/wiki/Principal_component_analysis">PCA</a>
+              and the top ten independent components from <a href="https://en.wikipedia.org/wiki/Independent_component_analysis">ICA</a>
+          </p><br>
+
+          <img class="photo" src="evcl_quantified_disentanglement.png" width = "device-width" maximum-scale=2>
+
+          <h3>Factors Affecting Learning</h3>
 
         <h2>Discussion</h2>
 
@@ -258,12 +570,13 @@
 
         <h2>Notes</h2>
         <p>
-          I appreciate any and all feedback. If I've made an error or if you have a suggestion, you can <a href="mailto:ryschaeffer@ucdavis.edu">email me</a> or comment on the <a href="">Reddit</a> or <a href="">HackerNews</a> threads.
-        </p>
+          I appreciate any and all feedback. If I've made an error or if you have a suggestion, you can
+            <a href="mailto:ryschaeffer@ucdavis.edu">email me</a> or comment on the <a href="">Reddit</a> or
+            <a href="">HackerNews</a> threads. For those who keep asking, I have not yet integrated RSS nor created a
+            mailing list, but if you are interested in being added to either once I get to them, feel free to email me.
+        </p><br>
 
 		<sup id="fn1">1. Interestingly, I learned that the two-streams hypothesis was inspired by work on <a href="https://en.wikipedia.org/wiki/Blindsight">blindsight</a>, the title of a criminally underappreciated <a href="https://en.wikipedia.org/wiki/Blindsight_(Watts_novel)">book</a> (available for free on the author's <a href="http://www.rifters.com/real/Blindsight.htm">website</a>). <a href="#ref1" title="Jump back to footnote 1 in the text.">↩</a></sup><br>
-
-    <sup id="fn2">2. This paper makes heavy use of variational autoencoders (VAEs). If you aren't familiar with the term or concept, I recommend reading Carl Doersch's <a href="https://arxiv.org/abs/1606.05908">tutorial</a>. Originally, I had intended to provide a quick tutorial on what VAEs are, but as I wrote more and more, I kept having to dive further and further into adjacent topics; ultimately, I had to shelve that pursuit to finish this post. <a href="#ref2" title="Jump back to footnote 2 in the text.">↩</a></sup>
 
       </section>
     </div>
