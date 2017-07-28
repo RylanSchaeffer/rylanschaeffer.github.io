@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eae2efb7-a251-444a-b8e9-e86cdf8b6ba2" name="Default" comment="5 per row">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/content/books/crucial_conversations_patterson_kenny.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/content/books.html" afterPath="$PROJECT_DIR$/content/books.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/content/research/early_visual_concept_learning/main.html" afterPath="$PROJECT_DIR$/content/research/early_visual_concept_learning/main.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -27,8 +23,8 @@
       <file leaf-file-name="main.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/content/research/early_visual_concept_learning/main.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="990">
-              <caret line="485" column="0" lean-forward="true" selection-start-line="485" selection-start-column="0" selection-end-line="485" selection-end-column="0" />
+            <state relative-caret-position="1050">
+              <caret line="591" column="86" lean-forward="true" selection-start-line="591" selection-start-column="86" selection-end-line="591" selection-end-column="86" />
               <folding />
             </state>
           </provider>
@@ -208,12 +204,12 @@
       <updated>1481775357938</updated>
       <workItem from="1500086723079" duration="6437000" />
       <workItem from="1500140752823" duration="18694000" />
-      <workItem from="1500226611076" duration="5360000" />
+      <workItem from="1500226611076" duration="8248000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30491000" />
+    <option name="totallyTimeSpent" value="33379000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="81" y="24" width="2799" height="1596" extended-state="6" />
@@ -322,8 +318,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/content/research/early_visual_concept_learning/main.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="990">
-          <caret line="485" column="0" lean-forward="true" selection-start-line="485" selection-start-column="0" selection-end-line="485" selection-end-column="0" />
+        <state relative-caret-position="1050">
+          <caret line="591" column="86" lean-forward="true" selection-start-line="591" selection-start-column="86" selection-end-line="591" selection-end-column="86" />
           <folding />
         </state>
       </provider>

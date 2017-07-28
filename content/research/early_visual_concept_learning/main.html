@@ -220,8 +220,8 @@
         <p>
           At this point, I'll offer you a choice. The prior paragraph should give you sufficient intuition to understand
           the rest of the paper, in which case, you can skip ahead to Experiments and Results. But if you want to better
-          understand VAEs without investing the time to read Carl Doersch's
-          <a href="https://arxiv.org/abs/1606.05908">excellent tutorial</a>, don't skip ahead.
+          understand VAEs, feel free to read my paraphrasing of Carl Doersch's
+          <a href="https://arxiv.org/abs/1606.05908">excellent tutorial</a>.
         </p><br>
 
         <h2>Mathematics</h2>
@@ -484,35 +484,55 @@
               </ol>
           </p><br>
 
+          <h3>Optimization and Reparameterization Trick</h3>
+          <p>
+            So how do we actually optimize the right hand side? The solution is to declare that both the prior $p_\theta(z)$
+            and the posterior approximation $q_\phi(z|x)$ are multivariate normal distributions. This gives us a
+            closed-form solution for computing the fourth term (the KL divergence). Specifically, we'll have the encoder
+            output two values, $\mu$ and $\Sigma$, that we'll use as parameters for the multivariate Gaussian's mean and
+            variance i.e. $\mathcal{N}(\mu(x), \Sigma(x))$. However, this introduces a problem: if we then sample $z$
+            from this distribution, we have no way of backpropagating through the sampling step.
+          </p><br>
 
           <p>
-            So how do we actually
-          </p>
+            We can solve this problem by using a "reparameterization trick." Instead of sampling from $\mathcal{N}(\mu(x), \Sigma(x))$,
+            we'll sample from $\mathcal{N}(0, I)$, where $I$ is the identity matrix, and then scale the value in a deterministic
+            manner using the mean $\mu(x)$ and the variance $\Sigma(x)$.
+          </p><br>
 
         <h3>VAEs for Early Visual Concept Learning</h3>
         <p>
-        	Now that we have a (shaky) grasp of VAEs, we're going to design one with the goal of learning statistically
-            independent latent variables. Like in the general VAE setting, we want to maximize the probability of the
-            observed data $x$ given the latent variables most likely to have generated the observed data. To do this,
-            we'll use one neural network as $q_\phi(z|x)$ that will learn how to generate likely $z$ values from the
-            observed $x$ values, and another neural network $p_\theta(x|z)$ that will learn how to reconstruct $x$ using
-            the output of the first neural network.
+          Now that we have a (shaky) grasp of VAEs, we're going to design one with the goal of learning statistically
+          independent latent variables. Like in the general VAE setting, we'll attempt to minimize reconstruction error
+          while pressuring the posterior approximation $q_\phi(z | x)$ to produce values similar to values produced by
+          the prior $p_\theta(z)$, where $\epsilon$ is a small scalar value.
 
         	<center>
             $
-            \argmax_\limits{\phi, \theta} \mathbb{E}_{z \sim q_\phi(z | x)} \big[\log p_\theta(x|z)\big]
+            \argmax_\limits{\phi, \theta} \mathbb{E}_{z \sim q_\phi(z | x)} \big[\log p_\theta(x|z)\big] \text{    subject to   }
+            D_{KL}\big( q_\phi(z|x) || p_\theta(z) \big) < \epsilon
             $
           </center>
         </p><br>
 
         <p>
-            In order to use gradient descent
+          This is equivalent to the following optimization problem, where $\beta \geq 0$ is a scalar value that controls
+          how tightly we want the posterior approximation to adhere to the prior $p_\theta(z)$:
+
+            <center>
+              $
+              \argmax_\limits{\phi, \theta} \mathbb{E}_{z \sim q_\phi(z | x)} \big[\log p_\theta(x|z)\big] - \beta
+              D_{KL}\big( q_\phi(z|x) || p_\theta(z) \big)
+              $
+            </center>
         </p>
 
         <p>
-
-        	How will we pressure the VAE to learn non-redundant, statistically independent features? We'll define by requiring that the latent variables remain relatively close to the 
-        </p>
+          How will we pressure the VAE to learn non-redundant, statistically independent features? We'll define the prior
+          distribution as an isotropic unit Gaussian i.e. $p_\theta(z) = \mathcal{N}(0, I)$. By having a covariance matrix
+          with all zero entries on the non-diagonal elements, we are creating pressure for the VAE to minimize covariance
+          between the latent variables.
+        </p><br>
         
         <h2>Experiments and Results</h2>
           <h3>Disentangled Factors in 2D</h3>
@@ -563,6 +583,16 @@
           <img class="photo" src="evcl_quantified_disentanglement.png" width = "device-width" maximum-scale=2>
 
           <h3>Factors Affecting Learning</h3>
+          <p>
+            Returning now to the first paper, which suggested that dense sampling is necessary for learning a good
+            representation, Higgins et al test this by examining how the learnt representation changes as data is sampled
+            less densely. As sampling density decreased, the degree of disentanglement in the latent variables also declines.
+            In the picture below, the horizontal axis measures how much two consecutive training data points differ, and
+            the vertical axis captures how the disentanglement declines (measured by how accurately the latent variables
+            can predict which variable was changed given two nearly identical inputs).
+          </p>
+
+          <img class="photo" src="evcl_sampling_density.png" width = "device-width" maximum-scale=2>
 
         <h2>Discussion</h2>
 
