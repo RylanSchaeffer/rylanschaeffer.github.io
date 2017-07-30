@@ -26,7 +26,7 @@
     </script>
 
     <script type="text/javascript"
-      src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
     </script>
 
     <script type="text/x-mathjax-config">
@@ -44,17 +44,22 @@
       <header class="inner">
         <h1 id="project_title">Explanation of:<br>Early Visual Concept Learning with Unsupervised Deep Learning</h1>
         <h3 id="project_tagline"><a href="https://arxiv.org/abs/1606.05579">Higgins et al. 2016.</a></h3>
-          <section id="quick_links">
-            <a class="back" href="../../research.html"></a>
-          </section>
+        <section id="quick_links">
+          <a class="back" href="../../research.html"></a>
+        </section>
       </header>
     </div>
 
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
-      <p id="main_content" class="inner">
+      <section id="main_content" class="inner">
         <p>
-			I've found that the overwhelming majority of online information on artificial intelligence research falls into one of two categories: the first is aimed at explaining advances to lay audiences, and the second is aimed at explaining advances to other researchers. I haven't found a good resource for people with a technical background who are unfamiliar with the more advanced concepts and are looking for someone to fill them in. This is my attempt to bridge that gap, by providing approachable yet (relatively) detailed explanations. In this post, I explain the titular paper - <a href="https://arxiv.org/abs/1606.05579">Early Visual Concept Learning with Unsupervised Deep Learning</a>.
+          I've found that the overwhelming majority of online information on artificial intelligence research falls
+          into one of two categories: the first is aimed at explaining advances to lay audiences, and the second is aimed at
+          explaining advances to other researchers. I haven't found a good resource for people with a technical background
+          who are unfamiliar with the more advanced concepts and are looking for someone to fill them in. This is my attempt
+          to bridge that gap, by providing approachable yet (relatively) detailed explanations. In this post, I explain the
+          titular paper - <a href="https://arxiv.org/abs/1606.05579">Early Visual Concept Learning with Unsupervised Deep Learning</a>.
         </p><br>
 
         <h2>Motivation</h2>
@@ -191,7 +196,7 @@
 
         <p>
           In order to recognize these new circles, the baby must be capable of recombining factors in novel ways to
-            recognize data from outside the training hull. This necessitates separating the x-coordinate from the
+          recognize data from outside the training hull. This necessitates separating the x-coordinate from the
           y-coordinate.
         </p><br>
 
@@ -251,13 +256,13 @@
           function, then the optimal encoder function $\mathcal{E}^*$ and the optimal decoder function $\mathcal{D}^*$
           are understood as follows:
 
-          <center>
-            $
-            \begin{align*}
-            \mathcal{E}^*, \mathcal{D}^*& = \argmin_{\mathcal{E}, \mathcal{D}} d(x, (\mathcal{D} \circ \mathcal{E})x)
-            \end{align*}
-            $
-          </center>
+        <center>
+          $
+          \begin{align*}
+          \mathcal{E}^*, \mathcal{D}^*& = \argmin_{\mathcal{E}, \mathcal{D}} d(x, (\mathcal{D} \circ \mathcal{E})x)
+          \end{align*}
+          $
+        </center>
         </p><br>
 
         <h3>Directed Probabilistic Models</h3>
@@ -340,11 +345,11 @@
           distributions $Q$ parameterized by $\phi$, and then finding which member of the family has the smallest
           <a href="https://en.wikipedia.org/wiki/Statistical_distance">distance</a> between the member and the true posterior:
 
-          <center>
-            $
-            \argmin_{q_\phi \in Q_\phi} \text{distance}(q_\phi(z | x), p_\theta(z|x))
-            $
-          </center>
+        <center>
+          $
+          \argmin_{q_\phi \in Q_\phi} \text{distance}(q_\phi(z | x), p_\theta(z|x))
+          $
+        </center>
 
         </p><br>
 
@@ -354,27 +359,27 @@
           denoted $D_{KL}(\cdot || \cdot)$. The KL divergence measures how much the first distribution diverges from the second distribution, and is
           defined as follows:
 
-          <center>
+        <center>
           $
           \begin{align*}
           D_{KL}(q_\phi(z|x) || p_\theta(z|x)) &= \int_{-\infty}^\infty q_\phi(z|x) \log \frac{q_\phi(z|x)}{p_\theta(z|x)} dz \\
-           &= \int_{-\infty}^\infty q_\phi(z|x) \big[\log q_\phi(z|x) - \log p_\theta(z|x)\big] dz
+          &= \int_{-\infty}^\infty q_\phi(z|x) \big[\log q_\phi(z|x) - \log p_\theta(z|x)\big] dz
           \end{align*}
           $
-          </center>
+        </center>
         </p><br>
 
         <p>
-            (TODO: is $dz$ really the correct differential?) Recalling the definition of expected value, notice that we
-            can redefine the KL divergence as an expectation:
+          (TODO: is $dz$ really the correct differential?) Recalling the definition of expected value, notice that we
+          can redefine the KL divergence as an expectation:
 
-            <center>
-            $
-            \begin{align*}\tag{1}
-            D_{KL}(q_\phi(z|x) || p_\theta(z|x)) &= \mathbb{E}_{z \sim q_\phi(z|x)} \big[\log q_\phi(z|x) - \log p_\theta(z|x)\big]
-            \end{align*}
-            $
-            </center>
+        <center>
+          $
+          \begin{align*}\tag{1}
+          D_{KL}(q_\phi(z|x) || p_\theta(z|x)) &= \mathbb{E}_{z \sim q_\phi(z|x)} \big[\log q_\phi(z|x) - \log p_\theta(z|x)\big]
+          \end{align*}
+          $
+        </center>
         </p><br>
 
 
@@ -386,119 +391,119 @@
 
         <img class="photo" src="evcl_vae_setting_2.png" width = "device-width">
 
-          <p>
-              As a reminder, our goal is to infer the distributions of $z$ and $\theta$ from the observable variable $x$.
-              The best distributions for $z$ and $\theta$ would be distributions that made our $x$ values maximally likely:
+        <p>
+          As a reminder, our goal is to infer the distributions of $z$ and $\theta$ from the observable variable $x$.
+          The best distributions for $z$ and $\theta$ would be distributions that made our $x$ values maximally likely:
 
-              <center>
-                $
-                \begin{align*}
-                \max p_\theta(x)
-                \end{align*}
-                $
-            </center>
-          </p>
+        <center>
+          $
+          \begin{align*}
+          \max p_\theta(x)
+          \end{align*}
+          $
+        </center>
+        </p>
 
-          <p>
-               This is the same goal as maximizing the log transform of $p_\theta(x)$
+        <p>
+          This is the same goal as maximizing the log transform of $p_\theta(x)$
 
-              <center>
-                  $
-                  \begin{align*}
-                  \max \log p_\theta(x)
-                  \end{align*}
-                  $
-              </center>
-          </p>
+        <center>
+          $
+          \begin{align*}
+          \max \log p_\theta(x)
+          \end{align*}
+          $
+        </center>
+        </p>
 
 
-          <p>
-              How can we find the best value of $\theta$? The answer lies in an extensive manipulation of equation (1).
-              Going back to equation (1), if we replace $p_\theta(z|x)$ using Bayes' Theorem, we reach the following equation:
+        <p>
+          How can we find the best value of $\theta$? The answer lies in an extensive manipulation of equation (1).
+          Going back to equation (1), if we replace $p_\theta(z|x)$ using Bayes' Theorem, we reach the following equation:
 
-          <center>
-              $
-              \begin{align*}
-              &= \mathbb{E}_{z \sim q_\phi(z|x)} \big[\log q_\phi(z|x) - \log p_\theta(x|z) - \log p_\theta(z)\big] + \log p_\theta(x)
-              \end{align*}
-              $
-          </center>
-          </p><br>
+        <center>
+          $
+          \begin{align*}
+          &= \mathbb{E}_{z \sim q_\phi(z|x)} \big[\log q_\phi(z|x) - \log p_\theta(x|z) - \log p_\theta(z)\big] + \log p_\theta(x)
+          \end{align*}
+          $
+        </center>
+        </p><br>
 
-          <p>
-              The marginal distribution $p_\theta(x)$ isn't included in the expectation, as it doesn't depend on $z$.
-              Similar to equation (1), we can group $q_\phi(z|x)$ and $p_\theta(z)$ into their own KL divergence:
+        <p>
+          The marginal distribution $p_\theta(x)$ isn't included in the expectation, as it doesn't depend on $z$.
+          Similar to equation (1), we can group $q_\phi(z|x)$ and $p_\theta(z)$ into their own KL divergence:
 
-          <center>
-              $
-              \begin{align*}
-              &= \mathbb{E}_{z \sim q_\phi(z|x)} \big[- \log p_\theta(x|z)\big] + \mathbb{E}_{z \sim q_\phi(z|x)} \big[\log q_\phi(z|x) - \log p_\theta(z) \big] + \log p_\theta(x)\\
-              &= -\mathbb{E}_{z \sim q_\phi(z|x)} \big[\log p_\theta(x|z)\big] + D_{KL}\big( q_\phi(z|x) || p_\theta(z) \big) + \log p_\theta(x)
-              \end{align*}
-              $
-          </center>
-          </p><br>
+        <center>
+          $
+          \begin{align*}
+          &= \mathbb{E}_{z \sim q_\phi(z|x)} \big[- \log p_\theta(x|z)\big] + \mathbb{E}_{z \sim q_\phi(z|x)} \big[\log q_\phi(z|x) - \log p_\theta(z) \big] + \log p_\theta(x)\\
+          &= -\mathbb{E}_{z \sim q_\phi(z|x)} \big[\log p_\theta(x|z)\big] + D_{KL}\big( q_\phi(z|x) || p_\theta(z) \big) + \log p_\theta(x)
+          \end{align*}
+          $
+        </center>
+        </p><br>
 
-          <p>
-              Then, if we negate and rearrange, we have the resulting equation:
-          <center>
-              $
-              \begin{align*}\tag{2}
-              \log p_\theta(x) - D_{KL}\big( q_\phi(z|x) || p_\theta(z|x) \big) = \mathbb{E}_{z \sim q_\phi(z|x)} \big[\log p_\theta(x|z)\big] - D_{KL}\big( q_\phi(z|x) || p_\theta(z) \big)
-              \end{align*}
-              $
-          </center>
-          </p><br>
+        <p>
+          Then, if we negate and rearrange, we have the resulting equation:
+        <center>
+          $
+          \begin{align*}\tag{2}
+          \log p_\theta(x) - D_{KL}\big( q_\phi(z|x) || p_\theta(z|x) \big) = \mathbb{E}_{z \sim q_\phi(z|x)} \big[\log p_\theta(x|z)\big] - D_{KL}\big( q_\phi(z|x) || p_\theta(z) \big)
+          \end{align*}
+          $
+        </center>
+        </p><br>
 
-          <p>
-            What does this equation actually tell us? Let's consider the left hand side first.
-              <ol>
-                <li>
-                  The first term is a quantity that we want to maximize - the (log) probability of observing the data
-                  that we have. Unfortunately, as mentioned earlier, this is intractable.
-                </li>
+        <p>
+          What does this equation actually tell us? Let's consider the left hand side first.
+        <ol>
+          <li>
+            The first term is a quantity that we want to maximize - the (log) probability of observing the data
+            that we have. Unfortunately, as mentioned earlier, this is intractable.
+          </li>
 
-                <li>
-                  The second term is a measure of how far our approximation of the intractable posterior diverges from
-                  the true posterior. We want to minimize this. However, this term is also intractable, as we don't know
-                  what the posterior is and thus can't compute the KL divergence.
-                </li>
-              </ol>
-          </p><br>
+          <li>
+            The second term is a measure of how far our approximation of the intractable posterior diverges from
+            the true posterior. We want to minimize this. However, this term is also intractable, as we don't know
+            what the posterior is and thus can't compute the KL divergence.
+          </li>
+        </ol>
+        </p><br>
 
-          <p>
-            The brilliance of the VAE framework is that we can accomplish both intractable goals by maximizing the right
-            hand side, which is tractable using common optimization algorithms (e.g. SGD, Adam).
-              <ol>
-                <li>
-                  The third term is the expected value of observing our data if we have two powerful function approximators
-                  (such as neural networks) and we jointly train the encoder to produce likely $z$ values from $x$ values
-                  (i.e. $q_\phi(z|x)$) and train the decoder to reconstruct $x$ values from $z$ values
-                  (i.e. $p_\theta(z|x))$.
-                </li>
+        <p>
+          The brilliance of the VAE framework is that we can accomplish both intractable goals by maximizing the right
+          hand side, which is tractable using common optimization algorithms (e.g. SGD, Adam).
+        <ol>
+          <li>
+            The third term is the expected value of observing our data if we have two powerful function approximators
+            (such as neural networks) and we jointly train the encoder to produce likely $z$ values from $x$ values
+            (i.e. $q_\phi(z|x)$) and train the decoder to reconstruct $x$ values from $z$ values
+            (i.e. $p_\theta(z|x)$).
+          </li>
 
-                <li>
-                  The fourth term acts as a regularization term, anchoring our posterior approximation $q_\phi(z|x)$ to
-                  $z$ values that are likely under the prior $p_\theta(z)$.
-                </li>
-              </ol>
-          </p><br>
+          <li>
+            The fourth term acts as a regularization term, anchoring our posterior approximation $q_\phi(z|x)$ to
+            $z$ values that are likely under the prior $p_\theta(z)$.
+          </li>
+        </ol>
+        </p><br>
 
-          <h3>Optimization and Reparameterization Trick</h3>
-          <p>
-            So how do we actually optimize the right hand side? The solution is to declare that both the prior $p_\theta(z)$
-            and the posterior approximation $q_\phi(z|x)$ are multivariate normal distributions. This gives us a
-            closed-form solution for computing the fourth term (the KL divergence). Specifically, we'll have the encoder
-            output two values, $\mu$ and $\Sigma$, that we'll use as parameters for the multivariate Gaussian's mean and
-            variance i.e. $\mathcal{N}(\mu(x), \Sigma(x))$. However, this introduces a problem: if we then sample $z$
-            from this distribution, we have no way of backpropagating through the sampling step.
-          </p><br>
+        <h3>Optimization and Reparameterization Trick</h3>
+        <p>
+          So how do we actually optimize the right hand side? The solution is to declare that both the prior $p_\theta(z)$
+          and the posterior approximation $q_\phi(z|x)$ are multivariate normal distributions. This gives us a
+          closed-form solution for computing the fourth term (the KL divergence). Specifically, we'll have the encoder
+          output two values, $\mu$ and $\Sigma$, that we'll use as parameters for the multivariate Gaussian's mean and
+          variance i.e. $\mathcal{N}(\mu(x), \Sigma(x))$. However, this introduces a problem: if we then sample $z$
+          from this distribution, we have no way of backpropagating through the sampling step.
+        </p><br>
 
-          <p>
-            We can solve this problem by using a "reparameterization trick." Instead of sampling from $\mathcal{N}(\mu(x), \Sigma(x))$,
-            we'll sample from $\mathcal{N}(0, I)$, where $I$ is the identity matrix, and then scale the value in a deterministic
-            manner using the mean $\mu(x)$ and the variance $\Sigma(x)$.
-          </p><br>
+        <p>
+          We can solve this problem by using a "reparameterization trick." Instead of sampling from $\mathcal{N}(\mu(x), \Sigma(x))$,
+          we'll sample from $\mathcal{N}(0, I)$, where $I$ is the identity matrix, and then scale the value in a deterministic
+          manner using the mean $\mu(x)$ and the variance $\Sigma(x)$.
+        </p><br>
 
         <h3>VAEs for Early Visual Concept Learning</h3>
         <p>
@@ -507,24 +512,24 @@
           while pressuring the posterior approximation $q_\phi(z | x)$ to produce values similar to values produced by
           the prior $p_\theta(z)$, where $\epsilon$ is a small scalar value.
 
-        	<center>
-            $
-            \argmax_\limits{\phi, \theta} \mathbb{E}_{z \sim q_\phi(z | x)} \big[\log p_\theta(x|z)\big] \text{    subject to   }
-            D_{KL}\big( q_\phi(z|x) || p_\theta(z) \big) < \epsilon
-            $
-          </center>
+        <center>
+          $
+          \argmax_\limits{\phi, \theta} \mathbb{E}_{z \sim q_\phi(z | x)} \big[\log p_\theta(x|z)\big] \text{    subject to   }
+          D_{KL}\big( q_\phi(z|x) || p_\theta(z) \big) < \epsilon
+          $
+        </center>
         </p><br>
 
         <p>
           This is equivalent to the following optimization problem, where $\beta \geq 0$ is a scalar value that controls
           how tightly we want the posterior approximation to adhere to the prior $p_\theta(z)$:
 
-            <center>
-              $
-              \argmax_\limits{\phi, \theta} \mathbb{E}_{z \sim q_\phi(z | x)} \big[\log p_\theta(x|z)\big] - \beta
-              D_{KL}\big( q_\phi(z|x) || p_\theta(z) \big)
-              $
-            </center>
+        <center>
+          $
+          \argmax_\limits{\phi, \theta} \mathbb{E}_{z \sim q_\phi(z | x)} \big[\log p_\theta(x|z)\big] - \beta
+          D_{KL}\big( q_\phi(z|x) || p_\theta(z) \big) \tag{3}
+          $
+        </center>
         </p>
 
         <p>
@@ -535,78 +540,122 @@
         </p><br>
         
         <h2>Experiments and Results</h2>
-          <h3>Disentangled Factors in 2D</h3>
-          <p>
-              The first test the authors throw at their model is to see whether it is capable of learning simple
-              disentangled generative factors. To do this, they take generate an artificial dataset of 2D images by
-              taking the cross product of 3 shapes (heart, oval and square), 32 X coordinate positions, 32 Y coordinate
-              positions, 6 scaling scalars and 40 rotations values (over the $2\pi$ range). A fully-connected VAE with 10 latent units was trained using data that
-              was densely sampled; in this case, densely sampled means that for each input image, it was followed by two
-              input images with only slightly modified latent variable values (e.g. shifted slightly, rotated slight).
-          </p><br>
+        <h3>Disentangled Factors in 2D</h3>
+        <p>
+          The first test the authors throw at their model is to see whether it is capable of learning simple
+          disentangled generative factors. To do this, they take generate an artificial dataset of 2D images by
+          taking the cross product of 3 shapes (heart, oval and square), 32 X coordinate positions, 32 Y coordinate
+          positions, 6 scaling scalars and 40 rotations values (over the $2\pi$ range). A fully-connected VAE with 10 latent units was trained using data that
+          was densely sampled; in this case, densely sampled means that for each input image, it was followed by two
+          input images with only slightly modified latent variable values (e.g. shifted slightly, rotated slight).
+        </p><br>
 
-          <p>
-              Of the the ten latent variables $z_1, ..., z_{10}$, five had near-zero KL divergences from the unit Gaussian prior $p(z) =
-              \mathcal{N} (0, 1)$, implying that the prior distribution anchored those variables well. The remaining five
-              variables each learned to respond to one of the generative factors. By averaging over shapes, rotations
-              and scaling, the authors could see that $z_5$ responded to Y coordinate, firing <font color="red">high values</font>
-              when Y was high and firing <font color="blue">low values</font> when Y was low. Similarly, $z_7$ learned
-              to respond to X coordinate. By averaging over position and rotations, the authors could see that $z_4$
-              learned the scaling parameter, and lastly, by averaging over positions and scaling, the authors could see
-              that $z_9$ and $z_{10}$ respond to rotation.
-          </p><br>
+        <p>
+          Of the the ten latent variables $z_1, ..., z_{10}$, five had near-zero KL divergences from the unit Gaussian prior $p(z) =
+          \mathcal{N} (0, 1)$, implying that the prior distribution anchored those variables well. The remaining five
+          variables each learned to respond to one of the generative factors. By averaging over shapes, rotations
+          and scaling, the authors could see that $z_5$ responded to Y coordinate, firing <font color="red">high values</font>
+          when Y was high and firing <font color="blue">low values</font> when Y was low. Similarly, $z_7$ learned
+          to respond to X coordinate. By averaging over position and rotations, the authors could see that $z_4$
+          learned the scaling parameter, and lastly, by averaging over positions and scaling, the authors could see
+          that $z_9$ and $z_{10}$ respond to rotation.
+        </p><br>
 
-          <img class="photo" src="evcl_disentangled_2d.png" width = "device-width" maximum-scale=2>
+        <img class="photo" src="evcl_disentangled_2d.png" width = "device-width">
 
-          <p>
-              The authors point out that the two latent variables appear to encode $cos$ and $sin$ rotational information,
-              explaining why one latent variable wasn't sufficient. In contrast, a VAE that lacked pressure to learn a disentangled representation (i.e. $\beta = 0$) failed
-              to learn the data's generative factors:
-          </p><br>
+        <p>
+          The authors point out that the two latent variables appear to encode $cos$ and $sin$ rotational information,
+          explaining why one latent variable wasn't sufficient. In contrast, a VAE that lacked pressure to learn a disentangled representation (i.e. $\beta = 0$) failed
+          to learn the data's generative factors:
+        </p><br>
 
-          <img class="photo" src="evcl_entangled_2d.png" width = "device-width" maximum-scale=2>
+        <img class="photo" src="evcl_entangled_2d.png" width = "device-width">
 
-          <h3>Quantifying Disentanglement</h3>
-          <p>
-              The authors propose a metric to capture how well learned latent representations disentangle generative
-              factors, which basically consists of taking an image, changing a single generative factor and then seeing
-              how well the learnt representations can determine which generative factor was changed between the original
-              and the modified image. I don't really want to get into this because I feel like it requires already knowing
-              the data's generative factors, which undermines the motivation of the article, but I understand wanting
-              something more concrete than "our plots visually look correct." Using their metric, the authors demonstrate
-              that their trained VAE with $\beta=4$ (below in blue) beats an untrained VAE with $\beta=4$ a VAE with
-              $\beta=1$ (i.e. the Bayes solution), a VAE with $\beta = 0$ (the maximum likelihood solution), the raw pixels,
-              the top ten principal components from <a href="https://en.wikipedia.org/wiki/Principal_component_analysis">PCA</a>
-              and the top ten independent components from <a href="https://en.wikipedia.org/wiki/Independent_component_analysis">ICA</a>
-          </p><br>
+        <h3>Quantifying Disentanglement</h3>
+        <p>
+          The authors propose a metric to capture how well learned latent representations disentangle generative
+          factors, which basically consists of taking an image, changing a single generative factor and then seeing
+          how well the learnt representations can determine which generative factor was changed between the original
+          and the modified image. Using their metric, the authors demonstrate
+          that their trained VAE with $\beta=4$ (below in blue) beats an untrained VAE with $\beta=4$ a VAE with
+          $\beta=1$ (i.e. the Bayes solution), a VAE with $\beta = 0$ (the maximum likelihood solution), the raw pixels,
+          the top ten principal components from <a href="https://en.wikipedia.org/wiki/Principal_component_analysis">PCA</a>
+          and the top ten independent components from <a href="https://en.wikipedia.org/wiki/Independent_component_analysis">ICA</a>
+        </p><br>
 
-          <img class="photo" src="evcl_quantified_disentanglement.png" width = "device-width" maximum-scale=2>
+        <img class="photo" src="evcl_quantified_disentanglement.png" width="device-width">
 
-          <h3>Factors Affecting Learning</h3>
-          <p>
-            Returning now to the first paper, which suggested that dense sampling is necessary for learning a good
-            representation, Higgins et al test this by examining how the learnt representation changes as data is sampled
-            less densely. As sampling density decreased, the degree of disentanglement in the latent variables also declines.
-            In the picture below, the horizontal axis measures how much two consecutive training data points differ, and
-            the vertical axis captures how the disentanglement declines (measured by how accurately the latent variables
-            can predict which variable was changed given two nearly identical inputs).
-          </p>
+        <h3>Testing Continuous Transform Learning</h3>
+        <p>
+          Returning now to the first paper, which suggested that dense sampling is necessary for learning a good
+          representation, Higgins et al test this by examining how the learnt representation changes as data is sampled
+          less densely. As sampling density decreased, the degree of disentanglement in the latent variables also declines.
+          In the picture below, the horizontal axis measures how much two consecutive training data points differ, and
+          the vertical axis captures how the disentanglement declines (measured by how accurately the latent variables
+          can predict which variable was changed given two nearly identical inputs that differ in exactly one latent
+          variable's value).
+        </p><br>
 
-          <img class="photo" src="evcl_sampling_density.png" width = "device-width" maximum-scale=2>
+        <img class="photo" src="evcl_sampling_density.png" width="device-width">
 
-        <h2>Discussion</h2>
+        <h3>Balancing Reconstruction and Non-Deviation from the Latent Prior</h3>
+        <p>
+          Earlier, in equation 3, a scalar parameter $\beta$ was introduced to help determine the balance between
+          minimizing reconstruction error and minimizing how far the latent variables deviate from their prior. The
+          authors point out that it makes sense to normalize $\beta$ with respect to how much compression the network is
+          trying to achieve. To understand why, consider if $\beta$ remains agnostic of the comparative input sizes and
+          the latent sizes; if the bottleneck is comparatively too small or too big, then the model might
+          fail to learn a good disentangled representation. The authors remedy this by
+          replacing $\beta$ with a normalized version, $\beta_{norm} = \beta \frac{\text{latent size}}
+          {\text{input size}}$. By plotting the latent size against $\beta_{norm}$ for fixed models, the authors discover
+          that there's a sweet spot for maintaining a meaningful disentangled representation.
+        </p><br>
+
+        <img class="photo" src="evcl_normalized_beta.png" width="device-width">
+
+        <h3>Learning Independent Factors</h3>
+        <p>
+          To further test whether the VAE can learn statistically independent factors, Higgins et al. showed their model
+          single-bodied objects with four arms, with the added restriction that the arms' lengths are determined by
+          specific generative factors (2, specifically). The authors tested to see whether the VAE would learn four
+          generative factors (one for each arm) or two generative factors (the underlying parameters determining the arm
+          lengths). The VAE learned two.
+        </p><br>
+
+        <h3>Generalization to New Combinations of Latent Variables</h3>
+        <p>
+          The authors also looked at how the VAE performed on data generated with novel combinations of previously-seen
+          latent variables. As you expect, the VAE was able to generalize relatively well.
+        </p><br>
 
         <h2>Summary</h2>
+        <p>
+          <ul>
+            <li>Unsupervised understanding of rudimentary visual concepts is an open question in AI research.</li>
+            <li>Neuroscience research suggests that dense sampling of input stimuli and learning independent generative
+            factors aids in unsupervised (visual) learning.</li>
+            <li>Variational Autoencoders are a powerful neural network-based architecture for Bayesian inference in
+              directed probabilistic graphs.</li>
+            <li>By introducing a parameter $\beta$ to balance between minimizing reconstruction error and minimizing
+              divergencefrom the isotropic Gaussian prior, this $\beta$-VAE can learn a disentangled representation of inputs by extracting the
+              independent generative factors.</li>
+          </ul>
+        </p>
 
         <h2>Notes</h2>
         <p>
           I appreciate any and all feedback. If I've made an error or if you have a suggestion, you can
-            <a href="mailto:ryschaeffer@ucdavis.edu">email me</a> or comment on the <a href="">Reddit</a> or
-            <a href="">HackerNews</a> threads. For those who keep asking, I have not yet integrated RSS nor created a
-            mailing list, but if you are interested in being added to either once I get to them, feel free to email me.
-        </p><br>
+          <a href="mailto:ryschaeffer@ucdavis.edu">email me</a> or comment on the <a href="">Reddit</a> or
+          <a href="">HackerNews</a> threads. I also created a
+          <a href="https://groups.google.com/forum/#!forum/rylan-schaeffers-computational-neuroscience-blog">Google group</a>
+          in lieu of a mailing list, for those of you that want to make sure you don't miss upcoming posts.
+        </p>
 
-		<sup id="fn1">1. Interestingly, I learned that the two-streams hypothesis was inspired by work on <a href="https://en.wikipedia.org/wiki/Blindsight">blindsight</a>, the title of a criminally underappreciated <a href="https://en.wikipedia.org/wiki/Blindsight_(Watts_novel)">book</a> (available for free on the author's <a href="http://www.rifters.com/real/Blindsight.htm">website</a>). <a href="#ref1" title="Jump back to footnote 1 in the text.">↩</a></sup><br>
+        <sup id="fn1">1. Interestingly, I learned that the two-streams hypothesis was inspired by work on
+          <a href="https://en.wikipedia.org/wiki/Blindsight">blindsight</a>, the title of a criminally underappreciated
+          <a href="https://en.wikipedia.org/wiki/Blindsight_(Watts_novel)">book</a> (available for free on the author's
+          <a href="http://www.rifters.com/real/Blindsight.htm">website</a>).
+          <a href="#ref1" title="Jump back to footnote 1 in the text.">↩</a></sup><br>
 
       </section>
     </div>
