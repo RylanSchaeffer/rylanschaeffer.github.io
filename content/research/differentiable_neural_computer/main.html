@@ -9,7 +9,7 @@
 
     <link rel="stylesheet" type="text/css" media="all" href="../../../stylesheets/stylesheet.css">
 
-    <title>Neural Turing Machine</title>
+    <title>Differentiable Neural Computer</title>
 
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -41,7 +41,7 @@
     <!-- HEADER -->
     <div id="header_wrap" class="outer">
       <header class="inner">
-        <h1 id="project_title">Explanation of<br>Neural Turing Machines</h1>
+        <h1 id="project_title">Explanation of<br>Differentiable Neural Computers</h1>
         <h3 id="project_tagline"><a href="https://arxiv.org/abs/1410.5401">Graves, Wayne and Danihelka 2014.</a></h3>
           <section id="quick_links">
             <a class="back" href="../../research.html"></a>
@@ -94,14 +94,14 @@
         <p>
           Let's refer to the memory matrix, with $R$ rows and $C$ elements per row, at time $t$ as $\mathcal{M}_t$. In order to read (and write), we'll need an attention mechanism that dictates where the head should read from. The attention mechanism will be a length-$R$ normalized weight vector $w_t$. We'll refer to individual elements in the weight vector as $w_t(i)$. By "normalized," the authors mean that the following two constraints hold:
 
-          <div style="text-align: center;">
+          <center>
           $
           \begin{align} \tag{1}
           &0 \leq w_t(i) \leq 1 \\
           &\sum\limits_{i=1}^R w_t(i) = 1
           \end{align}
           $
-          </div>
+          </center>
         </p><br>
 
         <p>

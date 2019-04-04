@@ -9,7 +9,7 @@
 
     <link rel="stylesheet" type="text/css" media="all" href="../../../stylesheets/stylesheet.css">
 
-    <title></title>
+    <title>Pentti Kanerva's Sparse Distributed Memory</title>
 
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -41,8 +41,8 @@
     <!-- HEADER -->
     <div id="header_wrap" class="outer">
       <header class="inner">
-        <h1 id="project_title">Explanation of:<br>Title of Paper</h1>
-        <h3 id="project_tagline"><a href="https://arxiv.org/abs/1605.06065">Authors Year.</a></h3>
+        <h1 id="project_title">Explanation of:<br>Pentti Kanerva's Sparse Distributed Memory</h1>
+        <h3 id="project_tagline"><a href="https://dl.acm.org/citation.cfm?id=534853">Pentti Kanerva 1988.</a></h3>
           <section id="quick_links">
             <a class="back" href="../../research.html"></a>
           </section>
@@ -54,17 +54,48 @@
       <section id="main_content" class="inner">
         <p>
           I've found that the overwhelming majority of online information in artificial intelligence
-            research falls into one of two categories: the first is aimed at explaining advances to
+          research falls into one of two categories: the first is aimed at explaining advances to
             lay audiences, and the second is aimed at explaining advances to other researchers. I
             haven't found a good resource for people with a technical background who are unfamiliar
             with the more advanced concepts and are looking for someone to fill them in. This is my
             attempt to bridge that gap, by providing approachable yet (relatively) detailed explanations.
-            In this post, I explain the titular paper - <a href="https://arxiv.org/abs/1605.06065">One-shot Learning with Memory-Augmented Neural Networks</a>.
+            In this post, I explain the titular book - <a href="https://dl.acm.org/citation.cfm?id=534853">Sparse Distributed Memory</a>.
         </p><br>
 
         <h2>Motivation</h2>
+        <p>
+          I discovered the concept of Pentti Kanerva's Sparse Distributed Memory (SDM) through two relatively
+          recent papers (<a href="https://arxiv.org/abs/1804.01756">1</a>, <a href="https://papers.nips.cc/paper/8149-learning-attractor-dynamics-for-generative-memory">2</a>,
+          but I personally felt that neither paper provided a crisp explanation of the motivation, construction,
+          properties and tradeoffs of this SDM model, and the <a href="https://en.wikipedia.org/wiki/Sparse_distributed_memory">
+          Wikipedia page</a> was packed with information, but failed to tell a story. Why had the authors
+          chosen this so-called SDM as the basis for their work, eschewing their earlier efforts in the direction
+          of the <a href="/home/rylan/Documents/rylanschaeffer.github.io/content/research/neural_turing_machine/main.html">Neural Turing Machine</a>
+          and its successor, the Differentiable Neural Computer?
+        </p>
 
         <h2>Background</h2>
+        <p>
+          The book begins with a lovely, lucid forward by <a href="https://en.wikipedia.org/wiki/Douglas_Hofstadter">Douglas Hofstadter</a>,
+          who acknowledges that even Kanerva devotes insufficient time to explaining the motivations
+          behind his SDM. In Kanerva's own words, he sought to "construct a physiologically plausible theory" for
+          animal memory, but what were the actual observations he wanted his theory to be capable of explaining?
+          Hofstadter composes a list of memory-related phenomena that provides a good starting point:
+        <ul>
+        <li>Rapid retrieval of specific instances</li>
+        <li>Representation invariance. "Thus, when we see a staircase (say), no matter how big or small it
+        is, no matter how twisted or straight, no matter how ornamented or plain, modern or old, dirty or
+        clean, the label "staircase" spontaneously jumps to center stage without any conscious effort at all"</li>
+        <li>Easy manipulation of concepts</li>
+        <li>Similarities between </li>
+        <li>Rapid connection of diverse elements</li>
+        <li>Easy construction of analogies</li>
+        <li>Phrase blends</li>
+        <li>Tip of the tongue</li>
+        <li>Metamemory. Know whether we know, know whether we don't know.</li>
+        </ul>
+        </p>
+
 
         <h2>Intuition</h2>
 

@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width,maximum-scale=2">
     <meta name="description" content="Rylan Schaeffer">
 
-    <link rel="stylesheet" type="text/css" media="all" href="../../../stylesheets/stylesheet.css">
+    <link rel="stylesheet" type="text/css" media="all" href="../../stylesheets/stylesheet.css">
 
     <title></title>
 
@@ -41,10 +41,10 @@
     <!-- HEADER -->
     <div id="header_wrap" class="outer">
       <header class="inner">
-        <h1 id="project_title">Explanation of:<br>Title of Paper</h1>
-        <h3 id="project_tagline"><a href="https://arxiv.org/abs/1605.06065">Authors Year.</a></h3>
+        <h1 id="project_title">Learning:<br>Probability and Statistics</h1>
+        <!--<h3 id="project_tagline"><a href="https://arxiv.org/abs/1605.06065">Authors Year.</a></h3>-->
           <section id="quick_links">
-            <a class="back" href="../../research.html"></a>
+            <a class="back" href="../../learning.html"></a>
           </section>
       </header>
     </div>
@@ -52,35 +52,41 @@
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
+        <h2 slot='h-1'>Binomial Distribution</h2>
+        <h3>Normal Approximation to the Binomial Distribution</h3>
         <p>
-          I've found that the overwhelming majority of online information in artificial intelligence
-            research falls into one of two categories: the first is aimed at explaining advances to
-            lay audiences, and the second is aimed at explaining advances to other researchers. I
-            haven't found a good resource for people with a technical background who are unfamiliar
-            with the more advanced concepts and are looking for someone to fill them in. This is my
-            attempt to bridge that gap, by providing approachable yet (relatively) detailed explanations.
-            In this post, I explain the titular paper - <a href="https://arxiv.org/abs/1605.06065">One-shot Learning with Memory-Augmented Neural Networks</a>.
-        </p><br>
+          The Binomial distribution $Bin(n,p)$ can be approximated via the Normal distribution
+          with mean $np$ and variance $np(1-p)$. One might guess this is by noting that the Binomial distribution
+          is equivalent to the sum of independently and identically distributed Bernoulli random variables
+          and that the <a href="https://en.wikipedia.org/wiki/Central_limit_theorem">Central Limit Theorem</a>
+          tells us that the sum of i.i.d. random variables typically tends towards a Normal distribution,
+          regardless of the distribution. But can we quantify what approximation error we should expect
+          for parameters $n$ and $p$?
+        </p>
 
-        <h2>Motivation</h2>
+        <p>
+          Let random variable $x \sim Bin(n, p)$ and suppose that we approximate $x$ with
+          $x \approx N(\mu, \Sigma)$, where mean $\mu = np$ and variance $\Sigma = np(1-p)$.
+          For outcome $x=k$, we should expect the error $E(k)$:
+        </p>
 
-        <h2>Background</h2>
+        <div style="text-align: center;">
+          $\begin{align*}
+          E(k) &= P_{x \sim Bin}(x=k) - P_{x \sim N}(x=k)\\
+          &= {n \choose k} p^k (1-p)^{n-k} - |2 \pi \Sigma|^{-1/2} \exp [-\frac{1}{2}(x - \mu)^T \Sigma^{-1} (x - \mu)]
 
-        <h2>Intuition</h2>
+          \end{align*}$
+        </div>
 
-        <h2>Mathematics</h2>
-        
-        <h2>Experiments and Results</h2>
+        <p>
 
-        <h2>Discussion</h2>
+        </p>
 
-        <h2>Summary</h2>
 
         <h2>Notes</h2>
         <p>
           I appreciate any and all feedback. If I've made an error or if you have a suggestion, you
-            can <a href="mailto:rylanschaeffer@gmail.com">email me</a> or comment on the
-            <a href="">Reddit</a> or <a href="">HackerNews</a> threads.
+            can <a href="mailto:rylanschaeffer@gmail.com">email me</a>.
         </p>
       </section>
     </div>
