@@ -103,9 +103,9 @@ p {
   text-align:justify;
 }
 
-footer p {
-  color: #f2f2f2;
-}
+/*footer p {*/
+  /*color: #f2f2f2;*/
+/*}*/
 
 a {
   text-decoration: none;
@@ -126,10 +126,10 @@ a {
 
 a:hover, a:focus {text-decoration: underline;}
 
-footer a {
-  color: #F2F2F2;
-  text-decoration: underline;
-}
+/*footer a {*/
+  /*color: #F2F2F2;*/
+  /*text-decoration: underline;*/
+/*}*/
 
 em {
   font-style: italic;
@@ -287,7 +287,7 @@ Full-Width Styles
 
 .inner {
   position: relative;
-  max-width: 640px;
+  width: 80%;
   padding: 20px 10px;
   margin: 0 auto;
 }
@@ -320,10 +320,18 @@ Full-Width Styles
   padding: 50px 10px 30px 10px;
 }
 
-#project_title {
+#header_title {
   margin: 0;
   color: #fff;
   font-size: 42px;
+  font-weight: 700;
+  text-shadow: #111 0px 0px 10px;
+}
+
+#footer_title {
+  margin: 0;
+  color: #fff;
+  font-size: 28px;
   font-weight: 700;
   text-shadow: #111 0px 0px 10px;
 }
@@ -401,11 +409,20 @@ Full-Width Styles
   background-size:contain;
 }
 
+/*img.photo {*/
+  /*width: 99%;*/
+  /*height: auto;*/
+  /*overflow: hidden;*/
+  /*background-size:contain;*/
+/*}*/
+
 img.photo {
-  width: 99%;
+  width: 30%;
   height: auto;
-  overflow: hidden;
-  background-size:contain;
+  display:block;
+  margin-left:0px;
+  margin-right:50px;
+  margin-bottom:50px
 }
 
 .zip_download_link {
@@ -471,7 +488,7 @@ Small Device Styles
     max-width: 480px;
   }
 
-  #project_title {
+  #header_title {
   font-size: 32px;
   }
 

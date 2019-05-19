@@ -305,7 +305,7 @@ Full-Width Styles
   padding: 50px 10px 30px 10px;
 }
 
-#project_title {
+#header_title {
   margin: 0;
   color: #fff;
   font-size: 42px;
@@ -456,7 +456,7 @@ Small Device Styles
     max-width: 480px;
   }
 
-  #project_title {
+  #header_title {
   font-size: 32px;
   }
 
