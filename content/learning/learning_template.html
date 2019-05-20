@@ -41,52 +41,25 @@
     <!-- HEADER -->
     <div id="header_wrap" class="outer">
       <header class="inner">
-        <h1 id="header_title">Learning: Probability and Statistics</h1>
-          <section id="quick_links">
-            <a class="back" href="../../learning.html"></a>
-          </section>
+        <h1 id="header_title">Learning: Subject Area</h1>
+        <nav>
+          <div>
+            <a href="../learning.html">Learning</a>
+          </div>
+        </nav>
       </header>
     </div>
 
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
-        <h2 slot='h-1'>Binomial Distribution</h2>
+        <h2>Binomial Distribution</h2>
         <h3>Normal Approximation to the Binomial Distribution</h3>
-        <p>
-          The Binomial distribution $Bin(n,p)$ can be approximated via the Normal distribution
-          with mean $np$ and variance $np(1-p)$. One might guess this is by noting that the Binomial distribution
-          is equivalent to the sum of independently and identically distributed Bernoulli random variables
-          and that the <a href="https://en.wikipedia.org/wiki/Central_limit_theorem">Central Limit Theorem</a>
-          tells us that the sum of i.i.d. random variables typically tends towards a Normal distribution,
-          regardless of the distribution. But can we quantify what approximation error we should expect
-          for parameters $n$ and $p$?
-        </p>
-
-        <p>
-          Let random variable $x \sim Bin(n, p)$ and suppose that we approximate $x$ with
-          $x \approx N(\mu, \Sigma)$, where mean $\mu = np$ and variance $\Sigma = np(1-p)$.
-          For outcome $x=k$, we should expect the error $E(k)$:
-        </p>
-
-        <div style="text-align: center;">
-          $\begin{align*}
-          E(k) &= P_{x \sim Bin}(x=k) - P_{x \sim N}(x=k)\\
-          &= {n \choose k} p^k (1-p)^{n-k} - |2 \pi \Sigma|^{-1/2} \exp [-\frac{1}{2}(x - \mu)^T \Sigma^{-1} (x - \mu)]
-
-          \end{align*}$
-        </div>
 
         <p>
 
         </p>
 
-
-        <h2>Notes</h2>
-        <p>
-          I appreciate any and all feedback. If I've made an error or if you have a suggestion, you
-            can <a href="mailto:rylanschaeffer@gmail.com">email me</a>.
-        </p>
       </section>
     </div>
 
@@ -95,8 +68,8 @@
       <footer class="inner">
         <h3 id="footer_title">Rylan Schaeffer</h3>
         <p>
-          Ping me at <a href="mailto:rylanschaeffer@gmail.com">rylanschaeffer@gmail.com</a>
-          if you want to get in touch!
+          I appreciate any and all feedback. If I've made an error or if you have a suggestion, please
+          email me at <a href="mailto:rylanschaeffer@gmail.com">rylanschaeffer@gmail.com</a>.
         </p>
       </footer>
     </div>
