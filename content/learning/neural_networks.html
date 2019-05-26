@@ -34,6 +34,7 @@
     </script>
 
     $\DeclareMathOperator*{\argmax}{argmax}$
+    $\DeclareMathOperator{\defeq}{\stackrel{def}{=}}$
   </head>
 
   <body>
@@ -41,7 +42,7 @@
     <!-- HEADER -->
     <div id="header_wrap" class="outer">
       <header class="inner">
-        <h1 id="header_title">Learning: Neural Networks</h1>
+        <h1 id="header_title">Rylan Schaeffer > Learning > Neural Networks</h1>
         <nav>
           <div>
             <a href="../learning.html">Learning</a>
@@ -53,10 +54,72 @@
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
-        <h2>(Deep) Linear Neural Networks</h2>
-        <h3>What is a (deep) linear neural network? Why does it matter?</h3>
+
+        <div id="toc_container">
+          <h1 class="toc_title">Contents</h1>
+          <ul class="table-of-content" id="markdown-toc">
+            <li><a href="#activation_functions">Activation Functions</a></li>
+              <ul>
+                <li><a href="#logistic_sigmoid">Logistic Sigmoid </a></li>
+                <li><a href="#hyperbolic_tangent">Hyperbolic Tangent</a></li>
+                <li><a href="#relationship_sigmoid_tanh">Relationship between
+                  Logistic Sigmoid and Hyperbolic Tangent</a></li>
+              </ul>
+            <li><a href="#deep_linear_nn">Deep Linear Neural Networks</a></li>
+          </ul>
+        </div>
+
+
+        <h2 id="activation_functions">Activation Functions</h2>
+          <h3 id="logistic_sigmoid">Logistic Sigmoid</h3>
+          <p>
+            The logistic sigmoid function $\sigma(x) = \frac{1}{1+e^{-x}} = \frac{e^x}{e^x + 1}$.
+          </p>
+
+          <h3 id="hyperbolic_tangent">Hyperbolic Tangent</h3>
+          <p>
+            The hyperbolic tangent function $\tanh(x) = \frac{e^x - e^{-x}}{e^x + e^{-x}}
+            = \frac{e^{2x} - 1}{e^{2x} + 1}$.
+          </p>
+          <h3 id="relationship_sigmoid_tanh">Relationship between Logistic Sigmoid
+            and Hyperbolic Tangent</h3>
+            <p>
+              The logistic sigmoid and the hyperbolic tangent functions can be
+              expressed as transformation of each other. Specifically,
+              $
+              \begin{align}
+              \tanh(x) &\defeq \frac{e^{2x} - 1}{e^{2x} + 1}
+              = \frac{2e^{2x}}{e^{2x} + 1} - \frac{e^{2x} + 1}{e^{2x} + 1}
+              = 2 \frac{e^{2x}}{e^{2x}} \frac{1}{1 + e^{-2x}} - 1
+              = 2 \sigma(2x) - 1
+              \end{align}
+              $
+            </p>
+
+          <p>
+            And therefore equivalently:
+            $
+            \begin{align}
+            \sigma(x) = \frac{\tanh(x/2) + 1}{2}
+            \end{align}
+            $
+          </p>
+
+          <p>
+            The consequence of this relationship is that the choice of activation
+            function between the two doesn't much matter since each is capable of
+            representing the one. That is, if a single scalar output from
+            a single layer of a network using $\sigmoid()$ is
+            $y(x, w) = w_0 + \sum w_i \sigma(x)$, then we can construct an equivalent
+            network using $\tanh$ by defining $y(x, w') = w_0' + \sum w_i' \tanh(x/2)$
+            where $w_0' = w_0 + \sum w_i / 2$ and $w_i' = w_i / 2$ for $i \neq 0$. Then
+            $y(x, w) = y(x, w')$.
+          </p>
+
+        <h2 id="deep_linear_nn">Deep Linear Neural Networks</h2>
+        <h3>What is a deep linear neural network? Why does it matter?</h3>
         <p>
-          A (deep) linear neural network is a neural network with the non-linear
+          A deep linear neural network is a neural network with the non-linear
           "activations" removed. That is, it is a composition of linear
           transformations (typically matrices). For instance,
           $\hat{y} = W_{32} W_{21} x$ is a two-layer linear network. Despite
