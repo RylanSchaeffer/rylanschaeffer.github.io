@@ -109,7 +109,7 @@
             The consequence of this relationship is that the choice of activation
             function between the two doesn't much matter since each is capable of
             representing the one. That is, if a single scalar output from
-            a single layer of a network using $\sigmoid()$ is
+            a single layer of a network using $\sigma()$ is
             $y(x, w) = w_0 + \sum w_i \sigma(x)$, then we can construct an equivalent
             network using $\tanh$ by defining $y(x, w') = w_0' + \sum w_i' \tanh(x/2)$
             where $w_0' = w_0 + \sum w_i / 2$ and $w_i' = w_i / 2$ for $i \neq 0$. Then
