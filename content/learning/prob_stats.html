@@ -33,6 +33,7 @@
       MathJax.Hub.Config({ TeX: { equationNumbers: {autoNumber: "AMS"} } });
     </script>
 
+    $usepackage{centernot}$
     $\DeclareMathOperator*{\argmax}{argmax}$
   </head>
 
@@ -51,36 +52,80 @@
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
-        <h2 slot='h-1'>Binomial Distribution</h2>
-        <h3>Normal Approximation to the Binomial Distribution</h3>
-        <p>
-          The Binomial distribution $Bin(n,p)$ can be approximated via the Normal distribution
-          with mean $np$ and variance $np(1-p)$. One might guess this is by noting that the Binomial distribution
-          is equivalent to the sum of independently and identically distributed Bernoulli random variables
-          and that the <a href="https://en.wikipedia.org/wiki/Central_limit_theorem">Central Limit Theorem</a>
-          tells us that the sum of i.i.d. random variables typically tends towards a Normal distribution,
-          regardless of the distribution. But can we quantify what approximation error we should expect
-          for parameters $n$ and $p$?
-        </p>
 
-        <p>
-          Let random variable $x \sim Bin(n, p)$ and suppose that we approximate $x$ with
-          $x \approx N(\mu, \Sigma)$, where mean $\mu = np$ and variance $\Sigma = np(1-p)$.
-          For outcome $x=k$, we should expect the error $E(k)$:
-        </p>
-
-        <div style="text-align: center;">
-          $\begin{align*}
-          E(k) &= P_{x \sim Bin}(x=k) - P_{x \sim N}(x=k)\\
-          &= {n \choose k} p^k (1-p)^{n-k} - |2 \pi \Sigma|^{-1/2} \exp [-\frac{1}{2}(x - \mu)^T \Sigma^{-1} (x - \mu)]
-
-          \end{align*}$
+        <div id="toc_container">
+          <h1 class="toc_title">Contents</h1>
+          <ul class="table-of-content" id="markdown-toc">
+            <li><a href="#exponential_family">Exponential Family Distributions</a></li>
+              <ul>
+                <li><a href="#binomial">Binomial Distribution</a></li>
+                <li><a href="#normal_approx_of_binomial">Normal Approximation to the Binomial Distribution</a></li>
+              </ul>
+            <li><a href="#pgm">Probabilistic Graphical Models</a></li>
+              <ul>
+                <li><a href="#d_separation">D-Separation</a></li>
+                <li><a href="#markov_blanket">Markov Blanket</a></li>
+              </ul>
+          </ul>
         </div>
 
-        <p>
+        <h2 id="exponential_family">Exponential Family Distributions</h2>
+          <h3 id="binomial">Binomial Distribution</h3>
+          <h3 id="normal_approx_of_binomial">Normal Approximation to the Binomial Distribution</h3>
+          <p>
+            The Binomial distribution $Bin(n,p)$ can be approximated via the Normal distribution
+            with mean $np$ and variance $np(1-p)$. One might guess this is by noting that the Binomial distribution
+            is equivalent to the sum of independently and identically distributed Bernoulli random variables
+            and that the <a href="https://en.wikipedia.org/wiki/Central_limit_theorem">Central Limit Theorem</a>
+            tells us that the sum of i.i.d. random variables typically tends towards a Normal distribution,
+            regardless of the distribution. But can we quantify what approximation error we should expect
+            for parameters $n$ and $p$?
+          </p>
 
-        </p>
+          <p>
+            Let random variable $x \sim Bin(n, p)$ and suppose that we approximate $x$ with
+            $x \approx N(\mu, \Sigma)$, where mean $\mu = np$ and variance $\Sigma = np(1-p)$.
+            For outcome $x=k$, we should expect the error $E(k)$:
+          </p>
 
+          <div style="text-align: center;">
+            $\begin{align*}
+            E(k) &= P_{x \sim Bin}(x=k) - P_{x \sim N}(x=k)\\
+            &= {n \choose k} p^k (1-p)^{n-k} - |2 \pi \Sigma|^{-1/2} \exp [-\frac{1}{2}(x - \mu)^T \Sigma^{-1} (x - \mu)]
+            \end{align*}$
+          </div>
+
+        <h2 id="pgm">Probabilistic Graphical Models</h2>
+          <h3 id="d_separation">Dependence-Separation</h3>
+          <p>
+            One advantage of a PGM is that it allows us to quickly determine
+            which random variables are conditionally independent of other random
+            variables (perhaps conditioned on some third set of random variables).
+            We can generally express this by considering any three
+            non-overlapping, possibly-empty sets of nodes A, B and C in a given
+            PGM, and asking whether A and B are conditionally independent given
+            C. If they are, we say that A and B are d-separated given C, where
+            the d stands for "dependence". I'm not sure why this phrasing was
+            chosen; if we already have independent and dependent, it seems
+            confusing to call two independent variables "dependence-separated."
+          </p>
+
+          <p>
+
+          </p>
+
+          <h3 id="markov_blanket">Markov Blanket</h3>
+          <p>
+            Sometimes called a Markov Boundary, a Markov Blanket is the set of
+            random variables
+          </p>
+
+          <div style="text-align: center;">
+            $\begin{align*}
+            P(x_i | x_{\{j \neq i \} } &= \frac{P(x_1, ..., x_D)}{\int P(x_1, ..., x_D) dx_i}\\
+            &= \frac{\prod_k p(x_k| Pa(x_k))}{\int p(x_k| Pa(x_k))}
+            \end{align*}$
+          </div>
 
         <h2>Notes</h2>
         <p>
