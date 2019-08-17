@@ -77,6 +77,9 @@ h1 {
 }
 
 h2 {
+  text-align: center;
+  margin-top: 10px;
+  padding-top: 25px;
   padding-bottom: 10px;
   font-size: 32px;
   background: url('../images/bg_hr.png') repeat-x bottom;
@@ -421,7 +424,7 @@ img.photo {
   display:block;
   margin-left:10px;
   margin-right:10px;
-  margin-bottom:50px;
+  margin-bottom:10px;
 }
 
 .zip_download_link {
