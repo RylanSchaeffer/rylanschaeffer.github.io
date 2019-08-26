@@ -1,0 +1,5 @@
+To update ruby vulnerabilities, run
+    sudo gem install <library e.g. ffi>
+
+To propagate changes to Gemfile.lock file,
+    sudo bundle update
