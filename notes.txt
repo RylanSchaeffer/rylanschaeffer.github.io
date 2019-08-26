@@ -3,3 +3,4 @@ To update ruby vulnerabilities, run
 
 To propagate changes to Gemfile.lock file,
     sudo bundle update
+    (need to run separately inside _sites/ directory)
