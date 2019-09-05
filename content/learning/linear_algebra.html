@@ -34,6 +34,7 @@
     </script>
 
     $\DeclareMathOperator*{\argmax}{argmax}$
+    $\DeclareMathOperator{\defeq}{\stackrel{def}{=}}$
   </head>
 
   <body>
@@ -41,7 +42,7 @@
     <!-- HEADER -->
     <div id="header_wrap" class="outer">
       <header class="inner">
-        <h1 id="header_title">Rylan Schaeffer > Learning > Information Theory</h1>
+        <h1 id="header_title">Rylan Schaeffer > Learning > Linear Algebra</h1>
         <nav>
           <div>
             <a href="../../index.html">Home</a> |
@@ -54,11 +55,42 @@
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
-        <h2>Binomial Distribution</h2>
-        <h3>Normal Approximation to the Binomial Distribution</h3>
 
+        <div id="toc_container">
+          <h1 class="toc_title">Contents</h1>
+          <ul class="table-of-content" id="markdown-toc">
+            <li>Hermitian Matrices
+              <ul>
+                <li><a href="#hermitian_matrices">Definition</a></li>
+              </ul>
+            </li>
+            <li>Matrix Definiteness
+              <ul>
+                <li><a href="#matrix_definiteness">Definition</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+
+        <h2>Hermitian Matrices</h2>
+        <h3 id="hermitian_matrices">Definition</h3>
         <p>
+          Wikipedia calls Hermitian matrices a generalization of real symmetric matrices that permits
+          imaginary numbers. Specifically, a Hermitian matrix is a matrix $A$ that is equal to its own
+          element-wise conjugate transposed, which typically denoted with a bar i.e. $A = \bar{A}^T$.
+          Since a real number is its
+          own conjugate, it's easy to see that any real symmetric matrix is also Hermitian, but the
+          original description is puzzling - why does this alternative notion require additionally
+          conjugating the imaginary numbers?
+        </p>
 
+        <h2>Matrix Definiteness</h2>
+        <h3 id="matrix_definiteness">Definition</h3>
+        <p>
+          Definiteness is a property of square, symmetric matrices. A matrix $M$ is said to be
+          positive semi-definite if $\forall x \in \mathbb{R}^n, x^T M x \geq 0$, positive
+          definite if $x^T M x > 0$ and conversely for negative semi-definite and negative
+          definite.
         </p>
 
       </section>
