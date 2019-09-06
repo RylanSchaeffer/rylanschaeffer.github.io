@@ -35,6 +35,7 @@
 
     $\DeclareMathOperator*{\argmax}{argmax}$
     $\DeclareMathOperator{\defeq}{\stackrel{def}{=}}$
+    $\DeclareMathOperator{\Tr}{Tr}$
   </head>
 
   <body>
@@ -59,14 +60,20 @@
         <div id="toc_container">
           <h1 class="toc_title">Contents</h1>
           <ul class="table-of-content" id="markdown-toc">
-            <li><a href="#activation_functions">Activation Functions</a></li>
+            <li><a href="#activation_functions">Activation Functions</a>
               <ul>
                 <li><a href="#logistic_sigmoid">Logistic Sigmoid </a></li>
                 <li><a href="#hyperbolic_tangent">Hyperbolic Tangent</a></li>
                 <li><a href="#relationship_sigmoid_tanh">Relationship between
                   Logistic Sigmoid and Hyperbolic Tangent</a></li>
               </ul>
-            <li><a href="#deep_linear_nn">Deep Linear Neural Networks</a></li>
+            </li>
+            <li><a href="#linear_nn">Linear Neural Networks</a>
+              <ul>
+                <li><a href="#deep_linear_nn">Deep Linear Neural Networks</a></li>
+              </ul>
+            </li>
+
           </ul>
         </div>
 
@@ -117,10 +124,52 @@
             $y(x, w) = y(x, w')$.
           </p>
 
-        <h2 id="deep_linear_nn">Deep Linear Neural Networks</h2>
-        <h3>What is a deep linear neural network? Why does it matter?</h3>
+        <h2 id="linear_nn">Linear Neural Networks</h2>
         <p>
-          A deep linear neural network is a neural network with the non-linear
+          One of the simplest models of a neuron we might consider is a single "neuron" outputting
+          a weighted combination of input features:
+
+        </p>
+
+        <p>
+          $
+          \begin{align}
+          y = w^T x
+          \end{align}
+          $
+        </p>
+
+        <p>
+          where $y \in \mathbb{R}$ and $w, x \in \mathbb{R}^d$.  This model, as a supervised learning
+          problem under the Mean-Squared Error loss function, has been extensively studied. In such a setting, the
+          neuron's goal is to learn a mapping $x \rightarrow y$ from a dataset of N x-y pairs,
+          $\{(x_n, y_n) \}_{n=1}^N$, by minimizing the MSE $L(w) \defeq \frac{1}{N} \sum_{n=1}^N
+          (y_n - w^T x_n)^2$. Does this model have a unique fixed point $w^*$ that minimizes the
+          loss? We take the gradient and set equal to zero.
+        </p>
+
+        <p>
+          $
+          \begin{align}
+          L(w) &\defeq \frac{1}{N} \sum_{n=1}^N (y_n - w^T x_n)^2 = \sum_{n=1}^N Tr(y_n - w^T x_n)^2\\\\
+          \nabla_w L(w) = 0 &= \nabla_w \frac{1}{N} \sum_{n=1}^N (y_n^2 - 2 w^T x_n y_n + w^T x_n x_n^T w)\\
+          0 &= \sum_{n=1}^N y_n x_n + \sum_{n=1}^N x_n x_n^T w
+          \end{align}
+          $
+        </p>
+
+        <p>
+          The first observation in that $\sum_{n=1}^N x_n x_n^T$ is the empiric input-input
+          covariance matrix and $\sum_{n=1}^N  y_n x_n$ is the empiric output-input covariance
+          "matrix" (although here the covariance is a vector since $y$ is a scalar). Because
+          <a href="linear_algebra.html#covariance_pos_semidefinite">covariance matrices are always
+          positive-semidefinite</a>,
+
+        </p>
+
+        <h3 id="deep_linear_nn">Deep Linear Neural Networks</h3>
+        <p>
+          A deep linear neural network is a multi-layered neural network with the non-linear
           "activations" removed. That is, it is a composition of linear
           transformations (typically matrices). For instance,
           $\hat{y} = W_{32} W_{21} x$ is a two-layer linear network. Despite
