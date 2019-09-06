@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width,maximum-scale=2">
+    <meta name="description" content="Rylan Schaeffer">
+
+    <link rel="stylesheet" type="text/css" media="all" href="../../stylesheets/stylesheet.css">
+
+    <title></title>
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-94033137-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+    </script>
+
+    <script type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({ TeX: { equationNumbers: {autoNumber: "AMS"} } });
+    </script>
+
+    <div style="display: none">
+      $\DeclareMathOperator*{\argmax}{argmax}$
+      $\DeclareMathOperator{\defeq}{\stackrel{def}{=}}$
+    </div>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+      <header class="inner">
+        <h1 id="header_title">Rylan Schaeffer > Learning > Numerical Methods</h1>
+        <nav>
+          <div>
+            <a href="../../index.html">Home</a> |
+            <a href="../learning.html">Learning</a>
+          </div>
+        </nav>
+      </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+
+        <div id="toc_container">
+          <h1 class="toc_title">Contents</h1>
+          <ul class="table-of-content" id="markdown-toc">
+            <li><a href="#error_analysis">Error Analysis</a></li>
+            <li><a href="#rate_of_convergence">Rate of Convergence</a></li>
+          </ul>
+        </div>
+
+        <h2 id="error_analysis">Error Analysis</h2>
+
+        <p>
+          Error analysis addresses identifying and quantifying causes of error in
+          scientific computing and numerical analysis. Some examples include truncation
+          (i.e. terminating a process early), discretization (i.e. approximating continuous values
+          in a discrete grid), and rounding (i.e. losing precision due to computer float point limitations).
+          For a concrete example involving all three sources of error, consider
+          estimating the derivative of some function $f(x)$ using finite differences:
+        </p>
+
+        <p>
+          $
+          \begin{align}
+          f'(x) \defeq \lim_{h \rightarrow 0} \frac{f(x+h) - f(x)}{h} \approx \hat{f'}(x, h) \defeq \frac{f(x+h) - f(x)}{h}
+          &
+          \end{align}
+          $
+        </p>
+
+        <p>
+          This introduces the first source of error: discretization. Irrespective of how accurately
+          we can represent numbers, we'll need to choose a specific value for h. The discretization
+          error is therefore $|f'(x) - \hat{f'}(x, h)|$. The next source of error, truncation,
+          arises when we expand $f(x+h)$ using a Taylor series expansion. However, this infinite
+          serie's terms decline in magnitude due to $n!$ in the denominator, so we might decide to
+          approximate $f(x+h)$ by truncating the series after the Nth term:
+        </p>
+
+        <p>
+          $
+          \begin{align}
+          f(x+h) = \sum_{n=0}^{\infty} \frac{f^{(n)}(x)}{n!} h^n \approx \hat{f}(x + h, N) \defeq \sum_{n=0}^{N}
+          \frac{f^{(n)}(x)}{n!} h^n
+          \end{align}
+          $
+        </p>
+
+        <p>
+          The truncation error is therefore $|f(x+h) - \hat{f}(x+h, N)|$. The final source of
+          error, rounding, arises due to limitations in how precisely computers can represent the
+          necessary values $h, f(x), \hat{f}(x + h, N), \hat{f'}(x, h)$.
+        </p>
+
+        <h2 id="rate_of_convergence">Rate of convergence</h2>
+        <p>
+          For numerical methods requiring multiple steps, one question is how
+          quickly the sequence of output numbers converges to the correct number. In practice, the
+          rate of convergence is critical for saving real-world time. Convergence might depend
+          on the number of iterations of an algorithm, on the number of steps in a series that
+          aren't cut off, and on a measure of discretization.
+        </p>
+
+      </section>
+    </div>
+
+    <!--FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <h3 id="footer_title">Rylan Schaeffer</h3>
+        <p>
+          I appreciate any and all feedback. If I've made an error or if you have a suggestion, please
+          email me at <a href="mailto:rylanschaeffer@gmail.com">rylanschaeffer@gmail.com</a>.
+        </p>
+      </footer>
+    </div>
+
+    
+  </body>
+</html>
