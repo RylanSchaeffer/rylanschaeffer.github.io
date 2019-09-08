@@ -25,12 +25,12 @@
       MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
     </script>
 
-    <script type="text/javascript"
-      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-    </script>
-
     <script type="text/x-mathjax-config">
       MathJax.Hub.Config({ TeX: { equationNumbers: {autoNumber: "AMS"} } });
+    </script>
+
+    <script type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
     </script>
 
     <div style="display: none">
@@ -62,6 +62,7 @@
           <h1 class="toc_title">Contents</h1>
           <ul class="table-of-content" id="markdown-toc">
             <li><a href="#error_analysis">Error Analysis</a></li>
+            <li><a href="#condition_number">Condition Number</a></li>
             <li><a href="#rate_of_convergence">Rate of Convergence</a></li>
           </ul>
         </div>
@@ -107,7 +108,52 @@
         <p>
           The truncation error is therefore $|f(x+h) - \hat{f}(x+h, N)|$. The final source of
           error, rounding, arises due to limitations in how precisely computers can represent the
-          necessary values $h, f(x), \hat{f}(x + h, N), \hat{f'}(x, h)$.
+          necessary values $h; f(x); \hat{f}(x + h, N); \hat{f'}(x, h)$.
+        </p>
+
+        <h2 id="condition_number">Condition Number</h2>
+        <p>
+          One property of a function we might be interested in is how sensitive the output is
+          for small input perturbations. There are two common ways to formalize this: the
+          absolute condition number and the relative condition number. The relative condition
+          number $\kappa$ captures whether small input perturbations inflate or attenuate after
+          passing through the function.
+        </p>
+
+        <p>
+          $
+          \begin{align}
+          \kappa \defeq \lim_{\epsilon \rightarrow 0} \sup_{\lVert \Delta x \rVert \leq \epsilon}
+          \frac{\lVert \Delta f(x) \rVert / \lVert f(x) \rVert}{\lVert \Delta x \rVert / \lVert x \rVert}
+          \end{align}
+          $
+        </p>
+
+        <p>
+          We say that a function $f(x)$ with $\kappa > 1$ is "ill-conditioned" as small
+          input perturbations will be amplified, and inversely, a function with
+          $\kappa < 1$ is "well conditioned".
+        </p>
+
+        <p>
+          For a concrete example, consider calculating the relative condition number for
+          a generic linear system: $f(x) = A x$, where $A$ is some $n \times n$ matrix
+          and $x \in \mathbb{R}^n$. The condition number is therefore:
+        </p>
+
+        <p>
+          $
+          \begin{align*}
+          \kappa
+          \defeq \frac{\lVert \Delta f(x) \rVert / \lVert f(x) \rVert}{\lVert \Delta x \rVert / \lVert x \rVert}
+          = \frac{\lVert A (x + \Delta x) - A x \rVert / \lVert A x \rVert}{\lVert \Delta x \rVert / \lVert x \rVert}
+          = \frac{\lVert A \Delta x \rVert  \lVert x \rVert}{\lVert \Delta x \rVert \lVert A x \rVert}
+          \end{align*}
+          $
+        </p>
+
+        <p>
+<!--          = \leq \lVert A \rVert \frac{\lVert x \rVert}{\lVert A x \rVert}-->
         </p>
 
         <h2 id="rate_of_convergence">Rate of convergence</h2>
