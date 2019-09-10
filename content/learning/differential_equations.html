@@ -61,20 +61,60 @@
         <div id="toc_container">
           <h1 class="toc_title">Contents</h1>
           <ul class="table-of-content" id="markdown-toc">
-            <li>Value-Based RL</li>
-            <li><a href="#policy_based_rl">Policy-Based RL</a>
-              <ul>
-                <li><a href="#policy_gradient_derivation">Derivation of Policy Gradient</a></li>
-              </ul>
-            </li>
+            <li>Linear Stability Analysis</li>
           </ul>
         </div>
 
-        <h2>Binomial Distribution</h2>
-        <h3>Normal Approximation to the Binomial Distribution</h3>
+        <h2>Linear Stability Analysis</h2>
+        <p>
+          For a continuous time dynamical system, we might want to understand whether, and how
+          quickly, a point near a stable fixed point flows to the fixed point. Concretely, let
+          $x$ be the phase space of some system and let $x^*$ be a fixed point of the system.
+          We can define a small perturbation away from the fixed point as $\eta(t) \defeq x(t) - x^*$.
+          Note that this is equivalent to defining a time-varying variable $x(t) = x^* + \eta(t)$.
+          We'd like to understand whether this small pertubation, $\eta(t)$ grows or decays over
+          time, and to answer such a question, we can construct a differential equation to describe
+          the behavior of $\eta(t)$.
+        </p>
 
         <p>
+          $\begin{align}
+          \frac{d}{dt}\eta(t) &= \frac{d}{dt} (x(t) - x^*)\\
+          &= \frac{d}{dt} x(t)\\
+          \end{align}$
+        </p>
 
+        <p>
+          Using the definition of $x(t) = x^* + \eta(t)$, we can construct a Taylor Series
+          expansion of $\frac{d}{dt} x(t)$ at $x^*$:
+        </p>
+
+        <p>
+          $\begin{align}
+          \frac{d}{dt} x(t) &= \frac{d}{dt} (x^* + \eta (t))\\
+          &\approx \frac{d}{dt} x^* + \eta(t) \frac{d^2}{dt^2} x^* + O(\eta^2)\\
+          \end{align}$
+        </p>
+
+        <p>
+          Since $x^*$ is a fixed point, $\frac{d}{dt} x^* = 0$ and thus:
+        </p>
+
+        <p>
+          $\begin{align}
+          \frac{d}{dt}\eta(t) = \eta(t) \frac{d^2}{dt^2} x^*
+          \end{align}$
+        </p>
+
+        <p>
+          This is a linear equation in $\eta$ and is therefore called the "linearization about
+          $x^*$". If $\frac{d^2}{dt^2} x^*$ is also zero, the $O(\eta^2)$ term that we previously
+          ignored will become relevant. This linearization tells us that if the second derivative
+          at $x^*$ is negative, then the perturbation will shrink, and inversely, if the
+          second derivative is positive, the perturbation will grow larger. The absolute value
+          of the second derivative, $|d^2 x^* / dt^2|$ tells us how quickly the pertubation will grow/shrink
+          and its reciprocal $\frac{1}{|d^2 x^* / dt^2|}$ is called the <b>characteristic time scale</b>
+          which expresses how much time is required to modify $x$ by a fixed amount around $x^*$.
         </p>
 
       </section>
