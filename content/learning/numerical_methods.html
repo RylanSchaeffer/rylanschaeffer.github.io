@@ -67,6 +67,7 @@
             <li><a href="#data_fitting">Data Fitting</a>
               <ul>
                 <li><a href="#vandermonde_interpolation">Vandermonde Interpolation</a></li>
+                <li><a href="#waring_interpolation">Waring (Lagrange) Interpolation</a></li>
               </ul>
             </li>
 
@@ -238,9 +239,79 @@
 
             <p>
               One well-known problem with Vandermonde interpolation is that the monomial basis
-              it uses causes columns 
+              it uses causes columns to become linearly dependent as n grows TODO. Another problem
+              is that inverting the dense $V$ matrix takes $O(n^3)$ time.
             </p>
 
+          </div>
+
+          <div>
+            <h3 id="waring_interpolation">Waring (Lagrange) Interpolation</h3>
+
+            <p>
+              To ameliorate the problems of <a href="#vandermonde_interpolation">Vandermonde
+              Interpolation</a>, Waring, Euler and later Lagrange discovered an improved
+              method that is today called Lagrange Interpolation. The approach starts
+              by observing that interpolation is easy if I have a polynomial that is 1 at $x_i$
+              and 0 at all other $x_j$; if I had such a polynomial, then I can guarantee that
+              the polynomial passes exactly through $(x_i, y_i)$ without impacting any other
+              point, just by multiplying the polynomial by $y_i$. Consequently, the
+              overall approach is to construct one indicator polynomial $P_i(x)$ per data point,
+              multiply each polynomial by $y_i$ and then linearly add all the polynomials.
+            </p>
+
+            <p>
+              The first question is how can I construct a polynomial that is 1 at $x_i$ and 0
+              at all other $x_{j \neq i}$?
+            </p>
+
+            <p>
+              $
+              \begin{align}
+              L_i(x_j) =
+              \begin{cases}
+              1 & x_j = x_i\\
+              0 & x_j \neq x_i
+              \end{cases}
+              \end{align}
+              $
+            </p>
+
+            <p>
+              I can immediately ensure that $L_i(x)$ is zero at $x_j \neq x_i$ by starting with a
+              polynomial that has roots at each $x_j \neq x_i$: $(x-x_1)(x-x_2)...(x-x_n)$.
+              To ensure that this polynomial is equal to 1 at $x_i$, I need to find a variable $v$
+              such that at $x_i$, $1 = v (x_i-x_1)(x_i-x_2)...(x_i-x_n)$. That's a pretty easy
+              equation to solve! This means that for each point $(x_i, y_i)$, we have a polynomial
+              that is 1 at $x_i$ and 0 at all other $x_j$.
+            </p>
+
+            <p>
+              $
+              \begin{align}
+              L_i(x)
+              &= \frac{(x-x_1)(x-x_2)...(x-x_n)}{(x_i-x_1)(x_i-x_2)...(x_i-x_n)}\\
+              &= \prod_{j=0\\j \neq i}^N \frac{x - x_j}{x_i - x_j}
+              \end{align}
+              $
+            </p>
+
+            <p>
+              To create our final polynomial, we multiply each polynomial by the corresponding $y_i$
+              and sum together. The final formula isn't particularly intuitive, but now you understand
+              that each constituent polynomial is 1 at exactly one $x_i$, by construction, and then
+              we just scale that 1 up to $y_i$.
+            </p>
+
+            <p>
+              $
+              \begin{align}
+              P(x)
+              &= \sum_{i=0}^{n} y_i L_i(x) \\
+              &= \sum_{i=0}^{n} y_i \prod_{j=0\\j \neq i}^N \frac{x - x_j}{x_i - x_j}
+              \end{align}
+              $
+            </p>
 
           </div>
 
