@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-US">
 
   <head>
     <meta charset='utf-8'>
@@ -64,10 +64,17 @@
             <li><a href="#error_analysis">Error Analysis</a></li>
             <li><a href="#condition_number">Condition Number</a></li>
             <li><a href="#rate_of_convergence">Rate of Convergence</a></li>
+            <li><a href="#data_fitting">Data Fitting</a>
+              <ul>
+                <li><a href="#vandermonde_interpolation">Vandermonde Interpolation</a></li>
+              </ul>
+            </li>
+
           </ul>
         </div>
 
         <h2 id="error_analysis">Error Analysis</h2>
+        <div>
 
         <p>
           Error analysis addresses identifying and quantifying causes of error in
@@ -111,7 +118,10 @@
           necessary values $h; f(x); \hat{f}(x + h, N); \hat{f'}(x, h)$.
         </p>
 
+        </div>
+
         <h2 id="condition_number">Condition Number</h2>
+        <div>
         <p>
           One property of a function we might be interested in is how sensitive the output is
           for small input perturbations. There are two common ways to formalize this: the
@@ -155,8 +165,10 @@
         <p>
 <!--          = \leq \lVert A \rVert \frac{\lVert x \rVert}{\lVert A x \rVert}-->
         </p>
+        </div>
 
         <h2 id="rate_of_convergence">Rate of convergence</h2>
+        <div>
         <p>
           For numerical methods requiring multiple steps, one question is how
           quickly the sequence of output numbers converges to the correct number. In practice, the
@@ -164,6 +176,77 @@
           on the number of iterations of an algorithm, on the number of steps in a series that
           aren't cut off, and on a measure of discretization.
         </p>
+        </div>
+
+        <h2 id="data_fitting">Data Fitting</h2>
+        <div>
+          <p>
+            Two common approaches to fitting a function to a finite sample of data are interpolation,
+            where a function is chosen to pass exactly through the sampled points, and optimization,
+            where a function is chosen based on minimizing or maximizing some criteria.
+          </p>
+
+          <div>
+            <h3 id="vandermonde_interpolation">Vandermonde Interpolation</h3>
+            <p>
+              Vandermonde Interpolation fits a function to a set of 2D points
+              $\{(x_i, y_i)\}_{i=1}^{n}$ by using the points to construct a monomial basis (i.e.
+              increasing powers of $x^0, x^1, x^2, ...$) and then attempting to find coefficients
+              for an $n-1$ degree polynomial passing through all points. To find the "right"
+              coefficients, Vandermonde interpolation solves a system of linear equations of
+              $V b = y$:
+            </p>
+
+            <p>
+              $
+              \begin{align}
+              \begin{bmatrix} 1 & x_1 & x_1^2 &... & x_1^{n-1}\\ \vdots & & \vdots & & \vdots \\
+              1 & x_n & x_n^2 & ... & x_n^{n-1}\\ \end{bmatrix}
+              \begin{bmatrix} b_0 \\ b_1 \\
+              \vdots \\ b_{n-1} \end{bmatrix}
+              &= \begin{bmatrix} y_1 \\ y_2 \\ \vdots
+              \\ y_n \end{bmatrix}
+              \end{align}
+              $
+            </p>
+
+            <p>
+              We can show that if the $n$ points are unique, then $Vb = y$ has a unique solution
+              for $b$. We'll first show that having unique points guarantees at least
+              one solution, and then show that having unique points guarantees only that solution.
+              One way is to show that $Vb = y$ has a particular solution is to show that $V$ is
+              invertible, which can be accomplished by showing that the determinant is non-zero.
+              This is made easy by the fact that the Vandermonde matrix $V$ has a nice formula for its determinant:
+              $\det(V) = \prod_{1 \leq i < j \leq n} (x_j - x_i)$. Because the $n$
+              points are unique, and because $i \neq j$, $x_j - x_i \neq 0$, and since the product of non-zero
+              numbers can never be zero, the determinant is non-zero and thus V is invertible.
+            </p>
+
+            <p>
+              But what about the null solution? We know that the general solution to a system of
+              linear equations is the sum of the particular solution of $Vb_p = y$ and the null solution
+              of $Vb_n = 0$, since $Vb_p + Vb_n = y + 0 = y$ and thus $V(b_p + b_n) = y$. It turns
+              out that the only null solution is $b=0$. One way to see this is to consider that for
+              $Vb = 0$, we have $n$ equations telling us the $n$ unique roots of the polynomial $b_0 + b_1 x^1 +
+              ... + b_{n-1} x^{n-1}$. But this polynomial is degree $n-1$, and the fundamental theorem
+              of algebra tells us that a polynomial of degree $n-1$ can have at most $n-1$ roots. So
+              the only way for a polynomial of degree $n-1$ to have $n$ roots is if it's the zero
+              polynomial i.e. $b_0 = ... = b_{n-1} = 0$. In conclusion, the null solution is $b_n = 0$,
+              leaving us with only one solution, the particular solution, which defines exactly one
+              polynomial.
+            </p>
+
+            <p>
+              One well-known problem with Vandermonde interpolation is that the monomial basis
+              it uses causes columns 
+            </p>
+
+
+          </div>
+
+        </div>
+
+
 
       </section>
     </div>
