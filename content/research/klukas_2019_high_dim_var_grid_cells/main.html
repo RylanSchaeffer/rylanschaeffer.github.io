@@ -43,34 +43,105 @@
     <!-- HEADER -->
     <div id="header_wrap" class="outer">
       <header class="inner">
-        <h1 id="header_title">Explanation of:<br>Title of Paper</h1>
-        <h3 id="project_tagline"><a href="https://arxiv.org/abs/1605.06065">Authors Year.</a></h3>
-          <section id="quick_links">
-            <a class="back" href="../../research.html"></a>
-          </section>
+        <h1 id="header_title">Rylan Schaeffer > Research ><br>
+          Explanation of <a href="578641.full.pdf">Higher-dimensional Cognitive
+            Variables with Grid Cells</a> (2019)</h1>
+        <div>
+          <a href="../../../index.html">Home</a> |
+          <a href="../../research.html">Research</a>
+        </div>
       </header>
     </div>
 
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
-        <p>
-          I've found that the overwhelming majority of online information in artificial intelligence
-            research falls into one of two categories: the first is aimed at explaining advances to
-            lay audiences, and the second is aimed at explaining advances to other researchers. I
-            haven't found a good resource for people with a technical background who are unfamiliar
-            with the more advanced concepts and are looking for someone to fill them in. This is my
-            attempt to bridge that gap, by providing approachable yet (relatively) detailed explanations.
-            In this post, I explain the titular paper - <a href="https://arxiv.org/abs/1605.06065">One-shot Learning with Memory-Augmented Neural Networks</a>.
-        </p><br>
-
-        <h2>Motivation</h2>
 
         <h2>Background</h2>
 
+        <p>
+          Grid cells are neurons that fire if and only if an animal is physically located at a
+          vertex of a triangular lattice tiling the 2D environment. This produces a triangular/hexagonal
+          pattern of neural activity as the animal navigates through the environment. Grid cells are
+          identified by three parameters: the spacing of the lattice, the orientation of the lattice
+          relative to some reference axis and a translational offset. Sub-networks of grid cells,
+          called modules, fire with the same lattice period and the same orientation, but with a
+          2D translational offset. By cleverly combining multiple modules, animals can create a
+          unique code for identifying their location in a 2D environment.
+        </p>
+
+        <p>
+          <img class="photo" src="stretch_birds_1.png" style="float: left; width: 35%">
+          Evidence also suggests that grid cells can be used to represent conceptual task variables
+          in 2 dimensions. In one <a href="https://science.sciencemag.org/content/352/6292/1464.long">study</a>,
+          experimenters trained participants to map cartoon pictures of birds to cartoon Christmas images.
+        <p>
+
+<!--        <p style="clear: both">-->
+        <p>
+          <img class="photo" src="stretch_birds_2.png" style="float: right; width: 20%">
+          But unbeknown by the participants, the birds were constructed by varying the length of
+          their necks and the length of their legs in a manner that implicitly defined a
+          two-dimensional task space (right), where the task could be thought of as identifying the
+          "location" of the Christmas images based on the (neck length, leg length) position.
+          Surprisingly, evidence suggested that grid cells were used to solve this task.
+        </p>
+
+        <p>
+          However, many tasks might reasonably require higher dimensional spaces for representation and
+          computation. Some researchers have looked into 3D grid cells for animals that navigate
+          vertically (e.g. bats), but a strong, positive answer hasn't emerged, and there's certainly
+          no indication of grid cells for dimensions ($n \geq 4$).
+          <img class="photo" src="naive_coding.png" style="float: left; width: 20%">
+          To clarify why this is problematic, imagine how one might represent $\mathbb{R}^3$ in
+          $\mathbb{R}^2$. If we naively try projecting $\mathbb{R}^3$ down to $\mathbb{R}^2$ (left),
+          the mapping will be non-invertible (since one dimension will be lost) and the animal
+          will be unable to unambiguously identify where it is located. In the cartoon depiction,
+          the animal can identify its $(x, y)$ position, but its $z$ position is ambiguous.
+
+        </p>
+
+        <h2>Research Questions</h2>
+        <p>
+          This raised a conundrum: how does the neural circuitry that underpins $\mathbb{R}^2$
+          work in arbitrary $\mathbb{R}^N$ while its activity is constrained to $\mathbb{R}^2$?
+          More specifically, we might ask the following questions:
+        </p>
+
+        <ol>
+          <li>Could the same neural circuitry used for representing 2-D Euclidean space also
+            be used for representing N-dimensional Euclidean space?</li>
+          <li>How could we characterize the capacity of such a representation?</li>
+          <li>What parameters determine the capacity, and how does the capacity scale as a function
+            of those parameters?</li>
+        </ol>
+
         <h2>Intuition</h2>
+        <p>
+          The answer is yes, the same neural circuitry can be used
+        </p>
 
         <h2>Mathematics</h2>
+
+        <p>
+          We first need to start by understanding a commonly used model of grid cell modules
+          in $\mathbb{R}^2$. This model posits that each grid cell module converts the animal's
+          position $x(t)$ into a macroscopic 2D periodic variable $\phi(x(t))$, where the change in firing
+          $\frac{d\phi}{dt}$ is related to the animal's change in position $\frac{dx(t)}{dt}$ by
+          a linear velocity operator.
+        </p>
+
+        <p>
+          $
+          \begin{align}
+          \frac{d\phi}{dt} &= A \frac{dx(t)}{dt}
+          \end{align}
+          $
+        </p>
+
+        <p>
+          A module might have some default $\varphi$
+        </p>
         
         <h2>Experiments and Results</h2>
 

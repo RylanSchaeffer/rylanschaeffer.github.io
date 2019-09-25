@@ -67,6 +67,7 @@
               <li><a href="#policy_gradient_derivation">Derivation of Policy Gradient</a></li>
             </ul>
           </li>
+          <li><a href="#actor_critic_rl">Actor-Critic RL</a></li>
         </ul>
         </div>
 
@@ -110,6 +111,51 @@
           Assuming that the environment obeys some transition dynamics
           $p(s_{t+1} | s_t, a_t)$,
         </p>
+
+        <h2 id="actor_critic_rl">Actor-Critic RL</h2>
+        <div>
+          <h3>Gradient Estimator Baselines</h3>
+          <div>
+            <p>
+
+            </p>
+
+            <h4>Constant Baseline: $b$</h4>
+            <div>
+            <p>
+              Unbiased:
+            </p>
+
+            <p>
+              $\begin{align}
+              \nabla_{\theta} \mathbb{E}_{p(\tau)} [R(\tau) - b]
+              &= \nabla_{\theta}  \mathbb{E}_{p(\tau)} [R(\tau)] - \nabla_{\theta} \mathbb{E}_{p(\tau)} [b]\\
+              &= \nabla_{\theta} \mathbb{E}_{p(\tau)} [R(\tau)] - b \nabla_{\theta} \mathbb{E}_{p(\tau)} [1]\\
+              &= \nabla_{\theta} \mathbb{E}_{p(\tau)} [R(\tau)] - b (0)\\
+              &= \nabla_{\theta} \mathbb{E}_{p(\tau)} [R(\tau)]
+              \end{align}$
+            </p>
+            </div>
+
+            <h4>State-Dependent Baseline: $b(s_t)$</h4>
+            <div>
+              <p>
+                Unbiased:
+              </p>
+
+              <p>
+                $\begin{align}
+                \nabla_{\theta} \mathbb{E}_{p(\tau)} [R(\tau) - b]
+                &= \nabla_{\theta}  \mathbb{E}_{p(\tau)} [R(\tau)] - \nabla_{\theta} \mathbb{E}_{p(\tau)} [b]\\
+                &= \nabla_{\theta} \mathbb{E}_{p(\tau)} [R(\tau)] - b \nabla_{\theta} \mathbb{E}_{p(\tau)} [1]\\
+                &= \nabla_{\theta} \mathbb{E}_{p(\tau)} [R(\tau)] - b (0)\\
+                &= \nabla_{\theta} \mathbb{E}_{p(\tau)} [R(\tau)]
+                \end{align}$
+              </p>
+              </div>
+          </div>
+
+        </div>
 
       </section>
     </div>

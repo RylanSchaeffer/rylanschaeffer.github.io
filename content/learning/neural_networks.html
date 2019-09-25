@@ -38,6 +38,7 @@
       $\DeclareMathOperator{\defeq}{\stackrel{def}{=}}$
       $\DeclareMathOperator{\Tr}{Tr}$
       $\DeclareMathOperator{\rank}{rank}$
+      $\DeclareMathOperator{\sign}{sign}$
     </div>
   </head>
 
@@ -73,27 +74,42 @@
             </li>
             <li><a href="#linear_nn">Linear Neural Networks</a>
               <ul>
+                <li><a href="#linear_neuron">Single Linear Neuron</a></li>
                 <li><a href="#deep_linear_nn">Deep Linear Neural Networks</a></li>
               </ul>
             </li>
+              <li><a href="#nonlinear_nn">Nonlinear Neural Networks</a>
+                  <ul>
+                      <li><a href="#perceptron">Perceptron</a></li>
+                  </ul>
+              </li>
 
           </ul>
         </div>
 
 
         <h2 id="activation_functions">Activation Functions</h2>
+          <div>
           <h3 id="logistic_sigmoid">Logistic Sigmoid</h3>
+          <div>
+
           <p>
             The logistic sigmoid function $\sigma(x) = \frac{1}{1+e^{-x}} = \frac{e^x}{e^x + 1}$.
           </p>
 
+          </div>
+
           <h3 id="hyperbolic_tangent">Hyperbolic Tangent</h3>
+          <div>
           <p>
             The hyperbolic tangent function $\tanh(x) = \frac{e^x - e^{-x}}{e^x + e^{-x}}
             = \frac{e^{2x} - 1}{e^{2x} + 1}$.
           </p>
+          </div>
+
           <h3 id="relationship_sigmoid_tanh">Relationship between Logistic Sigmoid
             and Hyperbolic Tangent</h3>
+          <div>
             <p>
               The logistic sigmoid and the hyperbolic tangent functions can be
               expressed as transformation of each other. Specifically,
@@ -126,126 +142,163 @@
             where $w_0' = w_0 + \sum w_i / 2$ and $w_i' = w_i / 2$ for $i \neq 0$. Then
             $y(x, w) = y(x, w')$.
           </p>
+          </div>
+          </div>
 
         <h2 id="linear_nn">Linear Neural Networks</h2>
-        <p>
-          One of the simplest models of a neuron we might consider is a single "neuron" outputting
-          a weighted combination of input features:
+          <div>
+          <h3 id="linear_neuron">Single Linear Neuron</h3>
+          <div>
 
-        </p>
+            <p>
+              One of the simplest models of a neuron we might consider is a single "neuron" outputting
+              a weighted combination of input features:
+            </p>
 
-        <p>
-          $
-          \begin{align}
-          y = w^T x
-          \end{align}
-          $
-        </p>
+            <p>
+              $
+              \begin{align}
+              y = w^T x
+              \end{align}
+              $
+            </p>
 
-        <p>
-          where $y \in \mathbb{R}$ and $w, x \in \mathbb{R}^d$.  This model, as a supervised learning
-          problem under the Mean-Squared Error loss function, has been extensively studied. In such a setting, the
-          neuron's goal is to learn a mapping $x \rightarrow y$ from a dataset of N x-y pairs,
-          $\{(x_n, y_n) \}_{n=1}^N$, by minimizing the training MSE $L^{tr}(w) \defeq \frac{1}{N} \sum_{n=1}^N
-          (y_n - w^T x_n)^2$. Does this model have a unique fixed point $w^*$ that minimizes the
-          loss? We take the gradient and set equal to zero.
-        </p>
+            <p>
+              where $y \in \mathbb{R}$ and $w, x \in \mathbb{R}^d$.  This model, as a supervised learning
+              problem under the Mean-Squared Error loss function, has been extensively studied. In such a setting, the
+              neuron's goal is to learn a mapping $x \rightarrow y$ from a dataset of N x-y pairs,
+              $\{(x_n, y_n) \}_{n=1}^N$, by minimizing the training MSE $L^{tr}(w) \defeq \frac{1}{N} \sum_{n=1}^N
+              (y_n - w^T x_n)^2$. Does this model have a unique fixed point $w^*$ that minimizes the
+              loss? We take the gradient and set equal to zero.
+            </p>
 
-        <p>
-          $
-          \begin{align}
-          L^{tr}(w) &\defeq \frac{1}{N} \sum_{n=1}^N (y_n - w^T x_n)^2 = \sum_{n=1}^N Tr(y_n - w^T x_n)^2\\\\
-          \nabla_w L(w) = 0 &= \nabla_w \frac{1}{N} \sum_{n=1}^N (y_n^2 - 2 w^T x_n y_n + w^T x_n x_n^T w)\\
-          0 &= -\sum_{n=1}^N y_n x_n + \sum_{n=1}^N x_n x_n^T w^*\\
-          \sum_{n=1}^N x_n x_n^T w^* &= \sum_{n=1}^N y_n x_n
-          \end{align}
-          $
-        </p>
+            <p>
+              $
+              \begin{align}
+              L^{tr}(w) &\defeq \frac{1}{N} \sum_{n=1}^N (y_n - w^T x_n)^2 = \sum_{n=1}^N Tr(y_n - w^T x_n)^2\\\\
+              \nabla_w L(w) = 0 &= \nabla_w \frac{1}{N} \sum_{n=1}^N (y_n^2 - 2 w^T x_n y_n + w^T x_n x_n^T w)\\
+              0 &= -\sum_{n=1}^N y_n x_n + \sum_{n=1}^N x_n x_n^T w^*\\
+              \sum_{n=1}^N x_n x_n^T w^* &= \sum_{n=1}^N y_n x_n
+              \end{align}
+              $
+            </p>
 
-        <p>
-            One important observation in that $\sum_{n=1}^N x_n x_n^T$ is the empiric input-input
-            covariance matrix and $\sum_{n=1}^N  y_n x_n$ is the empiric output-input covariance
-            "matrix" (although here the covariance is a vector since $y$ is a scalar), and the
-            optimal weight vector $w^*$ relates these two covariance matrices. Another important
-            observation is that $C \defeq \sum_{n=1}^N x_n x_n^T$ is the sum of $N$ rank-$D$
-            matrices, meaning that $\rank(C) \leq min(N, D)$. The third important observation is that the
-            Hessian $H_{ij} \defeq \frac{\partial L^{tr}(w)}{\partial w_i \partial w_j}= C_{ij}$.
-            More on this in a bit.
-        </p>
+            <p>
+                One important observation in that $\sum_{n=1}^N x_n x_n^T$ is the empiric input-input
+                covariance matrix and $\sum_{n=1}^N  y_n x_n$ is the empiric output-input covariance
+                "matrix" (although here the covariance is a vector since $y$ is a scalar), and the
+                optimal weight vector $w^*$ relates these two covariance matrices. Another important
+                observation is that $C \defeq \sum_{n=1}^N x_n x_n^T$ is the sum of $N$ rank-$D$
+                matrices, meaning that $\rank(C) \leq min(N, D)$. The third important observation is that the
+                Hessian $H_{ij} \defeq \frac{\partial L^{tr}(w)}{\partial w_i \partial w_j}= C_{ij}$.
+                More on this in a bit.
+            </p>
 
-        <p>
-            The first question to ask is what behavior we should expect from such a model?
-            Two regimes emerge, one where $N < D$ and the other where $N \geq D$. In the first regime,
-            where the number of observations $N$ is less than the dimensionality of the data $D$, $C$
-            is a $D \times D$ matrix of at most rank $N$, meaning that $C$ is not invertible and
-            therefore infinitely many solution exist. The easiest way to see this
-            is to note that we have $N$ equations and $D$ unknowns, meaning we have fewer equations
-            than unknowns. Consequently, in this regime, the training error $L^{tr}(w)$ is guaranteed to be 0.
-            For those unconvinced, we can prove this claim via construction:
-        </p>
+            <p>
+                The first question to ask is what behavior we should expect from such a model?
+                Two regimes emerge, one where $N < D$ and the other where $N \geq D$. In the first regime,
+                where the number of observations $N$ is less than the dimensionality of the data $D$, $C$
+                is a $D \times D$ matrix of at most rank $N$, meaning that $C$ is not invertible and
+                therefore infinitely many solution exist. The easiest way to see this
+                is to note that we have $N$ equations and $D$ unknowns, meaning we have fewer equations
+                than unknowns. Consequently, in this regime, the training error $L^{tr}(w)$ is guaranteed to be 0.
+                For those unconvinced, we can prove this claim via construction:
+            </p>
 
-        <p>
-            <!--          The second observation is that $w$ is a minimum because the Hessian of the loss function-->
-            <!--          $H_{ij} = \frac{\partial L(w)}{\partial w_i \partial w_j} = \sum_{n=1}^N x_n x_n^T$.-->
-            <!--          Because <a href="linear_algebra.html#covariance_pos_semidefinite">covariance matrices are always-->
-            <!--          positive-semidefinite</a>, the input-input covariance eigenvalues are $\geq 0$-->
-        </p>
+            <p>
+                <!--          The second observation is that $w$ is a minimum because the Hessian of the loss function-->
+                <!--          $H_{ij} = \frac{\partial L(w)}{\partial w_i \partial w_j} = \sum_{n=1}^N x_n x_n^T$.-->
+                <!--          Because <a href="linear_algebra.html#covariance_pos_semidefinite">covariance matrices are always-->
+                <!--          positive-semidefinite</a>, the input-input covariance eigenvalues are $\geq 0$-->
+            </p>
+            </div>
 
-        <h3 id="deep_linear_nn">Deep Linear Neural Networks</h3>
-        <p>
-          A deep linear neural network is a multi-layered neural network with the non-linear
-          "activations" removed. That is, it is a composition of linear
-          transformations (typically matrices). For instance,
-          $\hat{y} = W_{32} W_{21} x$ is a two-layer linear network. Despite
-          lacking the ability to learn non-linear functions, this class of
-          network is attractive because it can be tractably analyzed and
-          because its behaves similarly to its non-linear cousins under mild
-          conditions.
-        </p>
+          <h3 id="deep_linear_nn">Deep Linear Neural Networks</h3>
+          <div>
+            <p>
+              A deep linear neural network is a multi-layered neural network with the non-linear
+              "activations" removed. That is, it is a composition of linear
+              transformations (typically matrices). For instance,
+              $\hat{y} = W_{32} W_{21} x$ is a two-layer linear network. Despite
+              lacking the ability to learn non-linear functions, this class of
+              network is attractive because it can be tractably analyzed and
+              because its behaves similarly to its non-linear cousins under mild
+              conditions.
+            </p>
 
-        <h3>For a two-layer linear neural network trained under mean squared
-          error (MSE) on dataset $\{(x_i, y_i)\}_1^N$, what are the coupled differential
-          equations that describe the network's learning dynamics?</h3>
-        <p>
-          Let $x \in \mathbb{R}^i$ be the input, $y \in \mathbb{R}^o$ be the
-          output, and $L = \frac{1}{N} \sum_{i=1}^N (y - W_{32} W_{21} x)^T (y - W_{32} W_{21} x)$
-          be the objective function. Define the input-input correlation matrix
-          $\Sigma_{11} = \frac{1}{N}\sum_{i=1}^N x x^T$ and the input-output
-          correlation matrix $\Sigma_{31} = \frac{1}{N}\sum_{i=1}^N y x^T$. We first
-          derive $-\frac{\partial L}{\partial W_{32}}$:
-        </p>
+            <p>
+              One question we might immediately ask is <b>for a two-layer linear neural network trained
+              under mean squared
+                error (MSE) on dataset $\{(x_i, y_i)\}_1^N$, what are the coupled differential
+                equations that describe the network's learning dynamics?</b>
+              Let $x \in \mathbb{R}^i$ be the input, $y \in \mathbb{R}^o$ be the
+              output, and $L = \frac{1}{N} \sum_{i=1}^N (y - W_{32} W_{21} x)^T (y - W_{32} W_{21} x)$
+              be the objective function. Define the input-input correlation matrix
+              $\Sigma_{11} = \frac{1}{N}\sum_{i=1}^N x x^T$ and the input-output
+              correlation matrix $\Sigma_{31} = \frac{1}{N}\sum_{i=1}^N y x^T$. We first
+              derive $-\frac{\partial L}{\partial W_{32}}$:
+            </p>
 
-        <p>
-          $
-          \begin{align}
-          -\frac{\partial L}{\partial W_{32}} &= -\frac{1}{\partial W_{32}} \frac{1}{N} \sum_{i=1}^N (y - W_{32} W_{21} x)^T (y - W_{32} W_{21} x) \nonumber \\
-          &= -\frac{1}{\partial W_{32}} \frac{1}{N} \sum_{i=1}^N tr(y^T y - 2 y^T W_{32} W_{21} x + x^T W_{21}^T W_{32}^T W_{32} W_{21} x) \nonumber \\
-          &= \frac{1}{N} \sum_{i=1}^N 2 \frac{1}{\partial W_{32}} tr(y^T W_{32} W_{21} x) - \frac{1}{\partial W_{32}}tr(x^T W_{21}^T W_{32}^T W_{32} W_{21} x) \nonumber \\
-          &= \frac{1}{N} \sum_{i=1}^N 2 y x^T W_{21}^T - 2 W_{32} W_{21} x x^T W_{21}^T \nonumber \\
-          &= 2 \Sigma_{31} W_{21}^T - 2 W_{32} W_{21} \Sigma_{11} W_{21}^T \nonumber \\
-          -\frac{\partial L}{\partial W_{32}} &= 2 (\Sigma_{31} - W_{32} W_{21} \Sigma_{11}) W_{21}^T
-          \end{align}
-          $
-        </p>
+            <p>
+              $
+              \begin{align}
+              -\frac{\partial L}{\partial W_{32}} &= -\frac{1}{\partial W_{32}} \frac{1}{N} \sum_{i=1}^N (y - W_{32} W_{21} x)^T (y - W_{32} W_{21} x) \nonumber \\
+              &= -\frac{1}{\partial W_{32}} \frac{1}{N} \sum_{i=1}^N tr(y^T y - 2 y^T W_{32} W_{21} x + x^T W_{21}^T W_{32}^T W_{32} W_{21} x) \nonumber \\
+              &= \frac{1}{N} \sum_{i=1}^N 2 \frac{1}{\partial W_{32}} tr(y^T W_{32} W_{21} x) - \frac{1}{\partial W_{32}}tr(x^T W_{21}^T W_{32}^T W_{32} W_{21} x) \nonumber \\
+              &= \frac{1}{N} \sum_{i=1}^N 2 y x^T W_{21}^T - 2 W_{32} W_{21} x x^T W_{21}^T \nonumber \\
+              &= 2 \Sigma_{31} W_{21}^T - 2 W_{32} W_{21} \Sigma_{11} W_{21}^T \nonumber \\
+              -\frac{\partial L}{\partial W_{32}} &= 2 (\Sigma_{31} - W_{32} W_{21} \Sigma_{11}) W_{21}^T
+              \end{align}
+              $
+            </p>
 
-        <p>
-          We similarly derive $-\frac{\partial L}{\partial W_{21}}$:
-          $
-          \begin{align}
-          -\frac{\partial L}{\partial W_{21}} = 2 \Sigma_{32}^T (\Sigma_{31} - W_{32} W_{21} \Sigma_{11})
-          \end{align}
-          $
-        </p>
+            <p>
+              We similarly derive $-\frac{\partial L}{\partial W_{21}}$:
+              $
+              \begin{align}
+              -\frac{\partial L}{\partial W_{21}} = 2 \Sigma_{32}^T (\Sigma_{31} - W_{32} W_{21} \Sigma_{11})
+              \end{align}
+              $
+            </p>
 
-        <p>
-          Together, these coupled nonlinear differential equations define the
-          learning dynamics of a linear neural network. One key aspect is that
-          the learning dynamics are non-linear, meaning that deep linear networks
-          are more sophisticated than shallow (i.e. single-layer) networks. These
-          non-linear learning dynamics arise from the choice of error function:
-          MSE produces a loss function that is quartic with respect to the weights,
-          resulting in a gradient that is cubic with respect to the weights.
-        </p>
+            <p>
+              Together, these coupled nonlinear differential equations define the
+              learning dynamics of a linear neural network. One key aspect is that
+              the learning dynamics are non-linear, meaning that deep linear networks
+              are more sophisticated than shallow (i.e. single-layer) networks. These
+              non-linear learning dynamics arise from the choice of error function:
+              MSE produces a loss function that is quartic with respect to the weights,
+              resulting in a gradient that is cubic with respect to the weights.
+            </p>
+            </div>
+          </div>
+
+        <h2 id="nonlinear_nn">Nonlinear Neural Networks</h2>
+            <div>
+              <h3 id="perceptron">Perceptron</h3>
+              <div>
+                  <p>
+                      One of the earliest and simplest models of a nonlinear neural network is
+                      a binary classifier called the Perceptron, the non-linear equivalent of the
+                      <a href="#linear_neuron"> single linear neuron</a>:
+                  </p>
+
+                  <p>
+                      $\begin{align}
+                      y = \sign(w^T x)
+                      \end{align}$
+                  </p>
+
+                  <p>
+                      An amazing property of the perceptron was that for a given classification
+                      problem, if the
+                  </p>
+
+              </div>
+            </div>
+
+
+
       </section>
     </div>
 

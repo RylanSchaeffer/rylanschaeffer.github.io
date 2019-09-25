@@ -34,8 +34,9 @@
     </script>
 
     <div style="display: none">
-    $usepackage{centernot}$
-    $\DeclareMathOperator*{\argmax}{argmax}$
+      $usepackage{centernot}$
+      $\DeclareMathOperator*{\argmax}{argmax}$
+      $\DeclareMathOperator{\defeq}{\stackrel{def}{=}}$
     </div>
   </head>
 
@@ -64,6 +65,10 @@
                 <li><a href="#binomial">Binomial Distribution</a></li>
                 <li><a href="#normal_approx_of_binomial">Normal Approximation to the Binomial Distribution</a></li>
               </ul>
+            <li><a href="#sampling">Sampling</a></li>
+              <ul>
+                <li><a href="#inverse_cdf_sampling">Inverse CDF Sampling</a></li>
+              </ul>
             <li><a href="#pgm">Probabilistic Graphical Models</a></li>
               <ul>
                 <li><a href="#d_separation">D-Separation</a></li>
@@ -91,12 +96,90 @@
             For outcome $x=k$, we should expect the error $E(k)$:
           </p>
 
-          <div style="text-align: center;">
-            $\begin{align*}
+          <div>
+            $\begin{align}
             E(k) &= P_{x \sim Bin}(x=k) - P_{x \sim N}(x=k)\\
             &= {n \choose k} p^k (1-p)^{n-k} - |2 \pi \Sigma|^{-1/2} \exp [-\frac{1}{2}(x - \mu)^T \Sigma^{-1} (x - \mu)]
-            \end{align*}$
+            \end{align}$
           </div>
+
+        <h2 id="sampling">Sampling</h2>
+        <div>
+          <p>
+            Sampling algorithms are processes for gathering samples from a probability distribution $p(x)$.
+            The need arises from some distributions that may have no easily describable density, but we
+            would still like to compute properties of this density (e.g. the mean).
+          </p>
+
+          <h3 id="inverse_cdf_sampling">Inverse CDF Sampling</h3>
+          <div>
+            <p>
+              Inverse CDF Sampling gives us the ability to sample from any distribution $p(x)$ under
+              two necessary and sufficient conditions:
+            </p>
+
+            <ol>
+              <li>We can generate samples from $U(0,1)$</li>
+              <li>We can invert the cumulative distribution function (CDF) of $x$. I'll denote the
+                CDF of $x$ using $F_{p(x)}(c) \defeq \int_{-\infty}^{c} p(x) dx$.</li>
+            </ol>
+
+            <p>
+              There are two properties that make this
+              possible. First, a CDF is uniquely invertible, meaning that for a given value $u$
+              between 0 and 1, there is exactly 1 point $c$ in the distribution's support that solves
+              $u = \int_{-\infty}^c p(x) dx \defeq F_{p(x)}(c)$. Second, the CDF of any random
+              variable has a uniform distribution over $(0, 1)$.
+              One way to see this consists of computing the CDF of $F_{p(x)}(c)$ and checking whether
+              it is linear; this is a property of only Uniform distributions, so if this holds
+              (and I will show that it does), then the CDF of $x$. Define $u = F_{p(x)}(c)$,
+              with a corresponding CDF $F_{p(u)}(c')$.
+            </p>
+
+            <p style="text-align: center;">
+              $\begin{align*}
+              F_{p(u)}(c') &\defeq P(u \leq c') && \text{Definition of CDF of $u$}\\
+              &= P(F_{p(x)}(c) \leq c') && \text{Definition of $u$}\\
+              &= P(c \leq F_{p(x)}^{-1}(c')) && \text{Unique inverse of $F_{p(x)}(\cdot)$}\\
+              &= F_{p(x)}(F_{p(x)}^{-1}(c')) && \text{Definition of CDF of $x$}\\
+              &= c'
+              \end{align*}$
+            </p>
+
+            <p>
+              Intuitively, this says that the probability that $u$ is less than some value $c'$
+              is just the value $c'$ itself! Hence, we conclude the CDF of $u$ is linearly
+              growing and thus $u$ is distributed uniformly. Put together, these
+              properties give us the ability to easily sample from $p(x)$:
+              sample $u$ from $U(0, 1)$ and then solve $x = F_{p(x)}^{-1}(u)$.
+            </p>
+          </div>
+
+          <h3 id="rejection_sampling">Rejection Sampling</h3>
+          <div>
+            <p>
+              Rejection sampling gives us the ability to sample from any target distribution $p(x)$ as long
+              as we can write down the density $p(x)$ and as long as we can sample from another distribution $q(x)$,
+              called the proposal distribution, that has the same (or wider) support. The general idea is
+              to generate samples from $q(X)$, called the proposal distribution, and throw away samples that
+              unlikely under the target distribution. We need $q(x)$ to have a support at least as wide
+              as $p(x)$'s support  to ensure that all possible outcomes $x$ are sampled.
+            </p>
+
+            <p>
+
+            </p>
+          </div>
+
+          <h3 id="importance_sampling">Importance Sampling</h3>
+
+          <h3 id="gibbs_sampling">Gibbs Sampling</h3>
+          <div>
+
+          </div>
+
+
+        </div>
 
         <h2 id="pgm">Probabilistic Graphical Models</h2>
           <h3 id="d_separation">Dependence-Separation</h3>
