@@ -249,13 +249,13 @@
               l(\theta) \defeq \log p(x|\theta)
               &= \log \int_y p(x, y| \theta) dy && \text{Marginalization over $y$}\\
               &= \log \int_y \frac{p(x, y| \theta)}{q(y)} q(y) dy && 1 = \frac{q(y)}{q(y)}\\
-              &= \log \mathbb{E}_{q(x)}[\frac{p(x, y| \theta)}{q(y)}] && \text{Defn. of expectation}\\
-              &\geq \mathbb{E}_{q(x)}[\log \frac{p(x, y| \theta)}{q(y)}] && \text{Jensen's Inequality}
+              &= \log \mathbb{E}_{q(y)}[\frac{p(x, y| \theta)}{q(y)}] && \text{Defn. of expectation}\\
+              &\geq \mathbb{E}_{q(y)}[\log \frac{p(x, y| \theta)}{q(y)}] && \text{Jensen's Inequality}
               \end{align}$
             </p>
 
             <p>
-              We call this lower bound $F(q, \theta) \defeq \mathbb{E}_{q(x)}[\log \frac{p(x, y| \theta)}{q(y)}]$
+              We call this lower bound $F(q, \theta) \defeq \mathbb{E}_{q(y)}[\log \frac{p(x, y| \theta)}{q(y)}]$
               the <b>free energy</b>. It has several equivalent forms that will reveal to us
               the two EM steps that, when iteratively applied, monotonically increase the free energy,
               and thus monotonically increase the log likelihood.
@@ -263,11 +263,11 @@
 
             <p>
               $\begin{align}
-              F(q, \theta) &\defeq \mathbb{E}_{q(x)}[\log \frac{p(x, y| \theta)}{q(y)}]\\
-              &= \mathbb{E}_{q(x)}[\log p(x, y| \theta)] - H[q] && \text{where }
-              H[q] = \mathbb{E}_{q(x)}[\log q(x)] = \text{entropy of $q(y)$} \\
+              F(q, \theta) &\defeq \mathbb{E}_{q(y)}[\log \frac{p(x, y| \theta)}{q(y)}]\\
+              &= \mathbb{E}_{q(y)}[\log p(x, y| \theta)] - H[q] && \text{where }
+              H[q] = \mathbb{E}_{q(y)}[\log q(y)] = \text{entropy of $q(y)$} \\
               &= l(\theta) - KL[q(y)||p(y|x, \theta)] &&
-              \text{where } KL[q(y)||p(y|x, \theta)] = -\mathbb{E}_{q(x)}[\log \frac{p(y|x, \theta)}{q(y)}]
+              \text{where } KL[q(y)||p(y|x, \theta)] = -\mathbb{E}_{q(y)}[\log \frac{p(y|x, \theta)}{q(y)}]
               \end{align}$
             </p>
 
@@ -288,7 +288,8 @@
               <li>
                 Holding parameters $\theta$ fixed, optimize $F(q, \theta)$ with respect
                 to $q$:<br><br>
-                $\begin{align}q^{(k)}(y) = \argmax_{q(y)} F(q(y), \theta^{(k-1)})\end{align}$.
+                $\begin{align}q^{(k)}(y) = \argmax_{q(y)} F(q(y), \theta^{(k-1)}) \Rightarrow
+                q^{(k)}(y) = p(y|x, \theta^{(k-1)})\end{align}$.
               </li>
               <li>
                 Holding $q(y)$ fixed, optimize $F(q, \theta)$ with respect to $\theta$:<br><br>
