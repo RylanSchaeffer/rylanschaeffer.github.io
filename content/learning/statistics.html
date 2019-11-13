@@ -64,6 +64,13 @@
               <ul>
                 <li><a href="#jensens_inequality">Jensen's Inequality</a></li>
               </ul>
+            <li>Parameter Estimation</li>
+              <ul>
+                <li><a href="#estimator_desiderata">Estimator Desiderata</a></li>
+                <li><a href="#maximum_likelihood">Maximum Likelihood Estimation</a></li>
+<!--                <li><a href="#rao_blackwellization">Rao-Blackwellization</a></li>-->
+<!--                <li><a href="#control_variates">Control Variates</a></li>-->
+              </ul>
             <li><a href="#exponential_family">Exponential Family Distributions</a></li>
               <ul>
                 <li><a href="#binomial">Binomial Distribution</a></li>
@@ -72,6 +79,7 @@
             <li><a href="#sampling">Sampling</a></li>
               <ul>
                 <li><a href="#inverse_cdf_sampling">Inverse CDF Sampling</a></li>
+                <li><a href="#rejection_sampling">Rejection Sampling</a></li>
               </ul>
             <li><a href="#probabilistic_graphical_models">Probabilistic Graphical Models</a></li>
               <ul>
@@ -102,7 +110,59 @@
           </div>
         </div>
 
+        <h2 id="parameter_estimation" style="clear: both; text-align:center;">Parameter Estimation</h2>
+        <div>
+          <h3 id="estimator_desiderata">Estimator Desiderata</h3>
+          <div>
+            <p>
+              Suppose $\hat{\theta}(x)$ is an estimator of a parameter $\theta$. We write $\hat{\theta}(x)$
+              to remind ourselves that the estimator is a function of data $x$ that
+              depends on the parameter $\theta$. Ideally, we want estimators to have the following
+              properties:
+
+              <ul>
+                <li>Consistency: As $N \rightarrow \infty$, $\hat{\theta} \rightarrow \theta$</li>
+                <li>Unbiasedness: $\mathbb{E}_{p(x|\theta)}[\hat{\theta}(x)] = \theta$</li>
+                <li>Minimal Variance: TODO</li>
+              </ul>
+            </p>
+          </div>
+
+          <h3 id="maximum_likelihood">Maximum Likelihood Estimator</h3>
+          <div>
+            <p>
+              For a random variable $x$ whose distribution depends on parameters $\theta$,
+              we define the likelihood as $p(x|\theta)$. Maximum likelihood estimation
+              says to choose the estimator $\theta^{MLE}$ that maximizes the likelihood:
+
+              $$\theta^{MLE} = \argmax_{\theta} p(x|\theta) = \argmax_{\theta} \log p(x|\theta)$$
+
+              where the second equality follows from the monotonicity of the log function
+              i.e. $z_1 < z_2 \Rightarrow \log(z_1) < \log(z_2)$.
+              If the random variable $x$ is a set of $N$ identically and independently distributed
+              random variables $x_i$ i.e. $x = \{x_i \}_{i=1}^N$, the maximum likelihood estimator can
+              be rewritten as:
+
+              $$ \theta^{MLE} = \argmax_{\theta} \log \prod_{i=1}^N p(x_i|\theta) =
+              \argmax_{\theta} \sum_{i=1}^N  \log p(x_i|\theta)$$
+            </p>
+          </div>
+
+          <h3>Maximum A Posterior Estimator (TODO)</h3>
+          <div>
+          </div>
+
+          <h3>Bayes Estimator (TODO)</h3>
+          <div>
+          </div>
+
+          <h3>Method of Moments Estimator (TODO)</h3>
+          <div>
+          </div>
+        </div>
+
         <h2 id="exponential_family" style="clear: both; text-align:center;">Exponential Family Distributions</h2>
+        <div>
           <h3 id="binomial">Binomial Distribution</h3>
           <h3 id="normal_approx_of_binomial">Normal Approximation to the Binomial Distribution</h3>
           <p>
@@ -127,13 +187,14 @@
             &= {n \choose k} p^k (1-p)^{n-k} - |2 \pi \Sigma|^{-1/2} \exp [-\frac{1}{2}(x - \mu)^T \Sigma^{-1} (x - \mu)]
             \end{align}$
           </div>
+        </div>
 
         <h2 id="sampling">Sampling</h2>
         <div>
           <p>
             Sampling algorithms are processes for gathering samples from a probability distribution $p(x)$.
-            The need arises from some distributions that may have no easily describable density, but we
-            would still like to compute properties of this density (e.g. the mean).
+            The need arises because some distributions are horribly difficult to analytically describe
+            but easy to sample from.
           </p>
 
           <h3 id="inverse_cdf_sampling">Inverse CDF Sampling</h3>
@@ -183,22 +244,54 @@
           <h3 id="rejection_sampling">Rejection Sampling</h3>
           <div>
             <p>
-              Rejection sampling gives us the ability to sample from any target distribution $p(x)$ as long
-              as we can write down the density $p(x)$ and as long as we can sample from another distribution $q(x)$,
-              called the proposal distribution, that has the same (or wider) support. The general idea is
-              to generate samples from $q(X)$, called the proposal distribution, and throw away samples that
-              unlikely under the target distribution. We need $q(x)$ to have a support at least as wide
-              as $p(x)$'s support  to ensure that all possible outcomes $x$ are sampled.
+              Rejection sampling gives us the ability to sample from any target density $f(x)$ as long
+              as we can write down the density $f(x)$ and as long as we can sample from another distribution,
+              the proposal distribution $g(x)$ with the same (or wider) support. The idea is
+              to generate samples from $g(x)$ and throw away samples that are
+              unlikely under the target distribution. Consequently, we'll need $g(x)$ to have a support at
+              least as wide as $f(x)$'s support  to ensure that all possible outcomes $x$ are sampled.
+              Formally, what should rejection sampling look like?
             </p>
 
             <p>
+              Suppose we generate samples independently from the proposal distribution $g(x)$
+              and keep only samples $\{ x_i \}_{i=1}^N$ that meet some criteria. What should those criteria
+              be? For now, let's suppose that each sample $x_i$ met a (possibly random) criteria $c_i$.
+              We can write the probability of a single sample as $p(x_i | c_i)$. One way to show that
+              this set of samples matches a set of samples from the target distribution $f(x)$ is to
+              show that the CDF of these samples match the CDF of the target distribution's CDF,
+              denoted $F_{x}(\cdot)$. Formally, for some scalar value $a$, we'd like to choose
+              criteria such that that:
 
+              $$ p(x_i \leq a | c_i) = F_{x_i}(a)$$
+            </p>
+
+            <p>
+              We start by rewriting the left-hand side using Bayes' rule:
+
+              $$ p(x_i \leq a | c_i) = \frac{p(c_i|x_i \leq a) P(x_i \leq a)}{p(c_i)} = F_{x_i}(a)$$
+
+              We know that we generated $x_i$ from $g(x)$, so $P(x_i \leq a)$ is just
+              the CDF of $g(x)$ i.e. $P(x_i \leq a) = G_{x_i}(a)$. This leaves us with:
+
+              $$ p(x_i \leq a | c_i) = \frac{p(c_i|x_i \leq a) G_{x_i}(a)}{p(c_i)} = F_{x_i}(a)$$
+
+              This leads us to realize that the following must hold for our choice of $c_i$:
+
+              $$ \frac{p(c_i|x_i \leq a)}{p(c_i)} = \frac{F_{x_i}(a)}{G_{x_i}(a)} $$
+            </p>
+
+            <p>
+              Let's consider the simplest solution possible: if $c \sim U(0, 1)$, then $p(c_i) = 1$.
             </p>
           </div>
 
-          <h3 id="importance_sampling">Importance Sampling</h3>
+          <h3 id="importance_sampling">Importance Sampling (TODO)</h3>
+          <div>
 
-          <h3 id="gibbs_sampling">Gibbs Sampling</h3>
+          </div>
+
+          <h3 id="gibbs_sampling">Gibbs Sampling (TODO)</h3>
           <div>
 
           </div>
