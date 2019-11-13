@@ -63,9 +63,8 @@
           <ul class="table-of-content" id="markdown-toc">
             <li id="#objective_functions">Objective Functions <ul>
               <li><a href="#mean_squared_error">Mean Squared Error</a><ul>
-                <li><a href="#unpacking_supervised_mse">Unpacking MSE in Supervised Learning</a> </li>
+                <li><a href="#mse_equals_bias_sqrd_plus_variance">Unpacking MSE in Supervised Learning</a> </li>
               </ul></li>
-            </li>
             </ul></li>
             <li>Bias - Variance Trade-Off </li>
           </ul>
@@ -74,7 +73,7 @@
         <h1 id="objective_functions">Objective Functions</h1>
 
         <h2 id="mean_squared_error">Mean Squared Error</h2>
-          <h3 id="unpacking_supervised_mse">Unpacked MSE in Supervised Learning</h3>
+          <h3 id="mse_equals_bias_sqrd_plus_variance">Unpacked MSE in Supervised Learning</h3>
             <p>
               Suppose we'd like to better understand our expected loss when
               performing regression over a supervised dataset $\{(x_i, y_i )\}_{i=1}^N$.
@@ -160,9 +159,9 @@
 
             <p>
               The significance of this result is twofold. First, the expected loss
-              is the sum of two distinct losses: how far our model $f(x)$ differs from
-              the true conditional expected value $\mathbb{E}[y|x]$, and how the
-              variance inherent in the data. Second, it tells us that the optimal
+              is the sum of two distinct <terms></terms>: how far our model $f(x)$ differs from
+              the true conditional expected value $\mathbb{E}[y|x]$, and how much variance
+              is inherently in in the data. Second, it tells us that the optimal
               model (i.e. the model that minimizes the expected loss under MSE) is
               the model that matches the conditional expected value.
             </p>
