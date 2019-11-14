@@ -64,6 +64,28 @@
         <div id="toc_container">
           <h1 class="toc_title">Contents</h1>
           <ul class="table-of-content" id="markdown-toc">
+            <li><a href="#learning_algorithms">Learning Algorithms</a>
+              <ul>
+                <li><a href="#backprop">Backpropagation</a></li>
+                <li><a href="#weight_perturbation">Weight Perturbation</a></li>
+                <li><a href="#node_pertubation">Node Perturbation</a></li>
+                <li><a href="#bp_vs_wp_vs_np">Comparison of Backprop, Weight Perturbation & Node Perturbation</a></li>
+              </ul>
+            </li>
+
+            <li><a href="#linear_models">Linear Models</a>
+              <ul>
+                <li><a href="#linear_neuron">Single Linear Neuron</a></li>
+                <li><a href="#deep_linear_nn">Deep Linear Neural Networks</a></li>
+              </ul>
+            </li>
+
+            <li><a href="#nonlinear_models">Nonlinear Neural Networks</a>
+                <ul>
+                    <li><a href="#perceptron">Perceptron</a></li>
+                </ul>
+            </li>
+
             <li><a href="#activation_functions">Activation Functions</a>
               <ul>
                 <li><a href="#logistic_sigmoid">Logistic Sigmoid </a></li>
@@ -72,24 +94,146 @@
                   Logistic Sigmoid and Hyperbolic Tangent</a></li>
               </ul>
             </li>
-            <li><a href="#linear_nn">Linear Neural Networks</a>
-              <ul>
-                <li><a href="#linear_neuron">Single Linear Neuron</a></li>
-                <li><a href="#deep_linear_nn">Deep Linear Neural Networks</a></li>
-              </ul>
-            </li>
-              <li><a href="#nonlinear_nn">Nonlinear Neural Networks</a>
-                  <ul>
-                      <li><a href="#perceptron">Perceptron</a></li>
-                  </ul>
-              </li>
-
           </ul>
         </div>
 
+        <h2 id="learning_algorithms">Learning Algorithms</h2>
+        <div>
+          <h3 id="backprop">Backpropagation</h3>
+          <div>
+            <p>
+              Backpropagation ("backprop" for short)
+              TODO
+            </p>
+
+            <h4>Backprop as Chain Derivative</h4>
+            <p>
+              TODO
+            </p>
+
+            <h4>Backprop as Constrained Optimization</h4>
+            <p>
+              Backprop is most commonly derived using chain derivatives.
+              However, backprop can also be derived as the solution to a constrained optimization
+              problem (<a href="papers/leCun_1988_Theoretical_Framework_For_Backprop.pdf">LeCun 1988</a>).
+              The idea is to see backprop as an algorithm for selecting a set of vectors
+              $\{x_i\}_{i=1}^{L+1}$, one per layer of the network, that minimize a loss function
+              subject to a set of consistency equations:
+
+              $$ x^l = f(W^l x^{l-1} + b^l)$$
+
+              or equivalently, written in index form:
+
+              $$ x_i^l = f \Big( \sum_{j=1}^{N^{l-1}} W_{ij}^l x_j^{l-1} + b_i^l \Big)$$
+            </p>
+
+            <p>
+              we have $N$ datapoints $\{x_i, y_i\}_{i=1}^N$ and a
+              mean-squared error loss function.
+            </p>
+          </div>
+
+          <h3 id="weight_perturbation">Weight Perturbation</h3>
+          <div>
+            <p>
+              Weight Perturbation is an algorithm for learning with a global error signal
+              whereby additive noise is used to estimate the gradient of
+              the error signal with respect to that parameter
+              (<a href="papers/Jabri_Flower_1992_Weight_Perturbation.pdf">Jabri & Flower 1992</a>).
+              Consider training a feedforward network $y(\cdot)$ using mean squared error on training data
+              $\{(x_i, y_i)\}_{i=1}^N$:
+
+              $$ E_{tr} = \frac{1}{2} || y_i - y(x_i) ||_2^2 $$
+
+              $$x_i^l = f \Big(\sum_j W_{ij}^l x_j^{l-1} + b_i^l \Big) $$
+
+              Through a relatively simple algorithm, we can estimate $\frac{\partial E_{tr}}{\partial W_{ij}^l}$
+              and $\frac{\partial E_{tr}}{\partial b_{i}^l}$ simply by adding a small amount of
+              independent noise to each parameter. To understand why this works, consider adding
+              noise $\Omega_{ij}^l, \gamma_i^l \sim N(0, \sigma^2)$ to each parameter $W_{ij}^l, b_i^l$.
+              The network's activity and outputs will consequently be slightly pertubed:
+
+              $$ \tilde{E}_{tr} = \frac{1}{2} || y_i - \tilde{y}(x_i) ||_2^2$$
+
+              $$\tilde{x}_i^l = f \Big(\sum_j (W_{ij}^l + \Omega_{ij}^l) \tilde{x}_j^{l-1} + (b_i^l + \gamma_i^l) \Big) $$
+            </p>
+
+            <p>
+              If the variance of the additive noise $\sigma^2$ is small, we can use a linear
+              approximation of the training error $E_{tr}$ to quantify how the additive noise will affect the
+              training error.
+
+              $$\tilde{E}_{tr} \approx E_{tr} + \sum_{l, i, j} \frac{\partial E}{\partial W_{ij}^l}
+              \Omega_{ij}^l + \sum_{l, ij} \frac{\partial E}{\partial b_i^l} \gamma_i^l$$
+
+              Rearranging slightly, we can write that the difference between the pertubed and
+              unperturbed training error is:
+
+              $$\tilde{E}_{tr} - E_{tr} \approx \sum_{l, i, j} \frac{\partial E}{\partial W_{ij}^l}
+              \Omega_{ij}^l + \sum_{l, ij} \frac{\partial E}{\partial b_i^l} \gamma_i^l$$
+
+              Since each noise term was sampled independently from a distribution with mean 0,
+              we see that if we multiply both sides by a noise term $\Omega_{ab}^c$ and take the expectation with
+              respect to that noise term, the independence and zero mean will annihilate all
+              terms except the one containing the gradient with respect to the corresponding
+              parameter $W_{ab}^c$:
+
+              $\begin{align}
+              \tilde{E}_{tr} - E_{tr}
+              &\approx \sum_{l, i, j} \frac{\partial E}{\partial W_{ij}^l}
+              \Omega_{ij}^l + \sum_{l, ij} \frac{\partial E}{\partial b_i^l} \gamma_i^l\\
+              (\tilde{E}_{tr} - E_{tr}) \Omega_{ab}^c
+              &\approx \sum_{l, i, j} \frac{\partial E}{\partial W_{ij}^l}
+              \Omega_{ij}^l \Omega_{ab}^c  + \sum_{l, ij} \frac{\partial E}{\partial b_i^l} \gamma_i^l
+              \Omega_{ab}^c\\
+              \langle (\tilde{E}_{tr} - E_{tr}) \Omega_{ab}^c \rangle_{\Omega_{ab}^c}
+              &\approx \langle \sum_{l, i, j} \frac{\partial E}{\partial W_{ij}^l}
+              \Omega_{ij}^l \Omega_{ab}^c  + \sum_{l, ij} \frac{\partial E}{\partial b_i^l} \gamma_i^l
+              \Omega_{ab}^c \rangle_{\Omega_{ab}^c}\\
+              &\approx \sum_{l, i, j} \frac{\partial E}{\partial W_{ij}^l}
+              \langle \Omega_{ij}^l \Omega_{ab}^c \rangle_{\Omega_{ab}^c}  + \sum_{l, ij}
+              \frac{\partial E}{\partial b_i^l} \gamma_i^l \langle \Omega_{ab}^c \rangle_{\Omega_{ab}^c}\\
+              &\approx \frac{\partial E}{\partial W_{ab}^c} \sigma^2\\
+              \frac{1}{\sigma^2} \langle (\tilde{E}_{tr} - E_{tr}) \Omega_{ab}^c \rangle_{\Omega_{ab}^c}
+              &\approx  \frac{\partial E}{\partial W_{ab}^c}
+              \end{align}$
+            </p>
+
+            <p>
+              We can further simplify by noting that since $E_{tr}$ is independent of $\Omega_{ab}^c$,
+
+              $$ \langle E_{tr} \Omega_{ab}^c \rangle_{\Omega_{ab}^c} =
+              E_{tr} \langle \Omega_{ab}^c \rangle_{\Omega_{ab}^c} = 0$$
+
+              and therefore
+
+              $$\frac{1}{\sigma^2} \langle (\tilde{E}_{tr} - E_{tr}) \Omega_{ab}^c \rangle_{\Omega_{ab}^c}
+               = \frac{1}{\sigma^2} \langle \tilde{E}_{tr} \Omega_{ab}^c \rangle_{\Omega_{ab}^c}
+              \approx \frac{\partial E}{\partial W_{ab}^c}$$
+
+              This same argument applies for $\gamma_a^c$ as well, yielding:
+
+              $$ \frac{1}{\sigma^2} \langle \tilde{E}_{tr} \gamma_{a}^c \rangle_{\gamma{a}^c}
+              \approx \frac{\partial E}{\partial b_{a}^c}$$
+            </p>
+
+            <p>
+              What we've shown is that the covariance between the pertubation of the weight
+              and the pertubed error will (in expectation) point in the direction of the
+              gradient. No chain derivatives necessary!
+            </p>
+          </div>
+
+          <h3 id="node_perturbation">Node Perturbation</h3>
+          <div>
+            <p>
+              TODO
+            </p>
+          </div>
+        </div>
 
         <h2 id="activation_functions">Activation Functions</h2>
-          <div>
+        <div>
           <h3 id="logistic_sigmoid">Logistic Sigmoid</h3>
           <div>
 
@@ -145,8 +289,8 @@
           </div>
           </div>
 
-        <h2 id="linear_nn">Linear Neural Networks</h2>
-          <div>
+        <h2 id="linear_models">Linear Models</h2>
+        <div>
           <h3 id="linear_neuron">Single Linear Neuron</h3>
           <div>
 
@@ -273,8 +417,8 @@
             </div>
           </div>
 
-        <h2 id="nonlinear_nn">Nonlinear Neural Networks</h2>
-            <div>
+        <h2 id="nonlinear_models">Nonlinear Models</h2>
+        <div>
               <h3 id="perceptron">Perceptron</h3>
               <div>
                   <p>
