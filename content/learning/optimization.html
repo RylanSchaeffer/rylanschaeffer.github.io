@@ -46,7 +46,7 @@
     <!-- HEADER -->
     <div id="header_wrap" class="outer">
       <header class="inner">
-        <h1 id="header_title">Rylan Schaeffer > Learning > Subject Area</h1>
+        <h1 id="header_title">Rylan Schaeffer > Learning > Optimization</h1>
         <nav>
           <div>
             <a href="../../index.html">Home</a> |
@@ -63,7 +63,8 @@
         <div id="toc_container">
           <h1 class="toc_title">Contents</h1>
           <ul class="table-of-content" id="markdown-toc">
-            <li><a href="#gradient_based">Gradient-Based Optimization</a>
+            <li><a href="#first_order_gradient">First-Order Gradient-Based Optimization</a> </li>
+            <li><a href="#second_order_gradient">Second-Order Gradient-Based Optimization</a>
               <ul>
                 <li><a href="#newtons_method">Newton's Method</a></li>
               </ul>
@@ -71,15 +72,18 @@
           </ul>
         </div>
 
-        <h2 id="gradient_based">Gradient-Based Optimization</h2>
+        <h2 id="first_order_gradient">First-Order Gradient-Based Optimization</h2>
+        <div>
+        </div>
+
+        <h2 id="second_order_gradient">Second-Order Gradient-Based Optimization</h2>
         <div>
           <h3 id="newtons_method">Newton's Method</h3>
           <div>
-            <h4>Idea</h4>
+            <h4>Newton's Method: Idea</h4>
             <div>
               <p>
-                Newton's Method is a useful second-order gradient descent-based optimization
-                algorithm. Suppose we wish to minimize a scalar-valued function $f(x)$
+                Suppose we wish to minimize a scalar-valued function $f(x)$
                 where $x \in \mathbb{R}^N$ using gradient descent. We want to identify
                 what perturbation $\delta$ to $x$ minimizes $f(x)$. We phrase this question
                 as an optimization problem:
@@ -109,7 +113,7 @@
               </p>
             </div>
 
-            <h4>Attraction to Saddle Points</h4>
+            <h4>Newton's Method: Attracted to Saddle Points</h4>
             <div>
               <p>
                 One interesting property of Newton's Method is that it is attracted to saddle
@@ -128,7 +132,7 @@
               </p>
             </div>
 
-            <h4>Convergence Analysis</h4>
+            <h4>Newton's Method: Convergence Analysis</h4>
             <div>
 
             </div>
