@@ -61,7 +61,11 @@
         <div id="toc_container">
         <h1 class="toc_title">Contents</h1>
         <ul class="table-of-content" id="markdown-toc">
-          <li>Value-Based RL</li>
+          <li>Value-Based RL
+            <ul>
+              <li><a href="#rescorla_wagner_rule">Rescorla Wagner Learning Rule</a> </li>
+            </ul>
+          </li>
           <li><a href="#policy_based_rl">Policy-Based RL</a>
             <ul>
               <li><a href="#policy_gradient_derivation">Derivation of Policy Gradient</a></li>
@@ -70,6 +74,43 @@
           <li><a href="#actor_critic_rl">Actor-Critic RL</a></li>
         </ul>
         </div>
+
+        <h2 id="value_based_rl">Value-Based RL</h2>
+        <div>
+          <h3 id="rescorla_wagner_rule">Rescorla Wagner Learning Rule</h3>
+          <div>
+            <p>
+              The Rescorla-Wagner Learning Rule (1972) was a seminal model of associative learning
+              that preceded reinforcement learning. Associative learning is the problem of learning
+              how different stimuli are associated with rewards or punishments $r_n$. The model considers
+              the agent receiving a one-hot encoded stimulus vector $s_n$, where each element indicates
+              the presence or absence of a stimulus and $n$ is the trial number, and using a linear
+              readout $w_n$ of the stimuli to predict the expected reward or punishment $v_n$:
+
+              $$ v_n = w_n^T s_n $$
+            </p>
+
+            <p>
+              Over the course of the $N$ trials, the linear readout $w_n$ is updated using the prediction
+              error, $r_n - v_n$ (occasionally denoted by $\delta_n$):
+
+              $$ w_{n+1} \leftarrow w_n + \eta (r_n - v_n) s_n $$
+
+              This learning rule is equivalent to online gradient descent under a mean-squared error loss
+              between the actual reward and the expected reward:
+
+              $$
+              \begin{align*}
+              L(w) &= \langle (r - v)^2 \rangle_{s} \\
+              \nabla_w L(w) &= \langle  0 - 2 r s + 2 s s^T w \rangle_{s}\\
+              &= 2 \langle (r - w^T s) s \rangle_{s}\\
+              &\propto \langle (r - v) s \rangle_{s}
+              \end{align*}
+              $$
+            </p>
+          </div>
+        </div>
+
 
         <h2 id="policy_based_rl">Policy-Based RL</h2>
         <h3 id="policy_gradient_derivation">Derive the Policy Gradient Theorem in an episodic environment.</h3>
