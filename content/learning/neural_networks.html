@@ -178,7 +178,7 @@
               terms except the one containing the gradient with respect to the corresponding
               parameter $W_{ab}^c$:
 
-              $\begin{align}
+              $$\begin{align*}
               \tilde{E}_{tr} - E_{tr}
               &\approx \sum_{l, i, j} \frac{\partial E}{\partial W_{ij}^l}
               \Omega_{ij}^l + \sum_{l, ij} \frac{\partial E}{\partial b_i^l} \gamma_i^l\\
@@ -196,7 +196,7 @@
               &\approx \frac{\partial E}{\partial W_{ab}^c} \sigma^2\\
               \frac{1}{\sigma^2} \langle (\tilde{E}_{tr} - E_{tr}) \Omega_{ab}^c \rangle_{\Omega_{ab}^c}
               &\approx  \frac{\partial E}{\partial W_{ab}^c}
-              \end{align}$
+              \end{align*}$$
             </p>
 
             <p>
@@ -223,10 +223,12 @@
               gradient. No chain derivatives necessary! Then, Weight Pertubation approximates
               gradient descent using the following update equations:
 
+              $$
               \begin{align*}
               \Delta W_{ij}^l &= - \eta \tilde{E}_{tr} \Omega_{ij}^l \\
               \Delta b_i^l &= - \eta \tilde{E}_{tr} \gamma_i^l
               \end{align*}
+              $$
             </p>
 
             <div>
@@ -274,21 +276,25 @@
 
               Thus,
 
+              $$
               \begin{align*}
               \frac{\partial E}{\partial W_{ab}^c}
               &= \frac{\partial E}{\partial \nu_a^c} x_b^c\\
               &= \frac{1}{\sigma^2}\langle (\tilde{E}_{tr} - E_{tr}) \gamma_a^c \rangle_{\gamma_a^c} x_b^c
               \end{align*}
+              $$
             </p>
 
             <p>
               Since $tilde{x} \approx x$ to first order in $\gamma$, NP approximates gradient descent
               using the following update equations:
 
+              $$
               \begin{align*}
               \Delta W_{ij}^l &= - \eta \tilde{E}_{tr} \gamma_i^l x_j^l \\
               \Delta b_i^l &= - \eta \tilde{E}_{tr} \gamma_i^l
               \end{align*}
+              $$
             </p>
           </div>
 
@@ -339,23 +345,24 @@
             <p>
               The logistic sigmoid and the hyperbolic tangent functions can be
               expressed as transformation of each other. Specifically,
-              $
-              \begin{align}
+
+              $$
+              \begin{align*}
               \tanh(x) &\defeq \frac{e^{2x} - 1}{e^{2x} + 1}
               = \frac{2e^{2x}}{e^{2x} + 1} - \frac{e^{2x} + 1}{e^{2x} + 1}
               = 2 \frac{e^{2x}}{e^{2x}} \frac{1}{1 + e^{-2x}} - 1
               = 2 \sigma(2x) - 1
-              \end{align}
-              $
+              \end{align*}
+              $$
             </p>
 
           <p>
             And therefore equivalently:
-            $
-            \begin{align}
+            $$
+            \begin{align*}
             \sigma(x) = \frac{\tanh(x/2) + 1}{2}
-            \end{align}
-            $
+            \end{align*}
+            $$
           </p>
 
           <p>
@@ -382,11 +389,11 @@
             </p>
 
             <p>
-              $
-              \begin{align}
+              $$
+              \begin{align*}
               y = w^T x
-              \end{align}
-              $
+              \end{align*}
+              $$
             </p>
 
             <p>
@@ -399,14 +406,14 @@
             </p>
 
             <p>
-              $
-              \begin{align}
+              $$
+              \begin{align*}
               L^{tr}(w) &\defeq \frac{1}{N} \sum_{n=1}^N (y_n - w^T x_n)^2 = \sum_{n=1}^N Tr(y_n - w^T x_n)^2\\\\
               \nabla_w L(w) = 0 &= \nabla_w \frac{1}{N} \sum_{n=1}^N (y_n^2 - 2 w^T x_n y_n + w^T x_n x_n^T w)\\
               0 &= -\sum_{n=1}^N y_n x_n + \sum_{n=1}^N x_n x_n^T w^*\\
               \sum_{n=1}^N x_n x_n^T w^* &= \sum_{n=1}^N y_n x_n
-              \end{align}
-              $
+              \end{align*}
+              $$
             </p>
 
             <p>
@@ -439,6 +446,8 @@
             </p>
             </div>
 
+          <h3>Multivariate Linear neuron</h3>
+
           <h3 id="deep_linear_nn">Deep Linear Neural Networks</h3>
           <div>
             <p>
@@ -466,25 +475,25 @@
             </p>
 
             <p>
-              $
-              \begin{align}
+              $$
+              \begin{align*}
               -\frac{\partial L}{\partial W_{32}} &= -\frac{1}{\partial W_{32}} \frac{1}{N} \sum_{i=1}^N (y - W_{32} W_{21} x)^T (y - W_{32} W_{21} x) \nonumber \\
               &= -\frac{1}{\partial W_{32}} \frac{1}{N} \sum_{i=1}^N tr(y^T y - 2 y^T W_{32} W_{21} x + x^T W_{21}^T W_{32}^T W_{32} W_{21} x) \nonumber \\
               &= \frac{1}{N} \sum_{i=1}^N 2 \frac{1}{\partial W_{32}} tr(y^T W_{32} W_{21} x) - \frac{1}{\partial W_{32}}tr(x^T W_{21}^T W_{32}^T W_{32} W_{21} x) \nonumber \\
               &= \frac{1}{N} \sum_{i=1}^N 2 y x^T W_{21}^T - 2 W_{32} W_{21} x x^T W_{21}^T \nonumber \\
               &= 2 \Sigma_{31} W_{21}^T - 2 W_{32} W_{21} \Sigma_{11} W_{21}^T \nonumber \\
               -\frac{\partial L}{\partial W_{32}} &= 2 (\Sigma_{31} - W_{32} W_{21} \Sigma_{11}) W_{21}^T
-              \end{align}
-              $
+              \end{align*}
+              $$
             </p>
 
             <p>
               We similarly derive $-\frac{\partial L}{\partial W_{21}}$:
-              $
-              \begin{align}
+              $$
+              \begin{align*}
               -\frac{\partial L}{\partial W_{21}} = 2 \Sigma_{32}^T (\Sigma_{31} - W_{32} W_{21} \Sigma_{11})
-              \end{align}
-              $
+              \end{align*}
+              $$
             </p>
 
             <p>
@@ -510,9 +519,9 @@
                   </p>
 
                   <p>
-                      $\begin{align}
+                      $\begin{align*}
                       y = \sign(w^T x)
-                      \end{align}$
+                      \end{align*}$
                   </p>
 
                   <p>
