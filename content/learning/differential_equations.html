@@ -61,8 +61,106 @@
         <div id="toc_container">
           <h1 class="toc_title">Contents</h1>
           <ul class="table-of-content" id="markdown-toc">
+            <li><a href="#linear_first_order_odes">Linear, First-Order Differential Equations</a></li>
             <li>Linear Stability Analysis</li>
           </ul>
+        </div>
+
+        <h2 id="linear_first_order_odes">Linear, First-Order Differential Equations</h2>
+        <div>
+          <h3>No Source Term</h3>
+          <div>
+            <p>
+              Consider the following linear, first-order differential equation where
+              $y'(t)$ is shorthand for $\frac{dy(t)}{dt}$:
+
+              $$y'(t) = a y(t) $$
+
+              The solution to this differential equations is one of the most important functions,
+              the exponential function. To see that the exponential function is the correct solution to the above
+              differential equation, observe that:
+
+              $$y(t) = y(0) e^{a t} \Rightarrow y'(t) = a \, y(0) e^{a t} = a y(t) $$
+
+              Intuitively, what this means is that a system with these dynamics will either grow
+              exponentially (for $a > 0$) or decay exponentially (for $a < 0$). For $a=0$, the
+              system will sit unchanged.
+            </p>
+          </div>
+
+          <h3>Source Term</h3>
+          <div>
+            <p>
+              Now, suppose a source term $q(t)$ is added:
+
+              $$y'(t) = a y(t) + q(t)$$
+
+              Every equation like this will have two solutions: the null solution and the
+              particular solution. By null solution, I mean the solution $y_n(t)$ to the equation:
+
+              $$ y_n'(t) - a y_n(t) = 0$$
+
+              By particular solution, I mean the solution $y_p(t)$ to the equation:
+
+              $$ y_p'(t) - a y_p(t) = q(t)$$
+
+              The complete solution $y_c = y_p + y_n$ to this ODE is the sum of the null solution and the
+              particular solution:
+
+              $$
+              \begin{align*}
+              0 &= y_n'(t) - a y_n(t)\\
+              q(t) &= y_p'(t) - a y_p(t)\\
+              0 + q(t) &= y_n'(t) - a y_n(t) + y_p'(t) - a y_p(t)\\
+              q(t) &= (y_n'(t) + y_p'(t)) - a(y_n(t) + y_p(t))\\
+              &= y_c'(t) - a y_c(t)
+              \end{align*}
+              $$
+
+              We should think of the null solution as the behavior of the system with no external source
+              and the particular solution as the behavior of the system for the exact choice of external
+              source $q(t)$.
+            </p>
+
+            <p>
+              A general solution to the equation $y'(t) - a y(t) = q(t)$ is the following:
+
+              $$y(t) = y(0)e^{at} + \int_0^t e^{a(t-s)} q(s) ds $$
+
+              Before deriving this, let's try to gain some intuition for it. We see that
+              if the source term is zero i.e. $q(t) = 0$, we recover the solution to the sourceless
+              differential equation i.e. $y(t) = y(0)e^{at}$. As we expect, the starting condition $y(0)$
+              grows (decays) exponentially depending on whether $a > 0$ ($a < 0$). The second term
+              is like a continuous sum of the new inputs, but each input $q(s)$ also grows/decays
+              exponentially depending on how much time has elapsed since its occurence. For instance,
+              if we're at $t=4$ and there was an input at time $t=2$, $q(s=2)$ , we would expect that
+              input to have grown/decayed proportional to the elapsed two seconds i.e. $q(s=2) e^{a(4-2)}$.
+              To derive this equation,
+            </p>
+          </div>
+
+          <h3>Solutions to Common Source Terms</h3>
+          <div>
+            <p>
+              Using the above equation, we can derive response functions to several commonly encountered
+              source functions. First, let's consider a constant source i.e. $q(t) = q$:
+
+              $$
+              \begin{align*}
+              y(t) &= y(0) e^{at} + \int_0^t e^{a(t-s)} q ds\\
+              &= y(0) e^{at} + q e^{at} \int_0^t e^{-as} ds\\
+              &= y(0) e^{at} + q e^{at} \frac{-1}{a} e^{-as} \Bigr\rvert_{s=0}^{s=t}\\
+              &= y(0) e^{at} + \frac{q}{a}(e^{at} - 1) & \text{Response to constant source}
+              \end{align*}
+              $$
+
+              What happens here? As we might expect, 
+            </p>
+
+            <p>
+              Second, let's consider a
+            </p>
+          </div>
         </div>
 
         <h2>Important Source Terms</h2>
