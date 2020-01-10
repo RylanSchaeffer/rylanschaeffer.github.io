@@ -394,7 +394,8 @@
               This shows something super important! Since the variance of any variable is positive, $\mathbb{V}[h]$
               will be positive, meaning as long as $h(x)$ has positive covariance with $f(x)$, then the
               variance of our control variate estimator will be less than the variance of the original
-              estimator.
+              estimator. If we know $f(x)$ exactly, then we would expect the control variate estimator
+              to have zero variance, and indeed, we see that setting $h(x) = f(x)$ delivers 0 variance.
             </p>
           </div>
 
