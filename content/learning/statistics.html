@@ -64,7 +64,7 @@
               <ul>
                 <li><a href="#jensens_inequality">Jensen's Inequality</a></li>
               </ul>
-            <li>Parameter Estimation</li>
+            <li><a href="#estimators">Estimators</a></li>
               <ul>
                 <li><a href="#estimator_desiderata">Estimator Desiderata</a></li>
                 <li><a href="#maximum_likelihood">Maximum Likelihood Estimation</a></li>
@@ -81,6 +81,10 @@
                 <li><a href="#inverse_cdf_sampling">Inverse CDF Sampling</a></li>
                 <li><a href="#rejection_sampling">Rejection Sampling</a></li>
               </ul>
+            <li><a href="#variance_reduction">Variance Reduction</a></li>
+            <ul>
+              <li><a href="#control_variates">Control Variates</a></li>
+            </ul>
             <li><a href="#probabilistic_graphical_models">Probabilistic Graphical Models</a></li>
               <ul>
                 <li><a href="#latent_variable_models">Latent Variable Models</a></li>
@@ -110,7 +114,7 @@
           </div>
         </div>
 
-        <h2 id="parameter_estimation" style="clear: both; text-align:center;">Parameter Estimation</h2>
+        <h2 id="estimators" style="clear: both; text-align:center;">Estimators</h2>
         <div>
           <h3 id="estimator_desiderata">Estimator Desiderata</h3>
           <div>
@@ -296,7 +300,74 @@
 
           </div>
 
+        </div>
 
+        <h2 id="variance_reduction">Variance Reduction Techniques</h2>
+        <div>
+
+          <p>
+            As mentioned <a href="#estimators">earlier</a>, a desirable property of estimators is that they have
+            small variance. There are many techniques for reducing the variance of an estimator.
+          </p>
+
+          <h3 id="control_variates">Control Variates</h3>
+          <div>
+            <p>
+              Using a control variate is one technique for reducing the variance of an estimator.
+              Suppose we want to estimate
+              the expected value of some scalar function $f(x)$ under the distribution $x \sim p(x)$:
+
+              $$\mathbb{E}_x[f(x)]$$
+
+              We can reduce the variance of an estimator by
+              introducing a new function, $h(x)$, called the control variate, and a
+              scalar variable $\beta$. Using both, we define a surrogate function:
+
+              $$\tilde{f}(x) \defeq f(x) - \beta (h(x) - \mathbb{E}_x[h(x)])$$
+
+              An estimator that estimates the expected value of this surrogate function is called
+              the control variate estimator.
+              If this looks like constrained optimization using Lagrange multipliers, that's
+              because this is exactly what a control variate does. First, let's demonstrate that
+              regardless of $\beta$ and $h(x)$, the new surrogate function $\tilde{f}(x)$ has the
+              same expectation as the original function $f(x)$. This is because we subtracted the expected
+              value of the control variate $h(x)$.
+
+              $$
+              \begin{align*}
+              \mathbb{E}_x[\tilde{f}(x)]
+              &= \mathbb{E}_x \Big[f(x) - \beta (h(x) - \mathbb{E}_x[h(x)]) \Big]\\
+              &= \mathbb{E}_x [f(x)] - \beta (\mathbb{E}_x[h(x)] - \mathbb{E}_x[h(x)])\\
+              &= \mathbb{E}_x[f(x)]
+              \end{align*}
+              $$
+
+              The advantage of the surrogate function is that if we correctly choose $h(x)$
+              and $\beta$, the variance of the surrogate
+              function will be lower than the variance for the original
+              function $f(x)$. Dropping $x$ for brevity, we see that
+
+              $$
+              \begin{align*}
+              \mathbb{V}_x[\tilde{f}(x)]
+              &= \mathbb{V}_x \Big[f - \beta (h - \mathbb{E}_x[h]) \Big]\\
+              &= \mathbb{E} [(f - \beta(h - \mathbb{E}[h]))^2] - \mathbb{E}[f - \beta(h - \mathbb{E}[h])]^2\\
+              &= \mathbb{E} [f^2 - 2 \beta f (h - \mathbb{E}[h]) + \beta^2 (h - \mathbb{E}[h])^2] - \mathbb{E}[f]^2\\
+              &= \mathbb{E} [f^2] - \mathbb{E} [f]^2 - 2 \beta \mathbb{E} [f (h - \mathbb{E}[h])] + \beta^2 \mathbb{V}[h]\\
+              &= \mathbb{V}[f] - 2 \beta \mathbb{E} [f (h - \mathbb{E}[h])] + \mathbb{V}[h]
+              \end{align*}
+              $$
+
+              Minimizing with respect to $\beta$ by differentiating and setting equal to 0,
+              we find that the optimal value is
+
+              $$
+              0 = -2 \, Cov[f, h] + 2 \beta^* \mathbb{V}[h] \Rightarrow \beta^* = \frac{Cov[f, h]}{\mathbb{V}[h]}
+              = Corr(f, h) \sqrt{\frac{\mathbb{V}[f]}{\mathbb{V}[h]}}
+              $$
+
+            </p>
+          </div>
         </div>
 
         <h2 id="probabilistic_graphical_models">Probabilistic Graphical Models</h2>
