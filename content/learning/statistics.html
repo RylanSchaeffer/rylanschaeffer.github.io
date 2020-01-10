@@ -349,23 +349,52 @@
 
               $$
               \begin{align*}
-              \mathbb{V}_x[\tilde{f}(x)]
-              &= \mathbb{V}_x \Big[f - \beta (h - \mathbb{E}_x[h]) \Big]\\
+              \mathbb{V}[\tilde{f}(x)]
+              &= \mathbb{V} \Big[f - \beta (h - \mathbb{E}_x[h]) \Big]\\
               &= \mathbb{E} [(f - \beta(h - \mathbb{E}[h]))^2] - \mathbb{E}[f - \beta(h - \mathbb{E}[h])]^2\\
               &= \mathbb{E} [f^2 - 2 \beta f (h - \mathbb{E}[h]) + \beta^2 (h - \mathbb{E}[h])^2] - \mathbb{E}[f]^2\\
               &= \mathbb{E} [f^2] - \mathbb{E} [f]^2 - 2 \beta \mathbb{E} [f (h - \mathbb{E}[h])] + \beta^2 \mathbb{V}[h]\\
-              &= \mathbb{V}[f] - 2 \beta \mathbb{E} [f (h - \mathbb{E}[h])] + \mathbb{V}[h]
+              &= \mathbb{V}[f] - 2 \beta \mathbb{E} [f (h - \mathbb{E}[h])] + \beta^2 \mathbb{V}[h]\\
+              &= \mathbb{V}[f] - 2 \beta \mathbb{Cov} [f, h] + \beta^2 \mathbb{V}[h]
               \end{align*}
               $$
 
-              Minimizing with respect to $\beta$ by differentiating and setting equal to 0,
-              we find that the optimal value is
+              where the last line follows because
+
+              $$\mathbb{E} [\mathbb{E}[f] (h - \mathbb{E}[h])] =
+              \mathbb{E}[f] (\mathbb{E}[h] - \mathbb{E}[h]) = 0$$
+
+              and thus
+
+              $$\mathbb{E} [f (h - \mathbb{E}[h])] = \mathbb{E} [(f - \mathbb{E}[f]) (h - \mathbb{E}[h])] = \mathbb{Cov} [f, h]$$.
+            </p>
+
+            <p>
+
+              Then, minimizing with respect to $\beta$ by differentiating and setting equal to 0,
+              we find that the optimal value $\beta*$ is
 
               $$
-              0 = -2 \, Cov[f, h] + 2 \beta^* \mathbb{V}[h] \Rightarrow \beta^* = \frac{Cov[f, h]}{\mathbb{V}[h]}
-              = Corr(f, h) \sqrt{\frac{\mathbb{V}[f]}{\mathbb{V}[h]}}
+              0 = -2 \, \mathbb{Cov}[f, h] + 2 \beta^* \mathbb{V}[h] \Rightarrow \beta^* = \frac{\mathbb{Cov}[f, h]}{\mathbb{V}[h]}
+              = \mathbb{Corr}[f, h] \sqrt{\frac{\mathbb{V}[f]}{\mathbb{V}[h]}}
               $$
 
+              Using our newfound value of $\beta^*$, we can compare the variance of the surrogate
+              function $\tilde{f}(x)$ to the variance of the original function $f(x)$:
+
+              $$
+              \begin{align*}
+              \mathbb{V}[\tilde{f}(x)]
+              &= \mathbb{V}[f] - 2 \beta^* \mathbb{Cov} [f, h] + \beta^{*2} \mathbb{V}[h]\\
+              &= \mathbb{V}[f] - 2 \frac{\mathbb{Cov}[f, h]}{\mathbb{V}[h]} \mathbb{Cov} [f, h] + \frac{\mathbb{Cov}[f, h]^2}{\mathbb{V}[h]^2} \mathbb{V}[h]\\
+              &= \mathbb{V}[f] - \frac{\mathbb{Cov}[f, h]^2}{\mathbb{V}[h]}
+              \end{align*}
+              $$
+
+              This shows something super important! Since the variance of any variable is positive, $\mathbb{V}[h]$
+              will be positive, meaning as long as $h(x)$ has positive covariance with $f(x)$, then the
+              variance of our control variate estimator will be less than the variance of the original
+              estimator.
             </p>
           </div>
 
