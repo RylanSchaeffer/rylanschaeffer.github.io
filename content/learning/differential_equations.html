@@ -62,6 +62,9 @@
           <h1 class="toc_title">Contents</h1>
           <ul class="table-of-content" id="markdown-toc">
             <li><a href="#linear_first_order_odes">Linear, First-Order Differential Equations</a></li>
+            <ul>
+              <li><a href="#linear_first_order_integrating_factor">Solving Linear, First-Order ODEs with Integrating Factor</a></li>
+            </ul>
             <li>Linear Stability Analysis</li>
           </ul>
         </div>
@@ -182,58 +185,142 @@
           </div>
         </div>
 
+        <h3 id="linear_first_order_integrating_factor">Solving Linear, First-Order ODEs with Integrating Factors</h3>
+        <div>
+          <p>
+            Are linear, first order ODEs typically solvable? The answer turns out to be yes,
+            and we can show this using a tool called an integrating factor. To build up
+            some intuition, consider solving the following ODE:
+
+            $$y'(x) - a(x) y (x) = 0 $$
+
+            We can solve this ODE by putting the $y$ terms on one side and integrating:
+
+            $$
+            \begin{align}
+              \frac{y'(x)}{y(x)} &= a(x)\\
+              \log y(x) \lvert_{x_0}^x &= \int_{x_0}^x a(s) ds\\
+              y(x) &= y(x_0) + \exp(\int_{x_0}^x a(s) ds)
+            \end{align}
+            $$
+
+            If $a(x)$ is a constant, we see that we recover our previous solution, $y(x) =
+            y(x_0) + \exp(a (x - x_0))$. The key insight was to see that we could isolate the
+            $y$ terms and then integrate them independently from other variables. However,
+            when we consider the general linear first-order ODE, there is no readily apparent
+            method to isolate the $y$ terms.
+
+            $$ a(x) y'(x) + b(x) y(x) = h(x)$$
+
+          </p>
+
+          <p>
+            If we could somehow group all the $y$ terms and turn it into the derivative of
+            a function, then we could straightforwardly integrate. The idea is to multiply
+            the ODE by a new function $u(x)$, called an integrating factor, that will allow
+            us to rewrite the LHS as $(u(x) y(x))'$. If we can accomplish this,
+            then we can integrate both sides, divide by u(x) and we will have our $y(x)$,
+            as we did in the simpler case. To accomplish this, note that by the chain rule,
+
+            $$ (u(x) y(x))' = u'(x) y(x) + u(x) y'(x)$$
+
+            and thus
+
+            $$ u(x) y'(x) = (u(x) y(x))' - u'(x) y(x) $$
+
+            Plugging $u'(x) y(x)$ into our ODE,
+
+            $$ a(x) (u(x) y(x))' - a(x) u'(x) y(x) + b(x) u(x) y(x) = u(x) h(x)$$
+
+            Dividing by $a(x)$:
+
+            $$ (u(x) y(x))' - u'(x) y(x) + \frac{b(x)}{a(x)} u(x) y(x) = u(x) \frac{h(x)}{a(x)}$$
+
+            We need the second and third LHS terms to annihilate in order for the LHS to become $(u(x) y(x))'$.
+            This will happen when:
+
+            $$ u'(x) y(x) + \frac{b(x)}{a(x)} u(x) y(x) $$
+
+            This yields a much simpler ODE for $u(x)$ with solution:
+
+            $$ u(x) = u(x_0) \exp (\int_{x_0}^x \frac{b(s)}{a(s)} ds)$$
+
+            Plugging back into our ODE:
+
+            $$
+            \begin{align}
+            (u(x) y(x))' - u'(x) y(x) + \frac{b(x)}{a(x)} u(x) y(x) &= u(x) \frac{h(x)}{a(x)}\\
+            (u(x) y(x))' &= u(x) \frac{h(x)}{a(x)}\\
+            (u(x) y(x)) &= \int_{x_0}^x u(s) \frac{h(s)}{a(s)} ds\\
+            y(x) &= \frac{1}{u(x)} \int_{x_0}^x u(s) \frac{h(s)}{a(s)} ds
+            \end{align}
+            $$
+          </p>
+
+          <p>
+            $u(x_0)$ doesn't matter since the final form of $y(x)$ is multiplied
+            by $u(s)$ and divided by $u(x)$, so such a coefficient would cancel. This shows that
+            any linear first-order ODE can be solved using such an integrating factor:
+
+            $$ u(x) = \exp (\int_{x_0}^x \frac{b(s)}{a(s)} ds)$$
+          </p>
+
+        </div>
 
         <h2>Linear Stability Analysis</h2>
-        <p>
-          For a continuous time dynamical system, we might want to understand whether, and how
-          quickly, a point near a stable fixed point flows to the fixed point. Concretely, let
-          $x$ be the phase space of some system and let $x^*$ be a fixed point of the system.
-          We can define a small perturbation away from the fixed point as $\eta(t) \defeq x(t) - x^*$.
-          Note that this is equivalent to defining a time-varying variable $x(t) = x^* + \eta(t)$.
-          We'd like to understand whether this small pertubation, $\eta(t)$ grows or decays over
-          time, and to answer such a question, we can construct a differential equation to describe
-          the behavior of $\eta(t)$.
-        </p>
+        <div>
+          <p>
+            For a continuous time dynamical system, we might want to understand whether, and how
+            quickly, a point near a stable fixed point flows to the fixed point. Concretely, let
+            $x$ be the phase space of some system and let $x^*$ be a fixed point of the system.
+            We can define a small perturbation away from the fixed point as $\eta(t) \defeq x(t) - x^*$.
+            Note that this is equivalent to defining a time-varying variable $x(t) = x^* + \eta(t)$.
+            We'd like to understand whether this small pertubation, $\eta(t)$ grows or decays over
+            time, and to answer such a question, we can construct a differential equation to describe
+            the behavior of $\eta(t)$.
+          </p>
 
-        <p>
-          $\begin{align}
-          \frac{d}{dt}\eta(t) &= \frac{d}{dt} (x(t) - x^*)\\
-          &= \frac{d}{dt} x(t)\\
-          \end{align}$
-        </p>
+          <p>
+            $\begin{align}
+            \frac{d}{dt}\eta(t) &= \frac{d}{dt} (x(t) - x^*)\\
+            &= \frac{d}{dt} x(t)\\
+            \end{align}$
+          </p>
 
-        <p>
-          Using the definition of $x(t) = x^* + \eta(t)$, we can construct a Taylor Series
-          expansion of $\frac{d}{dt} x(t)$ at $x^*$:
-        </p>
+          <p>
+            Using the definition of $x(t) = x^* + \eta(t)$, we can construct a Taylor Series
+            expansion of $\frac{d}{dt} x(t)$ at $x^*$:
+          </p>
 
-        <p>
-          $\begin{align}
-          \frac{d}{dt} x(t) &= \frac{d}{dt} (x^* + \eta (t))\\
-          &\approx \frac{d}{dt} x^* + \eta(t) \frac{d^2}{dt^2} x^* + O(\eta^2)\\
-          \end{align}$
-        </p>
+          <p>
+            $\begin{align}
+            \frac{d}{dt} x(t) &= \frac{d}{dt} (x^* + \eta (t))\\
+            &\approx \frac{d}{dt} x^* + \eta(t) \frac{d^2}{dt^2} x^* + O(\eta^2)\\
+            \end{align}$
+          </p>
 
-        <p>
-          Since $x^*$ is a fixed point, $\frac{d}{dt} x^* = 0$ and thus:
-        </p>
+          <p>
+            Since $x^*$ is a fixed point, $\frac{d}{dt} x^* = 0$ and thus:
+          </p>
 
-        <p>
-          $\begin{align}
-          \frac{d}{dt}\eta(t) = \eta(t) \frac{d^2}{dt^2} x^*
-          \end{align}$
-        </p>
+          <p>
+            $\begin{align}
+            \frac{d}{dt}\eta(t) = \eta(t) \frac{d^2}{dt^2} x^*
+            \end{align}$
+          </p>
 
-        <p>
-          This is a linear equation in $\eta$ and is therefore called the "linearization about
-          $x^*$". If $\frac{d^2}{dt^2} x^*$ is also zero, the $O(\eta^2)$ term that we previously
-          ignored will become relevant. This linearization tells us that if the second derivative
-          at $x^*$ is negative, then the perturbation will shrink, and inversely, if the
-          second derivative is positive, the perturbation will grow larger. The absolute value
-          of the second derivative, $|d^2 x^* / dt^2|$ tells us how quickly the pertubation will grow/shrink
-          and its reciprocal $\frac{1}{|d^2 x^* / dt^2|}$ is called the <b>characteristic time scale</b>
-          which expresses how much time is required to modify $x$ by a fixed amount around $x^*$.
-        </p>
+          <p>
+            This is a linear equation in $\eta$ and is therefore called the "linearization about
+            $x^*$". If $\frac{d^2}{dt^2} x^*$ is also zero, the $O(\eta^2)$ term that we previously
+            ignored will become relevant. This linearization tells us that if the second derivative
+            at $x^*$ is negative, then the perturbation will shrink, and inversely, if the
+            second derivative is positive, the perturbation will grow larger. The absolute value
+            of the second derivative, $|d^2 x^* / dt^2|$ tells us how quickly the pertubation will grow/shrink
+            and its reciprocal $\frac{1}{|d^2 x^* / dt^2|}$ is called the <b>characteristic time scale</b>
+            which expresses how much time is required to modify $x$ by a fixed amount around $x^*$.
+          </p>
+
+        </div>
 
       </section>
     </div>
