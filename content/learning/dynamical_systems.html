@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width,maximum-scale=2">
+    <meta name="description" content="Rylan Schaeffer">
+
+    <link rel="stylesheet" type="text/css" media="all" href="../../stylesheets/stylesheet.css">
+
+    <title></title>
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-94033137-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+    </script>
+
+    <script type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({ TeX: { equationNumbers: {autoNumber: "AMS"} } });
+    </script>
+
+    <div style="display: none">
+      $\DeclareMathOperator*{\argmax}{argmax}$
+      $\DeclareMathOperator{\defeq}{\stackrel{def}{=}}$
+    </div>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+      <header class="inner">
+        <h1 id="header_title">Rylan Schaeffer > Learning > Differential Equations</h1>
+        <nav>
+          <div>
+            <a href="../../index.html">Home</a> |
+            <a href="../learning.html">Learning</a>
+          </div>
+        </nav>
+      </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+
+        <div id="toc_container">
+          <h1 class="toc_title">Contents</h1>
+          <ul class="table-of-content" id="markdown-toc">
+            <li><a href="#introductory_terminology">Introductory Terminology</a></li>
+            <li><a href="#nonlinear_stability_definitions">Non-Linear Stability Definitions</a></li>
+          </ul>
+        </div>
+
+        <h2 id="introductory_terminology">Terminology</h2>
+        <div>
+          Some key words:
+
+
+          <ul>
+            <li>Autonomous = time invariant e.g. $\dot{x} = f(x)$</li>
+            <li>Non-autonomous = time varient e.g. $\dot{x} = f(x, t)$</li>
+          </ul>
+        </div>
+
+        <h2 id="nonlinear_stability_definitions">Non-Linear Stability Definitions</h2>
+        <div>
+          <p>
+            For non-linear systems, multiple notions of stability exist. The first notion of
+            stability is an equilibrium point $x_{eq}$, defined as a point in the phase space
+            with all derivatives equal to 0. However, equilibrium points aren't the only focus.
+            We also care about the behavior of the system in general. Consequently, we have
+            a sequence of definitions of stability.
+          </p>
+
+          <p>
+            We say that an equilibrium point $x_{eq}$ is <b>stable</b> a point that starts within
+            a small ball (defined by radius $r$) around the equilibrium point can be bounded in how
+            far it can move away from the point. Intuitively, this means that the the system is
+            guaranteed to remain "close" to the equilibrium point if it starts close to the point.
+            Formally, we write:
+
+            $$ \forall R > 0, \exists 0 < r < R \text{ s.t. } ||x(0) - x_{eq}|| < r \Rightarrow ||x(t) - x_{eq}|| < R$$
+          </p>
+
+          <p>
+            We say that an equilibrium point is <b>asymptotically stable</b> if it is stable and
+            if starting near the point guarantees that the system will converge back to the
+            equilibrium point. Formally, we write:
+
+            $$\exists r_0 > 0 \text{ s. t. } ||x(0) - x_{eq}|| < r_0 \Rightarrow \lim_{t \to \infty}||x(t) - x_{eq} ||
+            \rightarrow 0 $$
+          </p>
+
+          <p>
+            We say that an equilibrium point is <b>global asymptotically stable</b> if that initial radius
+            $r_0 = \infty$. In this case, we say that the system (not just the point!) is globally
+            asymptotically stable because we know that there can only be one equilibrium point. If there
+            was another, then starting at the second equilibrium point wouldn't converge to the first
+            equilibrium point, contradicting the claim that the point is globally asymptocally stable.
+          </p>
+
+          <p>
+            We say that an equilibrium point is <b>exponentially stable</b> if starting near the
+            equilibrium point ensures that (potentially after some elapsed time) the system
+            converges exponentially fast to the fixed point. Formally, we write that
+
+            $$\exists r_0, \exists \alpha > 1, \exists \lambda > 0 \text{ s.t. } \forall t\geq 0,
+            ||x(t) - x_{eq} || < alpha || x(0) - x_{eq} || e^{- \lambda t}$$
+
+            One cool remark is that if we write $alpha$, which is just a positive value, as $e^{\lambda \tau}$,
+            we see that the bound of $alpha || x(0) - x_{eq} || e^{- \lambda t}$ can be rewritten as
+            $ || x(0) - x_{eq} || e^{- \lambda (t - \tau)}$. This shows that the scalar coefficient can
+            be seen a time delay: the state will converge exponentially fast starting from $\tau_0$.
+          </p>
+
+          <p>
+            We say that an equilibrium point is <b>globally exponentially stable</b> if $r_0 = \infty$.
+            Similar to global asymptotic stability, we can describe both the equilibrium point and the
+            system entirely as globally exponentially stable since only one equilibrium point can
+            exist.
+          </p>
+        </div>
+
+        <h2 id="linearization_and_local_stability">Linearization and Local Stability</h2>
+        <div>
+          <p>
+            Linearization around a fixed point is a method for studying the type of stability
+            the fixed point has. The idea is to Taylor-series expand about the equilibrium
+            point to first order and evaluate the eigenspectrum
+          </p>
+        </div>
+
+      </section>
+    </div>
+
+    <!--FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <h3 id="footer_title">Rylan Schaeffer</h3>
+        <p>
+          I appreciate any and all feedback. If I've made an error or if you have a suggestion, please
+          email me at <a href="mailto:rylanschaeffer@gmail.com">rylanschaeffer@gmail.com</a>.
+        </p>
+      </footer>
+    </div>
+
+    
+  </body>
+</html>
