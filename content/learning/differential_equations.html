@@ -63,7 +63,9 @@
           <ul class="table-of-content" id="markdown-toc">
             <li><a href="#linear_first_order_odes">Linear, First-Order Differential Equations</a></li>
             <ul>
-              <li><a href="#linear_first_order_integrating_factor">Solving Linear, First-Order ODEs with Integrating Factor</a></li>
+              <li><a href="#linear_first_order_integrating_factor">Solution 1: Integrating Factor</a></li>
+              <li><a href="#linear_first_order_variation_of_parameters">Solution 2: Variation of Parameters</a></li>
+              <li><a href="#linear_first_order_null_solution">Solution 3: Null Solution</a></li>
             </ul>
             <li>Linear Stability Analysis</li>
           </ul>
@@ -71,6 +73,81 @@
 
         <h2 id="linear_first_order_odes">Linear, First-Order Differential Equations</h2>
         <div>
+
+          <p>
+            Consider trying to solve a generic linear, first-order differential equation:
+
+            $$ a(x) y'(x) + b(x) y(x) = h(x)$$
+
+          </p>
+
+          <h3 id="linear_first_order_integrating_factor">Solution 1: Integrating Factor</h3>
+          <div>
+            <p>
+              If $a(x) \neq 0$, one way we can find the solution $y(x)$ is
+              is by using a function $f(x)$ called an integrating factor. To see
+              where the idea arises, let's divide both sides by $a(x)$. For brevity, I
+              drop $x$.
+
+              $$y' + \frac{b}{a} y = \frac{h}{a}$$
+
+              Suppose there exists a function $f(x)$ such that $\frac{1}{f}(fy)' = y' + \frac{b}{a} y$.
+              If we could find such a function, we could use it to solve the differential
+              equation:
+
+              \begin{align*}
+              y' + \frac{b}{a} y &= \frac{h}{a}\\
+              \frac{1}{f}(fy)' &= \\
+              f y - f(x_0)y(x_0) &= \int_{t=x_0}^t \frac{h(t) f(t)}{a(t)} \, dt\\
+              y  &= \frac{f(x_0)}{f(x)} y(x_0) + \frac{1}{f(x)} \int_{t=x_0}^x \frac{h(t) f(t)}{a(t)} \, dt\\
+              \end{align*}
+
+              The key insight was to express the inconvenient $y' + \frac{b}{a} y$ as a
+              derivative $(fy)'$ that we could easily integrate. The question is now how to find $f(x)$.
+              We start by setting $\frac{1}{f}(fy)' = y' + \frac{b}{a} y$ and then solve for $f(x)$:
+
+              \begin{align*}
+              \frac{1}{f}(fy)' &= y' + \frac{b}{a} y\\
+              \frac{1}{f}(f' y + y f') &= y' + \frac{b}{a} y\\
+              \frac{f'}{f} &= \frac{b}{a}\\
+              \log f(x) - \log f(x_0) &= \int_{t=x_0}^x \frac{b(t)}{a(t)} \, dt\\
+              f(x) &= f(x_0) \exp \Big(\int_{t=x_0}^x \frac{b(t)}{a(t)} \, dt \Big)
+              \end{align*}
+
+            </p>
+
+            <p>
+              When we plug $f(x)$ back into our equation for $y(x)$, we see that the initial
+              condition $f(x_0)$ doesn't matter because it cancels out:
+
+              \begin{align*}
+              y  &= \frac{f(x_0)}{f(x)} y(x_0) + \frac{1}{f(x)} \int_{t=x_0}^t \frac{h(t) f(t)}{a(t)} \, dt\\
+              &= \exp \Big(-\int_{t=x_0}^x \frac{b}{a} \, dt \Big) y(x_0) + \frac{1}{f(x_0)} \exp \Big(-\int_{t=x_0}^x \frac{b}{a} \, dt \Big) \int_{t=x_0}^t \frac{h(t) f(t)}{a(t)} \, dt
+              \end{align*}
+
+            </p>
+          </div>
+
+          <h3 id="linear_first_order_variation_of_parameters">Solution 2: Variation of Parameters</h3>
+          <div>
+            <p>
+
+            </p>
+          </div>
+
+          <h3 id="linear_first_order_null_solution">Solution 3: Null Solution</h3>
+          <div>
+            <p>
+              Define the linear operator $l(y) = a(x) y'(x) + b(x) y(x)$. Suppose that
+              $y_n \in \ker (l)$; that is, $l(y_n)$ = 0; we'll call $y_n$ the null or homogeneous
+              solution. Then given a single $y_p$ which solves $l(y_p) = h(x)$, we can write any
+              solution $y(x)$ as $y_p + C y_n$ for some suitable $C$. To see why, consider
+              $l(y - y_p)$. Since $l$ is a linear operator, $l(y - y_p) = l(y) - l(y_p) = h(x) - h(x)
+              = 0$. This implies that $y - y_p \in \ker(l) \Rightarrow \exists C$ s.t.
+              $y - y_p = C y_n \Rightarrow y = y_p + C y_n$.
+            </p>
+          </div>
+
           <h3>No Source Term</h3>
           <div>
             <p>
@@ -185,77 +262,8 @@
           </div>
         </div>
 
-        <h3 id="linear_first_order_integrating_factor">Solving Linear, First-Order ODEs with Integrating Factors</h3>
+        <h3>Solving Linear, First-Order ODEs with Integrating Factors</h3>
         <div>
-          <p>
-            Are linear, first order ODEs typically solvable? The answer turns out to be yes,
-            and we can show this using a tool called an integrating factor. To build up
-            some intuition, consider solving the following ODE:
-
-            $$y'(x) - a(x) y (x) = 0 $$
-
-            We can solve this ODE by putting the $y$ terms on one side and integrating:
-
-            $$
-            \begin{align}
-              \frac{y'(x)}{y(x)} &= a(x)\\
-              \log y(x) \lvert_{x_0}^x &= \int_{x_0}^x a(s) ds\\
-              y(x) &= y(x_0) + \exp(\int_{x_0}^x a(s) ds)
-            \end{align}
-            $$
-
-            If $a(x)$ is a constant, we see that we recover our previous solution, $y(x) =
-            y(x_0) + \exp(a (x - x_0))$. The key insight was to see that we could isolate the
-            $y$ terms and then integrate them independently from other variables. However,
-            when we consider the general linear first-order ODE, there is no readily apparent
-            method to isolate the $y$ terms.
-
-            $$ a(x) y'(x) + b(x) y(x) = h(x)$$
-
-          </p>
-
-          <p>
-            If we could somehow group all the $y$ terms and turn it into the derivative of
-            a function, then we could straightforwardly integrate. The idea is to multiply
-            the ODE by a new function $u(x)$, called an integrating factor, that will allow
-            us to rewrite the LHS as $(u(x) y(x))'$. If we can accomplish this,
-            then we can integrate both sides, divide by u(x) and we will have our $y(x)$,
-            as we did in the simpler case. To accomplish this, note that by the chain rule,
-
-            $$ (u(x) y(x))' = u'(x) y(x) + u(x) y'(x)$$
-
-            and thus
-
-            $$ u(x) y'(x) = (u(x) y(x))' - u'(x) y(x) $$
-
-            Plugging $u'(x) y(x)$ into our ODE,
-
-            $$ a(x) (u(x) y(x))' - a(x) u'(x) y(x) + b(x) u(x) y(x) = u(x) h(x)$$
-
-            Dividing by $a(x)$:
-
-            $$ (u(x) y(x))' - u'(x) y(x) + \frac{b(x)}{a(x)} u(x) y(x) = u(x) \frac{h(x)}{a(x)}$$
-
-            We need the second and third LHS terms to annihilate in order for the LHS to become $(u(x) y(x))'$.
-            This will happen when:
-
-            $$ u'(x) y(x) + \frac{b(x)}{a(x)} u(x) y(x) $$
-
-            This yields a much simpler ODE for $u(x)$ with solution:
-
-            $$ u(x) = u(x_0) \exp (\int_{x_0}^x \frac{b(s)}{a(s)} ds)$$
-
-            Plugging back into our ODE:
-
-            $$
-            \begin{align}
-            (u(x) y(x))' - u'(x) y(x) + \frac{b(x)}{a(x)} u(x) y(x) &= u(x) \frac{h(x)}{a(x)}\\
-            (u(x) y(x))' &= u(x) \frac{h(x)}{a(x)}\\
-            (u(x) y(x)) &= \int_{x_0}^x u(s) \frac{h(s)}{a(s)} ds\\
-            y(x) &= \frac{1}{u(x)} \int_{x_0}^x u(s) \frac{h(s)}{a(s)} ds
-            \end{align}
-            $$
-          </p>
 
           <p>
             $u(x_0)$ doesn't matter since the final form of $y(x)$ is multiplied
