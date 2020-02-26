@@ -36,6 +36,9 @@
     <div style="display: none">
       $\DeclareMathOperator*{\argmax}{argmax}$
       $\DeclareMathOperator{\defeq}{\stackrel{def}{=}}$
+      $\DeclareMathOperator{\Tr}{Tr}$
+      $\DeclareMathOperator{\rank}{rank}$
+      $\DeclareMathOperator{\sign}{sign}$
     </div>
   </head>
 
@@ -44,7 +47,7 @@
     <!-- HEADER -->
     <div id="header_wrap" class="outer">
       <header class="inner">
-        <h1 id="header_title">Rylan Schaeffer > Learning > Differential Equations</h1>
+        <h1 id="header_title">Rylan Schaeffer > Learning > Dynamical Systems</h1>
         <nav>
           <div>
             <a href="../../index.html">Home</a> |
@@ -75,6 +78,38 @@
             <li>Autonomous = time invariant e.g. $\dot{x} = f(x)$</li>
             <li>Non-autonomous = time varient e.g. $\dot{x} = f(x, t)$</li>
           </ul>
+        </div>
+
+        <h2 id="linear_dynamical_systems">Linear Dynamical Systems</h2>
+        <div>
+          <h3>1-Dimensional, </h3>
+
+          <h3>2-Dimensional</h3>
+          <div>
+            <p>
+              Consider the following system with $A = \begin{bmatrix} a_{11} & a_{12} \\
+              a_{21} & a_{22} \end{bmatrix} \in \mathbb{C}^2$:
+
+              $$\dot{x} = A x $$
+
+              If we consider the characteristic polynomial of $A$, we see that $A$ has two eigenvalues
+              $\lambda_1, \lambda_2$ which depend on $\tau \defeq \Tr(A) = \lambda_1 + \lambda_2$ and
+              $\Delta \defeq \det(A) = \lambda_1 \lambda_2$:
+
+              \begin{align*}
+              \det(A - \lambda I) &= \lambda^2 + - (a_{11} + a_{22})\lambda + (a_{11} a_{22} - a_{12}a_{21})\\
+              &= \lambda^2 - \tau \lambda + \Delta
+              \end{align*}
+
+              Consequently:
+
+              $$\lambda = \tau \pm \frac{\sqrt{\tau^2 - 4 \Delta}}{2} $$
+            </p>
+
+            <p>
+              
+            </p>
+          </div>
         </div>
 
         <h2 id="nonlinear_stability_definitions">Non-Linear Stability Definitions</h2>
