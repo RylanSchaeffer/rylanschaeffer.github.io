@@ -66,6 +66,7 @@
           <ul class="table-of-content" id="markdown-toc">
             <li><a href="#introductory_terminology">Introductory Terminology</a></li>
             <li><a href="#nonlinear_stability_definitions">Non-Linear Stability Definitions</a></li>
+            <li><a href="#linearization_and_local_stability">Linearization and Local Stability</a></li>
           </ul>
         </div>
 
@@ -154,20 +155,35 @@
             equilibrium point ensures that (potentially after some elapsed time) the system
             converges exponentially fast to the fixed point. Formally, we write that
 
-            $$\exists r_0, \exists \alpha > 1, \exists \lambda > 0 \text{ s.t. } \forall t\geq 0,
-            ||x(t) - x_{eq} || < alpha || x(0) - x_{eq} || e^{- \lambda t}$$
+            $$\exists \delta > 0, \exists \alpha > 1, \exists \lambda > 0 \text{ s.t. } ||x(t) - x_{eq}|| <
+            \delta \Rightarrow \forall t\geq 0,  ||x(t) - x_{eq} || \leq \alpha || x(0) - x_{eq} || e^{- \lambda t}$$
 
-            One cool remark is that if we write $alpha$, which is just a positive value, as $e^{\lambda \tau}$,
-            we see that the bound of $alpha || x(0) - x_{eq} || e^{- \lambda t}$ can be rewritten as
-            $ || x(0) - x_{eq} || e^{- \lambda (t - \tau)}$. This shows that the scalar coefficient can
-            be seen a time delay: the state will converge exponentially fast starting from $\tau_0$.
-          </p>
-
-          <p>
+            One cool point is that if we write $\alpha$, which is just a positive value, as $e^{\lambda \tau}$,
+            we see that the bound of $\alpha || x(0) - x_{eq} || e^{- \lambda t}$ can be rewritten as
+            $ || x(0) - x_{eq} || e^{- \lambda (t - \tau)}$. This shows that $\alpha$ can
+            be viewed as a time delay: the state will converge exponentially fast starting from $\tau_0$.
             We say that an equilibrium point is <b>globally exponentially stable</b> if $r_0 = \infty$.
             Similar to global asymptotic stability, we can describe both the equilibrium point and the
             system entirely as globally exponentially stable since only one equilibrium point can
             exist.
+          </p>
+
+          <p>
+            Note that exponential stability implies stability. To see this, suppose that a
+            point $x_{eq}$ that is exponentially stable. For any bounding radius $R$, we can
+            always find a corresponding $r < R$ to ensure that. Define $r = \min \{\frac{R}{\alpha}, \delta \}$
+            and assume that $||x(0)|| < r$.
+
+            \begin{align*}
+            ||x(t) - x_{eq}||
+            &\leq \alpha ||x(0) - x_{eq} ||e^{-\lambda t} & \text{Defn. of exponential stability and } ||x(0|| < \delta\\
+            &\leq \alpha ||x(0) - x_{eq} || & e^{-\lambda t} \text{ is monotonically decreasing for increasing } t \geq 0\\
+            &< \alpha r & \text{By assumption, } ||x(0)|| < r\\
+            &< \alpha \frac{R}{\alpha} & \text{Holds regardless of whether } r = \frac{R}{\alpha} \text{ or } r = d\\
+            &< R
+            \end{align*}
+
+            Thus we conclude that exponential stability implies stability.
           </p>
         </div>
 
@@ -176,7 +192,45 @@
           <p>
             Linearization around a fixed point is a method for studying the type of stability
             the fixed point has. The idea is to Taylor-series expand about the equilibrium
-            point to first order and evaluate the eigenspectrum
+            point to first order and disregard higher order terms (HOT). Suppose our system is
+            $\dot{x} = f(x)$. Then linearizing about a fixed point
+            $x_{eq} = 0$ (if the fixed point isn't at $0$, perform a coordinate transform) yields
+
+            $$f(x) = f(0, 0) + \frac{\partial f}{\partial x}|_{x=0, u=0} x + \text{ H.O.T.}$$
+
+            Since $f(0) = 0$ due to being a fixed point,
+
+            $$\dot{x} = f(x) = \frac{\partial f}{\partial x}|_{x=0,\\u=0} x + \text{ H.O.T.}$$
+
+            If we drop the higher order terms, we call the simplified system the <b>linearization</b>
+            or <b>linear approximation</b> of the system.
+
+            $$ \dot{x} = \frac{\partial f}{\partial x}|_{x=0,\\u=0} x$$
+
+            The matrix $A \defeq \frac{\partial f}{\partial x}|_{x=0, u=0}$ has a name: the Jacobian.
+            This leads us to Lypaunov's Linearization Method, which states:
+          </p>
+
+          <p>
+            <b>Theorem:</b> Let $\dot{x} = Ax$ be the linearization of some dynamical system.
+            <ul>
+              <li>
+                If all eigenvalues of the Jacobian are in the left half of the complex plane
+                (i.e. the linearized system is strictly stable),
+                then the equilibrium point in the original dynamical system is asymptotically stable.
+              </li>
+              <li>
+                If at least one eigenvalue of the Jacobian is in the right half of the complex plane
+                (i.e. the linearized system is unstable), then the equilibrium point in the
+                original dynamical system is unstable.
+              </li>
+              <li>
+                If the eigenvalues of the Jacobian are in the left half of the complex plane or
+                on the vertical axis (i.e. the linearized system is marginally stable), then
+                no conclusion can be drawn about the equilibrium point in the original dynamical system.
+              </li>
+            </ul>
+
           </p>
         </div>
 
