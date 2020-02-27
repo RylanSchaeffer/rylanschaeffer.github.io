@@ -67,6 +67,7 @@
             <li><a href="#introductory_terminology">Introductory Terminology</a></li>
             <li><a href="#nonlinear_stability_definitions">Non-Linear Stability Definitions</a></li>
             <li><a href="#linearization_and_local_stability">Linearization and Local Stability</a></li>
+            <li><a href="#lyapunov_direct_method">Lyapunov's Direct Method</a></li>
           </ul>
         </div>
 
@@ -230,7 +231,83 @@
                 no conclusion can be drawn about the equilibrium point in the original dynamical system.
               </li>
             </ul>
+          </p>
 
+          <p>
+            <b>Proof:</b> TODO
+          </p>
+
+          <p>
+            To understand the third possible outcome of the theorem, compare the systems $\dot{v} + |v|v = 0$ and $\dot{v} - |v|v = 0$.
+            Both systems' linearizations are $\dot{v}=0$, but the first system is asymptotically stable around
+            $v=0$ while the other system is unstable around $v=0$. The reason is that the higher order terms
+            we disregarded when linearizing the system contained the information necessary to make
+            this determination. For another simple example, consider $\dot{x} = ax + x^5$ with corresponding
+            linearization $\dot{x} = ax$. Clearly, if $a < 0$, the system converges, and if $a > 0$, the system
+            diverges, but we can't say anything for $a = 0$.
+          </p>
+        </div>
+
+        <h2 id="lyapunov_direct_method">Lyapunov's Direct Method</h2>
+        <div>
+          <p>
+            Linearization is a useful technique in the local vicinity of a fixed point, but it isn't sufficient.
+            We'd like to be able to describe the behavior of the system in
+            general, even when far away from fixed points. One insight from physics is that for
+            a system with dissipating energy, the system must eventually settle down to a fixed point.
+            Professor Slotine used the example of a pendulum; if $\theta$ is the angle away from the
+            pendulum hanging straight down, both $\theta = 0$ and $\theta = \pi$ are fixed points. What
+            differentiates them, though, is that the pendulum hanging straight down has no energy,
+            meaning it is stable, whereas the pendulum upright has potential energy; if
+            the pendulum is perturbed away from the upright position, and if the pendulum has friction,
+            then the pendulum will eventually settle down to the bottom equilibrium.
+            This motivates the idea of <b>Lyapunov functions</b>, which are energy-like
+            functions that can be used to describe the behavior of the system more broadly than
+            just around fixed points. The idea is to find a scalar function for the system which is non-negative
+            and zero only at equilibrium; then, depending on the time derivative of the Lyapunov function,
+            we can start drawing conclusions about the system's behavior.
+          </p>
+
+          <p>
+            We'll first need some definitions. We say that a scalar function $V(x)$ is
+            <b>locally positive definite</b> if within some ball $B_R$, $V(x) \geq 0$ with
+            $V(x) = 0 \leftrightarrow x=0$. If the function $V(x) = 0$ at other $x \neq 0$,
+            we say that the point is <b>locally positive semi-definite</b>. If $R = \infty$,
+            then we say the function is globally positive definite or globally positive semi-definite,
+            respectively. (Globally) negative and negative semi-definite functions are defined
+            similarly. We say that a scalar function $V(x)$ is a <b>Lyapunov function</b> if (a) $V(x)$ is
+            locally positive definite, (b) $V(x)$ has continuous partial derivatives and (c)
+            its time derivative $\dot{V}(t)$ is negative semi definite. If we can define a Lyapunov function
+            for a system around equilibrium points, we can start to make claims about the stability
+            of the equilibria.
+          </p>
+
+          <p>
+            <b>Theorem:</b> If a system has a Lyapunov function $V(x)$ defined around equilibrium point $x=0$
+            (if equilibrium is not at 0, perform a coordinate transform), then the equilibrium point
+            is stable. If the Lyapunov function's time derivative $\dot{V}(x)$ is negative definite,
+            then the equilibrium point is asymptotically stable.
+          </p>
+
+          <p>
+            <b>Proof:</b> Consider the first case i.e. $\dot{V}(x)$ is negative semi-definite. We want
+             to show that $x=0$ is stable, which means showing that $\forall R > 0, \exists r < R$ such that
+            $||x(0)|| < r \Rightarrow ||x(t)|| < R$. Find the minimum of $V(x)$ on the ball $B_R$.
+            Since $V(x)$ is positive definite, $V(x) = 0$ only at 0 and positive elsewhere. Since $V(x)$
+            is continuous and negative semi-definite, there must exist a ball $B_r$ around $V(x)$ such that
+            the maximum of $V(x)$ on $B_r$ is equal to the minimum of $V(x)$ on $B_R$. Then, provided
+             a point starts within $B_r$, since $V(x)$ cannot increase, the point cannot escape $B_R$
+            since this would require having a larger $V(x)$ than it starts with. The physical intuition is that
+            the minimum $V(x)$ on $B_R$ determines an energy threshold. We then find the region entirely below
+            this energy threshold (which is guaranteed to exist because $V(x)$ is continuous and $V(0) = 0$),
+            and since energy can't increase, we know points within this interior region are trapped below
+            the energy threshold.
+          </p>
+
+          <p>
+            <b>Proof:</b> Consider the second case i.e. $\dot{V}(x)$ is negative definite. We want to
+            show that $x=0$ is asymptotically stable, which means showing that $||x(0)|| < r_0 \Rightarrow
+            ||x(t)|| \rightarrow 0$ as $t \rightarrow \infty$.
           </p>
         </div>
 
