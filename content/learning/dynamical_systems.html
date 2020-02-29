@@ -65,9 +65,10 @@
           <h1 class="toc_title">Contents</h1>
           <ul class="table-of-content" id="markdown-toc">
             <li><a href="#introductory_terminology">Introductory Terminology</a></li>
+            <li><a href="#linear_dynamical_systems">Linear Dynamical Systems</a></li>
             <li><a href="#nonlinear_stability_definitions">Non-Linear Stability Definitions</a></li>
             <li><a href="#linearization_and_local_stability">Linearization and Local Stability</a></li>
-            <li><a href="#lyapunov_direct_method">Lyapunov's Direct Method</a></li>
+            <li><a href="#lyapunov_functions">Lyapunov Functions (Lyapunov's Direct Method)</a></li>
           </ul>
         </div>
 
@@ -84,33 +85,67 @@
 
         <h2 id="linear_dynamical_systems">Linear Dynamical Systems</h2>
         <div>
-          <h3>1-Dimensional, </h3>
+          <h3>1-Dimensional</h3>
 
           <h3>2-Dimensional</h3>
           <div>
             <p>
-              Consider the following system with $A = \begin{bmatrix} a_{11} & a_{12} \\
-              a_{21} & a_{22} \end{bmatrix} \in \mathbb{C}^2$:
-
-              $$\dot{x} = A x $$
+              Consider the linear, first order dynamical system $\dot{x} = A x $ with $A =
+              \begin{bmatrix} a_{11} & a_{12} \\ a_{21} & a_{22} \end{bmatrix} \in \mathbb{C}^2$:
 
               If we consider the characteristic polynomial of $A$, we see that $A$ has two eigenvalues
-              $\lambda_1, \lambda_2$ which depend on $\tau \defeq \Tr(A) = \lambda_1 + \lambda_2$ and
-              $\Delta \defeq \det(A) = \lambda_1 \lambda_2$:
+              $\lambda_1, \lambda_2$ which depend on the trace of $A$, $\Tr(A) = \lambda_1 + \lambda_2
+              = a_{11} + a_{22}$,
+              and the determinant of $A$, $\det(A) = \lambda_1 \lambda_2 = a_{11} a_{22} - a_{12} a_{21}$:
 
               \begin{align*}
               \det(A - \lambda I) &= \lambda^2 + - (a_{11} + a_{22})\lambda + (a_{11} a_{22} - a_{12}a_{21})\\
-              &= \lambda^2 - \tau \lambda + \Delta
+              &= \lambda^2 - \Tr(A) \lambda + \det(A)
               \end{align*}
 
-              Consequently:
+              Solving for the roots of this 2nd degree polynomial, we see that the eigenvalues are:
 
-              $$\lambda = \tau \pm \frac{\sqrt{\tau^2 - 4 \Delta}}{2} $$
+              $$\lambda = \Tr(A) \pm \frac{\sqrt{\Tr(A)^2 - 4 \det(A)}}{2}$$
+
+              Depending on the possible values of $\lambda_1$ and $\lambda_2$, we can classify the behavior
+              of the fixed point $x_{eq} = \begin{bmatrix} 0 \\ 0 \end{bmatrix}$.
             </p>
 
-            <p>
-              
-            </p>
+            <table>
+              <tr>
+                <th>Class Name</th>
+                <th>Conditions</th>
+                <th>Intuition</th>
+                <th>Visualization</th>
+              </tr>
+              <tr>
+                <td>Stable Spiral</td>
+                <td>
+                  $\Tr(A) < 0$ and $Tr(A)^2 - 4 \det(A) < 0$
+                </td>
+                <td>
+                  Both eigenvalues have negative real components and non-zero imaginary components. The system
+                  will flow towards the fixed point, with rotation caused by the imaginary components.
+                </td>
+                <td>
+
+                </td>
+              </tr>
+              <tr>
+                <td>Unstable Spiral</td>
+                <td>
+                  $\Tr(A) > 0$ and $Tr(A)^2 - 4 \det(A) < 0$
+                </td>
+                <td>
+                  Both eigenvalues have positive real components and non-zero imaginary components. The system
+                  will flow away from the fixed point, with rotation caused by the imaginary components.
+                </td>
+                <td>
+
+                </td>
+              </tr>
+
+            </table>
           </div>
         </div>
 
@@ -248,13 +283,14 @@
           </p>
         </div>
 
-        <h2 id="lyapunov_direct_method">Lyapunov's Direct Method</h2>
+        <h2 id="lyapunov_functions">Lyapunov Functions (Lyapunov's Direct Method)</h2>
         <div>
           <p>
             Linearization is a useful technique in the local vicinity of a fixed point, but it isn't sufficient.
             We'd like to be able to describe the behavior of the system in
-            general, even when far away from fixed points. One insight from physics is that for
-            a system with dissipating energy, the system must eventually settle down to a fixed point.
+            general, even when far away from fixed points, and without having to integrate the
+            differential equation. This led to Lyapunov's Direct Method, which is inspired by the idea
+            that for a system with dissipating energy, the system must eventually settle down to a fixed point.
             Professor Slotine used the example of a pendulum; if $\theta$ is the angle away from the
             pendulum hanging straight down, both $\theta = 0$ and $\theta = \pi$ are fixed points. What
             differentiates them, though, is that the pendulum hanging straight down has no energy,
@@ -271,7 +307,7 @@
           <p>
             We'll first need some definitions. We say that a scalar function $V(x)$ is
             <b>locally positive definite</b> if within some ball $B_R$, $V(x) \geq 0$ with
-            $V(x) = 0 \leftrightarrow x=0$. If the function $V(x) = 0$ at other $x \neq 0$,
+            $V(x) = 0 \leftrightarrow x=0$. If the function $V(x) = 0$ at any other $x \neq 0$,
             we say that the point is <b>locally positive semi-definite</b>. If $R = \infty$,
             then we say the function is globally positive definite or globally positive semi-definite,
             respectively. (Globally) negative and negative semi-definite functions are defined
@@ -286,15 +322,38 @@
             <b>Theorem:</b> If a system has a Lyapunov function $V(x)$ defined around equilibrium point $x=0$
             (if equilibrium is not at 0, perform a coordinate transform), then the equilibrium point
             is stable. If the Lyapunov function's time derivative $\dot{V}(x)$ is negative definite,
-            then the equilibrium point is asymptotically stable.
+            then the equilibrium point is asymptotically stable. In table form:
           </p>
+
+          <table>
+            <tr>
+              <th>$V(x)$</th>
+              <th>$\dot{V}(x)$</th>
+              <th>Conclusion</th>
+            </tr>
+            <tr>
+              <td>Locally Positive Definite</td>
+              <td>Locally Negative Semi-Definite</td>
+              <td>Stable</td>
+            </tr>
+            <tr>
+              <td>Locally Positive Definite</td>
+              <td>Locally Negative Definite</td>
+              <td>Asymptotically Stable</td>
+            </tr>
+            <tr>
+              <td>Globally Positive Definite</td>
+              <td>Globally Negative Definite</td>
+              <td>Globally Asymptotically Stable</td>
+            </tr>
+          </table>
 
           <p>
             <b>Proof:</b> Consider the first case i.e. $\dot{V}(x)$ is negative semi-definite. We want
              to show that $x=0$ is stable, which means showing that $\forall R > 0, \exists r < R$ such that
             $||x(0)|| < r \Rightarrow ||x(t)|| < R$. Find the minimum of $V(x)$ on the ball $B_R$.
-            Since $V(x)$ is positive definite, $V(x) = 0$ only at 0 and positive elsewhere. Since $V(x)$
-            is continuous and negative semi-definite, there must exist a ball $B_r$ around $V(x)$ such that
+            Since $V(x)$ is positive definite, $V(x) = 0$ only at 0 and $V(x)$ positive elsewhere. Since $V(x)$
+            is continuous and $0$ only at $x=0$, a ball $B_r$ around $x=0$ must exist such that
             the maximum of $V(x)$ on $B_r$ is equal to the minimum of $V(x)$ on $B_R$. Then, provided
              a point starts within $B_r$, since $V(x)$ cannot increase, the point cannot escape $B_R$
             since this would require having a larger $V(x)$ than it starts with. The physical intuition is that
@@ -305,10 +364,33 @@
           </p>
 
           <p>
-            <b>Proof:</b> Consider the second case i.e. $\dot{V}(x)$ is negative definite. We want to
-            show that $x=0$ is asymptotically stable, which means showing that $||x(0)|| < r_0 \Rightarrow
+            <b>Proof:</b> Consider the second case i.e. $\dot{V}(x)$ is negative definite. For the same
+            reasoning as above, we know that there exists a ball $B_r$ around $x(0)$ must exist such
+            that starting in $B_r$ guarantees the state never escapes $B_R$. Now we want to show that
+            there also exists some $r_0>0$ such that if $||x(0)|| < r_0 \Rightarrow
             ||x(t)|| \rightarrow 0$ as $t \rightarrow \infty$.
           </p>
+
+          <p>
+            However, both of these statements are local. We'd like to understand the global stability
+            of the equilibrium point(s). What additional conditions are required to make a convincing
+            statement? In order to assert global stability or global asymptotic stability, we need
+            to impose additional requirements. One possible requirement is that $V(x)$ be radially
+            unbounded
+          </p>
+
+          <p>
+            Example: Consider $\dot{x} + c(x) = 0$, where $x c(x) \geq 0$ and $x c(x) = 0 \Leftrightarrow
+            c(x) = 0$. In other words, $c(x)$ has the same sign as $x$. Choose $V(x) = x^2 \Rightarrow
+            \dot{V}(x) = 2 x \dot{x} = - 2 x c(x) \leq 0$. Since $V(x)$ is positive definite and
+            radially unbounded and $\dot{V}(x)$ is negative definite, the equilibrium point $x=0$
+            is globally asymptotically stable.
+          </p>
+
+        </div>
+
+        <div>
+          <h2>Invariant Set Theorem</h2>
         </div>
 
       </section>
