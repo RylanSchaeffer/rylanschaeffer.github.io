@@ -245,6 +245,9 @@ hr {
 table {
   margin-bottom: 20px;
   text-align: center;
+  width: auto;  /* width, margin-left, margin-right all needed to center table on page */
+  margin-left: auto;
+  margin-right: auto;
  }
 
 th {
