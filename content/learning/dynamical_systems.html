@@ -474,9 +474,9 @@
           <p>
             For example, consider $\ddot{x} + b(\dot{x} + c(x) = 0$, where $b(\dot{x})$ has the same sign
             as $\dot{x}$ and $c(x)$ has the same sign as $x$. One immediate consequence is that a fixed
-            point exists at $(x=0, \dot{x}=0)$. This is also the only fixed point since if $\dot{x}=0
-            \Leftrightarrow b(\dot{x}) = 0$, which implies that $\ddot{x} = -c(x)$, which in turn
-            is only zero when $x=0$. This means that $(x=0, \dot{x}=0)$ is the only fixed point.
+            point exists at $(x=0, \dot{x}=0)$. This is also the only fixed point a fixed point requires
+            $\dot(x) = 0$ and $\ddot(x) = 0$, which means $0 = c(x)$ must hold. But since $c(x)$ is zero
+            only at $x=0$, $(x=0, \dot{x}=0)$ must be the only fixed point.
             Define $V(x) = \frac{1}{2} \dot{x}^2 + \int_0^x c(t) dt $. If we consider the time derivative of $V(x)$:
 
             $$ \dot{V}(x) = \dot{x} \ddot{x} + c(x) \dot{x} = \dot{x}(-b(\dot{x} + -c(x)) + c(x) \dot{x}
