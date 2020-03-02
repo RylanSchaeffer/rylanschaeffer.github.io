@@ -47,7 +47,7 @@
     <!-- HEADER -->
     <div id="header_wrap" class="outer">
       <header class="inner">
-        <h1 id="header_title">Rylan Schaeffer > Learning > Dynamical Systems</h1>
+        <h1 id="header_title">Rylan Schaeffer > Learning > Dynamical Systems & Control</h1>
         <nav>
           <div>
             <a href="../../index.html">Home</a> |
@@ -67,8 +67,9 @@
             <li><a href="#introductory_terminology">Introductory Terminology</a></li>
             <li><a href="#linear_dynamical_systems">Linear Dynamical Systems</a></li>
             <li><a href="#nonlinear_stability_definitions">Non-Linear Stability Definitions</a></li>
-            <li><a href="#linearization_and_local_stability">Linearization and Local Stability</a></li>
-            <li><a href="#lyapunov_functions">Lyapunov Functions (Lyapunov's Direct Method)</a></li>
+            <li><a href="#stability_via_linearization">Stability via Linearization</a></li>
+            <li><a href="#stability_via_lyapunov_functions">Stability via Lyapunov Functions (Lyapunov's Direct Method)</a></li>
+            <li><a href="#stability_via_invariant_sets">Stability via Invariant Sets (La Salle's Method)</a></li>
           </ul>
         </div>
 
@@ -223,7 +224,11 @@
           </p>
         </div>
 
-        <h2 id="linearization_and_local_stability">Linearization and Local Stability</h2>
+        <h2>Linear Control</h2>
+
+        <h2>Non-Linear Control</h2>
+
+        <h2 id="stability_via_linearization">Stability via Linearization</h2>
         <div>
           <p>
             Linearization around a fixed point is a method for studying the type of stability
@@ -283,7 +288,7 @@
           </p>
         </div>
 
-        <h2 id="lyapunov_functions">Lyapunov Functions (Lyapunov's Direct Method)</h2>
+        <h2 id="stability_via_lyapunov_functions">Stability via Lyapunov Functions (Lyapunov's Direct Method)</h2>
         <div>
           <p>
             Linearization is a useful technique in the local vicinity of a fixed point, but it isn't sufficient.
@@ -376,21 +381,110 @@
             of the equilibrium point(s). What additional conditions are required to make a convincing
             statement? In order to assert global stability or global asymptotic stability, we need
             to impose additional requirements. One possible requirement is that $V(x)$ be radially
-            unbounded
+            unbounded, which is defined as $V(x) \rightarrow \infty$ as $|x| \rightarrow \infty$.
+            This condition prevents the state from finding a solution whereby $V(x)$ tends towards
+            but never reaches 0 by moving as far away from the equilibrium point as possible.
           </p>
 
           <p>
-            Example: Consider $\dot{x} + c(x) = 0$, where $x c(x) \geq 0$ and $x c(x) = 0 \Leftrightarrow
-            c(x) = 0$. In other words, $c(x)$ has the same sign as $x$. Choose $V(x) = x^2 \Rightarrow
+            Example: Consider $\dot{x} + c(x) = 0$, where $x c(x) \geq 0$ and $c(x)$ is continuous, which
+            implies that and $x c(x) = 0 \Leftrightarrow c(x) = 0$. In English, this means that
+            $c(x)$ has the same sign as $x$. Choose $V(x) = x^2 \Rightarrow
             \dot{V}(x) = 2 x \dot{x} = - 2 x c(x) \leq 0$. Since $V(x)$ is positive definite and
             radially unbounded and $\dot{V}(x)$ is negative definite, the equilibrium point $x=0$
-            is globally asymptotically stable.
+            is globally asymptotically stable. We couldn't have obtained this insight from
+            linearizing around the fixed point because we don't know what $c(x)$ is, but with Lyapunov's
+            direct method, we are able to that the origin is globally asymptotically stable.
           </p>
 
+          <p>
+            One property of Lyapunov functions is that many can exist for a single system. Suppose $V$
+            is a Lyapunov function. Then $\forall \rho > 0, \alpha > 1$, so is
+
+            $$V_1(x) = \rho V^{\alpha}$$
+
+            Suppose that $\phi(\cdot)$ is a scalar, differentiable, monotonically increasing function of
+            its scalar argument. Supposing again that $V(x)$ is a Lyapunov function, so is:
+
+            $$V_2(x) = \phi(V(x)) - \phi(0) $$
+
+            To see this requires showing three facts:
+
+            <ol>
+              <li>
+                $V_2(x)$ is positive definite (PD). $V$ is PD, which means that $V(x) = 0 \Leftrightarrow x = 0$
+                and thus $ V_2(0) = \phi(0) - \phi(0) = 0$. To show that $\forall x \neq 0, \, V_2(x) > 0$, we
+                know that because $V$ is PD, $\forall x \neq 0, \, V > 0$ and because $\phi$ is a strictly
+                monotonically increasing function, $\forall x \neq x, \, \phi(V(x)) - \phi(0) > 0$. Thus we
+                conclude that $V_2$ is positive definite.
+              </li>
+              <li>
+                $V_2(x)$ has continuous partial derivatives. We are told that $\phi$ is differentiable and
+                by virtue of $V$ being a Lyapunov function, it has continuous partial derivatives. Thus
+                $\frac{\partial V_2(x)}{\partial x_i} = \frac{d \phi(x)}{d V(x)} \frac{\partial V(x)}{\partial x_i}$
+                and we conclude that $V_2(x)$ has continuous partial derivatives.
+              </li>
+              <li>
+                $\dot{V}_2(x)$ is negative semi-definite (NSD). Because $\phi$ is a strictly monotonically
+                increasing function, $\frac{d \phi (V(x))}{d V(x)} > 0$, and because $V$ is a Lyapunov
+                function, $\dot{V}(x) \leq 0$. By the chain rule, $\dot{V}_2(x) = \frac{d}{dt} V'(x) =
+                \frac{d \phi (V(x))}{d V(x)} \dot{V}(x)$. $\dot{V}_2(x)$ is the product of a positive term
+                and non-positive term, meaning $\dot{V}_2(x) \leq 0$ is NSD.
+              </li>
+            </ol>
+          </p>
         </div>
 
+        <h2 id="stability_via_invariant_sets">Stability via Invariant Sets (La Salle's Method)</h2>
         <div>
-          <h2>Invariant Set Theorem</h2>
+          <p>
+            One shortcoming of demonstrating stability using Lyapunov functions is that if
+            $\dot{V}(x)$ is only negative semi-definite, we can't say anything about the asymptotic
+            behavior of the system. But this feels counter-intuitive. For instance, consider a
+            swinging pendulum with dampening. The velocity $\dot{\theta} = 0$ at the top of each swing,
+            meaning that $\dot{V}(\theta) = \frac{dV(\theta)}{d\theta} \dot{\theta} = 0$ but we would
+            expect the system to asymptote towards $\theta = 0$ provided it doesn't start at $\theta = \pi$.
+            This is a shortcoming we can rectify using the notion of invariant sets.
+          </p>
+
+          <p>
+            An invariant set $R$ is defined as a (sub)set of the state space such that if a point starts in
+            the set $R$, it never leaves the set $R$. Some examples of invariant sets include (a) the set of a
+            single equilibrium point, (b) the set of all equilibrium points, (c) the entire phase space,
+            (d) the trajectory of a point $x(t)$. Invariant sets will help us rectify the shortcoming
+            of Lyapunov's Direct Method since it will allow us to differentiate the bottom of the pendulum
+            $(\theta = 0, \dot{\theta} = 0)$ from the top of the pendulum swings.
+          </p>
+
+          <p>
+            <b>(Local) Theorem</b>: Consider an autonomous system $\dot{x} = f(x)$ and let $V(x)$ be a scalar
+            function with continuous first partial derivatives (note that we do not assume $V(x)$ to be positive
+            definite). Assume that for some $l > 0$, the region
+            $\Omega_l = \{x | V(x) < l \}$ is bounded and $\forall x \in \Omega_l, \, \dot{V}(x) \leq 0$.
+            Let $R$ be the set of all points within $\Omega$ where $\dot{V}(x) = 0$ and let $M$ be the
+            largest invariant set in $R$ i.e. the union of all invariant sets in $R$. Then every point
+            $x(t)$ originating in $\Omega_l$ tends to $M$ as $t \rightarrow \infty$.
+          </p>
+
+          <p>
+            As with Lyapunov's Direct Method, there is also a global equivalent of the local theorem.
+
+          </p>
+
+          <p>
+            For example, consider $\ddot{x} + b(\dot{x} + c(x) = 0$, where $b(\dot{x})$ has the same sign
+            as $\dot{x}$ and $c(x)$ has the same sign as $x$. One immediate consequence is that a fixed
+            point exists at $(x=0, \dot{x}=0)$. Define $V(x) = \frac{1}{2} \dot{x}^2 + \int_0^x c(t) dt $.
+            Note that $V(x)$ is radially unbounded (TODO Why?). If we consider the time derivative of $V(x)$:
+
+            $$ \dot{V}(x) = \dot{x} \ddot{x} + c(x) \dot{x} = \dot{x}(-b(\dot{x} + -c(x)) + c(x) \dot{x}
+            = -\dot{x} b(\dot{x})$$
+
+            Since $b$ shares the same sign as $\dot{x}$, $\dot{V}(x)$ is negative semi-definite. Thus, by
+            the global invariant set theorem, the fixed point $(x=0, \dot{x}=0)$ is globally
+            asymptotically stable. This is a result we could not have achieved using Lyapunov's direct
+            method.
+          </p>
         </div>
 
       </section>
