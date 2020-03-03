@@ -354,7 +354,7 @@
           </table>
 
           <p>
-            <b>Proof:</b> Consider the first case i.e. $\dot{V}(x)$ is negative semi-definite. We want
+            <b>(Local Stability) Proof:</b> Consider the first case i.e. $\dot{V}(x)$ is negative semi-definite. We want
              to show that $x=0$ is stable, which means showing that $\forall R > 0, \exists r < R$ such that
             $||x(0)|| < r \Rightarrow ||x(t)|| < R$. Find the minimum of $V(x)$ on the ball $B_R$.
             Since $V(x)$ is positive definite, $V(x) = 0$ only at 0 and $V(x)$ positive elsewhere. Since $V(x)$
@@ -369,11 +369,17 @@
           </p>
 
           <p>
-            <b>Proof:</b> Consider the second case i.e. $\dot{V}(x)$ is negative definite. For the same
-            reasoning as above, we know that there exists a ball $B_r$ around $x(0)$ must exist such
-            that starting in $B_r$ guarantees the state never escapes $B_R$. Now we want to show that
-            there also exists some $r_0>0$ such that if $||x(0)|| < r_0 \Rightarrow
-            ||x(t)|| \rightarrow 0$ as $t \rightarrow \infty$.
+            <b>(Local Asymptotic Stability) Proof:</b> Consider the second case i.e. $\dot{V}(x)$ is now
+            negative definite, not negative semi-definite. For the same reasoning as above, we know that
+            there exists a ball $B_r$ around $x(0)$ must exist such that starting in $B_r$ guarantees
+            the state never escapes $B_R$. We want to show that there also exists some $r_0>0$ such
+            that if $||x(0)|| < r_0 \Rightarrow ||x(t)|| \rightarrow 0$ as $t \rightarrow \infty$. Because
+            $V(\cdot)$ is positive definite, $V(\cdot)$ is lower bounded by $0$, and because this
+            ball $B_r$ exists, starting within $r$ guarantees that $V(\cdot)$ is upper bounded by $\max_R
+            V(R)$.
+            $\dot{V}(\cdot)$ is negative definite, $V(x)$ must approach some limit $L$. For purposes of
+            contradiction, assume that the limit $L \neq 0$. Because $\dot{V}(x) = 0 \Leftrightarrow x=0$
+            and $\dot{V}$ is continuous.
           </p>
 
           <p>
