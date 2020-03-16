@@ -65,11 +65,26 @@
           <h1 class="toc_title">Contents</h1>
           <ul class="table-of-content" id="markdown-toc">
             <li><a href="#introductory_terminology">Introductory Terminology</a></li>
-            <li><a href="#linear_dynamical_systems">Linear Dynamical Systems</a></li>
-            <li><a href="#nonlinear_stability_definitions">Non-Linear Stability Definitions</a></li>
-            <li><a href="#stability_via_linearization">Stability via Linearization</a></li>
-            <li><a href="#stability_via_lyapunov_functions">Stability via Lyapunov Functions (Lyapunov's Direct Method)</a></li>
-            <li><a href="#stability_via_invariant_sets">Stability via Invariant Sets (La Salle's Method)</a></li>
+            <li><a href="#stability_def">Definitions of Stability</a>
+              <ul>
+                <li><a href="#stability_def_linear_time_invariant">Stability in Linear, Time-Invariant (LTI) Systems</a> </li>
+                <li><a href="#stability_def_nonlinear">Stability in Non-Linear Systems</a> </li>
+                <li><a href="#stability_via_linearization">Characterizing Stability via Linearization</a></li>
+                <li><a href="#stability_via_lyapunov_functions">Characterizing Stability via Lyapunov Functions (Lyapunov's Direct Method)</a></li>
+                <li><a href="#stability_via_invariant_sets">Characterizing Stability via Invariant Sets (La Salle's Method)</a></li>
+                <li><a href="#constructing_lyapunov_functions">Constructing Lyapunov Functions</a></li>
+              </ul>
+            </li>
+            <li><a href="#linear_dynamical_systems">Linear Dynamical Systems</a>
+              <ul>
+                <li><a href="#linear_1d">1-Dimensional System</a> </li>
+                <li><a href="#linear_2d">2-Dimensional System</a></li>
+                <li><a href="#linear_time_invariant_lyapunov_analysis">Lyapunov Analysis of Linear Time-Invariant Systems</a> </li>
+              </ul>
+            </li>
+            <li><a href="">Control of Linear Dynamical Systems</a></li>
+            <li><a href="">Non-Linear Dynamical Systems</a></li>
+            <li><a href="">Control of Non-Linear Dynamical Systems</a></li>
           </ul>
         </div>
 
@@ -84,11 +99,462 @@
           </ul>
         </div>
 
+        <h2 id="stability_def">Stability Definitions</h2>
+        <div>
+          <h3 id="stability_def_linear_time_invariant">Stability of Linear, Time-Invariant (LTI) Systems</h3>
+          <div>
+            <p>
+              Consider an autonomous linear system $\dot{x} = A x$
+            </p>
+          </div>
+
+          <h3 id="stability_def_nonlinear">Stability of Non-Linear Systems</h3>
+          <div>
+            <p>
+              For non-linear systems, multiple notions of stability exist. The first notion of
+              stability is an equilibrium point $x_{eq}$, defined as a point in the phase space
+              with all derivatives equal to 0. However, equilibrium points aren't the only focus.
+              We also care about the behavior of the system in general. Consequently, we have
+              a sequence of definitions of stability.
+            </p>
+
+            <p>
+              We say that an equilibrium point $x_{eq}$ is <b>stable</b> a point that starts within
+              a small ball (defined by radius $r$) around the equilibrium point can be bounded in how
+              far it can move away from the point. Intuitively, this means that the the system is
+              guaranteed to remain "close" to the equilibrium point if it starts close to the point.
+              Formally, we write:
+
+              $$ \forall R > 0, \exists 0 < r < R \text{ s.t. } ||x(0) - x_{eq}|| < r \Rightarrow ||x(t) - x_{eq}|| < R$$
+            </p>
+
+            <p>
+              We say that an equilibrium point is <b>asymptotically stable</b> if it is stable and
+              if starting near the point guarantees that the system will converge back to the
+              equilibrium point. Formally, we write:
+
+              $$\exists r_0 > 0 \text{ s. t. } ||x(0) - x_{eq}|| < r_0 \Rightarrow \lim_{t \to \infty}||x(t) - x_{eq} ||
+              \rightarrow 0 $$
+            </p>
+
+            <p>
+              We say that an equilibrium point is <b>global asymptotically stable</b> if that initial radius
+              $r_0 = \infty$. In this case, we say that the system (not just the point!) is globally
+              asymptotically stable because we know that there can only be one equilibrium point. If there
+              was another, then starting at the second equilibrium point wouldn't converge to the first
+              equilibrium point, contradicting the claim that the point is globally asymptocally stable.
+            </p>
+
+            <p>
+              We say that an equilibrium point is <b>exponentially stable</b> if starting near the
+              equilibrium point ensures that (potentially after some elapsed time) the system
+              converges exponentially fast to the fixed point. Formally, we write that
+
+              $$\exists \delta > 0, \exists \alpha > 1, \exists \lambda > 0 \text{ s.t. } ||x(t) - x_{eq}|| <
+              \delta \Rightarrow \forall t\geq 0,  ||x(t) - x_{eq} || \leq \alpha || x(0) - x_{eq} || e^{- \lambda t}$$
+
+              One cool point is that if we write $\alpha$, which is just a positive value, as $e^{\lambda \tau}$,
+              we see that the bound of $\alpha || x(0) - x_{eq} || e^{- \lambda t}$ can be rewritten as
+              $ || x(0) - x_{eq} || e^{- \lambda (t - \tau)}$. This shows that $\alpha$ can
+              be viewed as a time delay: the state will converge exponentially fast starting from $\tau_0$.
+              We say that an equilibrium point is <b>globally exponentially stable</b> if $r_0 = \infty$.
+              Similar to global asymptotic stability, we can describe both the equilibrium point and the
+              system entirely as globally exponentially stable since only one equilibrium point can
+              exist.
+            </p>
+
+            <p>
+              Note that exponential stability implies stability. To see this, suppose that a
+              point $x_{eq}$ that is exponentially stable. For any bounding radius $R$, we can
+              always find a corresponding $r < R$ to ensure that. Define $r = \min \{\frac{R}{\alpha}, \delta \}$
+              and assume that $||x(0)|| < r$.
+
+              \begin{align*}
+              ||x(t) - x_{eq}||
+              &\leq \alpha ||x(0) - x_{eq} ||e^{-\lambda t} & \text{Defn. of exponential stability and } ||x(0|| < \delta\\
+              &\leq \alpha ||x(0) - x_{eq} || & e^{-\lambda t} \text{ is monotonically decreasing for increasing } t \geq 0\\
+              &< \alpha r & \text{By assumption, } ||x(0)|| < r\\
+              &< \alpha \frac{R}{\alpha} & \text{Holds regardless of whether } r = \frac{R}{\alpha} \text{ or } r = d\\
+              &< R
+              \end{align*}
+
+              Thus we conclude that exponential stability implies stability.
+            </p>
+          </div>
+
+
+          <h3 id="stability_via_linearization">Characterizing Stability via Linearization</h3>
+          <div>
+            <p>
+              Linearization around a fixed point is the first method for studying the type of stability
+              the fixed point has. The idea is to Taylor-series expand about the equilibrium
+              point to first order and disregard higher order terms (HOT). Suppose our system is
+              $\dot{x} = f(x)$. Then linearizing about a fixed point
+              $x_{eq} = 0$ (if the fixed point isn't at $0$, perform a coordinate transform) yields
+
+              $$f(x) = f(0, 0) + \frac{\partial f}{\partial x}|_{x=0, u=0} x + \text{ H.O.T.}$$
+
+              Since $f(0) = 0$ due to being a fixed point,
+
+              $$\dot{x} = f(x) = \frac{\partial f}{\partial x}|_{x=0,\\u=0} x + \text{ H.O.T.}$$
+
+              If we drop the higher order terms, we call the simplified system the <b>linearization</b>
+              or <b>linear approximation</b> of the system.
+
+              $$ \dot{x} = \frac{\partial f}{\partial x}|_{x=0,\\u=0} x$$
+
+              The matrix $A \defeq \frac{\partial f}{\partial x}|_{x=0, u=0}$ has a name: the Jacobian.
+              This leads us to Lypaunov's Linearization Method, which states:
+            </p>
+
+            <p>
+              <b>Theorem:</b> Let $\dot{x} = Ax$ be the linearization of some dynamical system.
+            <ul>
+              <li>
+                If all eigenvalues of the Jacobian are in the left half of the complex plane
+                (i.e. the linearized system is strictly stable),
+                then the equilibrium point in the original dynamical system is asymptotically stable.
+              </li>
+              <li>
+                If at least one eigenvalue of the Jacobian is in the right half of the complex plane
+                (i.e. the linearized system is unstable), then the equilibrium point in the
+                original dynamical system is unstable.
+              </li>
+              <li>
+                If the eigenvalues of the Jacobian are in the left half of the complex plane or
+                on the vertical axis (i.e. the linearized system is marginally stable), then
+                no conclusion can be drawn about the equilibrium point in the original dynamical system.
+              </li>
+            </ul>
+            </p>
+
+            <p>
+              <b>Proof:</b> TODO
+            </p>
+
+            <p>
+              To understand the third possible outcome of the theorem, compare the systems $\dot{v} + |v|v = 0$ and $\dot{v} - |v|v = 0$.
+              Both systems' linearizations are $\dot{v}=0$, but the first system is asymptotically stable around
+              $v=0$ while the other system is unstable around $v=0$. The reason is that the higher order terms
+              we disregarded when linearizing the system contained the information necessary to make
+              this determination. For another simple example, consider $\dot{x} = ax + x^5$ with corresponding
+              linearization $\dot{x} = ax$. Clearly, if $a < 0$, the system converges, and if $a > 0$, the system
+              diverges, but we can't say anything for $a = 0$.
+            </p>
+          </div>
+
+          <h3 id="stability_via_lyapunov_functions">Characterizing Stability via Lyapunov Functions (Lyapunov's Direct Method)</h3>
+          <div>
+            <p>
+              Linearization is a useful technique in the local vicinity of a fixed point, but it isn't sufficient.
+              We'd like to be able to describe the behavior of the system in
+              general, even when far away from fixed points, and without having to integrate the
+              differential equation. This led to Lyapunov's Direct Method, which is inspired by the idea
+              that for a system with dissipating energy, the system must eventually settle down to a fixed point.
+              Professor Slotine used the example of a pendulum; if $\theta$ is the angle away from the
+              pendulum hanging straight down, both $\theta = 0$ and $\theta = \pi$ are fixed points. What
+              differentiates them, though, is that the pendulum hanging straight down has no energy,
+              meaning it is stable, whereas the pendulum upright has potential energy; if
+              the pendulum is perturbed away from the upright position, and if the pendulum has friction,
+              then the pendulum will eventually settle down to the bottom equilibrium.
+              This motivates the idea of <b>Lyapunov functions</b>, which are energy-like
+              functions that can be used to describe the behavior of the system more broadly than
+              just around fixed points. The idea is to find a scalar function for the system which is non-negative
+              and zero only at equilibrium; then, depending on the time derivative of the Lyapunov function,
+              we can start drawing conclusions about the system's behavior.
+            </p>
+
+            <p>
+              We'll first need some definitions. We say that a scalar function $V(x)$ is
+              <b>locally positive definite</b> if within some ball $B_R$, $V(x) \geq 0$ with
+              $V(x) = 0 \leftrightarrow x=0$. If the function $V(x) = 0$ at any other $x \neq 0$,
+              we say that the point is <b>locally positive semi-definite</b>. If $R = \infty$,
+              then we say the function is globally positive definite or globally positive semi-definite,
+              respectively. (Globally) negative and negative semi-definite functions are defined
+              similarly. We say that a scalar function $V(x)$ is a <b>Lyapunov function</b> if (a) $V(x)$ is
+              locally positive definite, (b) $V(x)$ has continuous partial derivatives and (c)
+              its time derivative $\dot{V}(t)$ is negative semi definite. If we can define a Lyapunov function
+              for a system around equilibrium points, we can start to make claims about the stability
+              of the equilibria.
+            </p>
+
+            <p>
+              <b>Lypanunov's Direct Method Theorem:</b> If a system has a Lyapunov function $V(x)$ defined around equilibrium point $x=0$
+              (if equilibrium is not at 0, perform a coordinate transform), then the equilibrium point
+              is stable. If the Lyapunov function's time derivative $\dot{V}(x)$ is negative definite,
+              then the equilibrium point is asymptotically stable. In table form:
+            </p>
+
+            <table>
+              <tr>
+                <th>$V(x)$</th>
+                <th>$\dot{V}(x)$</th>
+                <th>Conclusion</th>
+              </tr>
+              <tr>
+                <td>Locally Positive Definite</td>
+                <td>Locally Negative Semi-Definite</td>
+                <td>Stable</td>
+              </tr>
+              <tr>
+                <td>Locally Positive Definite</td>
+                <td>Locally Negative Definite</td>
+                <td>Asymptotically Stable</td>
+              </tr>
+              <tr>
+                <td>Globally Positive Definite</td>
+                <td>Globally Negative Definite</td>
+                <td>Globally Asymptotically Stable</td>
+              </tr>
+            </table>
+
+            <p>
+              <b>(Local Stability) Proof:</b> Consider the first case i.e. $\dot{V}(x)$ is negative semi-definite. We want
+              to show that $x=0$ is stable, which means showing that $\forall R > 0, \exists r < R$ such that
+              $||x(0)|| < r \Rightarrow ||x(t)|| < R$. Find the minimum of $V(x)$ on the ball $B_R$.
+              Since $V(x)$ is positive definite, $V(x) = 0$ only at 0 and $V(x)$ positive elsewhere. Since $V(x)$
+              is continuous and $0$ only at $x=0$, a ball $B_r$ around $x=0$ must exist such that
+              the maximum of $V(x)$ on $B_r$ is equal to the minimum of $V(x)$ on $B_R$. Then, provided
+              a point starts within $B_r$, since $V(x)$ cannot increase, the point cannot escape $B_R$
+              since this would require having a larger $V(x)$ than it starts with. The physical intuition is that
+              the minimum $V(x)$ on $B_R$ determines an energy threshold. We then find the region entirely below
+              this energy threshold (which is guaranteed to exist because $V(x)$ is continuous and $V(0) = 0$),
+              and since energy can't increase, we know points within this interior region are trapped below
+              the energy threshold.
+            </p>
+
+            <p>
+              <b>(Local Asymptotic Stability) Proof:</b> Consider the second case i.e. $\dot{V}(x)$ is now
+              negative definite, not negative semi-definite. For the same reasoning as above, we know that
+              there exists a ball $B_r$ around $x(0)$ must exist such that starting in $B_r$ guarantees
+              the state never escapes $B_R$. We want to show that there also exists some $r_0>0$ such
+              that if $||x(0)|| < r_0 \Rightarrow ||x(t)|| \rightarrow 0$ as $t \rightarrow \infty$. To show
+              this, we'll use proof by contradiction, requiring a few clean steps. (1) $V$ is lower bounded
+              and $\dot{V}$ is negative definite, meaning $V \rightarrow L$ for some limit $L$. If $L = 0$,
+              then the system has converged to the fixed point and the point is thus asymptotically stable.
+              Using proof by contradiction, we'll show that $L$ cannot be anything except 0. Assume for
+              purposes of contradiction that $L \ neq 0$. Since $V$ is $0$ only at 0 and $V$ is smooth,
+              there exists some distance $d_L > 0$ such that $||x(t)|| > d_L$. (2) Since $\dot{V}$ is
+              negative definite, $\dot{V}$ is 0 only at $x=0$, and since $\dot{V}$ is smooth, $\dot{V} <
+              \min \{ \dot{V}(x) | x(t) > d_L \} \defeq \eta$; simply put, $\dot{V}$ cannot approach zero because the
+              function is 0 only at 0 and $V$'s limit $L \neq 0$ prevents the system from approaching $x=0$.
+              But then, by the fundamental theorem of calculus, we know that $V(t) = V(0) + \int_0^t \dot{V}(s)
+              \, ds \leq V(0) + \eta t$. This means that $V(t)$ must decrease at least linearly with respect
+              to time, but this is impossible since $V(t)$ is lower bounded! Thus we find our contradiction
+              and the conclude that any non-zero limit $L$ is impossible.
+            </p>
+
+            <p>
+              However, both of these statements are local. We'd like to understand the global stability
+              of the equilibrium point(s). What additional conditions are required to make a convincing
+              statement? In order to assert global stability or global asymptotic stability, we need
+              to impose additional requirements. One possible requirement is that $V(x)$ be radially
+              unbounded, which is defined as $V(x) \rightarrow \infty$ as $|x| \rightarrow \infty$.
+              This condition prevents the state from finding a solution whereby $V(x)$ tends towards
+              but never reaches 0 by moving as far away from the equilibrium point as possible.
+            </p>
+
+            <p>
+              Example: Consider $\dot{x} + c(x) = 0$, where $x c(x) \geq 0$ and $c(x)$ is continuous, which
+              implies that and $x c(x) = 0 \Leftrightarrow c(x) = 0$. In English, this means that
+              $c(x)$ has the same sign as $x$. Choose $V(x) = x^2 \Rightarrow
+              \dot{V}(x) = 2 x \dot{x} = - 2 x c(x) \leq 0$. Since $V(x)$ is positive definite and
+              radially unbounded and $\dot{V}(x)$ is negative definite, the equilibrium point $x=0$
+              is globally asymptotically stable. We couldn't have obtained this insight from
+              linearizing around the fixed point because we don't know what $c(x)$ is, but with Lyapunov's
+              direct method, we are able to that the origin is globally asymptotically stable.
+            </p>
+
+            <p>
+              <b>Properties:</b>One property of Lyapunov functions is that many can exist for a single system. Suppose $V$
+              is a Lyapunov function. Then $\forall \rho > 0, \alpha > 1$, so is
+
+              $$V_1(x) = \rho V^{\alpha}$$
+
+              Suppose that $\phi(\cdot)$ is a scalar, differentiable, monotonically increasing function of
+              its scalar argument. Supposing again that $V(x)$ is a Lyapunov function, so is:
+
+              $$V_2(x) = \phi(V(x)) - \phi(0) $$
+
+              To see this requires showing three facts:
+
+            <ol>
+              <li>
+                $V_2(x)$ is positive definite (PD). $V$ is PD, which means that $V(x) = 0 \Leftrightarrow x = 0$
+                and thus $ V_2(0) = \phi(0) - \phi(0) = 0$. To show that $\forall x \neq 0, \, V_2(x) > 0$, we
+                know that because $V$ is PD, $\forall x \neq 0, \, V > 0$ and because $\phi$ is a strictly
+                monotonically increasing function, $\forall x \neq x, \, \phi(V(x)) - \phi(0) > 0$. Thus we
+                conclude that $V_2$ is positive definite.
+              </li>
+              <li>
+                $V_2(x)$ has continuous partial derivatives. We are told that $\phi$ is differentiable and
+                by virtue of $V$ being a Lyapunov function, it has continuous partial derivatives. Thus
+                $\frac{\partial V_2(x)}{\partial x_i} = \frac{d \phi(x)}{d V(x)} \frac{\partial V(x)}{\partial x_i}$
+                and we conclude that $V_2(x)$ has continuous partial derivatives.
+              </li>
+              <li>
+                $\dot{V}_2(x)$ is negative semi-definite (NSD). Because $\phi$ is a strictly monotonically
+                increasing function, $\frac{d \phi (V(x))}{d V(x)} > 0$, and because $V$ is a Lyapunov
+                function, $\dot{V}(x) \leq 0$. By the chain rule, $\dot{V}_2(x) = \frac{d}{dt} V'(x) =
+                \frac{d \phi (V(x))}{d V(x)} \dot{V}(x)$. $\dot{V}_2(x)$ is the product of a positive term
+                and non-positive term, meaning $\dot{V}_2(x) \leq 0$ is NSD.
+              </li>
+            </ol>
+            </p>
+
+            <p>
+              <b>Problems:</b> Although succinct and elegant, Lyapunov's direct method has some shortcomings.
+              First, it doesn't tell us how to define the Lyapunov function $V$. Second, possibly infinite
+              functions can exist for one system, and all of them may lack some interpretable meaning. The above
+              example uses a strong prior that the energy of a physical system should be equal to the kinetic
+              plus potential energy, but this isn't generally applicable for all systems. Third, Lyapunov's
+              direct method's requirement that $\dot{V}$ is unnecessarily strict; as we'll see with
+              La Salle's Invariant Set Theorems in the next section, we can relax this requirement and still
+              make statements concerning the stability of the system's fixed point(s).
+            </p>
+          </div>
+
+          <h3 id="stability_via_invariant_sets">Characterizing Stability via Invariant Sets (La Salle's Method)</h3>
+          <div>
+            <p>
+              One shortcoming of demonstrating stability using Lyapunov's direct method is that if
+              $\dot{V}(x)$ is only negative semi-definite, we can't say anything about the asymptotic
+              behavior of the system. But this feels counter-intuitive. For instance, consider a
+              swinging pendulum with dampening. The velocity $\dot{\theta} = 0$ at the top of each swing,
+              meaning that $\dot{V}(\theta) = \frac{dV(\theta)}{d\theta} \dot{\theta} = 0$ but we would
+              expect the system to asymptote towards $\theta = 0$ provided it doesn't start at $\theta = \pi$.
+              This is a shortcoming we can rectify using the notion of invariant sets.
+            </p>
+
+            <p>
+              An invariant set $R$ is defined as a subset of the state space such that if a point starts in
+              the set $R$, it never leaves the set $R$. Some examples of invariant sets include (a) the set of a
+              single equilibrium point, (b) the set of all equilibrium points, (c) the entire phase space,
+              (d) the trajectory of a point $x(t)$. Invariant sets will help us rectify the shortcoming
+              of Lyapunov's Direct Method since it will allow us to differentiate the bottom of the pendulum
+              $(\theta = 0, \dot{\theta} = 0)$ from the top of the pendulum swings.
+            </p>
+
+            <p>
+              <b>La Salle's (Local) Invariant Set Theorem</b>: Consider an autonomous system
+              $\dot{x} = f(x)$ and let $V(x)$ be a scalar
+              function with continuous first partial derivatives (note that we do not assume $V(x)$ to be positive
+              definite). Assume that for some $l > 0$, the region
+              $\Omega_l = \{x | V(x) < l \}$ is bounded and $\forall x \in \Omega_l, \, \dot{V}(x) \leq 0$.
+              Let $R$ be the set of all points within $\Omega$ where $\dot{V}(x) = 0$ and let $M$ be the
+              largest invariant set in $R$ i.e. the union of all invariant sets in $R$. Then every point
+              $x(t)$ originating in $\Omega_l$ tends to $M$ as $t \rightarrow \infty$.
+            </p>
+
+            <p>
+              <b>La Salle's (Global) Invariant Set Theorem:</b> As with Lyapunov's Direct Method, there
+              is also a global equivalent of the local theorem. Consider an autonomous system $\dot{x} = f(x)$
+              and let $V(x)$ be a scalar function with continuous first partial derivatives. Define
+              $R = \{x | \dot{V}(x) = 0 \}$ and let $M$ be the largest invariant set in $R$. If
+              $V(x)$ is radially unbounded i.e. $||x|| \rightarrow \infty \Rightarrow V(x) \rightarrow \infty$
+              and if $\dot{V} \leq 0$ over the whole state space, then all states globally asymptotically
+              converge to M as $t \rightarrow \infty$.
+            </p>
+
+            <p>
+              <b>Example:</b> Consider $\ddot{x} + \dot{x}^3 + x^5 = x^4 \sin^2(x)$. Note that the system
+              has a fixed point at $x=0, \dot{x} = 0$. Define
+
+              $$V(x, \dot x) = \frac{1}{2} \dot x ^2 + \int_0^x u^t - u^4 \sin^2 (x)$$
+
+              Then
+
+              $$\dot{V} = - \dot{x}^4 \leq 0 $$
+
+              Thus, because $\dot{x}$ is globally negative definite, by the Global Invariant Set Theorem,
+              we conclude that the origin is asymptotically stable. We can make this statement regardless
+              of whether $V$ is positive definite.
+            </p>
+
+
+            <p>
+              <b>Example:</b> One nice example that makes use of both the local and global invariant set
+              theorems in the following. Consider the system:
+
+              \begin{align*}
+              \dot{x}_1 &= x_2 - x_1^7 (x_1^4 + 2 x_2^2 - 10)\\
+              \dot{x}_2 &= -x_1^3 - 3 x_2^5(x_1^4 + 2 x_2^2 - 10)
+              \end{align*}
+
+              Note that there are two invariant sets: the origin $(x=0, \dot{x} = 0$, and the limit
+              cycle $x_1^4 + 2 x_2^2 - 10$. To see this last one, note that:
+
+              $$\frac{d}{dt}(x_1^4 + 2 x_2^2 - 10) = -(4 x_1^{10} + 12 x_2^6)(x_1^4 + 2 x_2^2 - 10) $$
+
+              We'll consider a Lyapunov function that measures the distance from a point to the limit cycle:
+
+              $$V(x, \dot{x}) = (x_1^4 + 2 x_2^2 - 10)^2 $$
+
+              Taking the time derivative, we see that
+
+              $$\dot{V} = - 8(x_1^{10} + 3 x_2 ^6)(x_1^4 + 2 x_2^2 - 10)^2 $$
+
+              Thus $\dot{V}$ is negative except when $x_1^{10} + 3 x_2 ^6 = 0$ or $x_1^4 + 2 x_2^2 - 10 = 0$,
+              and then $\dot{V} = 0$. By the Global Invariant Set Theorem, we conclude that all states
+              globally asymptotically converge to either the limit cycle or the origin. But we can actually go
+              further and make one additional statement about the system. We can answer where points
+              enclosed between the origin and the limit cycle flow towards using the Local Invariant Set
+              Theorem. Define $l=100$ and $\Omega_l = \{ x | V(x) < l\}$. This excludes the origin, since
+              the origin is exactly at $V(x) = 100$. Then by the Local Invariant Set Theorem, all points
+              between the limit cycle and the origin flow to the limit cycle. The origin is therefore unstable.
+            </p>
+          </div>
+
+          <h3 id="constructing_lyapunov_functions">Constructing Lyapunov Functions</h3>
+          <div>
+            <p>
+              Since both Lyapunov's Direct Method and La Salle's Invariant Set Theorem both require
+              cleverly constructing functions with particular properties, it's worth taking a moment
+              to consider common approaches for defining Lyapunov functions.
+            </p>
+
+            <h4>Energy = Kinetic + Potential</h4>
+            <p>
+              Since almost any real system dissipates energy, a useful starting point is defining the
+              Lyapunov function as the sum of the system's kinetic energy plus potential energy.
+              For example, consider
+
+              $$\ddot{x} + b(\dot{x}) + c(x) = 0$$
+
+              where $b(\dot{x})$ has the same sign
+              as $\dot{x}$ and $c(x)$ has the same sign as $x$. One immediate consequence is that a fixed
+              point exists at $(x=0, \dot{x}=0)$. This is also the only fixed point as a fixed point requires
+              $\dot x = 0$ and $\ddot x = 0$, which means $0 = c(x)$ must hold. But since $c(x)$ is zero
+              only at $x=0$, $(x=0, \dot{x}=0)$ must be the only fixed point.
+              Now, we define
+
+              $$V(x) = \frac{1}{2} \dot{x}^2 + \int_0^x c(u) du $$
+
+              which if we view the system
+              as a non-linear mass-spring with damping, can be seen as the kinetic energy of the mass plus
+              the energy stored in the spring. If we consider the time derivative of $V(x)$:
+
+              $$ \dot{V}(x) = \dot{x} \ddot{x} + c(x) \dot{x} = \dot{x}(-b(\dot{x}) + -c(x)) + c(x) \dot{x}
+              = -\dot{x} b(\dot{x})$$
+
+              Since $b$ shares the same sign as $\dot{x}$, $\dot{V}(x)$ is negative semi-definite. Thus, by
+              the local invariant set theorem, the fixed point $(x=0, \dot{x}=0)$ is locally
+              asymptotically stable. If $\int_0^x c(t) dt$ is radially unbounded, then $V(x)$ is radially
+              unbounded and the fixed point becomes globally asymptotically stable. This is a result we
+              could not have achieved using Lyapunov's direct method.
+            </p>
+          </div>
+        </div>
+
+
         <h2 id="linear_dynamical_systems">Linear Dynamical Systems</h2>
         <div>
-          <h3>1-Dimensional</h3>
+          <h3 id="linear_1d">1-Dimensional</h3>
+          <div>
 
-          <h3>2-Dimensional</h3>
+          </div>
+
+          <h3 id="linear_2d">2-Dimensional</h3>
           <div>
             <p>
               Consider the linear, first order dynamical system $\dot{x} = A x $ with $A =
@@ -148,352 +614,72 @@
 
             </table>
           </div>
+
+
+          <h3 id="linear_time_invariant_lyapunov_analysis">Lyapunov Analysis of LTI System</h3>
+          <div>
+            <p>
+              Consider a linear, time-invariant system $\dot{x} = A x $ and a candidate Lyapunov function
+              involving a time-invariant matrix $P$.
+
+              $$V(x) = x^T P x $$
+
+              Because $P$ is constant with respect to time, the function's time derivative is:
+
+              $$ \dot{V}(x) = \dot{x}^T P x + x^T P \dot{x} = x^T (A^T P + P A ) x $$
+
+              For any linear system, we know that the origin is the only fixed point. We would like
+              to use Lyapunov analysis to determine whether the origin is stable or unstable. If we choose
+              $P$ as a symmetric positive definite matrix, we know that the Lyapunov function will
+              be positive definite. If we also choose $P$ such that $-Q \defeq A^T P + P A$
+              is negative definite, then by Lyapunov's direct method, we can conclude that the origin is
+              strictly stable (i.e. all eigenvalues' real components $<0$). This leads to the following
+              theorem.
+            </p>
+
+            <p>
+              <b>Theorem:</b> A LTI system $\dot{x} = A x$ is strictly stable (all of $A$'s eigenvalues' real
+              components $<0$ or equivalently, $A$ is Hurwitz) if and only if there exists symmetric
+              positive definite matrices $P, Q$ such that $-Q = A^T P + PA$.
+            </p>
+
+            <p>
+              <b>Proof:</b>Let $A$ be Hurwitz. Choose a positive definite $Q$. Because $A$ is Hurwitz,
+              $\lim_{t \to \infty} A t \rightarrow 0$. Using this property and the Fundamental
+              Theorem of Calculus, we can write negative definite $-Q$ as:
+
+              $$-Q = \int_0^{\infty} \frac{d}{du} \exp(A^T u) Q \exp(Au) du $$
+
+              Taking the derivative inside the integral and applying the chain rule, we see:
+
+              $$-Q = A^T \int_0^{\infty} \exp(A^T u) Q \exp(Au) du + \int_0^{\infty} \exp(A^T u) Q \exp(Au) du \, A$$
+
+              Define
+
+              $$P \defeq \int_0^{\infty} \exp(A^T u) Q \exp(Au) du$$
+
+              Note that $P$ is positive definite because $Q$ is. Then
+
+              $$ -Q = A^T P + P A$$
+
+              Define $V = x^T P x \Rightarrow \dot{V} = -x^T Q x$. By Lyapunov's Direct Method,
+              we conclude that the origin is strictly stable.
+            </p>
+
+            <p>
+              The other direction is also straightforward. Suppose there exist symmetric positive
+              definite $P, Q$. TODO
+            </p>
+          </div>
+
         </div>
 
-        <h2 id="nonlinear_stability_definitions">Non-Linear Stability Definitions</h2>
-        <div>
-          <p>
-            For non-linear systems, multiple notions of stability exist. The first notion of
-            stability is an equilibrium point $x_{eq}$, defined as a point in the phase space
-            with all derivatives equal to 0. However, equilibrium points aren't the only focus.
-            We also care about the behavior of the system in general. Consequently, we have
-            a sequence of definitions of stability.
-          </p>
-
-          <p>
-            We say that an equilibrium point $x_{eq}$ is <b>stable</b> a point that starts within
-            a small ball (defined by radius $r$) around the equilibrium point can be bounded in how
-            far it can move away from the point. Intuitively, this means that the the system is
-            guaranteed to remain "close" to the equilibrium point if it starts close to the point.
-            Formally, we write:
-
-            $$ \forall R > 0, \exists 0 < r < R \text{ s.t. } ||x(0) - x_{eq}|| < r \Rightarrow ||x(t) - x_{eq}|| < R$$
-          </p>
-
-          <p>
-            We say that an equilibrium point is <b>asymptotically stable</b> if it is stable and
-            if starting near the point guarantees that the system will converge back to the
-            equilibrium point. Formally, we write:
-
-            $$\exists r_0 > 0 \text{ s. t. } ||x(0) - x_{eq}|| < r_0 \Rightarrow \lim_{t \to \infty}||x(t) - x_{eq} ||
-            \rightarrow 0 $$
-          </p>
-
-          <p>
-            We say that an equilibrium point is <b>global asymptotically stable</b> if that initial radius
-            $r_0 = \infty$. In this case, we say that the system (not just the point!) is globally
-            asymptotically stable because we know that there can only be one equilibrium point. If there
-            was another, then starting at the second equilibrium point wouldn't converge to the first
-            equilibrium point, contradicting the claim that the point is globally asymptocally stable.
-          </p>
-
-          <p>
-            We say that an equilibrium point is <b>exponentially stable</b> if starting near the
-            equilibrium point ensures that (potentially after some elapsed time) the system
-            converges exponentially fast to the fixed point. Formally, we write that
-
-            $$\exists \delta > 0, \exists \alpha > 1, \exists \lambda > 0 \text{ s.t. } ||x(t) - x_{eq}|| <
-            \delta \Rightarrow \forall t\geq 0,  ||x(t) - x_{eq} || \leq \alpha || x(0) - x_{eq} || e^{- \lambda t}$$
-
-            One cool point is that if we write $\alpha$, which is just a positive value, as $e^{\lambda \tau}$,
-            we see that the bound of $\alpha || x(0) - x_{eq} || e^{- \lambda t}$ can be rewritten as
-            $ || x(0) - x_{eq} || e^{- \lambda (t - \tau)}$. This shows that $\alpha$ can
-            be viewed as a time delay: the state will converge exponentially fast starting from $\tau_0$.
-            We say that an equilibrium point is <b>globally exponentially stable</b> if $r_0 = \infty$.
-            Similar to global asymptotic stability, we can describe both the equilibrium point and the
-            system entirely as globally exponentially stable since only one equilibrium point can
-            exist.
-          </p>
-
-          <p>
-            Note that exponential stability implies stability. To see this, suppose that a
-            point $x_{eq}$ that is exponentially stable. For any bounding radius $R$, we can
-            always find a corresponding $r < R$ to ensure that. Define $r = \min \{\frac{R}{\alpha}, \delta \}$
-            and assume that $||x(0)|| < r$.
-
-            \begin{align*}
-            ||x(t) - x_{eq}||
-            &\leq \alpha ||x(0) - x_{eq} ||e^{-\lambda t} & \text{Defn. of exponential stability and } ||x(0|| < \delta\\
-            &\leq \alpha ||x(0) - x_{eq} || & e^{-\lambda t} \text{ is monotonically decreasing for increasing } t \geq 0\\
-            &< \alpha r & \text{By assumption, } ||x(0)|| < r\\
-            &< \alpha \frac{R}{\alpha} & \text{Holds regardless of whether } r = \frac{R}{\alpha} \text{ or } r = d\\
-            &< R
-            \end{align*}
-
-            Thus we conclude that exponential stability implies stability.
-          </p>
-        </div>
 
         <h2>Linear Control</h2>
 
         <h2>Non-Linear Control</h2>
-
-        <h2 id="stability_via_linearization">Stability via Linearization</h2>
         <div>
-          <p>
-            Linearization around a fixed point is a method for studying the type of stability
-            the fixed point has. The idea is to Taylor-series expand about the equilibrium
-            point to first order and disregard higher order terms (HOT). Suppose our system is
-            $\dot{x} = f(x)$. Then linearizing about a fixed point
-            $x_{eq} = 0$ (if the fixed point isn't at $0$, perform a coordinate transform) yields
 
-            $$f(x) = f(0, 0) + \frac{\partial f}{\partial x}|_{x=0, u=0} x + \text{ H.O.T.}$$
-
-            Since $f(0) = 0$ due to being a fixed point,
-
-            $$\dot{x} = f(x) = \frac{\partial f}{\partial x}|_{x=0,\\u=0} x + \text{ H.O.T.}$$
-
-            If we drop the higher order terms, we call the simplified system the <b>linearization</b>
-            or <b>linear approximation</b> of the system.
-
-            $$ \dot{x} = \frac{\partial f}{\partial x}|_{x=0,\\u=0} x$$
-
-            The matrix $A \defeq \frac{\partial f}{\partial x}|_{x=0, u=0}$ has a name: the Jacobian.
-            This leads us to Lypaunov's Linearization Method, which states:
-          </p>
-
-          <p>
-            <b>Theorem:</b> Let $\dot{x} = Ax$ be the linearization of some dynamical system.
-            <ul>
-              <li>
-                If all eigenvalues of the Jacobian are in the left half of the complex plane
-                (i.e. the linearized system is strictly stable),
-                then the equilibrium point in the original dynamical system is asymptotically stable.
-              </li>
-              <li>
-                If at least one eigenvalue of the Jacobian is in the right half of the complex plane
-                (i.e. the linearized system is unstable), then the equilibrium point in the
-                original dynamical system is unstable.
-              </li>
-              <li>
-                If the eigenvalues of the Jacobian are in the left half of the complex plane or
-                on the vertical axis (i.e. the linearized system is marginally stable), then
-                no conclusion can be drawn about the equilibrium point in the original dynamical system.
-              </li>
-            </ul>
-          </p>
-
-          <p>
-            <b>Proof:</b> TODO
-          </p>
-
-          <p>
-            To understand the third possible outcome of the theorem, compare the systems $\dot{v} + |v|v = 0$ and $\dot{v} - |v|v = 0$.
-            Both systems' linearizations are $\dot{v}=0$, but the first system is asymptotically stable around
-            $v=0$ while the other system is unstable around $v=0$. The reason is that the higher order terms
-            we disregarded when linearizing the system contained the information necessary to make
-            this determination. For another simple example, consider $\dot{x} = ax + x^5$ with corresponding
-            linearization $\dot{x} = ax$. Clearly, if $a < 0$, the system converges, and if $a > 0$, the system
-            diverges, but we can't say anything for $a = 0$.
-          </p>
-        </div>
-
-        <h2 id="stability_via_lyapunov_functions">Stability via Lyapunov Functions (Lyapunov's Direct Method)</h2>
-        <div>
-          <p>
-            Linearization is a useful technique in the local vicinity of a fixed point, but it isn't sufficient.
-            We'd like to be able to describe the behavior of the system in
-            general, even when far away from fixed points, and without having to integrate the
-            differential equation. This led to Lyapunov's Direct Method, which is inspired by the idea
-            that for a system with dissipating energy, the system must eventually settle down to a fixed point.
-            Professor Slotine used the example of a pendulum; if $\theta$ is the angle away from the
-            pendulum hanging straight down, both $\theta = 0$ and $\theta = \pi$ are fixed points. What
-            differentiates them, though, is that the pendulum hanging straight down has no energy,
-            meaning it is stable, whereas the pendulum upright has potential energy; if
-            the pendulum is perturbed away from the upright position, and if the pendulum has friction,
-            then the pendulum will eventually settle down to the bottom equilibrium.
-            This motivates the idea of <b>Lyapunov functions</b>, which are energy-like
-            functions that can be used to describe the behavior of the system more broadly than
-            just around fixed points. The idea is to find a scalar function for the system which is non-negative
-            and zero only at equilibrium; then, depending on the time derivative of the Lyapunov function,
-            we can start drawing conclusions about the system's behavior.
-          </p>
-
-          <p>
-            We'll first need some definitions. We say that a scalar function $V(x)$ is
-            <b>locally positive definite</b> if within some ball $B_R$, $V(x) \geq 0$ with
-            $V(x) = 0 \leftrightarrow x=0$. If the function $V(x) = 0$ at any other $x \neq 0$,
-            we say that the point is <b>locally positive semi-definite</b>. If $R = \infty$,
-            then we say the function is globally positive definite or globally positive semi-definite,
-            respectively. (Globally) negative and negative semi-definite functions are defined
-            similarly. We say that a scalar function $V(x)$ is a <b>Lyapunov function</b> if (a) $V(x)$ is
-            locally positive definite, (b) $V(x)$ has continuous partial derivatives and (c)
-            its time derivative $\dot{V}(t)$ is negative semi definite. If we can define a Lyapunov function
-            for a system around equilibrium points, we can start to make claims about the stability
-            of the equilibria.
-          </p>
-
-          <p>
-            <b>Theorem:</b> If a system has a Lyapunov function $V(x)$ defined around equilibrium point $x=0$
-            (if equilibrium is not at 0, perform a coordinate transform), then the equilibrium point
-            is stable. If the Lyapunov function's time derivative $\dot{V}(x)$ is negative definite,
-            then the equilibrium point is asymptotically stable. In table form:
-          </p>
-
-          <table>
-            <tr>
-              <th>$V(x)$</th>
-              <th>$\dot{V}(x)$</th>
-              <th>Conclusion</th>
-            </tr>
-            <tr>
-              <td>Locally Positive Definite</td>
-              <td>Locally Negative Semi-Definite</td>
-              <td>Stable</td>
-            </tr>
-            <tr>
-              <td>Locally Positive Definite</td>
-              <td>Locally Negative Definite</td>
-              <td>Asymptotically Stable</td>
-            </tr>
-            <tr>
-              <td>Globally Positive Definite</td>
-              <td>Globally Negative Definite</td>
-              <td>Globally Asymptotically Stable</td>
-            </tr>
-          </table>
-
-          <p>
-            <b>(Local Stability) Proof:</b> Consider the first case i.e. $\dot{V}(x)$ is negative semi-definite. We want
-             to show that $x=0$ is stable, which means showing that $\forall R > 0, \exists r < R$ such that
-            $||x(0)|| < r \Rightarrow ||x(t)|| < R$. Find the minimum of $V(x)$ on the ball $B_R$.
-            Since $V(x)$ is positive definite, $V(x) = 0$ only at 0 and $V(x)$ positive elsewhere. Since $V(x)$
-            is continuous and $0$ only at $x=0$, a ball $B_r$ around $x=0$ must exist such that
-            the maximum of $V(x)$ on $B_r$ is equal to the minimum of $V(x)$ on $B_R$. Then, provided
-             a point starts within $B_r$, since $V(x)$ cannot increase, the point cannot escape $B_R$
-            since this would require having a larger $V(x)$ than it starts with. The physical intuition is that
-            the minimum $V(x)$ on $B_R$ determines an energy threshold. We then find the region entirely below
-            this energy threshold (which is guaranteed to exist because $V(x)$ is continuous and $V(0) = 0$),
-            and since energy can't increase, we know points within this interior region are trapped below
-            the energy threshold.
-          </p>
-
-          <p>
-            <b>(Local Asymptotic Stability) Proof:</b> Consider the second case i.e. $\dot{V}(x)$ is now
-            negative definite, not negative semi-definite. For the same reasoning as above, we know that
-            there exists a ball $B_r$ around $x(0)$ must exist such that starting in $B_r$ guarantees
-            the state never escapes $B_R$. We want to show that there also exists some $r_0>0$ such
-            that if $||x(0)|| < r_0 \Rightarrow ||x(t)|| \rightarrow 0$ as $t \rightarrow \infty$. Because
-            $V(\cdot)$ is positive definite, $V(\cdot)$ is lower bounded by $0$, and because this
-            ball $B_r$ exists, starting within $r$ guarantees that $V(\cdot)$ is upper bounded by $\max_R
-            V(R)$.
-            $\dot{V}(\cdot)$ is negative definite, $V(x)$ must approach some limit $L$. For purposes of
-            contradiction, assume that the limit $L \neq 0$. Because $\dot{V}(x) = 0 \Leftrightarrow x=0$
-            and $\dot{V}$ is continuous.
-          </p>
-
-          <p>
-            However, both of these statements are local. We'd like to understand the global stability
-            of the equilibrium point(s). What additional conditions are required to make a convincing
-            statement? In order to assert global stability or global asymptotic stability, we need
-            to impose additional requirements. One possible requirement is that $V(x)$ be radially
-            unbounded, which is defined as $V(x) \rightarrow \infty$ as $|x| \rightarrow \infty$.
-            This condition prevents the state from finding a solution whereby $V(x)$ tends towards
-            but never reaches 0 by moving as far away from the equilibrium point as possible.
-          </p>
-
-          <p>
-            Example: Consider $\dot{x} + c(x) = 0$, where $x c(x) \geq 0$ and $c(x)$ is continuous, which
-            implies that and $x c(x) = 0 \Leftrightarrow c(x) = 0$. In English, this means that
-            $c(x)$ has the same sign as $x$. Choose $V(x) = x^2 \Rightarrow
-            \dot{V}(x) = 2 x \dot{x} = - 2 x c(x) \leq 0$. Since $V(x)$ is positive definite and
-            radially unbounded and $\dot{V}(x)$ is negative definite, the equilibrium point $x=0$
-            is globally asymptotically stable. We couldn't have obtained this insight from
-            linearizing around the fixed point because we don't know what $c(x)$ is, but with Lyapunov's
-            direct method, we are able to that the origin is globally asymptotically stable.
-          </p>
-
-          <p>
-            One property of Lyapunov functions is that many can exist for a single system. Suppose $V$
-            is a Lyapunov function. Then $\forall \rho > 0, \alpha > 1$, so is
-
-            $$V_1(x) = \rho V^{\alpha}$$
-
-            Suppose that $\phi(\cdot)$ is a scalar, differentiable, monotonically increasing function of
-            its scalar argument. Supposing again that $V(x)$ is a Lyapunov function, so is:
-
-            $$V_2(x) = \phi(V(x)) - \phi(0) $$
-
-            To see this requires showing three facts:
-
-            <ol>
-              <li>
-                $V_2(x)$ is positive definite (PD). $V$ is PD, which means that $V(x) = 0 \Leftrightarrow x = 0$
-                and thus $ V_2(0) = \phi(0) - \phi(0) = 0$. To show that $\forall x \neq 0, \, V_2(x) > 0$, we
-                know that because $V$ is PD, $\forall x \neq 0, \, V > 0$ and because $\phi$ is a strictly
-                monotonically increasing function, $\forall x \neq x, \, \phi(V(x)) - \phi(0) > 0$. Thus we
-                conclude that $V_2$ is positive definite.
-              </li>
-              <li>
-                $V_2(x)$ has continuous partial derivatives. We are told that $\phi$ is differentiable and
-                by virtue of $V$ being a Lyapunov function, it has continuous partial derivatives. Thus
-                $\frac{\partial V_2(x)}{\partial x_i} = \frac{d \phi(x)}{d V(x)} \frac{\partial V(x)}{\partial x_i}$
-                and we conclude that $V_2(x)$ has continuous partial derivatives.
-              </li>
-              <li>
-                $\dot{V}_2(x)$ is negative semi-definite (NSD). Because $\phi$ is a strictly monotonically
-                increasing function, $\frac{d \phi (V(x))}{d V(x)} > 0$, and because $V$ is a Lyapunov
-                function, $\dot{V}(x) \leq 0$. By the chain rule, $\dot{V}_2(x) = \frac{d}{dt} V'(x) =
-                \frac{d \phi (V(x))}{d V(x)} \dot{V}(x)$. $\dot{V}_2(x)$ is the product of a positive term
-                and non-positive term, meaning $\dot{V}_2(x) \leq 0$ is NSD.
-              </li>
-            </ol>
-          </p>
-        </div>
-
-        <h2 id="stability_via_invariant_sets">Stability via Invariant Sets (La Salle's Method)</h2>
-        <div>
-          <p>
-            One shortcoming of demonstrating stability using Lyapunov functions is that if
-            $\dot{V}(x)$ is only negative semi-definite, we can't say anything about the asymptotic
-            behavior of the system. But this feels counter-intuitive. For instance, consider a
-            swinging pendulum with dampening. The velocity $\dot{\theta} = 0$ at the top of each swing,
-            meaning that $\dot{V}(\theta) = \frac{dV(\theta)}{d\theta} \dot{\theta} = 0$ but we would
-            expect the system to asymptote towards $\theta = 0$ provided it doesn't start at $\theta = \pi$.
-            This is a shortcoming we can rectify using the notion of invariant sets.
-          </p>
-
-          <p>
-            An invariant set $R$ is defined as a (sub)set of the state space such that if a point starts in
-            the set $R$, it never leaves the set $R$. Some examples of invariant sets include (a) the set of a
-            single equilibrium point, (b) the set of all equilibrium points, (c) the entire phase space,
-            (d) the trajectory of a point $x(t)$. Invariant sets will help us rectify the shortcoming
-            of Lyapunov's Direct Method since it will allow us to differentiate the bottom of the pendulum
-            $(\theta = 0, \dot{\theta} = 0)$ from the top of the pendulum swings.
-          </p>
-
-          <p>
-            <b>(Local) Theorem</b>: Consider an autonomous system $\dot{x} = f(x)$ and let $V(x)$ be a scalar
-            function with continuous first partial derivatives (note that we do not assume $V(x)$ to be positive
-            definite). Assume that for some $l > 0$, the region
-            $\Omega_l = \{x | V(x) < l \}$ is bounded and $\forall x \in \Omega_l, \, \dot{V}(x) \leq 0$.
-            Let $R$ be the set of all points within $\Omega$ where $\dot{V}(x) = 0$ and let $M$ be the
-            largest invariant set in $R$ i.e. the union of all invariant sets in $R$. Then every point
-            $x(t)$ originating in $\Omega_l$ tends to $M$ as $t \rightarrow \infty$.
-          </p>
-
-          <p>
-            As with Lyapunov's Direct Method, there is also a global equivalent of the local theorem.
-
-          </p>
-
-          <p>
-            For example, consider $\ddot{x} + b(\dot{x} + c(x) = 0$, where $b(\dot{x})$ has the same sign
-            as $\dot{x}$ and $c(x)$ has the same sign as $x$. One immediate consequence is that a fixed
-            point exists at $(x=0, \dot{x}=0)$. This is also the only fixed point a fixed point requires
-            $\dot(x) = 0$ and $\ddot(x) = 0$, which means $0 = c(x)$ must hold. But since $c(x)$ is zero
-            only at $x=0$, $(x=0, \dot{x}=0)$ must be the only fixed point.
-            Define $V(x) = \frac{1}{2} \dot{x}^2 + \int_0^x c(t) dt $. If we consider the time derivative of $V(x)$:
-
-            $$ \dot{V}(x) = \dot{x} \ddot{x} + c(x) \dot{x} = \dot{x}(-b(\dot{x} + -c(x)) + c(x) \dot{x}
-            = -\dot{x} b(\dot{x})$$
-
-            Since $b$ shares the same sign as $\dot{x}$, $\dot{V}(x)$ is negative semi-definite. Thus, by
-            the local invariant set theorem, the fixed point $(x=0, \dot{x}=0)$ is locally
-            asymptotically stable. If $\int_0^x c(t) dt$ is radially unbounded, then $V(x)$ is radially
-            unbounded and the fixed point becomes globally asymptotically stable. This is a result we
-            could not have achieved using Lyapunov's direct method.
-          </p>
         </div>
 
       </section>

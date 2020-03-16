@@ -62,14 +62,12 @@
         <div id="toc_container">
           <h1 class="toc_title">Contents</h1>
           <ul class="table-of-content" id="markdown-toc">
-            <li><a href="#hermitian_matrices">Hermitian Matrices</a>
+            <li><a href="#square_matrices">Square Matrices</a>
               <ul>
-                <li></li>
-              </ul>
-            </li>
-            <li><a href="#covariance_matrices">Covariance Matrices</a>
-              <ul>
-                <li><a href="#covariance_pos_semidefinite">Covariance Matrix is always Positive Semidefinite</a> </li>
+                <li><a href="#square_general_properties">General Properties</a></li>
+                <li><a href="#hermitian_matrices">Hermitian Matrices</a></li>
+                <li><a href="#definiteness">Definiteness</a></li>
+                <li><a href="#covariance_matrices">Covariance Matrices</a> </li>
               </ul>
             </li>
             <li>Matrix Definiteness
@@ -80,49 +78,99 @@
           </ul>
         </div>
 
-        <h2 id="hermitian_matrices">Hermitian Matrices</h2>
-        <p>
-          Wikipedia calls Hermitian matrices a generalization of real symmetric matrices that permits
-          imaginary numbers. Specifically, a Hermitian matrix is a matrix $A$ that is equal to its own
-          element-wise conjugate transposed, which typically denoted with a bar i.e. $A = \bar{A}^T$.
-          Since a real number is its
-          own conjugate, it's easy to see that any real symmetric matrix is also Hermitian, but the
-          original description is puzzling - why does this alternative notion require additionally
-          conjugating the imaginary numbers?
-        </p>
+        <h2 id="square_matrices">Square Matrices</h2>
+        <div>
+          <h3 id="square_general_properties">General Properties</h3>
+          <div>
+            <ul>
+              <li>
+                Any square matrix $M$ can be written as the sum of a symmetric matrix and a skew symmetric
+                matrix.
 
-        <h2 id="covariance_matrcies">Covariance Matrices</h2>
-        <p>
-          asdfas
-        </p>
+                $$ M = \frac{M + M^T}{2} + \frac{M - M^T}{2} = M_{sym} + M_{skew}$$
+              </li>
+              <li>
+              </li>
+            </ul>
+          </div>
 
-        <h3 id="covariance_pos_semidefinite">Covariance Matrix is always Positive Semidefinite</h3>
+          <h3 id="hermitian_matrices">Hermitian Matrices</h3>
+          <div>
+            <p>
+              Hermitian matrices are a generalization of real symmetric matrices to complex numbers.
+              Specifically, a Hermitian matrix is a matrix $A$ that is equal to its own
+              element-wise conjugate transposed, which can be denoted with a bar or an H i.e. $A = \bar{A}^T = A^H$.
+              Since a real number is its
+              own conjugate, it's easy to see that any real symmetric matrix is also Hermitian, but the
+              original description is puzzling - why does this alternative notion require additionally
+              conjugating the imaginary numbers?
+            </p>
+          </div>
 
-        <p>
-          A covariance matrix is always positive semi-definite (PSD). A PSD matrix $M$ is a square
-          $d \times d$ matrix such that $\forall v \in \mathbb{R}^d, v^T M v \geq 0$. Recall that
-          if $X$ is a $n \times d$ matrix of n observations of centered $d$-dimensional data, the covariance
-          matrix is defined as follows: $C \defeq X^T X$. This helps us easily show that a covariance
-          matrix must necessarily be positive semidefinite:
-        </p>
+          <h3 id="definiteness">Definiteness</h3>
+          <div>
+            <p>
+              A square matrix $M$ is <b>positive definite</b> if $\forall x \neq 0, x^T M x > 0$. The
+              matrix is <b>positive semi-definite</b> if $\forall x \neq 0, x^T M x \geq 0$. We can
+              see that only the symmetric part of a matrix matters for definiteness because the skew
+              symmetric part $M_{skew}$ will always be zero:
 
-        <p>
-          $
-          \begin{align}
-          v^T C v &\defeq v^T X^T X v\\
-          &= \lVert X v \rVert_2 \geq 0
-          \end{align}
-          $
-        </p>
+              $$x^T M_{skew} x = (x^T M_{skew} x)^T = x^T M_{skew}^T x = - x^T M_{skew} x = 0 $$
 
-        <h2>Matrix Definiteness</h2>
-        <h3 id="matrix_definiteness">Definition</h3>
-        <p>
-          Definiteness is a property of square, symmetric matrices. A matrix $M$ is said to be
-          positive semi-definite if $\forall x \in \mathbb{R}^n, x^T M x \geq 0$, positive
-          definite if $x^T M x > 0$ and conversely for negative semi-definite and negative
-          definite.
-        </p>
+              We similarly define negative definiteness ($x^T M x < 0$) and negative semi-definite
+              ($x^T M x \leq 0$). We also define a matrix as <b>uniformly positive definite</b> if
+              $\exists \alpha > 0$ such that $M(t) \geq \alpha I$. Geometrically, we can view $x^T M x > 0$
+              as $w \cdot M x > 0$, which means that $x$ and $Mx$ point in the "same" direction.
+            </p>
+
+            <p>
+              There are a few useful properties associated with definiteness:
+            </p>
+            <ul>
+              <li>
+                A matrix is positive (negative) definite if and only if its eigenvalues are strictly
+                positive (negative). A matrix is positive (negative) semi-definite if and only if its
+                eigenvalues are non-negative (non-positive). Proof: TODO
+              </li>
+              <li>
+                A matrix is positive (negative) definite if and only if the determinants of all
+                leading minors are positive (negative). This is called Sylvester's criterion. Proof:
+                TODO
+              </li>
+              <li>
+                The sum of positive (semi-)definite matrices is positive (semi-) definite. Let $A, B$
+                both be positive definite and let $x \neq 0$. Then:
+
+                $$x^T (A + B) x = x^T A x + x^T B x > 0 + 0 = 0$$
+
+                The same holds for negative and negative semi-definite matrices.
+              </li>
+              <li>
+
+              </li>
+            </ul>
+
+          </div>
+
+          <h3 id="covariance_matrices">Covariance Matrices</h3>
+          <div>
+            <p>
+              A covariance matrix is always positive semi-definite (PSD). A PSD matrix $M$ is a square
+              $d \times d$ matrix such that $\forall v \in \mathbb{R}^d, v^T M v \geq 0$. Recall that
+              if $X$ is a $n \times d$ matrix of n observations of centered $d$-dimensional data, the covariance
+              matrix is defined as follows: $C \defeq X^T X$. This helps us easily show that a covariance
+              matrix must necessarily be positive semidefinite:
+            </p>
+
+            <p>
+              \begin{align}
+              v^T C v &\defeq v^T X^T X v\\
+              &= \lVert X v \rVert_2 \geq 0
+              \end{align}
+            </p>
+          </div>
+
+        </div>
 
       </section>
     </div>
