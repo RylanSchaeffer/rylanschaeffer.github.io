@@ -80,6 +80,7 @@
                 <li><a href="#linear_1d">1-Dimensional System</a> </li>
                 <li><a href="#linear_2d">2-Dimensional System</a></li>
                 <li><a href="#linear_time_invariant_lyapunov_analysis">Lyapunov Analysis of Linear Time-Invariant Systems</a> </li>
+                <li><a href="#linear_time_varying_lyapunov_analysis">Lyapunov Analysis of Linear Time-Varying Systems</a> </li>
               </ul>
             </li>
             <li><a href="">Control of Linear Dynamical Systems</a></li>
@@ -616,7 +617,7 @@
           </div>
 
 
-          <h3 id="linear_time_invariant_lyapunov_analysis">Lyapunov Analysis of LTI System</h3>
+          <h3 id="linear_time_invariant_lyapunov_analysis">Lyapunov Analysis of Linaer, Time-Invariant Systems</h3>
           <div>
             <p>
               Consider a linear, time-invariant system $\dot{x} = A x $ and a candidate Lyapunov function
@@ -639,12 +640,13 @@
 
             <p>
               <b>Theorem:</b> A LTI system $\dot{x} = A x$ is strictly stable (all of $A$'s eigenvalues' real
-              components $<0$ or equivalently, $A$ is Hurwitz) if and only if there exists symmetric
-              positive definite matrices $P, Q$ such that $-Q = A^T P + PA$.
+              components $<0$ or equivalently, $A$ is Hurwitz) if and only if for any symmetric
+              positive definite matrix $Q$, the unique solution $P$ to $-Q = A^T P + PA$ is also
+              symmetric positive definite.
             </p>
 
             <p>
-              <b>Proof:</b>Let $A$ be Hurwitz. Choose a positive definite $Q$. Because $A$ is Hurwitz,
+              <b>Proof:</b> Choose a positive definite $Q$. Because $A$ is Hurwitz,
               $\lim_{t \to \infty} A t \rightarrow 0$. Using this property and the Fundamental
               Theorem of Calculus, we can write negative definite $-Q$ as:
 
@@ -668,10 +670,29 @@
 
             <p>
               The other direction is also straightforward. Suppose there exist symmetric positive
-              definite $P, Q$. TODO
+              definite $P, Q$.
             </p>
           </div>
 
+          <h3 id="linear_time_varying_lyapunov_analysis">Lyapunov Analysis of Linear, Time-Varying Systems</h3>
+          <div>
+            <p>
+              For a linear, time-invariant system $\dot{x} = Ax$, the eigenvalues of $A$ tell us a tremendous
+              amount. Can we draw similar insights from the eigenvalues of a time-varying matrix $A$? The
+              answer is trickier. Consider the matrix $A = \begin{bmatrix} -1 & e^{2t} \\ 0 & -1 \end{bmatrix}$,
+              which has eigenvalue $-1$ with multiplicity $2$. Solving component-wise, we see that while $x_2$
+              converges, $x_1$ diverges:
+
+              \begin{align*}
+              \dot{x}_2 = -x_2 &\Rightarrow x_2(t) = x_2(0) e^{-t}\\
+              \dot{x}_1 = -x_1 + e^{2t} x_2(0) e^{-t} &\Rightarrow x_1(t) = x_1(0) e^{-t} + x_2(0) e^{t}
+              \end{align*}
+            </p>
+
+            <p>
+              Why does such behavior emerge?
+            </p>
+          </div>
         </div>
 
 
