@@ -64,13 +64,88 @@
           <h1 class="toc_title">Contents</h1>
           <ul class="table-of-content" id="markdown-toc">
             <li>
+              <a href="#series">Series</a>
+              <ul>
+                <li><a href="#power_series">Power Series</a></li>
+                <li><a href="#geometric_series">Geometric Series</a></li>
+                <li><a href="#convergent_series">Convergent Series</a></li>
+              </ul>
+            </li>
+            <li>
               <a href="#continuous_functions">Continuous Functions</a>
               <ul>
                 <li><a href="#continuous_epsilon_delta_def">Epsilon-Delta Definition of Continuity</a></li>
               </ul>
             </li>
-
+            <li>
+              <a href="#analytic_functions">Analytic Functions</a>
+            </li>
+            <li>TODO
+              <ul>
+                <li><a href="#barbalats_lemma">Barbalat's Lemma</a></li>
+              </ul>
+            </li>
           </ul>
+        </div>
+
+        <h2 id="series">Series</h2>
+        <div>
+          <p>
+            A series is
+          </p>
+
+          <h3 id="power_series">Power Series</h3>
+          <div>
+            <p>
+              A power series is an infinite series of the form:
+
+              $$\sum_{n=0}^{\infty} a_n (x - c)^n $$
+
+              where $c$ is the complex center of the series, $x$ is a complex variable and $a_n$
+              is the $n$th complex coefficient.
+            </p>
+
+            <p></p>
+
+            <p>
+              The <b>radius of convergence</b> of a power series is the maximum range over which
+              the series converges. Formally, we say that the radius of convergence $r$ is the
+              largest nonnegative real number such that $|x-c| < r$ converges and $|x-c| > r$ diverges i.e.
+
+              $$r = \sup \Big\{|x-c| : \sum_{n=0}^{\infty} a_n (x - c)^n \text{ converges} \Big\} $$
+            </p>
+
+            <p>
+              <b>Claim:</b> If a power series is analytic, then the power series must be a Taylor
+              series. TODO
+            </p>
+          </div>
+
+          <h3 id="geometric_series">Geometric Series</h3>
+          <dov>
+
+          </dov>
+
+          <h3 id="convergent_series">Convergent Series</h3>
+          <div>
+            <p>
+              A series $\sum_{n=0}^{\infty} a_n$ is said to converge or be convergent if
+            </p>
+
+            <p>
+
+            </p>
+
+            <p>
+              One way to determine whether a series converges is to apply the <b>ratio test</b>,
+              which considers
+
+              $$L \defeq \lim{n \rightarrow \infty} \frac{a_{n+1}}{a_n} $$
+
+              and states that (a) if $L > 1$, the series diverges, (b) if $L < 1$, the series converges
+              absolutely, and (c) if $L = 1$, the test is inconclusive.
+            </p>
+          </div>
         </div>
 
         <h2 id="continuous_functions">Continuous Functions</h2>
@@ -96,10 +171,21 @@
           </div>
         </div>
 
+        <h2 id="analytic_functions">Analytic Functions</h2>
+        <div>
+          <p>
+            A real function $f: x \rightarrow f(x)$ is <b>analytic</b> on the interval $I \defeq [a, b]$
+            if $\forall x \in I$, (a) the Taylor Series of $f$ converges, and (b) the Taylor Series of f
+            is equal to f. Recall that the Taylor Series of a function f at a point $x_0$ is defined as
+
+            $$T_f(x) = \sum_{n=0}^{\infty} \frac{f^{(n)}(x)}{n!}(x - x_0) $$
+          </p>
+        </div>
+
         <h2></h2>
         <div>
 
-          <h3>Barbalat's Lemma</h3>
+          <h3 id="barbalats_lemma">Barbalat's Lemma</h3>
           <div>
             <p>
               Consider a scalar, differentiable function $f(t)$. We might ask whether the following
@@ -110,12 +196,12 @@
               <li>
                 Does $\lim_{t \to \infty} \dot{f}(t) = 0 \Rightarrow f(t)$ converges? <b>No.</b> Consider
                 $f(t) = \sin(\log(t))
-                \Rightarrow \dot{f}(t) = \frac{1}{t} \cos(\log(t))$. The time derivative converges to 0, but the
+                \Rightarrow \frac{df(t)}{dt} = \frac{1}{t} \cos(\log(t))$. The time derivative converges to 0, but the
                 function itself oscillates forever as a sinusoid.
               </li>
               <li>
                 Does $f(t)$ converges $\Rightarrow \lim_{t \to \infty} \dot{f}(t) = 0$? <b>No.</b> Consider
-                $f(t) = e^{-t} \cos(e^{t}) = \Rightarrow \dot{f}(t) = \cos(e^t)$. The function converges to
+                $f(t) = e^{-t} \cos(e^{t}) \Rightarrow \frac{df(t)}{dt} = \cos(e^t)$. The function converges to
                 0, but the time derivative oscillates forever.
               </li>
             </ul>
@@ -124,8 +210,16 @@
               Given both these negative answers, Barbalat's Lemma aims to answer the question,
               under what conditions can we state that the derivative of a function vanishes?
               Before revealing the answer, we need to review a property called <b>uniform continuity</b>.
+            </p>
 
+            <p>
+              <b>Barbalat's Lemma:</b> Let $f(t) \geq 0$ be a scalar, lower-bounded function. If $f(t) \rightarrow$
+              limit $L$ as $t \rightarrow \infty$ and $\ddot{f} = \frac{d^2 f}{df^2}$ is lower bounded (or $\dot{f}$ is
+              uniformly continuous), then $\lim_{t \to \infty} \dot{f}(t) = 0$.
+            </p>
 
+            <p>
+              <b>Proof:</b> TODO
             </p>
           </div>
 

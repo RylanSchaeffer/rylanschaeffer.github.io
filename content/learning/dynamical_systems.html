@@ -85,7 +85,13 @@
             </li>
             <li><a href="">Control of Linear Dynamical Systems</a></li>
             <li><a href="">Non-Linear Dynamical Systems</a></li>
-            <li><a href="">Control of Non-Linear Dynamical Systems</a></li>
+            <li><a href="">Control of Non-Linear Dynamical Systems</a>
+            <li><a href="">Trajectory Tracking</a>
+              <ul>
+                <li><a href="#robust_control">Robust Control</a></li>
+                <li><a href="#robust_control">Adaptive Control</a></li>
+              </ul>
+            </li>
           </ul>
         </div>
 
@@ -428,7 +434,7 @@
             </p>
 
             <p>
-              An invariant set $R$ is defined as a subset of the state space such that if a point starts in
+              An invariant set $R$ is a subset of the state space such that if a point starts in
               the set $R$, it never leaves the set $R$. Some examples of invariant sets include (a) the set of a
               single equilibrium point, (b) the set of all equilibrium points, (c) the entire phase space,
               (d) the trajectory of a point $x(t)$. Invariant sets will help us rectify the shortcoming
@@ -503,6 +509,27 @@
               Theorem. Define $l=100$ and $\Omega_l = \{ x | V(x) < l\}$. This excludes the origin, since
               the origin is exactly at $V(x) = 100$. Then by the Local Invariant Set Theorem, all points
               between the limit cycle and the origin flow to the limit cycle. The origin is therefore unstable.
+            </p>
+          </div>
+
+          <h3 id="stability_via_barbalats_lemma">Characterizing Stability via Barbalat's Lemma</h3>
+          <div>
+            <p>
+              In Lyapunov's direct method and La Salle's invariant sets, we considered an autonomous system
+              $\dot{x} = f(x)$. Now, suppose we consider a nonautonomous system $\dot{x} = f(x, t)$. Can we
+              characterize the stability of fixed points as we did previously? The answer is yes, but not
+              so straighforwardly. Previously, we relied on that fact that because the system was autonomous,
+              if we defined our Lyapunov function $V(x)
+
+
+              let $V(x)$ be a scalar function with continuous first partial derivatives.
+              However, in both cases, Both theorems required that $\dot{V}$ be negative definite
+              <a href="analysis.html#barbalats_lemma">Barbalat's Lemma </a>
+            </p>
+
+            <p>
+              Suppose that $V(x, t) \geq 0$, $\frac{d}{dt} V(x, t) \leq 0$ and $\frac{d^2}{dt^2}V(x,t)$ is bounded.
+              Then
             </p>
           </div>
 
@@ -690,17 +717,84 @@
             </p>
 
             <p>
-              Why does such behavior emerge?
+              Why does such behavior emerge? TODO
+            </p>
+
+            <p>
+              However, all is not lost. As long as the symmetric part of $A$ is negative definite, then
+              we can ensure the origin is exponentially stable. Suppose w.l.o.g. all eigenvalues
+              of $\frac{1}{2}(A(t)^T + A(t)) \leq -\lambda$ for some positive $\lambda$, then $x
+              \rightarrow 0$ with rate $\lambda$. To show this, pick $V = x^T x$:
+
+              \begin{align*}
+              V &\defeq x^T x\\
+              \dot{V} &= x^T (A^T + A) x\\
+              &\leq -2 \lambda x^T x\\
+              &= -2 \lambda V
+              \end{align*}
+
+              Since $V \geq 0$ and $V(t) \leq V(0) e^{-2 \lambda t}$, we see that the system
+              converges exponentially quickly to the origin.
             </p>
           </div>
         </div>
 
-
         <h2>Linear Control</h2>
 
-        <h2>Non-Linear Control</h2>
+        <h2>Trajectory Tracking</h2>
         <div>
+          <p>
+            The following sections concern trajectory tracking i.e. controlling a system to ensure it
+            follows a pre-specified trajectory, denoted $x_d$. When tracking and controlling a system,
+            there can be many unknown quantities such as the dynamics, the parameters, the accuracy of
+            measurement, etc. Much like Bayesian statisticians make a distinction between unmodeled
+            (epistemic) uncertainty and modeled (aleatoric) uncertainty, control theorists make the same
+            distinction but using the terms <b>unstructured uncertainty/unmodeled dynamics</b> for the first
+            and <b>structured uncertainty/parametric uncertainty</b> for the second.
+          </p>
 
+          <h3 id="robust_control">Robust Control</h3>
+          <div>
+            <p>
+              Consider a potentially non-linear, potentially non-autonomous system that relates the
+              $n$-th time derivative of the state $x$ to the 0th through $n-1$th derivatives, along
+              with a controller $u(x,t)$ that can influence the system.
+
+              $$x^{(n)} = f(x, \dot{x}, \ddot{x}, ..., x^{(n-1)}, t) + b(x, \dot{x}, \ddot{x}, ..., x^{(n-1)} , t) u(x, t) $$
+
+              For brevity, we define $x = \{x, \dot{x}, \ddot{x}, ..., x^{(n-1)} \}$. Our system then becomes
+
+              $$x^{(n)} = f(x, t) + b(x, t) u $$
+
+              The functions $f, b$ might be complicated, non-linear monstrosities, involving parameters
+              that we are unaware of. We would like to
+              answer whether it is possible to produce a desired trajectory $x_d$ even in the face of
+              these unknowns. The answer is yes, with the insight that if we can bound the possible
+              range of $f$ and $b$, then we can choose $u$ to overpower both and ensure that $x \rightarrow x_d$.
+            </p>
+
+<!--            <p>-->
+<!--              We assume that $f(x, t)$ is unknown. The first assumption we make is that for some estimate-->
+<!--              of the dynamics $\hat{f}(x,t)$, we can upper bound the difference between our estimated dynamics and-->
+<!--              the true unknown dynamics. That is, for known $\hat{f}(x,t)$ and known $F(x, t)$, we can say that:-->
+
+<!--              $$|\hat{f}(x, t) - f(x, t)| \leq F(x, t)$$-->
+
+<!--              and similarly for unknown $b(x, t)$ with known $\hat{b}(x,t)$ and known $B(x, t)$.-->
+
+<!--              $$|\hat{b}(x, t) - b(x, t)| \leq B(x, t)$$-->
+
+<!--              The idea behind robust control is that controlling a first order system is significantly easier-->
+<!--              than controlling a $n$-th order system. The insight we offer is to-->
+<!--            </p>-->
+          </div>
+
+          <h3 id="adaptive_control">Adaptive Control</h3>
+          <div>
+            <p>
+
+            </p>
+          </div>
         </div>
 
       </section>

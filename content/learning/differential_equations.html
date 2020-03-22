@@ -65,22 +65,21 @@
             <ul>
               <li><a href="#linear_first_order_odes">Linear, First-Order Differential Equations</a></li>
               <ul>
-                <li><a href="#linear_first_order_integrating_factor">Approach 1: Integrating Factor</a></li>
-                <li><a href="#linear_first_order_variation_of_parameters">Approach 2: Variation of Parameters</a></li>
-                <li><a href="#linear_first_order_power_series_expansion">Approach 3: Power Series Expansion</a></li>
+                <li><a href="#linear_first_order_integrating_factor">Solving with an Integrating Factor</a></li>
+                <li><a href="#linear_first_order_variation_of_parameters">Solving with Variation of Parameters</a></li>
+                <li><a href="#linear_first_order_power_series_expansion">Solving with a Power Series Expansion</a></li>
+                <li><a href="#linear_first_order_stability_analysis">Stability Analysis</a> </li>
               </ul>
               <li><a href="#linear_second_order_odes">Linear, Second-Order Differential Equations</a></li>
               <ul>
-                <li><a href="#linear_second_order_variation_of_parameters">Approach 2: Variation of Parameters</a> </li>
+                <li><a href="#linear_second_order_variation_of_parameters">Solving with Variation of Parameters</a> </li>
               </ul>
             </ul>
-            <li>Linear Stability Analysis</li>
           </ul>
         </div>
 
         <h2 id="ordinary_differential_equations">Ordinary Differential Equations</h2>
         <div>
-
           <p>
             An ordinary differential equation is an equation that relates a function e.g. $y(x)$
             to its derivative e.g. $\frac{dy(x)}{dx}, \frac{d^2y(x)}{dx^2}$. Two example might be:
@@ -113,201 +112,302 @@
           </p>
 
 
-        <h3 id="linear_first_order_odes">Linear, First-Order ODE</h3>
-        <div>
-
-          <p>
-            Consider trying to solve a generic linear, first-order differential equation:
-
-            $$ a(x) y'(x) + b(x) y(x) = h(x)$$
-
-            To be clear, the linear operator here is $l(y) = a(x) y'(x) + b(x) y(x)$. One
-            question we might immediately ask is what the kernel of the operator is.
-            Recall that for any operator $l$ from one set to another, the kernel of the operator is the set
-            of inputs that map to 0 i.e. $\ker(l) \defeq =\{v \in V : l(v) = 0 \}$. One property worth
-            noting is that for a first-order linear operator $l: V \rightarrow V$ over some set $V$
-            given by $l(y) = a(x) y'(x) + b(x) y(x)$, the kernel of $l$ is one dimensional. To see this, we
-            see that the solution $y_n$ to the <b>homogeneous</b> equation is:
-
-            $$l(y) = 0 \Leftrightarrow  ay_n' + by_n = 0 \Leftrightarrow \frac{y_n'}{y_n} = \frac{b}{a} \Leftrightarrow
-            y_n = c \exp \Big(- \int_{x_0}^x \frac{b(t)}{a(t)} dt \Big) \Leftrightarrow \ker(l) = \text{span}(
-            \exp \Big(- \int_{x_0}^x \frac{b(t)}{a(t)} dt \Big))$$
-
-            This tells us a useful property about the linear operator. Suppose we have one solution $y_p$ to
-            the <b>inhomogeneous</b> equation $l(y) = h(x)$. Then any other solution can be written as
-            the particular solution plus some constant times the homogeneous aka null solution, $y = y_p + c y_n$.
-            We show this below:
-
-            $$l(y - y_p) = l(y) - l(y_p) = h(x) - h(x) = 0 \Leftrightarrow y - y_p \in \ker(l) \Leftrightarrow
-            y - y_p = c y_n \Leftrightarrow y = y_p + c y_n$$
-          </p>
-
-          <h4 id="linear_first_order_integrating_factor">Approach 1: Integrating Factor</h4>
+          <h3 id="linear_first_order_odes">Linear, First-Order ODE</h3>
           <div>
-            <p>
-              What about the inhomogeneous case i.e. when $h(x) \neq 0$? If $a(x) \neq 0$, one way
-              we can find the solution $y(x)$ is is by using a function $f(x)$ called an integrating
-              factor. To see where the idea arises, let's divide both sides by $a(x)$. For brevity, I
-              drop $x$.
-
-              $$y' + \frac{b}{a} y = \frac{h}{a}$$
-
-              Suppose there exists a function $f(x)$ such that $\frac{1}{f}(fy)' = y' + \frac{b}{a} y$.
-              If we could find such a function, we could use it to solve the differential
-              equation:
-
-              \begin{align*}
-              y' + \frac{b}{a} y &= \frac{h}{a}\\
-              \frac{1}{f}(fy)' &= \\
-              f y - f(x_0)y(x_0) &= \int_{t=x_0}^t \frac{h(t) f(t)}{a(t)} \, dt\\
-              y(x)  &= \frac{f(x_0)}{f(x)} y(x_0) + \frac{1}{f(x)} \int_{t=x_0}^x \frac{h(t) f(t)}{a(t)} \, dt\\
-              \end{align*}
-
-              The key insight was to express the inconvenient $y' + \frac{b}{a} y$ as a
-              derivative $(fy)'$ that we could easily integrate. The question is now how to find $f(x)$.
-              We start by setting $\frac{1}{f}(fy)' = y' + \frac{b}{a} y$ and then solve for $f(x)$:
-
-              \begin{align*}
-              \frac{1}{f}(fy)' &= y' + \frac{b}{a} y\\
-              \frac{1}{f}(f' y + y f') &= y' + \frac{b}{a} y\\
-              \frac{f'}{f} &= \frac{b}{a}\\
-              \log f(x) - \log f(x_0) &= \int_{t=x_0}^x \frac{b(t)}{a(t)} \, dt\\
-              f(x) &= f(x_0) \exp \Big(\int_{t=x_0}^x \frac{b(t)}{a(t)} \, dt \Big)
-              \end{align*}
-
-            </p>
 
             <p>
-              When we plug $f(x)$ back into our equation for $y(x)$, we see that the initial
-              condition $f(x_0)$ doesn't matter because it cancels out:
+              Consider trying to solve a generic linear, first-order differential equation:
 
-              \begin{align*}
-              y  &= \frac{f(x_0)}{f(x)} y(x_0) + \frac{1}{f(x)} \int_{t=x_0}^x \frac{h(t) f(t)}{a(t)} \, dt\\
-              &= \exp \Big(-\int_{t=x_0}^x \frac{b(t)}{a(t)} \, dt \Big) y(x_0) + \frac{1}{f(x_0)} \exp
-                \Big(-\int_{t=x_0}^x \frac{b(t)}{a(t)} \, dt \Big) \int_{t=x_0}^x \frac{h(t) f(t)}{a(t)} \, dt
-              \end{align*}
+              $$ a(x) y'(x) + b(x) y(x) = h(x)$$
 
+              To be clear, the linear operator here is $l(y) = a(x) y'(x) + b(x) y(x)$. One
+              question we might immediately ask is what the kernel of the operator is.
+              Recall that for any operator $l$ from one set to another, the kernel of the operator is the set
+              of inputs that map to 0 i.e. $\ker(l) \defeq \{v \in V : l(v) = 0 \}$. One property worth
+              noting is that for a first-order linear operator $l: V \rightarrow V$ over some set $V$
+              given by $l(y) = a(x) y'(x) + b(x) y(x)$, the kernel of $l$ is one dimensional. To see this, we
+              see that the solution $y_n$ to the <b>homogeneous</b> equation is:
+
+              $$l(y) = 0 \Leftrightarrow  ay_n' + by_n = 0 \Leftrightarrow \frac{y_n'}{y_n} = \frac{b}{a} \Leftrightarrow
+              y_n = c \exp \Big(- \int_{x_0}^x \frac{b(t)}{a(t)} dt \Big) \Leftrightarrow \ker(l) = \text{span}(
+              \exp \Big(- \int_{x_0}^x \frac{b(t)}{a(t)} dt \Big))$$
+
+              This tells us a useful property about the linear operator. Suppose we have one solution $y_p$ to
+              the <b>inhomogeneous</b> equation $l(y) = h(x)$. Then any other solution can be written as
+              the particular solution plus some constant times the homogeneous aka null solution, $y = y_p + c y_n$.
+
+              $$l(y - y_p) = l(y) - l(y_p) = h(x) - h(x) = 0 \Leftrightarrow y - y_p \in \ker(l) \Leftrightarrow
+              y - y_p = c y_n \Leftrightarrow y = y_p + c y_n$$
             </p>
 
+            <h4 id="linear_first_order_integrating_factor">Solving with an Integrating Factor</h4>
+            <div>
+              <p>
+                What about the inhomogeneous case i.e. when $h(x) \neq 0$? If $a(x) \neq 0$, one way
+                we can find the solution $y(x)$ is is by using a function $f(x)$ called an integrating
+                factor. To see where the idea arises, let's divide both sides by $a(x)$. For brevity, I
+                drop $x$.
+
+                $$y' + \frac{b}{a} y = \frac{h}{a}$$
+
+                Suppose there exists a function $f(x)$ such that $\frac{1}{f}(fy)' = y' + \frac{b}{a} y$.
+                If we could find such a function, we could use it to solve the differential
+                equation:
+
+                \begin{align*}
+                y' + \frac{b}{a} y &= \frac{h}{a}\\
+                \frac{1}{f}(fy)' &= \\
+                f y - f(x_0)y(x_0) &= \int_{t=x_0}^t \frac{h(t) f(t)}{a(t)} \, dt\\
+                y(x)  &= \frac{f(x_0)}{f(x)} y(x_0) + \frac{1}{f(x)} \int_{t=x_0}^x \frac{h(t) f(t)}{a(t)} \, dt\\
+                \end{align*}
+
+                The key insight was to express the inconvenient $y' + \frac{b}{a} y$ as a
+                derivative $(fy)'$ that we could easily integrate. The question is now how to find $f(x)$.
+                We start by setting $\frac{1}{f}(fy)' = y' + \frac{b}{a} y$ and then solve for $f(x)$:
+
+                \begin{align*}
+                \frac{1}{f}(fy)' &= y' + \frac{b}{a} y\\
+                \frac{1}{f}(f' y + y f') &= y' + \frac{b}{a} y\\
+                \frac{f'}{f} &= \frac{b}{a}\\
+                \log f(x) - \log f(x_0) &= \int_{t=x_0}^x \frac{b(t)}{a(t)} \, dt\\
+                f(x) &= f(x_0) \exp \Big(\int_{t=x_0}^x \frac{b(t)}{a(t)} \, dt \Big)
+                \end{align*}
+
+              </p>
+
+              <p>
+                When we plug $f(x)$ back into our equation for $y(x)$, we see that the initial
+                condition $f(x_0)$ doesn't matter because it cancels out:
+
+                \begin{align*}
+                y  &= \frac{f(x_0)}{f(x)} y(x_0) + \frac{1}{f(x)} \int_{t=x_0}^x \frac{h(t) f(t)}{a(t)} \, dt\\
+                &= \exp \Big(-\int_{t=x_0}^x \frac{b(t)}{a(t)} \, dt \Big) y(x_0) + \frac{1}{f(x_0)} \exp
+                  \Big(-\int_{t=x_0}^x \frac{b(t)}{a(t)} \, dt \Big) \int_{t=x_0}^x \frac{h(t) f(t)}{a(t)} \, dt
+                \end{align*}
+
+              </p>
+
+            </div>
+
+            <h4 id="linear_first_order_variation_of_parameters">Solving with Variation of Parameters</h4>
+            <div>
+              <p>
+                Again, consider trying to solve our linear, first-order inhomogeneous ODE with some initial condition
+                $y(x_0) = y_0$:
+
+                $$ a(x) y'(x) + b(x) y(x) = h(x) $$
+
+                Dropping $x$ for brevity, the linear operator of this ODE is $l(y) = a y' + b y$.
+                Let $y_n(x)$ be one element such that $l(y_n(x)) = 0$. <a href="#linear_first_order_odes">We know
+                from earlier</a> that the kernel of $l(\cdot)$ is one dimensional, meaning that
+                $\ker(l) = \text{span}(y_n)$. This means that any element in the kernel of $l$ must be some
+                constant scalar multiple of $y_n(x)$.
+              </p>
+
+              <p>
+                How then can we find a solution to the inhomogeneous equation?
+              </p>
+
+              <p>
+                Suppose we consider a possible solution:
+
+                $$ y(x) = g(x) y_n(x)$$
+
+                Then
+
+                \begin{align*}
+                l(y) &= l(g y_n)\\
+                &= a(g' y_n + g y_n' ) + b (g y_n)\\
+                &= a g'y_n + ag y_n' + b g f\\
+                &= a g' y_n + g l(y_n)\\
+                &= a g' y_n
+                \end{align*}
+
+                where the last line follows because $y_n$ is an element of $\ker(l)$. This shows the significance
+                of $g(x)$ being non-constant; had $g(x)$ been constant, $g'(x) = 0$ and we find that $l(y) = 0$.
+                We next need to figure out what $g(x)$ should be so $l(y) = h$, :
+
+                \begin{align*}
+                h &= l(y)\\
+                &= a g' y_n \\
+                \frac{h}{a y_n} &= g'
+                \end{align*}
+
+                Thus we see that if we had multipled $y_n(x)$ by $g(x) = g(x_0) + \int_{x_0}^x \frac{h(u)}{a(u) y_n(u)} du$,
+                we would have solved the inhomogeneous equation:
+
+                $$y_p(x) = y_n(x) g(x_0) + y_n(x) \int_{x_0}^x \frac{h(u)}{a(u) y_n(u)} du$$
+              </p>
+            </div>
+
+            <h4 id="linear_first_order_power_series_expansion">Solving with a Power Series Expansion</h4>
+            <div>
+              <p>
+                Another way to solve the differential equation is to Taylor Series expand both sides of the
+                system and match coefficients.
+              </p>
+            </div>
+
+            <h4 id="linear_first_order_stability_analysis">Linear Stability Analysis</h4>
+            <div>
+              <p>
+                Consider a first order, linear differential equation
+
+                $$ \dot{x} \defeq \frac{dx}{dt} = A x$$
+
+                Since a system has a fixed point at $x = 0$. We might want to understand whether, and how
+                quickly, a point near the origin flows towards or away from the fixed point. Concretely, let
+                $x$ be the phase space of some system and let $x^*$ be a fixed point of the system.
+                We can define a small perturbation away from the fixed point as $\eta(t) \defeq x(t) - x^*$.
+                Note that this is equivalent to defining a time-varying variable $x(t) = x^* + \eta(t)$.
+                We'd like to understand whether this small pertubation, $\eta(t)$ grows or decays over
+                time, and to answer such a question, we can construct a differential equation to describe
+                the behavior of $\eta(t)$.
+              </p>
+
+              <p>
+                $\begin{align}
+                \frac{d}{dt}\eta(t) &= \frac{d}{dt} (x(t) - x^*)\\
+                &= \frac{d}{dt} x(t)\\
+                \end{align}$
+              </p>
+
+              <p>
+                Using the definition of $x(t) = x^* + \eta(t)$, we can construct a Taylor Series
+                expansion of $\frac{d}{dt} x(t)$ at $x^*$:
+              </p>
+
+              <p>
+                $\begin{align}
+                \frac{d}{dt} x(t) &= \frac{d}{dt} (x^* + \eta (t))\\
+                &\approx \frac{d}{dt} x^* + \eta(t) \frac{d^2}{dt^2} x^* + O(\eta^2)\\
+                \end{align}$
+              </p>
+
+              <p>
+                Since $x^*$ is a fixed point, $\frac{d}{dt} x^* = 0$ and thus:
+              </p>
+
+              <p>
+                $\begin{align}
+                \frac{d}{dt}\eta(t) = \eta(t) \frac{d^2}{dt^2} x^*
+                \end{align}$
+              </p>
+
+              <p>
+                This is a linear equation in $\eta$ and is therefore called the "linearization about
+                $x^*$". If $\frac{d^2}{dt^2} x^*$ is also zero, the $O(\eta^2)$ term that we previously
+                ignored will become relevant. This linearization tells us that if the second derivative
+                at $x^*$ is negative, then the perturbation will shrink, and inversely, if the
+                second derivative is positive, the perturbation will grow larger. The absolute value
+                of the second derivative, $|d^2 x^* / dt^2|$ tells us how quickly the pertubation will grow/shrink
+                and its reciprocal $\frac{1}{|d^2 x^* / dt^2|}$ is called the <b>characteristic time scale</b>
+                which expresses how much time is required to modify $x$ by a fixed amount around $x^*$.
+              </p>
+            </div>
+
+
+            <h4>No Source Term</h4>
+            <div>
+  <!--            <p>-->
+  <!--              Consider the following linear, first-order differential equation where-->
+  <!--              $y'(t)$ is shorthand for $\frac{dy(t)}{dt}$:-->
+
+  <!--              $$y'(t) = a y(t) $$-->
+
+  <!--              The solution to this differential equations is one of the most important functions,-->
+  <!--              the exponential function. To see that the exponential function is the correct solution to the above-->
+  <!--              differential equation, observe that:-->
+
+  <!--              $$y(t) = y(0) e^{a t} \Rightarrow y'(t) = a \, y(0) e^{a t} = a y(t) $$-->
+
+  <!--              Intuitively, what this means is that a system with these dynamics will either grow-->
+  <!--              exponentially (for $a > 0$) or decay exponentially (for $a < 0$). For $a=0$, the-->
+  <!--              system will sit unchanged.-->
+  <!--            </p>-->
+  <!--          </div>-->
+
+  <!--          <h3>Source Term</h3>-->
+  <!--          <div>-->
+  <!--            <p>-->
+  <!--              Now, suppose a source term $q(t)$ is added:-->
+
+  <!--              $$y'(t) = a y(t) + q(t)$$-->
+
+  <!--              Every equation like this will have two solutions: the null solution and the-->
+  <!--              particular solution. By null solution, I mean the solution $y_n(t)$ to the equation:-->
+
+  <!--              $$ y_n'(t) - a y_n(t) = 0$$-->
+
+  <!--              By particular solution, I mean the solution $y_p(t)$ to the equation:-->
+
+  <!--              $$ y_p'(t) - a y_p(t) = q(t)$$-->
+
+  <!--              The complete solution $y_c = y_p + y_n$ to this ODE is the sum of the null solution and the-->
+  <!--              particular solution:-->
+
+  <!--              $$-->
+  <!--              \begin{align*}-->
+  <!--              0 &= y_n'(t) - a y_n(t)\\-->
+  <!--              q(t) &= y_p'(t) - a y_p(t)\\-->
+  <!--              0 + q(t) &= y_n'(t) - a y_n(t) + y_p'(t) - a y_p(t)\\-->
+  <!--              q(t) &= (y_n'(t) + y_p'(t)) - a(y_n(t) + y_p(t))\\-->
+  <!--              &= y_c'(t) - a y_c(t)-->
+  <!--              \end{align*}-->
+  <!--              $$-->
+
+  <!--              We should think of the null solution as the behavior of the system with no external source-->
+  <!--              and the particular solution as the behavior of the system for the exact choice of external-->
+  <!--              source $q(t)$.-->
+  <!--            </p>-->
+
+  <!--            <p>-->
+  <!--              A general solution to the equation $y'(t) - a y(t) = q(t)$ is the following:-->
+
+  <!--              $$y(t) = y(0)e^{at} + \int_0^t e^{a(t-s)} q(s) ds $$-->
+
+  <!--              Before deriving this, let's try to gain some intuition for it. We see that-->
+  <!--              if the source term is zero i.e. $q(t) = 0$, we recover the solution to the sourceless-->
+  <!--              differential equation i.e. $y(t) = y(0)e^{at}$. As we expect, the starting condition $y(0)$-->
+  <!--              grows (decays) exponentially depending on whether $a > 0$ ($a < 0$). The second term-->
+  <!--              is like a continuous sum of the new inputs, but each input $q(s)$ also grows/decays-->
+  <!--              exponentially depending on how much time has elapsed since its occurence. For instance,-->
+  <!--              if we're at $t=4$ and there was an input at time $t=2$, $q(s=2)$ , we would expect that-->
+  <!--              input to have grown/decayed proportional to the elapsed two seconds i.e. $q(s=2) e^{a(4-2)}$.-->
+  <!--              To derive this equation,-->
+  <!--            </p>-->
+  <!--          </div>-->
+
+  <!--          <h3>Solutions to Common Source Terms</h3>-->
+  <!--          <div>-->
+
+  <!--            <h4>Constant Source $q(t) = q$</h4>-->
+  <!--            <p>-->
+  <!--              Using the above equation, we can derive response functions to several commonly encountered-->
+  <!--              source functions. First, let's consider a constant source i.e. $q(t) = q$:-->
+
+  <!--              $$-->
+  <!--              \begin{align*}-->
+  <!--              y(t) &= y(0) e^{at} + \int_0^t e^{a(t-s)} q ds\\-->
+  <!--              &= y(0) e^{at} + q e^{at} \int_0^t e^{-as} ds\\-->
+  <!--              &= y(0) e^{at} + q e^{at} \frac{-1}{a} e^{-as} \Bigr\rvert_{s=0}^{s=t}\\-->
+  <!--              &= y(0) e^{at} + \frac{q}{a}(e^{at} - 1) & \text{Response to constant source}-->
+  <!--              \end{align*}-->
+  <!--              $$-->
+
+  <!--              What happens here? As we might expect,-->
+  <!--            </p>-->
+
+  <!--            <p>-->
+  <!--              Second, let's consider a-->
+  <!--            </p>-->
+  <!--          </div>-->
           </div>
 
-          <h3 id="linear_first_order_variation_of_parameters">Approach 2: Variation of Parameters</h3>
+          <h3 id="linear_second_order_odes">Linear, Second-Order ODE</h3>
           <div>
-            <p>
-
-
-            </p>
-          </div>
-
-          <h3 id="linear_first_order_power_series_expansion">Approach 3: Power Series Expansion</h3>
-          <div>
-            <p>
-
-
-            </p>
-          </div>
-
-          <h3>No Source Term</h3>
-<!--          <div>-->
-<!--            <p>-->
-<!--              Consider the following linear, first-order differential equation where-->
-<!--              $y'(t)$ is shorthand for $\frac{dy(t)}{dt}$:-->
-
-<!--              $$y'(t) = a y(t) $$-->
-
-<!--              The solution to this differential equations is one of the most important functions,-->
-<!--              the exponential function. To see that the exponential function is the correct solution to the above-->
-<!--              differential equation, observe that:-->
-
-<!--              $$y(t) = y(0) e^{a t} \Rightarrow y'(t) = a \, y(0) e^{a t} = a y(t) $$-->
-
-<!--              Intuitively, what this means is that a system with these dynamics will either grow-->
-<!--              exponentially (for $a > 0$) or decay exponentially (for $a < 0$). For $a=0$, the-->
-<!--              system will sit unchanged.-->
-<!--            </p>-->
-<!--          </div>-->
-
-<!--          <h3>Source Term</h3>-->
-<!--          <div>-->
-<!--            <p>-->
-<!--              Now, suppose a source term $q(t)$ is added:-->
-
-<!--              $$y'(t) = a y(t) + q(t)$$-->
-
-<!--              Every equation like this will have two solutions: the null solution and the-->
-<!--              particular solution. By null solution, I mean the solution $y_n(t)$ to the equation:-->
-
-<!--              $$ y_n'(t) - a y_n(t) = 0$$-->
-
-<!--              By particular solution, I mean the solution $y_p(t)$ to the equation:-->
-
-<!--              $$ y_p'(t) - a y_p(t) = q(t)$$-->
-
-<!--              The complete solution $y_c = y_p + y_n$ to this ODE is the sum of the null solution and the-->
-<!--              particular solution:-->
-
-<!--              $$-->
-<!--              \begin{align*}-->
-<!--              0 &= y_n'(t) - a y_n(t)\\-->
-<!--              q(t) &= y_p'(t) - a y_p(t)\\-->
-<!--              0 + q(t) &= y_n'(t) - a y_n(t) + y_p'(t) - a y_p(t)\\-->
-<!--              q(t) &= (y_n'(t) + y_p'(t)) - a(y_n(t) + y_p(t))\\-->
-<!--              &= y_c'(t) - a y_c(t)-->
-<!--              \end{align*}-->
-<!--              $$-->
-
-<!--              We should think of the null solution as the behavior of the system with no external source-->
-<!--              and the particular solution as the behavior of the system for the exact choice of external-->
-<!--              source $q(t)$.-->
-<!--            </p>-->
-
-<!--            <p>-->
-<!--              A general solution to the equation $y'(t) - a y(t) = q(t)$ is the following:-->
-
-<!--              $$y(t) = y(0)e^{at} + \int_0^t e^{a(t-s)} q(s) ds $$-->
-
-<!--              Before deriving this, let's try to gain some intuition for it. We see that-->
-<!--              if the source term is zero i.e. $q(t) = 0$, we recover the solution to the sourceless-->
-<!--              differential equation i.e. $y(t) = y(0)e^{at}$. As we expect, the starting condition $y(0)$-->
-<!--              grows (decays) exponentially depending on whether $a > 0$ ($a < 0$). The second term-->
-<!--              is like a continuous sum of the new inputs, but each input $q(s)$ also grows/decays-->
-<!--              exponentially depending on how much time has elapsed since its occurence. For instance,-->
-<!--              if we're at $t=4$ and there was an input at time $t=2$, $q(s=2)$ , we would expect that-->
-<!--              input to have grown/decayed proportional to the elapsed two seconds i.e. $q(s=2) e^{a(4-2)}$.-->
-<!--              To derive this equation,-->
-<!--            </p>-->
-<!--          </div>-->
-
-<!--          <h3>Solutions to Common Source Terms</h3>-->
-<!--          <div>-->
-
-<!--            <h4>Constant Source $q(t) = q$</h4>-->
-<!--            <p>-->
-<!--              Using the above equation, we can derive response functions to several commonly encountered-->
-<!--              source functions. First, let's consider a constant source i.e. $q(t) = q$:-->
-
-<!--              $$-->
-<!--              \begin{align*}-->
-<!--              y(t) &= y(0) e^{at} + \int_0^t e^{a(t-s)} q ds\\-->
-<!--              &= y(0) e^{at} + q e^{at} \int_0^t e^{-as} ds\\-->
-<!--              &= y(0) e^{at} + q e^{at} \frac{-1}{a} e^{-as} \Bigr\rvert_{s=0}^{s=t}\\-->
-<!--              &= y(0) e^{at} + \frac{q}{a}(e^{at} - 1) & \text{Response to constant source}-->
-<!--              \end{align*}-->
-<!--              $$-->
-
-<!--              What happens here? As we might expect,-->
-<!--            </p>-->
-
-<!--            <p>-->
-<!--              Second, let's consider a-->
-<!--            </p>-->
-<!--          </div>-->
-        </div>
-
-        <h3 id="linear_second_order_odes">Linear, Second-Order ODE</h3>
-        <div>
-          <h4 id="linear_second_order_variation_of_parameters">Approach 2: Variation of Parameters</h4>
-          <div>
+            <h4 id="linear_second_order_variation_of_parameters">Solving with Variation of Parameters</h4>
+            <div>
             <p>
               For the linear, first-order ODE, <a href="#linear_first_order_variation_of_parameters">we could
               solve the equation by first finding
@@ -399,96 +499,30 @@
               $$y_p = c_1 f_1 + c_2 f_2 = -f_1(x) \int_{t=x_0}^{t=x} \frac{f_2(t) h(t)}{a(t) W(t)} dt
               + f_2(x) \int_{t=x_0}^{t=x} \frac{f_1(t) h(t)}{a(t) W(t)} dt$$
             </p>
+            </div>
           </div>
-        </div>
 
 
-        <h2>Important Source Terms</h2>
-        <div>
-          <h3>Delta Function</h3>
-          <div>
-            The delta function can be represented in different ways that are useful in specific
-            contexts. Some of these forms are:
+<!--        <h2>Important Source Terms</h2>-->
+<!--        <div>-->
+<!--          <h3>Delta Function</h3>-->
+<!--          <div>-->
+<!--            The delta function can be represented in different ways that are useful in specific-->
+<!--            contexts. Some of these forms are:-->
 
-            <ul>
-              <li>Gaussian: $\delta(x) = \lim_{\epsilon \rightarrow 0} \frac{1}{\sqrt{2 \pi \epsilon}}
-                e^{-x^2 / 2 \epsilon^2}$</li>
-              <li>Lorentzian: $\lim_{\epsilon \rightarrow 0} \frac{1}{\pi \epsilon} \frac{1}{1 + x^2/\epsilon^2}$</li>
-              <li>Fourier: $\lim_{\epsilon \rightarrow 0} \frac{sin(x/\epsilon)}{x \pi} = \int_{-1/2}^{1/2} e^{ixt} dt$</li>
-            </ul>
+<!--            <ul>-->
+<!--              <li>Gaussian: $\delta(x) = \lim_{\epsilon \rightarrow 0} \frac{1}{\sqrt{2 \pi \epsilon}}-->
+<!--                e^{-x^2 / 2 \epsilon^2}$</li>-->
+<!--              <li>Lorentzian: $\lim_{\epsilon \rightarrow 0} \frac{1}{\pi \epsilon} \frac{1}{1 + x^2/\epsilon^2}$</li>-->
+<!--              <li>Fourier: $\lim_{\epsilon \rightarrow 0} \frac{sin(x/\epsilon)}{x \pi} = \int_{-1/2}^{1/2} e^{ixt} dt$</li>-->
+<!--            </ul>-->
 
-          </div>
-        </div>
-
-        <h3>Solving Linear, First-Order ODEs with Integrating Factors</h3>
-        <div>
-
-          <p>
-            $u(x_0)$ doesn't matter since the final form of $y(x)$ is multiplied
-            by $u(s)$ and divided by $u(x)$, so such a coefficient would cancel. This shows that
-            any linear first-order ODE can be solved using such an integrating factor:
-
-            $$ u(x) = \exp (\int_{x_0}^x \frac{b(s)}{a(s)} ds)$$
-          </p>
+<!--          </div>-->
+<!--        </div>-->
 
         </div>
 
-        <h2>Linear Stability Analysis</h2>
-        <div>
-          <p>
-            For a continuous time dynamical system, we might want to understand whether, and how
-            quickly, a point near a stable fixed point flows to the fixed point. Concretely, let
-            $x$ be the phase space of some system and let $x^*$ be a fixed point of the system.
-            We can define a small perturbation away from the fixed point as $\eta(t) \defeq x(t) - x^*$.
-            Note that this is equivalent to defining a time-varying variable $x(t) = x^* + \eta(t)$.
-            We'd like to understand whether this small pertubation, $\eta(t)$ grows or decays over
-            time, and to answer such a question, we can construct a differential equation to describe
-            the behavior of $\eta(t)$.
-          </p>
 
-          <p>
-            $\begin{align}
-            \frac{d}{dt}\eta(t) &= \frac{d}{dt} (x(t) - x^*)\\
-            &= \frac{d}{dt} x(t)\\
-            \end{align}$
-          </p>
-
-          <p>
-            Using the definition of $x(t) = x^* + \eta(t)$, we can construct a Taylor Series
-            expansion of $\frac{d}{dt} x(t)$ at $x^*$:
-          </p>
-
-          <p>
-            $\begin{align}
-            \frac{d}{dt} x(t) &= \frac{d}{dt} (x^* + \eta (t))\\
-            &\approx \frac{d}{dt} x^* + \eta(t) \frac{d^2}{dt^2} x^* + O(\eta^2)\\
-            \end{align}$
-          </p>
-
-          <p>
-            Since $x^*$ is a fixed point, $\frac{d}{dt} x^* = 0$ and thus:
-          </p>
-
-          <p>
-            $\begin{align}
-            \frac{d}{dt}\eta(t) = \eta(t) \frac{d^2}{dt^2} x^*
-            \end{align}$
-          </p>
-
-          <p>
-            This is a linear equation in $\eta$ and is therefore called the "linearization about
-            $x^*$". If $\frac{d^2}{dt^2} x^*$ is also zero, the $O(\eta^2)$ term that we previously
-            ignored will become relevant. This linearization tells us that if the second derivative
-            at $x^*$ is negative, then the perturbation will shrink, and inversely, if the
-            second derivative is positive, the perturbation will grow larger. The absolute value
-            of the second derivative, $|d^2 x^* / dt^2|$ tells us how quickly the pertubation will grow/shrink
-            and its reciprocal $\frac{1}{|d^2 x^* / dt^2|}$ is called the <b>characteristic time scale</b>
-            which expresses how much time is required to modify $x$ by a fixed amount around $x^*$.
-          </p>
-
-        </div>
-
-        </div>
       </section>
     </div>
 
