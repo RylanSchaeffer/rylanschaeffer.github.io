@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset='utf-8'>
+	<meta http-equiv="X-UA-Compatible" content="chrome=1">
+	<meta name="viewport" content="width=device-width,maximum-scale=2">
+	<meta name="description" content="Rylan Schaeffer">
+
+	<link rel="stylesheet" type="text/css" media="all" href="../../../stylesheets/stylesheet.css">
+
+	<title></title>
+
+	<script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-94033137-1', 'auto');
+        ga('send', 'pageview');
+	</script>
+
+	<script type="text/x-mathjax-config">
+      MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+    </script>
+
+	<script type="text/javascript"
+			src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+	</script>
+
+	<script type="text/x-mathjax-config">
+      MathJax.Hub.Config({ TeX: { equationNumbers: {autoNumber: "AMS"} } });
+    </script>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div id="header_wrap" class="outer">
+	<header class="inner">
+		<h1 id="header_title">Rylan Schaeffer > Thoughts > The Idea Machine</h1>
+		<nav>
+			<div>
+				<a href="../../../index.html">Home</a> |
+				<a href="../../thoughts.html">Thoughts</a>
+			</div>
+		</nav>
+	</header>
+</div>
+
+<!-- MAIN CONTENT -->
+<div id="main_content_wrap" class="outer">
+	<section id="main_content" class="inner">
+
+		<h1>Learning at Harvard and MIT in the Age of Artificial Intelligence</h1>
+		<h3>2020/04/05</h3>
+		<div>
+			<h3>Background</h3>
+			<div>
+				<p>
+					One of my favorite books is <a href="https://mitpress.mit.edu/books/idea-factory">
+					The Idea Factory: Learning to Think at MIT</a> by Pepper White. It tells Pepper's story
+					as a student earning his Master's in Mechanical Engineering at MIT in the 1980s,
+					capturing his research, experiences and feelings of inadequacy first-hand. Forty years
+					later, as a Master's student at Harvard conducting research in MIT's Brain and Cognitive
+					Science Department, these posts are my stories, inspired by Pepper and in tribute to
+					those who came before. To paraphrase my favorite quote, "If I could see [...] an insight,
+					a new way of looking at it that would maybe, just maybe, find its way into future generations
+					[...] In the Eiffel tower of technology, I would be a rivet."
+				</p>
+			</div>
+
+			<h3>Remote Learning and Living</h3>
+			<div>
+				<p>
+					Because my grad dorm and home department at Harvard closed, and my BCS building at MIT
+					 closed, I moved back home to
+					California. To support the exodus of students from campus, Harvard and MIT both switched
+					to remote learning, relying heavily on Zoom. The new system has its advantages and disadvantages.
+					On the plus side, lectures and meetings are recordable, I can hold private conversations
+					with other participants, and I can tune out if the speaker is uninteresting or wasting time.
+					On the negative side, I now wake up at 6 AM for my 9 AM MATH 110 lecture, speakers are unable
+					to gauge the audience's reaction, and no one respects meeting end points. Nearly every meeting
+					I've had since returning home has ran 15-45 minutes over, and people are quite shameless.
+					One perk of using Zoom is that if you have a green screen, you can display background images; using
+					red poster board paper, I did exactly that. So far my favorite background images to display
+					include screenshots of Professor Slotine mid-lecture and Andrew Ryan's Welcome to Rapture.
+				</p>
+
+				<img class="photo" src="slotine_2.png" style="float: left; width: 45%">
+				<img class="photo" src="bioshock.jpg" style="float: right; width: 45%">
+
+				<p style="clear: both">
+					Another difference between being present and being remote is that the likelihood of chance
+					encounters falls essentially to zero. This has forced me to be much more intentional with
+					how I socialize. If I don't reach out, the only people I see during a day are my parents.
+					If I do reach out, I need to do so days in advance, and with specific time intervals in
+					mind. It's honestly quite nice, but there's something insufficient about online interaction.
+				</p>
+			</div>
+
+			<h3>Coursework</h3>
+			<div>
+
+			</div>
+
+			<h3>Research</h3>
+			<div>
+				<p>
+					Over the weekend, Mikail and I discovered a perplexing result in my IBL research
+					project. Most cognitive neuroscientists, or people who touch the field, will be
+					familiar with the term <a href="https://en.wikipedia.org/wiki/Psychometrics">psychometrics</a>.
+					One common psychometric plot (indeed, so common that it's sometimes called the
+					<a href="https://en.wikipedia.org/wiki/Psychometric_function">psychometric function</a>)
+					is a plot comparing how an experiment's stimulus strength (e.g. the contrast of a Gabor
+					patch) to the subject's behavioral responses. For my IBL project, I had previously implemented
+					a function to plot the psychometric curve for my model, but the plots were strange. However,
+					now that our implementation had a notion of within-trial dynamics and now that we had switched
+					our implementation from one input stimulus per step to two input stimuli per step, I wanted
+					to revisit the psychometric curves to see whether they looked any different. They did,
+					but not in the way we expected.
+				</p>
+
+				<img class="photo" src="psychometric_left.png" style="float: left; width: 45%">
+				<img class="photo" src="psychometric_right.png" style="float: right; width: 45%">
+
+				<p style="clear: both">
+					What you see here is a plot comparing the strength of the left stimulus against the
+					strength of the right stimulus against the model's probability of selecting the
+					correct action.
+				</p>
+			</div>
+
+			<h3>Dating Troubles</h3>
+			<div>
+				<p>
+					Before I moved to Harvard at the end of August, I happened to pass an acquaintance of
+					mine from undergrad. I asked her if she wanted to hang out, but we couldn't find time
+					with our busy schedules. Fast forward to Christmas break, and I reached out again. She
+					expressed interest in catching up, but then when we were supposed to hang out, she
+					texted to say she had come down with strep throat. I figured if she was desperate enough
+					to get strep throat to avoid seeing me, I should take a hint, so I didn't push the point.
+					I returned to Cambridge quite quickly, on December 30th, but we kept texting back and
+					forth. Eventually, she said she was feeling better and asked if I wanted to hang out,
+					so I told her that I was already gone. Nonetheless, we continued chatting until we were
+					basically texting for an hour a day, every day, before bed. This continued for three
+					months or so, and we started calling, maybe two or three times a week, with longer text
+					conversations stretching into hours. When coronavirus shuttered campus and forced me home,
+					I was quite excited to see her.
+				</p>
+			</div>
+
+
+			<!--			necessary to ensure photos don't go into footer			-->
+			<p style="clear: both">
+			</p>
+
+		</div>
+
+	</section>
+</div>
+
+<!--FOOTER  -->
+<div id="footer_wrap" class="outer">
+	<footer class="inner">
+		<h3 id="footer_title">Rylan Schaeffer</h3>
+		<p>
+			I appreciate any and all feedback. If you have suggestions or feedback or want to get in touch,
+			ping me at <a href="mailto:rylanschaeffer@gmail.com">rylanschaeffer@gmail.com</a>.
+
+			If you feel like helping me survive grad school poverty or appreciate anything on this
+			website, please free free to donate to me at <a href="https://www.paypal.com/paypalme2/rylanschaeffer">
+			https://www.paypal.com/paypalme2/rylanschaeffer</a>.
+		</p>
+	</footer>
+</div>
+
+
+</body>
+</html>
