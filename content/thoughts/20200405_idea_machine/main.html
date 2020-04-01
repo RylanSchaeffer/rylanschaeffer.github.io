@@ -85,7 +85,8 @@
 					I've had since returning home has ran 15-45 minutes over, and people are quite shameless.
 					One perk of using Zoom is that if you have a green screen, you can display background images; using
 					red poster board paper, I did exactly that. So far my favorite background images to display
-					include screenshots of Professor Slotine mid-lecture and Andrew Ryan's Welcome to Rapture.
+					include screenshots of Professor Slotine mid-lecture (left) and Andrew Ryan's
+					Welcome to Rapture sign (right).
 				</p>
 
 				<img class="photo" src="slotine_2.png" style="float: left; width: 45%">
@@ -100,7 +101,50 @@
 				</p>
 			</div>
 
-			<h3>Coursework</h3>
+			<h3>Distributional Reinforcement Learning</h3>
+			<div>
+				<p>
+					On Tuesday, I attended Harvard's Center for Brain Science seminar delivered by
+					Professor Nao Uchida from the Molecular and Cellular Biology department. Uchida's lab
+					specializes in dopamine neurons and the purported role(s) they play in reinforcement
+					learning. This talk concerned distributional reinforcement learning (RL), a relatively new
+					take on value-based reinforcement learning. The talk was based on the paper
+					<a href="dabney_2020.pdf">A distributional code for value in dopamine-based
+						reinforcement learning</a>. What were the main ideas?
+				</p>
+
+				<img class="photo" src="bellemare_2017_performance.png" style="float: right; width: 25%">
+
+				<p>
+					Most, if not all, value-based RL algorithms aim to learn the expected value
+					of the return distribution. This includes the Rescorla-Wagner learning rule,
+					Q-learning and all its variants e.g. SARSA. However, recent work by DeepMind
+					explored (a) whether the entire
+					reward distribution could be learned and (b) whether learning the full distribution
+					offered any advantage over learning solely its expected value. In the first paper,
+					<a href="bellemare_2017.pdf">Bellemare and colleagues (2017)</a> proposed a
+					distributional algorithm called C51 that significantly improved over other algorithms
+					on the Atari suite of games.
+				</p>
+
+				<p style="clear: both"></p>
+
+				<img class="photo" src="dabney_2018_performance.png" style="float: left; width: 25%">
+
+				<p>
+					In a follow up paper, <a href="dabney_2018.pdf">Dabney and colleagues (2018)</a>
+					proposed a better algorithm called Quantile Regression Deep Q-Learning (QR-DQN)
+					which outperformed even C51. I'm not sure why C51's mean score on Atari seems to be
+					so much lower in the second paper, or why QR-DQN underperforms C51 in the first paper.
+					Regardless, both approaches claim to clearly improve over baselines.
+				</p>
+
+				<p>
+					Nao's talk 
+				</p>
+			</div>
+
+			<h3 style="clear: both;">Coursework</h3>
 			<div>
 
 			</div>
