@@ -32,6 +32,14 @@
 	<script type="text/x-mathjax-config">
       MathJax.Hub.Config({ TeX: { equationNumbers: {autoNumber: "AMS"} } });
     </script>
+
+	<div style="display: none">
+		$\DeclareMathOperator*{\argmax}{argmax}$
+		$\DeclareMathOperator{\defeq}{\stackrel{def}{=}}$
+		$\DeclareMathOperator{\Tr}{Tr}$
+		$\DeclareMathOperator{\rank}{rank}$
+		$\DeclareMathOperator{\sign}{sign}$
+	</div>
 </head>
 
 <body>
@@ -54,7 +62,7 @@
 	<section id="main_content" class="inner">
 
 		<h1>Learning at Harvard and MIT in the Age of Artificial Intelligence</h1>
-		<h3>2020/04/05</h3>
+		<h3>2020/04/05 (<a href="../20200322_idea_machine/main.html">previous</a>-<a href="">next</a>)</h3>
 		<div>
 			<h3>Background</h3>
 			<div>
@@ -123,24 +131,30 @@
 					reward distribution could be learned and (b) whether learning the full distribution
 					offered any advantage over learning solely its expected value. In the first paper,
 					<a href="bellemare_2017.pdf">Bellemare and colleagues (2017)</a> proposed a
-					distributional algorithm called C51 that significantly improved over other algorithms
-					on the Atari suite of games.
+					distributional algorithm called C51 that claimed to significantly outperform
+					point-estimate value-based algorithms on the Atari suite of games (right). The idea
+					behind C51 is to replace the typical Bellman equation with a full distribution equivalent:
+
+					$$ Q(s_t, a_t) \defeq \mathbb{E}_{s_t, a_t}[R(s_t,a_t) + \gamma Q(s_{t+1}, a_{t+1})]
+					\qquad \Rightarrow \qquad Z(s, a) \defeq R(s,a) + \gamma Z(s,a)$$
 				</p>
 
-				<p style="clear: both"></p>
+				<p style="clear: both">
+					The main claims of the paper were 
+				</p>
 
 				<img class="photo" src="dabney_2018_performance.png" style="float: left; width: 25%">
 
 				<p>
 					In a follow up paper, <a href="dabney_2018.pdf">Dabney and colleagues (2018)</a>
 					proposed a better algorithm called Quantile Regression Deep Q-Learning (QR-DQN)
-					which outperformed even C51. I'm not sure why C51's mean score on Atari seems to be
+					which outperformed even C51 (left). I'm not sure why C51's mean score on Atari seems to be
 					so much lower in the second paper, or why QR-DQN underperforms C51 in the first paper.
 					Regardless, both approaches claim to clearly improve over baselines.
 				</p>
 
 				<p>
-					Nao's talk 
+					Nao's talk
 				</p>
 			</div>
 
