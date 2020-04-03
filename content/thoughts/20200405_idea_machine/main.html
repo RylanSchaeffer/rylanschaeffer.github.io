@@ -62,7 +62,7 @@
 	<section id="main_content" class="inner">
 
 		<h1>Learning at Harvard and MIT in the Age of Artificial Intelligence</h1>
-		<h3>2020/04/05 (<a href="../20200322_idea_machine/main.html">previous</a>-<a href="">next</a>)</h3>
+		<h3>2020/04/05</h3>
 		<div>
 			<h3>Background</h3>
 			<div>
@@ -79,7 +79,7 @@
 				</p>
 			</div>
 
-			<h3>Remote Learning and Living</h3>
+			<h3>Remote Learning</h3>
 			<div>
 				<p>
 					Because my grad dorm and home department at Harvard closed, and my BCS building at MIT
@@ -106,7 +106,12 @@
 					how I socialize. If I don't reach out, the only people I see during a day are my parents.
 					If I do reach out, I need to do so days in advance, and with specific time intervals in
 					mind. It's honestly quite nice, but there's something insufficient about online interaction.
+					The last difference I noticed is that because most video
+					call platforms don't display both the shared screen and attendees's faces, lecturers/speakers can't
+					read the room; without that crucial non-verbal feedback, the speaker moves through material
+					much more quickly than they would otherwise.
 				</p>
+
 			</div>
 
 			<h3>Distributional Reinforcement Learning</h3>
@@ -140,7 +145,7 @@
 				</p>
 
 				<p style="clear: both">
-					The main claims of the paper were 
+					The main claims of the paper were
 				</p>
 
 				<img class="photo" src="dabney_2018_performance.png" style="float: left; width: 25%">
@@ -158,9 +163,63 @@
 				</p>
 			</div>
 
+
+			<h3>Moral Dilemmas In the Face of Coronavirus</h3>
+			<div>
+				<p>
+					On Wednesday, Harvard Hillel hosted <a href="https://en.wikipedia.org/wiki/Michael_J._Sandel">
+					Professor Michael Sandel</a> and <a href="https://en.wikipedia.org/wiki/Shai_Held">Rabbi
+					Shai Held</a> for a discussion titled "Moral Dilemmas In the Face of Coronavirus: A
+					Conversation Between Michael Sandel and Shai Held." My parents and I watched the conversation
+					and enjoyed it tremendously. Both guests were incredibly well spoken.
+					I submitted the following question, which unfortunately went unasked and thus unanswered:
+					"As a young adult, some my age view society's largest challenges (economic inequality,
+					climate change, etc.) as the direct consequence of older generations enriching themselves
+					at our expense.  Now we're expected to further harm our already impoverished well-being
+					for these same older generations - why is this a fair request to impose on us?" I emailed
+					the question to Sandel - if he answers, I'll provide an update.
+				</p>
+
+				<p>
+					Two insights stuck with me, both made by Shai Held. The first was a comment that
+					one failing of feminism has been that although it has made great strides
+					transforming traditional male jobs into respectable professions for women, very little
+					work has been made on transforming traditional female jobs (e.g. nurse) into respectable
+					professions for men. I'm not sure whether failing is the right word, but he is correct.
+					The second was a comment about an insidiousness implication of meritocracy, that
+					"a perfectly meritocratic society is devoid of compassion," because if society is truly
+					perfectly meritocratic, then you deserve exactly what you have - nothing less and nothing
+					more. Both he and Sandel connected this back to the prevailing American sentiment that
+					the wealthy deserve their wealth because they earned it, which conversely implies that
+					the poor deserve their poverty.
+				</p>
+			</div>
+
 			<h3 style="clear: both;">Coursework</h3>
 			<div>
+				<p>
+					On Thursday, I had my midterm for 2.152/9.110, Professor Slotine's Non-Linear Control
+					course. Topics cover different definitions of stability, proofs for showing the (in)stability
+					of systems, and robust/adaptive control. It was my first MIT graduate midterm,
+					and it went okay. Each problem on the exam was certainly solvable, but the
+					combined duration I would need to solve each problem
+					exceeded the available time. What was surprising for me is that while everything was
+					derivable (and indeed, that's how I approached each problem), it seemed to me
+					that in order to finish on time, one needed to have memorized/internalized the end
+					statement of most results. For instance, one problem asked us to design a switching
+					controller to track a specific trajectory $x_d$ in the third order system:
 
+					$$\dddot{x} + \ddot{x} + (1 + b^3)\dot{x} + 2 \cos(c) \cos(x)x^2  = u$$
+
+					where $u = u(t, x, \dot{x}, \ddot{x}, \dddot{x}, \dot{x}_d, \ddot{x}_d, \dddot{x}_d)$
+					is the control law.
+					This is no different than the second order case: we start by defining our error
+					$\tilde{x} = x - x_d$ and a simplified system $s = (\frac{d}{dt} + \lambda)^2 \tilde{x}$
+					and then use Barbalat's Lemma on the the Lyapunov function candidate $V(x,
+					\dot{x}, \ddot{x}) = \frac{1}{2}s^2$ to show that with the right control law $u$,
+					the sliding condition is met, meaning $s \rightarrow 0$. But writing out the entire
+					derivation to design the right control law $u$ is time consuming.
+				</p>
 			</div>
 
 			<h3>Research</h3>
