@@ -82,15 +82,19 @@
 			<h3>Remote Learning</h3>
 			<div>
 				<p>
-					Because my grad dorm and home department at Harvard closed, and my BCS building at MIT
-					 closed, I moved back home to
-					California. To support the exodus of students from campus, Harvard and MIT both switched
+					Because my grad dorm, my home department, and my lab building at MIT
+					 closed, I moved back home to California.
+					To support the exodus of students from campus, Harvard and MIT both switched
 					to remote learning, relying heavily on Zoom. The new system has its advantages and disadvantages.
 					On the plus side, lectures and meetings are recordable, I can hold private conversations
 					with other participants, and I can tune out if the speaker is uninteresting or wasting time.
-					On the negative side, I now wake up at 6 AM for my 9 AM MATH 110 lecture, speakers are unable
-					to gauge the audience's reaction, and no one respects meeting end points. Nearly every meeting
+					On the negative side, I now wake up at 6 AM for my 9 AM MATH 110 lecture; speakers are unable
+					to read the room, and consequently blow through material
+					much more quickly than they would otherwisel no one respects meeting end times. Nearly every meeting
 					I've had since returning home has ran 15-45 minutes over, and people are quite shameless.
+				</p>
+
+				<p>
 					One perk of using Zoom is that if you have a green screen, you can display background images; using
 					red poster board paper, I did exactly that. So far my favorite background images to display
 					include screenshots of Professor Slotine mid-lecture (left) and Andrew Ryan's
@@ -106,62 +110,58 @@
 					how I socialize. If I don't reach out, the only people I see during a day are my parents.
 					If I do reach out, I need to do so days in advance, and with specific time intervals in
 					mind. It's honestly quite nice, but there's something insufficient about online interaction.
-					The last difference I noticed is that because most video
-					call platforms don't display both the shared screen and attendees's faces, lecturers/speakers can't
-					read the room; without that crucial non-verbal feedback, the speaker moves through material
-					much more quickly than they would otherwise.
 				</p>
 
 			</div>
 
-			<h3>Distributional Reinforcement Learning</h3>
-			<div>
-				<p>
-					On Tuesday, I attended Harvard's Center for Brain Science seminar delivered by
-					Professor Nao Uchida from the Molecular and Cellular Biology department. Uchida's lab
-					specializes in dopamine neurons and the purported role(s) they play in reinforcement
-					learning. This talk concerned distributional reinforcement learning (RL), a relatively new
-					take on value-based reinforcement learning. The talk was based on the paper
-					<a href="dabney_2020.pdf">A distributional code for value in dopamine-based
-						reinforcement learning</a>. What were the main ideas?
-				</p>
+<!--			<h3>Distributional Reinforcement Learning</h3>-->
+<!--			<div>-->
+<!--				<p>-->
+<!--					On Tuesday, I attended Harvard's Center for Brain Science seminar delivered by-->
+<!--					Professor Nao Uchida from the Molecular and Cellular Biology department. Uchida's lab-->
+<!--					specializes in dopamine neurons and the purported role(s) they play in reinforcement-->
+<!--					learning. This talk concerned distributional reinforcement learning (RL), a relatively new-->
+<!--					take on value-based reinforcement learning. The talk was based on the paper-->
+<!--					<a href="dabney_2020.pdf">A distributional code for value in dopamine-based-->
+<!--						reinforcement learning</a>. What were the main ideas?-->
+<!--				</p>-->
 
-				<img class="photo" src="bellemare_2017_performance.png" style="float: right; width: 25%">
+<!--				<img class="photo" src="bellemare_2017_performance.png" style="float: right; width: 25%">-->
 
-				<p>
-					Most, if not all, value-based RL algorithms aim to learn the expected value
-					of the return distribution. This includes the Rescorla-Wagner learning rule,
-					Q-learning and all its variants e.g. SARSA. However, recent work by DeepMind
-					explored (a) whether the entire
-					reward distribution could be learned and (b) whether learning the full distribution
-					offered any advantage over learning solely its expected value. In the first paper,
-					<a href="bellemare_2017.pdf">Bellemare and colleagues (2017)</a> proposed a
-					distributional algorithm called C51 that claimed to significantly outperform
-					point-estimate value-based algorithms on the Atari suite of games (right). The idea
-					behind C51 is to replace the typical Bellman equation with a full distribution equivalent:
+<!--				<p>-->
+<!--					Most, if not all, value-based RL algorithms aim to learn the expected value-->
+<!--					of the return distribution. This includes the Rescorla-Wagner learning rule,-->
+<!--					Q-learning and all its variants e.g. SARSA. However, recent work by DeepMind-->
+<!--					explored (a) whether the entire-->
+<!--					reward distribution could be learned and (b) whether learning the full distribution-->
+<!--					offered any advantage over learning solely its expected value. In the first paper,-->
+<!--					<a href="bellemare_2017.pdf">Bellemare and colleagues (2017)</a> proposed a-->
+<!--					distributional algorithm called C51 that claimed to significantly outperform-->
+<!--					point-estimate value-based algorithms on the Atari suite of games (right). The idea-->
+<!--					behind C51 is to replace the typical Bellman equation with a full distribution equivalent:-->
 
-					$$ Q(s_t, a_t) \defeq \mathbb{E}_{s_t, a_t}[R(s_t,a_t) + \gamma Q(s_{t+1}, a_{t+1})]
-					\qquad \Rightarrow \qquad Z(s, a) \defeq R(s,a) + \gamma Z(s,a)$$
-				</p>
+<!--					$$ Q(s_t, a_t) \defeq \mathbb{E}_{s_t, a_t}[R(s_t,a_t) + \gamma Q(s_{t+1}, a_{t+1})]-->
+<!--					\qquad \Rightarrow \qquad Z(s, a) \defeq R(s,a) + \gamma Z(s,a)$$-->
+<!--				</p>-->
 
-				<p style="clear: both">
-					The main claims of the paper were
-				</p>
+<!--				<p style="clear: both">-->
+<!--					The main claims of the paper were-->
+<!--				</p>-->
 
-				<img class="photo" src="dabney_2018_performance.png" style="float: left; width: 25%">
+<!--				<img class="photo" src="dabney_2018_performance.png" style="float: left; width: 25%">-->
 
-				<p>
-					In a follow up paper, <a href="dabney_2018.pdf">Dabney and colleagues (2018)</a>
-					proposed a better algorithm called Quantile Regression Deep Q-Learning (QR-DQN)
-					which outperformed even C51 (left). I'm not sure why C51's mean score on Atari seems to be
-					so much lower in the second paper, or why QR-DQN underperforms C51 in the first paper.
-					Regardless, both approaches claim to clearly improve over baselines.
-				</p>
+<!--				<p>-->
+<!--					In a follow up paper, <a href="dabney_2018.pdf">Dabney and colleagues (2018)</a>-->
+<!--					proposed a better algorithm called Quantile Regression Deep Q-Learning (QR-DQN)-->
+<!--					which outperformed even C51 (left). I'm not sure why C51's mean score on Atari seems to be-->
+<!--					so much lower in the second paper, or why QR-DQN underperforms C51 in the first paper.-->
+<!--					Regardless, both approaches claim to clearly improve over baselines.-->
+<!--				</p>-->
 
-				<p>
-					Nao's talk
-				</p>
-			</div>
+<!--				<p>-->
+<!--					Nao's talk-->
+<!--				</p>-->
+<!--			</div>-->
 
 
 			<h3>Moral Dilemmas In the Face of Coronavirus</h3>
@@ -182,10 +182,10 @@
 
 				<p>
 					Two insights stuck with me, both made by Shai Held. The first was a comment that
-					one failing of feminism has been that although it has made great strides
+					while feminism has made great strides in
 					transforming traditional male jobs into respectable professions for women, very little
-					work has been made on transforming traditional female jobs (e.g. nurse) into respectable
-					professions for men. I'm not sure whether failing is the right word, but he is correct.
+					progress has been made towards making traditional female jobs (e.g. nurse) into respectable
+					professions for men.
 					The second was a comment about an insidiousness implication of meritocracy, that
 					"a perfectly meritocratic society is devoid of compassion," because if society is truly
 					perfectly meritocratic, then you deserve exactly what you have - nothing less and nothing
@@ -228,49 +228,59 @@
 				</p>
 			</div>
 
-			<h3>Research</h3>
-			<div>
-				<p>
-					Over the weekend, Mikail and I discovered a perplexing result in my IBL research
-					project. Most cognitive neuroscientists, or people who touch the field, will be
-					familiar with the term <a href="https://en.wikipedia.org/wiki/Psychometrics">psychometrics</a>.
-					One common psychometric plot (indeed, so common that it's sometimes called the
-					<a href="https://en.wikipedia.org/wiki/Psychometric_function">psychometric function</a>)
-					is a plot comparing how an experiment's stimulus strength (e.g. the contrast of a Gabor
-					patch) to the subject's behavioral responses. For my IBL project, I had previously implemented
-					a function to plot the psychometric curve for my model, but the plots were strange. However,
-					now that our implementation had a notion of within-trial dynamics and now that we had switched
-					our implementation from one input stimulus per step to two input stimuli per step, I wanted
-					to revisit the psychometric curves to see whether they looked any different. They did,
-					but not in the way we expected.
-				</p>
+<!--			<h3>Research</h3>-->
+<!--			<div>-->
+<!--				<p>-->
+<!--					Over the weekend, Mikail and I discovered a perplexing result in my IBL research-->
+<!--					project. Most cognitive neuroscientists, or people who touch the field, will be-->
+<!--					familiar with the term <a href="https://en.wikipedia.org/wiki/Psychometrics">psychometrics</a>.-->
+<!--					One common psychometric plot (indeed, so common that it's sometimes called the-->
+<!--					<a href="https://en.wikipedia.org/wiki/Psychometric_function">psychometric function</a>)-->
+<!--					is a plot comparing how an experiment's stimulus strength (e.g. the contrast of a Gabor-->
+<!--					patch) to the subject's behavioral responses. For my IBL project, I had previously implemented-->
+<!--					a function to plot the psychometric curve for my model, but the plots were strange. However,-->
+<!--					now that our implementation had a notion of within-trial dynamics and now that we had switched-->
+<!--					our implementation from one input stimulus per step to two input stimuli per step, I wanted-->
+<!--					to revisit the psychometric curves to see whether they looked any different. They did,-->
+<!--					but not in the way we expected.-->
+<!--				</p>-->
 
-				<img class="photo" src="psychometric_left.png" style="float: left; width: 45%">
-				<img class="photo" src="psychometric_right.png" style="float: right; width: 45%">
+<!--				<img class="photo" src="psychometric_left.png" style="float: left; width: 45%">-->
+<!--				<img class="photo" src="psychometric_right.png" style="float: right; width: 45%">-->
 
-				<p style="clear: both">
-					What you see here is a plot comparing the strength of the left stimulus against the
-					strength of the right stimulus against the model's probability of selecting the
-					correct action.
-				</p>
-			</div>
+<!--				<p style="clear: both">-->
+<!--					What you see here is a plot comparing the strength of the left stimulus against the-->
+<!--					strength of the right stimulus against the model's probability of selecting the-->
+<!--					correct action.-->
+<!--				</p>-->
+<!--			</div>-->
 
 			<h3>Dating Troubles</h3>
 			<div>
 				<p>
-					Before I moved to Harvard at the end of August, I happened to pass an acquaintance of
-					mine from undergrad. I asked her if she wanted to hang out, but we couldn't find time
+					Before I moved to Harvard at the end of August, I had a chance encounter with an
+					acquaintance of
+					mine from undergrad. I asked her if she wanted to catch up, but we couldn't find time
 					with our busy schedules. Fast forward to Christmas break, and I reached out again. She
-					expressed interest in catching up, but then when we were supposed to hang out, she
+					expressed interest in seeing me, but just when we were supposed to hang out, she
 					texted to say she had come down with strep throat. I figured if she was desperate enough
-					to get strep throat to avoid seeing me, I should take a hint, so I didn't push the point.
-					I returned to Cambridge quite quickly, on December 30th, but we kept texting back and
+					to feign strep throat to avoid seeing me, I should take a hint, so I didn't push the point.
+					I returned to Cambridge on December 30th, but surprisingly, we kept texting back and
 					forth. Eventually, she said she was feeling better and asked if I wanted to hang out,
-					so I told her that I was already gone. Nonetheless, we continued chatting until we were
+					so I told her that I was already gone. We continued chatting until we were
 					basically texting for an hour a day, every day, before bed. This continued for three
 					months or so, and we started calling, maybe two or three times a week, with longer text
-					conversations stretching into hours. When coronavirus shuttered campus and forced me home,
-					I was quite excited to see her.
+					conversations stretching into hours.
+				</p>
+
+				<p>
+					When coronavirus shuttered campus and forced me home, I was quite excited to see her.
+					I saw her once, but then California's shelter-in-place took effect and I haven't seen
+					her since. I can't tell whether I was so distasteful in our first in-person reunion
+					or whether the situation combined with personal details of her life has placed her
+					on edge, but she has stopped putting effort into responding to my texts and has declined
+					any effort I've made to call. I'm not sure of what I did wrong, but I've
+					taken the hint.
 				</p>
 			</div>
 
