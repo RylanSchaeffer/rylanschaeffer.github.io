@@ -8,7 +8,7 @@ gems:
 
 title: Rylan Schaeffer
 description: "Theoretical Neuroscience & Machine Learning"
-logo: ![Rylan Schaeffer](photos/profile_pic.png)
+logo: photos/profile_pic.png
 show_downloads: false
 google_analytics: UA-94033137-1
 theme: jekyll-theme-minimal
