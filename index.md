@@ -3,9 +3,7 @@
 My name is Rylan Schaeffer, and I work at [Uber Technologies](https://www.uber.com/")
 as a Data Scientist since October 2018. It's [generally advisable](https://www.ece.ucdavis.edu/~jowens/advice.html)
 to share a picture of oneself so that others will know what one
-looks like.
-
-![Rylan Schaeffer](photos/profile_pic.png)
+looks like. 
 
 Before joining Uber, I:
 

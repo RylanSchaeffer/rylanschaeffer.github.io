@@ -1,5 +1,4 @@
 name: "Rylan Schaeffer's Blog"
-description: "Theoretical Neuroscience & Machine Learning"
 author:
   name: "Rylan Schaeffer"
   email: "rylanschaeffer@gmail.com"
@@ -8,8 +7,10 @@ gems:
   - jekyll-feed
 
 title: Rylan Schaeffer
-google_analytics: 
+description: "Theoretical Neuroscience & Machine Learning"
+logo: ![Rylan Schaeffer](photos/profile_pic.png)
 show_downloads: false
+google_analytics: UA-94033137-1
 theme: jekyll-theme-minimal
 markdown: kramdown
 kramdown:
