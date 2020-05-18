@@ -6,3 +6,8 @@ author:
   twitter: "RylanSchaeffer"
 gems:
   - jekyll-feed
+
+title: Rylanschaeffer.GitHub.io
+google_analytics: 
+show_downloads: true
+theme: jekyll-theme-minimal
