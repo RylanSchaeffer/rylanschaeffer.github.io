@@ -1,11 +1,7 @@
 ### Welcome!
 
 My name is Rylan Schaeffer, and I work at [Uber Technologies](https://www.uber.com/")
-as a Data Scientist since October 2018. It's [generally advisable](https://www.ece.ucdavis.edu/~jowens/advice.html)
-to share a picture of oneself so that others will know what one
-looks like. 
-
-Before joining Uber, I:
+as a Data Scientist since October 2018. Before joining Uber, I:
 
 - earned my Master of Research in Cognitive Neuroscience at 
 [University College London's Institute of Cognitive Neuroscience](http://www.ucl.ac.uk/icn)
