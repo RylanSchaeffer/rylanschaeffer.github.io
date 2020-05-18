@@ -1,11 +1,9 @@
-### Welcome to GitHub Pages.
-This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:
+### Welcome!
 
-```
-$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-```
+My name is Rylan Schaeffer, and I work at [Uber Technologies](https://www.uber.com/")
+as a Data Scientist since October 2018. It's [generally advisable](https://www.ece.ucdavis.edu/~jowens/advice.html)
+to share a picture of oneself so that others will know what one
+looks like. Before joining Uber, I:
 
 If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.
 
