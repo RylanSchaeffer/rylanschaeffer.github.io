@@ -1,4 +1,4 @@
-### Talks
+### Talks by Me
 
 #### 2019
 
@@ -20,3 +20,11 @@ engineers were about to make was much better received.
 
 #### 2011
 - [Eagle Scout Court of Honor Video](talks/eagle_court_of_honor.mp4)
+
+
+### Talks by Others
+
+#### 2017
+
+- [Jay McClelland's Neural Networks for Cognition and Cognitive Neuroscience: 
+One Scientist’s Perspective](talks/mcclelland_cnjc_2017_06_07.pdf)
