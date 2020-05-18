@@ -11,3 +11,6 @@ title: Rylan Schaeffer
 google_analytics: 
 show_downloads: false
 theme: jekyll-theme-minimal
+markdown: kramdown
+kramdown:
+  math_engine: mathjax
