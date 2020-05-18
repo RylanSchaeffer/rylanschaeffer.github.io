@@ -3,18 +3,33 @@
 My name is Rylan Schaeffer, and I work at [Uber Technologies](https://www.uber.com/")
 as a Data Scientist since October 2018. It's [generally advisable](https://www.ece.ucdavis.edu/~jowens/advice.html)
 to share a picture of oneself so that others will know what one
-looks like. Before joining Uber, I:
+looks like.
 
-If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.
+![Rylan Schaeffer](photos/profile_pic.png)
 
-### Designer Templates
-We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.
+Before joining Uber, I:
 
-### Rather Drive Stick?
-If you prefer to not use the automatic generator, push a branch named `gh-pages` to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.
+- earned my Master of Research in Cognitive Neuroscience at 
+[University College London's Institute of Cognitive Neuroscience](http://www.ucl.ac.uk/icn)
+under [Dr. Stephen Fleming](http://metacoglab.org/) on metacognition, where 
+[Julius Kunze](http://juliuskunze.com), [Louis Kirsch](http://louiskirsch.com/) and I started
+UCL's Artificial Intelligence Journal Club that featured 25 speakers in 9 months
+from DeepMind, OpenAI, Uber AI Labs, Toronto, MILA, Stanford, Berkeley, Princeton,
+Oxford, Cambridge, Imperial and other institutions.
 
-### Authors and Contributors
-You can @mention a GitHub username to generate a link to their profile. The resulting `<a>` element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (@defunkt), PJ Hyett (@pjhyett), and Tom Preston-Werner (@mojombo) founded GitHub.
-
-### Support or Contact
-Having trouble with Pages? Check out the documentation at https://help.github.com/pages or contact support@github.com and we’ll help you sort it out.
+- conducted research on applying supervised deep learning to DNA sequencing as
+ an intern at [Thermo Fisher Scientific](https://www.thermofisher.com/uk/en/home.html)
+ 
+- earned two BS degrees at <a href="http://www.ucdavis.edu/">UC Davis</a>
+in <a href="http://cs.ucdavis.edu/">computer science engineering</a> and <a href="http://www.stat.ucdavis.edu/">statistics</a>,
+where I received the <a href="photos/outstanding_senior.jpg">UC Davis Computer Science Department's 2016 Outstanding Senior Award</a>
+for teaching three undergraduate courses and for organizing and co-hosting over a dozen faculty talks aimed at
+bridging the divide between undergraduates and professors. I intially started in biomedical engineering,
+switched to business, and then pursued a major of my own creation
+aimed at studying persuasion and motivation before choosing CSE and Stats.
+                
+- served as CFO and COO of <a href="https://asucd.ucdavis.edu/">ASUCD</a> (overseeing a $12
+million annual operating budget and 20+ units) and as the undergraduate representative on the UC Davis College
+of Engineering Dean Recruitment Advisory Committee.
+                
+- won the [national Congressional debate tournament](https://ci.uky.edu/UKDebate/results-history) in high school.
