@@ -26,7 +26,40 @@ coding and my mother having an edge with algebra.
 ![](datascience_1.jpg) 
 
 I was expecting teaching the two of them to be relatively uneventful, but fortuitiously,
-we've made so many enjoyable memories. 
+we've made so many enjoyable memories. During one lecture, my father fell asleep.
+My mother and I couldn't believe it. Most of the time, he's a very good student.
+Here he is, teaching at the board.
+
+![](datascience_3.jpg)
+
+During another lecture, I was teaching conditional probability and introduce them
+to the formula:
+
+$$P(A|B) = \frac{P(A, B)}{P(B)}$$
+
+I then gave them a practice problem and five minutes to solve it. Halfway through, my
+mother exclaimed "I've been using the wrong formula!" Here she is laughing at her
+mistake.
+
+![](datascience_2.jpg)
+
+My favorite story concerns our cabin. We're legally required to remove the flammable
+debris surrounding it, so once a year, we typically head up where we rake and burn
+the pine needles. However, this year was going to need extra work. The winter had 
+been dry, and had been followed by a heavy snowstorm that wrecked havoc on the
+weakened trees; three trees had fallen on our cabin. My mother sent me the following
+email, asking for a break from our lectures to take care of the cabin.
+
+![](datascience_5.png) 
+
+She then showed up in my office and told me that I was misreading the academic
+calendar. I asked, "How's that?" She then wrote the following on the whiteboard.
+
+![](datascience_4.jpg)
+
+One of my friends, V, has already agreed to be a guest lecturer. If you're
+interested in joining us or doing something similar with your family, get in
+touch!
 
 
 ### Hosting Trivia
@@ -44,4 +77,5 @@ legs. I made him stand in the light where I could capture the following photos.
 
 ![](dads_legs_2.jpg)
 
-That gastrocnemius looks fake.
+I showed some friends. One said "That gastrocnemius looks fake." and another said
+"How come your dad is sportier than all my friends in my age."
