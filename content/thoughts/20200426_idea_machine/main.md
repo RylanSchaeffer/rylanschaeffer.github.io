@@ -27,7 +27,7 @@ those into something larger. I think I need to be more mindful that I see potent
 girlfriends for who they are, not what I can shape them into.
 
 ### Women in STEM Nominee for Mentor of the Year
-<img class="photo" src="wistem.png" style="float: left; width: 30%">
+![WiSTEM](wistem.png)
 
 This week, I was nominated by Harvard College Women's Center as a 2020 Women in STEM
 (WiSTEM) Mentor of the Year for mentoring two undergraduate students, both of who are wonderful
@@ -43,8 +43,7 @@ I couldn't stop laughing. The email contained testimony from ten of the twelve
 nominees' mentees, lauding what each of the mentors had done, and I was not one of the
 twelve. I wonder if one of my mentees was playing a prank on me :)
 
-Here's a story I didn't previous write down.
-One of my mentees, Alyssa, knew all kinds of surprises around campus. One night,
+One of my mentees, Alyssa, knows all kinds of surprises around campus. One night,
 she, my other mentee and me met to have s'mores at the fireplaces in the Plaza
 outside the Science Center. The s'more truck was closed, unfortunately, and
 before long, not even the fires could keep us warm from the biting cold. Alyssa
@@ -53,6 +52,7 @@ Center, up a few stairs, into a little room at the top that had a massive telesc
 The wall was covered in comics, including one Bloom County that I remembered
 from my childhood. The view from the rooftop overlooking the campus was beautiful.
 
-<img class="photo" src="IMG_20200217_194415.jpg" style="float: right; width: 30%">
-<img class="photo" src="IMG_20200217_194106.jpg" style="float: right; width: 30%">
-<img class="photo" src="IMG_20200217_193813.jpg" style="float: right; width: 30%">
+![](IMG_20200217_194415.jpg)
+![](IMG_20200217_193813.jpg)
+![](IMG_20200217_194106.jpg)
+
