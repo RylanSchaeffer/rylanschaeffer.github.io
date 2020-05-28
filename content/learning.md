@@ -1,4 +1,4 @@
-### Learning
+# Learning
 
 - [Analysis](learning/analysis.html)
 - [Differential Equations](learning/differential_equations.html)
