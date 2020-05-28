@@ -85,14 +85,13 @@ controller to track a specific trajectory $x_d$ in the third order system:
 
 $$\dddot{x} + \ddot{x} + (1 + b^3)\dot{x} + 2 \cos(c) \cos(x)x^2  = u$$
 
-where $u = u(t, x, \dot{x}, \ddot{x}, \dddot{x}, \dot{x}_d, \ddot{x}_d, \dddot{x}_d)$
-is the control law.
-This is no different than the second order case: we start by defining our error
-$\tilde{x} = x - x_d$ and a simplified system $s = (\frac{d}{dt} + \lambda)^2 \tilde{x}$
-and then use Barbalat's Lemma on the the Lyapunov function candidate $V(x,
-\dot{x}, \ddot{x}) = \frac{1}{2}s^2$ to show that with the right control law $u$,
-the sliding condition is met, meaning $s \rightarrow 0$. But writing out the entire
-derivation to design the right control law $u$ is time consuming.
+where $$u = u(t, x, \dot{x}, \ddot{x}, \dddot{x}, \dot{x}_d, \ddot{x}_d, \dddot{x}_d)$$
+is the control law. This is no different than the second order case: we start by defining our error
+$$\tilde{x} = x - x_d$$ and a simplified system $$s = (\frac{d}{dt} + \lambda)^2 \tilde{x}$$
+and then use Barbalat's Lemma on the the Lyapunov function candidate $$V(x,
+\dot{x}, \ddot{x}) = \frac{1}{2}s^2$$ to show that with the right control law $$u$$,
+the sliding condition is met, meaning $$s \rightarrow 0$$. But writing out the entire
+derivation to design the right control law $$u$$ is time consuming.
 
 I told myself that even if I don't receive top marks on the midterm, I went from having
 never thought about a differential equation 8-9 years to at least receiving a passing
