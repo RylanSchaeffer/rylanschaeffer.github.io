@@ -53,6 +53,8 @@ The wall was covered in comics, including one Bloom County that I remembered
 from my childhood. The view from the rooftop overlooking the campus was beautiful.
 
 ![](IMG_20200217_194415.jpg)
+
 ![](IMG_20200217_193813.jpg)
+
 ![](IMG_20200217_194106.jpg)
 
