@@ -9,5 +9,6 @@
 - [Neural Networks](learning/neural_networks.html)
 - [Numerical Methods](learning/numerical_methods.html)
 - [Optimization](learning/optimization.html)
-- [Probability and Statistics](learning/statistics.html)
+- [Probability](learning/probability.html)
+- [Statistics](learning/statistics.html)
 - [Reinforcement Learning](learning/reinforcement_learning.html)
