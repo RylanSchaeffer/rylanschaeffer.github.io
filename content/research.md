@@ -1,9 +1,13 @@
 # Research
 
 ## Preprints
+
+### 2020
 - [Reverse-engineering recurrent neural network solutions to a hierarchical inference task for mice](research/20200605_ibl_rnn/main.html)
+- Towards Unifying Smooth Neural Codes with Adversarially Robust Representations
 
 ## Publications
+
 
 ## Explanations of Others' Research
 - [Neural Turing Machines](research/neural_turing_machine/main.html)
