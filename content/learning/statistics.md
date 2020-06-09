@@ -52,7 +52,7 @@ MSE(\hat{\theta}) &= \mathbb{E}_{p(x)}[(\hat{\theta} - \theta)^2 ]\\
 $$ $$
 
 * Unbiased: The estimator's bias $$B(\hat{\theta}) = 0$$. An unbiased estimator means that 
-on average, the estimator equals the estimand.
+on average, the estimator $$\hat{\theta}(x)$$ equals the estimand $$\theta$$.
 
 * Efficient: 
 
@@ -82,7 +82,7 @@ an estimator $\hat{\theta}(\cdot)$ by predicting
   introducing a new function, $h(x)$, called the control variate, and a
   scalar variable $\beta$. Using both, we define a surrogate function:
 
-  $$\tilde{f}(x) \defeq f(x) - \beta (h(x) - \mathbb{E}_x[h(x)])$$
+  $$\tilde{f}(x) = f(x) - \beta (h(x) - \mathbb{E}_x[h(x)])$$
 
   An estimator that estimates the expected value of this surrogate function is called
   the control variate estimator.
@@ -163,6 +163,10 @@ an estimator $\hat{\theta}(\cdot)$ by predicting
   Both REINFORCE and the <a href="reinforcement_learning.html#policy_gradient_derivation">policy gradient theorem</a>
   can be viewed as using control variate estimators for the agent's return.
 </p>
+
+### Antithetic Variates
+
+TODO (https://en.wikipedia.org/wiki/Antithetic_variates)
 
 
 ### Rao-Blackwellization 
