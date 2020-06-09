@@ -54,7 +54,7 @@ Bayesian observer tells us how well the RNN could do given the actions it select
 
 ![](hook_plot_behav_trial_outcome_by_trial_strength.jpg)
 
-![](hook_plot_behav_trial_outcome_by_trial_strength.jpg)
+![](hook_plot_behav_prob_correct_by_strength_trial_block.jpg)
 
 ![](hook_plot_behav_prob_correct_action_by_trial_within_block.jpg)
 
@@ -71,6 +71,18 @@ Bayesian observer tells us how well the RNN could do given the actions it select
 
 #### Claim 3:
 
+![](hook_plot_task_block_inference_multiple_blocks.jpg)
+
+![](hook_plot_task_block_inference_single_block.jpg)
+
 #### Claim 4: 
 
+![](hook_plot_model_effective_circuit.jpg)
+
 ![](hook_plot_state_space_vector_fields_ideal.jpg)
+
+![](hook_plot_reduced_dim_state_space_distance_decoherence.jpg)
+
+![](hook_plot_reduced_dim_state_space_trajectories_within_block.jpg)
+
+![](hook_plot_compare_rnn_distilled_rnn_and_two_unit_rnn.jpg)
