@@ -16,9 +16,15 @@ A __Positive Semi-Definite Kernel__ (also known as a reproducing kernel, a Merce
 <details>
 <summary>Proof:</summary>
 Let $$P = P^T$$ be a PSD symmetric matrix. By definition of PSD, $\forall c \, c^T P \bar{c} \geq 0$$.
-Choose $$c$$ to be the $ith$ eigenvector of $$P$$. Then $$c^T P \bar{c} = c^T P^T \bar{c} = \lambda_i c^T
-\bar{c} = \lambda_i ||c||_2^2 \geq 0$$.
+Choose $$c = v_i$$ to be the $ith$ eigenvector of $$P$$. Then $$v_i^T P \bar{v_i} = v_i^T P^T \bar{v_i}
+ = \lambda_i v_i^T \bar{v_i} = \lambda_i ||v_i||_2^2 \geq 0 \Rightarrow \lambda_i \geq 0$$.
 </details>
+
+The other direction is the same proof in reverse. Assume that all eigenvalues of
+$$P$$ are non-negative. Then $$\lambda_i ||v_i||_2^2 \geq 0 \Rightarrow \lambda_i v_i^T \bar{v_i} \geq 0
+
+
+ 
 
 - 
 
