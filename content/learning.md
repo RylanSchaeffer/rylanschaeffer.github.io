@@ -4,6 +4,7 @@
 - [Differential Equations](learning/differential_equations.html)
 - [Dynamical Systems and Control](learning/dynamical_systems.html)
 - [Informative Non-Fiction Books](learning/informative_nonfiction.html)
+- [Kernels](learning/kernels.html)
 - [Linear Algebra](learning/linear_algebra.html)
 - [Machine Learning](learning/machine_learning.html)
 - [Neural Networks](learning/neural_networks.html)
