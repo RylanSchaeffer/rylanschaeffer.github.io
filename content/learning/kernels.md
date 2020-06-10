@@ -19,15 +19,17 @@ matrix is PSD. Also known as a reproducing kernel and a Mercer kernel.
 
 - A symmetric matrix is PSD if and only if its eigenvalues are non-negative.
 <details>
-<summary>Proof:</summary>
-Let $$P = P^T$$ be a PSD symmetric matrix. By definition of PSD, $\forall c \, c^T P \bar{c} \geq 0$$.
-Choose $$c = v_i$$ to be the $ith$ eigenvector of $$P$$. Then $$v_i^T P \bar{v_i} = v_i^T P^T \bar{v_i}
+<summary>(Proof)</summary>
+Let $$P = P^T$$ be a PSD symmetric matrix. By definition of PSD, $$\forall c \, c^T P \bar{c} \geq 0$$.
+Choose $$c = v_i$$ to be the $$ith$$ eigenvector of $$P$$. Then $$v_i^T P \bar{v_i} = v_i^T P^T \bar{v_i}
  = \lambda_i v_i^T \bar{v_i} = \lambda_i ||v_i||_2^2 \geq 0 \Rightarrow \lambda_i \geq 0$$.
+
+In the other direction, assume that all eigenvalues of $$P$$ are non-negative. Then
+$$\lambda_i ||v_i||_2^2 \geq 0 \Rightarrow \lambda_i v_i^T \bar{v_i} \geq 0
+\Rightarrow v_i^T P \bar{v_i} \geq 0$$. But trickily, we need to show that this holds for
+all vectors $$c$$, not just the eigenvectors. 
+
 </details>
-
-The other direction is the same proof in reverse. Assume that all eigenvalues of
-$$P$$ are non-negative. Then $$\lambda_i ||v_i||_2^2 \geq 0 \Rightarrow \lambda_i v_i^T \bar{v_i} \geq 0
-
 
  
 
