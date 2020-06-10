@@ -148,7 +148,7 @@ Depending on the magnitude of the distilled RNN's readout vector (a free paramet
 the distilled system can outperform the full RNN (distilled 86.87%, full 85.50%).
 The distilled 2-unit RNN recognizes blocks in the same way as the original RNN,
 whereas a 2-unit RNN trained directly on the task itself fails to recognize blocks
-after four times as many gradient steps.
+after being trained for much much longer.
 
 ![](hook_plot_compare_rnn_distilled_rnn_and_two_unit_rnn.jpg)
 
