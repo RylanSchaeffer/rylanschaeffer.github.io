@@ -8,8 +8,8 @@ kernel methods are typically applicable when data is rotationally invariant.
 ## Background
 
 Two important prerequisites to kernels are
-[inner product spaces](/content/learning/linear_algebra.md#inner-product-spaces) and
-[Hilbert spaces](/content/learning/linear_algebra.md#hilbert-spaces).
+[inner product spaces](/content/learning/linear_algebra.html#inner-product-spaces) and
+[Hilbert spaces](/content/learning/linear_algebra.html#hilbert-spaces).
 
 ## Kernels
 
@@ -86,7 +86,7 @@ $$\sum_i \sum_j a_i a_j k(x_i, x_j)
 \geq 0$$
 </details>
  
-### Properties of PSD Kernels and Matrices
+### Properties of Positive Definite Kernels
 
 - A symmetric matrix is PSD if and only if its eigenvalues are non-negative.
 <details>
