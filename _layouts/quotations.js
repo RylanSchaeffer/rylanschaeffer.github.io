@@ -61,5 +61,8 @@ const quotations = [
 
     "Time it took the most of me\n" +
     "And left me with no key\n" +
-    "To unlock the chest of remedy"
+    "To unlock the chest of remedy",
+
+    "Encumbered forever by desire and ambition\n" +
+    "There's a hunger still unsatisfied"
 ];
