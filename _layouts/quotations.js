@@ -54,5 +54,7 @@ const quotations = [
 
     "That's why the people who push themselves into hell see a different hell from the rest of us.",
 
+    "Then one day you find ten years have got behind you, no one told you when to run, you missed the starting gun",
+
     ""
 ];
