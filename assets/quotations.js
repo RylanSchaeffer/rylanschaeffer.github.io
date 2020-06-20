@@ -18,9 +18,9 @@ const quotations = [
 
     "Yet, he thought, if I can die saying 'Life is so beautiful,' then nothing else is important.",
 
-    "I know I can be\n" +
-    "what I want to be\n" +
-    "if I work hard at it\n" +
+    "I know I can be&lt;br />" +
+    "what I want to be&lt;br />" +
+    "if I work hard at it&lt;br />" +
     "I'll be what I want to be.",
 
     "For you are life, rarer than a quark and unpredictable beyond the dreams of Heisenberg.",
@@ -59,15 +59,15 @@ const quotations = [
 
     "Then one day you find ten years have got behind you, no one told you when to run, you missed the starting gun",
 
-    "Time it took the most of me\n" +
-    "And left me with no key\n" +
+    "Time it took the most of me&lt;br />" +
+    "And left me with no key&lt;br />" +
     "To unlock the chest of remedy",
 
-    "Encumbered forever by desire and ambition\n" +
+    "Encumbered forever by desire and ambition&lt;br />" +
     "There's a hunger still unsatisfied",
 
-    "Where were you when I was burned and broken?\n" +
-    "While the days slipped by from my window watching\n" +
+    "Where were you when I was burned and broken?&lt;br />" +
+    "While the days slipped by from my window watching&lt;br />" +
     "And where were you when I was hurt and I was helpless?",
 
     "Ad astra per aspera",
@@ -77,9 +77,9 @@ const quotations = [
     "Because everything here must still be accomplished. It depends only on him to " +
     "participate in this privileged act of creation.",
 
-    "Then let me start again, I cried\n" +
-    "Please let me start again\n" +
-    "I want a face that's fair this time\n" +
+    "Then let me start again, I cried&lt;br />" +
+    "Please let me start again&lt;br />" +
+    "I want a face that's fair this time&lt;br />" +
     "I want a spirit that is calm",
 
     "\"Lonely? You have yourself. Your infinite selves. " +

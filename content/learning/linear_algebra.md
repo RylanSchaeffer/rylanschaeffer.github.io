@@ -3,8 +3,8 @@
 ## Inner Product Spaces
 
 An __inner product space__ is a vector space $$V$$ equipped with an __inner product__,
-a function $$\langle \cdot, \cdot \rangle: V \times V \rightarrow F$$, where 
-$$F$$ is either the real numbers or the complex numbers, satisfying three properties:
+a function $$\langle \cdot, \cdot \rangle: V \times V \rightarrow \mathbb{F}$$ (where
+$$\mathbb{F}$$ is either the real numbers or the complex numbers) satisfying three properties:
 
 1. Hermitian Symmetric: $$\langle x, y \rangle = \bar{\langle y, x \rangle}$$
 
