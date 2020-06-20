@@ -42,12 +42,12 @@
 
         <p>{{ site.description | default: site.github.project_tagline }}</p>
 
-        <script src="quotations.js"></script>
+        <script src="/assets/quotations.js"></script>
         <p id="quotation"></p>
         <script>
             i = Math.floor(Math.random()*quotations.length);
-            p = document.getElementById("quotation")
-            p.InnerHTML = quotations[i]
+            p = document.getElementById("quotation");
+            p.InnerHTML = quotations[i];
         </script>
     </header>
     <section>
