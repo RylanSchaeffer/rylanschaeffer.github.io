@@ -24,3 +24,7 @@ $$\langle x, x \rangle \geq 0$$ and $$\langle x, x \rangle = 0 \Leftrightarrow x
 
 Inner product spaces containing limits of Cauchy Sequences
 
+Infinite sequences: the space $$l_2$$ (square summable sequences) coimprises all
+sequences $$a = (a_i)_{i \in \mathbb{N}}$$ for which
+
+$$ ||a||_{l_2}^2 = \sum_{i=1}^{\infty}a_i^2 < \infty$$
