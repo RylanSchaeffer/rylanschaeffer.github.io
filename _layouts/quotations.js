@@ -18,7 +18,10 @@ const quotations = [
 
     "Yet, he thought, if I can die saying 'Life is so beautiful,' then nothing else is important.",
 
-    "I know I can be what I want to be; if I work hard at it, I'll be what I want to be.",
+    "I know I can be\n" +
+    "what I want to be\n" +
+    "if I work hard at it\n" +
+    "I'll be what I want to be.",
 
     "For you are life, rarer than a quark and unpredictable beyond the dreams of Heisenberg.",
 
@@ -56,5 +59,7 @@ const quotations = [
 
     "Then one day you find ten years have got behind you, no one told you when to run, you missed the starting gun",
 
-    ""
+    "Time it took the most of me\n" +
+    "And left me with no key\n" +
+    "To unlock the chest of remedy"
 ];
