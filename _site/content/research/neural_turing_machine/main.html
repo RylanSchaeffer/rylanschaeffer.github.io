@@ -33,7 +33,9 @@
       MathJax.Hub.Config({ TeX: { equationNumbers: {autoNumber: "AMS"} } });
     </script>
 
-    $\DeclareMathOperator*{\argmax}{argmax}$
+    <div style="display: none">
+      $\DeclareMathOperator*{\argmax}{argmax}$
+    </div>
   </head>
 
   <body>
@@ -41,11 +43,14 @@
     <!-- HEADER -->
     <div id="header_wrap" class="outer">
       <header class="inner">
-        <h1 id="project_title">Explanation of<br>Neural Turing Machines</h1>
-        <h3 id="project_tagline"><a href="https://arxiv.org/abs/1410.5401">Graves, Wayne and Danihelka 2014.</a></h3>
-          <section id="quick_links">
-            <a class="back" href="../../research.html"></a>
-          </section>
+        <h1 id="header_title">Rylan Schaeffer > Research ><br>
+          Explanation of <a href="1410.5401.pdf">Neural Turing Machines</a> (2014)</h1>
+        <nav>
+          <div>
+            <a href="../../../index.html">Home</a> |
+            <a href="../../research.html">Research</a>
+          </div>
+        </nav>
       </header>
     </div>
 
@@ -94,14 +99,14 @@
         <p>
           Let's refer to the memory matrix, with $R$ rows and $C$ elements per row, at time $t$ as $\mathcal{M}_t$. In order to read (and write), we'll need an attention mechanism that dictates where the head should read from. The attention mechanism will be a length-$R$ normalized weight vector $w_t$. We'll refer to individual elements in the weight vector as $w_t(i)$. By "normalized," the authors mean that the following two constraints hold:
 
-          <center>
+          <div style="text-align: center;">
           $
           \begin{align} \tag{1}
           &0 \leq w_t(i) \leq 1 \\
           &\sum\limits_{i=1}^R w_t(i) = 1
           \end{align}
           $
-          </center>
+          </div>
         </p><br>
 
         <p>
@@ -319,21 +324,21 @@
           </ul>
         </p>
 
-        <h2>Notes</h2>
-        <p>
-          I appreciate any and all feedback. If I've made an error or if you have a suggestion, you can <a href="mailto:ryschaeffer@ucdavis.edu">email me</a> or comment on the <a href="https://www.reddit.com/r/MachineLearning/comments/64lkry/d_explanation_of_deepminds_neural_turing_machine/">Reddit</a> or <a href="https://news.ycombinator.com/item?id=14081483">HackerNews</a> threads. I intend to create a mailing list (shoutout to Ben) and integrate RSS (shoutout to Uri) in the near future.
-        </p>
-
       </section>
     </div>
 
-    <!-- FOOTER  -->
+    <!--FOOTER  -->
     <div id="footer_wrap" class="outer">
       <footer class="inner">
-        
-        <p class="copyright">Slate theme maintained by <a href="https://github.com/pages-themes">pages-themes</a></p>
-        
-        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+        <h3 id="footer_title">Rylan Schaeffer</h3>
+        <p>
+          I appreciate any and all feedback. If you have suggestions or feedback or want to get in touch,
+          ping me at <a href="mailto:rylanschaeffer@gmail.com">rylanschaeffer@gmail.com</a>.
+
+          If you feel like helping me survive grad school poverty or appreciate anything on this
+          website, please free free to donate to me at <a href="https://www.paypal.com/paypalme2/rylanschaeffer">
+          https://www.paypal.com/paypalme2/rylanschaeffer</a>.
+        </p>
       </footer>
     </div>
 

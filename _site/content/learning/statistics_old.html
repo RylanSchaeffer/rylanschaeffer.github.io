@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width,maximum-scale=2">
+    <meta name="description" content="Rylan Schaeffer">
+
+    <link rel="stylesheet" type="text/css" media="all" href="../../stylesheets/stylesheet.css">
+
+    <title></title>
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-94033137-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+    </script>
+
+    <script type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({ TeX: { equationNumbers: {autoNumber: "AMS"} } });
+    </script>
+
+    <div style="display: none">
+      $usepackage{centernot}$
+      $\DeclareMathOperator*{\argmax}{argmax}$
+      $\DeclareMathOperator{\defeq}{\stackrel{def}{=}}$
+    </div>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+      <header class="inner">
+        <h1 id="header_title">Rylan Schaeffer > Learning > Statistics</h1>
+          <section id="quick_links">
+            <a href="../../index.html">Home</a> |
+            <a href="../learning.html">Learning</a>
+          </section>
+      </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+
+        <div id="toc_container">
+          <h1 class="toc_title">Contents</h1>
+          <ul class="table-of-content" id="markdown-toc">
+            <li>Probability Measures</li>
+              <ul>
+                <li><a href="#jensens_inequality">Jensen's Inequality</a></li>
+              </ul>
+            <li><a href="#estimators">Estimators</a></li>
+              <ul>
+                <li><a href="#estimator_desiderata">Estimator Desiderata</a></li>
+                <li><a href="#maximum_likelihood">Maximum Likelihood Estimation</a></li>
+<!--                <li><a href="#rao_blackwellization">Rao-Blackwellization</a></li>-->
+<!--                <li><a href="#control_variates">Control Variates</a></li>-->
+              </ul>
+            <li><a href="#exponential_family">Exponential Family Distributions</a></li>
+              <ul>
+                <li><a href="#binomial">Binomial Distribution</a></li>
+                <li><a href="#normal_approx_of_binomial">Normal Approximation to the Binomial Distribution</a></li>
+              </ul>
+            <li><a href="#sampling">Sampling</a></li>
+              <ul>
+                <li><a href="#inverse_cdf_sampling">Inverse CDF Sampling</a></li>
+                <li><a href="#rejection_sampling">Rejection Sampling</a></li>
+              </ul>
+            <li><a href="#variance_reduction">Variance Reduction</a></li>
+            <ul>
+              <li><a href="#control_variates">Control Variates</a></li>
+            </ul>
+            <li><a href="#probabilistic_graphical_models">Probabilistic Graphical Models</a></li>
+              <ul>
+                <li><a href="#latent_variable_models">Latent Variable Models</a></li>
+                <li><a href="#expectation_maximization">Expectation Maximization</a></li>
+                <li><a href="#d_separation">D-Separation</a></li>
+                <li><a href="#markov_blanket">Markov Blanket</a></li>
+              </ul>
+          </ul>
+        </div>
+
+        <h2 id="probability_measures">Probability Measures</h2>
+        <div>
+          <h3 id="jensens_inequality">Jensen's Inequality</h3>
+          <div>
+            <p>
+              <img class="photo" src="prob_stats/jensens_inequality.png" style="float: right; width: 35%">
+              Jensen's Inequality is a fundamental property of convex functions and probability
+              measures which states that for any convex function $f(\cdot)$ and any probability
+              measure $p(x)$ for random variable $x$,
+              $f(\mathbb{E}_{p(x)}[x]) \geq \mathbb{E}_{p(x)}[f(x)]$. This follows immediately from
+              the definition of a convex function. The plot to the right pictorially explains why
+              Jensen's Inequality holds; because $f(x)$ is convex, we know that any secant line
+              connecting two points on $f(x)$ must lie at or below the function.
+            </p>
+
+
+          </div>
+        </div>
+
+        <h2 id="estimators" style="clear: both; text-align:center;">Estimators</h2>
+        <div>
+          <h3 id="estimator_desiderata">Estimator Desiderata</h3>
+          <div>
+            <p>
+              Suppose $\hat{\theta}(x)$ is an estimator of a parameter $\theta$. We write $\hat{\theta}(x)$
+              to remind ourselves that the estimator is a function of data $x$ that
+              depends on the parameter $\theta$. Ideally, we want estimators to have the following
+              properties:
+
+              <ul>
+                <li>Consistency: As $N \rightarrow \infty$, $\hat{\theta} \rightarrow \theta$</li>
+                <li>Unbiasedness: $\mathbb{E}_{p(x|\theta)}[\hat{\theta}(x)] = \theta$</li>
+                <li>Minimal Variance: TODO</li>
+              </ul>
+            </p>
+          </div>
+
+          <h3 id="maximum_likelihood">Maximum Likelihood Estimator</h3>
+          <div>
+            <p>
+              For a random variable $x$ whose distribution depends on parameters $\theta$,
+              we define the likelihood as $p(x|\theta)$. Maximum likelihood estimation
+              says to choose the estimator $\theta^{MLE}$ that maximizes the likelihood:
+
+              $$\theta^{MLE} = \argmax_{\theta} p(x|\theta) = \argmax_{\theta} \log p(x|\theta)$$
+
+              where the second equality follows from the monotonicity of the log function
+              i.e. $z_1 < z_2 \Rightarrow \log(z_1) < \log(z_2)$.
+              If the random variable $x$ is a set of $N$ identically and independently distributed
+              random variables $x_i$ i.e. $x = \{x_i \}_{i=1}^N$, the maximum likelihood estimator can
+              be rewritten as:
+
+              $$ \theta^{MLE} = \argmax_{\theta} \log \prod_{i=1}^N p(x_i|\theta) =
+              \argmax_{\theta} \sum_{i=1}^N  \log p(x_i|\theta)$$
+            </p>
+          </div>
+
+          <h3>Maximum A Posterior Estimator (TODO)</h3>
+          <div>
+          </div>
+
+          <h3>Bayes Estimator (TODO)</h3>
+          <div>
+          </div>
+
+          <h3>Method of Moments Estimator (TODO)</h3>
+          <div>
+          </div>
+        </div>
+
+        <h2 id="exponential_family" style="clear: both; text-align:center;">Exponential Family Distributions</h2>
+        <div>
+          <h3 id="binomial">Binomial Distribution</h3>
+          <h3 id="normal_approx_of_binomial">Normal Approximation to the Binomial Distribution</h3>
+          <p>
+            The Binomial distribution $Bin(n,p)$ can be approximated via the Normal distribution
+            with mean $np$ and variance $np(1-p)$. One might guess this is by noting that the Binomial distribution
+            is equivalent to the sum of independently and identically distributed Bernoulli random variables
+            and that the <a href="https://en.wikipedia.org/wiki/Central_limit_theorem">Central Limit Theorem</a>
+            tells us that the sum of i.i.d. random variables typically tends towards a Normal distribution,
+            regardless of the distribution. But can we quantify what approximation error we should expect
+            for parameters $n$ and $p$?
+          </p>
+
+          <p>
+            Let random variable $x \sim Bin(n, p)$ and suppose that we approximate $x$ with
+            $x \approx N(\mu, \Sigma)$, where mean $\mu = np$ and variance $\Sigma = np(1-p)$.
+            For outcome $x=k$, we should expect the error $E(k)$:
+          </p>
+
+          <div>
+            $\begin{align}
+            E(k) &= P_{x \sim Bin}(x=k) - P_{x \sim N}(x=k)\\
+            &= {n \choose k} p^k (1-p)^{n-k} - |2 \pi \Sigma|^{-1/2} \exp [-\frac{1}{2}(x - \mu)^T \Sigma^{-1} (x - \mu)]
+            \end{align}$
+          </div>
+        </div>
+
+        <h2 id="sampling">Sampling</h2>
+        <div>
+          <p>
+            Sampling algorithms are processes for gathering samples from a probability distribution $p(x)$.
+            The need arises because some distributions are horribly difficult to analytically describe
+            but easy to sample from.
+          </p>
+
+          <h3 id="inverse_cdf_sampling">Inverse CDF Sampling</h3>
+          <div>
+            <p>
+              Inverse CDF Sampling gives us the ability to sample from any distribution $p(x)$ under
+              two necessary and sufficient conditions:
+            </p>
+
+            <ol>
+              <li>We can generate samples from $U(0,1)$</li>
+              <li>We can invert the cumulative distribution function (CDF) of $x$. I'll denote the
+                CDF of $x$ using $F_{p(x)}(c) \defeq \int_{-\infty}^{c} p(x) dx$.</li>
+            </ol>
+
+            <p>
+              There are two properties that make this
+              possible. First, a CDF is uniquely invertible, meaning that for a given value $u$
+              between 0 and 1, there is exactly 1 point $c$ in the distribution's support that solves
+              $u = \int_{-\infty}^c p(x) dx \defeq F_{p(x)}(c)$. Second, the CDF of any random
+              variable has a uniform distribution over $(0, 1)$.
+              One way to see this consists of computing the CDF of $F_{p(x)}(c)$ and checking whether
+              it is linear; this is a property of only Uniform distributions, so if this holds
+              (and I will show that it does), then the CDF of $x$. Define $u = F_{p(x)}(c)$,
+              with a corresponding CDF $F_{p(u)}(c')$.
+            </p>
+
+            <p style="text-align: center;">
+              $\begin{align*}
+              F_{p(u)}(c') &\defeq P(u \leq c') && \text{Definition of CDF of $u$}\\
+              &= P(F_{p(x)}(c) \leq c') && \text{Definition of $u$}\\
+              &= P(c \leq F_{p(x)}^{-1}(c')) && \text{Unique inverse of $F_{p(x)}(\cdot)$}\\
+              &= F_{p(x)}(F_{p(x)}^{-1}(c')) && \text{Definition of CDF of $x$}\\
+              &= c'
+              \end{align*}$
+            </p>
+
+            <p>
+              Intuitively, this says that the probability that $u$ is less than some value $c'$
+              is just the value $c'$ itself! Hence, we conclude the CDF of $u$ is linearly
+              growing and thus $u$ is distributed uniformly. Put together, these
+              properties give us the ability to easily sample from $p(x)$:
+              sample $u$ from $U(0, 1)$ and then solve $x = F_{p(x)}^{-1}(u)$.
+            </p>
+          </div>
+
+          <h3 id="rejection_sampling">Rejection Sampling</h3>
+          <div>
+            <p>
+              Rejection sampling gives us the ability to sample from any target density $f(x)$ as long
+              as we can write down the density $f(x)$ and as long as we can sample from another distribution,
+              the proposal distribution $g(x)$ with the same (or wider) support. The idea is
+              to generate samples from $g(x)$ and throw away samples that are
+              unlikely under the target distribution. Consequently, we'll need $g(x)$ to have a support at
+              least as wide as $f(x)$'s support  to ensure that all possible outcomes $x$ are sampled.
+              Formally, what should rejection sampling look like?
+            </p>
+
+            <p>
+              Suppose we generate samples independently from the proposal distribution $g(x)$
+              and keep only samples $\{ x_i \}_{i=1}^N$ that meet some criteria. What should those criteria
+              be? For now, let's suppose that each sample $x_i$ met a (possibly random) criteria $c_i$.
+              We can write the probability of a single sample as $p(x_i | c_i)$. One way to show that
+              this set of samples matches a set of samples from the target distribution $f(x)$ is to
+              show that the CDF of these samples match the CDF of the target distribution's CDF,
+              denoted $F_{x}(\cdot)$. Formally, for some scalar value $a$, we'd like to choose
+              criteria such that that:
+
+              $$ p(x_i \leq a | c_i) = F_{x_i}(a)$$
+            </p>
+
+            <p>
+              We start by rewriting the left-hand side using Bayes' rule:
+
+              $$ p(x_i \leq a | c_i) = \frac{p(c_i|x_i \leq a) P(x_i \leq a)}{p(c_i)} = F_{x_i}(a)$$
+
+              We know that we generated $x_i$ from $g(x)$, so $P(x_i \leq a)$ is just
+              the CDF of $g(x)$ i.e. $P(x_i \leq a) = G_{x_i}(a)$. This leaves us with:
+
+              $$ p(x_i \leq a | c_i) = \frac{p(c_i|x_i \leq a) G_{x_i}(a)}{p(c_i)} = F_{x_i}(a)$$
+
+              This leads us to realize that the following must hold for our choice of $c_i$:
+
+              $$ \frac{p(c_i|x_i \leq a)}{p(c_i)} = \frac{F_{x_i}(a)}{G_{x_i}(a)} $$
+            </p>
+
+            <p>
+              Let's consider the simplest solution possible: if $c \sim U(0, 1)$, then $p(c_i) = 1$.
+            </p>
+          </div>
+
+          <h3 id="importance_sampling">Importance Sampling (TODO)</h3>
+          <div>
+
+          </div>
+
+          <h3 id="gibbs_sampling">Gibbs Sampling (TODO)</h3>
+          <div>
+
+          </div>
+
+        </div>
+
+        <h2 id="variance_reduction">Variance Reduction Techniques</h2>
+        <div>
+
+          <p>
+            As mentioned <a href="#estimators">earlier</a>, a desirable property of estimators is that they have
+            small variance. There are many techniques for reducing the variance of an estimator.
+          </p>
+
+          <h3 id="control_variates">Control Variates</h3>
+          <div>
+            <p>
+              Using a control variate is one technique for reducing the variance of an estimator.
+              Suppose we want to estimate
+              the expected value of some scalar function $f(x)$ under the distribution $x \sim p(x)$:
+
+              $$\mathbb{E}_x[f(x)]$$
+
+              We can reduce the variance of an estimator by
+              introducing a new function, $h(x)$, called the control variate, and a
+              scalar variable $\beta$. Using both, we define a surrogate function:
+
+              $$\tilde{f}(x) \defeq f(x) - \beta (h(x) - \mathbb{E}_x[h(x)])$$
+
+              An estimator that estimates the expected value of this surrogate function is called
+              the control variate estimator.
+              If this looks like constrained optimization using Lagrange multipliers, that's
+              because this is exactly what a control variate does. First, let's demonstrate that
+              regardless of $\beta$ and $h(x)$, the new surrogate function $\tilde{f}(x)$ has the
+              same expectation as the original function $f(x)$. This is because we subtracted the expected
+              value of the control variate $h(x)$.
+
+              $$
+              \begin{align*}
+              \mathbb{E}_x[\tilde{f}(x)]
+              &= \mathbb{E}_x \Big[f(x) - \beta (h(x) - \mathbb{E}_x[h(x)]) \Big]\\
+              &= \mathbb{E}_x [f(x)] - \beta (\mathbb{E}_x[h(x)] - \mathbb{E}_x[h(x)])\\
+              &= \mathbb{E}_x[f(x)]
+              \end{align*}
+              $$
+
+              The advantage of the surrogate function is that if we correctly choose $h(x)$
+              and $\beta$, the variance of the surrogate
+              function will be lower than the variance for the original
+              function $f(x)$. Dropping $x$ for brevity, we see that
+
+              $$
+              \begin{align*}
+              \mathbb{V}[\tilde{f}(x)]
+              &= \mathbb{V} \Big[f - \beta (h - \mathbb{E}_x[h]) \Big]\\
+              &= \mathbb{E} [(f - \beta(h - \mathbb{E}[h]))^2] - \mathbb{E}[f - \beta(h - \mathbb{E}[h])]^2\\
+              &= \mathbb{E} [f^2 - 2 \beta f (h - \mathbb{E}[h]) + \beta^2 (h - \mathbb{E}[h])^2] - \mathbb{E}[f]^2\\
+              &= \mathbb{E} [f^2] - \mathbb{E} [f]^2 - 2 \beta \mathbb{E} [f (h - \mathbb{E}[h])] + \beta^2 \mathbb{V}[h]\\
+              &= \mathbb{V}[f] - 2 \beta \mathbb{E} [f (h - \mathbb{E}[h])] + \beta^2 \mathbb{V}[h]\\
+              &= \mathbb{V}[f] - 2 \beta \mathbb{Cov} [f, h] + \beta^2 \mathbb{V}[h]
+              \end{align*}
+              $$
+
+              where the last line follows because
+
+              $$\mathbb{E} [\mathbb{E}[f] (h - \mathbb{E}[h])] =
+              \mathbb{E}[f] (\mathbb{E}[h] - \mathbb{E}[h]) = 0$$
+
+              and thus
+
+              $$\mathbb{E} [f (h - \mathbb{E}[h])] = \mathbb{E} [(f - \mathbb{E}[f]) (h - \mathbb{E}[h])] = \mathbb{Cov} [f, h]$$.
+            </p>
+
+            <p>
+
+              Then, minimizing with respect to $\beta$ by differentiating and setting equal to 0,
+              we find that the optimal value $\beta*$ is
+
+              $$
+              0 = -2 \, \mathbb{Cov}[f, h] + 2 \beta^* \mathbb{V}[h] \Rightarrow \beta^* = \frac{\mathbb{Cov}[f, h]}{\mathbb{V}[h]}
+              = \mathbb{Corr}[f, h] \sqrt{\frac{\mathbb{V}[f]}{\mathbb{V}[h]}}
+              $$
+
+              Using our newfound value of $\beta^*$, we can compare the variance of the surrogate
+              function $\tilde{f}(x)$ to the variance of the original function $f(x)$:
+
+              $$
+              \begin{align*}
+              \mathbb{V}[\tilde{f}(x)]
+              &= \mathbb{V}[f] - 2 \beta^* \mathbb{Cov} [f, h] + \beta^{*2} \mathbb{V}[h]\\
+              &= \mathbb{V}[f] - 2 \frac{\mathbb{Cov}[f, h]}{\mathbb{V}[h]} \mathbb{Cov} [f, h] + \frac{\mathbb{Cov}[f, h]^2}{\mathbb{V}[h]^2} \mathbb{V}[h]\\
+              &= \mathbb{V}[f] - \frac{\mathbb{Cov}[f, h]^2}{\mathbb{V}[h]}
+              \end{align*}
+              $$
+
+              This shows something super important! Since the variance of any variable is positive, $\mathbb{V}[h]$
+              will be positive, meaning as long as $h(x)$ has positive covariance with $f(x)$, then the
+              variance of our control variate estimator will be less than the variance of the original
+              estimator. If we know $f(x)$ exactly, then we would expect the control variate estimator
+              to have zero variance, and indeed, we see that setting $h(x) = f(x)$ delivers 0 variance.
+            </p>
+
+            <p>
+              One common application of control variate estimators is in
+              <a href="reinforcement_learning.html#policy_based_rl">policy-based reinforcement learning</a>.
+              Both REINFORCE and the <a href="reinforcement_learning.html#policy_gradient_derivation">policy gradient theorem</a>
+              can be viewed as using control variate estimators for the agent's return.
+            </p>
+          </div>
+
+          <h3 id="antithetic_variates">Antithetic Variates</h3>
+          <div></div>
+
+          <h3 id="rao_blackwellization">Conditioning (Rao-Blackwellization)</h3>
+          <div></div>
+
+          <h3 id="moment_matching">Moment Matching & Reweighting</h3>
+          <div></div>
+        </div>
+
+        <h2 id="probabilistic_graphical_models">Probabilistic Graphical Models</h2>
+        <div>
+          <h3 id="latent_variable_models">Latent Variable Models</h3>
+          <div>
+            <p>
+              Per Jensen's inequality
+            </p>
+
+            <p>
+              $\begin{align}
+              l(\theta)
+              \end{align}$
+            </p>
+          </div>
+
+          <h3 id="expectation_maximization">Expectation Maximization</h3>
+          <div>
+            <p>
+              Expectation Maximization (EM) is a principled iterative algorithm for simultaneously
+              inferring both latent variables and parameters for their distributions.
+              For concreteness, suppose we have observable random variable $x$, latent variable
+              $y$ and parameters $\theta = \{\theta_x, \theta_y\}$ for the distributions $p(y| \theta_y)$
+              and $p(x|y, \theta_x)$. In such a setting, inference is difficult because we have
+              two unknown but related quantities: the unknown values of the latent variables (i.e. $y$),
+              and the unknown parameters for the latent and observable variables' distributions (i.e.
+              $\theta$. EM makes inferring both unknowns possible by iteratively repeating
+              by two steps. First, we pretend we had observed the latent variables and we then
+              infer values of the distributions' parameters $\theta$. Second, we pretend
+              we have the parameters for distributions and we then infer values of the latent variables $y$.
+            </p>
+
+            <p>
+              One straightforward way to understand EM is by viewing it as progressively
+              tightening a lower bound on the (log) likelihood. Per <a href="#jensens_inequality">
+              Jensen's Inequality</a>, any distribution over the latent variables $q(y)$ creates
+              a lower bound on the log likelihood:
+            </p>
+
+            <p>
+              $\begin{align}
+              l(\theta) \defeq \log p(x|\theta)
+              &= \log \int_y p(x, y| \theta) dy && \text{Marginalization over $y$}\\
+              &= \log \int_y \frac{p(x, y| \theta)}{q(y)} q(y) dy && 1 = \frac{q(y)}{q(y)}\\
+              &= \log \mathbb{E}_{q(y)}[\frac{p(x, y| \theta)}{q(y)}] && \text{Defn. of expectation}\\
+              &\geq \mathbb{E}_{q(y)}[\log \frac{p(x, y| \theta)}{q(y)}] && \text{Jensen's Inequality}
+              \end{align}$
+            </p>
+
+            <p>
+              We call this lower bound $F(q, \theta) \defeq \mathbb{E}_{q(y)}[\log \frac{p(x, y| \theta)}{q(y)}]$
+              the <b>free energy</b>. It has several equivalent forms that will reveal to us
+              the two EM steps that, when iteratively applied, monotonically increase the free energy,
+              and thus monotonically increase the log likelihood.
+            </p>
+
+            <p>
+              $\begin{align}
+              F(q, \theta) &\defeq \mathbb{E}_{q(y)}[\log \frac{p(x, y| \theta)}{q(y)}]\\
+              &= \mathbb{E}_{q(y)}[\log p(x, y| \theta)] - H[q] && \text{where }
+              H[q] = \mathbb{E}_{q(y)}[\log q(y)] = \text{entropy of $q(y)$} \\
+              &= l(\theta) - KL[q(y)||p(y|x, \theta)] &&
+              \text{where } KL[q(y)||p(y|x, \theta)] = -\mathbb{E}_{q(y)}[\log \frac{p(y|x, \theta)}{q(y)}]
+              \end{align}$
+            </p>
+
+            <p>
+              Why are alternative forms of the free energy useful? The second tells us that if we want
+              to maximize the free energy with respect to $\theta$, we can do so independently of
+              $q(y)$: generate samples from $q(y)$ and then choose $\theta^* = \argmax_{\theta}
+              \log p(x, y| \theta)$, since $H[q]$ is constant with respect to $\theta$. The third
+              tells us that if we want to maximize the free energy with respect to $q(y)$, we can
+              do so independently of $\theta$: since $\theta$ is fixed, setting $q(y) = p(y|x, \theta)$
+              raises the free energy exactly to the likelihood. We know that this increases the
+              log likelihood because every KL divergence is non-negative. Using $(k)$ to indicate the
+              $kth$ step, we now have the EM algorithm:
+            </p>
+
+
+            <ol>
+              <li>
+                Holding parameters $\theta$ fixed, optimize $F(q, \theta)$ with respect
+                to $q$:<br><br>
+                $\begin{align}q^{(k)}(y) = \argmax_{q(y)} F(q(y), \theta^{(k-1)}) \Rightarrow
+                q^{(k)}(y) = p(y|x, \theta^{(k-1)})\end{align}$.
+              </li>
+              <li>
+                Holding $q(y)$ fixed, optimize $F(q, \theta)$ with respect to $\theta$:<br><br>
+                $\begin{align}\theta^{(k)} = \argmax_{\theta} F(q^{(k)}(y), \theta) =
+                \argmax_{\theta} \mathbb{E}_{q^{(k)}(x)}[\log p(x, y| \theta)]\end{align}$
+              </li>
+            </ol>
+
+            <p>
+              There are two questions we might immediately ask. First, why is this pair of steps
+              guaranteed to monotonically increase the log likelihood? Second, is this pair of
+              steps guaranteed to converge?
+            </p>
+          </div>
+
+          <h3 id="d_separation">Dependence-Separation</h3>
+          <p>
+            One advantage of a PGM is that it allows us to quickly determine
+            which random variables are conditionally independent of other random
+            variables (perhaps conditioned on some third set of random variables).
+            We can generally express this by considering any three
+            non-overlapping, possibly-empty sets of nodes A, B and C in a given
+            PGM, and asking whether A and B are conditionally independent given
+            C. If they are, we say that A and B are d-separated given C, where
+            the d stands for "dependence". I'm not sure why this phrasing was
+            chosen; if we already have independent and dependent, it seems
+            confusing to call two independent variables "dependence-separated."
+          </p>
+
+          <p>
+
+          </p>
+
+          <h3 id="markov_blanket">Markov Blanket</h3>
+          <p>
+            Sometimes called a Markov Boundary, a Markov Blanket is the set of
+            random variables
+          </p>
+
+          <div style="text-align: center;">
+            $\begin{align}
+            P(x_i | x_{\{j \neq i \} } &= \frac{P(x_1, ..., x_D)}{\int P(x_1, ..., x_D) dx_i}\\
+            &= \frac{\prod_k p(x_k| Pa(x_k))}{\int p(x_k| Pa(x_k))}
+            \end{align}$
+          </div>
+        </div>
+
+        <h2>Notes</h2>
+        <p>
+          I appreciate any and all feedback. If I've made an error or if you have a suggestion, you
+            can <a href="mailto:rylanschaeffer@gmail.com">email me</a>.
+        </p>
+      </section>
+    </div>
+
+    <!--FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <h3 id="footer_title">Rylan Schaeffer</h3>
+        <p>
+          I appreciate any and all feedback. If you have suggestions or feedback or want to get in touch,
+          ping me at <a href="mailto:rylanschaeffer@gmail.com">rylanschaeffer@gmail.com</a>.
+
+          If you feel like helping me survive grad school poverty or appreciate anything on this
+          website, please free free to donate to me at <a href="https://www.paypal.com/paypalme2/rylanschaeffer">
+          https://www.paypal.com/paypalme2/rylanschaeffer</a>.
+        </p>
+      </footer>
+    </div>
+
+    
+  </body>
+</html>

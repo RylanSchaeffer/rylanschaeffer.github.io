@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width,maximum-scale=2">
+    <meta name="description" content="Rylan Schaeffer">
+
+    <link rel="stylesheet" type="text/css" media="all" href="../../stylesheets/stylesheet.css">
+
+    <title></title>
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-94033137-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({ TeX: { equationNumbers: {autoNumber: "AMS"} } });
+    </script>
+
+    <script type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+
+    <div style="display: none">
+      $\DeclareMathOperator*{\argmax}{argmax}$
+      $\DeclareMathOperator{\defeq}{\stackrel{def}{=}}$
+    </div>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+      <header class="inner">
+        <h1 id="header_title">Rylan Schaeffer > Learning > Numerical Methods</h1>
+        <nav>
+          <div>
+            <a href="../../index.html">Home</a> |
+            <a href="../learning.html">Learning</a>
+          </div>
+        </nav>
+      </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+
+        <div id="toc_container">
+          <h1 class="toc_title">Contents</h1>
+          <ul class="table-of-content" id="markdown-toc">
+            <li><a href="#error_analysis">Error Analysis</a></li>
+            <li><a href="#condition_number">Condition Number</a></li>
+            <li><a href="#rate_of_convergence">Rate of Convergence</a></li>
+            <li><a href="#data_fitting">Data Fitting</a>
+              <ul>
+                <li><a href="#vandermonde_interpolation">Vandermonde Interpolation</a></li>
+                <li><a href="#waring_interpolation">Waring (Lagrange) Interpolation</a></li>
+              </ul>
+            </li>
+
+          </ul>
+        </div>
+
+        <h2 id="error_analysis">Error Analysis</h2>
+        <div>
+
+        <p>
+          Error analysis addresses identifying and quantifying causes of error in
+          scientific computing and numerical analysis. Some examples include truncation
+          (i.e. terminating a process early), discretization (i.e. approximating continuous values
+          in a discrete grid), and rounding (i.e. losing precision due to computer float point limitations).
+          For a concrete example involving all three sources of error, consider
+          estimating the derivative of some function $f(x)$ using finite differences:
+        </p>
+
+        <p>
+          $
+          \begin{align}
+          f'(x) \defeq \lim_{h \rightarrow 0} \frac{f(x+h) - f(x)}{h} \approx \hat{f'}(x, h) \defeq \frac{f(x+h) - f(x)}{h}
+          &
+          \end{align}
+          $
+        </p>
+
+        <p>
+          This introduces the first source of error: discretization. Irrespective of how accurately
+          we can represent numbers, we'll need to choose a specific value for h. The discretization
+          error is therefore $|f'(x) - \hat{f'}(x, h)|$. The next source of error, truncation,
+          arises when we expand $f(x+h)$ using a Taylor series expansion. However, this infinite
+          serie's terms decline in magnitude due to $n!$ in the denominator, so we might decide to
+          approximate $f(x+h)$ by truncating the series after the Nth term:
+        </p>
+
+        <p>
+          $
+          \begin{align}
+          f(x+h) = \sum_{n=0}^{\infty} \frac{f^{(n)}(x)}{n!} h^n \approx \hat{f}(x + h, N) \defeq \sum_{n=0}^{N}
+          \frac{f^{(n)}(x)}{n!} h^n
+          \end{align}
+          $
+        </p>
+
+        <p>
+          The truncation error is therefore $|f(x+h) - \hat{f}(x+h, N)|$. The final source of
+          error, rounding, arises due to limitations in how precisely computers can represent the
+          necessary values $h; f(x); \hat{f}(x + h, N); \hat{f'}(x, h)$.
+        </p>
+
+        </div>
+
+        <h2 id="condition_number">Condition Number</h2>
+        <div>
+        <p>
+          One property of a function we might be interested in is how sensitive the output is
+          for small input perturbations. There are two common ways to formalize this: the
+          absolute condition number and the relative condition number. The relative condition
+          number $\kappa$ captures whether small input perturbations inflate or attenuate after
+          passing through the function.
+        </p>
+
+        <p>
+          $
+          \begin{align}
+          \kappa \defeq \lim_{\epsilon \rightarrow 0} \sup_{\lVert \Delta x \rVert \leq \epsilon}
+          \frac{\lVert \Delta f(x) \rVert / \lVert f(x) \rVert}{\lVert \Delta x \rVert / \lVert x \rVert}
+          \end{align}
+          $
+        </p>
+
+        <p>
+          We say that a function $f(x)$ with $\kappa > 1$ is "ill-conditioned" as small
+          input perturbations will be amplified, and inversely, a function with
+          $\kappa < 1$ is "well conditioned".
+        </p>
+
+        <p>
+          For a concrete example, consider calculating the relative condition number for
+          a generic linear system: $f(x) = A x$, where $A$ is some $n \times n$ matrix
+          and $x \in \mathbb{R}^n$. The condition number is therefore:
+        </p>
+
+        <p>
+          $
+          \begin{align*}
+          \kappa
+          \defeq \frac{\lVert \Delta f(x) \rVert / \lVert f(x) \rVert}{\lVert \Delta x \rVert / \lVert x \rVert}
+          = \frac{\lVert A (x + \Delta x) - A x \rVert / \lVert A x \rVert}{\lVert \Delta x \rVert / \lVert x \rVert}
+          = \frac{\lVert A \Delta x \rVert  \lVert x \rVert}{\lVert \Delta x \rVert \lVert A x \rVert}
+          \end{align*}
+          $
+        </p>
+
+        <p>
+<!--          = \leq \lVert A \rVert \frac{\lVert x \rVert}{\lVert A x \rVert}-->
+        </p>
+        </div>
+
+        <h2 id="rate_of_convergence">Rate of convergence</h2>
+        <div>
+        <p>
+          For numerical methods requiring multiple steps, one question is how
+          quickly the sequence of output numbers converges to the correct number. In practice, the
+          rate of convergence is critical for saving real-world time. Convergence might depend
+          on the number of iterations of an algorithm, on the number of steps in a series that
+          aren't cut off, and on a measure of discretization.
+        </p>
+        </div>
+
+        <h2 id="data_fitting">Data Fitting</h2>
+        <div>
+          <p>
+            Two common approaches to fitting a function to a finite sample of data are interpolation,
+            where a function is chosen to pass exactly through the sampled points, and optimization,
+            where a function is chosen based on minimizing or maximizing some criteria.
+          </p>
+
+          <div>
+            <h3 id="vandermonde_interpolation">Vandermonde Interpolation</h3>
+            <p>
+              Vandermonde Interpolation fits a function to a set of 2D points
+              $\{(x_i, y_i)\}_{i=1}^{n}$ by using the points to construct a monomial basis (i.e.
+              increasing powers of $x^0, x^1, x^2, ...$) and then attempting to find coefficients
+              for an $n-1$ degree polynomial passing through all points. To find the "right"
+              coefficients, Vandermonde interpolation solves a system of linear equations of
+              $V b = y$:
+            </p>
+
+            <p>
+              $
+              \begin{align}
+              \begin{bmatrix} 1 & x_1 & x_1^2 &... & x_1^{n-1}\\ \vdots & & \vdots & & \vdots \\
+              1 & x_n & x_n^2 & ... & x_n^{n-1}\\ \end{bmatrix}
+              \begin{bmatrix} b_0 \\ b_1 \\
+              \vdots \\ b_{n-1} \end{bmatrix}
+              &= \begin{bmatrix} y_1 \\ y_2 \\ \vdots
+              \\ y_n \end{bmatrix}
+              \end{align}
+              $
+            </p>
+
+            <p>
+              We can show that if the $n$ points are unique, then $Vb = y$ has a unique solution
+              for $b$. We'll first show that having unique points guarantees at least
+              one solution, and then show that having unique points guarantees only that solution.
+              One way is to show that $Vb = y$ has a particular solution is to show that $V$ is
+              invertible, which can be accomplished by showing that the determinant is non-zero.
+              This is made easy by the fact that the Vandermonde matrix $V$ has a nice formula for its determinant:
+              $\det(V) = \prod_{1 \leq i < j \leq n} (x_j - x_i)$. Because the $n$
+              points are unique, and because $i \neq j$, $x_j - x_i \neq 0$, and since the product of non-zero
+              numbers can never be zero, the determinant is non-zero and thus V is invertible.
+            </p>
+
+            <p>
+              But what about the null solution? We know that the general solution to a system of
+              linear equations is the sum of the particular solution of $Vb_p = y$ and the null solution
+              of $Vb_n = 0$, since $Vb_p + Vb_n = y + 0 = y$ and thus $V(b_p + b_n) = y$. It turns
+              out that the only null solution is $b=0$. One way to see this is to consider that for
+              $Vb = 0$, we have $n$ equations telling us the $n$ unique roots of the polynomial $b_0 + b_1 x^1 +
+              ... + b_{n-1} x^{n-1}$. But this polynomial is degree $n-1$, and the fundamental theorem
+              of algebra tells us that a polynomial of degree $n-1$ can have at most $n-1$ roots. So
+              the only way for a polynomial of degree $n-1$ to have $n$ roots is if it's the zero
+              polynomial i.e. $b_0 = ... = b_{n-1} = 0$. In conclusion, the null solution is $b_n = 0$,
+              leaving us with only one solution, the particular solution, which defines exactly one
+              polynomial.
+            </p>
+
+            <p>
+              One well-known problem with Vandermonde interpolation is that the monomial basis
+              it uses causes columns to become linearly dependent as n grows TODO. Another problem
+              is that inverting the dense $V$ matrix takes $O(n^3)$ time.
+            </p>
+
+          </div>
+
+          <div>
+            <h3 id="waring_interpolation">Waring (Lagrange) Interpolation</h3>
+
+            <p>
+              To ameliorate the problems of <a href="#vandermonde_interpolation">Vandermonde
+              Interpolation</a>, Waring, Euler and later Lagrange discovered an improved
+              method that is today called Lagrange Interpolation. The approach starts
+              by observing that interpolation is easy if I have a polynomial that is 1 at $x_i$
+              and 0 at all other $x_j$; if I had such a polynomial, then I can guarantee that
+              the polynomial passes exactly through $(x_i, y_i)$ without impacting any other
+              point, just by multiplying the polynomial by $y_i$. Consequently, the
+              overall approach is to construct one indicator polynomial $P_i(x)$ per data point,
+              multiply each polynomial by $y_i$ and then linearly add all the polynomials.
+            </p>
+
+            <p>
+              The first question is how can I construct a polynomial that is 1 at $x_i$ and 0
+              at all other $x_{j \neq i}$?
+            </p>
+
+            <p>
+              $
+              \begin{align}
+              L_i(x_j) =
+              \begin{cases}
+              1 & x_j = x_i\\
+              0 & x_j \neq x_i
+              \end{cases}
+              \end{align}
+              $
+            </p>
+
+            <p>
+              I can immediately ensure that $L_i(x)$ is zero at $x_j \neq x_i$ by starting with a
+              polynomial that has roots at each $x_j \neq x_i$: $(x-x_1)(x-x_2)...(x-x_n)$.
+              To ensure that this polynomial is equal to 1 at $x_i$, I need to find a variable $v$
+              such that at $x_i$, $1 = v (x_i-x_1)(x_i-x_2)...(x_i-x_n)$. That's a pretty easy
+              equation to solve! This means that for each point $(x_i, y_i)$, we have a polynomial
+              that is 1 at $x_i$ and 0 at all other $x_j$.
+            </p>
+
+            <p>
+              $
+              \begin{align}
+              L_i(x)
+              &= \frac{(x-x_1)(x-x_2)...(x-x_n)}{(x_i-x_1)(x_i-x_2)...(x_i-x_n)}\\
+              &= \prod_{j=0\\j \neq i}^N \frac{x - x_j}{x_i - x_j}
+              \end{align}
+              $
+            </p>
+
+            <p>
+              To create our final polynomial, we multiply each polynomial by the corresponding $y_i$
+              and sum together. The final formula isn't particularly intuitive, but now you understand
+              that each constituent polynomial is 1 at exactly one $x_i$, by construction, and then
+              we just scale that 1 up to $y_i$.
+            </p>
+
+            <p>
+              $
+              \begin{align}
+              P(x)
+              &= \sum_{i=0}^{n} y_i L_i(x) \\
+              &= \sum_{i=0}^{n} y_i \prod_{j=0\\j \neq i}^N \frac{x - x_j}{x_i - x_j}
+              \end{align}
+              $
+            </p>
+
+          </div>
+
+        </div>
+
+
+
+      </section>
+    </div>
+
+    <!--FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <h3 id="footer_title">Rylan Schaeffer</h3>
+        <p>
+          I appreciate any and all feedback. If you have suggestions or feedback or want to get in touch,
+          ping me at <a href="mailto:rylanschaeffer@gmail.com">rylanschaeffer@gmail.com</a>.
+
+          If you feel like helping me survive grad school poverty or appreciate anything on this
+          website, please free free to donate to me at <a href="https://www.paypal.com/paypalme2/rylanschaeffer">
+          https://www.paypal.com/paypalme2/rylanschaeffer</a>.
+        </p>
+      </footer>
+    </div>
+
+    
+  </body>
+</html>

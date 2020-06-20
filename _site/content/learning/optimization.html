@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width,maximum-scale=2">
+    <meta name="description" content="Rylan Schaeffer">
+
+    <link rel="stylesheet" type="text/css" media="all" href="../../stylesheets/stylesheet.css">
+
+    <title></title>
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-94033137-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+    </script>
+
+    <script type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({ TeX: { equationNumbers: {autoNumber: "AMS"} } });
+    </script>
+
+    <div style="display: none">
+      $\DeclareMathOperator*{\argmax}{argmax}$
+      $\DeclareMathOperator*{\argmin}{argmin}$
+      $\DeclareMathOperator*{\Tr}{Tr}$
+      $\DeclareMathOperator{\defeq}{\stackrel{def}{=}}$
+    </div>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+      <header class="inner">
+        <h1 id="header_title">Rylan Schaeffer > Learning > Optimization</h1>
+        <nav>
+          <div>
+            <a href="../../index.html">Home</a> |
+            <a href="../learning.html">Learning</a>
+          </div>
+        </nav>
+      </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+
+        <div id="toc_container">
+          <h1 class="toc_title">Contents</h1>
+          <ul class="table-of-content" id="markdown-toc">
+            <li><a href="#first_order_gradient">First-Order Gradient-Based Optimization</a> </li>
+            <li><a href="#second_order_gradient">Second-Order Gradient-Based Optimization</a>
+              <ul>
+                <li><a href="#newtons_method">Newton's Method</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+
+        <h2 id="first_order_gradient">First-Order Gradient-Based Optimization</h2>
+        <div>
+        </div>
+
+        <h2 id="second_order_gradient">Second-Order Gradient-Based Optimization</h2>
+        <div>
+          <h3 id="newtons_method">Newton's Method</h3>
+          <div>
+            <h4>Newton's Method: Idea</h4>
+            <div>
+              <p>
+                Suppose we wish to minimize a scalar-valued function $f(x)$
+                where $x \in \mathbb{R}^N$ using gradient descent. We want to identify
+                what perturbation $\delta$ to $x$ minimizes $f(x)$. We phrase this question
+                as an optimization problem:
+
+                $$\argmin_{\delta} f(x + \delta)$$
+
+                If we perform a second-order Taylor series expansion about the current point,
+                we see that:
+
+                $$f(x + \delta) \approx f(x) + \nabla_x f(x)^T \delta + \frac{1}{2} \delta^T
+                H(x) \delta + O(\delta^3)$$
+
+                where $H(x)_{ij} = \frac{\partial^2 f(x)}{\partial x_i \partial x_j}$
+                is the Hessian. To find the value of $\delta$ that minimizes $f(x^* + \delta)$,
+                we differentiate and set equal to 0:
+
+                $$ 0 = \nabla_{\delta} f(x^* + \delta) \Rightarrow
+                0 = 0 + \nabla_x f(x) + H(x) \delta$$
+
+                Solving for $\delta$ yields:
+
+                $$\delta = - H(x)^{-1} \nabla_x f(x)$$
+
+                Thus, Newton's Method takes the following step:
+
+                $$x_{k+1} = x_k - H(x)^{-1} \nabla_x f(x)$$
+              </p>
+            </div>
+
+            <h4>Newton's Method: Attracted to Saddle Points</h4>
+            <div>
+              <p>
+                One interesting property of Newton's Method is that it is attracted to saddle
+                points, a point made by <a href="papers/Dauphin_Bengio_2014_Identify_Attack_Saddle_Point_High_Dim_Non_Convex_Optim.pdf">
+                Dauphin et al. 2014</a>. To see why this is, let's explore how Newton's Method
+                behaves around fixed points. Starting with a second-order Taylor Series expansion
+                around a fixed point $x^*$:
+
+                $$f(x^* + \delta) =  $$
+
+                we write the update in the eigenbasis
+                of the Hessian. Let $\lambda_i, e_i$ be the $i$-th eigenvalue, eigenvector pair of
+                the Hessian $H \defeq \nabla_x^2 f(x)$:
+
+
+              </p>
+            </div>
+
+            <h4>Newton's Method: Convergence Analysis</h4>
+            <div>
+
+            </div>
+          </div>
+
+        </div>
+
+        <p>
+
+        </p>
+
+      </section>
+    </div>
+
+    <!--FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <h3 id="footer_title">Rylan Schaeffer</h3>
+        <p>
+          I appreciate any and all feedback. If you have suggestions or feedback or want to get in touch,
+          ping me at <a href="mailto:rylanschaeffer@gmail.com">rylanschaeffer@gmail.com</a>.
+
+          If you feel like helping me survive grad school poverty or appreciate anything on this
+          website, please free free to donate to me at <a href="https://www.paypal.com/paypalme2/rylanschaeffer">
+          https://www.paypal.com/paypalme2/rylanschaeffer</a>.
+        </p>
+      </footer>
+    </div>
+
+    
+  </body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width,maximum-scale=2">
+    <meta name="description" content="Rylan Schaeffer">
+
+    <link rel="stylesheet" type="text/css" media="all" href="../../../stylesheets/stylesheet.css">
+
+    <title>Variational Autoencoders</title>
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-94033137-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+    </script>
+
+    <script type="text/javascript"
+      src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({ TeX: { equationNumbers: {autoNumber: "AMS"} } });
+    </script>
+
+    $\DeclareMathOperator*{\argmax}{argmax}$
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+      <header class="inner">
+        <h1 id="header_title">(WORK IN PROGRESS) Explanation of:<br>Variational Autoencoders</h1>
+        <h3 id="project_tagline"><a href="https://arxiv.org/abs/1312.6114">Kingma and Welling 2013.</a></h3>
+          <section id="quick_links">
+            <a class="back" href="../../research.html"></a>
+          </section>
+      </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <p>
+          I've found that the overwhelming majority of online information on artificial intelligence research falls into one of two categories: the first is aimed at explaining advances to lay audiences, and the second is aimed at explaining advances to other researchers. I haven't found a good resource for people with a technical background who are unfamiliar with the more advanced concepts and are looking for someone to fill them in. Frequently, papers will leverage common tools (e.g. recurrent neural networks, generative adversarial networks), and in order to clearly communicate those papers, I need to first explain those tools. In this post, I explain the titular tool - <a href="https://arxiv.org/abs/1312.6114">Variational Autoencoders</a> (VAEs).
+        </p><br>
+
+        <p>
+          Understanding this paper would have been significantly harder without <a href="http://www.carldoersch.com/">Carl Doersch's</a> <a href="https://arxiv.org/abs/1606.05908">tutorial</a>. My goal is to provide an abridged version of his tutorial, but I expect this post will end up being used just for my own reference.
+        </p><br>
+
+        <h2>Motivation</h2>
+        <p>
+          Kingma and Welling's paper opens with the following question: "How can we perform efficient approximate inference and learning with directed probabilistic models whose continuous latent variables and/or parameters have intractable posterior distributions?" At first glance, the question seems technically challenging, but it's worth taking time to understand.
+        </p>
+
+        <p>
+          Let's start by understanding "directed probabilistic models." When we observe data, there is some underlying process that generated the data. We'd like to know more about this process, perhaps to understand its properties or to generate more data. We can learn about this process , and so we'd like to approximate the process. For simplicity, we'll assume that the process can be modeled using some parametric family of probability distributions (e.g. a normal distribution). More specifically,  
+        </p>
+
+        <p>
+          If we assume that there is some parameter $\theta$ that determines the distribution $p_\theta(\mathbf{Z})$ over the hidden variables $\mathbf{z}$ - this is the horizontal arrow from $\theta$ to $\mathbf{Z}$. Then, together, the hidden variables $\mathbf{Z}$ and the parameter $\theta$ together determine the distribution $p_\theta(\mathbf{X} | \mathbf{Z})$ over the data $\mathbf{x}$
+        </p>
+
+        <img class="photo" src="vae_setting_1.png" width = "device-width" maximum-scale=2>
+
+        <h2>Background</h2>
+        <h3>Autoencoders</h3>
+        <p>
+          Let's start with an explanation of autoencoders. An autoencoder consists of two neural networks that work together to try to learn a compressed representation of the observed data. The first, called the <b>encoder</b>, attempts to find a lower dimensional representation of a data point, and the second, called the <b>decoder</b>, attempts to reconstruct the input data point given only the lower dimensional representation (hence the name autoencoder). Using a visual I stole from <a href="http://multithreaded.stitchfix.com/blog/2015/09/17/deep-style/">MultiThreaded</a>, an autoencoder looks like this:
+        </p><br>
+
+        <img class="photo" src="simple_vae.png" width = "device-width" maximum-scale=2>
+
+        <h2>Intuition</h2>
+        <p>
+          VAEs are a type of autoencoder
+        </p><br>
+
+
+        <img class="photo" src="vae_setting_2.png" width = "device-width" maximum-scale=2>
+
+        <h2>Mathematics</h2>
+
+
+        <p>
+          
+
+          If it helps, break it down. We use the data $x$ and the approximation function $q_\phi(z | x)$ to determine which values of the latent variables $z$ most likely generated $x$. Then, we use the conditional probability $p_\theta(x|z)$
+        </p><br>
+        
+        <h2>Experiments and Results</h2>
+
+        <h2>Discussion</h2>
+
+        <h2>Summary</h2>
+
+        <h2>Notes</h2>
+        <p>
+          I appreciate any and all feedback. If I've made an error or if you have a suggestion, you can <a href="mailto:ryschaeffer@ucdavis.edu">email me</a> or comment on the <a href="">Reddit</a> or <a href="">HackerNews</a> threads.
+        </p>
+
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        
+        <p class="copyright">Slate theme maintained by <a href="https://github.com/pages-themes">pages-themes</a></p>
+        
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+  </body>
+</html>
