@@ -1,4 +1,29 @@
-# Kernels
+# Kernel Methods
+
+At a high level, kernel methods in machine learning approach learning by 
+considering a dataset $$\{x\}$$ not in the original space (e.g. words, images,
+sounds), but in a (possibly infinite) feature space where two datums's features
+are related by their inner product. This means kernel methods are generally
+applicable when the data is rotationally invariant.
+
+## Hilbert Spaces
+
+### Inner Product Spaces
+
+The starting concept for kernel methods is __inner product spaces__. An inner
+product space is a vector space $$X$$ equipped with an inner product. An inner product
+is a function $$\langle \cdot, \cdot \rangle: X \rightarrow \mathbb{R}$$ that meets
+three properties:
+
+1. Linear: $$\forall x_1, x_2 \in X$$ and $$\forall \alpha_1, \alpha_2 \in \mathbb{R}$$,
+
+$$\langle \alpha_1 x_1, \alpha $$
+
+2. 
+
+3. 
+
+A __Hilbert space__ is a 
 
 ## PSD Kernels and Matrices
 
@@ -31,9 +56,7 @@ all vectors $$c$$, not just the eigenvectors.
 
 </details>
 
- 
-
-- 
+- If k is PSD kernel
 
 
 
