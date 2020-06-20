@@ -66,8 +66,7 @@
 <script>
 i = Math.floor(Math.random()*quotations.length);
 p = document.getElementById("quotation");
-console.log(p);
-p.InnerHTML = quotations[i];
+p.innerHTML = quotations[i];
 </script>
 
 {% if site.google_analytics %}
