@@ -80,5 +80,8 @@ const quotations = [
     "Then let me start again, I cried\n" +
     "Please let me start again\n" +
     "I want a face that's fair this time\n" +
-    "I want a spirit that is calm"
+    "I want a spirit that is calm",
+
+    "\"Lonely? You have yourself. Your infinite selves. " +
+    "It's a nonstop party where all the guests are the only person we like.\""
 ];
