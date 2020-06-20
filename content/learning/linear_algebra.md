@@ -20,5 +20,7 @@ $$\langle a x + by, z \rangle = a \langle x , z \rangle
 
 $$\langle x, x \rangle \geq 0$$ and $$\langle x, x \rangle = 0 \Leftrightarrow x = 0$$
 
+## Hilbert Spaces
 
+Inner product spaces containing limits of Cauchy Sequences
 

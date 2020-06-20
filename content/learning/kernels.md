@@ -6,24 +6,23 @@ sounds), but in a (possibly infinite) feature space where two datums's features
 are related by their inner product. This means kernel methods are generally
 applicable when the data is rotationally invariant.
 
-## Hilbert Spaces
 
-### Inner Product Spaces
+## Background
 
-The starting concept for kernel methods is __inner product spaces__. An inner
-product space is a vector space $$X$$ equipped with an inner product. An inner product
-is a function $$\langle \cdot, \cdot \rangle: X \rightarrow \mathbb{R}$$ that meets
-three properties:
+Two important prerequisites to kernels are
+[inner product spaces](/content/learning/linear_algebra.md#inner-product-spaces) and
+[Hilbert spaces](/content/learning/linear_algebra.md#hilbert-spaces).
 
-1. Linear: $$\forall x_1, x_2 \in X$$ and $$\forall \alpha_1, \alpha_2 \in \mathbb{R}$$,
+## Kernels
 
-$$\langle \alpha_1 x_1, \alpha $$
+Simply, a kernel is a dot product between features of objects. More formally,
+let $$X$$ be a non-empty set. A function $$k: X \times X \rightarrow \mathbb{R}$$ is 
+a kernel if there exists an $$\mathbb{R}$$-Hibert space $$H$$ and a map $$\Phi: X
+\rightarrow H$$ such that $$\forall x, x' \in X$$,
 
-2. 
+$$ k(x, x') = \langle \Phi(x), \Phi(x') \rangle $$
 
-3. 
-
-A __Hilbert space__ is a 
+ 
 
 ## PSD Kernels and Matrices
 
