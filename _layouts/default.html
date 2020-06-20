@@ -20,8 +20,6 @@
         <img src="{{site.logo | relative_url}}" alt="Logo" />
         {% endif %}
 
-        <p>{{ site.description | default: site.github.project_tagline }}</p>
-
         {% if site.github.is_project_page %}
         <p class="view"><a href="{{ site.github.repository_url }}">View the Project on GitHub <small>{{ site.github.repository_nwo }}</small></a></p>
         {% endif %}
@@ -41,6 +39,8 @@
         <a href="/content/thoughts.html">Thoughts</a><br>
         <a href="/content/talks.html">Talks</a><br>
         <a href="/content/teaching.html">Teaching</a>
+
+        <p>{{ site.description | default: site.github.project_tagline }}</p>
     </header>
     <section>
 
