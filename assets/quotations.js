@@ -75,7 +75,7 @@ const quotations = [
     "Marry someone who makes you laugh because life is hard.",
 
     "Because everything here must still be accomplished. It depends only on him to " +
-    "participate in this privileged act of creation."
+    "participate in this privileged act of creation.",
 
     "Then let me start again, I cried\n" +
     "Please let me start again\n" +
