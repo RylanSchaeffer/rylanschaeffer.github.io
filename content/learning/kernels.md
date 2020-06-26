@@ -115,3 +115,8 @@ all vectors $$c$$, not just the eigenvectors.
 
 - If k is PSD kernel
 
+## Reproducing Kernel Hilbert Spaces
+
+In order to approach Reproducing Kernel Hilbert Spaces (RKHS), we need to slightly
+widen our understanding of what a feature of a datum $$\Phi(x)$$ means.
+We need to think of features as interchangeable with functions.
