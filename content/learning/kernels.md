@@ -117,6 +117,36 @@ all vectors $$c$$, not just the eigenvectors.
 
 ## Reproducing Kernel Hilbert Spaces
 
+Positive definite (PD) kernels are also called __reproducing kernels__ and we're about to
+understand why. The key idea is that any PD kernel can be viewed as a dot product in some
+space.
+
+Suppose we're given a kernel $$k(\cdot, cdot)$$. How can we see that this kernel defines a
+dot product in some space? We need three ingredients: a vector/function space, a function
+$$\langle \cdot, \cdot \rangle : X \times X \rightarrow \mathbb{R}$$ and a proof
+that this function is indeed an inner product.
+
+First, we'll define the vector/function space, which is also commonly called the __feature
+space__. We define a function $$\Phi: X \rightarrow \mathbb{R}^{X}$$, where $$\mathbb{R}^{X}$$
+denotes a function mapping $$X \rightarrow R$$. This means that for any $$x \in X$$, we can
+define a vector/function $$\Phi(x) = k(\cdot, x)$$. I despise this notation, called the canonical
+feature map, because the notation obscures that __$$\Phi(x)$$ is a function with an unfilled 
+argument__. If we're given a set of $$\{x_i\}_{i}$$, we can then define a function space as
+the span of the corresponding feature maps:
+
+$$ \text{span}\{ \Phi(x_i) \} = \text{span} \{ k(\cdot, x_i) \}$$
+
+Second, we need to define an inner product. Let $$f(\cdot) = \sum_i \alpha_i \Phi(x_i)$$
+and let $$g(\cdot) = \sum_i \beta_i \Phi(x_i)$$ be two functions in our function space.
+We define the inner product as:
+
+$$\langle f, g \rangle = \sum_i \sum_j \alpha_i \beta_j k(x_i, x_j)$$
+
+Third, we show that this inner product is indeed an inner product. This requires meeting
+[three properties](linear_algebra.md#inner-product-spaces): Hermitian symmetry, conjugate
+bilinearity and non-negativity, with equality to zero implying the arguments are the same.
+First, 
+
 In order to approach Reproducing Kernel Hilbert Spaces (RKHS), we need to slightly
 widen our understanding of what a feature of a datum $$\Phi(x)$$ means.
 We need to think of features as interchangeable with functions.
