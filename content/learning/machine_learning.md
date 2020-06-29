@@ -40,6 +40,8 @@ the quantile regression loss function for the $$\tau$$th quantile is
 
 $$ QR_{\tau}(\hat{y}) = (\hat{y} - y)(\tau - \mathbb{I}(\hat{y}-y < 0))$$
 
+The loss function is convex and piece-wise linear.
+
 - Expectile Regression
 
 Just as quantile regression generalized mean absolute error, expectile regression
@@ -48,6 +50,6 @@ $$\tau$$th expectile is:
 
 $$ER_{\tau}(\hat{y}) = |(\hat{y} - y)^2 (\tau - \mathbb{I}(\hat{y}-y < 0))|$$
 
-
+The loss function is convex and piece-wise quadratic.
 
 ### Classification

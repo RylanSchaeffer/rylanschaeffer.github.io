@@ -70,7 +70,7 @@ A symmetric function $$k: X \times X \rightarrow \mathbb{R}$$ is __positive defi
 if $$\forall n \geq 1, \, \forall (a_1, ..., a_n) \in \mathbb{R}^N,\, \forall (x_1,...,x_N)
 \in X^n$$
 
-$$\sum_{i=1}^N \sum_{j=1}^N a_i a_j k(x_1, k_j) \geq 0$$ 
+$$\sum_{i=1}^N \sum_{j=1}^N a_i a_j k(x_i, x_j) \geq 0$$ 
 
 __Note__: The terminology here can vary. Some say that the function is __strictly positive
 definite__ if equality holds only when all the $$a_i$$ are zero for mutually distinct $$x_i$$,
@@ -115,7 +115,7 @@ all vectors $$c$$, not just the eigenvectors.
 
 - If k is PSD kernel
 
-## Reproducing Kernel Hilbert Spaces
+### Kernels are inner products in some feature space
 
 Positive definite (PD) kernels are also called __reproducing kernels__ and we're about to
 understand why. The key idea is that any PD kernel can be viewed as a dot product in some
@@ -140,13 +140,50 @@ Second, we need to define an inner product. Let $$f(\cdot) = \sum_i \alpha_i \Ph
 and let $$g(\cdot) = \sum_i \beta_i \Phi(x_i)$$ be two functions in our function space.
 We define the inner product as:
 
-$$\langle f, g \rangle = \sum_i \sum_j \alpha_i \beta_j k(x_i, x_j)$$
+$$\langle f, g \rangle = \sum_i \sum_j \alpha_i \overbar{\beta_j} k(x_i, x_j)$$
 
 Third, we show that this inner product is indeed an inner product. This requires meeting
 [three properties](linear_algebra.md#inner-product-spaces): Hermitian symmetry, conjugate
 bilinearity and non-negativity, with equality to zero implying the arguments are the same.
-First, 
+The above definition is clearly Hermitian symmetric and conjugate bilinear, and we know 
+that non-negativity is met because the kernel is positive definite.
 
-In order to approach Reproducing Kernel Hilbert Spaces (RKHS), we need to slightly
-widen our understanding of what a feature of a datum $$\Phi(x)$$ means.
-We need to think of features as interchangeable with functions.
+The opposite direction also holds. Suppose $$\Phi: X \rightarrow \mathbb{R}$$ is given.
+If we define a kernel as $$k(x_i, x_j) = \langle \Phi(x_i), \Phi(x_j) \rangle$$, then the
+kernel is positive definite:
+
+$$\sum_i \sum_j c_i c_j k(x_i, x_j) = \langle \sum_i c_i \Phi(x_i), \sum_j c_j \Phi(x_j) \rangle
+ = || \sum_i c_i \Phi(x_i)||^2 \geq 0 $$
+ 
+To summarize, $\forall x_i, x_j \in X$$:
+
+$$k(x_i, x_j) = \langle \Phi(x_i), \Phi(x_j) \rangle = \langle k(\cdot, x_i), k(\cdot, x_j) \rangle $$
+
+## Reproducing Kernel Hilbert Spaces
+
+We finally reach the definition of a Reproducing Kernel Hilbert Space (RKHS). 
+
+Formally, let $$X$$ be a non-empty set and $$H$$ a Hilbert space of functions $$f: X \rightarrow
+\mathbb{R}$$. H is called a RKHS if there exists a function $$k: X \times X \rightarrow \mathbb{R}$$
+(i.e. a kernel) with the following properties:
+ 
+1. $$k$$ is reproducing i.e. $$\forall f(\cdot) \in H, \langle f(\cdot), k(\cdot, x) \rangle = f(x)$$.
+Importantly, $$\langle k(x_i, \cdot), k(x_j, \cdot) \rangle = k(x_i, x_j)$$.
+
+2. $$k$$ spans $$H$$ i.e. $$H = \overbar{\text{span} \{k(x, \cdot) | x \in X \}}$$, where the overline
+denotes completion of the space i.e. adding all limits of all Cauchy sequences.
+
+### Properties
+
+- An RKHS has only one kernel $$k$$.
+
+<details>
+<summary>Proof</summary>
+Proof by contradiction: Assume there exist two kernels $$k, k'$$ spanning $$H$$. Using the
+reproducing property:
+
+$$ \langle k(x_i, \cdot), k'(x_j, \cdot) \rangle = k(x_i, x_j) = k(x_j,x_i) = k'(x_i, x_j) = k'(x_j, x_i)$$
+</details>
+
+- By the Riesz Representation Theorem, $$\forall x' \in X, \exists \text{ a unique function of } x$$
+such that $$f(x') = \langle f(\cdot), k(\cdot, x')\rangle $$ 
