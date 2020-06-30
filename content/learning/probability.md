@@ -35,12 +35,12 @@ P(A, B^c) &= P(A) - P(A, B)\\
 &= P(A)(1 - P(B))\\
 &= P(A) P(B^c)\\
 P(A^c, B) &= P(B) - P(A, B)\\
-&= P(B)(1 - P(A))
+&= P(B)(1 - P(A))\\
 &= P(B)P(A^c)\\
 P(A^c, B^c) &= P(A^c) - P(A^c, B^c)\\
 &= P(A^c) - P(A^c)P(B)\\
-P(A^c)(1 - P(B))\\
-P(A^c)P(B^c)
+&= P(A^c)(1 - P(B))\\
+&= P(A^c)P(B^c)
 \end{align*}
 $$
 
@@ -85,10 +85,11 @@ To see why, consider $$\frac{1}{\pi} \int_{\mathbb{R}} \frac{x}{1+x^2} dx = \fra
 
 - Variance: Undefined
 
+
 </details>
 
-
 ## Inequalities
+
 <details>
 
 ### Chebychev's Inequality
@@ -107,7 +108,33 @@ $$
 &= r P(g(x) \geq r)
 \end{align*}
 $$
+
 </details>
 
+</details>
+
+
+## Notions of Convergence
+
+<details>
+
+- Convergence in Probability: A sequence of random variables $(X_i)_{i \in \mathbb{N}}$$ __converges
+in probability__ if $$\forall \epsilon > 0$$
+
+$$\lim_{n \rightarrow \infty} P(|X_n - X| < \epsilon) = 1 $$
+
+The __Weak Law of Large Numbers__ states that if the set of random variables $$\{X_i\}_{i=1}^N$$ are 
+i.i.d. with $$\mathbb{E}_X[X_i] = \mu < \infty$$ and $$\mathbb{V}_X[X_i] = \sigma^2 < \infty$$,
+then the sample mean $$\frac{1}{N} \sum_{i=1}^N X_i$$ converges in probability to the expected value.
+
+
+  
+
+- Convergence Almost Surely:  A sequence of random variables $(X_i)_{i \in \mathbb{N}}$$ __converges
+almost surely__ if $$\forall \epsilon > 0$$
+                             
+$$ P(\lim_{n \rightarrow \infty} |X_n - X| < \epsilon) = 1 $$
+
+Convergence almost surely implies convergence in probability.
 
 </details>
