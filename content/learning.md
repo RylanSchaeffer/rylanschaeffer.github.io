@@ -1,6 +1,7 @@
 # Learning
 
 - [Analysis](learning/analysis.html)
+- [Calculus](learning/calculus.html)
 - [Differential Equations](learning/differential_equations.html)
 - [Dynamical Systems and Control](learning/dynamical_systems.html)
 - [Informative Non-Fiction Books](learning/informative_nonfiction.html)
