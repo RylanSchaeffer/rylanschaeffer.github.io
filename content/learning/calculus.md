@@ -17,3 +17,5 @@ $$
 &= f(b(y), y) \partial_y b(y) - f(a(y), y) \partial_y a(y) + \int_{a(y)}^{b(y)} \partial_y f(x, y) dx\\
 \end{align*}
 $$
+
+This is also commonly called differentiating under the integral sign.

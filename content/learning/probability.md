@@ -67,6 +67,7 @@ P(Y \leq y) &= P(F_X(x) \leq y)\\
 
 
 ## Probability Distributions
+<details>
 
 ### Cauchy Distribution
 
@@ -82,4 +83,31 @@ $$\int_{\mathbb{R}} p(x | x_0, \gamma) dx = \frac{1}{\pi} \tan^{-1} (\frac{x - x
 To see why, consider $$\frac{1}{\pi} \int_{\mathbb{R}} \frac{x}{1+x^2} dx = \frac{2}{\pi}
 \int_0^{\infty} \frac{x}{1+x^2} dx = \frac{1}{\pi} \lim_{x \rightarrow \infty} \log(1 + x^2)$$
 
-- Variance: Undefined 
+- Variance: Undefined
+
+</details>
+
+
+## Inequalities
+<details>
+
+### Chebychev's Inequality
+
+Let $$X$$ be a random variable and let $$g(x)>0$$. Then $$\forall r > 0$$,
+
+$$P(g(x) \geq r) \leq \frac{\mathbb{E}_x[g(x)]}{r}$$
+
+<details>
+<summary>Proof</summary>
+$$
+\begin{align*}
+\mathbb{E}_x[g(x)] &= \int_x g(x) p(x) dx\\
+&\geq \int_{x: g(x) \geq r} g(x) p(x) dx\\
+&\geq r \int_{x: g(x) \geq r} p(x) dx\\
+&= r P(g(x) \geq r)
+\end{align*}
+$$
+</details>
+
+
+</details>
