@@ -53,8 +53,6 @@ then $$Y \sim \mathcal{U}(0,1)$$.
 
 <details>
 <summary>Proof:</summary>
-One property unique to $$\mathcal{U}(0,1)$$ is that its CDF $$F_Y(y) = P(Y \leq 
-y) = y$$. We'll use this fact in the following manner:
 
 $$
 \begin{align*}
@@ -63,11 +61,14 @@ P(Y \leq y) &= P(F_X(x) \leq y)\\
 &= F_X(F_X^{-1}(y))\\
 &= y
 \end{align*}
+
+Since only $$\mathcal{U}(0,1)$$ has a CDF $$F_Y(y) = P(Y \leq 
+y) = y$$, we conclude that $$Y$$ is distributed uniformly.
+
 </details>
 
 
 ## Probability Distributions
-<details>
 
 ### Cauchy Distribution
 
@@ -86,11 +87,7 @@ To see why, consider $$\frac{1}{\pi} \int_{\mathbb{R}} \frac{x}{1+x^2} dx = \fra
 - Variance: Undefined
 
 
-</details>
-
 ## Inequalities
-
-<details>
 
 ### Chebychev's Inequality
 
@@ -111,14 +108,9 @@ $$
 
 </details>
 
-</details>
-
-
 ## Notions of Convergence
 
-<details>
-
-- Convergence in Probability: A sequence of random variables $(X_i)_{i \in \mathbb{N}}$$ __converges
+- Convergence in Probability: A sequence of random variables $$(X_i)_{i \in \mathbb{N}}$$ __converges
 in probability__ if $$\forall \epsilon > 0$$
 
 $$\lim_{n \rightarrow \infty} P(|X_n - X| < \epsilon) = 1 $$
@@ -127,8 +119,29 @@ The __Weak Law of Large Numbers__ states that if the set of random variables $$\
 i.i.d. with $$\mathbb{E}_X[X_i] = \mu < \infty$$ and $$\mathbb{V}_X[X_i] = \sigma^2 < \infty$$,
 then the sample mean $$\frac{1}{N} \sum_{i=1}^N X_i$$ converges in probability to the expected value.
 
+<details>
 
-  
+<summary>Proof:</summary>
+
+Use [Chebyshev's Inequality](#chebychevs-inequality):
+
+$$
+\begin{align*}
+P(|\bar{X}_n - \mu| \geq \epsilon )
+&= P(|\bar{X}_n - \mu|^2 \geq \epsilon^2 )\\
+&\leq \frac{\mathbb{E}_x[(\bar{X}_n - \mu)^2]}{\epsilon^2}\\
+&= \mathbb{V}_x[\bar{X}] / \epsilon^2\\
+&= \sigma^2 / n \epsilon^2
+\end{align*}
+$$ 
+
+Then, taking the limit as $$n \rightarrow \infty$$:
+
+$$ \lim{n \rightarrow \infty} P(|\bar{X}_n - \mu| < \epsilon) < 
+1 - \lim_{n \rightarrow \infty} \frac{\sigma^2}{n \epsilon^2} = 1$$ 
+
+</details>
+
 
 - Convergence Almost Surely:  A sequence of random variables $(X_i)_{i \in \mathbb{N}}$$ __converges
 almost surely__ if $$\forall \epsilon > 0$$
@@ -136,5 +149,3 @@ almost surely__ if $$\forall \epsilon > 0$$
 $$ P(\lim_{n \rightarrow \infty} |X_n - X| < \epsilon) = 1 $$
 
 Convergence almost surely implies convergence in probability.
-
-</details>
