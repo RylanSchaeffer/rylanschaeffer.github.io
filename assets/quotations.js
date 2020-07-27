@@ -83,5 +83,20 @@ const quotations = [
     "I want a spirit that is calm",
 
     "\"Lonely? You have yourself. Your infinite selves. " +
-    "It's a nonstop party where all the guests are the only person we like.\""
+    "It's a nonstop party where all the guests are the only person we like.\"",
+
+    "Don't take your eyes off them for a second. And don't ever forget them, " +
+    "because I promise that they won't forget you.",
+
+    "Structurally, there's no discernible difference. Life and death are " +
+    "unquantifiable abstracts. Why should I be concerned?",
+
+    "“All we ever see of stars are their old photographs.”",
+
+    "Through my blue fingers, pink grains are falling, haphazard, random, a" +
+    " disorganized stream of silicone that seems pregnant with the possibility " +
+    "of every conceivable shape... But this is illusion. Things have their shape" +
+    " in time, not space alone. ",
+
+    "Ad majora",
 ];
