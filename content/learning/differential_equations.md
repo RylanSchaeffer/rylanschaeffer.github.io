@@ -1,6 +1,4 @@
-# Calculus
-
-## Ordinary Differential Equations
+# Ordinary Differential Equations
 
 An ordinary differential equation (ODE) is an equation that relates a function e.g. $y(x)$
 to its derivative e.g. $\frac{dy(x)}{dx}, \frac{d^2y(x)}{dx^2}$. Two example might be:
@@ -15,7 +13,7 @@ $$[a, b]$$, denoted $$C^1(a, b)$$. Then we can define an operator $$l: C^1(a, b)
 
 $$l(y(x)) = \frac{dy(x)}{dx} - x$$
 
-### Linear ODEs
+## Linear ODEs
 
 We say that the operator is <b>linear</b> if it satisfies two properties: element addition
 and scalar multiplication. Element addition means that $$\forall y_1, y_2 \in C^1(a, b)$$,
@@ -39,7 +37,7 @@ solution due to linearity:
 
 $$l(y_p + y_n) = l(y_p) + l(y_n) = h(x) + 0 = h(x) $$
 
-### Linear, First Order ODEs
+## Linear, First Order ODEs
 
 A generic linear, first-order ODE can be written as:
 
@@ -64,7 +62,7 @@ the particular solution plus some constant times the homogeneous aka null soluti
 $$l(y - y_p) = l(y) - l(y_p) = h(x) - h(x) = 0 \Leftrightarrow y - y_p \in \ker(l) \Leftrightarrow
 y - y_p = c y_n \Leftrightarrow y = y_p + c y_n$$
 
-#### Solving with an integrating factor
+### Solving Linear, 1st-Order: Integrating factor
 
 What about the inhomogeneous case i.e. when $h(x) \neq 0$? If $a(x) \neq 0$, one way
 we can find the solution $y(x)$ is is by using a function $f(x)$ called an integrating
@@ -95,3 +93,111 @@ We start by setting $\frac{1}{f}(fy)' = y' + \frac{b}{a} y$ and then solve for $
 \log f(x) - \log f(x_0) &= \int_{t=x_0}^x \frac{b(t)}{a(t)} \, dt\\
 f(x) &= f(x_0) \exp \Big(\int_{t=x_0}^x \frac{b(t)}{a(t)} \, dt \Big)
 \end{align*}
+
+When we plug $f(x)$ back into our equation for $y(x)$, we see that the initial
+condition $f(x_0)$ doesn't matter because it cancels out:
+
+\begin{align*}
+y  &= \frac{f(x_0)}{f(x)} y(x_0) + \frac{1}{f(x)} \int_{t=x_0}^x \frac{h(t) f(t)}{a(t)} \, dt\\
+&= \exp \Big(-\int_{t=x_0}^x \frac{b(t)}{a(t)} \, dt \Big) y(x_0) + \frac{1}{f(x_0)} \exp
+  \Big(-\int_{t=x_0}^x \frac{b(t)}{a(t)} \, dt \Big) \int_{t=x_0}^x \frac{h(t) f(t)}{a(t)} \, dt
+\end{align*}
+
+### Solving Linear, 1st-Order: Variation of Parameters
+
+### Solving Linear, 1st-Order: Power Series Expansion
+
+Another way to solve the differential equation is to Taylor Series expand both sides of the
+system and match coefficients.
+
+## Linear, 2nd-Order ODEs
+
+### Solving Linear, 2nd-Order: Variation of Parameters
+
+For the linear, first-order ODE, <a href="#linear_first_order_variation_of_parameters">we could
+solve the equation by first finding
+the null/homogeneous solution and then finding the particular/inhomogeneous
+solution by treating the constant as a variable</a>. This approach will also work
+for a linear, second-order ODE. Suppose we know
+
+$$l(y) = a(x) y''(x) + b(x) y'(x) + c(x)y = h(x) \quad \text{ and } \quad \ker(l) = \{f_1(x), f_2(x) \}$$
+
+The null/homogeneous solution (with constants $c_1, c_2 \in \mathbb{R}$) is
+
+$$y_n(x) = c_1 f_1(x) + c_2 f_2(x) $$
+
+We suppose that the particular/inhomogeneous solution might have the same form
+but with variable coefficients:
+
+$$ y_p(x) = c_1(x) f_1(x) + c_2(x) f_2(x) $$
+
+Dropping $x$ for brevity and differentiating, we see that:
+
+$$ y_p' = c_1' f_1 + c_1 f_1' + c_2' f_2 + c_2 f_2'$$
+
+and that
+
+$$ y_p'' = c_1 '' f_1 + 2 c_1' f_1' + c_1 f_1'' + 2 c_2' f_2 ' + c_2'' f_2 + c_2 f_2''$$
+
+Plugging into the inhomogeneous equation, we see a mess of terms that we can
+simplify a bit, taking advantage of the fact that some terms live in the kernel
+of $l$:
+
+\begin{align*}
+h(x) &= l(y_p) = a y_p'' + b y_p' + c y\\
+&= a (c_1 '' f_1 + 2 c_1' f_1' + c_1 f_1'' + 2 c_2' f_2 ' + c_2'' f_2 + c_2 f_2'') +
+b (c_1' f_1 + c_1 f_1' + c_2' f_2 + c_2 f_2') + c(c_1(x) f_1(x) + c_2(x) f_2(x))\\
+&= a (c_1'' f_1 + 2 c_1' f_1' + 2 c_2' f_2' + c_2'' f_2) +
+b (c_1' f_1 + c_2' f_2) +
+c_1 (a f_1'' + b f_1' + c f_1) + c_2 (a f_2'' + b f_2' + c f_2)\\
+&= a (c_1'' f_1 + 2 c_1' f_1' + 2 c_2' f_2' + c_2'' f_2) +
+b (c_1' f_1 + c_2' f_2) +
+c_1 l(f_1) + c_2 l(f_2)\\
+&= a (c_1'' f_1 + 2 c_1' f_1' + 2 c_2' f_2' + c_2'' f_2) +
+b (c_1' f_1 + c_2' f_2) +
+0 + 0\\
+\end{align*}
+
+
+Suppose someone gives you a hint and suggests that $c_1' f_1 + c_2' f_2 = 0$,
+which also implies that its derivative $c_1'' f_1 + c_1' f_1' +
+c_2'' f_2 + c_2' f_2' = 0$. This simplifies our equation tremendously:
+
+$$h = a (c_1' f_1' + c_2' f_2') $$
+
+The question now is whether we can find two functions, $c_1, c_2$, that satisfy
+both equations:
+
+\begin{align*}
+c_1' f_1 + c_2' f_2 &= 0\\
+c_1' f_1' + c_2' f_2' &= \frac{h(x)}{a(x)}
+\end{align*}
+
+We have two equations and two unknowns, meaning we can find a solution!
+
+$$\begin{bmatrix} f_1(x) & f_2(x) \\ f_1'(x) & f_2'(x) \end{bmatrix}
+\begin{bmatrix} c_1'(x) \\ c_2'(x) \end{bmatrix} =
+\begin{bmatrix}0 \\ \frac{h(x)}{a(x)} \end{bmatrix} $$
+
+We invert the matrix:
+
+$$
+\begin{bmatrix} c_1'(x) \\ c_2'(x) \end{bmatrix} =
+\frac{1}{f_1 f_2' - f_1' f_2}
+\begin{bmatrix} f_2'(x) & -f_2(x) \\ -f_1'(x) & f_1(x) \end{bmatrix}
+\begin{bmatrix}0 \\ \frac{h(x)}{a(x)} \end{bmatrix}$$
+
+A commonly used term for the prefactor is the <b>Wronskian</b>, which we denote
+$W(x) \defeq f_1(x) f_2'(x) - f_1'(x) f_2(x)$. We then solve our the varying
+coefficients:
+
+$$c_1(x) = -\int_{t=x_0}^{t=x} \frac{f_2(t) h(t)}{a(t) W(t)} dt
+
+\quad \text{ and } \quad
+
+c_2(x) = \int_{t=x_0}^{t=x} \frac{f_1(t) h(t)}{a(t) W(t)} dt$$
+
+Thus our final solution to the inhomogeneous equation is:
+
+$$y_p = c_1 f_1 + c_2 f_2 = -f_1(x) \int_{t=x_0}^{t=x} \frac{f_2(t) h(t)}{a(t) W(t)} dt
++ f_2(x) \int_{t=x_0}^{t=x} \frac{f_1(t) h(t)}{a(t) W(t)} dt$$
