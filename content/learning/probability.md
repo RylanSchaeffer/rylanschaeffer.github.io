@@ -26,7 +26,7 @@ of the marginal probabilities:
 
 $$P(A, B) = P(A) P(B)$$
 
-If $$A, B$$ are independent, then so are the following by the following proofs:
+If $$A, B$$ are independent, then so are the following:
 
 $$
 \begin{align*}
@@ -47,7 +47,7 @@ $$
 
 ### Probability Integral Transform
 
-__Theorem__: For any random variable $X$, its CDF $$F_X(x)$$
+__Theorem__: For any random variable $$X$$, its CDF $$F_X(x)$$
 is distributed uniformly over $$(0,1)$$. That is, if we define $$Y = F_X(x)$$,
 then $$Y \sim \mathcal{U}(0,1)$$.
 
