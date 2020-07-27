@@ -1,7 +1,7 @@
 # Ordinary Differential Equations
 
 An ordinary differential equation (ODE) is an equation that relates a function e.g. $y(x)$
-to its derivative e.g. $\frac{dy(x)}{dx}, \frac{d^2y(x)}{dx^2}$. Two example might be:
+to its derivative. Two example might be:
 
 $$\frac{dy(x)}{dx} = x , \quad \frac{d^2 y(x)}{d^2 x} = x + \sin(x)$$
 
@@ -31,8 +31,8 @@ that insight, I highly recommend watching his material.
 
 An important point is that a complete solution
 to any linear equation $$l(y) = h(x)$$ has two parts: the null solution $$y_n$$, which solves
-the homogeneous equation $$l(y) = 0$$, and the particular solution $$y_p$$, which solves the
-inhomogeneous equation $$l(y) = h(x)$$. The sum of the two solutions provides the complete
+the homogeneous equation $$l(y_n) = 0$$, and the particular solution $$y_p$$, which solves the
+inhomogeneous equation $$l(y_p) = h(x)$$. The sum of the two solutions provides the complete
 solution due to linearity:
 
 $$l(y_p + y_n) = l(y_p) + l(y_n) = h(x) + 0 = h(x) $$
@@ -43,17 +43,26 @@ A generic linear, first-order ODE can be written as:
 
 $$ a(x) y'(x) + b(x) y(x) = h(x)$$
 
-To be clear, the linear operator here is $$l(y) = a(x) y'(x) + b(x) y(x)$$. We start by trying
-to find the null solution. This corresponds to identifying what the kernel of the operator is.
-Recall that for any operator $l$ from one set to another, the kernel of the operator is the set
+To be clear, the linear operator here is $$l(y) = a(x) y'(x) + b(x) y(x)$$.
+
+### Dimension of Linear, 1st-Order Kernel
+
+We start by trying to find the null solution, which corresponds to identifying what the kernel of the operator is.
+Recall that for any operator $$l$$ from one set to another, the kernel of the operator is the set
 of inputs that map to 0 i.e. $$\ker(l) \defeq \{v \in V : l(v) = 0 \}$$. One property worth
 noting is that for a first-order linear operator $$l: V \rightarrow V$$
 with $$l(y) = a(x) y'(x) + b(x) y(x)$$, the kernel of $$l$$ is one dimensional. To see this, we
-see that the solution $y_n$ to the <b>homogeneous</b> equation is:
+see that the solution $y_n$ to the homogeneous equation is:
 
-$$l(y) = 0 \Leftrightarrow  ay_n' + by_n = 0 \Leftrightarrow \frac{y_n'}{y_n} = \frac{b}{a} \Leftrightarrow
-y_n = c \exp \Big(- \int_{x_0}^x \frac{b(t)}{a(t)} dt \Big) \Leftrightarrow \ker(l) = \text{span}(
-\exp \Big(- \int_{x_0}^x \frac{b(t)}{a(t)} dt \Big))$$
+$$
+\begin{align*}
+l(y) &= 0 \Leftrightarrow  ay_n' + by_n = 0\\
+\frac{y_n'}{y_n} &= \frac{b}{a}\\
+y_n &= c \exp \Big(- \int_{x_0}^x \frac{b(t)}{a(t)} dt \Big)\\
+\ker(l) &= \text{span}(
+\exp \Big(- \int_{x_0}^x \frac{b(t)}{a(t)} dt \Big))
+\end{align*}
+$$
 
 This tells us a useful property about the linear operator. Suppose we have one solution $$y_p$$ to
 the <b>inhomogeneous</b> equation $l(y) = h(x)$. Then any other solution can be written as
@@ -61,6 +70,8 @@ the particular solution plus some constant times the homogeneous aka null soluti
 
 $$l(y - y_p) = l(y) - l(y_p) = h(x) - h(x) = 0 \Leftrightarrow y - y_p \in \ker(l) \Leftrightarrow
 y - y_p = c y_n \Leftrightarrow y = y_p + c y_n$$
+
+**Example**:
 
 ### Solving Linear, 1st-Order: Integrating factor
 
