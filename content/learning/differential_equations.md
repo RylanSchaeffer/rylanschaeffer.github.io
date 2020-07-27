@@ -64,26 +64,38 @@ y_n &= c \exp \Big(- \int_{x_0}^x \frac{b(t)}{a(t)} dt \Big)\\
 \end{align*}
 $$
 
-This tells us a useful property about the linear operator. Suppose we have one solution $$y_p$$ to
-the <b>inhomogeneous</b> equation $l(y) = h(x)$. Then any other solution can be written as
-the particular solution plus some constant times the homogeneous aka null solution, $y = y_p + c y_n$.
+This tells us that any solution can be written as
+a particular solution plus some constant times the homogeneous aka null solution, $y = y_p + c y_n$.
 
 $$l(y - y_p) = l(y) - l(y_p) = h(x) - h(x) = 0 \Leftrightarrow y - y_p \in \ker(l) \Leftrightarrow
 y - y_p = c y_n \Leftrightarrow y = y_p + c y_n$$
 
-**Example**:
+### Warm-up Problems
+
+Some linear, 1st order ODEs are easy to solve.
+
+__Example 1__: Let $$l(y) = \partial_x y(x) + a y(x) = 0$$, where $$a$$ is a constant. Dropping
+$$x$$ for brevity, dividing by $$y$$ and integrating both terms gives us:
+
+$$
+\begin{align*}
+y'(x) + a y(x) &= 0\\
+\int \frac{\partial_x y}{y} dy + a \int 1 dy &=\\
+\log y(x) - \log y(x_0) &= -a(x - x_0)\\
+y(x) &= y(x_0) e^{-a (x - x_0)}  
+\end{align*}
+$$
 
 ### Solving Linear, 1st-Order: Integrating factor
 
-What about the inhomogeneous case i.e. when $h(x) \neq 0$? If $a(x) \neq 0$, one way
-we can find the solution $y(x)$ is is by using a function $f(x)$ called an integrating
-factor. To see where the idea arises, let's divide both sides by $a(x)$. For brevity, I
-drop $x$.
+What about the inhomogeneous case i.e. when $$l(y) \neq 0$$? If $$a(x) \neq 0$$, one way
+we can find the solution $$y(x)$$ is by using a function $$f(x)$$ called an integrating
+factor. To see where the idea arises, let's divide both sides by $$a(x)$$.
 
 $$y' + \frac{b}{a} y = \frac{h}{a}$$
 
 Suppose there exists a function $f(x)$ such that $\frac{1}{f}(fy)' = y' + \frac{b}{a} y$.
-If we could find such a function, we could use it to solve the differential
+If such a function exists, it would tremendously simplify the differential
 equation:
 
 \begin{align*}
