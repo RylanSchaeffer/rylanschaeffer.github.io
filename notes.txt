@@ -4,6 +4,10 @@ To run locally
 To update ruby vulnerabilities, run
     sudo gem install <library e.g. ffi>
 
+To update:
+    bundle update github-pages
+
 To propagate changes to Gemfile.lock file,
     sudo bundle update
     (need to run separately inside _sites/ directory)
+
