@@ -1,9 +1,9 @@
 # Ordinary Differential Equations
 
-An ordinary differential equation (ODE) is an equation that relates a function e.g. $y(x)$
+An ordinary differential equation (ODE) is an equation that relates a function
 to its derivative. Two example might be:
 
-$$\frac{dy(x)}{dx} = x , \quad \frac{d^2 y(x)}{d^2 x} = x + \sin(x)$$
+$$\frac{dy(x)}{dx} = x , \quad \frac{d^2 y(x)}{dx^2} = x + \sin(x)$$
 
 Each differential equation can be viewed as an operator that maps elements of a set
 to elements of the same set. Using the above example, suppose that $$y(x)$$ and $$\frac{dy(x)}{dx}$$
@@ -90,25 +90,27 @@ $$
 
 What about the inhomogeneous case i.e. when $$l(y) \neq 0$$? If $$a(x) \neq 0$$, one way
 we can find the solution $$y(x)$$ is by using a function $$f(x)$$ called an integrating
-factor. To see where the idea arises, let's divide both sides by $$a(x)$$.
+factor. To see where the idea arises, divide both sides by $$a(x)$$.
 
 $$y' + \frac{b}{a} y = \frac{h}{a}$$
 
-Suppose there exists a function $f(x)$ such that $\frac{1}{f}(fy)' = y' + \frac{b}{a} y$.
-If such a function exists, it would tremendously simplify the differential
-equation:
+If there existed a function $f(x)$ such that $$\frac{1}{f}(fy)' = y' + \frac{b}{a} y$$,
+such a function would tremendously simplify the differential equation:
 
+$$
 \begin{align*}
 y' + \frac{b}{a} y &= \frac{h}{a}\\
 \frac{1}{f}(fy)' &= \\
 f y - f(x_0)y(x_0) &= \int_{t=x_0}^t \frac{h(t) f(t)}{a(t)} \, dt\\
 y(x)  &= \frac{f(x_0)}{f(x)} y(x_0) + \frac{1}{f(x)} \int_{t=x_0}^x \frac{h(t) f(t)}{a(t)} \, dt\\
 \end{align*}
+$$
 
-The key insight was to express the inconvenient $y' + \frac{b}{a} y$ as a
-derivative $(fy)'$ that we could easily integrate. The question is now how to find $f(x)$.
-We start by setting $\frac{1}{f}(fy)' = y' + \frac{b}{a} y$ and then solve for $f(x)$:
+The key insight was to express the inconvenient $$y' + \frac{b}{a} y$$ as a
+derivative $$(fy)'$$ that is more easily integrated. The question is now how to find $f(x)$.
+We start by setting $$\frac{1}{f}(fy)' = y' + \frac{b}{a} y$$ and then solve for $$f(x)$$:
 
+$$
 \begin{align*}
 \frac{1}{f}(fy)' &= y' + \frac{b}{a} y\\
 \frac{1}{f}(f' y + y f') &= y' + \frac{b}{a} y\\
@@ -116,15 +118,18 @@ We start by setting $\frac{1}{f}(fy)' = y' + \frac{b}{a} y$ and then solve for $
 \log f(x) - \log f(x_0) &= \int_{t=x_0}^x \frac{b(t)}{a(t)} \, dt\\
 f(x) &= f(x_0) \exp \Big(\int_{t=x_0}^x \frac{b(t)}{a(t)} \, dt \Big)
 \end{align*}
+$$
 
-When we plug $f(x)$ back into our equation for $y(x)$, we see that the initial
-condition $f(x_0)$ doesn't matter because it cancels out:
+When we plug $$f(x)$$ back into our equation for $y(x)$, we see that the initial
+condition $$f(x_0)$$ doesn't matter because it cancels out:
 
+$$
 \begin{align*}
 y  &= \frac{f(x_0)}{f(x)} y(x_0) + \frac{1}{f(x)} \int_{t=x_0}^x \frac{h(t) f(t)}{a(t)} \, dt\\
 &= \exp \Big(-\int_{t=x_0}^x \frac{b(t)}{a(t)} \, dt \Big) y(x_0) + \frac{1}{f(x_0)} \exp
   \Big(-\int_{t=x_0}^x \frac{b(t)}{a(t)} \, dt \Big) \int_{t=x_0}^x \frac{h(t) f(t)}{a(t)} \, dt
 \end{align*}
+$$
 
 ### Solving Linear, 1st-Order: Variation of Parameters
 
