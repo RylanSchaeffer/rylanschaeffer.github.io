@@ -1,5 +1,6 @@
 # Thoughts
 
+- [2020-08-05 Summer Interns](thoughts/20200805_summer_interns/main.html)
 - [2020-05-30 The Idea Machine](thoughts/20200530_idea_machine/main.html)
 - [2020-04-26 The Idea Machine](thoughts/20200426_idea_machine/main.html)
 - [2020-04-12 The Idea Machine](thoughts/20200412_idea_machine/main.html)
