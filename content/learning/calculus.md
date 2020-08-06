@@ -6,7 +6,7 @@ When can we swap the order of integration and differentiation? Suppose we have
 
 $$ \partial_{y} \int_{a(y)}^{b(y)} f(x, y) dx$$
 
-Using the Fundamental Theorem of calculus, we can answer this question. First, replace
+Using the Fundamental Theorem of Calculus, we can answer this question. First, replace
 the integral with the integrated function:
 
 $$
