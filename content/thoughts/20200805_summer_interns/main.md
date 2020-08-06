@@ -35,4 +35,8 @@ if a project is worth doing, typically you want to prioritize it.
 - Establish a set time to take and give feedback. This will help ensure resentment doesn't build
 up over time due to unspoken issues.
 
+- A friend suggested that in the future, I (1) require daily stand-up and (2) tell my intern
+to work on a few threads in parallel so that if ever a single one is blocked, she can pivot
+to work on another until she becomes unblocked.
+
 - As a last comment, I'll probably impose basic linear algebra as a necessary prerequisite.
