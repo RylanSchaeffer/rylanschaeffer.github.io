@@ -13,4 +13,5 @@
 - [Optimization](learning/optimization.html)
 - [Probability](learning/probability.html)
 - [Statistics](learning/statistics.html)
+- [Stochastic Processes](learning/stochastic_processes.html)
 - [Reinforcement Learning](learning/reinforcement_learning.html)
