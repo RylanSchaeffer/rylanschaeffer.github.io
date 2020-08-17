@@ -8,7 +8,7 @@ the men to continue investing time after two or three dates was the sticking poi
 
 I think I understand why this is, and the answer points towards one conclusion:
 if you're a man less attractive than Adonis, or if you're a woman looking for a
-committed relationship, online dating is a poor use of your time.
+committed relationship, online dating does not optimize your chances of success.
 
 An easy way to see this is to consider the following (tremendously simplified)
 model. Suppose we have $$N$$ men and $$N$$ women all trying to find an opposite-gender
