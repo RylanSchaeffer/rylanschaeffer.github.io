@@ -30,7 +30,7 @@ time?
 
 Note the log-log scaling! Turns out $$N$$, the total population of men, doesn't much matter. What matters
 is $$K$$, the number of men a woman is willing to consider. The top
-$$\approx K$$ men monopolize female interest. The parameter $$p$$, which captures how independent
+$$\sim K$$ men monopolize female interest. The parameter $$p$$, which captures how independent
 female preferences are from one another, has a small effect on determining how close
 to $$K$$ the final result is; if $$p=0$$, then women all prefer the same men, and exactly
 the top $$K$$ men dominate, whereas larger values of $$p$$ push the cliff slightly past $$K$$. The 
