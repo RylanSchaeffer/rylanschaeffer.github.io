@@ -2,7 +2,10 @@
 
 ## Chinese Restaurant Process
 
-Imagine a queue of $$N$$ customers at a restaurant with infinitely many tables, each with
+The Chinese Restaurant Process (CRP) is a stochastic process for expressing distributions
+over partitions of your data. Consequently, the 
+
+The name arises from imagining a queue of $$N$$ customers at a restaurant with infinitely many tables, each with
 an infinite capacity. Suppose that the first customer $$z_1$$ sits at a table and that every
 subsequent customer $$z_n$$ either sits at a new table with probability $$\alpha / (n - 1 + \alpha)$$
 or sits with others with probability $$n_k / (n - 1 + \alpha)$$, where $$n-1$$ is the number of
@@ -11,17 +14,19 @@ already seated customers and $$n_k$$ is the number of people at the $$k$$th tabl
 Note that this single-parameter ($$\alpha$$) process defines a valid probability distribution.
 For the $n$th customer, the sum of all outcomes is 1:
 
+$$
 \begin{align*}
 \frac{\alpha}{n - 1 + \alpha} + \sum_i \frac{c_i}{n-1+\alpha}
 &= \frac{1}{n - 1 + \alpha}(\alpha + \sum_i c_i)\\
 &= \frac{1}{n - 1 + \alpha}(\alpha + n - 1)\\
 &= 1
 \end{align*}
+$$
 
 Properties:
 
 1. The probability of seating arrangement is invariant under permutations. To see why, note
-that for $$N$$ customers, the normalization constant is always $$\Pi_n^N \frac{1}{n - 1 + \alpha }
+that for $$N$$ customers, the normalization constant is always $$\Pi_n^N \frac{1}{n - 1 + \alpha }$$
 
 2. A seating arrangement is a partition of the people. We could consider a distribution on the space
 of all possible partitions for $$n$$ customers, but the partition function $$\rho(n)$$ has no known

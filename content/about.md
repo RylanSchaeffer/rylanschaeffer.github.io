@@ -4,7 +4,7 @@ Based on some [good advice](https://www.ece.ucdavis.edu/~jowens/advice.html), I 
 
 ![](about/profile_pic.jpg)
 
-# Background
+## Background
 
 - 2018 Fall - 2019 Fall: I worked at [Uber Technologies](https://www.uber.com/")
 as a Data Scientist. 
