@@ -1,5 +1,6 @@
 # Thoughts
 
+- [2020-08-16 Why Online Dating is (Almost Certainly) a Waste of Your Time](thoughts/20200816_online_dating/main.html)
 - [2020-08-05 Summer Interns](thoughts/20200805_summer_interns/main.html)
 - [2020-05-30 The Idea Machine](thoughts/20200530_idea_machine/main.html)
 - [2020-04-26 The Idea Machine](thoughts/20200426_idea_machine/main.html)
