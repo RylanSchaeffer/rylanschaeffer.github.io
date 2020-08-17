@@ -14,10 +14,12 @@ An easy way to see this is to consider the following (tremendously simplified)
 model. Suppose we have $$N$$ men and $$N$$ women all trying to find an opposite-gender
 partner. We assume men are interested in all women, but women use a budget constraint
 approach: each woman will only select $$K$$ men to express an interest in. We further
-assume that women's interests are not independent. Specifically, the probability
-that one woman expresses an interest in a man is proportional to the number of other
-women expressing an interest in that man, with a parameter $$p \in [0, 1]$$ to capture
-the probability of a woman expressing an interest in a new man.
+assume that women's interests are not independent. To capture this, we introduce a 
+parameter $$p \in [0, 1]$$. Each woman will
+express an interest in $$pK$$ new men as well as an interest in $$(1-p)K$$ men that 
+other women have already expressed an interest in, where the probability
+that a woman expresses an interest in a man is proportional to the number of other
+women expressing an interest in that man.
 
 Suppose we order men by the proportion of women interested in that man. What does such
 a distribution look like, and why does it tell us that online dating is a waste of
