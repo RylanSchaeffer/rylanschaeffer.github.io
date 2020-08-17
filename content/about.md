@@ -1,5 +1,10 @@
-### About Me
+# About Me
 
+Based on some [good advice](https://www.ece.ucdavis.edu/~jowens/advice.html), I typically look like this:
+
+![](about/profile_pic.jpg)
+
+# Background
 
 - 2018 Fall - 2019 Fall: I worked at [Uber Technologies](https://www.uber.com/")
 as a Data Scientist. 

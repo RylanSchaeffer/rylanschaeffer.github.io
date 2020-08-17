@@ -8,7 +8,7 @@ gems:
 
 title: Rylan Schaeffer
 description: "'So we seem to find, in our selves, unity over time, unity of function, unity in space'"
-logo: index/profile_pic.JPG
+#logo: index/profile_pic.JPG
 show_downloads: false
 google_analytics: UA-94033137-1
 theme: jekyll-theme-minimal
