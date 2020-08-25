@@ -11,9 +11,10 @@ are both elements of the set of continuous, differentiable functions over the in
 $$[a, b]$$, denoted $$C^1(a, b)$$.
 
 ## Linear ODEs
+-----
 
-We say that an operator $$l$$ is __linear__ if it satisfies two properties. Supposing
-that $$y_1(x), y_2(x) \in C^1(a, b)$$ and $$\lambda \in \mathbb{R}$$, the properties are
+We say that an operator $$l$$ is _linear_ if it satisfies two properties. Letting
+$$y_1(x), y_2(x) \in C^1(a, b)$$ and $$\lambda \in \mathbb{R}$$, the properties are
 
 1. Element addition: $$l(y_1(x) + y_2(x)) = l(y_1) + l(y_2)$$
 
@@ -37,10 +38,11 @@ solution due to linearity:
 $$l(y_p + y_n) = l(y_p) + l(y_n) = h(x) + 0 = h(x) $$
 
 ## Linear, First Order ODEs
+-----
 
 A generic linear, first-order ODE can be written as:
 
-$$ l(y(x)) = a(x) y'(x) + b(x) y(x) = h(x)$$
+$$ l(y(x)) = a(x) d_x y(x) + b(x) y(x) = h(x)$$
 
 ### Intuition
 
@@ -79,18 +81,82 @@ As we saw above, if $$l(y) = a d_x y(x) + b y(x) = 0$$, the solution is straight
 
 $$y(x) = y(x_0) e^{-b x / a}$$
 
-We now consider non-constant coefficients $$a(x), b(x)$$. As long as $$a(x) \neq 0$$, we 
-can rewrite as
+For non-constant coefficients $$a(x), b(x)$$, we can use the same approach as before:
 
-$$l(y) = d_x y + \frac{b(x)}{a(x)} y = 0  
+$$
+\begin{align*}
+l(y(x)) = a(x) d_x y + b(x) y &= 0\\
+\frac{d_x y}{y} + \frac{b(x)}{a(x)} &=\\
+y(x) &= y(x_0) e^{\int_{x_0}^x \frac{b(u)}{a(u)} du
+\end{align*}
+$$
 
-Suppose $$l(y) = d_x y(x) + a(x) y(x) = 0$$. 
+Gilbert Strang dubs the term $$e^{\int_{x_0}^x \frac{b(u)}{a(u)} du$$ the _growth factor_
+$$G(x_0, x)$$ because it describes how much a quantity will grow/decay from $$x_0$$ to $$x$$. 
+This growth factor will reappear in the solution to the particular equation.
 
-### Particular (Inhomogeneous) Solution
+### Particular (Inhomogeneous) Solution via Integrating Factors
 
+In the inhomogeneous case $$l(y) = h(x)$$, the above approach will no longer work because
+the right-hand side is no longer zero. One way, and the way we'll use now, is to find
+the solution $$y(x)$$ by using a function $$f(x)$$ called an _integrating
+factor_. To see where the idea arises, divide both sides by $$a(x)$$.
+
+$$d_x y + \frac{b(x)}{a(x)} y = \frac{h}{a}$$
+
+If a function $f(x)$ existed such that $$\frac{1}{f}(fy)' = y' + \frac{b}{a} y$$, then
+this function would tremendously simplify the differential equation:
+
+$$
+\begin{align*}
+y' + \frac{b}{a} y &= \frac{h}{a}\\
+\frac{1}{f}(fy)' &= \\
+f y - f(x_0)y(x_0) &= \int_{t=x_0}^t \frac{h(t) f(t)}{a(t)} \, dt\\
+y(x)  &= \frac{f(x_0)}{f(x)} y(x_0) + \frac{1}{f(x)} \int_{t=x_0}^x \frac{h(t) f(t)}{a(t)} \, dt\\
+\end{align*}
+$$
+
+The insight is to express the inconvenient $$y' + \frac{b}{a} y$$ as a
+derivative $$(fy)'$$ that is more easily integrated. The question is now how to find $$f(x)$$.
+We start by setting $$\frac{1}{f}(fy)' = y' + \frac{b}{a} y$$ and then solve for $$f(x)$$:
+
+$$
+\begin{align*}
+\frac{1}{f}(fy)' &= y' + \frac{b}{a} y\\
+\frac{1}{f}(f' y + y f') &= y' + \frac{b}{a} y\\
+\frac{f'}{f} &= \frac{b}{a}\\
+\log f(x) - \log f(x_0) &= \int_{t=x_0}^x \frac{b(t)}{a(t)} \, dt\\
+f(x) &= f(x_0) \exp \Big(\int_{t=x_0}^x \frac{b(t)}{a(t)} \, dt \Big)
+\end{align*}
+$$
+
+When we plug $$f(x)$$ back into our equation for $$y(x)$$, we see that the initial
+condition $$f(x_0)$$ doesn't matter because it cancels out:
+
+$$
+\begin{align*}
+y  &= \frac{f(x_0)}{f(x)} y(x_0) + \frac{1}{f(x)} \int_{t=x_0}^x \frac{h(t) f(t)}{a(t)} \, dt\\
+&= \exp \Big(-\int_{t=x_0}^x \frac{b(t)}{a(t)} \, dt \Big) y(x_0) + \frac{1}{f(x_0)} \exp
+  \Big(-\int_{t=x_0}^x \frac{b(t)}{a(t)} \, dt \Big) \int_{t=x_0}^x \frac{h(t) f(t)}{a(t)} \, dt
+\end{align*}
+$$
 
 
 ### Key Inhomogeneous Solutions
+
+Although we have a general formula, certain input functions $$h(x)$$ are more important than
+others.
+
+1. Constant $$h(x) = h$$:
+
+2. Step Function $$h(x) = c H(x - x_*)$$:
+
+3. Delta Function $$h(x) = \delta(x - x_*)$$:
+
+4. Exponential Input $$h(x) = e^{ct}$$:
+
+5. Resonating Expoential Input $$h(x) = e^{-a x}$$:
+
 
 
 It has the complete solution:
@@ -135,50 +201,6 @@ y = y_p + c y_n
 \end{align*}
 $$
 
-### Solving Linear, 1st-Order: Integrating factor
-
-What about the inhomogeneous case i.e. when $$l(y) \neq 0$$? If $$a(x) \neq 0$$, one way
-we can find the solution $$y(x)$$ is by using a function $$f(x)$$ called an integrating
-factor. To see where the idea arises, divide both sides by $$a(x)$$.
-
-$$y' + \frac{b}{a} y = \frac{h}{a}$$
-
-If there existed a function $f(x)$ such that $$\frac{1}{f}(fy)' = y' + \frac{b}{a} y$$,
-such a function would tremendously simplify the differential equation:
-
-$$
-\begin{align*}
-y' + \frac{b}{a} y &= \frac{h}{a}\\
-\frac{1}{f}(fy)' &= \\
-f y - f(x_0)y(x_0) &= \int_{t=x_0}^t \frac{h(t) f(t)}{a(t)} \, dt\\
-y(x)  &= \frac{f(x_0)}{f(x)} y(x_0) + \frac{1}{f(x)} \int_{t=x_0}^x \frac{h(t) f(t)}{a(t)} \, dt\\
-\end{align*}
-$$
-
-The insight is to express the inconvenient $$y' + \frac{b}{a} y$$ as a
-derivative $$(fy)'$$ that is more easily integrated. The question is now how to find $$f(x)$$.
-We start by setting $$\frac{1}{f}(fy)' = y' + \frac{b}{a} y$$ and then solve for $$f(x)$$:
-
-$$
-\begin{align*}
-\frac{1}{f}(fy)' &= y' + \frac{b}{a} y\\
-\frac{1}{f}(f' y + y f') &= y' + \frac{b}{a} y\\
-\frac{f'}{f} &= \frac{b}{a}\\
-\log f(x) - \log f(x_0) &= \int_{t=x_0}^x \frac{b(t)}{a(t)} \, dt\\
-f(x) &= f(x_0) \exp \Big(\int_{t=x_0}^x \frac{b(t)}{a(t)} \, dt \Big)
-\end{align*}
-$$
-
-When we plug $$f(x)$$ back into our equation for $$y(x)$$, we see that the initial
-condition $$f(x_0)$$ doesn't matter because it cancels out:
-
-$$
-\begin{align*}
-y  &= \frac{f(x_0)}{f(x)} y(x_0) + \frac{1}{f(x)} \int_{t=x_0}^x \frac{h(t) f(t)}{a(t)} \, dt\\
-&= \exp \Big(-\int_{t=x_0}^x \frac{b(t)}{a(t)} \, dt \Big) y(x_0) + \frac{1}{f(x_0)} \exp
-  \Big(-\int_{t=x_0}^x \frac{b(t)}{a(t)} \, dt \Big) \int_{t=x_0}^x \frac{h(t) f(t)}{a(t)} \, dt
-\end{align*}
-$$
 
 ### Solving Linear, 1st-Order: Variation of Parameters
 
@@ -188,6 +210,7 @@ Another way to solve the differential equation is to Taylor Series expand both s
 system and match coefficients.
 
 ## Linear, 2nd-Order ODEs
+-----
 
 ### Solving Linear, 2nd-Order: Variation of Parameters
 
