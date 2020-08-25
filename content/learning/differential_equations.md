@@ -12,7 +12,7 @@ $$[a, b]$$, denoted $$C^1(a, b)$$.
 
 ## Linear ODEs
 
-We say that an operator $$l$$ is <b>linear</b> if it satisfies two properties. Supposing
+We say that an operator $$l$$ is __linear__ if it satisfies two properties. Supposing
 that $$y_1(x), y_2(x) \in C^1(a, b)$$ and $$\lambda \in \mathbb{R}$$, the properties are
 
 1. Element addition: $$l(y_1(x) + y_2(x)) = l(y_1) + l(y_2)$$
@@ -42,6 +42,57 @@ A generic linear, first-order ODE can be written as:
 
 $$ l(y(x)) = a(x) y'(x) + b(x) y(x) = h(x)$$
 
+### Intuition
+
+For linear, first-order ODEs, exponentials are key. Why? Because all null solutions
+aim to solve the homogeneous equation:
+
+$$l(y) = a(x) d_x y(x) + b(x) y(x) = 0$$
+
+If $$a(x) = a$$ and $$b(x) = b$$ are constants, we immediately see that we are trying to find a function
+that is proportional to its own derivative - the exponential function!
+
+$$ d_x y(x) = - \frac{b}{a} y(x) \rightarrow y(x) = y(x_0) e^{- b  (x - x_0) / a}$$
+
+If that isn't persuasive, we can be a bit more rigorous, dividing by $$y$$ and integrating
+both sides:
+
+$$
+\begin{align*}
+d_x y + \frac{b}{a} y(x) &= 0\\
+\int \frac{d_x y}{y} dy + \frac{b}{a} \int 1 dy &=\\
+\log y(x) - \log y(x_0) + a(x - x_0) &= \\
+y(x) &= y(x_0) e^{-a (x - x_0)}  
+\end{align*}
+$$
+
+For concreteness, suppose $$x$$ is time and $$y(x)$$ is your bank balance. Over time, 
+interest will accrue, depositing more in your account as a function of the amount you 
+put in initially $$y(x_0)$$ and the elapsed time $$x - x_0$$. Now, suppose we deposit
+an additional dollar at a particular time $$x_1$$. That added dollar will also continue
+growing exponentially, but the elapsed time since its deposit will be $$x - x_1$$, not
+ $$x - x_0$$. Thus, exponentials remain key for the inhomogenous equation.
+
+### Null (Homogeneous) Solution
+
+As we saw above, if $$l(y) = a d_x y(x) + b y(x) = 0$$, the solution is straightforward:
+
+$$y(x) = y(x_0) e^{-b x / a}$$
+
+We now consider non-constant coefficients $$a(x), b(x)$$. As long as $$a(x) \neq 0$$, we 
+can rewrite as
+
+$$l(y) = d_x y + \frac{b(x)}{a(x)} y = 0  
+
+Suppose $$l(y) = d_x y(x) + a(x) y(x) = 0$$. 
+
+### Particular (Inhomogeneous) Solution
+
+
+
+### Key Inhomogeneous Solutions
+
+
 It has the complete solution:
 
 $$ y(x) = \exp \{(\int_{u=x_0}^{u=x} \frac{b(u)}{a(u)}) du \}[y(x_0) 
@@ -49,24 +100,6 @@ $$ y(x) = \exp \{(\int_{u=x_0}^{u=x} \frac{b(u)}{a(u)}) du \}[y(x_0)
 
 where $$f(x) = \exp \Big(\int_{u=x_0}^{u=x} \frac{b(u)}{a(u)}) du \Big)$$
 
-### Intuition
-
-For linear, first-order ODEs, exponentials are key. Why? Because all null solutions
-aim to solve the homogeneous equation:
-
-$$ d_x y(x) + a(x) y(x) = 0$$
-
-If $$a(x) = a$$ is a constant, we immediately see that we are trying to find a function
-that is proportional to its own derivative - the exponential function!
-
-$$ d_x y(x) = - a y(x) \rightarrow y(x) = y(x_0) e^{-a x}$$
-
-Suppose we increase $$d_x y(x)$$ by 1 at a particular value of $$x$$. If we think 
-of $$y(x)$$ as being the balance in a bank account, and $$e^{-a x}$$ as its exponential
-return, then that added dollar will continue growing exponentially. Thus, exponentials
-remain relevant even when we consider the inhomogenous equation.
-
-### Solution 1
 
  
 
@@ -99,22 +132,6 @@ l(y - y_p) = l(y) - l(y_p) = h(x) - h(x) = 0\\
 y - y_p \in \ker(l)\\
 y - y_p = c y_n\\
 y = y_p + c y_n
-\end{align*}
-$$
-
-### Warm-up Problems
-
-Some linear, 1st order ODEs are easy to solve.
-
-__Example 1__: Let $$l(y) = \partial_x y(x) + a y(x) = 0$$, where $$a$$ is a constant. Dropping
-$$x$$ for brevity, dividing by $$y$$ and integrating both terms gives us:
-
-$$
-\begin{align*}
-y'(x) + a y(x) &= 0\\
-\int \frac{\partial_x y}{y} dy + a \int 1 dy &=\\
-\log y(x) - \log y(x_0) &= -a(x - x_0)\\
-y(x) &= y(x_0) e^{-a (x - x_0)}  
 \end{align*}
 $$
 
