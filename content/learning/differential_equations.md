@@ -91,7 +91,7 @@ y(x) &= y(x_0) e^{\int_{x_0}^x \frac{b(u)}{a(u)} du
 \end{align*}
 $$
 
-Gilbert Strang dubs the term $$e^{\int_{x_0}^x \frac{b(u)}{a(u)} du$$ the _growth factor_
+Gilbert Strang dubs the term $$e^{\int_{x_0}^x \frac{b(u)}{a(u)} du}$$ the _growth factor_
 $$G(x_0, x)$$ because it describes how much a quantity will grow/decay from $$x_0$$ to $$x$$. 
 This growth factor will reappear in the solution to the particular equation.
 
