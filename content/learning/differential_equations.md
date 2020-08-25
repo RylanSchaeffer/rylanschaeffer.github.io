@@ -62,15 +62,15 @@ both sides:
 $$
 \begin{align*}
 d_x y + \frac{b}{a} y(x) &= 0\\
-\int \frac{d_x y}{y} dy + \frac{b}{a} \int 1 dy &=\\
-\log y(x) - \log y(x_0) + a(x - x_0) &= \\
-y(x) &= y(x_0) e^{-a (x - x_0)}  
+\int \frac{d_x y}{y} dy + \frac{b}{a} \int dy &=\\
+\log y(x) - \log y(x_0) + b(x - x_0)/a &= \\
+y(x) &= y(x_0) e^{-b (x - x_0) / a}  
 \end{align*}
 $$
 
 For concreteness, suppose $$x$$ is time and $$y(x)$$ is your bank balance. Over time, 
 interest will accrue, depositing more in your account as a function of the amount you 
-put in initially $$y(x_0)$$ and the elapsed time $$x - x_0$$. Now, suppose we deposit
+put in initially $$y(x_0)$$, the ratio $$b/a$$ and the elapsed time $$x - x_0$$. Now, suppose we deposit
 an additional dollar at a particular time $$x_1$$. That added dollar will also continue
 growing exponentially, but the elapsed time since its deposit will be $$x - x_1$$, not
  $$x - x_0$$. Thus, exponentials remain key for the inhomogenous equation.
@@ -98,7 +98,7 @@ This growth factor will reappear in the solution to the particular equation.
 ### Particular (Inhomogeneous) Solution via Integrating Factors
 
 In the inhomogeneous case $$l(y) = h(x)$$, the above approach will no longer work because
-the right-hand side is no longer zero. One way, and the way we'll use now, is to find
+the right-hand side is no longer zero. One way that we'll use now is to find
 the solution $$y(x)$$ by using a function $$f(x)$$ called an _integrating
 factor_. To see where the idea arises, divide both sides by $$a(x)$$.
 
