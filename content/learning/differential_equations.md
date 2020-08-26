@@ -100,7 +100,7 @@ $$
 Gilbert Strang dubs the exponential term the _growth factor_ $$G(x_0, x)$$ because it
 describes how much a quantity will grow/decay from $$x_0$$ to $$x$$.
 
-$$G(x_0, x) = e^{\int_{x_0}^x \frac{b(u)}{a(u)} du}$$
+$$G(x_0, x) = \exp \Big(\int_{x_0}^x \frac{b(u)}{a(u)} du \Big)$$
  
 This growth factor will reappear in the solution to the particular equation.
 
@@ -127,9 +127,8 @@ y(x)  &= \frac{f(x_0)}{f(x)} y(x_0) + \frac{1}{f(x)} \int_{x_0}^x \frac{h(u) f(u
 \end{align*}
 $$
 
-The question is now how to find $$f(x)$$.
-We start by setting $$\frac{1}{f}(fy)' = y' + \frac{b}{a} y$$ and then solve for the integrating
-factor $$f(x)$$:
+The question is now how to find $$f(x)$$? Set $$\frac{1}{f}(fy)' = y' + \frac{b}{a} y$$ and 
+solve for the integrating factor $$f(x)$$:
 
 $$
 \begin{align*}
@@ -141,14 +140,14 @@ f(x) &= f(x_0) \exp \Big(\int_{x_0}^x \frac{b(u)}{a(u)} \, du \Big)
 \end{align*}
 $$
 
-When we plug $$f(x)$$ back into our equation for $$y(x)$$, we see that the initial
-condition $$f(x_0)$$ doesn't matter because it cancels out:
+Note that the integrating factor has the same growth factor as in the homogeneous
+case! So what is our final complete solution? We have
 
 $$
 \begin{align*}
-y  &= \frac{f(x_0)}{f(x)} y(x_0) + \frac{1}{f(x)} \int_{t=x_0}^x \frac{h(t) f(t)}{a(t)} \, dt\\
-&= \exp \Big(-\int_{t=x_0}^x \frac{b(t)}{a(t)} \, dt \Big) y(x_0) + \frac{1}{f(x_0)} \exp
-  \Big(-\int_{t=x_0}^x \frac{b(t)}{a(t)} \, dt \Big) \int_{t=x_0}^x \frac{h(t) f(t)}{a(t)} \, dt
+y(x)  &= \frac{f(x_0)}{f(x)} y(x_0) + \frac{1}{f(x)} \int_{x_0}^x \frac{h(v) f(v)}{a(v)} \, dv\\
+&= \exp \Big(\int_{x_0}^x \frac{b(u)}{a(u)} du \Big) y(x_0)
++ \exp \Big(- \int_{x_0}^x \frac{b(u)}{a(u)} du \Big) \int_{x_0}^x \frac{h(v)}{a(v)} \exp \Big(- \int_{x_0}^v \frac{b(u)}{a(u)} du \Big) \, dv  
 \end{align*}
 $$
 
