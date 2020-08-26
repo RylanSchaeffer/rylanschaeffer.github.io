@@ -1,19 +1,25 @@
 # Ordinary Differential Equations
 
 An ordinary differential equation (ODE) is an equation that relates a function
-to its derivative. Two example might be:
+to its derivative(s). Two example might be:
 
 $$\frac{dy(x)}{dx} = x , \quad \frac{d^2 y(x)}{dx^2} = x + \sin(x)$$
 
-Each differential equation can be viewed as an operator that maps elements of a set
-to elements of the same set. Using the above examples, $$y(x)$$ and $$\frac{dy(x)}{dx}$$
-are both elements of the set of continuous, differentiable functions over the interval
-$$[a, b]$$, denoted $$C^1(a, b)$$.
+Each differential equation can be viewed as an operator $$d: \mathbb{F} \rightarrow \mathbb{F}$$
+that maps elements of a set
+to elements of the same set. For instance, consider the set of continuous, differentiable
+functions over the interval $$[a, b]$$, denoted $$C^1(a, b)$$. For $$y(x) \in C^1(a, b)$$,
+ one differential operator could be:
+
+$$d(y(x)) = \frac{d^2 y(x)}{dx^2} - x - \sin(x) $$
+
+Then $$d(y(x)) = 0$$ expresses the second example above.
 
 ## Linear ODEs
 -----
 
-We say that an operator $$l$$ is _linear_ if it satisfies two properties. Letting
+We say that an operator $$l: \mathbb{F} \rightarrow \mathbb{F}$$ is _linear_ if it satisfies
+two properties. Letting
 $$y_1(x), y_2(x) \in C^1(a, b)$$ and $$\lambda \in \mathbb{R}$$, the properties are
 
 1. Element addition: $$l(y_1(x) + y_2(x)) = l(y_1) + l(y_2)$$
@@ -91,21 +97,26 @@ y(x) &= y(x_0) e^{\int_{x_0}^x \frac{b(u)}{a(u)} du
 \end{align*}
 $$
 
-Gilbert Strang dubs the term $$e^{\int_{x_0}^x \frac{b(u)}{a(u)} du}$$ the _growth factor_
-$$G(x_0, x)$$ because it describes how much a quantity will grow/decay from $$x_0$$ to $$x$$. 
+Gilbert Strang dubs the exponential term the _growth factor_ $$G(x_0, x)$$ because it
+describes how much a quantity will grow/decay from $$x_0$$ to $$x$$.
+
+$$G(x_0, x) = e^{\int_{x_0}^x \frac{b(u)}{a(u)} du}$$
+ 
 This growth factor will reappear in the solution to the particular equation.
 
 ### Particular (Inhomogeneous) Solution via Integrating Factors
 
-In the inhomogeneous case $$l(y) = h(x)$$, the above approach will no longer work because
-the right-hand side is no longer zero. One way that we'll use now is to find
-the solution $$y(x)$$ by using a function $$f(x)$$ called an _integrating
-factor_. To see where the idea arises, divide both sides by $$a(x)$$.
+To find the solution $$y(x)$$ to the linear, first order inhomogeneous equation
+
+$$l(y) = a(x) d_x y(x) + b(x) y(x) = h(x)$$
+
+we'll use a function $$f(x)$$ called an _integrating factor_. Before starting, we'll first divide
+ by $$a(x)$$ to clean things up.
 
 $$d_x y + \frac{b(x)}{a(x)} y = \frac{h}{a}$$
 
-If a function $f(x)$ existed such that $$\frac{1}{f}(fy)' = y' + \frac{b}{a} y$$, then
-this function would tremendously simplify the differential equation:
+The motivation for an integrating factor is that if a function $$f(x)$$ exists such that
+$$\frac{1}{f}(fy)' = y' + \frac{b}{a} y$$, then we could simplify the differential equation:
 
 $$
 \begin{align*}
