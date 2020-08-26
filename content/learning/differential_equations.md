@@ -93,7 +93,7 @@ $$
 \begin{align*}
 l(y(x)) = a(x) d_x y + b(x) y &= 0\\
 \frac{d_x y}{y} + \frac{b(x)}{a(x)} &=\\
-y(x) &= y(x_0) e^{\int_{x_0}^x \frac{b(u)}{a(u)} du
+y(x) &= y(x_0) e^{\int_{x_0}^x \frac{b(u)}{a(u)} du}
 \end{align*}
 $$
 
@@ -116,20 +116,20 @@ we'll use a function $$f(x)$$ called an _integrating factor_. Before starting, w
 $$d_x y + \frac{b(x)}{a(x)} y = \frac{h}{a}$$
 
 The motivation for an integrating factor is that if a function $$f(x)$$ exists such that
-$$\frac{1}{f}(fy)' = y' + \frac{b}{a} y$$, then we could simplify the differential equation:
+$$\frac{1}{f}(fy)' = y' + \frac{b}{a} y$$, then we could replace the inconvenient
+$$y' + \frac{b}{a} y$$ with a derivative $$(fy)'$$ that can be more easily integrated:
 
 $$
 \begin{align*}
-y' + \frac{b}{a} y &= \frac{h}{a}\\
-\frac{1}{f}(fy)' &= \\
+y' + \frac{b}{a} y &= \frac{1}{f}(fy)' = \frac{h}{a}\\
 f y - f(x_0)y(x_0) &= \int_{t=x_0}^t \frac{h(t) f(t)}{a(t)} \, dt\\
-y(x)  &= \frac{f(x_0)}{f(x)} y(x_0) + \frac{1}{f(x)} \int_{t=x_0}^x \frac{h(t) f(t)}{a(t)} \, dt\\
+y(x)  &= \frac{f(x_0)}{f(x)} y(x_0) + \frac{1}{f(x)} \int_{x_0}^x \frac{h(u) f(u)}{a(u)} \, du\\
 \end{align*}
 $$
 
-The insight is to express the inconvenient $$y' + \frac{b}{a} y$$ as a
-derivative $$(fy)'$$ that is more easily integrated. The question is now how to find $$f(x)$$.
-We start by setting $$\frac{1}{f}(fy)' = y' + \frac{b}{a} y$$ and then solve for $$f(x)$$:
+The question is now how to find $$f(x)$$.
+We start by setting $$\frac{1}{f}(fy)' = y' + \frac{b}{a} y$$ and then solve for the integrating
+factor $$f(x)$$:
 
 $$
 \begin{align*}
@@ -137,7 +137,7 @@ $$
 \frac{1}{f}(f' y + y f') &= y' + \frac{b}{a} y\\
 \frac{f'}{f} &= \frac{b}{a}\\
 \log f(x) - \log f(x_0) &= \int_{t=x_0}^x \frac{b(t)}{a(t)} \, dt\\
-f(x) &= f(x_0) \exp \Big(\int_{t=x_0}^x \frac{b(t)}{a(t)} \, dt \Big)
+f(x) &= f(x_0) \exp \Big(\int_{x_0}^x \frac{b(u)}{a(u)} \, du \Big)
 \end{align*}
 $$
 
