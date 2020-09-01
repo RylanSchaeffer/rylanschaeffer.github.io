@@ -49,7 +49,7 @@ Because the CRP defines a distribution on partitions of customers, the order in 
 the customers arrive doesn't matter. This property is called exchangeability.
 However, for certain applications, exchangeability might be undesirable. For instance, if your
 data has temporal or spatial structure, then you would want clusters (tables) to reflect the
-relevant notions of distance. [Blei and Frazier](https://www.jmlr.org/papers/volume12/blei11a/blei11a.pdf)
+relevant notions of distance. [Blei and Frazier 2011](https://www.jmlr.org/papers/volume12/blei11a/blei11a.pdf)
 introduce the Distance Dependent CRP (ddCRP) to allow the CRP to capture this desideratum.
 
 The key conceptual difference is that instead of assigning customers to tables (clusters)
@@ -67,7 +67,15 @@ assigning the $$i$$th customer to the $$j$$th customer is then:
 
 $$
 P(z_i = j|D, \alpha) = \begin{cases}
-\frac{f(d_{ij})}{\sum_k f(d_{ik}) + \alpha} & i \neq j \\
-\frac{\alpha}{\sum_k f(d_{ik}) + \alpha} & i = j
+\frac{f(d_{ij})}{\alpha + \sum_k f(d_{ik})} & i \neq j \\
+\frac{\alpha}{\alpha + \sum_k f(d_{ik})} & i = j
 \end{cases}
 $$
+
+We can define a sequential CRP by defining $$d_{ij} = \infty$$ for $$j > i$$.
+
+
+## Dirichlet Process
+
+A Dirichlet process is intimately connected with several others, including the 
+_stick breaking process_, the _Chinese restaurant process_ and the _Polya urn scheme_.  

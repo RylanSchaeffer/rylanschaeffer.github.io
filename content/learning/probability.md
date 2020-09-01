@@ -1,6 +1,7 @@
 # Probability
 
 ## Probability Spaces
+-----
 
 A __probability space__ is a 3-tuple consisting of a set $$X$$, a $$\sigma$$-algebra
 and a probability measure $$P$$. A collection $$C$$ of subsets of set $$X$$ is
@@ -18,8 +19,13 @@ Relatedly, a function $$P: C \rightarrow [0, 1]$$ is a probability measure on $$
 2. $$P$$ is $$\sigma$$-additive i.e. P(\cup_{i=1}^{\infty} c_i) = 
 \sum_{i=1}^{\infty} P(c_i)$$ 
 
+## Random Variables
+-----
 
-## Independence
+At the heart of probability is the notion of a _random variable_. Intuitively, a random variable
+is a variable whose value depends on the outcome of some random process (e.g. a coin flip). 
+
+### Independence
 
 Two random variables are __independent__ if their joint probability is equal to the product
 of the marginal probabilities:
@@ -149,3 +155,26 @@ almost surely__ if $$\forall \epsilon > 0$$
 $$ P(\lim_{n \rightarrow \infty} |X_n - X| < \epsilon) = 1 $$
 
 Convergence almost surely implies convergence in probability.
+
+## Probability Distributions
+-----
+
+## Parametric Probability Distributions
+
+Parameters are frequently classified into one of several possible types: 
+
+- location parameter: shifts the distribution e.g. Gaussian mean
+- scale (inverse rate): stretches/squeezes the distribution e.g. Laplace diversity
+- shape: changes the shape e.g. Beta $$\alpha, \beta$$
+
+### Beta Distribution
+
+The Beta distribution is a two-parameter continuous distribution over the interval $$[0, 1]$$.
+Its density is  
+
+$$p(x; \alpha, \beta) = \frac{\Gamma(\alpha + \beta)}{\Gamma(\alpha) \Gamma(\beta)} x^{\alpha-1} (1-x)^{\beta-1}$$
+
+
+
+### Dirichlet Distribution
+
