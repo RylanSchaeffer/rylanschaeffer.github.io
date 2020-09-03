@@ -151,11 +151,11 @@ $$\mathcal{Z} = \{ Z : S \times A \rightarrow P(\mathbb{R}) \}$$
 The maximal Wasserstein distance between two action-value distributions $$Z_1, Z_2$$ is 
 defined as the largest Wasserstein distance evaluate at all states and actions:
 
-$$d_p (Z_1, Z_2) = \sup{s, a} W_p (Z_1(s,a), Z_2(s,a)) $$
+$$d_p (Z_1, Z_2) = \sup_{s, a} W_p (Z_1(s,a), Z_2(s,a)) $$
 
 However, minimizing the Wasserstein distance with stochastic gradient descent yields biased
 gradients, so we need an alternative approach. Dabney and his co-authors note that if 
-we constrain the agent to representing the return distribution using a fixed number of 
+we constrain the agent to represent the return distribution using a fixed number of 
 _quantiles_, then we can construct an alternative approach. For those unfamiliar with
 quantiles, quantiles are a generalization
 of the median. Specifically, if $$\tau \in (0, 1)$$, the $\tau$-th quantile of a random
@@ -168,7 +168,7 @@ learn an arbitrary action-value distribution $$Z^* \in \mathcal{Z}$$, but constr
 to using $$\hat{Z} \in \mathcal{Z}_Q$$. Formally, we're looking for $$\hat{Z}$$ that
 minimizes the Wasserstein distance:
 
-$$\hat{Z} = \argmin_{Z \in \mathcal{Z}_Q} W_1 (Z, Z^*)$$
+$$\hat{Z} = \underset{Z \in \mathcal{Z}_Q}{\operatorname{argmin}} W_1 (Z, Z^*)$$
 
 Let $$z_{\tau_1}, z_{\tau_2}, ..., z_{\tau_K}$$ denote the values of $$z$$ corresponding to the
 $$K$$ quantiles. If we place uniform weight on each quantile (i.e. we place probability mass
