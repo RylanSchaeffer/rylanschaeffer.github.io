@@ -12,6 +12,7 @@
 - [Numerical Methods](learning/numerical_methods.html)
 - [Optimization](learning/optimization.html)
 - [Probability](learning/probability.html)
+- [Probabilistic Graphical Models](learning/probabilistic_graphical_models.html)
 - [Statistics](learning/statistics.html)
 - [Stochastic Processes](learning/stochastic_processes.html)
 - [Reinforcement Learning](learning/reinforcement_learning.html)
