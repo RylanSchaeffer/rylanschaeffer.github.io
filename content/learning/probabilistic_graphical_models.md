@@ -26,7 +26,7 @@ problem is closely associated with the efficiency of inference.
 
 A directed graphical model is one way of combining graphs with random variables. Specifically,
 a directed graphical model $$G$$ is defined as the tuple of $$U$$, a set of nodes, each 
-representing a random variable, and $$U \subseteq V \cross V$$, a set of directed edges.
+representing a random variable, and $$U \subseteq V \times V$$, a set of directed edges.
 One particular $$GG$$ defines a family of joint distributions over the random variables
 by imposing conditional independencies in the edges. 
 We denote the $$i$$th random variable $$X_i$$ and its set of parent nodes
@@ -41,14 +41,37 @@ conditional probabilities.
 I use numbers to represent random variables rather than $$x_1, x_2, ...$. I couldn't get
 BayesNet to work with Markdown, so bear with the poor "pictures".  
 
-$$ 1 \rightarrow 2 \leftarrow 3$$
+- Ex 1:
 
-Here, by the definition of conditional probabilities, we have $$p(1,2,3) = p(1)p(2|1)p(3|1,2)$$.
-But by the structure of the graph, we also have $$p(1,2,3) = p(1)p(2|1)p(3|2)$$. Setting the
-two equal means $$p(3|1,2) = p(3|2)$$. This means that 3 is conditionally independent from 
-1 given 2. 
+$$ 1 \rightarrow 2 \rightarrow 3$$
+
+Here, by the definition of conditional probabilities, we have
+
+$$p(1,2,3) = p(1)p(2|1)p(3|1,2)$$
+
+
+By the structure of the graph, we also have
+
+$$p(1,2,3) = p(1)p(2|1)p(3|2)$$
+
+Setting the two equal shows $$p(3|1,2) = p(3|2)$$, meaning 3 is conditionally independent from 
+1 given 2 i.e. $$1 \perp 3 | 2$$.
+
+- Ex 2:
  
+$$ 1 \leftarrow 2 \rightarrow 3$$
 
+A similar analysis shows that $$1 \bigCI 3$$ but that $$1 \not\perp 3$$. Intuitively, if $$1$$ and 
+$$3$$ are descendents of $$2$$, then knowing $$2$$ renders the two descendents independent.
+
+- Ex 3:
+
+$$ 1 \rightarrow 2 \leftarrow 3 $$
+
+This one is trickier, but not by much. Suppose $$2$$ is the child of $$1$$ and $$3$$. Initially,
+there's no relationship between the parents, so $$1 \perp 3$$, but if I observe that the child
+has blue eyes and $$1$$ does not tells me something about $$3$$. This means $$1 \perp 3$$ but 
+$$1 \not\per 3 | 2$$.
 
 
 ## History
