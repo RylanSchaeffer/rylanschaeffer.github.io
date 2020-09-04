@@ -36,7 +36,18 @@ $$\pi_i = \{j \in V | (j, i) \in E \}$$
 __Importantly, $$G$$ cannot have cycles__. If it does, there is no consistent way to assign
 conditional probabilities.
 
-### Examples
+### Extracting Conditional Independence from Graph Structure
+
+I use numbers to represent random variables rather than $$x_1, x_2, ...$. I couldn't get
+BayesNet to work with Markdown, so bear with the poor "pictures".  
+
+$$ 1 \rightarrow 2 \leftarrow 3$$
+
+Here, by the definition of conditional probabilities, we have $$p(1,2,3) = p(1)p(2|1)p(3|1,2)$$.
+But by the structure of the graph, we also have $$p(1,2,3) = p(1)p(2|1)p(3|2)$$. Setting the
+two equal means $$p(3|1,2) = p(3|2)$$. This means that 3 is conditionally independent from 
+1 given 2. 
+ 
 
 
 
