@@ -36,7 +36,7 @@ $$\pi_i = \{j \in V | (j, i) \in E \}$$
 __Importantly, $$G$$ cannot have cycles__. If it does, there is no consistent way to assign
 conditional probabilities.
 
-### Extracting Conditional Independence from Graph Structure
+### Extracting Conditional Independence from Directed Graphs
 
 I use numbers to represent random variables rather than $$x_1, x_2, ...$. I couldn't get
 BayesNet to work with Markdown, so bear with the poor "pictures".  
@@ -72,9 +72,40 @@ there's no relationship between the parents, so $$1 \perp 3$$, but if I observe 
 has blue eyes and that $$1$$ does not, this tells me something about $$3$$. Consequently,
 $$1 \perp 3$$ but $$1 \not\perp 3 | 2$$.
 
-_Local Markov Property_: For a given DAG $$G = (V, E)$$, we say that the DAG has the local
-Markov property if $$\forall i \in V, x_i \perp x_{nd(i)\pi_i}$$ | \pi_i$$ where $$\pi_i$$
-are the parents of $$i$$ and $$nd(i)$$ are the non-descendents of $$i$$. 
+__Directed Local Markov Property__:  A distribution $$p$$ over $$X^{|V}}$$ ($$V$$ is the set of 
+variables) is said to satisfy the directed local
+Markov property with respect to a DAG $$G = (V, E)$$ if $$\forall i \in V, x_i \perp 
+x_{nd(i)\pi_i} | \pi_i$$ where $$\pi_i$$ are the parents of $$i$$ and
+ $$nd(i)$$ are the non-descendents of $$i$$. 
+
+Directed Separation (or d-separation) describes rules for extracting
+conditional independencies in a DAG. 
+
+__Directed (d-) Separation__: For a given DAG $$G = (V, E)$$, we say the set of nodes $$A$$ is d-separated from the
+ nodes $$B$$ with respect to nodes $$C$$ if every path between nodes $$a\in A$$ and 
+ $$b \in B$$ is blocked. 
+
+__Directed Global Markov Property__: A distribution $$p$$ over $$X^{|V|}$$ is said to satisfy the 
+global Markov property with respect to a DAG $$G$$ if $$x_A \perp x_B | x_C$$ for any
+$$x_A, x_B, x_C \subset V$$ such that $$A$$ and $$B$$ are d-separated by $$C$$.
+
+It turns out that both the global Markov property and the local Markov property are equivalent,
+and that both properties are equivalent to factorization.
+
+__Theorem__: Let $$G$$ be a DAG. The following are equivalent:
+
+1. $$p$$ factorizes according to $$G$$
+
+2. $$p$$ satisfies the directed global Markov property with respect to $$G$$
+
+3. $$p$$ satisfies the directed local Markov property with respect to $$G$$ 
+
+The implication is that the following two lists are equivalent:
+
+1. List all distributions that factorize according to the graph structure
+
+2. List all distributions, then discard distributions which violate the conditional
+independencies obtained by testing d-separation
 
 
 ## History
