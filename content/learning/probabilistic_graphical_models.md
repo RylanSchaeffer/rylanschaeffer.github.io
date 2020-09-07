@@ -60,7 +60,7 @@ Setting the two equal shows $$p(3|1,2) = p(3|2)$$, meaning 3 is conditionally in
  
 $$ 1 \leftarrow 2 \rightarrow 3$$
 
-A similar analysis shows that $$1 \perp 3 | y$$ Intuitively, if $$1$$ and $$3$$ are descendents
+A similar analysis shows that $$1 \perp 3 | 2$$ Intuitively, if $$1$$ and $$3$$ are descendents
 of $$2$$, then knowing $$2$$ renders the two descendents independent.
 
 - Ex 3:
@@ -72,10 +72,10 @@ there's no relationship between the parents, so $$1 \perp 3$$, but if I observe 
 has blue eyes and that $$1$$ does not, this tells me something about $$3$$. Consequently,
 $$1 \perp 3$$ but $$1 \not\perp 3 | 2$$.
 
-__Directed Local Markov Property__:  A distribution $$p$$ over $$X^{|V}}$$ ($$V$$ is the set of 
+__Directed Local Markov Property__:  A distribution $$p$$ over $$X^{|V|}$$ ($$V$$ is the set of 
 variables) is said to satisfy the directed local
 Markov property with respect to a DAG $$G = (V, E)$$ if $$\forall i \in V, x_i \perp 
-x_{nd(i)\pi_i} | \pi_i$$ where $$\pi_i$$ are the parents of $$i$$ and
+x_{nd(i)\\pi_i} | \pi_i$$ where $$\pi_i$$ are the parents of $$i$$ and
  $$nd(i)$$ are the non-descendents of $$i$$. 
 
 Directed Separation (or d-separation) describes rules for extracting
@@ -83,7 +83,22 @@ conditional independencies in a DAG.
 
 __Directed (d-) Separation__: For a given DAG $$G = (V, E)$$, we say the set of nodes $$A$$ is d-separated from the
  nodes $$B$$ with respect to nodes $$C$$ if every path between nodes $$a\in A$$ and 
- $$b \in B$$ is blocked. 
+ $$b \in B$$ is blocked.
+ 
+We now need to explain what a path is and what blocked means. A path is a chain of edges that connect
+two vertices, regardless of those edges' directionality. For determining whether a path is blocked,
+there are really just two rules motivated by the earlier examples ($$1 \rightarrow 2 \rightarrow 3, 
+1 \leftarrow 2 \rightarrow 3, 1 \rightarrow 2 \leftarrow 3$$):
+
+1. Suppose arrows on the path don't meet head to head (e.g. $$1 \rightarrow 2 \rightarrow 3, 
+1 \leftarrow 2 \rightarrow 3$$). Then the path is blocked if a node along the path is observed
+and unblocked if not observed.
+
+2. Suppose arrows on the path do meet head to head (e.g. $$1 \rightarrow 2 \leftarrow 3$$).
+Then the path is unblocked if a node along the path is observed and blocked if not observed.
+
+
+ 
 
 __Directed Global Markov Property__: A distribution $$p$$ over $$X^{|V|}$$ is said to satisfy the 
 global Markov property with respect to a DAG $$G$$ if $$x_A \perp x_B | x_C$$ for any
