@@ -49,7 +49,6 @@ Here, by the definition of conditional probabilities, we have
 
 $$p(1,2,3) = p(1)p(2|1)p(3|1,2)$$
 
-
 By the structure of the graph, we also have
 
 $$p(1,2,3) = p(1)p(2|1)p(3|2)$$
@@ -61,8 +60,8 @@ Setting the two equal shows $$p(3|1,2) = p(3|2)$$, meaning 3 is conditionally in
  
 $$ 1 \leftarrow 2 \rightarrow 3$$
 
-A similar analysis shows that $$1 \bigCI 3$$ but that $$1 \not\perp 3$$. Intuitively, if $$1$$ and 
-$$3$$ are descendents of $$2$$, then knowing $$2$$ renders the two descendents independent.
+A similar analysis shows that $$1 \perp 3 | y$$ Intuitively, if $$1$$ and $$3$$ are descendents
+of $$2$$, then knowing $$2$$ renders the two descendents independent.
 
 - Ex 3:
 
@@ -70,8 +69,12 @@ $$ 1 \rightarrow 2 \leftarrow 3 $$
 
 This one is trickier, but not by much. Suppose $$2$$ is the child of $$1$$ and $$3$$. Initially,
 there's no relationship between the parents, so $$1 \perp 3$$, but if I observe that the child
-has blue eyes and $$1$$ does not tells me something about $$3$$. This means $$1 \perp 3$$ but 
-$$1 \not\per 3 | 2$$.
+has blue eyes and that $$1$$ does not, this tells me something about $$3$$. Consequently,
+$$1 \perp 3$$ but $$1 \not\perp 3 | 2$$.
+
+_Local Markov Property_: For a given DAG $$G = (V, E)$$, we say that the DAG has the local
+Markov property if $$\forall i \in V, x_i \perp x_{nd(i)\pi_i}$$ | \pi_i$$ where $$\pi_i$$
+are the parents of $$i$$ and $$nd(i)$$ are the non-descendents of $$i$$. 
 
 
 ## History
