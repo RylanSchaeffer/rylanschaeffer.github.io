@@ -3,24 +3,23 @@
 ## Overview
 -----
 
-Bayesian inference frequently involves computing a conditional distribution:
+A joint distribution over $$N$$ variables $$\{x_i\}_{i=1}^N can permit complicated relationships
+between the variables. One general principle is that performing inference
+becomes easier in the absence of relationships between variables. This motivates
+us to specify relationships between variables as a graphs and then use the graph
+structure to design efficient inference algorithms
 
-$$ p(x|y) = \frac{p(x, y)}{p(y)} = \frac{p(x, y)}{\sum_x p(x, y)}$$
+## History
+-----
+- Statistical physics: undirected graphs to represent distribution over large
+system of interacting particles
 
-Without any information the relationship between $$x$$ and $$y$$, if $$x$$ is
-$$D$$ dimensional, the integral requires summing over $$|X|^D$$ terms,
-which is exponential in the dimension. However, if some relationship is known,
-we might be able to simplify the integral. For instance, if dimensions are
-conditionally independent given $$y$$, we have:
- 
-$$p(x|y) = \prod_{n=1}^N p(x_n|y) = \prod_{n=1}^N \frac{p(x_n, y)}{\sum_{x_n} p(x_n, y)}$$
+- Genetics: directed graphs to model inheritance
 
-With independence, the number of sums shifts from exponential to linear in dimension.
-Structure matters! We shall wee that the degree of structure inherent in a 
-problem is closely associated with the efficiency of inference.
+- Statistics: interactions in multi-dimensional contingency tables
 
 
-## Directed Graphical Model
+## Directed Graphical Models
 -----
 
 
@@ -53,7 +52,8 @@ By the structure of the graph, we also have
 
 $$p(1,2,3) = p(1)p(2|1)p(3|2)$$
 
-Setting the two equal shows
+Setting the two equal shows $$p(3|1,2) = p(3|2)$$, meaning 3 is conditionally independent from 
+1 given 2
 
 - Ex 2:
  
@@ -122,11 +122,9 @@ The implication is that the following two lists are equivalent:
 independencies obtained by testing d-separation
 
 
-## History
+## Undirected Graphical Models
 -----
-- Statistical physics: undirected graphs to represent distribution over large
-system of interacting particles
 
-- Genetics: directed graphs to model inheritance
 
-- Statistics: interactions in multi-dimensional contingency tables
+
+## Relationship between Directed and Undirected Models
