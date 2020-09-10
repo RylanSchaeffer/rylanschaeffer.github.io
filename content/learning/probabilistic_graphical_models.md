@@ -53,7 +53,7 @@ By the structure of the graph, we also have
 $$p(1,2,3) = p(1)p(2|1)p(3|2)$$
 
 Setting the two equal shows $$p(3|1,2) = p(3|2)$$, meaning 3 is conditionally independent from 
-1 given 2  i.e. $$1 \perp 3 | 2$$.
+1 given 2; that is, $$1 \perp 3 | 2$$.
 
 - Ex 2:
  
@@ -138,3 +138,15 @@ independencies obtained by testing d-separation
 | Local Markov Property |||
 | Pairwise Markov Property |||
 
+
+testing latex table
+
+$$
+\begin{center}
+\begin{tabular}{ c c c }
+ cell1 & cell2 & cell3 \\ 
+ cell4 & cell5 & cell6 \\  
+ cell7 & cell8 & cell9    
+\end{tabular}
+\end{center}
+$$
