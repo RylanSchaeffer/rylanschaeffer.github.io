@@ -53,13 +53,13 @@ By the structure of the graph, we also have
 $$p(1,2,3) = p(1)p(2|1)p(3|2)$$
 
 Setting the two equal shows $$p(3|1,2) = p(3|2)$$, meaning 3 is conditionally independent from 
-1 given 2
+1 given 2  i.e. $$1 \perp 3 | 2$$.
 
 - Ex 2:
  
 $$ 1 \leftarrow 2 \rightarrow 3$$
 
-A similar analysis shows that $$1 \perp 3 | 2$$ Intuitively, if $$1$$ and $$3$$ are descendents
+A similar analysis shows that $$1 \perp 3 | 2$$. Intuitively, if $$1$$ and $$3$$ are descendents
 of $$2$$, then knowing $$2$$ renders the two descendents independent.
 
 - Ex 3:
@@ -128,3 +128,13 @@ independencies obtained by testing d-separation
 
 
 ## Relationship between Directed and Undirected Models
+
+
+
+| Property | Directed | Undirected |
+| -------- | -------- | ---------- |
+| Factorization | $$p(x) = \prod^N p(x_i | x_{\pi_i}) $$ | |
+| Global Markov Property | | |
+| Local Markov Property |||
+| Pairwise Markov Property |||
+
