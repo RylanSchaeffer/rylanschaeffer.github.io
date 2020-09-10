@@ -53,7 +53,7 @@ By the structure of the graph, we also have
 $$p(1,2,3) = p(1)p(2|1)p(3|2)$$
 
 Setting the two equal shows $$p(3|1,2) = p(3|2)$$, meaning 3 is conditionally independent from 
-1 given 2; that is, $$1 \perp 3 | 2$$.
+1 given 2.
 
 - Ex 2:
  
