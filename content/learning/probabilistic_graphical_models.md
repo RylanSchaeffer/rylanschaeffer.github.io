@@ -128,8 +128,24 @@ __Global Markov Property__: A distribution $$p$$ satisfies this property if it s
 all conditional independence statements $$x_A \perp x_B | x_C$$ for all disjoint sets
 $$A, B, C \in V$$ such that $$A, B$$ are separated w.r.t. $$C$$.
 
-__Pairwise Markov Property__:
+__Pairwise Markov Property__: $$\forall (i, j) \not\in E, \, x_i \perp x_j | x_{V \\ \{i, j\}}$$
 
+__Factorization__: Let $$cl^*(G)$$ be the set of maximal cliques on $$G$$. Then the Boltzmann
+(or Gibbs) distribution on $$G$$ is defined as 
+
+$$p(x) = \frac{1}{Z} \exp(- \sum_{c \in cl^*(G)} \Psi (x_c))$$
+
+where $$x_c$$ are the nodes in the maximal clique and $$\Psi: X^{|c|} \rightarrow \mathbb{R}_{\geq 0}$$
+are non-negative functions called potentials. Cliques can be intuited from a physics perspective.
+If undirected edges describe interactions between objects, then a maximial clique is a group of particles
+that all interact. That interaction has some energy, and the sum of all the interactions has a 
+total energy.
+
+__Claim__: Factorization $$\Rightarrow$$ Undirected Global Markov Property.
+
+__Hammersley-Clifford Theorem__: If $p(x) > 0$$, then factorization w.r.t. undirected $$G$$
+$$\Leftrightarrow$$ undirected global Markov property $$\Leftrightarrow undirected local
+Markov property$$.
 
 ## Relationship between Directed and Undirected Graphs
 
@@ -143,4 +159,16 @@ one undirected graph.
 - Ex: $$1 \rightarrow 2 \leftarrow 3$$ has no equivalent undirected graph with these
 and only these conditional independencies.
 
-- Ex:
+- Ex: $$ 1 - 2 - 3 - 4 - 1$$ has no equivalent directed graph. Because the undirected
+graph has a loop, at some point, 2 edges will collide. Suppose the collision happens
+at $$3 \rightarrow 4 \leftarrow 1$$. In the undirected graph, we have $$1 \perp 3 | 2, 4$$.
+But in the directed graph, we have $$1 \not\perp | 2, 4$$.
+
+__Efficient Representation__: Suppose $$G_1, G_2 $$ are two graphs with corresponding families
+$$P(G_1), P(G_2)$$ and with sets of CIs given by $$I(G_1), I(G_2)$$. If a distribution
+$$p$$ is representable by both graphs i.e. $$p \in P(G_1), p \in P(G_2)$$, we say 
+$$G_1$$ is a more efficient representation of $$p$$ if $$I(G_1) \subset I(G_2)$$.
+
+__Independence Maps__: A DAG or UG is called an independence map (or I-map) for 
+distribution $$p$$ if set of CIs expressed by graph $$I(G) \subset I(p)$$, where
+$$I(p)$$ is the set of CIs expressed by the distribution. 
