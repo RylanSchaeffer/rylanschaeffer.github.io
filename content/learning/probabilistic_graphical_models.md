@@ -169,6 +169,30 @@ $$P(G_1), P(G_2)$$ and with sets of CIs given by $$I(G_1), I(G_2)$$. If a distri
 $$p$$ is representable by both graphs i.e. $$p \in P(G_1), p \in P(G_2)$$, we say 
 $$G_1$$ is a more efficient representation of $$p$$ if $$I(G_1) \subset I(G_2)$$.
 
-__Independence Maps__: A DAG or UG is called an independence map (or I-map) for 
+__Independence Map__: A DAG or UG is called an independence map (or I-map) for 
 distribution $$p$$ if set of CIs expressed by graph $$I(G) \subset I(p)$$, where
-$$I(p)$$ is the set of CIs expressed by the distribution. 
+$$I(p)$$ is the set of CIs expressed by the distribution.
+
+The implication of being an I-map is that $$p$$ is one of the distributions in the 
+set of families represented by the graph.
+
+__Perfect Map__: A graph $$G$$ is a perfect map for distribution $$p$$ if $$I(G) = I(p)$$.
+
+__Minimal I-Map$$: A graph $$G$$ is a minimal I-map if removing any edge would cause
+it to no longer be an I-map for distribution $$p$$.
+
+Note: A minimal I-map for a distribution $$p$$ may not be unique. It depends on the choice
+of topological ordering and which CIes (if any) are dropped.
+
+__Moralization__: An undirected graph $$G' = (V, E')$$ is a moralization of a DAG $$G=(V, E)$$
+if $$(i, j) \in E \Rightarrow (i, j) \in E'$$ and $$if i \rightarrow k \leftarrow j$$, we connect
+$$i$$ to $$j$$ (either direction fine). This connection is called a "moralization" after 
+"marrying" two unmarried nodes.
+
+Claim: DAG $$G$$ has undirected perfect map $$\Leftrightarrow$$ moralization of G does not add
+any edges.
+
+__Chordal__: An undirected graph (UG) is chordal if every loop of size $$\geq 4$$ has a chord
+(an edge connecting 2 non-consecutive nodes in loop)
+
+Claim: Undirected graph G has a directed P-map $$\Leftrightarrow$$ G is chordal
