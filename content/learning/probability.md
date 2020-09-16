@@ -187,7 +187,7 @@ Information Form: Define $$J = \Sigma^{-1}$$ and $$h = J \mu$$. Then
 
 $$p(x\lvert \mu, \Sigma) \propto \exp \Big(-\frac{1}{2} x^T J x + x^T h \Big)$$
 
-Linear Form: $$x \sim \mathcal{N}(\mu, Sigma)$$ if $$\exists A \in \mathbb{R}^{N \cross N}$$
+Linear Form: $$x \sim \mathcal{N}(\mu, Sigma)$$ if $$\exists A \in \mathbb{R}^{N \times N}$$
 and $$b \in \mathbb{R}^N$$ such that $$x = Au + b$$ where $$u \sim \mathcal{N}(0, I)$$.
 Specifically, $$\mu = b$$ and $$\Sigma = A A^T$$.
 
@@ -204,15 +204,15 @@ $$X \sim \mathcal{N}(\mu_x, \Sigma_{xx})$$
 
 - Closed under conditioning
 
-$$Y | X sim \mathcal{N}(h_y - J_{yx} x , J_{yy})$$
+$$Y | X \sim \mathcal{N}(h_y - J_{yx} x , J_{yy})$$
 
 Proof: 
 
 $$
 \begin{align*}
 p(y|x) &\propto \exp \Big(-\frac{1}{2} \begin{bmatrix} x \\ y \end{bmatrix}^T J 
-\begin{bmatrix} x \\ y \end{bmatrix} + \begin{bmatrix} x \\ y \end{bmatrix}^Twe \begin{bmatrix} h_x \\ h_y \end{bmatrix} \Big)\\
-&\propto \exp \Big(-\frac{1}{2} y^T J_yy y + (h_y - J{yx} x)^T y \Big)
+\begin{bmatrix} x \\ y \end{bmatrix} + \begin{bmatrix} x \\ y \end{bmatrix}^T \begin{bmatrix} h_x \\ h_y \end{bmatrix} \Big)\\
+&\propto \exp \Big(-\frac{1}{2} y^T J_{yy} y + (h_y - J_{yx} x)^T y \Big)
 \end{align*}
 $$
 
