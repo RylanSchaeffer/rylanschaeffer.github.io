@@ -178,6 +178,45 @@ $$p(x; \alpha, \beta) = \frac{\Gamma(\alpha + \beta)}{\Gamma(\alpha) \Gamma(\bet
 
 ### Dirichlet Distribution
 
+### Normal (Gaussian) Distribution
+
+Classic Form: $$p(x\lvert \mu, \Sigma) = \frac{1}{\sqrt{2 \pi \det{\Sigma}}} \exp \Big(
+-\frac{1}{2}(x- \mu)^T \Sigma^{-1} (x - \mu) \Big)$$
+
+Information Form: Define $$J = \Sigma^{-1}$$ and $$h = J \mu$$. Then
+
+$$p(x\lvert \mu, \Sigma) \propto \exp \Big(-\frac{1}{2} x^T J x + x^T h \Big)$$
+
+Linear Form: $$x \sim \mathcal{N}(\mu, Sigma)$$ if $$\exists A \in \mathbb{R}^{N \cross N}$$
+and $$b \in \mathbb{R}^N$$ such that $$x = Au + b$$ where $$u \sim \mathcal{N}(0, I)$$.
+Specifically, $$\mu = b$$ and $$\Sigma = A A^T$$.
+
+#### Properties
+
+Let $$(X, Y) \sim \mathcal{N}(\begin{bmatrix} \mu_x \\ \mu_y \end{bmatrix}, \begin{bmatrix}
+ \Sigma_{xx} & \Sigma_{xy} \\ \Sigma_{xy} & \Sigma_{yy}\end{bmatrix})$$, or equivalently,
+ $$(X, Y) \sim \mathcal{N}^{-1}(\begin{bmatrix} h_x \\ h_y \end{bmatrix}, \begin{bmatrix}
+  J_{xx} & J_{xy} \\ J_{xy} & J_{yy}\end{bmatrix})$$. Then
+
+- Closed under marginalization
+
+$$X \sim \mathcal{N}(\mu_x, \Sigma_{xx})$$
+
+- Closed under conditioning
+
+$$Y | X sim \mathcal{N}(h_y - J_{yx} x , J_{yy})$$
+
+Proof: 
+
+$$
+\begin{align*}
+p(y|x) \propto \exp \Big(-\frac{1}{2} \begin{bmatrix} h_x \\ h_y \end{bmatrix}^T J 
+\begin{bmatrix} h_x \\ h_y \end{bmatrix} + \begin{bmatrix} h_x \\ h_y \end{bmatrix}^Twe \begin{bmatrix} h_x \\ h_y \end{bmatrix} \Big)\\
+
+
+\end{algin*}
+$$
+
 
 ## Divergence Measures
 -----

@@ -143,9 +143,9 @@ total energy.
 
 __Claim__: Factorization $$\Rightarrow$$ Undirected Global Markov Property.
 
-__Hammersley-Clifford Theorem__: If $p(x) > 0$$, then factorization w.r.t. undirected $$G$$
-$$\Leftrightarrow$$ undirected global Markov property $$\Leftrightarrow undirected local
-Markov property$$.
+__Hammersley-Clifford Theorem__: If $$p(x) > 0$$, then factorization w.r.t. undirected $$G$$
+$$\Leftrightarrow$$ undirected global Markov property $$\Leftrightarrow$$ undirected local
+Markov property.
 
 ## Relationship between Directed and Undirected Graphs
 
@@ -178,14 +178,14 @@ set of families represented by the graph.
 
 __Perfect Map__: A graph $$G$$ is a perfect map for distribution $$p$$ if $$I(G) = I(p)$$.
 
-__Minimal I-Map$$: A graph $$G$$ is a minimal I-map if removing any edge would cause
+__Minimal I-Map__: A graph $$G$$ is a minimal I-map if removing any edge would cause
 it to no longer be an I-map for distribution $$p$$.
 
 Note: A minimal I-map for a distribution $$p$$ may not be unique. It depends on the choice
 of topological ordering and which CIes (if any) are dropped.
 
 __Moralization__: An undirected graph $$G' = (V, E')$$ is a moralization of a DAG $$G=(V, E)$$
-if $$(i, j) \in E \Rightarrow (i, j) \in E'$$ and $$if i \rightarrow k \leftarrow j$$, we connect
+if $$(i, j) \in E \Rightarrow (i, j) \in E'$$ and if $$ i \rightarrow k \leftarrow j$$, we connect
 $$i$$ to $$j$$ (either direction fine). This connection is called a "moralization" after 
 "marrying" two unmarried nodes.
 
@@ -196,3 +196,20 @@ __Chordal__: An undirected graph (UG) is chordal if every loop of size $$\geq 4$
 (an edge connecting 2 non-consecutive nodes in loop)
 
 Claim: Undirected graph G has a directed P-map $$\Leftrightarrow$$ G is chordal
+
+
+### Gaussian Undirected Graphs
+
+
+Important Properties:
+
+Potentials have only at most pairwise interactions
+between variables. This is because $$J$$ creates pairwise terms and $$h$$ creates single
+terms, but there are no other higher interaction terms.
+
+
+
+## Factor Graphs
+
+A factor graph $$G=((V, F), E)$$ is a bipartitie graph such that $$V$$ are variable nodes 
+and $$F$$ are factor nodes.
