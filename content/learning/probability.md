@@ -210,12 +210,14 @@ Proof:
 
 $$
 \begin{align*}
-p(y|x) \propto \exp \Big(-\frac{1}{2} \begin{bmatrix} h_x \\ h_y \end{bmatrix}^T J 
-\begin{bmatrix} h_x \\ h_y \end{bmatrix} + \begin{bmatrix} h_x \\ h_y \end{bmatrix}^Twe \begin{bmatrix} h_x \\ h_y \end{bmatrix} \Big)\\
-
-
-\end{algin*}
+p(y|x) &\propto \exp \Big(-\frac{1}{2} \begin{bmatrix} x \\ y \end{bmatrix}^T J 
+\begin{bmatrix} x \\ y \end{bmatrix} + \begin{bmatrix} x \\ y \end{bmatrix}^Twe \begin{bmatrix} h_x \\ h_y \end{bmatrix} \Big)\\
+&\propto \exp \Big(-\frac{1}{2} y^T J_yy y + (h_y - J{yx} x)^T y \Big)
+\end{align*}
 $$
+
+Note that covariance/precision doesn't depend on conditioned variable. Also the mean is determined
+by an affine transformation of conditioned variance.
 
 
 ## Divergence Measures
