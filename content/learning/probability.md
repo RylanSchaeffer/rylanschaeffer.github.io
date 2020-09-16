@@ -7,7 +7,7 @@ A __probability space__ is a 3-tuple consisting of a set $$X$$, a $$\sigma$$-alg
 and a probability measure $$P$$. A collection $$C$$ of subsets of set $$X$$ is
 called a __$$\sigma$$-algebra__ on $$X$$ if
 
-1. $$X \in C$$
+1. X belongs to C i.e $$X \in C$$
 2. C is closed under complementation. That is, if $$c \in C$$, then $$\overline{c}
 := X \ c \in C$$
 3. C is closed under countable unions. That is, if $$c_1, c_2, ... \in C$$, then 
@@ -78,11 +78,11 @@ y) = y$$, we conclude that $$Y$$ is distributed uniformly.
 
 ### Cauchy Distribution
 
-- Density: $$ p(x|x_0, \gamma) = \frac{1}{\pi} \frac{1}{1 + (\frac{x - x_0}{\gamma})^2}$$
+- Density: $$ p(x\lvertx_0, \gamma) = \frac{1}{\pi} \frac{1}{1 + (\frac{x - x_0}{\gamma})^2}$$
 
 The density is properly normalized:
 
-$$\int_{\mathbb{R}} p(x | x_0, \gamma) dx = \frac{1}{\pi} \tan^{-1} (\frac{x - x_0}{\gamma})
+$$\int_{\mathbb{R}} p(x \lvert x_0, \gamma) dx = \frac{1}{\pi} \tan^{-1} (\frac{x - x_0}{\gamma})
 \big\lvert_{-\infty}^{\infty} = \frac{1}{\pi}(\pi / 2 + \pi/2) = 1$$
 
 - Mean: Undefined
@@ -119,7 +119,7 @@ $$
 - Convergence in Probability: A sequence of random variables $$(X_i)_{i \in \mathbb{N}}$$ __converges
 in probability__ if $$\forall \epsilon > 0$$
 
-$$\lim_{n \rightarrow \infty} P(|X_n - X| < \epsilon) = 1 $$
+$$\lim_{n \rightarrow \infty} P(\lvertX_n - X\lvert < \epsilon) = 1 $$
 
 The __Weak Law of Large Numbers__ states that if the set of random variables $$\{X_i\}_{i=1}^N$$ are 
 i.i.d. with $$\mathbb{E}_X[X_i] = \mu < \infty$$ and $$\mathbb{V}_X[X_i] = \sigma^2 < \infty$$,
@@ -133,8 +133,8 @@ Use [Chebyshev's Inequality](#chebychevs-inequality):
 
 $$
 \begin{align*}
-P(|\bar{X}_n - \mu| \geq \epsilon )
-&= P(|\bar{X}_n - \mu|^2 \geq \epsilon^2 )\\
+P(\lvert\bar{X}_n - \mu\lvert \geq \epsilon )
+&= P(\lvert\bar{X}_n - \mu\lvert^2 \geq \epsilon^2 )\\
 &\leq \frac{\mathbb{E}_x[(\bar{X}_n - \mu)^2]}{\epsilon^2}\\
 &= \mathbb{V}_x[\bar{X}] / \epsilon^2\\
 &= \sigma^2 / n \epsilon^2
@@ -143,7 +143,7 @@ $$
 
 Then, taking the limit as $$n \rightarrow \infty$$:
 
-$$ \lim{n \rightarrow \infty} P(|\bar{X}_n - \mu| < \epsilon) < 
+$$ \lim{n \rightarrow \infty} P(\lvert\bar{X}_n - \mu\lvert < \epsilon) < 
 1 - \lim_{n \rightarrow \infty} \frac{\sigma^2}{n \epsilon^2} = 1$$ 
 
 </details>
@@ -152,7 +152,7 @@ $$ \lim{n \rightarrow \infty} P(|\bar{X}_n - \mu| < \epsilon) <
 - Convergence Almost Surely:  A sequence of random variables $(X_i)_{i \in \mathbb{N}}$$ __converges
 almost surely__ if $$\forall \epsilon > 0$$
                              
-$$ P(\lim_{n \rightarrow \infty} |X_n - X| < \epsilon) = 1 $$
+$$ P(\lim_{n \rightarrow \infty} \lvertX_n - X\lvert < \epsilon) = 1 $$
 
 Convergence almost surely implies convergence in probability.
 
@@ -204,13 +204,13 @@ $$X \sim \mathcal{N}(\mu_x, \Sigma_{xx})$$
 
 - Closed under conditioning
 
-$$Y | X \sim \mathcal{N}(h_y - J_{yx} x , J_{yy})$$
+$$Y \lvert X \sim \mathcal{N}(h_y - J_{yx} x , J_{yy})$$
 
 Proof: 
 
 $$
 \begin{align*}
-p(y|x) &\propto \exp \Big(-\frac{1}{2} \begin{bmatrix} x \\ y \end{bmatrix}^T J 
+p(y\lvertx) &\propto \exp \Big(-\frac{1}{2} \begin{bmatrix} x \\ y \end{bmatrix}^T J 
 \begin{bmatrix} x \\ y \end{bmatrix} + \begin{bmatrix} x \\ y \end{bmatrix}^T \begin{bmatrix} h_x \\ h_y \end{bmatrix} \Big)\\
 &\propto \exp \Big(-\frac{1}{2} y^T J_{yy} y + (h_y - J_{yx} x)^T y \Big)
 \end{align*}
@@ -242,7 +242,7 @@ The Wasserstein distance is a way of quantifying the distance between probabilit
 on a metric space. Suppose $$P(x), Q(x)$$ are two cumulative distributions functions of the 
 real random variable $$X$$. The Wasserstein metric is defined as 
 
-$$W_p(P,Q) = \Big(\int_0^1 du |P^{-1}(u) - Q^{-1}(u)|^p \Big)^{1/p}$$
+$$W_p(P,Q) = \Big(\int_0^1 du \lvertP^{-1}(u) - Q^{-1}(u)\lvert^p \Big)^{1/p}$$
 
 Visually
 
@@ -252,7 +252,7 @@ Like the Wasserstein distance, the Cramer distance is a way of quantifying the d
 between probability distributions on a metric space. If $$P(x), Q(x)$$ are two cumulative
 distributions of the real random variable $$X$$, then the Cramer distance is defined as
 
-$$C_p(P, Q) = \Big(\int_{-\infty}^{\infty} |P(x) - Q(x)|^p \Big)^{1/p} $$
+$$C_p(P, Q) = \Big(\int_{-\infty}^{\infty} \lvertP(x) - Q(x)\lvert^p \Big)^{1/p} $$
 
 When $$p=1$$, the Wasserstein distance and the Cramer distance agree. Visually, if we picture
 $$X$$ on the abscissa and the CDF on the ordinate, then the Wasserstein distance is the sum
@@ -267,7 +267,7 @@ distances that might be desirable.
 - Scale Sensitive: A distance $$d(\cdot, \cdot)$$ is scale sensitive if $$\exists \beta >0$$
 such that $$\forall X, Y, c>0$$
 
-$$d(cX, cY) \leq |c|^{\beta} d(X, Y)$$
+$$d(cX, cY) \leq \lvertc\lvert^{\beta} d(X, Y)$$
 
 Intuitively, this just means that scaling the arguments by $$c$$ scales the distance by $$c$$,
 possibly to some power.
