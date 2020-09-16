@@ -216,9 +216,15 @@ p(y|x) &\propto \exp \Big(-\frac{1}{2} \begin{bmatrix} x \\ y \end{bmatrix}^T J
 \end{align*}
 $$
 
-Note that covariance/precision doesn't depend on conditioned variable. Also the mean is determined
+Note that covariance/precision doesn't depend on the conditioned variable. Also the mean is determined
 by an affine transformation of conditioned variance.
 
+- Suppose $$x_i, x_j$$ are jointly Gaussian. $$x_i \perp x_j \Leftrightarrow \Sigma_{i,j}$$.
+
+- Suppose $$x_i, x_j, x_k$$ are jointly Gaussian. In general, $$x_i \perp x_j, x_j \perp x_k$$
+does not imply $$x_i \perp x_k$$, but this does hold for Gaussians. 
+
+- $$\forall i \neq j \neq k, \quad x_i \perp x_j \lvert x_k \Leftrightarrow J_{ij} = 0$$
 
 ## Divergence Measures
 -----
