@@ -78,7 +78,7 @@ y) = y$$, we conclude that $$Y$$ is distributed uniformly.
 
 ### Cauchy Distribution
 
-- Density: $$ p(x\lvertx_0, \gamma) = \frac{1}{\pi} \frac{1}{1 + (\frac{x - x_0}{\gamma})^2}$$
+- Density: $$ p(x \lvert x_0, \gamma) = \frac{1}{\pi} \frac{1}{1 + (\frac{x - x_0}{\gamma})^2}$$
 
 The density is properly normalized:
 
@@ -119,7 +119,7 @@ $$
 - Convergence in Probability: A sequence of random variables $$(X_i)_{i \in \mathbb{N}}$$ __converges
 in probability__ if $$\forall \epsilon > 0$$
 
-$$\lim_{n \rightarrow \infty} P(\lvertX_n - X\lvert < \epsilon) = 1 $$
+$$\lim_{n \rightarrow \infty} P(\lvert X_n - X\lvert < \epsilon) = 1 $$
 
 The __Weak Law of Large Numbers__ states that if the set of random variables $$\{X_i\}_{i=1}^N$$ are 
 i.i.d. with $$\mathbb{E}_X[X_i] = \mu < \infty$$ and $$\mathbb{V}_X[X_i] = \sigma^2 < \infty$$,
@@ -152,7 +152,7 @@ $$ \lim{n \rightarrow \infty} P(\lvert\bar{X}_n - \mu\lvert < \epsilon) <
 - Convergence Almost Surely:  A sequence of random variables $(X_i)_{i \in \mathbb{N}}$$ __converges
 almost surely__ if $$\forall \epsilon > 0$$
                              
-$$ P(\lim_{n \rightarrow \infty} \lvertX_n - X\lvert < \epsilon) = 1 $$
+$$ P(\lim_{n \rightarrow \infty} \lvert X_n - X\lvert < \epsilon) = 1 $$
 
 Convergence almost surely implies convergence in probability.
 
@@ -210,7 +210,7 @@ Proof:
 
 $$
 \begin{align*}
-p(y\lvertx) &\propto \exp \Big(-\frac{1}{2} \begin{bmatrix} x \\ y \end{bmatrix}^T J 
+p(y\lvert x) &\propto \exp \Big(-\frac{1}{2} \begin{bmatrix} x \\ y \end{bmatrix}^T J 
 \begin{bmatrix} x \\ y \end{bmatrix} + \begin{bmatrix} x \\ y \end{bmatrix}^T \begin{bmatrix} h_x \\ h_y \end{bmatrix} \Big)\\
 &\propto \exp \Big(-\frac{1}{2} y^T J_{yy} y + (h_y - J_{yx} x)^T y \Big)
 \end{align*}

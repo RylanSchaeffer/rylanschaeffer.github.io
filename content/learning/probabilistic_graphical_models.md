@@ -147,6 +147,20 @@ __Hammersley-Clifford Theorem__: If $$p(x) > 0$$, then factorization w.r.t. undi
 $$\Leftrightarrow$$ undirected global Markov property $$\Leftrightarrow$$ undirected local
 Markov property.
 
+### Gaussian Undirected Graphs
+
+As the name implies, all variables have Normal distributions. Properties:
+
+1. Potentials can have at most pairwise interactions between variables because
+$$J$$ creates pairwise terms and $$h$$ creates single terms, but there are no other higher
+interaction terms.
+
+2. $$x_i \perp x_j \Leftrightarrow \Sigma_{ij} = 0$$
+
+3. $$x_i \perp x_j | \text{everything else} \Leftrightarrow J_{ij} = 0$$. This only
+holds when conditioning on everything else. Consequently, to test $$x_i \perp x_j | x_k$$,
+first marginalize till only $$x_i, x_j, x_k$$ remain.
+
 ## Relationship between Directed and Undirected Graphs
 
 Directed and undirected graphs can represent different distributions. 
@@ -198,15 +212,16 @@ __Chordal__: An undirected graph (UG) is chordal if every loop of size $$\geq 4$
 Claim: Undirected graph G has a directed P-map $$\Leftrightarrow$$ G is chordal
 
 
-### Gaussian Undirected Graphs
+## Ancestral Graphs
 
+See Ancestral Graph Markov Models by Richardson and Spirtes for a complete description.
+Motivated by the property that Gaussians are closed under marginalization and conditioning, we ask what
+graphs are closed under both operations?
 
-Important Properties:
-
-Potentials have only at most pairwise interactions
-between variables. This is because $$J$$ creates pairwise terms and $$h$$ creates single
-terms, but there are no other higher interaction terms.
-
+Consider an undirected graph $$x_1 - L - x_2 - x_3$$ and we marginalize out $$L$$. Is there
+another undirected graph which is a P-map for the original graph? Yes: $$x_1 - x_2 - x_3$$.
+What if we instead condition on $$L$$? Again, there is a P-map for the original graph:
+$$x_1 \phantom{-} x_2 - x_3$$.
 
 
 ## Factor Graphs
