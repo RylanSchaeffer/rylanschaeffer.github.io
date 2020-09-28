@@ -160,6 +160,7 @@ Convergence almost surely implies convergence in probability.
 -----
 
 ## Parametric Probability Distributions
+-----
 
 Parameters are frequently classified into one of several possible types: 
 
@@ -225,6 +226,20 @@ by an affine transformation of conditioned variance.
 does not imply $$x_i \perp x_k$$, but this does hold for Gaussians. 
 
 - $$\forall i \neq j \neq k, \quad x_i \perp x_j \lvert x_k \Leftrightarrow J_{ij} = 0$$
+
+## Exponential Family Distributions
+-----
+
+Many parametric distributions can be written in a similar form. This family of distributions
+is called the exponential family and has the form
+
+$$p(x; \theta) = \frac{1}{Z(\theta)} h(x) \exp (\eta(\theta)^T T(x))$$
+
+where $$\eta(\theta)$$ are the natural parameters, $$T(x)$$ are the sufficient statistics
+and $$Z(\theta)$$ is a normalization constant.
+
+
+
 
 ## Divergence Measures
 -----

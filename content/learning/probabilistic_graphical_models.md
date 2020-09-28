@@ -162,6 +162,7 @@ holds when conditioning on everything else. Consequently, to test $$x_i \perp x_
 first marginalize till only $$x_i, x_j, x_k$$ remain.
 
 ## Relationship between Directed and Undirected Graphs
+-----
 
 Directed and undirected graphs can represent different distributions. 
 
@@ -212,12 +213,14 @@ __Chordal__: An undirected graph (UG) is chordal if every loop of size $$\geq 4$
 Claim: Undirected graph G has a directed P-map $$\Leftrightarrow$$ G is chordal
 
 ## Factor Graphs
+-----
 
 A factor graph $$G=((V, F), E)$$ is a bipartitie graph such that $$V$$ are variable nodes 
 and $$F$$ are factor nodes.
 
 
 ## Ancestral Graphs
+-----
 
 See Ancestral Graph Markov Models by Richardson and Spirtes for a complete description.
 Motivated by the property that Gaussians are closed under marginalization and conditioning, we ask what
@@ -259,7 +262,7 @@ where $$x_{\pi_i}$$ is the set of nodes that are parents of $$x_i$$.
 As long as the parameters are disjoint, then every term in the likelihood can be optimized
 separately:
 
-$$L(\Theta) = \prod_{n=1}^N p(x_n | x_{\pi_n}, \theta_n)$$
+$$L(\Theta) = \prod_{d=1}^D p(x_d | x_{\pi_d}, \theta_d)$$
 
 Unfortunately, parameter estimation in undirected graphs is not so easy. The potentials
 group together multiple variables. TODO: why do cliques make parameter estimation hard? 
@@ -282,8 +285,33 @@ l(\theta; D) &= \sum_{n=1}^N \log p(x_n; \theta)\\
 \end{align*}
 $$
 
-Remark: 
+Remark: Let $$p(x)$$ be a distribution on $$x_1, ..., x_D$$ and let $$Q$$ be the family
+of distributions on the emptry graph. Then the M projection of $$p$$
+onto $$Q$$ is the product of the marginals $$q^M = p(x_1)...p(x_D)$$. 
 
+Let $$p(x)$$ be a distribution on $$x_1, ..., x_D$$ and let $$Q$$ be the family
+of distributions that factorize according to DAG $$G$$. Then the M projection of $$p$$
+onto $$Q$$ is the product of the marginals $$q^M = \prod_{d=1}^D p(x_d| x_{\pi_d})$$.
 
 __Information (I) Projection__: The I-projection of $$p$$ onto a family of distributions
 $$Q$$ is $$q^M = \argmin_{q \in Q} D(q||p)$$
+
+### Parameter Estimation in Undirected Gaussian
+
+Consider a Gaussian undirected graph $$p(x) \propto \exp(\sum_{d=1}^D h_d x_d - \frac{1}{2}
+J_{ij} x_i x_j$$. The sufficient statistics are all polynomials up to order 2 and the natural
+parameters are $$\theta = \{h_1, ..., h_N, J_{11}, ..., J_{1D}, ..., J_{DD} \}$$. 
+
+For $$N$$ i.i.d. samples, we have $$p(x^1, ..., x^N; \theta) = \frac{1}{Z(\theta)^N}
+\exp(\sum_{d=1}^D \theta_d \sum_{n=1}^N f_d(x_n)))$$
+
+### Parameter Estimation in Directed Gaussian
+
+### Parameter Estimation in Exponential Family
+
+__Theorem__: Let $$p$$ be a distribution on $$x_1, ..., x_N$$ and Q be the exponential family
+with sufficient statistics and natural parameters $$\Theta$$. If $$\exists \theta \in \
+\Theta$$ such that $$\forall d, \quad \mathbb{E}_{q_{\theta}}(f_d(x)) = \mathbb{E}_p(f_d(x))$$
+then the M projection of $$p$$ onto $$Q$$ is $$q_{\theta}$$.
+
+Proof: 
