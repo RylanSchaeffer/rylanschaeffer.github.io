@@ -211,6 +211,11 @@ __Chordal__: An undirected graph (UG) is chordal if every loop of size $$\geq 4$
 
 Claim: Undirected graph G has a directed P-map $$\Leftrightarrow$$ G is chordal
 
+## Factor Graphs
+
+A factor graph $$G=((V, F), E)$$ is a bipartitie graph such that $$V$$ are variable nodes 
+and $$F$$ are factor nodes.
+
 
 ## Ancestral Graphs
 
@@ -221,10 +226,64 @@ graphs are closed under both operations?
 Consider an undirected graph $$x_1 - L - x_2 - x_3$$ and we marginalize out $$L$$. Is there
 another undirected graph which is a P-map for the original graph? Yes: $$x_1 - x_2 - x_3$$.
 What if we instead condition on $$L$$? Again, there is a P-map for the original graph:
-$$x_1 \phantom{-} x_2 - x_3$$.
+$$x_1 \phantom{-} x_2 - x_3$$. We conclude that undirected graphs are closed under
+conditioning and marginalization.
+
+We now ask the same two questions of directed graphs. The answer to both will be no.
+Consider $$x_1 \rightarrow x_2$$, $$x_3 \rightarrow x_4$$, $$L \rightarrow x_2$$
+and $$L \rightarrow x_4$$. For a concrete example, $$x_1, x_3$$ might be treatments,
+$$x_2, x_4$$ outcomes and $$L$$ the general health state of the study participant.
+If we try to marginalize out $$L$$, no directed graph will be a P-map. For another 
+graph, too complicated for me to type, marginalization can create a new V-structure,
+meaning the original graph's independencies are affected. Consequently, directed 
+graphs are not closed under conditioning nor marginalization.
+
+We can rectify this shortcoming by introducing bidirectional edges e.g. $$x_i \leftrightarrow
+x_j$$ and undirected edges $$x_i - x_j$$. This class of graphs is called
+Ancestral Graphs.
+
+__Ancestral Graph__: An ancestral graph $$G=(v, (U, D, B))$$ is a graph with three
+sets of edges: undirected $$U$$, directed $$D$$ and bidirectional $$B$$. 
+
+TODO: why is this?
 
 
-## Factor Graphs
 
-A factor graph $$G=((V, F), E)$$ is a bipartitie graph such that $$V$$ are variable nodes 
-and $$F$$ are factor nodes.
+## Parameter Estimation in Graphs
+
+Consider a directed graph with disjoint parameters per conditional independency:
+
+$$p(x_i | x_{\pi_i}, \theta_i)$$
+
+where $$x_{\pi_i}$$ is the set of nodes that are parents of $$x_i$$. 
+As long as the parameters are disjoint, then every term in the likelihood can be optimized
+separately:
+
+$$L(\Theta) = \prod_{n=1}^N p(x_n | x_{\pi_n}, \theta_n)$$
+
+Unfortunately, parameter estimation in undirected graphs is not so easy. The potentials
+group together multiple variables. TODO: why do cliques make parameter estimation hard? 
+
+__Moment (M) Projection__: The M-projection of $$p$$ onto a family of distributions $$Q$$
+is $$q^M = \argmin_{q \in Q} D(p||q)$$
+
+Remark: in the discrete setting, maximizing the MLE is equivalent to minimizing the 
+M projection of the empirical distribution $$\hat{p}$$ onto the family of distributions
+parameterized by $$\theta$$. Letting $$k = 1, ..., K$$ denote the possible outcomes:
+
+$$
+\begin{align*}
+l(\theta; D) &= \sum_{n=1}^N \log p(x_n; \theta)\\
+&= \sum_{k=1}^K n_k \log \hat{p}(x = k; \theta)\\
+&= N \sum_{k=1}^N \frac{n_k}{N} \log p(x = k; \theta)\\
+&= N \mathbb{E}_{\hat{p}} \big( \log p(x; \theta) \big)
+&= N \mathbb{E}_{\hat{p}} \big( \log \hat{p}(x; \theta) \big) - \mathbb{E}_{\hat{p}} \big( \log \frac{\hat{p}(x; \theta)}{p(x; \theta)} \big)\\
+&= D_{KL}(\hat{p}, p(\cdot; \theta)) 
+\end{align*}
+$$
+
+Remark: 
+
+
+__Information (I) Projection__: The I-projection of $$p$$ onto a family of distributions
+$$Q$$ is $$q^M = \argmin_{q \in Q} D(q||p)$$
