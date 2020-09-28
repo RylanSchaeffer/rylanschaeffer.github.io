@@ -279,7 +279,7 @@ $$
 l(\theta; D) &= \sum_{n=1}^N \log p(x_n; \theta)\\
 &= \sum_{k=1}^K n_k \log \hat{p}(x = k; \theta)\\
 &= N \sum_{k=1}^N \frac{n_k}{N} \log p(x = k; \theta)\\
-&= N \mathbb{E}_{\hat{p}} \big( \log p(x; \theta) \big)
+&= N \mathbb{E}_{\hat{p}} \big( \log p(x; \theta) \big)\\
 &= N \mathbb{E}_{\hat{p}} \big( \log \hat{p}(x; \theta) \big) - \mathbb{E}_{\hat{p}} \big( \log \frac{\hat{p}(x; \theta)}{p(x; \theta)} \big)\\
 &= D_{KL}(\hat{p}, p(\cdot; \theta)) 
 \end{align*}
@@ -314,4 +314,11 @@ with sufficient statistics and natural parameters $$\Theta$$. If $$\exists \thet
 \Theta$$ such that $$\forall d, \quad \mathbb{E}_{q_{\theta}}(f_d(x)) = \mathbb{E}_p(f_d(x))$$
 then the M projection of $$p$$ onto $$Q$$ is $$q_{\theta}$$.
 
-Proof: 
+Proof: Consider $$\theta' \in \Theta$$. Our goal is to show that $$D(p, q_{\theta'}) - 
+D(p, q_{\theta})$$.
+
+$$
+\begin{align*}
+ D(p, q_{\theta'}) - D(p, q_{\theta}) &= -H(p) - \mathbb{E}_p(\log q_{})
+\end{align*}
+$$
