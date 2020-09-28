@@ -227,18 +227,6 @@ does not imply $$x_i \perp x_k$$, but this does hold for Gaussians.
 
 - $$\forall i \neq j \neq k, \quad x_i \perp x_j \lvert x_k \Leftrightarrow J_{ij} = 0$$
 
-## Exponential Family Distributions
------
-
-Many parametric distributions can be written in a similar form. This family of distributions
-is called the exponential family and has the form
-
-$$p(x; \theta) = \frac{1}{Z(\theta)} h(x) \exp (\eta(\theta)^T T(x))$$
-
-where $$\eta(\theta)$$ are the natural parameters, $$T(x)$$ are the sufficient statistics
-and $$Z(\theta)$$ is a normalization constant.
-
-
 
 
 ## Divergence Measures
@@ -257,7 +245,7 @@ The Wasserstein distance is a way of quantifying the distance between probabilit
 on a metric space. Suppose $$P(x), Q(x)$$ are two cumulative distributions functions of the 
 real random variable $$X$$. The Wasserstein metric is defined as 
 
-$$W_p(P,Q) = \Big(\int_0^1 du \lvertP^{-1}(u) - Q^{-1}(u)\lvert^p \Big)^{1/p}$$
+$$W_p(P,Q) = \Big(\int_0^1 du \lvert P^{-1}(u) - Q^{-1}(u)\lvert^p \Big)^{1/p}$$
 
 Visually
 
@@ -267,7 +255,7 @@ Like the Wasserstein distance, the Cramer distance is a way of quantifying the d
 between probability distributions on a metric space. If $$P(x), Q(x)$$ are two cumulative
 distributions of the real random variable $$X$$, then the Cramer distance is defined as
 
-$$C_p(P, Q) = \Big(\int_{-\infty}^{\infty} \lvertP(x) - Q(x)\lvert^p \Big)^{1/p} $$
+$$C_p(P, Q) = \Big(\int_{-\infty}^{\infty} \lvert P(x) - Q(x)\lvert^p \Big)^{1/p} $$
 
 When $$p=1$$, the Wasserstein distance and the Cramer distance agree. Visually, if we picture
 $$X$$ on the abscissa and the CDF on the ordinate, then the Wasserstein distance is the sum
@@ -282,7 +270,7 @@ distances that might be desirable.
 - Scale Sensitive: A distance $$d(\cdot, \cdot)$$ is scale sensitive if $$\exists \beta >0$$
 such that $$\forall X, Y, c>0$$
 
-$$d(cX, cY) \leq \lvertc\lvert^{\beta} d(X, Y)$$
+$$d(cX, cY) \leq \lvert c \lvert^{\beta} d(X, Y)$$
 
 Intuitively, this just means that scaling the arguments by $$c$$ scales the distance by $$c$$,
 possibly to some power.
