@@ -18,7 +18,7 @@
 - [2016-01-04 "The End of Crypto"](thoughts/20160104.html)
 - [Andrew Narayanan and Ending the Online Panopticon](thoughts/20151230.html)
 - [Why I Reconstructed My Facebook](thoughts/20151221.html)
-- [2015-10-12 Oh, The Places You'll Go](thoughts/20151012.html)
+- [2015-10-12 Oh, The Places You'll Go](thoughts/20151012_oh_the_places_youll_go/main.html)
 - [Alexander Coward](thoughts/20151011.html)
 - [The Case for Tor at UC Davis](thoughts/20151010.html)
 - [October 5th, 2015](thoughts/20151005.html)
