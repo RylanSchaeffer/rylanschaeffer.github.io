@@ -12,8 +12,7 @@ at the beginning:
 > You can steer yourself  
 > any direction you choose.
 
-Whenever I see that, I feel obliged to remind people that rest of the poem, especially the
-parts that (to me) are much more important:
+Whenever I see that, I feel obliged to remind people of the rest of the poem:
 
 > You'll be on your way up!  
 > You'll be seeing great sights!  
@@ -64,7 +63,7 @@ along with
 > Alone will be something  
 > you'll be quite a lot.  
 > And when you're alone,  
->there's a very good chance  
+> there's a very good chance  
 > you'll meet things that scare you  
 > right out of your pants.  
 > There are some, down the road  
