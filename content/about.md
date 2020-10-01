@@ -1,8 +1,7 @@
 # About Me
 
-Based on some [good advice](https://www.ece.ucdavis.edu/~jowens/advice.html), I typically look like this:
-
-![](about/profile_pic.jpg)
+Based on some [good advice](https://www.ece.ucdavis.edu/~jowens/advice.html), I typically look like 
+the person on the left.
 
 ## Background
 
