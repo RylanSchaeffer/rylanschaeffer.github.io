@@ -3,10 +3,10 @@
 ## Preprints
 
 ### 2020
-- [Reverse-engineering recurrent neural network solutions to a hierarchical inference task for mice](research/20200605_ibl_rnn/main.html)
 - Towards Unifying Smooth Neural Codes with Adversarially Robust Representations
 
 ## Publications
+- [Reverse-engineering recurrent neural network solutions to a hierarchical inference task for mice. NeurIPS 2020](research/20200605_ibl_rnn/main.html)
 
 
 ## Explanations of Others' Research
