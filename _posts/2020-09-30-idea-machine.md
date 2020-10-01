@@ -8,24 +8,13 @@ tags: idea-machine 2020 MIT Harvard
 # The Idea Machine
 ## Learning at Harvard and MIT in the Age of Artificial Intelligence
 
-### Background
-
-One of my favorite books is <a href="https://mitpress.mit.edu/books/idea-factory">
-The Idea Factory: Learning to Think at MIT</a> by Pepper White. It tells Pepper's story
-as a student earning his Master's in Mechanical Engineering at MIT in the 1980s,
-capturing his research, experiences and feelings of inadequacy first-hand. Forty years
-later, as a Master's student at Harvard conducting research in MIT's Brain and Cognitive
-Science Department, these posts are my stories, inspired by Pepper and in tribute to
-those who came before. To paraphrase my favorite quote, "If I could see \[...\] an insight,
-a new way of looking at it that would maybe, just maybe, find its way into future generations
-\[...\] In the Eiffel tower of technology, I would be a rivet."
-
-
 ### NeurIPS Acceptance
 
 My paper was accepted at NeurIPS 2020! My first paper, and boy does it feel good. The morning
 of, my mother asked me when results were scheduled to be released, and I told her 8 pm
 Pacific Time. She told me I must be wrong, and when I stood my ground, she started to argue the point.
+
+<!--excerpt-->
 
 
 ### Scholarship Applications

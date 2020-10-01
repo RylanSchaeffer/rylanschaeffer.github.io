@@ -20,5 +20,7 @@ those who came before. To paraphrase my favorite quote, "If I could see \[...\] 
 a new way of looking at it that would maybe, just maybe, find its way into future generations
 \[...\] In the Eiffel tower of technology, I would be a rivet."
 
+<!--excerpt-->
 
+##
 
