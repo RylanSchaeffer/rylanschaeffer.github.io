@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "Oh, the Places You'll Go"
+tags: dr-seuss inspiration
 ---
 
 
