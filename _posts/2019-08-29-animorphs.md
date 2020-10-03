@@ -9,7 +9,8 @@ childhood book series, concerning the criticisms that the books were too
 vicious and depressing for children.
 
 <blockquote>
-    Dear Animorphs Readers:<br><br>
+
+    Dear Animorphs Readers:
 
     Quite a number of people seem to be annoyed by the final chapter in the Animorphs story.
     There are a lot of complaints that I let Rachel die. That I let Visser Three/One live.
