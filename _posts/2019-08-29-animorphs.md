@@ -6,7 +6,7 @@ tags: 2019 animorphs reading inspiration
 
 I discovered this public letter from the author of Animorphs, one of my
 childhood book series, concerning the criticisms that the books were too
-vicioius and depressing for children.
+vicious and depressing for children.
 
 <blockquote>
     Dear Animorphs Readers:<br><br>
