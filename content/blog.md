@@ -2,11 +2,14 @@
 
 {% for post in site.posts %}
   <div class="post">
-    <h2 class="post-title">
+    <span class="post-title">
       <a href="{{ site.baseurl }}{{ post.url }}">
-        {{ post.title }} {{ post.date | date: '%b %-d, %Y' }}
+        {{ post.title }}
       </a>
-    </h2>
+    </span>
+    <span class="post-date">
+      {{ post.date | date: '%b %-d, %Y' }}
+    </span>
 
   </div>
 {% endfor %}
