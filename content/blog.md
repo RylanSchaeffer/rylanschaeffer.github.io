@@ -12,9 +12,5 @@
     {{ post.date | date: '%b %-d, %Y' }}
     </span>
 
-    {{ post.excerpt }}
-    {% if post.content contains site.excerpt_separator %}
-      <a href="{{ site.baseurl }}{{ post.url }}">Read more</a>
-    {% endif %}
   </div>
 {% endfor %}
