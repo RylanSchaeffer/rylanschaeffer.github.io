@@ -1,4 +1,8 @@
-# Lessons from Summer Interns
+---
+layout: post
+title:  Lessons from Summer Interns 
+tags: 2020 MIT 
+---
 
 I managed my first ever interns this summer. Having two, especially two with different backgrounds
 and different skillsets, helped me glean insights I might not have otherwise. I learned the 
