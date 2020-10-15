@@ -28,7 +28,7 @@ Since moving to Wichita in 2013, he and his wife have been members of First Pres
 Cremation as requested will be private.
 </blockquote>
 
-![](2020-10-13-grandpa-obituary/grandpa_2.jpg)
+![](2020-10-13-grandpa-passing/grandpa_2.jpg)
 
 
 To be honest, I don't remember much about my grandfather. I know he cheated on my maternal grandmother. 
