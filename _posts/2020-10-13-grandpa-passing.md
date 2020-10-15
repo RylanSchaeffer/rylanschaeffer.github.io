@@ -30,14 +30,25 @@ Cremation as requested will be private.
 
 ## Some Photos
 
+Grandpa with Granny (Wanda Reed, his first wife and my grandmother)
+![](/assets/2020-10-13-grandpa-passing/grandpa_3.jpg)
+
+Grandpa on the tandem with Granny
+![](/assets/2020-10-13-grandpa-passing/grandpa_4.jpg)
+
+Grandpa with Dottie (his second wife)
+![](/assets/2020-10-13-grandpa-passing/grandpa_1.jpg)
+
 Cindy and Kevin with Grandpa
 ![](/assets/2020-10-13-grandpa-passing/grandpa_2.jpg)
 
+Grandpa with Dottie
+![](/assets/2020-10-13-grandpa-passing/grandpa_5.jpg)
 
 ## My Memories of Grandpa
 
 To be honest, I don't remember much about my grandfather. I know he cheated on my maternal grandmother. 
-He left California when my she died and I was 7. He moved across the country to marry someone else
+He left California when she died and I was 7. He moved across the country to marry someone else
 without warning. He broke my mother's heart.
 For the past decade, he's been in a nursing home with progressively
 worsening Alzheimer's. Years ago, he used to say that if he was ever a vegetable, he'd rather be killed.
