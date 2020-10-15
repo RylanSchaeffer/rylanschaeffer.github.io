@@ -1,4 +1,9 @@
-# The Idea Machine
+---
+layout: post
+title:  The Idea Machine 
+tags: idea-machine 2020 MIT Harvard
+---
+
 ## Learning at Harvard and MIT in the Age of Artificial Intelligence
 
 ### Background
@@ -32,9 +37,9 @@ red poster board paper, I did exactly that. So far my favorite background images
 include screenshots of Professor Slotine mid-lecture (left) and Andrew Ryan's
 Welcome to Rapture sign (right).
 
-![](slotine_2.png)
+![](/assets/2020-04-05-idea-machine/slotine_2.png)
 
-![](bioshock.jpg)
+![](/assets/2020-04-05-idea-machine/bioshock.jpg)
 
 Another difference between being present and being remote is that the likelihood of chance
 encounters falls essentially to zero. This has forced me to be much more intentional with
