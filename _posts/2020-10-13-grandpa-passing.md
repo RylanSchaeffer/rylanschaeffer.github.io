@@ -28,10 +28,13 @@ Since moving to Wichita in 2013, he and his wife have been members of First Pres
 Cremation as requested will be private.
 </blockquote>
 
+## Some Photos
+
 Cindy and Kevin with Grandpa
 ![](/assets/2020-10-13-grandpa-passing/grandpa_2.jpg)
 
 
+## My Memories of Grandpa
 
 To be honest, I don't remember much about my grandfather. I know he cheated on my maternal grandmother. 
 He left California when my she died and I was 7. He moved across the country to marry someone else
@@ -45,3 +48,5 @@ worsening Alzheimer's. Years ago, he used to say that if he was ever a vegetable
 2. Invest in real estate. It's the only thing they can't make more of.
 3. If you don't want to live without a brain for a decade, (a) make this clear to your children
 and your attorney, and (b) live someplace with physician-assisted suicide.
+4. Talk to your grandchildren. Tell them stories about your life. Tell them what you've 
+learned. Be honest about the mistakes you made.
