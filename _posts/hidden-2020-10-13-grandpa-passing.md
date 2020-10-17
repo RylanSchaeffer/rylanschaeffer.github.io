@@ -26,7 +26,7 @@ Seattle, Wa., Rylan Schaeffer of Mt. View, Ca. in addition to several nieces and
 Since moving to Wichita in 2013, he and his wife have been members of First Presbyterian Church of Wichita.
 
 Cremation as requested will be private.
-</blockquote>
+</blockquote><br>
 
 ## Some Photos
 
