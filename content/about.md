@@ -1,7 +1,7 @@
 # About Me
 
 Based on some [good advice](https://www.ece.ucdavis.edu/~jowens/advice.html), I typically look like 
-the person on the left. Quotes that have significance to me are displayed randomly on the left.
+the person on the left. Quotes that have significance to me are displayed randomly on the bottom left.
 My life's trajectory is succinctly summarized below:
 
 - 2019 Fall - Present: I'm earning my Masters of Engineering in Computer Science Engineering at Harvard
