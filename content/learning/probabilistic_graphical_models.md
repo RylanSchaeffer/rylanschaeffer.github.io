@@ -14,7 +14,7 @@ structure to design efficient inference algorithms.
     - [Undirected Graphs](probabilistic_graphical_models/undirected_graphical_models.md)
     - [Factor Graphs](probabilistic_graphical_models/factor_graphical_models.md)
     - [Ancestral Graphs](probabilistic_graphical_models/ancestral_graphical_models.md)
-- Algorithms for Efficient Inference
+- Algorithms for Computing Marginals and Most Probable Configuration / MAP
     - [Elimination Algorithm](probabilistic_graphical_models/elimination_algorithm.md)
     - [Sum-Product (Belief Propagation)](probabilistic_graphical_models/belief_propagation.md)
     - [Junction Tree Algorithm](probabilistic_graphical_models/junction_tree_algorithm.md)
