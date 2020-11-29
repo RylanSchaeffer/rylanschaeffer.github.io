@@ -1,10 +1,11 @@
 # Research
 
 ## Publications
-- [Reverse-engineering recurrent neural network solutions to a hierarchical inference task for mice. NeurIPS 2020](research/20200605_ibl_rnn/main.html)
+- Rylan Schaeffer, Mikail Khona, Leenoy Meshulam, International Brain Laboratory, Ila Rani Fiete
+[Reverse-engineering recurrent neural network solutions to a hierarchical inference task for mice. NeurIPS (2020)](research/20200605_ibl_rnn/main.html)
 
 ## Submitted
--Rylan Schaeffer, Nimrod Shaham, Gabriel Kreiman, Haim Sompolinsky. 
+- Rylan Schaeffer, Nimrod Shaham, Gabriel Kreiman, Haim Sompolinsky. 
 Neural network model of amygdalar memory engram formation and function. Submitted, CoSyNe (2021).
  
 - Rylan Schaeffer, Niki Kim, Mikail Khona, International Brain Laboratory, Ila Rani Fiete. 
