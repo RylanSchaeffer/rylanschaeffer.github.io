@@ -6,7 +6,7 @@
 If you really want to succeed in life, get a wife and a mistress. Then, when you really need to get your
 work done, you can tell the mistress you’re with the wife and tell the wife you’re with the mistress.
 
-- One day at the airport, a very tiny, very petite grandmother is passing through security. As she steps up 
+- (Warning: Causal Inference Joke) One day at the airport, a very tiny, very petite grandmother is passing through security. As she steps up 
 to the scanner, it reveals that her winter coat is filled with explosives! A security guard asks her to
 step inside a private room and take off her coat. “Ma’am, you can’t fly like that!” the guard says. 
 “What are you thinking??” The grandmother replies, “I read online that the probability of one bomb on a
