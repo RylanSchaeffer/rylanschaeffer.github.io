@@ -99,4 +99,18 @@ const quotations = [
     " in time, not space alone. ",
 
     "Ad majora",
+
+    "Remember, in the burning heart\n" +
+    "There can never be surrender at all.",
+
+    "This is pretty lazy, seeing as you always talk such a big game. Quit laying' down" +
+    "on the job.",
+
+    "For the blood is running still\n" +
+    "From the roots of Yggdrasil",
+
+    "When the tears are in your eyes\n" +
+    "You sing a drunken lullaby\n" +
+    "And the weight of the world\n" +
+    "Comes crashing on your spine",
 ];
