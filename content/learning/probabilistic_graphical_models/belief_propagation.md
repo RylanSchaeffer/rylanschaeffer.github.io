@@ -13,12 +13,12 @@ we saw we could do so efficiently for one variable, and in Belief Propagation ap
 we saw we could do so efficiently for all variables. Here, we'll see that if the joint distribution is Gaussian,
 then we can also efficiently compute marginal distributions.
 
-Consider a 2D Gaussian distribution. We can write the joint distribution in information form:
+Consider a 2D Gaussian undirected graphical model. We can write the joint distribution in information form:
 
 $$
 \begin{align}
 p(x_1, x_2) &\propto \exp(-\frac{1}{2} x^T J x + h^T x)\\
-= \underbrace{\exp(-\frac{1}{2} x_1^T J_{11} x_1 + h_1^T x_1)}_{\phi_1(x_1)} \exp(-\frac{1}{2} x_2^T J_{22} x_2 + h_2^T x_2) \exp(-x_1^T J_{12} x_2)
+&= \underbrace{\exp(-\frac{1}{2} x_1^T J_{11} x_1 + h_1^T x_1)}_{\phi_1(x_1)} \exp(-\frac{1}{2} x_2^T J_{22} x_2 + h_2^T x_2) \exp(-x_1^T J_{12} x_2)
 \end{align}
 $$
 
@@ -45,3 +45,15 @@ p(x_1) \propto \phi_1(x_1) m_{2 \rightarrow 1}(x_1)\\
 = \mathcal{N}^{-1}(h_1 + h_{2 \rightarrow 1}, J_{11} + J_{2 \rightarrow 1})
 \end{align}
 $$
+
+Letting $$N(i)$$ denote the neighbors of vertex $$i$$, we can expand the same logic to the N-dimensional
+case to determine the marginal distributions and the messages:
+
+$$p(x_i) = \mathcal{N}^{-1}(h_j + \sum_{j \in N(i)} h_{j \rightarrow i}, J_{ii} + \sum_{j \in N(i)} J_{j \rightarrow i})$$
+
+$$m_{j \rightarrow i} = \mathcal{N}^{-1}(h_j + \sum_{k \in N(j)\\\{i\}} h_{k \rightarrow j},
+J_{jj} + \sum_{k \in N(j)\\\{i\}} J_{k \rightarrow j})$$
+
+Gaussian Belief Propagation has time complexity $$\mathcal{O}(Nd^3)$$, where $$N$$ is the number of vertices and 
+$$d$$ is the dimension of each vertex. The cubic dependence on d arises from inverting the covariance matrices.
+This can compare favorably to Gaussian elimination, which naively has time complexity $$\mathcal{O}((Nd)^3)$$.
