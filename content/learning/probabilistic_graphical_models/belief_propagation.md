@@ -51,8 +51,16 @@ case to determine the marginal distributions and the messages:
 
 $$p(x_i) = \mathcal{N}^{-1}(h_j + \sum_{j \in N(i)} h_{j \rightarrow i}, J_{ii} + \sum_{j \in N(i)} J_{j \rightarrow i})$$
 
-$$m_{j \rightarrow i} = \mathcal{N}^{-1}(h_j + \sum_{k \in N(j) \setminus \{i\}} h_{k \rightarrow j},
-J_{jj} + \sum_{k \in N(j) \setminus \{i\}} J_{k \rightarrow j})$$
+$$m_{j \rightarrow i}(x_i) = \mathcal{N}^{-1}(h_{j \rightarrow i}, J_{j \rightarrow i})$$
+
+where
+
+$$
+\begin{align}
+h_{j \rightarrow i} &= -J_{ij} (J_{jj} + \sum_{k \in N(j) \setminus \{i\}} J_{k \rightarrow j})^{-1} (h_j + \sum_{k \in N(j) \setminus \{i\}} h_{k \rightarrow j}) \\
+J_{j \rightarrow i} &= -J_{ij} (J_{jj} + \sum_{k \in N(j) \setminus \{i\}} J_{k \rightarrow j})^{-1} J_{ji}
+\end{align}
+$$
 
 Gaussian Belief Propagation has time complexity $$\mathcal{O}(Nd^3)$$, where $$N$$ is the number of vertices and 
 $$d$$ is the dimension of each vertex. The cubic dependence on d arises from inverting the covariance matrices.
