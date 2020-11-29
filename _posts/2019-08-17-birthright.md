@@ -833,4 +833,5 @@ Last, but certainly not least, is the journal entry of another trip participant.
 is smart and I very much enjoyed learning about her/his life ;)
 
 
-img class="center" src="20190817_taglit/journal.jpeg"
+
+<img class="photo" src="{{ site.url }}/assets/2019-08-17-taglit/20190817_taglit/journal.jpeg">
