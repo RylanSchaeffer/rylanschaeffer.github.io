@@ -25,6 +25,8 @@ a secret too?" her supervisor asks. "I didn't really take the weekend off either
 
 ## Sweet
 
+## Start Ups
+- We lose a little money on every customer, but we make it up on volume.
 
 ## Inappropriate
 

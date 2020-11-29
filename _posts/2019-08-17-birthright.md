@@ -834,4 +834,4 @@ is smart and I very much enjoyed learning about her/his life ;)
 
 
 
-<img class="photo" src="{{ site.url }}/assets/2019-08-17-taglit/20190817_taglit/journal.jpeg">
+<img class="photo" src="{{ site.url }}/assets/2019-08-17-taglit/journal.jpeg">
