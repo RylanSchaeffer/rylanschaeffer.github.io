@@ -5,8 +5,16 @@ the person on the left.
 
 ## Background
 
+- 2019 Fall - Present: I'm earning my Masters of Engineering in Computer Science Engineering at Harvard
+University. I am currently conducting research with [Professor Ila Fiete in MIT BCS](https://fietelab.mit.edu/)
+as well as [Professor Cengiz Pehlvan in Harvard Applied Math](https://pehlevan.seas.harvard.edu/) and 
+[Dr. Nimrod Shaham in Harvard Center for Brain Science](https://cbmm.mit.edu/about/people/shaham). 
+
 - 2018 Fall - 2019 Fall: I worked at [Uber Technologies](https://www.uber.com/")
-as a Data Scientist. 
+as a Data Scientist on the Intelligent Decision Systems team. We specialized in time-series 
+forecasting and anomaly detection. My teammates [Calvin](https://www.linkedin.com/in/cworsnup/),
+[Yuxi](https://www.linkedin.com/in/yuxipanucla/) and [Roy](https://www.linkedin.com/in/roy-yajia-yang-b1b76a64/)
+and I placed third in Uber's multi-week internal machine learning hackathon out of 50+ teams.
 
 - 2017 Fall - 2018 Fall: I earned my Master of Research in Cognitive Neuroscience at 
 [University College London's Institute of Cognitive Neuroscience](http://www.ucl.ac.uk/icn)
