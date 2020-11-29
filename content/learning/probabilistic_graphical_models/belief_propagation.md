@@ -37,12 +37,12 @@ $$
 
 The messages are themselves Gaussian, with $$m_{2 \rightarrow 1} \propto \mathcal{N}^{-1}(_{2 \rightarrow 1}, 
 J_{2 \rightarrow 1})$$, where $$h_{2 \rightarrow 1} = -J_{12} J_{22}^{-1} h_2$$ and $$J_{2 \rightarrow 1} = 
-- J_{12} J_{22}^{-1} J_{21}$$, and the marginals are themselves Gaussian:
+-J_{12} J_{22}^{-1} J_{21}$$, and the marginals are themselves Gaussian:
 
 $$
 \begin{align}
-p(x_1) \propto \phi_1(x_1) m_{2 \rightarrow 1}(x_1)\\
-= \mathcal{N}^{-1}(h_1 + h_{2 \rightarrow 1}, J_{11} + J_{2 \rightarrow 1})
+p(x_1) &\propto \phi_1(x_1) m_{2 \rightarrow 1}(x_1)\\
+&= \mathcal{N}^{-1}(h_1 + h_{2 \rightarrow 1}, J_{11} + J_{2 \rightarrow 1})
 \end{align}
 $$
 
