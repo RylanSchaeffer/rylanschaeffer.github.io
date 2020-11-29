@@ -59,8 +59,8 @@ where
 
 $$
 \begin{align}
-h_{j \rightarrow i} &= -J_{ij} (J_{jj} + \sum_{k \in N(j) \setminus \{i\}} J_{k \rightarrow j})^{-1} (h_j + \sum_{k \in N(j) \setminus \{i\}} h_{k \rightarrow j}) \\
-J_{j \rightarrow i} &= -J_{ij} (J_{jj} + \sum_{k \in N(j) \setminus \{i\}} J_{k \rightarrow j})^{-1} J_{ji}
+h_{j \rightarrow i} &= -J_{ij} \Big( J_{jj} + \sum_{k \in N(j) \setminus \{i\}} J_{k \rightarrow j} \Big)^{-1} (h_j + \sum_{k \in N(j) \setminus \{i\}} h_{k \rightarrow j}) \\
+J_{j \rightarrow i} &= -J_{ij} \Big( J_{jj} + \sum_{k \in N(j) \setminus \{i\}} J_{k \rightarrow j} \Big)^{-1} J_{ji}
 \end{align}
 $$
 

@@ -17,6 +17,7 @@ structure to design efficient inference algorithms.
 - Algorithms for Efficient Inference
     - [Elimination Algorithm](probabilistic_graphical_models/elimination_algorithm.md)
     - [Sum-Product (Belief Propagation)](probabilistic_graphical_models/belief_propagation.md)
+    - [Junction Tree Algorithm](probabilistic_graphical_models/junction_tree_algorithm.md)
     - Loopy Belief Propagation
     - Variational Inference
     
