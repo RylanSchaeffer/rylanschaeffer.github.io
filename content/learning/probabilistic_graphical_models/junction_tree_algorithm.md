@@ -34,7 +34,7 @@ If a clique tree satisfies the junction tree property, we can enforce the constr
 we can define the edge potentials to be 1 if and only if the variables shared between the nodes are all
 equal. For instance, in the edge (1, 2, 4) - (2, 4, 5), the edge potential would be defined as
 
-$$\psi_{124, 245} = \mathbb{1}(2 in (1, 2, 4) == 2 in (2, 4, 5)) & \mathbb{1}(4 in (1, 2, 4) == 4 in (2, 4, 5)) $$
+$$\psi_{124, 245} = \mathbb{1}(2 in (1, 2, 4) == 2 in (2, 4, 5)) \& \mathbb{1}(4 in (1, 2, 4) == 4 in (2, 4, 5)) $$
 
 By setting edges to enforce this constraint, the factor potentials in the original graph are
 node potentials in the junction tree.
