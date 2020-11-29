@@ -1,14 +1,16 @@
 # Teaching
 
 ## Harvard
+-----
 
-### AM207 Stochastic Methods for Data Analysis, Inference and Optimization
+### AM207 Bayesian Methods for Data Analysis, Inference and Optimization (Fall 2020)
  
-### CS109A Introduction to Data Science 
+### CS109A Introduction to Data Science (Summer 2020)
 
-### CS10 Elements of Data Science
+### CS10 Elements of Data Science (Spring 2020)
 
 ## UC Davis
+-----
 
 ### Student Led Courses
 
@@ -29,23 +31,7 @@ course, please feel free to contact me after reading the
 <a href="https://localwiki.org/davis/Student_Facilitated_Courses">Davis Wiki</a> page. I'm more than happy
 to walk you through the process and provide guidance on being an instructor.
 
-
-### UHP98 Davis Hacks
-
-The first course I taught was a 1-unit seminar for University Honors Program students on how to maximize one's undergraduate educational experience. I co-taught with <a href="https://www.linkedin.com/in/pjsheehan">Patrick Sheehan</a>. The course was based on a previous course we both took taught by <a href="https://www.linkedin.com/pub/rajiv-narayan/18/b0b/72a">Rajiv Narayan</a>. I may post the material at some later date, but for those interested in the key lessons, read <a href="http://calnewport.com/blog/about/">Cal Newport's Blog</a>.
-
-
-### ECS98 History of Computer Science
-
-I designed and taught my second course, a 1-unit lower division seminar in Spring 2015, on the History of Computer Science. In case you're interested in learning more about it, here is the updated <a href="../articles/HistoryofCSSyllabus.pdf">syllabus</a>. I want to thank <a href="http://web.cs.ucdavis.edu/people/lecturers/index.html">Sean Davis</a> for serving as my instructor of record, as well as Nina Amenta, Phillip Rogaway, Matthew Farrens, Norm Matloff, Vladimir Filkov, Patrice Koehl and Lori Avellar for making the seminar possible.
-
-
-The two main books I used were <a href="https://www.goodreads.com/book/show/15937797-computer">Computer: A History of the Information Machine</a> and <a href="https://www.goodreads.com/book/show/299652.The_Universal_Computer">The Universal Computer: The Road from Leibniz to Turing</a>. I also enjoyed reading <a href="https://www.goodreads.com/book/show/6493321-logicomix">Logicomix: An epic search for truth</a> while searching for course material.
-
-Eleven of 15 students submitted course evaluations, and nine submitted the extended course evaluation. You can read their <a href="https://docs.google.com/forms/d/1QGgtASCoJYZCxTJaJYoL02156iRUl2Ri_fB8Few-pnE/viewanalytics#start=publishanalytics">responses</a>. The evaluations were handwritten, so I digitized the students' responses. Some handwriting was illegible, so some information was lost.
-
-
-### ECS98 Bitcoin and Cryptocurrency Technologies
+### ECS98 Bitcoin and Cryptocurrency Technologies (Spring 2016)
 
 I designed and taught my third class, a 2-unit upper division course titled <a href="../files/198FCourseSyllabus.pdf">Bitcoin and Cryptocurrency Technologies</a> in Spring 2016 under the supervision of <a href="http://faculty.engineering.ucdavis.edu/levitt/">Karl Levitt</a>. I co-taught with <a href="https://www.linkedin.com/in/vinyang">Vincent Yang</a>. The first half of our course is based on Princeton's <a href="https://www.coursera.org/course/bitcointech">Bitcoin and Cryptocurrency Technologies</a> course. Lecture notes (some incomplete) and their corresponding .tex files are available <a href="https://github.com/RylanSchaeffer/ECS198-Cryptocurrency-Technologies/tree/master/Lectures">online</a>.
 
@@ -56,4 +42,19 @@ The term project specifications can be viewed <a href="../files/198FTermProject.
 
 
 Nine of 23 students submitted <a href="../files/RylanECS198F.pdf">evaluations</a>. The first three questions are on a five-point scale, and the remaining questions are on a ten-point scale. Before the course began, students with little programming experience asked to add a 1-unit version of the class to learn the conceptual material; we agreed. Looking back, this was a mistake. It increased our workload, which precluded us from developing more thoughtful assignments. We also had to teach to two very different audiences, which I think was best captured in a student's following comment: "I had no idea what hashing was and never constructed a tree before. I couldn't understand how those concepts played a major role in Bitcoin. Similarly, I felt lost throughout most lectures. I'm not sure if it's because of my insufficient background, or me just not taking good enough notes." Given another opportunity, I would have been adhered to the course's prerequisites I initially set.
+
+
+### ECS98 History of Computer Science (Spring 2015)
+
+I designed and taught my second course, a 1-unit lower division seminar in Spring 2015, on the History of Computer Science. In case you're interested in learning more about it, here is the updated <a href="../articles/HistoryofCSSyllabus.pdf">syllabus</a>. I want to thank <a href="http://web.cs.ucdavis.edu/people/lecturers/index.html">Sean Davis</a> for serving as my instructor of record, as well as Nina Amenta, Phillip Rogaway, Matthew Farrens, Norm Matloff, Vladimir Filkov, Patrice Koehl and Lori Avellar for making the seminar possible.
+
+
+The two main books I used were <a href="https://www.goodreads.com/book/show/15937797-computer">Computer: A History of the Information Machine</a> and <a href="https://www.goodreads.com/book/show/299652.The_Universal_Computer">The Universal Computer: The Road from Leibniz to Turing</a>. I also enjoyed reading <a href="https://www.goodreads.com/book/show/6493321-logicomix">Logicomix: An epic search for truth</a> while searching for course material.
+
+Eleven of 15 students submitted course evaluations, and nine submitted the extended course evaluation. You can read their <a href="https://docs.google.com/forms/d/1QGgtASCoJYZCxTJaJYoL02156iRUl2Ri_fB8Few-pnE/viewanalytics#start=publishanalytics">responses</a>. The evaluations were handwritten, so I digitized the students' responses. Some handwriting was illegible, so some information was lost.
+
+
+### UHP98 Davis Hacks (Spring 2014)
+
+The first course I taught was a 1-unit seminar for University Honors Program students on how to maximize one's undergraduate educational experience. I co-taught with <a href="https://www.linkedin.com/in/pjsheehan">Patrick Sheehan</a>. The course was based on a previous course we both took taught by <a href="https://www.linkedin.com/pub/rajiv-narayan/18/b0b/72a">Rajiv Narayan</a>. I may post the material at some later date, but for those interested in the key lessons, read <a href="http://calnewport.com/blog/about/">Cal Newport's Blog</a>.
 

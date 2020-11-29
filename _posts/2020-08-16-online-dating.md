@@ -31,7 +31,7 @@ Suppose we order men by the proportion of women interested in that man. What doe
 a distribution look like, and why does it tell us that online dating is a waste of
 time?
 
-![N=10000, K=50](dating, N=10000, K=50.png)
+![N=10000, K=50]({{ site.url }}/assets/2020-08-16-online-dating/dating, N=10000, K=50.png)
 
 
 Note the log-log scaling! Turns out $$N$$, the total population of men, doesn't much matter. What matters
@@ -43,7 +43,7 @@ the top $$K$$ men dominate, whereas larger values of $$p$$ push the cliff slight
 independence parameter $$p$$ also controls how steeply female interest in men outside the top
 $$K$$ decays. Again, note the log-log scaling!
 
-![N=10000, K=100](dating, N=10000, K=100.png)
+![N=10000, K=100]({{ site.url }}/assets/2020-08-16-online-dating/dating, N=10000, K=100.png)
 
 
 What's the takeaway? If you're male and not in the top $$K$$, then you will have very few
