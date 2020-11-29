@@ -15,8 +15,8 @@ structure to design efficient inference algorithms.
     - [Factor Graphs](probabilistic_graphical_models/factor_graphical_models.md)
     - [Ancestral Graphs](probabilistic_graphical_models/ancestral_graphical_models.md)
 - Algorithms for Efficient Inference
-    - Elimination Algorithm
-    - Sum-Product (Belief Propagation)
+    - [Elimination Algorithm](probabilistic_graphical_models/elimination_algorithm.md)
+    - [Sum-Product (Belief Propagation)](probabilistic_graphical_models/belief_propagation.md)
     - Loopy Belief Propagation
     - Variational Inference
     

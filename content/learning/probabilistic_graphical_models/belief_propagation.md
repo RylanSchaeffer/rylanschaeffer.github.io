@@ -30,6 +30,7 @@ $$
 \begin{align}
 p(x_1) &= \int \phi_1(x_1) \phi_2(x_2) \psi_{1,2}(x_1, x_2) dx_2\\
 &= \phi_1(x_1) \int \phi_2(x_2) \psi_{1,2}(x_1, x_2) dx_2\\
-&= \phi_1(x_1) \underbrace{\int \exp()}_{m_{2 \rightarrow 1}(x_1)}\\
+&= \phi_1(x_1) \underbrace{\int \exp(-\frac{1}{2} x^T \begin{bmatrix} 0 & J_{12}\\ J_{21} & J_{22} \end{bmatrix} x + 
+\begin{bmatrix}0 \\ h_2 \end{bmatrix}^T x) dx_2}_{m_{2 \rightarrow 1}(x_1)}\\
 \end{align}
 $$
