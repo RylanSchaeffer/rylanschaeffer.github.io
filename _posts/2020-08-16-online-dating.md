@@ -1,10 +1,8 @@
 ---
 layout: post
-title:  Online Dating 
+title:  Why Online Dating is (Almost Certainly) a Waste of Your Time 
 tags: online-dating 2020
 ---
-
-## Why Online Dating is (Almost Certainly) a Waste of Your Time
 
 A few weeks ago, I went on a hike with two friends (6 feet apart, wearing masks,
 of course). One of my friends complained that online dating was rough for her,

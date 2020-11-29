@@ -11,14 +11,14 @@ recollection of the trip and its highlights.
 
 
 <p style="text-align:center;">
-<img class="center" src="../assets/2019-08-17-taglit/taglit.jpg" style="width: 100%">
+<img class="center" src="{{ site.url }}/assets/2019-08-17-taglit/taglit.jpg" style="width: 100%">
 
 
 <h2>Day 1 - Afik Kibbutz Orchan and Shehecheyanu Ceremony</h2>
 
 
-<img class="photo" src="../assets/2019-08-17-taglit/itamar_bouton.jpg" style="float:left; width: 15%">
-<img class="photo" src="../assets/2019-08-17-taglit/day01_route.png" style="float:right; width: 15%">
+<img class="photo" src="{{ site.url }}/assets/2019-08-17-taglit/itamar_bouton.jpg" style="float:left; width: 15%">
+<img class="photo" src="{{ site.url }}/assets/2019-08-17-taglit/day01_route.png" style="float:right; width: 15%">
 We were greeted at the airport by our Israeli participants and our Israeli guide,
 <a href="http://boutontour.com/">Itamar Bouton</a>, who would prove himself to
 be an enthusiastic, knowledgeable and humorous leader over the course of the trip. He gave three
@@ -38,7 +38,7 @@ kibbutz was in Afik prior to Israel capturing the Golan Heights during the Six D
 
 
 <p style="clear: both; text-align:center;">
-<img class="center" src="../assets/2019-08-17-taglit/day01_kibbutz_afik.jpg" style="width: 100%">
+<img class="center" src="{{ site.url }}/assets/2019-08-17-taglit/day01_kibbutz_afik.jpg" style="width: 100%">
 
 
 
@@ -55,7 +55,7 @@ came in the form of small donations from Jews across Europe.
 
 
 <p style="clear: both">
-<img class="photo" src="../assets/2019-08-17-taglit/day01_benw_as_israel.jpg" style="float: right; width: 40%">
+<img class="photo" src="{{ site.url }}/assets/2019-08-17-taglit/day01_benw_as_israel.jpg" style="float: right; width: 40%">
 Our guide Itamar gave us a preview of where we would travel and what we would do over
 the course of the trip, using Ben as a makeshift map of Israel. To get to know one another,
 we played an activity where we partnered up and told our partner an embarrassing story
@@ -67,7 +67,7 @@ to share their stories.
 
 
 <p style="clear: both">
-<img class="photo" src="../assets/2019-08-17-taglit/day01_shehecheyanu.jpg" style="float: left; width: 40%">
+<img class="photo" src="{{ site.url }}/assets/2019-08-17-taglit/day01_shehecheyanu.jpg" style="float: left; width: 40%">
 The final activity of the day was the <a href="https://en.wikipedia.org/wiki/Shehecheyanu">Shehecheyanu</a>
 during sunset. Shehecheyanu is a common Jewish prayer used to celebrate new experiences.
 Most significantly and recently, the Shehecheyanu was recited by Israel's first Minister
@@ -99,8 +99,8 @@ companion. An attacker was later released as part of <a href="https://en.wikiped
 
 
 
-<img class="photo" src="../assets/2019-08-17-taglit/day02_hike_water_hole.jpg" style="float: left; width: 35%">
-<img class="photo" src="../assets/2019-08-17-taglit/day02_hike.jpg" style="float: left; width: 35%">
+<img class="photo" src="{{ site.url }}/assets/2019-08-17-taglit/day02_hike_water_hole.jpg" style="float: left; width: 35%">
+<img class="photo" src="{{ site.url }}/assets/2019-08-17-taglit/day02_hike.jpg" style="float: left; width: 35%">
 We started the day with a hike. Halfway through, we encountered a
 delightful pond that we went swimming in. Our wet clothes proved to be a good defense
 against the growing heat of the day. As we passed over diverse types of rocks,
@@ -114,11 +114,11 @@ tried to do exactly that leading up to the Six Day War.
 
 
 <p style="clear: both; text-align:center;">
-<img class="center" src="../assets/2019-08-17-taglit/day02_golan_border.jpg" style="width: 100%">
+<img class="center" src="{{ site.url }}/assets/2019-08-17-taglit/day02_golan_border.jpg" style="width: 100%">
 
 
 <p style="clear: both">
-<img class="photo" src="../assets/2019-08-17-taglit/day02_rafting.jpg" style="float: left; width: 45%">
+<img class="photo" src="{{ site.url }}/assets/2019-08-17-taglit/day02_rafting.jpg" style="float: left; width: 45%">
 Our final activity of the day was rafting. There was only one short section of the river
 that wasn't calm, but Becca, Dani, Nate and I entertained ourselves by chasing other
 rafts, throwing people out of their rafts (sorry Danny!) and attempting to paddle
@@ -128,7 +128,7 @@ while facing in opposite directions.
 <h2 style="clear: both;">Day 3 - Tzfat and the Kabbalah</h2>
 
 
-<img class="photo" src="../assets/2019-08-17-taglit/day03_route.png" style="float: left; width: 20%">
+<img class="photo" src="{{ site.url }}/assets/2019-08-17-taglit/day03_route.png" style="float: left; width: 20%">
 Day 3 started with a bus ride to <a href="https://en.wikipedia.org/wiki/Safed">Tzfat</a>
 (also known as Safed), one of the <a href="https://en.wikipedia.org/wiki/Four_Holy_Cities">four holiest cities in Israel</a>,
 the others being Jerusalem,
@@ -145,7 +145,7 @@ event
 
 
 
-<img class="photo" src="../assets/2019-08-17-taglit/day03_kabbala.jpg" style="float: right; width: 45%">
+<img class="photo" src="{{ site.url }}/assets/2019-08-17-taglit/day03_kabbala.jpg" style="float: right; width: 45%">
 Our first stop was the <a href="https://www.kabbalahart.com/artist/">Tzfat Gallery of Mystical Art</a>,
 an art gallery run by a former American named Robert who made <a href="https://en.wikipedia.org/wiki/Aliyah">Aliyah</a>
 (i.e. emigrated) to Israel and took the name Avraham Loewenthal. Apparently we were
@@ -175,7 +175,7 @@ a transcendental moment. Many people in our group bought small copies of his art
 
 
 <p style="clear: both">
-<img class="photo" src="../assets/2019-08-17-taglit/day03_tzfat.jpg" style="float: left; width: 45%">
+<img class="photo" src="{{ site.url }}/assets/2019-08-17-taglit/day03_tzfat.jpg" style="float: left; width: 45%">
 After leaving Avraham's art store, we walked through the old Jewish quarter of Tzfat.
 Itamar shared with us the <a href="https://www.safed.co.il/war-of-independence-in-tzfat.html">story of how Israel came to control Tzfat</a>.
 As the British and French prepared to leave the Middle East, the UN Partition Plan
@@ -188,7 +188,7 @@ an atomic bomb and the Arabs fled from the city, ceding it to Jewish control.
 
 
 <p style="clear: both">
-<img class="photo" src="../assets/2019-08-17-taglit/day03_tzfat_professor.jpg" style="float: right; width: 45%">
+<img class="photo" src="{{ site.url }}/assets/2019-08-17-taglit/day03_tzfat_professor.jpg" style="float: right; width: 45%">
 The group was given two hours to shop for souvenirs, so Dani,
 Nathan and I seized the opportunity to explore the city. We walked through streets
 that looks hundreds of years old, past citizens who looked equally dated, until
@@ -203,8 +203,8 @@ professor since I asked so many questions.
 <h2 style="clear: both;">Day 4 - Knesset Menorah, Israel Museum and the Western Wall</h2>
 
 
-<img class="photo" src="../assets/2019-08-17-taglit/day04_route.png" style="float: right; width: 15%">
-<img class="photo" src="../assets/2019-08-17-taglit/day04_parliament_menorah.jpg" style="float: right; width: 45%">
+<img class="photo" src="{{ site.url }}/assets/2019-08-17-taglit/day04_route.png" style="float: right; width: 15%">
+<img class="photo" src="{{ site.url }}/assets/2019-08-17-taglit/day04_parliament_menorah.jpg" style="float: right; width: 45%">
 Day 4 started in Jerusalem at the <a href="https://en.wikipedia.org/wiki/Knesset_Menorah">
 Knesset Menorah</a>, a 15 foot tall Menorah located near The Knesset (Israel's Parliament).
 I might not have been listening since it was only when I read the Wikipedia article that I
@@ -238,11 +238,11 @@ an annual day of fasting to lament the loss of the First and Second Temples.
 
 
 <p style="clear: both; text-align:center;">
-<img class="center" src="../assets/2019-08-17-taglit/day04_model_temple.jpg" style="width: 100%">
+<img class="center" src="{{ site.url }}/assets/2019-08-17-taglit/day04_model_temple.jpg" style="width: 100%">
 
 
 
-<img class="photo" src="../assets/2019-08-17-taglit/day04_astronaut.jpg" style="float: right; width: 25%">
+<img class="photo" src="{{ site.url }}/assets/2019-08-17-taglit/day04_astronaut.jpg" style="float: right; width: 25%">
 Many people's favorite exhibit was the Dead Sea Scrolls, a set of religious
 manuscripts dated as early as 300 BCE, but I found the exhibit uninformative and
 uninspiring. The exhibit focused on where the scrolls were found, how the scrolls
@@ -266,12 +266,12 @@ similarly.
 
 
 <p style="clear: both">
-<img class="photo" src="../assets/2019-08-17-taglit/day04_insta.jpg" style="float: left; width: 95%">
+<img class="photo" src="{{ site.url }}/assets/2019-08-17-taglit/day04_insta.jpg" style="float: left; width: 95%">
 People on the trip worked hard to get just the right shot!
 
 
 <p style="clear: both">
-<img class="photo" src="../assets/2019-08-17-taglit/day04_western_wall.jpg" style="float: left; width: 70%">
+<img class="photo" src="{{ site.url }}/assets/2019-08-17-taglit/day04_western_wall.jpg" style="float: left; width: 70%">
 Our final stop of the day was the Western Wall. We were afforded the chance to leave
 a prayer at the Wall and many did. I repeatedly tried and failed to write a prayer that
 I wouldn't be ashamed of, until I remembered <a href="http://www.twainquotes.com/Satan.html">
@@ -283,9 +283,9 @@ your world turns for the better and that you find what you need."
 <h2 style="clear: both;">Day 5 - Jerusalem, Ein Karem and B'nai Mitzvah</h2>
 
 
-<img class="photo" src="../assets/2019-08-17-taglit/day05_ghost_town_2.jpg" style="float: right; width: 35%">
-<img class="photo" src="../assets/2019-08-17-taglit/day05_ghost_town_1.jpg" style="float: right; width: 35%">
-<img class="photo" src="../assets/2019-08-17-taglit/day05_nate_helps.jpg" style="float: right; width: 35%">
+<img class="photo" src="{{ site.url }}/assets/2019-08-17-taglit/day05_ghost_town_2.jpg" style="float: right; width: 35%">
+<img class="photo" src="{{ site.url }}/assets/2019-08-17-taglit/day05_ghost_town_1.jpg" style="float: right; width: 35%">
+<img class="photo" src="{{ site.url }}/assets/2019-08-17-taglit/day05_nate_helps.jpg" style="float: right; width: 35%">
 Day 5 started in Jerusalem on Shabbat. We were given the whole morning off, so Dani,
 Nathan and I set out to explore the city. We were amazed at how quiet the city was.
 Not a shop was open, not a car moved, not a person was in the street other than
@@ -306,7 +306,7 @@ service might be impacted without a fix until he showed up to press the button.
 
 
 <p style="clear: both;">
-<img class="photo" src="../assets/2019-08-17-taglit/day05_hebrew_uni_view.jpg" style="float: left; width: 35%">
+<img class="photo" src="{{ site.url }}/assets/2019-08-17-taglit/day05_hebrew_uni_view.jpg" style="float: left; width: 35%">
 We continued on through a Muslim quarter of Jerusalem towards our goal of the Hebrew
 University of Jerusalem, which I wanted to see for its world-class Brain Sciences
 departments. As we walked through the Muslim quarter, we noticed a couple things. First,
@@ -324,12 +324,12 @@ the 1948 War of Independence, the University was forced to relocate, but returne
 
 
 <p style="clear: both; text-align:center;">
-<img class="center" src="../assets/2019-08-17-taglit/day05_hebrew_uni_panorama.jpg" style="width: 100%">
+<img class="center" src="{{ site.url }}/assets/2019-08-17-taglit/day05_hebrew_uni_panorama.jpg" style="width: 100%">
 
 
 <p style="clear: both;">
-<img class="photo" src="../assets/2019-08-17-taglit/day05_ein_karem_ice_cream.jpg" style="float: left; width: 35%">
-<img class="photo" src="../assets/2019-08-17-taglit/day05_fried_chicken.jpg" style="float: left; width: 35%">
+<img class="photo" src="{{ site.url }}/assets/2019-08-17-taglit/day05_ein_karem_ice_cream.jpg" style="float: left; width: 35%">
+<img class="photo" src="{{ site.url }}/assets/2019-08-17-taglit/day05_fried_chicken.jpg" style="float: left; width: 35%">
 We then took a <a href="https://en.wikipedia.org/wiki/Gett">Gett taxi</a> (the Israeli
 equivalent of an Uber or Lyft) to <a href="https://en.wikipedia.org/wiki/Ein_Karem">Ein
 Karem</a> at the recommendation of one of our Israeli friends. I struck up a
@@ -351,7 +351,7 @@ quick."
 
 
 
-<img class="photo" src="../assets/2019-08-17-taglit/day05_ein_karem_st_john.jpg" style="float: right; width: 35%">
+<img class="photo" src="{{ site.url }}/assets/2019-08-17-taglit/day05_ein_karem_st_john.jpg" style="float: right; width: 35%">
 We quickly learned that Ein Karem is a popular Christian pilgrimmage spot due to it
 being the birthplace of St. John the Baptist (right). An Israeli couple who were walking with
 us tried to strike up a conversation with the priest, but he didn't know how to speak
@@ -364,7 +364,7 @@ the negation.
 
 
 <p style="clear: both">
-<img class="photo" src="../assets/2019-08-17-taglit/day05_binae_mitzvah.jpg" style="float: left; width: 35%">
+<img class="photo" src="{{ site.url }}/assets/2019-08-17-taglit/day05_binae_mitzvah.jpg" style="float: left; width: 35%">
 The group spent the rest of the day chilling in a local park. We started with a voluntary
 group B'nai Mitzvah. Having never had a Bat Mitzvah, I learned more about the
 ceremonial event. 13 years seems a bit early for anyone to make an informed decision
@@ -375,7 +375,7 @@ first.
 <h2 style="clear: both;">Day 6 - Yad Vashem, Israeli Innovation and Nightlife in Tel Aviv</h2>
 
 
-<img class="photo" src="../assets/2019-08-17-taglit/day06_an_inch.jpg" style="float: left; width: 20%">
+<img class="photo" src="{{ site.url }}/assets/2019-08-17-taglit/day06_an_inch.jpg" style="float: left; width: 20%">
 <a href="https://www.yadvashem.org/">Yad Vashem</a> is Israel's Holocaust Memorial.
 Photos aren't permitted inside, so I have very few. I'll share one photo that I snuck
 because the story touched me. As the picture reads, <a href="https://en.wikipedia.org/wiki/Roza_Robota">Roza Robota</a>
@@ -394,9 +394,9 @@ scene justice in words, but it's one of the most moving film scenes I've seen:
 
 
 
-<img class="photo" src="../assets/2019-08-17-taglit/day06_route.png" style="float: left; width: 15%">
-<img class="photo" src="../assets/2019-08-17-taglit/day06_ethiopian.jpg" style="float: right; width: 40%">
-<img class="photo" src="../assets/2019-08-17-taglit/day06_partners_in_crime.jpg" style="float: left; width: 40%">
+<img class="photo" src="{{ site.url }}/assets/2019-08-17-taglit/day06_route.png" style="float: left; width: 15%">
+<img class="photo" src="{{ site.url }}/assets/2019-08-17-taglit/day06_ethiopian.jpg" style="float: right; width: 40%">
+<img class="photo" src="{{ site.url }}/assets/2019-08-17-taglit/day06_partners_in_crime.jpg" style="float: left; width: 40%">
 We then departed Jerusalem for Tel Aviv. The city had an aesthetic unlike anything I'd
 previously experienced - tall, shining skyscrapers that looked like Jenga towers
 juxtaposed with markets offering piles of colorful spices and dried fruit and London-like
@@ -409,7 +409,7 @@ food (right).
 
 
 <p style="clear: both">
-<img class="photo" src="../assets/2019-08-17-taglit/day06_stock_exchange.jpg" style="float: left; width: 20%">
+<img class="photo" src="{{ site.url }}/assets/2019-08-17-taglit/day06_stock_exchange.jpg" style="float: left; width: 20%">
 We then went to the <a href="https://www.taglitinnovation.com/">Center for Israeli Innovation</a>
 at the Tel Aviv Stock Exchange. They had an opening bell, so I of course asked to ring it.
 Turns out the bell is just a way to look like the New York Stock Exchange - it wasn't actually connected to anything. But the
@@ -444,7 +444,7 @@ what they do, moreso than say, the United States.
 
 
 <p style="clear: both">
-<img class="photo" src="../assets/2019-08-17-taglit/day06_exploration.jpg" style="float: left; width: 50%">
+<img class="photo" src="{{ site.url }}/assets/2019-08-17-taglit/day06_exploration.jpg" style="float: left; width: 50%">
 That night, we were given the freedom to explore Tel Aviv. Dani, Nate and I decided to
 walk as far south along the shoreline as time would permit. As we walked along the
 shore, our conversations swayed in the breeze, touching all manner of topics. One topic
@@ -455,8 +455,8 @@ once told her, <b>"Marry someone who makes you laugh because life is hard."</b>
 <h2 style="clear: both;">Day 7 - Gentrification in Tel Aviv and Bedouins in the Negev</h2>
 
 
-<img class="photo" src="../assets/2019-08-17-taglit/day07_gentrification.jpg" style="width: 50%; float: left">
-<img class="photo" src="../assets/2019-08-17-taglit/day07_insta.jpg" style="width: 50%; float: left">
+<img class="photo" src="{{ site.url }}/assets/2019-08-17-taglit/day07_gentrification.jpg" style="width: 50%; float: left">
+<img class="photo" src="{{ site.url }}/assets/2019-08-17-taglit/day07_insta.jpg" style="width: 50%; float: left">
 We started the day with an opportunity to explore Tel Aviv in small groups. My group
 explored a new shopping center a multi-story shopping mall. We also walked by
 the Camp Rabin military base and its <a href="https://en.wikipedia.org/wiki/Marganit_Tower">
@@ -467,8 +467,8 @@ been experiencing significant gentrification that gives rise to new malls.
 
 
 
-<img class="photo" src="../assets/2019-08-17-taglit/day07_route.png" style="float: right; width: 15%">
-<img class="photo" src="../assets/2019-08-17-taglit/day07_camel_riding.jpg" style="float: right; width: 40%">
+<img class="photo" src="{{ site.url }}/assets/2019-08-17-taglit/day07_route.png" style="float: right; width: 15%">
+<img class="photo" src="{{ site.url }}/assets/2019-08-17-taglit/day07_camel_riding.jpg" style="float: right; width: 40%">
 We then traveled out to the Negev (Kfar Hnokdim, specifically) to stay the night at
 a Bedouin campement. Bedouins are nomadic Arabs who live across countries in the Middle
 East. They famously discovered the <a href="https://en.wikipedia.org/wiki/Dead_Sea_Scrolls">
@@ -510,7 +510,7 @@ camp, and the lights to its left and right are other towns on the horizon.
 
 
 <p style="clear: both; text-align:center;">
-<img class="center" src="../assets/2019-08-17-taglit/day07_night_run.jpg" style="width: 100%">
+<img class="center" src="{{ site.url }}/assets/2019-08-17-taglit/day07_night_run.jpg" style="width: 100%">
 
 
 
@@ -521,13 +521,13 @@ from the run.
 
 
 <p style="clear: both; text-align:center;">
-<img class="center" src="../assets/2019-08-17-taglit/day07_bedouin_tent.jpg" style="width: 100%">
+<img class="center" src="{{ site.url }}/assets/2019-08-17-taglit/day07_bedouin_tent.jpg" style="width: 100%">
 
 
 <h2 style="clear: both;">Day 8 - Masada, the Dead Sea and Ben-Gurion's Tomb</h2>
 
 <p style="clear: both; text-align:center;">
-<img class="center" src="../assets/2019-08-17-taglit/day08_masada_ruins.jpg" style="width: 100%">
+<img class="center" src="{{ site.url }}/assets/2019-08-17-taglit/day08_masada_ruins.jpg" style="width: 100%">
 
 
 
@@ -545,7 +545,7 @@ to lay siege to Masada.
 
 
 
-<img class="photo" src="../assets/2019-08-17-taglit/day08_masada_siege_tower.jpg" style="float: left; width: 35%">
+<img class="photo" src="{{ site.url }}/assets/2019-08-17-taglit/day08_masada_siege_tower.jpg" style="float: left; width: 35%">
 Typically siege methods were ineffective against Masada given its positioning, so
 the Roman legion literally moved a small mountain to
 create a new entrance to the elevated plateau and then used a system of pulleys to pull
@@ -577,7 +577,7 @@ the same name</a>.
 
 
 
-<img class="photo" src="../assets/2019-08-17-taglit/day08_dead_sea.jpg" style="float: right; width: 45%">
+<img class="photo" src="{{ site.url }}/assets/2019-08-17-taglit/day08_dead_sea.jpg" style="float: right; width: 45%">
 We then bused to the Dead Sea. From a distance, it looks like a gorgeous white sand
 beach, but that's deceptive! There is no sand - the whiteness is hardened salt crystal.
 Several people (in our group and others) made the mistake of unknowingly lacerating
@@ -592,7 +592,7 @@ it appears to be false.</a>
 
 
 <p style="clear: both">
-<img class="photo" src="../assets/2019-08-17-taglit/day08_ben_gurion_grave.jpg" style="float: left; width: 45%">
+<img class="photo" src="{{ site.url }}/assets/2019-08-17-taglit/day08_ben_gurion_grave.jpg" style="float: left; width: 45%">
 We visited the tomb of <a href="https://en.wikipedia.org/wiki/David_Ben-Gurion">David
 Ben-Gurion</a>, Israel's first prime minister, in <a href="https://en.wikipedia.org/wiki/Midreshet_Ben-Gurion">
 Midreshet Ben-Gurion</a> where we learned about his background and his vision for
@@ -709,7 +709,7 @@ Israel is.
 <h2 style="clear: both;">Day 9 - Ein Avdat National Park and Mount Herzl</h2>
 
 
-<img class="photo" src="../assets/2019-08-17-taglit/day09_national_park.jpg" style="float: left; width: 40%">
+<img class="photo" src="{{ site.url }}/assets/2019-08-17-taglit/day09_national_park.jpg" style="float: left; width: 40%">
 On our second-to-last day of the trip, we started by hiking Ein Advat, an ancient canyon
 in the desert near kibbutz Sde Boker and the tomb of the Ben-Gurions. Our guide told us
 that the area was ancient, but I didn't realize how ancient - evidence of tools used by
@@ -721,8 +721,8 @@ Ben-Gurion.
 
 
 <p style="clear: both">
-<img class="photo" src="../assets/2019-08-17-taglit/day09_mt_herzl_1.jpg" style="float: right; width: 40%">
-<img class="photo" src="../assets/2019-08-17-taglit/day09_mt_herzl_3.jpg" style="float: right; width: 40%">
+<img class="photo" src="{{ site.url }}/assets/2019-08-17-taglit/day09_mt_herzl_1.jpg" style="float: right; width: 40%">
+<img class="photo" src="{{ site.url }}/assets/2019-08-17-taglit/day09_mt_herzl_3.jpg" style="float: right; width: 40%">
 Our final stop was at <a href="https://en.wikipedia.org/wiki/Mount_Herzl">Mount Herzl</a>,
 a graveyard built to memorialize those who died defending Israel. The name comes from
 <a href="https://en.wikipedia.org/wiki/Theodor_Herzl">Theodor Herzl</a>, the founder of
@@ -748,9 +748,9 @@ grounds and was jailed until his former military commander spoke in his defense.
 <h2 style="clear: both;">Day 10 - Farewells</h2>
 
 
-<img class="photo" src="../assets/2019-08-17-taglit/day10_book_rip_3.jpg" style="float: right; width: 20%">
-<img class="photo" src="../assets/2019-08-17-taglit/day10_book_rip_2.jpg" style="float: right; width: 20%">
-<img class="photo" src="../assets/2019-08-17-taglit/day10_book_rip_1.jpg" style="float: right; width: 20%">
+<img class="photo" src="{{ site.url }}/assets/2019-08-17-taglit/day10_book_rip_3.jpg" style="float: right; width: 20%">
+<img class="photo" src="{{ site.url }}/assets/2019-08-17-taglit/day10_book_rip_2.jpg" style="float: right; width: 20%">
+<img class="photo" src="{{ site.url }}/assets/2019-08-17-taglit/day10_book_rip_1.jpg" style="float: right; width: 20%">
 As we waited
 at the airport to depart, Nate bemoaned that he didn't have a book to read on the
 flight. Dani, who was halfway through Dan Brown's Digital Fortress, took inspiration
