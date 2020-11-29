@@ -34,3 +34,14 @@ p(x_1) &= \int \phi_1(x_1) \phi_2(x_2) \psi_{1,2}(x_1, x_2) dx_2\\
 \begin{bmatrix}0 \\ h_2 \end{bmatrix}^T x) dx_2}_{m_{2 \rightarrow 1}(x_1)}\\
 \end{align}
 $$
+
+The messages are themselves Gaussian, with $$m_{2 \rightarrow 1} \propto \mathcal{N}^{-1}(_{2 \rightarrow 1}, 
+J_{2 \rightarrow 1})$$, where $$h_{2 \rightarrow 1} = -J_{12} J_{22}^{-1} h_2$$ and $$J_{2 \rightarrow 1} = 
+- J_{12} J_{22}^{-1} J_{21}$$, and the marginals are themselves Gaussian:
+
+$$
+\begin{align}
+p(x_1) \propto \phi_1(x_1) m_{2 \rightarrow 1}(x_1)\\
+= \mathcal{N}^{-1}(h_1 + h_{2 \rightarrow 1}, J_{11} + J_{2 \rightarrow 1})
+\end{align}
+$$
