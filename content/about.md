@@ -25,7 +25,8 @@ from DeepMind, OpenAI, Uber AI Labs, Toronto, MILA, Stanford, Berkeley, Princeto
 Oxford, Cambridge, Imperial and other institutions.
 
 - 2017 Summer: conducted research on applying supervised deep learning to DNA sequencing as
- an intern at [Thermo Fisher Scientific](https://www.thermofisher.com/uk/en/home.html)
+ an intern at [Thermo Fisher Scientific](https://www.thermofisher.com/uk/en/home.html). My
+ seq2seq model surpassed the company's gold standard algorithm and earned me my first patent.
  
 - 2011 Fall - 2016 Summer: I earned two BS degrees at [UC Davis](http://www.ucdavis.edu/)
 in <a href="http://cs.ucdavis.edu/">computer science engineering</a> and <a href="http://www.stat.ucdavis.edu/">statistics</a>,
