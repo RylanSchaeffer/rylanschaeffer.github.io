@@ -5,13 +5,7 @@ computing marginal distributions in trees lead to the question of whether we can
 inference of marginal distributions in general undirected graphs. The Junction Tree Algorithm allows
 us to do so under certain settings. The approach is to convert a given undirected graph to an
 undirected tree where the nodes in the tree correspond to maximum cliques in the original graph (called a junction
-tree), and then apply belief propagation in the junction tree. However, this prompts some immediate follow-up questions, including:
-
-- When does a graph have a junction tree?
-- If a graph has a junction tree, how can we efficiently find it?
-- If a graph doesn't have a junction tree, what do we do?
-
-These questions will be answered in the second half. We first start with some definitions.
+tree), and then apply belief propagation in the junction tree. We first start with some definitions.
 
 A __clique graph__ of graph $$G$$ is a new graph where the new graph's nodes are the max cliques in $$G$$.
 A __clique tree__ is a clique graph that is a tree.
@@ -40,7 +34,15 @@ If a clique tree satisfies the junction tree property, we can enforce the constr
 we can define the edge potentials to be 1 if and only if the variables shared between the nodes are all
 equal. For instance, in the edge (1, 2, 4) - (2, 4, 5), the edge potential would be defined as
 
-$$\psi_{124, 245} = \mathbb{1}(2 in (1, 2, 4) == 2 in (2, 4, 5)) & \mathbb{1}(4 in (1, 2, 4) == 4 in (2, 4, 5)) ] $$
+$$\psi_{124, 245} = \mathbb{1}(2 in (1, 2, 4) == 2 in (2, 4, 5)) & \mathbb{1}(4 in (1, 2, 4) == 4 in (2, 4, 5)) $$
 
 By setting edges to enforce this constraint, the factor potentials in the original graph are
-node potentials in the junction tree
+node potentials in the junction tree.
+
+However, this prompts some immediate follow-up questions, including:
+
+- When does a graph have a junction tree?
+- If a graph has a junction tree, how can we efficiently find it?
+- If a graph doesn't have a junction tree, what do we do?
+
+ 
