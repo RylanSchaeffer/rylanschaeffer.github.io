@@ -103,7 +103,7 @@ const quotations = [
     "Remember, in the burning heart\n" +
     "There can never be surrender at all.",
 
-    "This is pretty lazy, seeing as you always talk such a big game. Quit laying' down" +
+    "This is pretty lazy, seeing as you always talk such a big game. Quit laying' down " +
     "on the job.",
 
     "For the blood is running still\n" +
