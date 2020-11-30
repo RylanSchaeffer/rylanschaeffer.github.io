@@ -2,7 +2,7 @@
 
 ## Overview
 
-A joint distribution over $$N$$ variables $$\{x_i\}_{i=1}^N$$ can permit complicated relationships
+A joint distribution over $$N$$ variables $$\underline{x}$$ can permit complicated relationships
 between the variables. One general principle is that performing inference
 becomes easier in the absence of relationships between variables. This motivates
 us to specify relationships between variables as a graphs and then use the graph

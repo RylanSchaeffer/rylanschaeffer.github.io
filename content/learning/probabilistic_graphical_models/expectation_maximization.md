@@ -16,22 +16,20 @@ $$\argmax_{\theta} \log \int_y p(x, y| \theta) $$
 Expectation Maximization (EM) is a principled iterative algorithm for simultaneously
 inferring both latent variables and parameters for their distributions.
 For concreteness, suppose we have observable random variable $x$, latent variable
-$y$ and parameters $\theta = \{\theta_x, \theta_y\}$ for the distributions $p(y| \theta_y)$
-and $p(x|y, \theta_x)$. In such a setting, inference is difficult because we have
-two unknown but related quantities: the unknown values of the latent variables (i.e. $y$),
+$$y$$ and parameters $$\theta = \{\theta_x, \theta_y\}$$ for the distributions $$p(y| \theta_y)$$
+and $$p(x|y, \theta_x)$$. In such a setting, inference is difficult because we have
+two unknown but related quantities: the unknown values of the latent variables (i.e. $$y$$),
 and the unknown parameters for the latent and observable variables' distributions (i.e.
-$\theta$. EM makes inferring both unknowns possible by iteratively repeating
+$$\theta$$. EM makes inferring both unknowns possible by iteratively repeating
 by two steps. First, we pretend we had observed the latent variables and we then
-infer values of the distributions' parameters $\theta$. Second, we pretend
-we have the parameters for distributions and we then infer values of the latent variables $y$.
+infer values of the distributions' parameters $$\theta$$. Second, we pretend
+we have the parameters for distributions and we then infer values of the latent variables $$y$$.
 
 
 
 One straightforward way to understand EM is by viewing it as progressively
 tightening a lower bound on the (log) likelihood. Per Jensen's Inequality, 
-any distribution over the latent variables $q(y)$ creates a lower bound on the log likelihood:
-
-
+any distribution over the latent variables $$q(y)$$ creates a lower bound on the log likelihood:
 
 $$\begin{align}
 l(\theta) \defeq \log p(x|\theta)
