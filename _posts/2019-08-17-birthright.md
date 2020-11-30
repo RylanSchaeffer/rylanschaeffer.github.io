@@ -10,8 +10,7 @@ Jewish communities, and connection with Israel and its people." The following is
 recollection of the trip and its highlights.
 
 
-<p style="text-align:center;">
-<img class="center" src="{{ site.url }}/assets/2019-08-17-taglit/taglit.jpg" style="width: 100%">
+![taglit]({{ site.url }}/assets/2019-08-17-taglit/taglit.jpg)
 
 
 <h2>Day 1 - Afik Kibbutz Orchan and Shehecheyanu Ceremony</h2>
@@ -832,6 +831,3 @@ me a glimpse at the answer.
 Last, but certainly not least, is the journal entry of another trip participant. S/he
 is smart and I very much enjoyed learning about her/his life ;)
 
-
-
-<img class="photo" src="{{ site.url }}/assets/2019-08-17-taglit/journal.jpeg">
