@@ -16,10 +16,10 @@ recollection of the trip and its highlights.
 ## Day 1 - Afik Kibbutz Orchan and Shehecheyanu Ceremony
 
 
-<img class="photo" src="{{ site.url }}/assets/2019-08-17-taglit/itamar_bouton.jpg" style="float:left; width: 15%">
-<img class="photo" src="{{ site.url }}/assets/2019-08-17-taglit/day01_route.png" style="float:right; width: 15%">
+![itamar_bouton]({{ site.url }}/assets/2019-08-17-taglit/itamar_bouton.jpg) 
+![day01_route]({{ site.url }}/assets/2019-08-17-taglit/day01_route.png)
 We were greeted at the airport by our Israeli participants and our Israeli guide,
-<a href="http://boutontour.com/">Itamar Bouton</a>, who would prove himself to
+[Itamar Bouton](http://boutontour.com/), who would prove himself to
 be an enthusiastic, knowledgeable and humorous leader over the course of the trip. He gave three
 simple rules to follow: don't be stupid, don't be a jerk, and don't be late!
 
@@ -27,17 +27,15 @@ simple rules to follow: don't be stupid, don't be a jerk, and don't be late!
 
 We immediately left Ben Gurion airport in Tel Aviv, heading Northeast to
 an Israeli settlement in the
-Golan Heights called <a href="https://en.wikipedia.org/wiki/Afik">Afik</a>,
+Golan Heights called [Afik](https://en.wikipedia.org/wiki/Afik),
 where we spent the first two nights at our first Kibbutz. Unbeknownst to me at the time,
 Wikipedia states that the kibbutz is the first Israeli kibbutz in Golan Heights and is
 considered an illegal settlement under international law. I was unable to learn when
-the kibbutz was established, but the <a href="https://www.jewishvirtuallibrary.org/history-and-overview-of-the-golan-heights">Jewish Virtual Library</a>
+the kibbutz was established, but the [Jewish Virtual Library](https://www.jewishvirtuallibrary.org/history-and-overview-of-the-golan-heights)
 suggests that kibbutzim in the Golan Heights predate Israeli control, although no
 kibbutz was in Afik prior to Israel capturing the Golan Heights during the Six Day War.
 
-
-<p style="clear: both; text-align:center;">
-<img class="center" src="{{ site.url }}/assets/2019-08-17-taglit/day01_kibbutz_afik.jpg" style="width: 100%">
+![day01_kibbutz_afik]({{ site.url }}/assets/2019-08-17-taglit/day01_kibbutz_afik.jpg)
 
 
 
