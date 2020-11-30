@@ -1,6 +1,7 @@
 # Expectation Maximization
 
 $$\DeclareMathOperator*{\argmax}{argmax}$$
+$$\DeclareMathOperator{\defeq}{\stackrel{def}{=}}$$
 
 Previously, we assumed that all variables were observed. Now we consider the presence
 of latent (unobserved) variables. The presence of latent variables can screw up
