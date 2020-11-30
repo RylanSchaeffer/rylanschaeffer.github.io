@@ -119,9 +119,11 @@ const quotations = [
     "dream along with you, and in this way memory and imagination and language combine to make spirits " +
     "in the head.“",
 
-    "“And as a writer now, I want to save Linda's life. Not her body - her life.“",
-
     "“Other stories were passed down like legends from old-timer to newcomer. Mostly, though, we " +
     "had to make up our own. Often they were exaggerated, or blatant lies, but it was a way " +
     "of bringing body and soul back together, or a way of making new bodies for the souls to inhabit.“",
+
+    "“Stories are for joining the past to the future. Stories are for those late hours in the night when" +
+    " you can't remember how you got from where you were to where you are. Stories are for eternity, when " +
+    "memory is erased, when there is nothing to remember except the story.”",
 ];
