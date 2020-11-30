@@ -14,10 +14,22 @@ structure to design efficient inference algorithms.
     - [Undirected Graphs](probabilistic_graphical_models/undirected_graphical_models.md)
     - [Factor Graphs](probabilistic_graphical_models/factor_graphical_models.md)
     - [Ancestral Graphs](probabilistic_graphical_models/ancestral_graphical_models.md)
-- Algorithms for Computing Marginals and Most Probable Configuration / MAP
+    - Causal Graphs
+- Parameter Estimation
+    - Maximum Likelihood
+- Types of Inference Problems
+    - Marginalization
+    - Most Probable Configuration / MAP
+- Exact Inference Algorithms
     - [Elimination Algorithm](probabilistic_graphical_models/elimination_algorithm.md)
     - [Sum-Product (Belief Propagation)](probabilistic_graphical_models/belief_propagation.md)
     - [Junction Tree Algorithm](probabilistic_graphical_models/junction_tree_algorithm.md)
+- Approximate Inference Algorithms
     - Loopy Belief Propagation
     - Variational Inference
+    - Graph Partitioning
+- Latent Variables and Parameter Learning
+    - [Expectation Maximization](probabilistic_graphical_models/expectation_maximization.md)
+  
+  
     
