@@ -1,4 +1,8 @@
-# Taglit (Birthright)
+---
+layout: post
+title:  Taglit-Birthright Israel
+tags: travel 2019 israel judaism
+---
 
 
 I spent the past two weeks traveling across Israel as part of [Taglit Birthright Israel](https://www.birthrightisrael.com/about_us)

@@ -5,9 +5,6 @@ tags: dr-seuss inspiration
 ---
 
 
-
-# Oh, the Places You'll Go
-
 I saw another person quoting Dr. Seuss's "Oh, the Places You'll Go," specifically the bit
 at the beginning:
 
