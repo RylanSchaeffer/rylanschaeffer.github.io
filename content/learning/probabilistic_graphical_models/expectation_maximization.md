@@ -1,5 +1,7 @@
 # Expectation Maximization
 
+$$\DeclareMathOperator*{\argmax}{argmax}$$
+
 Previously, we assumed that all variables were observed. Now we consider the presence
 of latent (unobserved) variables. The presence of latent variables can screw up
 parameter estimation. For instance, if $$x$$ is observed and no latent variables are present,
@@ -48,10 +50,8 @@ and thus monotonically increase the log likelihood.
 
 $$\begin{align}
 F(q, \theta) &\defeq \mathbb{E}_{q(y)}[\log \frac{p(x, y| \theta)}{q(y)}]\\
-&= \mathbb{E}_{q(y)}[\log p(x, y| \theta)] + H[q] && \text{where }
-H[q] = -\mathbb{E}_{q(y)}[\log q(y)] = \text{entropy of $q(y)$} \\
-&= l(\theta) - KL[q(y)||p(y|x, \theta)] &&
-\text{where } KL[q(y)||p(y|x, \theta)] = \mathbb{E}_{q(y)}[\log \frac{q(y)}{p(y|x, \theta)}]
+&= \mathbb{E}_{q(y)}[\log p(x, y| \theta)] + H[q]\\
+&= l(\theta) - KL[q(y)||p(y|x, \theta)]
 \end{align}$$
 
 
@@ -66,13 +66,13 @@ raises the free energy exactly to the likelihood. We know that this increases th
 log likelihood because every KL divergence is non-negative. Using $$(k)$$ to indicate the
 $$k$$th step, we now have the EM algorithm:
 
-- Holding parameters $\theta$ fixed, optimize $$F(q, \theta)$$ with respect
+- E Step: Holding parameters $\theta$ fixed, optimize $$F(q, \theta)$$ with respect
 to $$q$$:
 
 $$\begin{align}q^{(k)}(y) = \argmax_{q(y)} F(q(y), \theta^{(k-1)}) \Rightarrow
 q^{(k)}(y) = p(y|x, \theta^{(k-1)})\end{align}$$
 
-- Holding $$q(y)$$ fixed, optimize $$F(q, \theta)$$ with respect to $$\theta$$:
+- M Step: Holding $$q(y)$$ fixed, optimize $$F(q, \theta)$$ with respect to $$\theta$$:
 $$\begin{align}\theta^{(k)} = \argmax_{\theta} F(q^{(k)}(y), \theta) =
 \argmax_{\theta} \mathbb{E}_{q^{(k)}(x)}[\log p(x, y| \theta)]\end{align}$$
   
