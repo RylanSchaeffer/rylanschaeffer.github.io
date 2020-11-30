@@ -41,19 +41,17 @@ l(\theta) \defeq \log p(x|\theta)
 
 
 
-We call this lower bound $F(q, \theta) \defeq \mathbb{E}_{q(y)}[\log \frac{p(x, y| \theta)}{q(y)}]$
-the <b>free energy</b>. It has several equivalent forms that will reveal to us
+We call this lower bound $$F(q, \theta) \defeq \mathbb{E}_{q(y)}[ \log \frac{p(x, y| \theta)}{q(y)} ]$$
+the __negative variational free energy__. It has several equivalent forms that will reveal to us
 the two EM steps that, when iteratively applied, monotonically increase the free energy,
 and thus monotonically increase the log likelihood.
 
-
-
 $$\begin{align}
 F(q, \theta) &\defeq \mathbb{E}_{q(y)}[\log \frac{p(x, y| \theta)}{q(y)}]\\
-&= \mathbb{E}_{q(y)}[\log p(x, y| \theta)] - H[q] && \text{where }
-H[q] = \mathbb{E}_{q(y)}[\log q(y)] = \text{entropy of $q(y)$} \\
+&= \mathbb{E}_{q(y)}[\log p(x, y| \theta)] + H[q] && \text{where }
+H[q] = -\mathbb{E}_{q(y)}[\log q(y)] = \text{entropy of $q(y)$} \\
 &= l(\theta) - KL[q(y)||p(y|x, \theta)] &&
-\text{where } KL[q(y)||p(y|x, \theta)] = -\mathbb{E}_{q(y)}[\log \frac{p(y|x, \theta)}{q(y)}]
+\text{where } KL[q(y)||p(y|x, \theta)] = \mathbb{E}_{q(y)}[\log \frac{q(y)}{p(y|x, \theta)}]
 \end{align}$$
 
 
