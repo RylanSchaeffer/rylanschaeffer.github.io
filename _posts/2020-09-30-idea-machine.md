@@ -12,7 +12,7 @@ My paper was accepted at NeurIPS 2020! My first paper, and boy does it feel good
 of, my mother asked me when results were scheduled to be released, and I told her 8 pm
 Pacific Time. She told me I must be wrong, and when I stood my ground, she started to argue the point.
 
-<!--excerpt-->
+TODO
 
 
 ### Scholarship Applications
