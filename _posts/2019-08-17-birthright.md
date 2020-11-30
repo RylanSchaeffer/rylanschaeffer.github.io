@@ -37,9 +37,6 @@ kibbutz was in Afik prior to Israel capturing the Golan Heights during the Six D
 
 ![day01_kibbutz_afik]({{ site.url }}/assets/2019-08-17-taglit/day01_kibbutz_afik.jpg)
 
-
-
-
 The kibbutz was lush and gorgeous. I was surprised to learn that the
 history of kibbutzim in Israel is closely intertwined with Marxist/Communist elements;
 one of the pioneers wrote that, "We were happy enough working on the land, but we knew
@@ -51,8 +48,7 @@ historically) resources and chores were shared. The captial necessary to purchas
 came in the form of small donations from Jews across Europe.
 
 
-<p style="clear: both">
-<img class="photo" src="{{ site.url }}/assets/2019-08-17-taglit/day01_benw_as_israel.jpg" style="float: right; width: 40%">
+![day01_benw_as_israel]({{ site.url }}/assets/2019-08-17-taglit/day01_benw_as_israel.jpg)
 Our guide Itamar gave us a preview of where we would travel and what we would do over
 the course of the trip, using Ben as a makeshift map of Israel. To get to know one another,
 we played an activity where we partnered up and told our partner an embarrassing story
@@ -63,8 +59,8 @@ told one another their most embarrassing stories. Sadly, neither gave me permiss
 to share their stories.
 
 
-<p style="clear: both">
-<img class="photo" src="{{ site.url }}/assets/2019-08-17-taglit/day01_shehecheyanu.jpg" style="float: left; width: 40%">
+![day01_shehecheyanu]({{ site.url }}/assets/2019-08-17-taglit/day01_shehecheyanu.jpg)
+
 The final activity of the day was the <a href="https://en.wikipedia.org/wiki/Shehecheyanu">Shehecheyanu</a>
 during sunset. Shehecheyanu is a common Jewish prayer used to celebrate new experiences.
 Most significantly and recently, the Shehecheyanu was recited by Israel's first Minister
