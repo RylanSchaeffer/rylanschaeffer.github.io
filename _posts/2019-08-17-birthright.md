@@ -15,15 +15,12 @@ recollection of the trip and its highlights.
 
 ## Day 1 - Afik Kibbutz Orchan and Shehecheyanu Ceremony
 
-
-![itamar_bouton]({{ site.url }}/assets/2019-08-17-taglit/itamar_bouton.jpg) 
-![day01_route]({{ site.url }}/assets/2019-08-17-taglit/day01_route.png)
 We were greeted at the airport by our Israeli participants and our Israeli guide,
 [Itamar Bouton](http://boutontour.com/), who would prove himself to
 be an enthusiastic, knowledgeable and humorous leader over the course of the trip. He gave three
 simple rules to follow: don't be stupid, don't be a jerk, and don't be late!
 
-
+![itamar_bouton]({{ site.url }}/assets/2019-08-17-taglit/itamar_bouton.jpg) 
 
 We immediately left Ben Gurion airport in Tel Aviv, heading Northeast to
 an Israeli settlement in the
@@ -35,7 +32,8 @@ the kibbutz was established, but the [Jewish Virtual Library](https://www.jewish
 suggests that kibbutzim in the Golan Heights predate Israeli control, although no
 kibbutz was in Afik prior to Israel capturing the Golan Heights during the Six Day War.
 
-![day01_kibbutz_afik]({{ site.url }}/assets/2019-08-17-taglit/day01_kibbutz_afik.jpg)
+
+![day01_route]({{ site.url }}/assets/2019-08-17-taglit/day01_route.png)
 
 The kibbutz was lush and gorgeous. I was surprised to learn that the
 history of kibbutzim in Israel is closely intertwined with Marxist/Communist elements;
@@ -48,7 +46,8 @@ historically) resources and chores were shared. The captial necessary to purchas
 came in the form of small donations from Jews across Europe.
 
 
-![day01_benw_as_israel]({{ site.url }}/assets/2019-08-17-taglit/day01_benw_as_israel.jpg)
+![day01_kibbutz_afik]({{ site.url }}/assets/2019-08-17-taglit/day01_kibbutz_afik.jpg)
+
 Our guide Itamar gave us a preview of where we would travel and what we would do over
 the course of the trip, using Ben as a makeshift map of Israel. To get to know one another,
 we played an activity where we partnered up and told our partner an embarrassing story
@@ -59,13 +58,15 @@ told one another their most embarrassing stories. Sadly, neither gave me permiss
 to share their stories.
 
 
-![day01_shehecheyanu]({{ site.url }}/assets/2019-08-17-taglit/day01_shehecheyanu.jpg)
+![day01_benw_as_israel]({{ site.url }}/assets/2019-08-17-taglit/day01_benw_as_israel.jpg)
 
 The final activity of the day was the <a href="https://en.wikipedia.org/wiki/Shehecheyanu">Shehecheyanu</a>
 during sunset. Shehecheyanu is a common Jewish prayer used to celebrate new experiences.
 Most significantly and recently, the Shehecheyanu was recited by Israel's first Minister
-of Religions <a href="https://en.wikipedia.org/wiki/Yehuda_Leib_Maimon">Yehuda Leib Maimon</a>
+of Religions, [Yehuda Leib Maimon](https://en.wikipedia.org/wiki/Yehuda_Leib_Maimon),
 in 1948 after the first Prime Minister read Israel's Declaration of Independence.
+
+![day01_shehecheyanu]({{ site.url }}/assets/2019-08-17-taglit/day01_shehecheyanu.jpg)
 
 
 ## Day 2 - Hiking, Golan Heights and Rafting
