@@ -13,7 +13,7 @@ recollection of the trip and its highlights.
 ![taglit]({{ site.url }}/assets/2019-08-17-taglit/taglit.jpg)
 
 
-<h2>Day 1 - Afik Kibbutz Orchan and Shehecheyanu Ceremony</h2>
+## Day 1 - Afik Kibbutz Orchan and Shehecheyanu Ceremony
 
 
 <img class="photo" src="{{ site.url }}/assets/2019-08-17-taglit/itamar_bouton.jpg" style="float:left; width: 15%">
@@ -74,7 +74,7 @@ of Religions <a href="https://en.wikipedia.org/wiki/Yehuda_Leib_Maimon">Yehuda L
 in 1948 after the first Prime Minister read Israel's Declaration of Independence.
 
 
-<h2 style="clear: both;">Day 2 - Hiking, Golan Heights and Rafting</h2>
+## Day 2 - Hiking, Golan Heights and Rafting
 
 
 On Day 2, an 18-year old Israeli named Dvir Sorek was killed by two Palestinians, one
@@ -124,7 +124,7 @@ rafts, throwing people out of their rafts (sorry Danny!) and attempting to paddl
 while facing in opposite directions.
 
 
-<h2 style="clear: both;">Day 3 - Tzfat and the Kabbalah</h2>
+## Day 3 - Tzfat and the Kabbalah
 
 
 <img class="photo" src="{{ site.url }}/assets/2019-08-17-taglit/day03_route.png" style="float: left; width: 20%">
@@ -138,9 +138,8 @@ believed burial site of the <a href="https://en.wikipedia.org/wiki/Cave_of_the_P
 two reasons: first, Tiberias is the location where the <a href="https://en.wikipedia.org/wiki/Jerusalem_Talmud">Talmud</a>
 was first recorded from oral traditions; second, Tiberias
 
-Why Tiberias and Tzfat are
-considered holy escapes me, since neither seems to have hosted any significant spiritual
-event
+Why Tiberias and Tzfat are considered holy escapes me, since neither 
+seems to have hosted any significant spiritual event.
 
 
 
@@ -199,7 +198,7 @@ professor since I asked so many questions.
 
 
 
-<h2 style="clear: both;">Day 4 - Knesset Menorah, Israel Museum and the Western Wall</h2>
+## Day 4 - Knesset Menorah, Israel Museum and the Western Wall
 
 
 <img class="photo" src="{{ site.url }}/assets/2019-08-17-taglit/day04_route.png" style="float: right; width: 15%">
@@ -279,7 +278,7 @@ a prayer the most: I struggle to find the words to express how I feel, but I hop
 your world turns for the better and that you find what you need."
 
 
-<h2 style="clear: both;">Day 5 - Jerusalem, Ein Karem and B'nai Mitzvah</h2>
+## Day 5 - Jerusalem, Ein Karem and B'nai Mitzvah
 
 
 <img class="photo" src="{{ site.url }}/assets/2019-08-17-taglit/day05_ghost_town_2.jpg" style="float: right; width: 35%">
@@ -371,7 +370,7 @@ about the obligations they'll accept, even if a bit of background reading is req
 first.
 
 
-<h2 style="clear: both;">Day 6 - Yad Vashem, Israeli Innovation and Nightlife in Tel Aviv</h2>
+## Day 6 - Yad Vashem, Israeli Innovation and Nightlife in Tel Aviv
 
 
 <img class="photo" src="{{ site.url }}/assets/2019-08-17-taglit/day06_an_inch.jpg" style="float: left; width: 20%">
@@ -451,7 +450,7 @@ we discussed was marriage advice we had received from our parents. Dani said her
 once told her, <b>"Marry someone who makes you laugh because life is hard."</b>
 
 
-<h2 style="clear: both;">Day 7 - Gentrification in Tel Aviv and Bedouins in the Negev</h2>
+## Day 7 - Gentrification in Tel Aviv and Bedouins in the Negev
 
 
 <img class="photo" src="{{ site.url }}/assets/2019-08-17-taglit/day07_gentrification.jpg" style="width: 50%; float: left">
@@ -523,7 +522,7 @@ from the run.
 <img class="center" src="{{ site.url }}/assets/2019-08-17-taglit/day07_bedouin_tent.jpg" style="width: 100%">
 
 
-<h2 style="clear: both;">Day 8 - Masada, the Dead Sea and Ben-Gurion's Tomb</h2>
+## Day 8 - Masada, the Dead Sea and Ben-Gurion's Tomb
 
 <p style="clear: both; text-align:center;">
 <img class="center" src="{{ site.url }}/assets/2019-08-17-taglit/day08_masada_ruins.jpg" style="width: 100%">
@@ -705,7 +704,7 @@ I told her what Israel is, then. And she agreed." One wonders how he explained w
 Israel is.
 
 
-<h2 style="clear: both;">Day 9 - Ein Avdat National Park and Mount Herzl</h2>
+## Day 9 - Ein Avdat National Park and Mount Herzl
 
 
 <img class="photo" src="{{ site.url }}/assets/2019-08-17-taglit/day09_national_park.jpg" style="float: left; width: 40%">
@@ -744,7 +743,7 @@ when his father was mandated to return to active duty, his father refused on eth
 grounds and was jailed until his former military commander spoke in his defense.
 
 
-<h2 style="clear: both;">Day 10 - Farewells</h2>
+## Day 10 - Farewells
 
 
 <img class="photo" src="{{ site.url }}/assets/2019-08-17-taglit/day10_book_rip_3.jpg" style="float: right; width: 20%">
@@ -827,7 +826,3 @@ I wondered whether her experiences had given her a greater appreciation for the
 fragility and shortness of life. Her answer, that she now gets high every night on
 THC concentrate, not for her pain nor for her appetite, but out of boredom, gave
 me a glimpse at the answer.
-
-Last, but certainly not least, is the journal entry of another trip participant. S/he
-is smart and I very much enjoyed learning about her/his life ;)
-
