@@ -46,7 +46,7 @@ of males was called "the beautiful ones" due to sleek healthy coats unmarred by 
 
 ### Sunday
 
-Total work time:
+Total work time: 8:40
 
 I spent most of the day preparing for my 6.438 exam this Thursday and polishing my 
 PhD applications that are coming due starting on Tuesday. I had a nice call with Aviv
