@@ -18,7 +18,7 @@ $$\argmax_{\theta} \log \int_y p(x, y| \theta) $$
 
 Expectation Maximization (EM) is a principled iterative algorithm for simultaneously
 inferring both latent variables and parameters for their distributions.
-For concreteness, suppose we have observable random variable $x$, latent variable
+For concreteness, suppose we have observable random variable $$x$$, latent variable
 $$y$$ and parameters $$\theta = \{\theta_x, \theta_y\}$$ for the distributions $$p(y| \theta_y)$$
 and $$p(x|y, \theta_x)$$. In such a setting, inference is difficult because we have
 two unknown but related quantities: the unknown values of the latent variables (i.e. $$y$$),
@@ -58,7 +58,7 @@ F(q, \theta) &\defeq \mathbb{E}_{q(y)}[\log \frac{p(x, y| \theta)}{q(y)}]\\
 
 
 Why are alternative forms of the free energy useful? The second tells us that if we want
-to maximize the free energy with respect to $\theta$, we can do so independently of
+to maximize the free energy with respect to $$\theta$$, we can do so independently of
 $$q(y)$$: generate samples from $$q(y)$$ and then choose $$\theta^* = \argmax_{\theta}
 \log p(x, y| \theta)$$, since $$H[q]$$ is constant with respect to $$\theta$$. The third
 tells us that if we want to maximize the free energy with respect to $$q(y)$$, we can
@@ -67,7 +67,7 @@ raises the free energy exactly to the likelihood. We know that this increases th
 log likelihood because every KL divergence is non-negative. Using $$(k)$$ to indicate the
 $$k$$th step, we now have the EM algorithm:
 
-- E Step: Holding parameters $\theta$ fixed, optimize $$F(q, \theta)$$ with respect
+- E Step: Holding parameters $$\theta$$ fixed, optimize $$F(q, \theta)$$ with respect
 to $$q$$:
 
 $$\begin{align}q^{(k)}(y) = \argmax_{q(y)} F(q(y), \theta^{(k-1)}) \Rightarrow
