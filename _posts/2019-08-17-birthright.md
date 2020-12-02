@@ -155,7 +155,6 @@ a prophesied figure who would deliver the Jewish people from suffering.
 
 ![day03_kabbala]({{ site.url }}/assets/2019-08-17-taglit/day03_kabbala.jpg)
 
-
 Avraham's explanation of core Kabbalah beliefs differs significantly from the
 <a href="https://en.wikipedia.org/wiki/Kabbalah#Concepts">Wikipedia article</a>, so
 I'm not sure where exactly the truth lies. Avraham stated that Kabbalah holds that
