@@ -738,9 +738,9 @@ was really bad. In Dani's defense, she bought it at an Israeli bookstore where t
 weren't many English language options.
 
 
-![day10_book_rip_3]({{ site.url }}/assets/2019-08-17-taglit/day10_book_rip_3.jpg)
-![day10_book_rip_2]({{ site.url }}/assets/2019-08-17-taglit/day10_book_rip_2.jpg)
 ![day10_book_rip_1]({{ site.url }}/assets/2019-08-17-taglit/day10_book_rip_1.jpg)
+![day10_book_rip_2]({{ site.url }}/assets/2019-08-17-taglit/day10_book_rip_2.jpg)
+![day10_book_rip_3]({{ site.url }}/assets/2019-08-17-taglit/day10_book_rip_3.jpg)
 
 
 After I finally touched down in San Jose, I took an Uber home to Mountain View. My
