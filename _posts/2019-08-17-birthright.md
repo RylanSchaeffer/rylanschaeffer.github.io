@@ -14,7 +14,7 @@ Jewish communities, and connection with Israel and its people." The following is
 recollection of the trip and its highlights.
 
 
-![taglit](../assets/2019-08-17-taglit/taglit.jpg)
+![taglit]({{ site.url }}/assets/2019-08-17-taglit/taglit.jpg)
 
 
 ## Day 1 - Afik Kibbutz Orchan and Shehecheyanu Ceremony
