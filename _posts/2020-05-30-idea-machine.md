@@ -17,14 +17,14 @@ blast. The two of them have complementary strengths, with my father having an ed
 coding and my mother having an edge with algebra. Here are the two of them, pair
 programming on a Jupyter notebook.
 
-![](20200530-idea-machine/datascience_1.jpg) 
+![](../_private_posts/20200530-idea-machine/datascience_1.jpg) 
 
 I was expecting teaching the two of them to be uneventful, but
 we've made so many enjoyable memories. During one lecture, my father fell asleep.
 My mother and I couldn't believe it. Most of the time, he's a very good student.
 I'm a big fan of students teaching me, so here he is, teaching us.
 
-![](20200530-idea-machine/datascience_3.jpg)
+![](../_private_posts/20200530-idea-machine/datascience_3.jpg)
 
 During another lecture, I was teaching conditional probability and introduced them
 to the formula:
@@ -35,7 +35,7 @@ I then gave them a practice problem and five minutes to solve it. Halfway throug
 mother exclaimed "I've been using the wrong formula!" Here she is laughing at her
 mistake.
 
-![](20200530-idea-machine/datascience_2.jpg)
+![](../_private_posts/20200530-idea-machine/datascience_2.jpg)
 
 My favorite story concerns our cabin. We're legally required to remove the flammable
 debris surrounding it, so once a year, we typically head up where we rake and burn
@@ -44,12 +44,12 @@ been dry, and had been followed by a heavy snowstorm that wrecked havoc on the
 weakened trees; three trees had fallen on our cabin. My mother sent me the following
 email, asking for a break from our lectures to take care of the cabin.
 
-![](20200530-idea-machine/datascience_5.png) 
+![](../_private_posts/20200530-idea-machine/datascience_5.png) 
 
 She then showed up in my office and told me that I was misreading the academic
 calendar. I asked, "How's that?" She then wrote the following on the whiteboard.
 
-![](20200530-idea-machine/datascience_4.jpg)
+![](../_private_posts/20200530-idea-machine/datascience_4.jpg)
 
 One of my friends, V, has agreed to be a guest lecturer and we're so excited.
 If you're interested in joining us or doing something similar with your family,
@@ -85,7 +85,7 @@ around it. Ultimately, Vincent's trivia was a smashing success. He had 71 (ish)
 attendees, and my sister, who showed up late and teamless, placed 4th by herself.
 My friend Jessica's team, "Essential Twerkforce," came in first.
 
-![](20200530-idea-machine/vincent_trivia.png)
+![](../_private_posts/20200530-idea-machine/vincent_trivia.png)
 
 
 ### Dad's Legs
@@ -94,7 +94,7 @@ This one is a bit gnarly, but honestly, I can't not talk about this. My father
 cycles for 90 minutes five nights a week, consistently, and I finally noticed
 legs. I made him stand in the light where I could capture the following photos.
 
-![](20200530-idea-machine/dads_legs_1.jpg)
+![](../_private_posts/20200530-idea-machine/dads_legs_1.jpg)
 
 ![](assets/20200530_idea_machine/dads_legs_2.jpg)
 

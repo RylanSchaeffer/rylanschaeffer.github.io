@@ -733,7 +733,7 @@ grounds and was jailed until his former military commander spoke in his defense.
 As we waited
 at the airport to depart, Nate bemoaned that he didn't have a book to read on the
 flight. Dani, who was halfway through Dan Brown's Digital Fortress, took inspiration
-from Soloman's solution and ripped the book in half. Nate later told me that the book
+from King Solomon and ripped the book in half. Nate later told me that the book
 was really bad. In Dani's defense, she bought it at an Israeli bookstore where there
 weren't many English language options.
 

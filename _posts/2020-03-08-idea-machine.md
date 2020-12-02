@@ -28,10 +28,10 @@ building and room number), which has tens of cases of bananas. They range from
 green to (very rarely) verging on brown, but there are so many of them and they're
 free.
 
-<img class="photo" src="20200308-idea-machine/26_110.jpg" style="float: left; width: 20%">
-<img class="photo" src="20200308-idea-machine/karl_taylor_compton.jpg" style="float: left; width: 30%">
-<img class="photo" src="20200308-idea-machine/banana_boxes.jpg" style="float: left; width: 20%">
-<img class="photo" src="20200308-idea-machine/bananas.jpg" style="float: left; width: 20%">
+<img class="photo" src="../_private_posts/20200308-idea-machine/26_110.jpg" style="float: left; width: 20%">
+<img class="photo" src="../_private_posts/20200308-idea-machine/karl_taylor_compton.jpg" style="float: left; width: 30%">
+<img class="photo" src="../_private_posts/20200308-idea-machine/banana_boxes.jpg" style="float: left; width: 20%">
+<img class="photo" src="../_private_posts/20200308-idea-machine/bananas.jpg" style="float: left; width: 20%">
 
 
 I was so excited by my discovery that I brought my story and a bunch of bananas
