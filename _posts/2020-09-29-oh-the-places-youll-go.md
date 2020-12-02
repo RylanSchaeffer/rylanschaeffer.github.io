@@ -28,5 +28,8 @@ Adharsh
 
 </blockquote>
 
+
+
+
 ![email_from_stranger]({{ site.url }}/assets/2020-09-29-oh-the-places-youll-go/email_from_stranger.png)
 
