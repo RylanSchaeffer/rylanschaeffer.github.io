@@ -118,12 +118,13 @@ that wasn't calm, but Becca, Dani, Nate and I entertained ourselves by chasing o
 rafts, throwing people out of their rafts (sorry Danny!) and attempting to paddle
 while facing in opposite directions.
 
-[day02_rafting]*{{ site.url }}/assets/2019-08-17-taglit/day02_rafting.jpg)
+[day02_rafting]({{ site.url }}/assets/2019-08-17-taglit/day02_rafting.jpg)
 
 ## Day 3 - Tzfat and the Kabbalah
 
 
-<img class="photo" src="{{ site.url }}/assets/2019-08-17-taglit/day03_route.png" style="float: left; width: 20%">
+[day03_route]({{ site.url }}/assets/2019-08-17-taglit/day03_route.png)
+
 Day 3 started with a bus ride to <a href="https://en.wikipedia.org/wiki/Safed">Tzfat</a>
 (also known as Safed), one of the <a href="https://en.wikipedia.org/wiki/Four_Holy_Cities">four holiest cities in Israel</a>,
 the others being Jerusalem,
@@ -137,9 +138,6 @@ was first recorded from oral traditions; second, Tiberias
 Why Tiberias and Tzfat are considered holy escapes me, since neither 
 seems to have hosted any significant spiritual event.
 
-
-
-<img class="photo" src="{{ site.url }}/assets/2019-08-17-taglit/day03_kabbala.jpg" style="float: right; width: 45%">
 Our first stop was the <a href="https://www.kabbalahart.com/artist/">Tzfat Gallery of Mystical Art</a>,
 an art gallery run by a former American named Robert who made <a href="https://en.wikipedia.org/wiki/Aliyah">Aliyah</a>
 (i.e. emigrated) to Israel and took the name Avraham Loewenthal. Apparently we were
@@ -154,6 +152,7 @@ and relocated to Tzfat in Israel; their painful experiences led them to focus on
 the <a href="https://en.wikipedia.org/wiki/Messiah_in_Judaism">Jewish Messiah</a>,
 a prophesied figure who would deliver the Jewish people from suffering.
 
+[day03_kabbala]({{ site.url }}/assets/2019-08-17-taglit/day03_kabbala.jpg")
 
 
 Avraham's explanation of core Kabbalah beliefs differs significantly from the
@@ -167,9 +166,6 @@ question. He also told us that Kabbalah believes in a sacred tie between
 a person and their name, and that adopting a new name when making Aliyah can feel like
 a transcendental moment. Many people in our group bought small copies of his art work.
 
-
-<p style="clear: both">
-<img class="photo" src="{{ site.url }}/assets/2019-08-17-taglit/day03_tzfat.jpg" style="float: left; width: 45%">
 After leaving Avraham's art store, we walked through the old Jewish quarter of Tzfat.
 Itamar shared with us the <a href="https://www.safed.co.il/war-of-independence-in-tzfat.html">story of how Israel came to control Tzfat</a>.
 As the British and French prepared to leave the Middle East, the UN Partition Plan
@@ -180,9 +176,9 @@ were able to obtain an artillery weapon called the Davidka that was terribly ina
 but frighteningly loud. Somehow, a rumor started amongst the Arabs that the Davidka was
 an atomic bomb and the Arabs fled from the city, ceding it to Jewish control.
 
+[day03_tzfat]({{ site.url }}/assets/2019-08-17-taglit/day03_tzfat.jpg")
 
-<p style="clear: both">
-<img class="photo" src="{{ site.url }}/assets/2019-08-17-taglit/day03_tzfat_professor.jpg" style="float: right; width: 45%">
+[day03_tzfat_professor]({{ site.url }}/assets/2019-08-17-taglit/day03_tzfat_professor.jpg)
 The group was given two hours to shop for souvenirs, so Dani,
 Nathan and I seized the opportunity to explore the city. We walked through streets
 that looks hundreds of years old, past citizens who looked equally dated, until
@@ -191,7 +187,6 @@ we had been in was a small historical area and that the majority of the city
 does not live like that. One of the locals we met (right) laughed at us for thinking that
 the historical district is representative of the city. He also joked that I must be a
 professor since I asked so many questions.
-
 
 
 ## Day 4 - Knesset Menorah, Israel Museum and the Western Wall
