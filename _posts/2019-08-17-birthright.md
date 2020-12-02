@@ -99,8 +99,9 @@ companion. An attacker was later released as part of <a href="https://en.wikiped
 We started the day with a hike. Halfway through, we encountered a
 delightful pond that we went swimming in. Our wet clothes proved to be a good defense
 against the growing heat of the day.
-[day02_hike_water_hole]({{ site.url }}/assets/2019-08-17-taglit/day02_hike_water_hole.jpg)
-[day02_hike]{{ site.url }}/assets/2019-08-17-taglit/day02_hike.jpg)
+![day02_hike_water_hole]({{ site.url }}/assets/2019-08-17-taglit/day02_hike_water_hole.jpg)
+![day02_hike]{{ site.url }}/assets/2019-08-17-taglit/day02_hike.jpg)
+
 As we passed over diverse types of rocks,
 we learned that the Golan Heights was <a href="https://en.wikipedia.org/wiki/Golan_Heights#Geology">formerly seismically active</a>.
 Consequently, mountains were formed that act as a watershed funneling
@@ -111,19 +112,19 @@ indeed, the <a href="https://en.wikipedia.org/wiki/Headwater_Diversion_Plan_(Jor
 tried to do exactly that leading up to the Six Day War.
 
 
-[day02_golan_border]({{ site.url }}/assets/2019-08-17-taglit/day02_golan_border.jpg)
+![day02_golan_border]({{ site.url }}/assets/2019-08-17-taglit/day02_golan_border.jpg)
 
 Our final activity of the day was rafting. There was only one short section of the river
 that wasn't calm, but Becca, Dani, Nate and I entertained ourselves by chasing other
 rafts, throwing people out of their rafts (sorry Danny!) and attempting to paddle
 while facing in opposite directions.
 
-[day02_rafting]({{ site.url }}/assets/2019-08-17-taglit/day02_rafting.jpg)
+![day02_rafting]({{ site.url }}/assets/2019-08-17-taglit/day02_rafting.jpg)
 
 ## Day 3 - Tzfat and the Kabbalah
 
 
-[day03_route]({{ site.url }}/assets/2019-08-17-taglit/day03_route.png)
+![day03_route]({{ site.url }}/assets/2019-08-17-taglit/day03_route.png)
 
 Day 3 started with a bus ride to <a href="https://en.wikipedia.org/wiki/Safed">Tzfat</a>
 (also known as Safed), one of the <a href="https://en.wikipedia.org/wiki/Four_Holy_Cities">four holiest cities in Israel</a>,
@@ -152,7 +153,7 @@ and relocated to Tzfat in Israel; their painful experiences led them to focus on
 the <a href="https://en.wikipedia.org/wiki/Messiah_in_Judaism">Jewish Messiah</a>,
 a prophesied figure who would deliver the Jewish people from suffering.
 
-[day03_kabbala]({{ site.url }}/assets/2019-08-17-taglit/day03_kabbala.jpg")
+![day03_kabbala]({{ site.url }}/assets/2019-08-17-taglit/day03_kabbala.jpg")
 
 
 Avraham's explanation of core Kabbalah beliefs differs significantly from the
@@ -176,9 +177,8 @@ were able to obtain an artillery weapon called the Davidka that was terribly ina
 but frighteningly loud. Somehow, a rumor started amongst the Arabs that the Davidka was
 an atomic bomb and the Arabs fled from the city, ceding it to Jewish control.
 
-[day03_tzfat]({{ site.url }}/assets/2019-08-17-taglit/day03_tzfat.jpg")
+![day03_tzfat]({{ site.url }}/assets/2019-08-17-taglit/day03_tzfat.jpg")
 
-[day03_tzfat_professor]({{ site.url }}/assets/2019-08-17-taglit/day03_tzfat_professor.jpg)
 The group was given two hours to shop for souvenirs, so Dani,
 Nathan and I seized the opportunity to explore the city. We walked through streets
 that looks hundreds of years old, past citizens who looked equally dated, until
@@ -189,11 +189,14 @@ the historical district is representative of the city. He also joked that I must
 professor since I asked so many questions.
 
 
+![day03_tzfat_professor]({{ site.url }}/assets/2019-08-17-taglit/day03_tzfat_professor.jpg)
+
+
 ## Day 4 - Knesset Menorah, Israel Museum and the Western Wall
 
 
-<img class="photo" src="{{ site.url }}/assets/2019-08-17-taglit/day04_route.png" style="float: right; width: 15%">
-<img class="photo" src="{{ site.url }}/assets/2019-08-17-taglit/day04_parliament_menorah.jpg" style="float: right; width: 45%">
+![day04_route]({{ site.url }}/assets/2019-08-17-taglit/day04_route.png)
+
 Day 4 started in Jerusalem at the <a href="https://en.wikipedia.org/wiki/Knesset_Menorah">
 Knesset Menorah</a>, a 15 foot tall Menorah located near The Knesset (Israel's Parliament).
 I might not have been listening since it was only when I read the Wikipedia article that I
@@ -205,8 +208,8 @@ including the 10 Commandments as given to Moses on Mount Sinai and Israel's War 
 Independence that create the state of Israel. I wasn't familiar with most of the
 stories on the menorah; the whole Wikipedia article is worth a read.
 
+![day04_parliament_menorah]({{ site.url }}/assets/2019-08-17-taglit/day04_parliament_menorah.jpg")
 
-<p style="clear: both">
 We then visited the <a href="https://www.imj.org.il/en">Israel Museum of Jerusalem</a>.
 Several exhibits were interesting. The first was a 50:1 model replica of the
 <a href="https://en.wikipedia.org/wiki/Second_Temple">Second Temple</a>, the holiest
@@ -226,12 +229,9 @@ motivation for <a href="https://en.wikipedia.org/wiki/Tisha_B%27Av">Tisha B'Av</
 an annual day of fasting to lament the loss of the First and Second Temples.
 
 
-<p style="clear: both; text-align:center;">
-<img class="center" src="{{ site.url }}/assets/2019-08-17-taglit/day04_model_temple.jpg" style="width: 100%">
+![day04_model_temple]({{ site.url }}/assets/2019-08-17-taglit/day04_model_temple.jpg)
 
 
-
-<img class="photo" src="{{ site.url }}/assets/2019-08-17-taglit/day04_astronaut.jpg" style="float: right; width: 25%">
 Many people's favorite exhibit was the Dead Sea Scrolls, a set of religious
 manuscripts dated as early as 300 BCE, but I found the exhibit uninformative and
 uninspiring. The exhibit focused on where the scrolls were found, how the scrolls
@@ -253,10 +253,11 @@ in a risky business and we hope that if anything happens to us it will not delay
 program. The conquest of space is worth the risk of life." I imagine Ramon felt
 similarly.
 
+![day04_astronaut]({{ site.url }}/assets/2019-08-17-taglit/day04_astronaut.jpg)
 
-<p style="clear: both">
-<img class="photo" src="{{ site.url }}/assets/2019-08-17-taglit/day04_insta.jpg" style="float: left; width: 95%">
 People on the trip worked hard to get just the right shot!
+
+![day04_insta]({{ site.url }}/assets/2019-08-17-taglit/day04_insta.jpg")
 
 
 <p style="clear: both">
