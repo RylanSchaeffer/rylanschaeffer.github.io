@@ -153,7 +153,7 @@ and relocated to Tzfat in Israel; their painful experiences led them to focus on
 the <a href="https://en.wikipedia.org/wiki/Messiah_in_Judaism">Jewish Messiah</a>,
 a prophesied figure who would deliver the Jewish people from suffering.
 
-![day03_kabbala]({{ site.url }}/assets/2019-08-17-taglit/day03_kabbala.jpg")
+![day03_kabbala]({{ site.url }}/assets/2019-08-17-taglit/day03_kabbala.jpg)
 
 
 Avraham's explanation of core Kabbalah beliefs differs significantly from the
