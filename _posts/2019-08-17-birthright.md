@@ -101,7 +101,7 @@ against the growing heat of the day.
 
 ![day02_hike_water_hole]({{ site.url }}/assets/2019-08-17-taglit/day02_hike_water_hole.jpg)
 
-![day02_hike]{{ site.url }}/assets/2019-08-17-taglit/day02_hike.jpg)
+![day02_hike]({{ site.url }}/assets/2019-08-17-taglit/day02_hike.jpg)
 
 
 As we passed over diverse types of rocks,
