@@ -3,8 +3,8 @@
 $$\DeclareMathOperator*{\argmax}{argmax}$$
 $$\DeclareMathOperator{\defeq}{\stackrel{def}{=}}$$
 
-Previously, we assumed that all variables were observed. Now we consider the presence
-of latent (unobserved) variables. The presence of latent variables can screw up
+Previously, we assumed that all variables were observed and the graph was known. Now we consider the presence
+of latent (unobserved) variables while the graph remains known. The presence of latent variables can screw up
 parameter estimation. For instance, if $$x$$ is observed and no latent variables are present,
 then we can directly maximize the log likelihood:
 
@@ -74,6 +74,7 @@ $$\begin{align}q^{(k)}(y) = \argmax_{q(y)} F(q(y), \theta^{(k-1)}) \Rightarrow
 q^{(k)}(y) = p(y|x, \theta^{(k-1)})\end{align}$$
 
 - M Step: Holding $$q(y)$$ fixed, optimize $$F(q, \theta)$$ with respect to $$\theta$$:
+
 $$\begin{align}\theta^{(k)} = \argmax_{\theta} F(q^{(k)}(y), \theta) =
 \argmax_{\theta} \mathbb{E}_{q^{(k)}(x)}[\log p(x, y| \theta)]\end{align}$$
   

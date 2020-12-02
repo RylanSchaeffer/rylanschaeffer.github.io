@@ -28,8 +28,8 @@ structure to design efficient inference algorithms.
     - Loopy Belief Propagation
     - Variational Inference
     - Graph Partitioning
-- Latent Variables and Parameter Learning
-    - [Expectation Maximization](probabilistic_graphical_models/expectation_maximization.md)
-  
+- Learning
+    - Some variables unobserved, graph is known -> [Expectation Maximization](probabilistic_graphical_models/expectation_maximization.md)
+    - All variables observed, graph is unknown [Chow Liu Algorithm]()
   
     

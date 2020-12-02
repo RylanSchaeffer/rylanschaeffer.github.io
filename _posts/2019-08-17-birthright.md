@@ -96,12 +96,12 @@ were praying for Shabbat. One of the dead was a young girl close in age to my Is
 companion. An attacker was later released as part of <a href="https://en.wikipedia.org/wiki/Gilad_Shalit_prisoner_exchange">a trade for an IDF prisoner of war</a>.
 
 
-
-<img class="photo" src="{{ site.url }}/assets/2019-08-17-taglit/day02_hike_water_hole.jpg" style="float: left; width: 35%">
-<img class="photo" src="{{ site.url }}/assets/2019-08-17-taglit/day02_hike.jpg" style="float: left; width: 35%">
 We started the day with a hike. Halfway through, we encountered a
 delightful pond that we went swimming in. Our wet clothes proved to be a good defense
-against the growing heat of the day. As we passed over diverse types of rocks,
+against the growing heat of the day.
+[day02_hike_water_hole]({{ site.url }}/assets/2019-08-17-taglit/day02_hike_water_hole.jpg)
+[day02_hike]{{ site.url }}/assets/2019-08-17-taglit/day02_hike.jpg)
+As we passed over diverse types of rocks,
 we learned that the Golan Heights was <a href="https://en.wikipedia.org/wiki/Golan_Heights#Geology">formerly seismically active</a>.
 Consequently, mountains were formed that act as a watershed funneling
 clean rainwater into the Sea of Galilee, where it can be used for drinking and
@@ -111,17 +111,14 @@ indeed, the <a href="https://en.wikipedia.org/wiki/Headwater_Diversion_Plan_(Jor
 tried to do exactly that leading up to the Six Day War.
 
 
-<p style="clear: both; text-align:center;">
-<img class="center" src="{{ site.url }}/assets/2019-08-17-taglit/day02_golan_border.jpg" style="width: 100%">
+[day02_golan_border]({{ site.url }}/assets/2019-08-17-taglit/day02_golan_border.jpg)
 
-
-<p style="clear: both">
-<img class="photo" src="{{ site.url }}/assets/2019-08-17-taglit/day02_rafting.jpg" style="float: left; width: 45%">
 Our final activity of the day was rafting. There was only one short section of the river
 that wasn't calm, but Becca, Dani, Nate and I entertained ourselves by chasing other
 rafts, throwing people out of their rafts (sorry Danny!) and attempting to paddle
 while facing in opposite directions.
 
+[day02_rafting]*{{ site.url }}/assets/2019-08-17-taglit/day02_rafting.jpg)
 
 ## Day 3 - Tzfat and the Kabbalah
 

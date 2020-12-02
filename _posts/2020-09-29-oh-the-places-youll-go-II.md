@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Oh, the Places You'll Go" Part II
+title:  "Oh, the Places You'll Go" (Part II)
 tags: dr-seuss inspiration
 ---
 
