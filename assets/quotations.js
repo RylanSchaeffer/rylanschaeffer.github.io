@@ -126,4 +126,6 @@ const quotations = [
     "“Stories are for joining the past to the future. Stories are for those late hours in the night when" +
     " you can't remember how you got from where you were to where you are. Stories are for eternity, when " +
     "memory is erased, when there is nothing to remember except the story.”",
+
+    "“You bear witness to the end of your journey. It is not always a happy thing.",
 ];

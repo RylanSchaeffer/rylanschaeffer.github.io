@@ -21,11 +21,20 @@ treat yourself and take the weekend off." "Oh, I intend to!" her supervisor repl
 reconvened to discuss new potential projects. My RA said to her supervisor, "Can I let you in on a 
 little secret?" "Of course!" "I didn't really take the weekend off," she says. "Can I let you in 
 a secret too?" her supervisor asks. "I didn't really take the weekend off either!"
- 
 
-## Sweet
+## Romantic
+
+## Nerdy and Romantic Pickup Lines
+
+- "You're the other parameter in my partition function. You normalize my life."
+
+- "I love staying up all night, passing messages with you till our beliefs converge"
+
+- "Nothing can d-separate us because we're connected"
+
 
 ## Start Ups
+
 - We lose a little money on every customer, but we make it up on volume.
 
 ## Inappropriate
@@ -37,11 +46,4 @@ shows up with over fifty items and starts checking out. A line forms behind the 
 other customers start to grumble, so a store clerk comes over to talk to the student. "Excuse me,
 this is the express lane." "I know that," the student snaps. The clerk snaps back, "Then are you
 a Harvard student who can't count, or an MIT student who can't read?"
-
-## Nerdy Romantic Lines
-
-- "You're the other parameter in my partition function. You normalize my life."
-
-- "I love staying up all night, passing messages with you till our beliefs converge"
-
-- "Nothing can d-separate us because we're connected"
+  

@@ -20,8 +20,9 @@ via Representations and Dynamics Distillation. In preparation (2021).
 hierarchical inference in the mouse brain. In preparation (2021).
 
 
-### Old Projects
-- Towards Unifying Smooth Neural Codes with Adversarially Robust Representations
+## Abandoned
+- Rylan Schaeffer, Nayantara Mudur, Helena Casademunt. Towards Unifying Smooth 
+  Neural Codes with Adversarially Robust Representations. 2019.
 
 
 ## Explanations of Others' Research
