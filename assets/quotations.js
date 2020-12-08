@@ -128,4 +128,9 @@ const quotations = [
     "memory is erased, when there is nothing to remember except the story.”",
 
     "“You bear witness to the end of your journey. It is not always a happy thing.",
+
+    "“I can feel a storm near\n" +
+    "The dream won't go away\n" +
+    "So meet me tonight dear\n" +
+    "And we'll run into a new day“",
 ];
