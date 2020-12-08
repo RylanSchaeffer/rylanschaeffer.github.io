@@ -49,7 +49,8 @@ guests. I wouldn't have paid much attention, except the first name caught my eye
 ![chanukah]({{site.url}}/assets/20201213-idea-machine/chanukah.jpeg)
 
 In case you aren't familiar with this scumbag, Dershowitz is infamous for (a) defending OJ Simpson
-and (b) defending Jeffrey Epstein. The third guest is Larry Summers, who infamously resigned from
+and (b) being best friends with notorious pedophile and underage sex trafficker Jeffrey Epstein.
+The third guest is Larry Summers, who infamously resigned from
 heading Harvard after saying women were bad at science. I don't know anything about Ruth Wisse or 
 Drew Faust, so I looked them up and discovered that Wisse is a neocon who has said feminism is destroying
 western civilization and that Palestinians seem to have no right to a state. Drew Faust married
@@ -59,7 +60,7 @@ excited during his lectures on cannibalism). How are these the best people Harva
 
 ### Tuesday
 
-Total work time: 
+Total work time: 9:26
 
 ### Distributional Reinforcement Learning
 
@@ -71,6 +72,11 @@ these, I feel so stupid and that makes me feel depressed. I don't know if I can 
 ### Wednesday
 
 Total work time: 
+
+### 6.438 Algorithms for Inference
+
+Devavrat started lecture with "I hope you didn't feel time pressure on the quiz. 
+And if you did, it's only a quiz." I feel like I'm being gaslit.
 
 ### Thursday
 
