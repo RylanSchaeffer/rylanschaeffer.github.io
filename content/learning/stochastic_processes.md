@@ -1,7 +1,7 @@
 # Stochastic Processes
 
 A stochastic process is a set of random variables indexed by some other set. For instance,
-a sequence of stock prices $$\{X_t\}_{0 \leq t \leq T\}$$ is a stochastic process where the
+a sequence of stock prices $$\{ X_t \}_{0 \leq t \leq T }$$ is a stochastic process where the
 index set is time $$t \in [0, T]$$.
 
 - [Gaussian Process](stochastic_processes/gaussian_processes.md)
