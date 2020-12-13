@@ -7,8 +7,8 @@ and covariance function $$k(\cdot, cdot)$$ if for any $$x_1, ..., x_m \in X$$
 
 $$\begin{bmatrix} f(x_1) \\ \vdots \\ f(x_m) \end{bmatrix} \sim \mathcal{N} \Big(
 \begin{bmatrix} \mu(x_1) \\ \vdots \\ \mu(x_m) \end{bmatrix},
-\begin{bmatrix} k(x_1, x_1) & \hdots & k(x_1, x_m) \\ \vdots & & \vdots \\ 
-k(x_m, x_1) & \hdots & k(x_m, x_m) \end{bmatrix} \Big)$$
+\begin{bmatrix} k(x_1, x_1) & \dots & k(x_1, x_m) \\ \vdots & & \vdots \\ 
+k(x_m, x_1) & \dots & k(x_m, x_m) \end{bmatrix} \Big)$$
 
 The following notation is used as shorthand:
 
@@ -71,7 +71,7 @@ $$y_n = f(x_n) + \epsilon_n$$
 
 If we place a zero mean Gaussian Process prior on the function $$f$$, then :
 
-$$f(\cdot) \sim \mathcal{N}(0, k(\cdot, \cdot))$$
+$$f(\cdot) \sim \mathcal{GP}(0, k(\cdot, \cdot))$$
 
 Because the sum of independent Gaussian random variables is itself a random variable, we have that
 
