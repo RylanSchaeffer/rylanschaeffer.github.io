@@ -8,7 +8,7 @@ tags: idea-machine 2020 MIT Harvard
 
 ### Monday
 
-Total work time: 6:45
+Total work time: 10:12
 
 ### Ancestral Discoveries
 
@@ -41,6 +41,7 @@ was a clear and forceful argument against slavery and initiated the process of b
 the Society of Friends (1776) and Pennsylvania (1780)."
 </blockquote>
 
+
 ### Harvard Chanukah
 
 Harvard sent out invitations for a virtual Chanukah celebration, and with it, a list of "headlining"
@@ -58,10 +59,6 @@ her PhD supervisor. I thought Michael Sandel was an angel, but seeing his name o
 me think he must be hiding some terrible secret (I'm joking, of course, but he was exceptionally
 excited during his lectures on cannibalism). How are these the best people Harvard could find?
 
-### Tuesday
-
-Total work time: 9:26
-
 ### Distributional Reinforcement Learning
 
 I spent the entire day trying to understand Bellemare et al. 2019's Distributional reinforcement learning
@@ -69,14 +66,20 @@ with linear function approximation and Lyle et al. 2019's A Comparative Analysis
 Distributional Reinforcement Learning for my presentation to Cengiz's lab on Wednesday. On days like
 these, I feel so stupid and that makes me feel depressed. I don't know if I can make it in this field.
 
-### Wednesday
 
-Total work time: 
+### Tuesday
+
+Total work time:
 
 ### 6.438 Algorithms for Inference
 
-Devavrat started lecture with "I hope you didn't feel time pressure on the quiz. 
+Devavrat started lecture with "I hope you didn't feel time pressure on the quiz.
 And if you did, it's only a quiz." I feel like I'm being gaslit.
+
+
+### Wednesday
+
+Total work time: 
 
 ### Thursday
 
