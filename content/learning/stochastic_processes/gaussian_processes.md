@@ -15,9 +15,8 @@ The following notation is used as shorthand:
 $$ f(\cdot) \sim \mathcal{GP}(\mu(\cdot), k(\cdot, \cdot))$$
 
 Gaussian processes are a generalization of a finite-dimensional multivariate Gaussian
-random vector. We can think of each index element $$x$$ as the input to function $$f(\cdot)$$
-and the corresponding elements $$f(x)$$ as the function evaluated at that point. Consequently,
-GPs are frequently described as "distributions over functions."
+random vector. We can think of each $$f(x)$$ as the function $$f(\cdot)$$ evaluated at index element
+$$x$$. This is why GPs are frequently described as "distributions over functions."
 
 In order for a GP to be valid, the covariance function $$k(\cdot, \cdot)$$ must define a 
 valid covariance matrix when evaluated at $$x_1, ..., x_m$$. Any function is therefore a valid
