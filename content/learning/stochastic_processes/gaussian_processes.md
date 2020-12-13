@@ -81,4 +81,6 @@ $$
 \Big)
 $$
 
+For a more complete explanation, see [Stanford CS299's notes](http://cs229.stanford.edu/section/cs229-gaussian_processes.pdf).
+
 TODO: finish
