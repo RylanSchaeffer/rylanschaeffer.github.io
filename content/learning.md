@@ -1,5 +1,7 @@
 # Learning
 
+Disclaimer: these are intended for my personal reference. Many are woefully incomplete. Don't judge :)
+
 - [Analysis (Real)](learning/analysis_real.html)
 - [Convex Analysis](learning/analysis_convex.html)
 - [Calculus](learning/calculus.html)
