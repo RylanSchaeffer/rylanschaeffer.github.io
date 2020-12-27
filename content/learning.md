@@ -2,9 +2,8 @@
 
 Disclaimer: these are intended for my personal reference. Many are woefully incomplete. Don't judge :)
 
-- [Analysis (Real)](learning/analysis_real.html)
-- [Convex Analysis](learning/analysis_convex.html)
 - [Calculus](learning/calculus.html)
+- [Convex Analysis](learning/analysis_convex.html)
 - [Differential Equations](learning/differential_equations.html)
 - [Dynamical Systems and Control](learning/dynamical_systems.html)
 - [Information Theory](learning/information_theory.html)
@@ -17,6 +16,7 @@ Disclaimer: these are intended for my personal reference. Many are woefully inco
 - [Optimization](learning/optimization.html)
 - [Probability](learning/probability.html)
 - [Probabilistic Graphical Models](learning/probabilistic_graphical_models.html)
+- [Real Analysis](learning/analysis_real.html)
 - [Statistics](learning/statistics.html)
 - [Stochastic Processes](learning/stochastic_processes.html)
 - [Reinforcement Learning](learning/reinforcement_learning.html)
