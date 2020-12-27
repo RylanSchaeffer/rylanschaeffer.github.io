@@ -104,6 +104,11 @@ const quotations = [
     "“This is pretty lazy, seeing as you always talk such a big game. Quit laying' down " +
     "on the job.“",
 
+    "“The only thing all humans are equal in is death.“",
+
+    "“People have so many important things to communicate throughout their lives. They" +
+    "have so many things to talk about over a good beer.“",
+
     "“For the blood is running still\n" +
     "From the roots of Yggdrasil“",
 
@@ -133,4 +138,11 @@ const quotations = [
     "The dream won't go away\n" +
     "So meet me tonight dear\n" +
     "And we'll run into a new day“",
+
+    "“I wanna live the stories I write“",
+
+    "“You know Mr. Burns, you're the richest guy I know.“\n" +
+    "“Ah yes, but I'd trade it all for a little more“",
+
+
 ];

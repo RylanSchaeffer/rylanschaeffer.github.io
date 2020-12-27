@@ -1,9 +1,11 @@
 # Learning
 
-- [Analysis](learning/analysis.html)
+- [Analysis (Real)](learning/analysis_real.html)
+- [Convex Analysis](learning/analysis_convex.html)
 - [Calculus](learning/calculus.html)
 - [Differential Equations](learning/differential_equations.html)
 - [Dynamical Systems and Control](learning/dynamical_systems.html)
+- [Information Theory](learning/information_theory.html)
 - [Informative Non-Fiction Books](learning/informative_nonfiction.html)
 - [Kernels](learning/kernels.html)
 - [Linear Algebra](learning/linear_algebra.html)
