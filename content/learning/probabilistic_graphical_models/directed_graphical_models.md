@@ -37,38 +37,66 @@ By following the factorization dictated by the graph, we also have
 $$p(X_1,X_2,X_3) = p(X_1)p(X_2\lvert X_1)p(X_3\lvert X_2)$$. Setting the two equal shows $$p(X_3 \lvert X_1,X_2)
 = p(X_3 \lvert 2)$$, meaning $$X_3$$ is conditionally independent from $$X_1$$ given $$X_2$$.
 
-- Ex 2: $$ 1 \leftarrow 2 \rightarrow 3$$. A similar analysis shows that $$1 \perp 3 \lvert 2$$.
-Intuitively, if $$1$$ and $$3$$ are descendents of $$2$$, then knowing the parent $$2$$ renders the
+- Ex 2:
+  
+$$ X_1 \leftarrow X_2 \rightarrow X_3$$
+
+A similar analysis shows that $$X_1 \perp X_3 \lvert X_2$$. Intuitively, if $$X_1$$ and $$X_3$$ are
+half-siblings, with a shared parent of $$X_2$$, then knowing the shared parent $$X_2$$ renders the
  two descendents independent.
 
-- Ex 3: $$ 1 \rightarrow 2 \leftarrow 3 $$. This one is trickier, but not by much. Suppose $$2$$ is the child of $$1$$ and $$3$$. Initially,
-there's no relationship between the parents, so $$1 \perp 3$$, but if I observe that the child
-has blue eyes and that $$1$$ does not, this tells me something about $$3$$. Consequently,
-$$1 \perp 3$$ but $$1 \not\perp 3 \lvert 2$$.
+- Ex 3:
+  
+$$ X_1 \rightarrow X_2 \leftarrow X_3 $$
+
+This one is trickier. Suppose $$X_2$$ is the child of $$1$$ and $$3$$. Initially,
+there's no relationship between the parents, so $$X_1 \perp X_3$$, but if I observe that the child
+has blue eyes and that $$X_1$$ does not, this tells me something about $$X_3$$. Consequently,
+$$X_1 \perp X_3$$ but $$X_1 \not\perp X_3 \lvert X_2$$.
+
+Intuitively, these three examples suggest two principles are at play. 
+
+1. If a path between two random variables doesn't have two arrows that point at the same random 
+   variable (called a __collision__), then the two variables are dependent on one another. But 
+   conditioning on middle node(s) along the path renders the nodes at the start and end of the path
+   independent.
+   
+2. If a path between two random variables does have a collision, then the opposite holds. Specifically, 
+   the two variables are initially independent from one another, but conditioning on a shared descendent
+   renders the two conditionally dependent.
+
+Are these principles sufficient to give us exactly the conditional independencies implied by a given
+directed graph? 
+
+
+## Directed Separation (d-separation)
+
+It turns out the answer is yes. Directed separation formalizes the two principles. Specifically,
+for DAG $$G = (V, E)$$, we say the set of nodes $$A$$ is d-separated from the
+nodes $$B$$ with respect to nodes $$C$$ if every _path_ between nodes $$a\in A$$ and
+$$b \in B$$ is _blocked_. A _path_ is a chain of edges that connect
+two vertices, regardless of those edges' directionality. For determining whether a path is _blocked_,
+there are really just two rules motivated by the earlier examples ($$X_1 \rightarrow X_2 \rightarrow X_3,
+X_1 \leftarrow X_2 \rightarrow X_3, X_1 \rightarrow X_2 \leftarrow X_3$$):
+
+1. Suppose arrows on the path don't meet head to head (e.g. $$X_1 \rightarrow X_2 \rightarrow X_3,
+   X_1 \leftarrow X_2 \rightarrow X_3$$). Then the path is blocked if a node along the path is observed
+   and unblocked if not observed.
+
+2. Suppose arrows on the path do meet head to head (e.g. $$X_1 \rightarrow X_2 \leftarrow X_3$$).
+   Then the path is unblocked if a node along the path is observed and blocked if not observed.
+   This also holds for descendents of node $$X_2$$.
+
+If all paths between two (subsets of) nodes are blocked, the two (subsets of) nodes are conditionally
+independent.
+
+## Directed Graph Properties
 
 __Directed Local Markov Property__:  A distribution $$p$$ over $$X^{\lvertV\lvert}$$ ($$V$$ is the set of 
-variables) is said to satisfy the directed local
-Markov property with respect to a DAG $$G = (V, E)$$ if $$\forall i \in V, x_i \perp 
+variables) is said to satisfy the directed local Markov property with respect to a DAG $$G = (V, E)$$ if $$\forall i \in V, x_i \perp 
 x_{nd(i) \\ pi_i} \lvert \pi_i$$ where $$\pi_i$$ are the parents of $$i$$ and
  $$nd(i)$$ are the non-descendents of $$i$$. 
 
-Directed Separation (or d-separation) describes rules for extracting
-conditional independencies in a DAG. 
-
-__Directed (d-) Separation__: For DAG $$G = (V, E)$$, we say the set of nodes $$A$$ is d-separated from the
- nodes $$B$$ with respect to nodes $$C$$ if every _path_ between nodes $$a\in A$$ and 
- $$b \in B$$ is _blocked_. A _path_ is a chain of edges that connect
-two vertices, regardless of those edges' directionality. For determining whether a path is _blocked_,
-there are really just two rules motivated by the earlier examples ($$1 \rightarrow 2 \rightarrow 3, 
-1 \leftarrow 2 \rightarrow 3, 1 \rightarrow 2 \leftarrow 3$$):
-
-1. Suppose arrows on the path don't meet head to head (e.g. $$1 \rightarrow 2 \rightarrow 3, 
-1 \leftarrow 2 \rightarrow 3$$). Then the path is blocked if a node along the path is observed
-and unblocked if not observed.
-
-2. Suppose arrows on the path do meet head to head (e.g. $$1 \rightarrow 2 \leftarrow 3$$).
-Then the path is unblocked if a node along the path is observed and blocked if not observed.
-This also holds for descendents of node $$2$$.
 
 __Directed Global Markov Property__: A distribution $$p$$ satisfies the 
 global Markov property with respect to a DAG $$G=(V,E)$$ if $$\forall x_A, x_B, x_C \subset V,
