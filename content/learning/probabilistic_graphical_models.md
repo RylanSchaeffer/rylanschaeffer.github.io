@@ -14,6 +14,7 @@ structure to design efficient inference algorithms.
     - [Undirected Graphs](probabilistic_graphical_models/undirected_graphical_models.md)
     - [Factor Graphs](probabilistic_graphical_models/factor_graphical_models.md)
     - [Ancestral Graphs](probabilistic_graphical_models/ancestral_graphical_models.md)
+    - [Graph Relations](probabilistic_graphical_models/)  
     - Causal Graphs
 - Parameter Estimation
     - Maximum Likelihood

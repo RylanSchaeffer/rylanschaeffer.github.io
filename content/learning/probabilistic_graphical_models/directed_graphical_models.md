@@ -57,7 +57,7 @@ $$X_1 \perp X_3$$ but $$X_1 \not\perp X_3 \lvert X_2$$.
 Intuitively, these three examples suggest two principles are at play. 
 
 1. If a path between two random variables doesn't have two arrows that point at the same random 
-   variable (called a __collision__), then the two variables are dependent on one another. But 
+   variable (called an __immoralitiy__), then the two variables are dependent on one another. But 
    conditioning on middle node(s) along the path renders the nodes at the start and end of the path
    independent.
    
@@ -71,8 +71,8 @@ directed graph?
 
 ## Directed Separation (d-separation)
 
-It turns out the answer is yes. Directed separation formalizes the two principles. Specifically,
-for DAG $$G = (V, E)$$, we say the set of nodes $$A$$ is d-separated from the
+It turns out the answer is yes. Directed separation (more commonly called d-separation)
+formalizes the two principles. For DAG $$G = (V, E)$$, we say the set of nodes $$A$$ is d-separated from the
 nodes $$B$$ with respect to nodes $$C$$ if every _path_ between nodes $$a\in A$$ and
 $$b \in B$$ is _blocked_. A _path_ is a chain of edges that connect
 two vertices, regardless of those edges' directionality. For determining whether a path is _blocked_,
@@ -92,11 +92,25 @@ independent.
 
 ## Directed Graph Properties
 
+Let $$I(G)$$ be the set of C.I. relations for a DAG $$G$$ corresponding to d-separation,
+and let $$I(p)$$ be the set of C.I. relations for distribution $$p$$.
+
+__Identical Conditional Independencies__: When do two graphs have exactly the same
+set of conditional independencies? For two DAGs $$G_1, G_2$$, $$I(G_1) = I(G_2)$$ if and only if (1) both have
+the same skeleton (i.e. same edges, regardless of direction) and (2) same
+v-structures (also called collisions, immoralities or common causes).
+
+__Distribution for Given Graph__: For a given graph, is there a distribution that has exactly the graph's conditional independencies?
+Yes. $$\forall G = (V,E), \exists p$$ such that $$p$$ factorizes according to $$G$$
+and $$I(G) = I(p)$$. 
+
+__No Graph for Given Distribution__: For a given distribution $$p$$, is there a graph that has exactly the distribution's
+conditional independencies? No. $$\exists p $$ for which no DAG exists satisfying $$I(G)= I(p)$$.
+
 __Directed Local Markov Property__:  A distribution $$p$$ over $$X^{\lvertV\lvert}$$ ($$V$$ is the set of 
 variables) is said to satisfy the directed local Markov property with respect to a DAG $$G = (V, E)$$ if $$\forall i \in V, x_i \perp 
 x_{nd(i) \\ pi_i} \lvert \pi_i$$ where $$\pi_i$$ are the parents of $$i$$ and
  $$nd(i)$$ are the non-descendents of $$i$$. 
-
 
 __Directed Global Markov Property__: A distribution $$p$$ satisfies the 
 global Markov property with respect to a DAG $$G=(V,E)$$ if $$\forall x_A, x_B, x_C \subset V,
@@ -119,15 +133,4 @@ The implication is that the following two lists are equivalent:
 
 2. List all distributions, then discard distributions which violate the conditional
 independencies obtained by testing d-separation
-
-
-Let $$I(G)$$ be the set of C.I. relations for a DAG $$G$$ corresponding to d-separation,
-and let $$I(p)$$ be the set of C.I. relations for distribution $$p$$.
-
-__Claim__: $$\forall G = (V,E), \exists p$$ such that $$p$$ factorizes according to $$G$$
- and $$I(G) = I(p)$$. Additionally, $$\exists p $$ for which no DAG exists satisfying
- $$I(G)= I(p)$$.
- 
-__Claim__: For two DAGs $$G_1, G_2$$, $$I(G_1) = I(G_2)$$ if and only if (1) both have 
-the same skeleton (i.e. same edges, regardless of direction) and (2) same
-v-structures (also called immoralities or common causes). 
+   
