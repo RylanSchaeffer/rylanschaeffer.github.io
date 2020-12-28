@@ -105,7 +105,7 @@ const quotations = [
 
     "“The only thing all humans are equal in is death.“",
 
-    "“People have so many important things to communicate throughout their lives. They" +
+    "“People have so many important things to communicate throughout their lives. They " +
     "have so many things to talk about over a good beer.“",
 
     "“For the blood is running still<br/>" +
@@ -128,14 +128,11 @@ const quotations = [
     "memory is erased, when there is nothing to remember except the story.”",
 
     "“I can feel a storm near<br/>" +
-    "The dream won't go away<br/>" +
-    "So meet me tonight dear<br/>" +
-    "And we'll run into a new day“",
+    "The dream won't go away<br/>",
 
     "“I wanna live the stories I write“",
 
     "“You know Mr. Burns, you're the richest guy I know.“<br/>" +
     "“Ah yes, but I'd trade it all for a little more“",
-
 
 ];

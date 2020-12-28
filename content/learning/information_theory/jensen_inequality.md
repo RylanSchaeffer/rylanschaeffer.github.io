@@ -18,4 +18,4 @@ Jensen's Inequality appears everywhere in information theory e.g. KL Divergence,
 due to the frequent appearance of $$\log$$, a concave function. For instance, we can bound the log 
 of a random variable's expected value:
 
-$$\mathbf{E}[\log X] = \sum_x p(x) \log x \geq \log \sum_x p(x) x = \log (\mathbf{E}[X])$$
+$$\mathbf{E}[\log X] = \sum_x p(x) \log x \leq \log \sum_x p(x) x = \log (\mathbf{E}[X])$$
