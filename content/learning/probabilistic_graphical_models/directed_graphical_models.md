@@ -1,27 +1,41 @@
 # Directed Graphical Models
 
+A directed graphical model is one way of expressing conditional dependencies between random variables.
+Specifically, a directed graphical model $$G = (V, E)$$ represents each random variable with a node and
+uses the directed edges to indicate conditional probabilities. Specifically, for a random variable $$X_i$$,
+we say that its parents $$X_{\pi_i}$$ is the set of nodes such a directed edge goes from the parent to $$X_i$.
 
-A directed graphical model is one way of combining graphs with random variables. Specifically,
-a directed graphical model $$G = (V, E)$$ is defined as the tuple of $$V$$, a set of vertices, each 
-representing a random variable, and $$E \subseteq V \times V$$, a set of directed edges.
-One particular $$G$$ defines a family of joint distributions over the random variables
-by imposing conditional independencies in the edges. 
-We denote the $$i$$th random variable $$X_i$$ and its set of parent nodes
+$$X_{\pi_i} = \{j \in V \lvert (j, i) \in E \}$$
 
-$$\pi_i = \{j \in V \lvert (j, i) \in E \}$$
+The full joint distribution $$P(X_1, ..., X_N)$$ is said to __factorize__ as:
 
-__Importantly, $$G$$ cannot have cycles__. If it does, there is no consistent way to assign
-conditional probabilities.
+$$P(X_1, ..., X_N) = \prod_{n=1}^N P(X_n|X_{\pi_n})$$
 
-## Extracting Conditional Independence from Directed Graphs
+One key point is that a given directed graph does not describe a single distribution. Rather,
+the given graph describes a family of distributions such that each distribution in the family
+can be factorized according to the graph structure. __Importantly, $$G$$ cannot have cycles__.
+If it does, there is no consistent way to assign conditional probabilities.
 
-I use numbers to represent random variables rather than $$x_1, x_2, ...$$. I couldn't get
-BayesNet to work with Markdown, so bear with the poor "pictures".  
+## Extracting Conditional Independencies
 
-- Ex 1: $$ 1 \rightarrow 2 \rightarrow 3$$ .Here, by the definition of conditional probabilities, we have
-$$p(1,2,3) = p(1)p(2\lvert1)p(3\lvert1,2)$$. By the structure of the graph, we also have 
-$$p(1,2,3) = p(1)p(2\lvert1)p(3\lvert2)$$. Setting the two equal shows $$p(3\lvert1,2) = p(3\lvert2)$$, meaning
-3 is conditionally independent from 1 given 2.
+For a given graph, the graph structure tells us which variables are conditionally independent
+from other variables, possibly given other variables. More formally, we'd like to find all 
+sets $$A, B, C$$ such that 
+
+$$X_A \perp X_B | X_C$$
+
+where $$X_A = \{X_i : i \in A\}$$. It turns out that considering three simple cases will be
+sufficient to extract two rules that will allow us to determine all conditional independence
+statements from the graph structure. I couldn't get BayesNet to work with Markdown, so bear with the poor "pictures".
+
+- Ex 1:
+  
+$$ X_1 \rightarrow X_2 \rightarrow X_3$$
+
+We can always write the joint probability as $$p(X_1, X_2, X_3) = p(X_1)p(X_2\lvert X_1)p(X_3 \lvert1,2)$$.
+By following the factorization dictated by the graph, we also have 
+$$p(X_1,X_2,X_3) = p(X_1)p(X_2\lvert X_1)p(X_3\lvert X_2)$$. Setting the two equal shows $$p(X_3 \lvert X_1,X_2)
+= p(X_3 \lvert 2)$$, meaning $$X_3$$ is conditionally independent from $$X_1$$ given $$X_2$$.
 
 - Ex 2: $$ 1 \leftarrow 2 \rightarrow 3$$. A similar analysis shows that $$1 \perp 3 \lvert 2$$.
 Intuitively, if $$1$$ and $$3$$ are descendents of $$2$$, then knowing the parent $$2$$ renders the
