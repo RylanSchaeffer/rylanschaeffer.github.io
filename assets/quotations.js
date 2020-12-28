@@ -18,9 +18,9 @@ const quotations = [
 
     "“Yet, he thought, if I can die saying 'Life is so beautiful,' then nothing else is important.“",
 
-    "“I know I can\n" +
-    "be what I want to be\n" +
-    "if I work hard at it\n" +
+    "“I know I can/n" +
+    "be what I want to be/n" +
+    "if I work hard at it/n" +
     "I'll be what I want to be.“",
 
     "“For you are life, rarer than a quark and unpredictable beyond the dreams of Heisenberg.“",
@@ -37,8 +37,8 @@ const quotations = [
     "else in return. But once you have overcome it and made it your own, you will gain an irreplaceable " +
     "fullmetal heart.“",
 
-    "“I want you to feel what I felt. I want you to know why a story-truth is truer sometimes " +
-    "than happening truth.“",
+    "“Don't take your eyes off them for a second. And don't ever forget them, " +
+    "because I promise that they won't forget you.“",
 
     "“Someone once told me the definition of hell: the last day you have on earth, the person " +
     "you became meets the person you could have become.“",
@@ -55,17 +55,22 @@ const quotations = [
 
     "“That's why the people who push themselves into hell see a different hell from the rest of us.“",
 
+    "“Then let me start again, I cried/n" +
+    "Please let me start again/n" +
+    "I want a face that's fair this time/n" +
+    "I want a spirit that is calm“",
+
     "“Then one day you find ten years have got behind you, no one told you when to run, you missed the starting gun“",
 
-    "“Time, it took the most of me\n" +
-    "And left me with no key\n" +
+    "“Time, it took the most of me/n" +
+    "And left me with no key/n" +
     "To unlock the chest of remedy“",
 
-    "“Encumbered forever by desire and ambition\n" +
+    "“Encumbered forever by desire and ambition/n" +
     "There's a hunger still unsatisfied“",
 
-    "“Where were you when I was burned and broken\n" +
-    "While the days slipped by from my window watching\n" +
+    "“Where were you when I was burned and broken/n" +
+    "While the days slipped by from my window watching/n" +
     "And where were you when I was hurt and I was helpless?“",
 
     "“Ad astra per aspera“",
@@ -75,16 +80,8 @@ const quotations = [
     "“Because everything here must still be accomplished. It depends only on him to " +
     "participate in this privileged act of creation.“",
 
-    "“Then let me start again, I cried\n" +
-    "Please let me start again\n" +
-    "I want a face that's fair this time\n" +
-    "I want a spirit that is calm“",
-
     "\"Lonely? You have yourself. Your infinite selves. " +
     "It's a nonstop party where all the guests are the only person we like.\"",
-
-    "“Don't take your eyes off them for a second. And don't ever forget them, " +
-    "because I promise that they won't forget you.“",
 
     "“Structurally, there's no discernible difference. Life and death are " +
     "unquantifiable abstracts. Why should I be concerned?“",
@@ -98,31 +95,29 @@ const quotations = [
 
     "“Ad majora“",
 
-    "“Remember, in the burning heart\n" +
+    "“Remember, in the burning heart/n" +
     "There can never be surrender at all.“",
 
     "“This is pretty lazy, seeing as you always talk such a big game. Quit laying' down " +
     "on the job.“",
+
+    "“You bear witness to the end of your journey. It is not always a happy thing.",
 
     "“The only thing all humans are equal in is death.“",
 
     "“People have so many important things to communicate throughout their lives. They" +
     "have so many things to talk about over a good beer.“",
 
-    "“For the blood is running still\n" +
+    "“For the blood is running still/n" +
     "From the roots of Yggdrasil“",
 
-    "“When the tears are in your eyes\n" +
-    "You sing a drunken lullaby\n" +
-    "And the weight of the world\n" +
+    "“When the tears are in your eyes/n" +
+    "You sing a drunken lullaby/n" +
+    "And the weight of the world/n" +
     "Comes crashing on your spine“",
 
-    "“I want you to feel what I felt. I want you to know why story-truth is truer sometimes " +
-    "than happening-truth.“",
-
-    "“The thing about a story is that you dream it as you tell it, hoping that other might then " +
-    "dream along with you, and in this way memory and imagination and language combine to make spirits " +
-    "in the head.“",
+    "“I want you to feel what I felt. I want you to know why a story-truth is truer sometimes " +
+    "than happening truth.“",
 
     "“Other stories were passed down like legends from old-timer to newcomer. Mostly, though, we " +
     "had to make up our own. Often they were exaggerated, or blatant lies, but it was a way " +
@@ -132,16 +127,14 @@ const quotations = [
     " you can't remember how you got from where you were to where you are. Stories are for eternity, when " +
     "memory is erased, when there is nothing to remember except the story.”",
 
-    "“You bear witness to the end of your journey. It is not always a happy thing.",
-
-    "“I can feel a storm near\n" +
-    "The dream won't go away\n" +
-    "So meet me tonight dear\n" +
+    "“I can feel a storm near/n" +
+    "The dream won't go away/n" +
+    "So meet me tonight dear/n" +
     "And we'll run into a new day“",
 
     "“I wanna live the stories I write“",
 
-    "“You know Mr. Burns, you're the richest guy I know.“\n" +
+    "“You know Mr. Burns, you're the richest guy I know.“/n" +
     "“Ah yes, but I'd trade it all for a little more“",
 
 
