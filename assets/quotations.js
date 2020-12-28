@@ -18,9 +18,9 @@ const quotations = [
 
     "“Yet, he thought, if I can die saying 'Life is so beautiful,' then nothing else is important.“",
 
-    "“I know I can/n" +
-    "be what I want to be/n" +
-    "if I work hard at it/n" +
+    "“I know I can<br/>" +
+    "be what I want to be<br/>" +
+    "if I work hard at it<br/>" +
     "I'll be what I want to be.“",
 
     "“For you are life, rarer than a quark and unpredictable beyond the dreams of Heisenberg.“",
@@ -55,22 +55,22 @@ const quotations = [
 
     "“That's why the people who push themselves into hell see a different hell from the rest of us.“",
 
-    "“Then let me start again, I cried/n" +
-    "Please let me start again/n" +
-    "I want a face that's fair this time/n" +
+    "“Then let me start again, I cried<br/>" +
+    "Please let me start again<br/>" +
+    "I want a face that's fair this time<br/>" +
     "I want a spirit that is calm“",
 
     "“Then one day you find ten years have got behind you, no one told you when to run, you missed the starting gun“",
 
-    "“Time, it took the most of me/n" +
-    "And left me with no key/n" +
+    "“Time, it took the most of me<br/>" +
+    "And left me with no key<br/>" +
     "To unlock the chest of remedy“",
 
-    "“Encumbered forever by desire and ambition/n" +
+    "“Encumbered forever by desire and ambition<br/>" +
     "There's a hunger still unsatisfied“",
 
-    "“Where were you when I was burned and broken/n" +
-    "While the days slipped by from my window watching/n" +
+    "“Where were you when I was burned and broken<br/>" +
+    "While the days slipped by from my window watching<br/>" +
     "And where were you when I was hurt and I was helpless?“",
 
     "“Ad astra per aspera“",
@@ -95,7 +95,7 @@ const quotations = [
 
     "“Ad majora“",
 
-    "“Remember, in the burning heart/n" +
+    "“Remember, in the burning heart<br/>" +
     "There can never be surrender at all.“",
 
     "“This is pretty lazy, seeing as you always talk such a big game. Quit laying' down " +
@@ -108,12 +108,12 @@ const quotations = [
     "“People have so many important things to communicate throughout their lives. They" +
     "have so many things to talk about over a good beer.“",
 
-    "“For the blood is running still/n" +
+    "“For the blood is running still<br/>" +
     "From the roots of Yggdrasil“",
 
-    "“When the tears are in your eyes/n" +
-    "You sing a drunken lullaby/n" +
-    "And the weight of the world/n" +
+    "“When the tears are in your eyes<br/>" +
+    "You sing a drunken lullaby<br/>" +
+    "And the weight of the world<br/>" +
     "Comes crashing on your spine“",
 
     "“I want you to feel what I felt. I want you to know why a story-truth is truer sometimes " +
@@ -127,14 +127,14 @@ const quotations = [
     " you can't remember how you got from where you were to where you are. Stories are for eternity, when " +
     "memory is erased, when there is nothing to remember except the story.”",
 
-    "“I can feel a storm near/n" +
-    "The dream won't go away/n" +
-    "So meet me tonight dear/n" +
+    "“I can feel a storm near<br/>" +
+    "The dream won't go away<br/>" +
+    "So meet me tonight dear<br/>" +
     "And we'll run into a new day“",
 
     "“I wanna live the stories I write“",
 
-    "“You know Mr. Burns, you're the richest guy I know.“/n" +
+    "“You know Mr. Burns, you're the richest guy I know.“<br/>" +
     "“Ah yes, but I'd trade it all for a little more“",
 
 
