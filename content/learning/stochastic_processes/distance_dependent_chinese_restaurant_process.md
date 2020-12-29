@@ -1,6 +1,7 @@
-### Distance Dependent Chinese Restaurant Process
+# Distance Dependent Chinese Restaurant Process
 
-Because the CRP defines a distribution on partitions of customers, the order in which
+Because the [Chinese Restaurant Process](chinese_restaurant_process.md)
+defines a distribution on partitions of customers, the order in which
 the customers arrive doesn't matter. This property is called exchangeability.
 However, for certain applications, exchangeability might be undesirable. For instance, if your
 data has temporal or spatial structure, then you would want clusters (tables) to reflect the
