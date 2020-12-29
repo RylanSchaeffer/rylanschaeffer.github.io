@@ -1,5 +1,29 @@
 # Stick Breaking Process
 
+
+## Succinct Explanation
+
+Given a base distribution $$G$$ and two shape parameters $$\alpha, \beta > 0$$, draw 
+an infinite sequence $$(x_1, x_2, ...)$$ from the base distribution i.e. $$x_k \sim G$$ and
+then draw an infinite sequence $$(v_1, v_2, ...)$$ from a $$Beta(a, b)$$ distribution.
+Convert the Beta samples into a sequence of probability masses $$(\rho_1, \rho_2, ...)$$
+that sums to 1 almost surely:
+
+$$
+\rho_k = \begin{cases}
+v_1 & k = 1\\
+v_k \prod_{j < k} (1 - v_j) & k > 1
+\end{cases}
+$$
+
+A sample path (draw) from $$SBP(G, a, b)$$ is a mixture of an infinite Dirac measures with
+mass $$\rho_k$$ located at $$x_k$$:
+
+$$G \sim SBP(G, a, b) \rightarrow G(x) = sum_{k=1}^{\infty} \rho_k \delta_{x_k}$$
+
+
+## Verbose Explanation
+
 A stick breaking process (SBP) is a stochastic process with a funny name that originates
 in a metaphor of sequentially breaking a stick into an infinite sequence of smaller
 and smaller fractions. A SBP requires three inputs: a __base distribution__ $$G_0$$

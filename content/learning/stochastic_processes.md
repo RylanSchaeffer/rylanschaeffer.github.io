@@ -9,4 +9,4 @@ distributions over function spaces.
 - [Chinese Restaurant Process](stochastic_processes/chinese_restaurant_process.md)
 - [Distance-Dependent Chinese Restaurant Process](stochastic_processes/distance_dependent_chinese_restaurant_process.md)
 - [Dirichlet Process](stochastic_processes/dirichlet_process.md)
-- [Stick Breaking Process](stochastic_processes)
+- [Stick Breaking Process](stochastic_processes/stick_breaking_process.md)

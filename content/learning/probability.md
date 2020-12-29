@@ -76,7 +76,9 @@ y) = y$$, we conclude that $$Y$$ is distributed uniformly.
 
 ## Probability Distributions
 
-- 
+- [Cauchy](probability/cauchy_distribution.md)
+- [Kumaraswamy](probability/kumaraswamy_distribution.md)
+
 
 
 
