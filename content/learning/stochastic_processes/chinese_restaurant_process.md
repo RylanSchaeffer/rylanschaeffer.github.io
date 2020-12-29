@@ -30,12 +30,20 @@ $$
 \end{align*}
 $$
 
-Properties:
+## Relation to the Dirichlet Process and Stick Breaking Process
+
+The CRP is closely related to the [Dirichlet process](dirichlet_process.md) and the 
+[Stick Breaking Process](stick_breaking_process.md). The difference is that
+the CRP integrates out the base measure $$G$$, meaning that the CRP cares only for how many
+elements have the same value, regardless of what that value (i.e. the location) is.
+
+## Properties
 
 1. The probability of seating arrangement is invariant under permutations. To see why, note
    that for $$N$$ customers, the normalization constant is always $$\Pi_n^N \frac{1}{n - 1 + \alpha }$$
 
-2. A seating arrangement is a partition of the people. We could consider a distribution on the space
+2. A seating arrangement is a [composition](https://en.wikipedia.org/wiki/Composition_(combinatorics))
+   of the customers. We could consider a distribution on the space
    of all possible partitions for $$n$$ customers, but the partition function $$\rho(n)$$ has no known
    closed form. It grows approximately $$e^{O(\sqrt{n})}$$.
 
