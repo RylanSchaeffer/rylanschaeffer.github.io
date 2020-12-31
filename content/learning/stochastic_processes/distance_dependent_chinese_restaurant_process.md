@@ -1,23 +1,28 @@
 # Distance Dependent Chinese Restaurant Process
 
-Because the [Chinese Restaurant Process](chinese_restaurant_process.md)
-defines a distribution on partitions of customers, the order in which
-the customers arrive doesn't matter. This property is called exchangeability.
-However, for certain applications, exchangeability might be undesirable. For instance, if your
+One property of the [Chinese Restaurant Process](chinese_restaurant_process.md), called _exchangeability_,
+is that the order in which the customers arrive doesn't matter.
+However, for certain applications, exchangeability might be inaccurate. For instance, if your
 data has temporal or spatial structure, then you would want clusters (tables) to reflect the
 relevant notions of distance. [Blei and Frazier 2011](https://www.jmlr.org/papers/volume12/blei11a/blei11a.pdf)
-introduce the Distance Dependent CRP (ddCRP) to allow the CRP to capture this desideratum.
+introduce the Distance Dependent CRP (ddCRP) to generate the CRP to capture this desideratum.
 
 The key conceptual difference is that instead of assigning customers to tables (clusters)
 proportional to the number of people at the table, we assign customers to other customers proportional
-to the distance between them. This also produces a distribution over partitions of the customers.
+to the distance between them. From this customer-customer assignment, we can reconstruct the clusters.
+This also produces a distribution over partitions of the customers. How do we do this mathematically?
+We start by rewrite the [common definition of the CRP](chinese_restaurant_process.md).
+Let $$i, j$$ index customers and $$z_i$$ denote which customer $$i$$ is assigned to. In the CRP,
+the probability that customer $$i$$ is assigned to customer $$j$$:
 
-To do this properly, we need a few extra ingredients. First, we need a measure of "distance" between all pairs of
-data points. I put "distance" in quotation marks because a distance function is defined as satisfying
-three axioms (identity of indiscernibles, symmetry, triangle inequality), but Blei and Frazier
-frustratingly use the word "distance" even though there's no requirement for any of the three axioms.
-We use $$d_{ij}$$ to denote the "distance" from the $$i$$th datum to the $$j$$th datum
-and $$D = \{ d_ij \}$$ to denote the set of all pairwise distances. We also permit a "decay" function
+$$p_{CRP}(z_i = j) \propto \begin{cases} 1 & j < i\\ \alpha & i = j \end{cases} $$
+
+We can now generalize this to the ddCRP by replacing the $$1$$ with the "distance" (not in the
+strict mathematical sense) between $$i$$ and $$j$$, denoted $$d_{ij}$$. This gives us the ddCRP:
+
+$$p_{ddCRP}(z_i = j) \propto \begin{cases} d{ij} & j < i\\ \alpha & i = j \end{cases} $$
+
+In the Blei and Frazier paper, they further introduce a "decay" function
 $$f: \mathbb{R} \rightarrow \mathbb{R}$$ to allow transformations of the distance. The probability of
 assigning the $$i$$th customer to the $$j$$th customer is then:
 
@@ -28,4 +33,4 @@ P(z_i = j|D, \alpha) = \begin{cases}
 \end{cases}
 $$
 
-We can define a sequential CRP by defining $$d_{ij} = \infty$$ for $$j > i$$.
+

@@ -25,7 +25,7 @@ An equivalent representation (that can then be generalized to yield the
 [distance dependence CRP](distance_dependent_chinese_restaurant_process.md))
 assigns customers to one another instead of assigning customers to tables.
 
-$$p(z_i = j) \propto \begin{cases} 1 & j < 1\\ \alpha & i = j \end{cases} $$
+$$p(z_i = j) \propto \begin{cases} 1 & j < i\\ \alpha & i = j \end{cases} $$
 
 Customers that have been assigned can then be grouped into tables. For instance,
 if $$z_2$$ sits with $$z_1$$ and $$z_3$$ sits with $$z_2$$, then all three
