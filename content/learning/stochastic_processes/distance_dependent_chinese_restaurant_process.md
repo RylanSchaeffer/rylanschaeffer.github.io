@@ -23,7 +23,7 @@ strict mathematical sense) between $$i$$ and $$j$$, denoted $$d_{ij}$$. This giv
 $$p_{ddCRP}(z_i = j) \propto \begin{cases} d{ij} & j < i\\ \alpha & i = j \end{cases} $$
 
 In the Blei and Frazier paper, they further introduce a "decay" function
-$$f: \mathbb{R} \rightarrow \mathbb{R}$$ to allow transformations of the distance. The probability of
+$$f: \mathbb{R} \rightarrow \mathbb{R}_{\geq 0}$$ to allow transformations of the distance. The probability of
 assigning the $$i$$th customer to the $$j$$th customer is then:
 
 $$
@@ -33,4 +33,26 @@ P(z_i = j|D, \alpha) = \begin{cases}
 \end{cases}
 $$
 
+## Properties
 
+- Every permutation of the data does not necessarily have the same probability under the ddCRP.
+  In contrast, the CRP guarantees every permutation of the data is equally probable (i.e. the
+  data is exchangeable). 
+
+- 
+
+## Inference via Gibbs Sampling 
+
+
+
+## Variational Inference of Sequential ddCRP
+
+One subtype of the ddCRP is the _sequential ddCRP_ (seqCRP), which specifically addresses distances that are
+exclusively functions of time. The seqCRP is useful in modeling sequential data with latent clusters
+where the number of clusters is not known a priori. [Bartunov and Vetrov 2014](http://proceedings.mlr.press/v32/bartunov14.pdf)
+proposed a variational inference algorithm for the seqCRP. 
+
+We consider a sequence of data $$\underline{x} = x_1, ..., x_T$$ that we assume was generated
+by a seqCRP mixture model. As above, let $$f$$ be the decay function, $$D = \{d_{ij}\}$$ be the
+set of pairwise distances, $$\alpha$$ be the concentration parameter and $$z_i$$ be the customer
+that the $$i$$th customer is assigned to.

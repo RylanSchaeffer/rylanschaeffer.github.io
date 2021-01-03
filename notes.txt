@@ -4,6 +4,8 @@ To run locally
 To update ruby vulnerabilities, run
     sudo gem install <library e.g. ffi>
 
+
+
 To update:
     bundle update github-pages
 

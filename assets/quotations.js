@@ -135,4 +135,6 @@ const quotations = [
     "“You know Mr. Burns, you're the richest guy I know.“<br/>" +
     "“Ah yes, but I'd trade it all for a little more“",
 
+
+    "“World-class skill requires world-class discipline.“",
 ];
