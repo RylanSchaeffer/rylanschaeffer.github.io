@@ -61,6 +61,8 @@ Thanks again and happy holidays!
 
 ### CS10 Elements of Data Science (Spring 2020)
 
+[Click for raw data](teaching/2020_stat10.pdf)
+
 ## UC Davis
 -----
 
