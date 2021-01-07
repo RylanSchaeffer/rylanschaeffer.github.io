@@ -11,7 +11,7 @@ The scale ranges from 5 (Excellent) to 1 (Unsatisfactory):
 | -------- | ----- | ---------- | -------- |
 | Evaluate Rylan overall | 12 | 4.83 | 4.61|
 | Gives effective lectures of presentations | 8 | 4.88 | 4.53|
-| Facilities discussion and encourages participations | 10 | 4.90 | 4.53|
+| Facilities discussion and encourages participation | 10 | 4.90 | 4.53|
 | Is accessible outside of class | 12 |  4.92 | 4.66|
 | Generates enthusiasm for the subject matter |12 | 4.83 | 4.51 |
 | Gives useful feedback on assignments| 8 | 4.38 | 4.54 |
@@ -39,27 +39,23 @@ Student testimonials:
 
 A private email from a student:
 
-<blockquote>
-Hi Rylan,
 
-
-I don't think we've ever officially met, but my name is [redacted] and I started
+> Hi Rylan,
+>
+> I don't think we've ever officially met, but my name is [redacted] and I started
 [my program] this fall. I also attended your AM207 office hours almost
 every week this semester, and I just wanted to say thank you so much for making them
-fun, educational, and accessible!
-
-
-I've been out of school for [several years] so 207 was rather daunting, and I honestly
+fun, educational, and accessible!  
+> 
+> I've been out of school for [several years] so 207 was rather daunting, and I honestly
 wouldn't have made it through the class without your weekly recap of the concepts in
 lecture, how they relate to the homework, and the rationale behind what we should
 expect to see in our own implementations. I'm sure teaching into the gather.town 
 void was difficult, so thought I'd drop a note here and let you know that you did
-a great job. :)
-
-
-Thanks again and happy holidays!
-</blockquote>
-
+a great job. :)  
+> 
+> Thanks again and happy holidays!  
+> [Redacted]
 
 
 ### CS109A Introduction to Data Science (Summer 2020)
