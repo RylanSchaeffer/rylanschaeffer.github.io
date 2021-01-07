@@ -1,70 +1,9 @@
 # Teaching
 
-## Harvard
------
+- [2020 Fall Applied Math 207 Bayeian Methods (Graduate)](teaching/2020_am207.md)
+- [2020 Summer Computer Science 109A Intro to Data Science](teaching/2020_cs109a.md)
+- [2020 Spring Computer Science 10 Elements of Data Science](teaching/2020_cs10.md)
 
-### AM207 Bayesian Methods for Data Analysis, Inference and Optimization (Fall 2020)
-
-The scale ranges from 5 (Excellent) to 1 (Unsatisfactory):
-
-| Question | Count | Rylan Mean | FAS Mean |
-| -------- | ----- | ---------- | -------- |
-| Evaluate Rylan overall | 12 | 4.83 | 4.61|
-| Gives effective lectures of presentations | 8 | 4.88 | 4.53|
-| Facilities discussion and encourages participation | 10 | 4.90 | 4.53|
-| Is accessible outside of class | 12 |  4.92 | 4.66|
-| Generates enthusiasm for the subject matter |12 | 4.83 | 4.51 |
-| Gives useful feedback on assignments| 8 | 4.38 | 4.54 |
-| Return assignments in a timely fashion| 8 |  4.75 | 4.53
-
-Student testimonials:
-
-- "Rylan's office hours got me through this course! I always left with an even clearer understanding of the concepts from class that week
-  and how they related to the homework assignments. His sense of humor and clear excitement in the course material made those
-  Saturday afternoon sessions a joy to experience very week. Thank you, Rylan!!"
-- "Stayed late at OH on numerous occasions to help students out; awesome overall! Also just seems like a very fun / nice person." 
-- "I can't say enough good things about Rylan's section. I would not have passed the class without him. He didn't just answer questions,
-  he basically taught an entire lesson so we would understand the homework assignment and be able to complete it. Rylan is a talented
-  teacher, and he went above and beyond with how much he cared about helping the students in this class."
-- "Rylan knows the material extremely well and does a great job helping with troubleshooting and overall background knowledge and
-  intuition for the pset. For feedback, I would apprecaite if Ryland can move through OH in a timely manner with an agenda as OH
-  usually goes over."
-- "Rylan is a wonderful TF. He's very accessible, and his enthusiasm for the material shows. His feedback on assignments also included
-  actionable improvements. He is good at explaining things using a socratic method."
-- "Hi Rylan! I'm so grateful for your joy for the course material and comprehensive explanations. I can see that you deeply enjoy the
-  course material which was always inspiring and uplifting for me."
-- "Rylan is full of enthusiasm for the material and also for teaching in general! He will make a great professor one day, I'm sure."
-
-[Click for raw data](teaching/2020_am207.pdf)
-
-A private email from a student:
-
-
-> Hi Rylan,
->
-> I don't think we've ever officially met, but my name is [redacted] and I started
-[my program] this fall. I also attended your AM207 office hours almost
-every week this semester, and I just wanted to say thank you so much for making them
-fun, educational, and accessible!  
-> 
-> I've been out of school for [several years] so 207 was rather daunting, and I honestly
-wouldn't have made it through the class without your weekly recap of the concepts in
-lecture, how they relate to the homework, and the rationale behind what we should
-expect to see in our own implementations. I'm sure teaching into the gather.town 
-void was difficult, so thought I'd drop a note here and let you know that you did
-a great job. :)  
-> 
-> Thanks again and happy holidays!  
-> [Redacted]
-
-
-### CS109A Introduction to Data Science (Summer 2020)
-
-[Click for raw data](teaching/2020_cs109a.pdf)
-
-### CS10 Elements of Data Science (Spring 2020)
-
-[Click for raw data](teaching/2020_stat10.pdf)
 
 
 ## UC Davis
