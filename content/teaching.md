@@ -33,19 +33,19 @@ Please comment on Rylan's teaching:
   course material which was always inspiring and uplifting for me.
 - Rylan is full of enthusiasm for the material and also for teaching in general! He will make a great professor one day, I'm sure.
 
-[Raw data](teaching/2020_am207.pdf)
+[Click for raw data](teaching/2020_am207.pdf)
 
 A private email from a student:
 
 <blockquote>
 Hi Rylan,
 
-I don't think we've ever officially met, but my name is <redacted> and I started
-<my program> this fall. I also attended your AM207 office hours almost
+I don't think we've ever officially met, but my name is [redacted] and I started
+[my program] this fall. I also attended your AM207 office hours almost
 every week this semester, and I just wanted to say thank you so much for making them
 fun, educational, and accessible!
 
-I've been out of school for <several years> so 207 was rather daunting, and I honestly
+I've been out of school for [several years] so 207 was rather daunting, and I honestly
 wouldn't have made it through the class without your weekly recap of the concepts in
 lecture, how they relate to the homework, and the rationale behind what we should
 expect to see in our own implementations. I'm sure teaching into the gather.town 
@@ -56,6 +56,8 @@ Thanks again and happy holidays!
 </blockquote>
 
 ### CS109A Introduction to Data Science (Summer 2020)
+
+[Click for raw data](teaching/2020_cs109a.pdf)
 
 ### CS10 Elements of Data Science (Spring 2020)
 
