@@ -13,30 +13,26 @@ $$f(x) = \sum_{-\infty}^{\infty} c_n e^{inx} $$
 
 ## Hilbert Space Interpretation
 
-For me, Fourier series clicked when they were explained as a orthogonal basis for a
-particular function space $L^2([-\pi, \pi])$ i.e. the space of square-integrable functions
-on $[-\pi, \pi]$. To see this, let's consider the inner product between $e^{inx}$ and $e^{ikx}$
-with $n, k \in \mathbf{Z}$:
+For me, Fourier series clicked when they were explained as an orthogonal basis for
+the space of square-integrable functions on $[-\pi, \pi]$, denotes $L^2([-\pi, \pi])$.
+To see this, let's consider the inner product between $e^{inx}$ and $e^{ikx}$ with
+$n, k \in \mathbf{Z}$:
 
-$$\langle e^{inx}, e^{ikx} \rangle = \int_{-\pi}^{\pi}e^{inx} \overbar{e^{ikx}} dx = \int_{-\pi}^{\pi}e^{inx} e^{-ikx} dx$$
+$$\langle e^{inx}, e^{ikx} \rangle = \int_{-\pi}^{\pi}e^{inx} \overline{e^{ikx}} dx = \int_{-\pi}^{\pi}e^{inx} e^{-ikx} dx$$
 
-If $n=k$, the inner product evaluates to
+If $n=k$, the inner product evaluates straightforwardly to
 
 $$\langle e^{inx}, e^{ikx} \rangle = \int_{-\pi}^{\pi} dx = \pi - (-\pi) = 2 \pi$$
 
-If $n \neq k$, the inner product evaluates to
-
-$$\langle e^{inx}, e^{ikx} \rangle = \int_{-\pi}^{\pi} e^{i(n-k)x} dx = 0$$
-
-where the last equality follows from the fact that $n-k$ is some integer and the integral
-with an integer prefactor in the exponential evaluates to 0 i.e. $\forall m \neq 0 \in \mathbb{Z}$:
+If $n \neq k$, the inner product requires a bit more work:
 
 \begin{align*}
-\int_{-\pi}^{\pi} e^{i m x} dx &= \int_{-\pi}^{\pi} \cos(m x) + i \sin(m x) dx\\
-&= \sin(m x)/m \lvert_{x=-\pi}^{\pi} - i \cos(m x)/m  \lvert_{x=-\pi}^{\pi}\\
-&= \sin(\pi m)/m - \sin(-\pi m)/m - i \cos(m \pi)/m + i \cos(- m \pi)/m \\
-&= \sin(\pi m)/m - \sin(\pi m) / m - 0 + 0\\
+\langle e^{inx}, e^{ikx} \rangle &= \int_{-\pi}^{\pi} e^{i(n-k)x} dx\\
+&= \frac{1}{i(n-k)} e^{i(n-k)x} \lvert_{x=-\pi}^{x=\pi}\\
+&= \frac{1}{i(n-k)} (e^{i(n-k)\pi} - e^{-i(n-k)\pi}\\
+&= \frac{2 \sin((n-k)\pi)}{m}
 &= 0
 \end{align*}
 
-where we used the property that $\cos(m \pi) = 0$
+where we used three properties: (1) $\cos(x) = \cos(-x)$, (2) $\sin(-x) = -\sin(x)$, 
+and (3) for any integer $n-k \neq 0$, $\sin((n-k)\pi) = 0$.
