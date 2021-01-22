@@ -29,15 +29,15 @@ If $$n \neq k$$, the inner product requires a bit more work:
 $$
 \begin{align*}
 \langle e^{inx}, e^{ikx} \rangle &= \int_{-\pi}^{\pi} e^{i(n-k)x} dx\\
-&= \frac{1}{i(n-k)} e^{i(n-k)x} \lvert_{x=-\pi}^{x=\pi}\\
-&= \frac{1}{i(n-k)} (e^{i(n-k)\pi} - e^{-i(n-k)\pi}\\
+&= \frac{1}{i(n-k)} e^{i(n-k)x} \Big\lvert_{x=-\pi}^{x=\pi}\\
+&= \frac{1}{i(n-k)} (e^{i(n-k)\pi} - e^{-i(n-k)\pi})\\
 &= \frac{2 \sin((n-k)\pi)}{m}\\
 &= 0
 \end{align*}
 $$
 
 where we used three properties: (1) $$\cos(x) = \cos(-x)$$, (2) $$\sin(-x) = -\sin(x)$$, 
-and (3) for any integer $$n-k \neq 0, \sin((n-k)\pi) = 0$$.
+and (3) for any integer $$m \neq 0, \sin(m \pi) = 0$$.
 
 
 ## Fourier Series for Key Functions
@@ -45,6 +45,21 @@ and (3) for any integer $$n-k \neq 0, \sin((n-k)\pi) = 0$$.
 ### Delta Function
 
 $$\delta(x)$$ is an even function i.e. $$\delta(x) = \delta(-x)$$, so we expect that all the
-sin terms (the asymmetric terms) will vanish. Define the Fourier series of the delta function
+sin terms (the asymmetric terms) will vanish. Let's practice using the complex exponential
+representation of the Fourier series. Define
 
-$$\delta(x) = \sum_{n=-\infty}^{\infty} c_n  $$
+$$\delta(x) = \sum_{n=-\infty}^{\infty} c_n e^{i n x}$$
+
+The complex coefficient for the $$k$$th term, $$c_k$$, is found by solving:
+
+$$
+\begin{align*}
+\langle \delta(x), e^{ikx} \rangle &= \langle \sum_{n=-\infty}^{\infty} c_n e^{i n x},  e^{i k x} \rangle\\
+\int_{-\pi}^{\pi} \delta(x) e^{-ikx} dx &=  \sum_{n=-\infty}^{\infty} c_n \langle e^{i n x}, e^{i k x} \rangle\\
+e^{-ik(0)} &= 2 \pi c_k\\
+\frac{1}{2\pi} &= c_k
+\end{align*}
+$$
+
+This tells us a remarkable fact: the series never decays! Every term has the same coefficient.
+This tells us that the delta function has all frequencies represented with equal strength.
