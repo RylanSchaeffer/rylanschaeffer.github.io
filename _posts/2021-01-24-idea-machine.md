@@ -44,9 +44,9 @@ with Germany, but sadly the damage was done.
 I went hiking today with Cameron Cairns, Ashley Hanson and Amelia Helland in Montara. 
 Beautiful views over the mist and the ocean.
 
-![](../assets/2021-01-24-idea-machine/montara_1.jpg)
-![](../assets/2021-01-24-idea-machine/montara_2.jpg)
-![](../assets/2021-01-24-idea-machine/montara_3.jpg)
+![]({{ site.url }}/assets/2021-01-24-idea-machine/montara_1.jpg)
+![]({{ site.url }}/assets/2021-01-24-idea-machine/montara_2.jpg)
+![]({{ site.url }}/assets/2021-01-24-idea-machine/montara_3.jpg)
 
 
 ### Tuesday
