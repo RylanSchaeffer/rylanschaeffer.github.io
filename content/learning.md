@@ -17,6 +17,7 @@ Disclaimer: these are intended for my personal reference. Many are woefully inco
 - [Probability](learning/probability.html)
 - [Probabilistic Graphical Models](learning/probabilistic_graphical_models.html)
 - [Real Analysis](learning/analysis_real.html)
+- [Signals](learning/signals.html)
 - [Statistics](learning/statistics.html)
 - [Stochastic Processes](learning/stochastic_processes.html)
 - [Reinforcement Learning](learning/reinforcement_learning.html)
