@@ -20,19 +20,31 @@ $n, k \in \mathbf{Z}$:
 
 $$\langle e^{inx}, e^{ikx} \rangle = \int_{-\pi}^{\pi}e^{inx} \overline{e^{ikx}} dx = \int_{-\pi}^{\pi}e^{inx} e^{-ikx} dx$$
 
-If $n=k$, the inner product evaluates straightforwardly to
+If $$n=k$$, the inner product evaluates straightforwardly to
 
 $$\langle e^{inx}, e^{ikx} \rangle = \int_{-\pi}^{\pi} dx = \pi - (-\pi) = 2 \pi$$
 
-If $n \neq k$, the inner product requires a bit more work:
+If $$n \neq k$$, the inner product requires a bit more work:
 
+$$
 \begin{align*}
 \langle e^{inx}, e^{ikx} \rangle &= \int_{-\pi}^{\pi} e^{i(n-k)x} dx\\
 &= \frac{1}{i(n-k)} e^{i(n-k)x} \lvert_{x=-\pi}^{x=\pi}\\
 &= \frac{1}{i(n-k)} (e^{i(n-k)\pi} - e^{-i(n-k)\pi}\\
-&= \frac{2 \sin((n-k)\pi)}{m}
+&= \frac{2 \sin((n-k)\pi)}{m}\\
 &= 0
 \end{align*}
+$$
 
-where we used three properties: (1) $\cos(x) = \cos(-x)$, (2) $\sin(-x) = -\sin(x)$, 
-and (3) for any integer $n-k \neq 0$, $\sin((n-k)\pi) = 0$.
+where we used three properties: (1) $$\cos(x) = \cos(-x)$$, (2) $$\sin(-x) = -\sin(x)$$, 
+and (3) for any integer $$n-k \neq 0, \sin((n-k)\pi) = 0$$.
+
+
+## Fourier Series for Key Functions
+
+### Delta Function
+
+$$\delta(x)$$ is an even function i.e. $$\delta(x) = \delta(-x)$$, so we expect that all the
+sin terms (the asymmetric terms) will vanish. Define the Fourier series of the delta function
+
+$$\delta(x) = \sum_{n=-\infty}^{\infty} c_n  $$
