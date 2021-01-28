@@ -40,15 +40,30 @@ partitions, then $$G \sim DP(\alpha, G_0)$$.
 
 ## Properties
 
-- $$\mathbb{E}[G(A_k)] = G_0(A_k)$$. Proof:
+- Each sample path (draw) from a Dirichlet Process is a discrete distribution
+
+- $$\mathbb{E}[G(A_k)] = \mathbb{E}[G_0(A_k)]$$. Proof:
 
 $$
 \begin{align*}
 \mathbb{E}[G(A_k)] &= \frac{\alpha G_0(A_k)}{\sum_i \alpha G_0(A_i)}\\
 &= \frac{G_0(A_k)}{\sum_i G_0(A_i)}\\
-&= \mathbb{E}[G_0(A_k)] 
+&= \mathbb{E}[G_0(A_k)]
 \end{align*}
 $$
+
+- $$\mathbb{V}[G(A_k)] = G_0(A_k)(1 - G_0(A_k))/(1 + \alpha)
+
+- Posterior inference: Let $$G \sim DP(\alpha, G_0)$$. Since $$G$$ is a (random) distribution,
+we can sample from it. Let $$\theta_1, ..., \theta_N$ \sim_{i.i.d} G$. Let $$N$ be the 
+  total number of samples. Then the posterior of $$G$$ is given by
+  
+$$G | \theta_1, ..., \theta_N \sim DP(\alpha + N, \frac{\alpha}{\alpha + N} G_0 +
+\frac{N}{\alpha + N} \frac{1}{N}\sum_{n=1}^N \delta_{\theta_n})$$
+
+where $$\delta_{\theta_n}$$ is a Dirac measure. Intuitively, the concentration parameter
+sharpens by the number of observations and the base distribution becomes a weighted average
+of the prior distribution $$G_0$$ and the empirical distribution $$\frac{1}{N}\sum_{n=1}^N \delta_{\theta_n}$$.
 
 ## Relation to Other Processes
 
