@@ -52,17 +52,18 @@ $$
 \end{align*}
 $$
 
-- $$\mathbb{V}[G(A_k)] = G_0(A_k)(1 - G_0(A_k))/(1 + \alpha)
+- $$\mathbb{V}[G(A_k)] = G_0(A_k)(1 - G_0(A_k))/(1 + \alpha)$$
 
 - Posterior inference: Let $$G \sim DP(\alpha, G_0)$$. Since $$G$$ is a (random) distribution,
-we can sample from it. Let $$\theta_1, ..., \theta_N$ \sim_{i.i.d} G$. Let $$N$ be the 
+we can sample from it. Let $$\theta_1, ..., \theta_N \sim_{i.i.d} G$$, where $$N$ is the 
   total number of samples. Then the posterior of $$G$$ is given by
   
-$$G | \theta_1, ..., \theta_N \sim DP(\alpha + N, \frac{\alpha}{\alpha + N} G_0 +
-\frac{N}{\alpha + N} \frac{1}{N}\sum_{n=1}^N \delta_{\theta_n})$$
+$$G | \theta_1, ..., \theta_N \sim DP \Big(\alpha + N, \frac{\alpha}{\alpha + N} G_0 +
+\frac{N}{\alpha + N} \frac{1}{N}\sum_{n=1}^N \delta_{\theta_n} \Big)$$
 
-where $$\delta_{\theta_n}$$ is a Dirac measure. Intuitively, the concentration parameter
-sharpens by the number of observations and the base distribution becomes a weighted average
+where $$\delta_{\theta_n}$$ is a Dirac measure located at $$\theta_n$$. Intuitively, the posterior's
+concentration parameter is the sum of the pseudo-observations $$\alpha$$ and the real observations
+$$N$, and the base distribution becomes a weighted average
 of the prior distribution $$G_0$$ and the empirical distribution $$\frac{1}{N}\sum_{n=1}^N \delta_{\theta_n}$$.
 
 ## Relation to Other Processes
