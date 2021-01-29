@@ -63,22 +63,29 @@ This is an equivalent definition of $$CRP(\alpha)$$.
 
 ## Properties
 
-1. The probability of seating arrangement is invariant under permutations. To see why, note
-   that for $$N$$ customers, the normalization constant is always $$\Pi_n^N \frac{1}{n - 1 + \alpha}$$
+- The probability of a random partition of $$N$$ customers $$\Pi_N$$ equalling a particular parition $$\pi_N$$
+  with $$K$$ blocks and $$N_k$$ elements in the $$k$$th block is given by
 
-2. A seating arrangement of $$N$$ customers defines a partition over $$[N] := \{1, ..., N\}$$. The number
- of partitions for $$N$$ customers is given by the [Bell numbers](https://en.wikipedia.org/wiki/Bell_number)
+$$P(\Pi_N = \pi_N) = \frac{\alpha^{K-1} \prod_{k=1}^K (N_k - 1)!}{(\alpha + 1)_{N-1 \uparrow 1}} $$
 
-3. The expected number of tables $$K$$ grows logarithmically with the number of customers $$N$$. Specifically,
+where the denominator is the so-called rising factorial, defined as $$x_{M \uparrow a} := \prod_{m=1}^{M-1}(x + ma)$$.
+
+- The expected number of tables $$K$$ grows logarithmically with the number of customers $$N$$. Specifically,
 
 $$\mathbb{E}[K | N] = \sum_{n=1}^N \frac{\alpha}{\alpha + n - 1} = \alpha (\digamma(\alpha + N) - \digamma(\alpha))
 \approx \alpha \log(1 + \frac{N}{\alpha})$$
 
-where $$\digamma(\cdot)$$ is the Digamma function. Similarly, the variance around the expected number of tables 
+where $$\digamma(\cdot)$$ is the Digamma function. Similarly, the variance around the expected number of tables
 grows logarithmically:
 
 $$\mathbb{V}[K | N] \approx \alpha \log (1 + \frac{N}{\alpha})$$
 
+- The probability of seating arrangement is invariant under permutations. To see why, note
+   that for $$N$$ customers, the normalization constant is always $$\Pi_n^N \frac{1}{n - 1 + \alpha}$$
+
+- A seating arrangement of $$N$$ customers defines a partition over $$[N] := \{1, ..., N\}$$. The number
+ of partitions for $$N$$ customers is given by the [Bell numbers](https://en.wikipedia.org/wiki/Bell_number)
+  
 ## Relation to Other Stochastic Processes
 
 ### Blackwell-MacQueen Urn Scheme
