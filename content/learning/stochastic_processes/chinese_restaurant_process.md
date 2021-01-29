@@ -49,7 +49,7 @@ G &\sim DP(\alpha, G_0)\\
 $$
 
 As explained in the [Blackwell-MacQueen Urn Scheme](blackwell_macqueen_urn_scheme.md), the
-posterior predictive of $$\theta_{N+1}$$ can be written as:
+posterior predictive of $$\theta_{M+1}$$ can be written as:
 
 $$\theta_{M+1} | \theta_1, ..., \theta_M \sim \frac{1}{\alpha + M}(\alpha G_0 + \sum_{m=1}^M \delta_{\theta_m})$$
 

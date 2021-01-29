@@ -2,35 +2,47 @@
 
 __Parent__: [Stochastic Processes](../stochastic_processes.md)
 
-Given a base distribution $$G$$ and two shape parameters $$a, b > 0$$, a 
-sample path (a draw) from $$SBP(G, a, b)$$ is a distribution defined as an infinite mixture
-of Dirac measures with mass $$\rho_k$$ located at $$x_k$$:
+## Definition
 
-$$G \sim SBP(G, a, b) \rightarrow G(x) = sum_{k=1}^{\infty} \rho_k \delta_{x_k}$$
+The Stick-Breaking Process (SBP) is a stochastic process where each sample path is an infinite sequence of
+random variables $$\pi_1, \pi_2...$$ such that each variable $$pi_i \in (0, 1)$$ and sum of the sequence
+$$\sum_{k=1}^{\infty} \pi_1$$ equals 1 with probability 1. The way the variables is generated is by sampling
+an i.i.d. sequence of $$v_k \sim Beta(\alpha, \beta)$$ and then defining
 
-In plain English, the righthand distribution should be read as "the probability of observing x is equal
-to $$\rho_k$$ if $$x=x_k$$ and zero otherwise." The infinite sequence of locations
-$$(x_1, x_2, ...)$$ is constructed by sampling its elements from
-the base distribution i.e. $$x_k \sim G$$, and the probability masses $$\rho_k$$ are
-constructed by drawing an infinite sequence $$(v_1, v_2, ...)$$ from a $$Beta(a, b)$$ distribution
-and then converting the Beta samples into a sequence of probability masses $$(\rho_1, \rho_2, ...)$$
-that sums to 1 almost surely:
+$$ \pi_K = v_K \prod_{k = 1}^K (1 - v_k)$$
 
-$$
-\rho_k = \begin{cases}
-v_1 & k = 1\\
-v_k \prod_{j < k} (1 - v_j) & k > 1
-\end{cases}
-$$
+This is the source of the name "stick breaking": a stick with mass 1 is sequentially broken into smaller and
+smaller pieces.
 
 
-If $$v_k \sim Beta(1, \alpha)$$, then the resulting SBP is exactly equivalent
-to a [Dirichlet process](dirichlet_process.md) and the sequence of probability
-masses $$(\rho_1, \rho_2, ...)$$ follows a Griffiths, Engel, McCloskey (GEM) distribution:
+## Relation to Other Stochastic Processes
 
-$$(\rho_1, \rho_2, ...) \sim GEM(\alpha) $$
+### Griffiths-Engen-McCloskey (GEM) Distribution
 
-## Relation to Chinese Restaurant Process
+If the stick-breaking weights $$v_k ~ Beta(\alpha, \beta)$$ with $$\alpha = 1$$, then the 
+the infinite random vector $$\pi = (\pi_1, \pi_2, ...)$$ is said to be distributed according
+to the so_called Griffiths-Engen-McCloskey distribution $$GEM(\beta)$$.
+
+### Dirichlet Process
+
+The SBP is intimately related to the [Dirichlet process](dirichlet_process.md). Let $$G \sim DP(\alpha, G_0)$$
+be a random distribution. The distribution is defined as:
+
+$$G = \sum_{k=1}^K \pi_k \delta_{\theta_{k}}$$
+
+where $$\pi_1, \pi_2, ...$$ is an infinite sequence of probability masses summing to 1 and
+$$\theta_1, \theta_2, ...$$ is an infinite sequence of elements sampled from the base distribution
+$$G_0$$. From this perspective, one can see that an easy way to sample a random distribution from a DP
+is through the three-step __stick-breaking construction__:
+
+1. Sample $$\pi_1, \pi_2, ... \sim_{i.i.d.} SBP(1, \alpha)$$
+2. Sample $$\theta_1, \theta_2, ...$$ from the base distribution $$G_0$$
+3. Create an infinite mixture distribution $$G := \sum_{k=1}^{\infty} \pi_k \delta_{\theta_{k}}
+
+This constructed $$G$$ is distributed according to $$DP(\alpha, G_0)$$, hence the name stick-breaking
+construction.
+
+### Chinese Restaurant Process
 
 The SBP is closely related to the [CRP](chinese_restaurant_process.md). The difference is that 
 the CRP integrates out the base measure $$G$$, meaning that the CRP cares only for how many
