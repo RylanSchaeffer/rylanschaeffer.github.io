@@ -1,4 +1,5 @@
 # Dirichlet Process
+__Parent__: [Stochastic Processes](../stochastic_processes.md)
 
 There are many ways to describe a Dirichlet Process (DP). Some of these include:
 
