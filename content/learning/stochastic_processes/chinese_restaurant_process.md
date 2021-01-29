@@ -4,9 +4,11 @@ __Parent__: [Stochastic Processes](../stochastic_processes.md)
 
 The Chinese Restaurant Process (CRP) is a stochastic process for expressing distributions
 over partitions of $$[N] := \{1, ..., N\}$$. Consequently, the CRP is frequently used in problems involving
-clustering.
+clustering. The CRP is also known as Ewens sampling formula.
 
 ## Definition
+
+## Definition as Distribution Over Partitions
 
 The name arises from imagining a queue of possibly infinitely many customers at a Chinese restaurant,
 with infinitely many tables, each table with an infinite capacity. Fix a concentration parameter $$\alpha > 0$$.
@@ -35,17 +37,47 @@ Customers that have been assigned can then be grouped into tables. For instance,
 if $$z_2$$ sits with $$z_1$$ and $$z_3$$ sits with $$z_2$$, then all three
 are at the same table.
 
+## Definition as Marginalizing Out DP Base Measure
+
+Suppose we have the following generative model:
+
+$$
+\begin{align*}
+G &\sim DP(\alpha, G_0)\\
+\theta_1, ..., \theta_M &\sim_{i.i.d.} G
+\end{align*}
+$$
+
+As explained in the [Blackwell-MacQueen Urn Scheme](blackwell_macqueen_urn_scheme.md), the
+posterior predictive of $$\theta_{N+1}$$ can be written as:
+
+$$\theta_{M+1} | \theta_1, ..., \theta_M \sim \frac{1}{\alpha + M}(\alpha G_0 + \sum_{m=1}^M \delta_{\theta_m})$$
+
+However, some of those $$\theta_1, ..., \theta_M$$ may take the same value, meaning we can rewrite the
+sum of the Dirac measures as the sum of the unique values $$\theta_1^*, ..., \theta_K^*$$ along
+with the counts of each value appearing $$N_k$$: 
+
+$$\theta_{M+1} | \theta_1, ..., \theta_M \sim \frac{1}{\alpha + M}(\alpha G_0 + \sum_{k=1}^K N_k \delta_{\theta_k^*})$$
+
+This is an equivalent definition of $$CRP(\alpha)$$.
+
 ## Properties
 
 1. The probability of seating arrangement is invariant under permutations. To see why, note
-   that for $$N$$ customers, the normalization constant is always $$\Pi_n^N \frac{1}{n - 1 + \alpha }$$
+   that for $$N$$ customers, the normalization constant is always $$\Pi_n^N \frac{1}{n - 1 + \alpha}$$
 
-2. A seating arrangement is a [partition](https://en.wikipedia.org/wiki/Partition_(number_theory))
-   of the customers. We could consider a distribution on the space
-   of all possible partitions for $$n$$ customers, but the partition function $$\rho(n)$$ has no known
-   closed form. It grows approximately $$e^{O(\sqrt{n})}$$.
+2. A seating arrangement of $$N$$ customers defines a partition over $$[N] := \{1, ..., N\}$$. The number
+ of partitions for $$N$$ customers is given by the [Bell numbers](https://en.wikipedia.org/wiki/Bell_number)
 
-3. The expected number of tables grows logarithmically. To see why, in order for
+3. The expected number of tables $$K$$ grows logarithmically with the number of customers $$N$$. Specifically,
+
+$$\mathbb{E}[K | N] = \sum_{n=1}^N \frac{\alpha}{\alpha + n - 1} = \alpha (\digamma(\alpha + N) - \digamma(\alpha))
+\approx \alpha \log(1 + \frac{N}{\alpha})$$
+
+where $$\digamma(\cdot)$$ is the Digamma function. Similarly, the variance around the expected number of tables 
+grows logarithmically:
+
+$$\mathbb{V}[K | N] \approx \alpha \log (1 + \frac{N}{\alpha})$$
 
 ## Relation to Other Stochastic Processes
 
