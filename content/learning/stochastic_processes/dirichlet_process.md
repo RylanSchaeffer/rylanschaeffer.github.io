@@ -9,7 +9,7 @@ There are many ways to describe a Dirichlet Process (DP). Some of these include:
   
 - A distribution over discrete probability distributions
 
-- A distribution whose marginal distributions are distributed Dirichlet
+- A distribution whose marginals follow Dirichlet distributions
 
 ## Definition
 
@@ -74,7 +74,7 @@ concentration parameter is the sum of the pseudo-observations $$\alpha$$ and the
 $$N$$, and the base distribution becomes a weighted average
 of the prior distribution $$G_0$$ and the empirical distribution $$\frac{1}{N} \sum_{n=1}^N \delta_{\theta_n}$$.
 
-## Relation to Other Processes
+## Relation to Other Stochastic Processes
 
 ### Blackwell-MacQueen Urn Scheme
 

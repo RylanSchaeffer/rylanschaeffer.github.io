@@ -3,11 +3,13 @@
 __Parent__: [Stochastic Processes](../stochastic_processes.md)
 
 The Chinese Restaurant Process (CRP) is a stochastic process for expressing distributions
-over partitions of your data. Consequently, the CRP is frequently used in problems involving
+over partitions of $$[N] := \{1, ..., N\}$$. Consequently, the CRP is frequently used in problems involving
 clustering.
 
-The name arises from imagining a queue of $$N$$ customers at a restaurant with infinitely many tables, each with
-an infinite capacity. Fix a concentration parameter $$\alpha > 0$$.
+## Definition
+
+The name arises from imagining a queue of possibly infinitely many customers at a Chinese restaurant,
+with infinitely many tables, each table with an infinite capacity. Fix a concentration parameter $$\alpha > 0$$.
 The first customer $$z_1$$ sits at a table, which we label table 1. For
 each subsequent customer $$z_t$$, let $$K_{t-1}$$ denote the number of tables occupied by the
 preceding $$t-1$$ customers and let $$n_{t-1}^{(k)}$$ denote the number of people at the $$k$$th table
@@ -33,13 +35,6 @@ Customers that have been assigned can then be grouped into tables. For instance,
 if $$z_2$$ sits with $$z_1$$ and $$z_3$$ sits with $$z_2$$, then all three
 are at the same table.
 
-## Relation to the Dirichlet Process and Stick Breaking Process
-
-The CRP is closely related to the [Dirichlet process](dirichlet_process.md) and the 
-[Stick Breaking Process](stick_breaking_process.md). The difference is that
-the CRP integrates out the base measure $$G$$, meaning that the CRP cares only for how many
-elements have the same value, regardless of what that value (i.e. the location) is.
-
 ## Properties
 
 1. The probability of seating arrangement is invariant under permutations. To see why, note
@@ -52,3 +47,22 @@ elements have the same value, regardless of what that value (i.e. the location) 
 
 3. The expected number of tables grows logarithmically. To see why, in order for
 
+## Relation to Other Stochastic Processes
+
+### Blackwell-MacQueen Urn Scheme
+
+As far as I can tell, the [Blackwell-MacQueen Urn scheme](blackwell_macqueen_urn_scheme.md) is identical
+to the CRP. One small difference in usage is that CRP discussions tend to focus more on partitions,
+whereas BM Urn Schemes tend to focus on the specific realization of each random variable in the sequence.
+
+### Dirichlet Process
+
+The CRP is closely related to the [Dirichlet process](dirichlet_process.md#chinese-restaurant-process). The connection is that
+the CRP integrates out the base measure $$G_0$$, meaning that the CRP cares only for how many
+random elements have the same value, regardless of what that value is. For a more detailed explanation
+of marginalizing out the base measure $$G_0$$, see
+[the definition of the Blackwell-MacQueen Urn Scheme](blackwell_macqueen_urn_scheme.md#definition).
+
+### Stick-Breaking Process
+
+[Stick Breaking Process](stick_breaking_process.md)
