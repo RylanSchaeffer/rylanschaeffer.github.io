@@ -42,7 +42,7 @@ partitions, then $$G \sim DP(\alpha, G_0)$$.
 
 - Each sample path (draw) from a Dirichlet Process is a discrete distribution
 
-- $$\mathbb{E}[G(A_k)] = \mathbb{E}[G_0(A_k)]$$. Proof:
+- The mean $$\mathbb{E}[G(A_k)] = \mathbb{E}[G_0(A_k)]$$. Proof:
 
 $$
 \begin{align*}
@@ -52,11 +52,11 @@ $$
 \end{align*}
 $$
 
-- $$\mathbb{V}[G(A_k)] = G_0(A_k)(1 - G_0(A_k))/(1 + \alpha)$$
+- The variance $$\mathbb{V}[G(A_k)] = G_0(A_k)(1 - G_0(A_k))/(1 + \alpha)$$. Proof:
 
 - Posterior inference: Let $$G \sim DP(\alpha, G_0)$$. Since $$G$$ is a (random) distribution,
 we can sample from it. Let $$\theta_1, ..., \theta_N \sim_{i.i.d} G$$, where $$N$ is the 
-  total number of samples. Then the posterior of $$G$$ is given by
+  total number of samples. Then the posterior of $$G$$ is given by:
   
 $$G | \theta_1, ..., \theta_N \sim DP \Big(\alpha + N, \frac{\alpha}{\alpha + N} G_0 +
 \frac{N}{\alpha + N} \frac{1}{N}\sum_{n=1}^N \delta_{\theta_n} \Big)$$
@@ -69,6 +69,40 @@ of the prior distribution $$G_0$$ and the empirical distribution $$\frac{1}{N}\s
 ## Relation to Other Processes
 
 ### Blackwell-MacQueen Urn Scheme
+
+The [Blackwell-MacQueen Urn scheme](blackwell_macqueen_urn_scheme.md) describes the
+posterior predictive distribution of samples from a distribution sampled from a DP.
+Specifically, suppose we have the following generative model:
+
+$$
+\begin{align*}
+G &\sim DP(\alpha, G_0)\\
+\theta_1, ..., \theta_N &\sim_{i.i.d.} G
+\end{align*}
+$$
+
+and we want to know the posterior predictive distribution
+
+$$P(\theta_{N+1} | \theta_1, ..., \theta_N)$$
+
+This posterior predictive distribution is described by the Blackwell-MacQueen urn scheme, which
+marginalizes out the random distribution $$G$$:
+
+$$
+\begin{align*}
+p(\theta_{N+1} \in A | \theta_1, ..., \theta_N) &= \int p(\theta_{N+1} \in A | G) p(G | \theta_1, ..., \theta_N) dG\\
+&= \int G(A) p(G | \theta_1, ..., \theta_N) dG\\
+&= \mathbb{E}[G(A) | \theta_1, ..., \theta_N]\\
+&= \frac{\alpha}{\alpha + N} G_0(A) + \frac{N}{\alpha + N} \frac{1}{N} \sum_{n=1}^N \delta_{\theta_n}(A)\\
+&= \frac{1}{\alpha + n} \Big( \alpha G_0(A) + \sum_{n=1}^N \delta_{\theta_n}(A) \Big)
+\end{align*}
+$$
+
+where the expected value of $$G(A)|\theta_1, ..., \theta_N$$ is given by the expected value of the
+Dirichlet distribution.
+
+The Blackwell-MacQueen Urn Scheme is an infinite-color generalization of the Polya urn scheme, 
+which in contrast has only two
 
 ### Chinese Restaurant Process
 
