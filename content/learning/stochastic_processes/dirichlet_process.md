@@ -12,7 +12,6 @@ There are many ways to describe a Dirichlet Process (DP). Some of these include:
 
 ## Definition
 
-
 Briefly, we have to cover measure theory. A __measure__ is a function that assigns
 a non-negative number to subset of a set. One additional requirement is that in
 order to be a measure, the function must be __countably additive__,
@@ -37,6 +36,9 @@ postive parameter $$\alpha$$, then the scaled measures could be used for a Diric
 distribution. Now, if a distribution $$G$$ is described by a Dirichlet distribute whose
 concentration parameters are these scaled measures for all possible finite measurable
 partitions, then $$G \sim DP(\alpha, G_0)$$.
+
+One can alternatively define the DP using the
+[Blackwell-MacQueen urn scheme](blackwell_macqueen_urn_scheme.md#defining-dirichlet-process-using-bm-urn-scheme)
 
 ## Properties
 

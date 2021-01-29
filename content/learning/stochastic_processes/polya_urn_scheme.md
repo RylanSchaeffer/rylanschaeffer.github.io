@@ -2,7 +2,7 @@
 
 The Polya urn scheme is intuitively described as an urn filled with balls
 that are each one of two colors (e.g. black or white). A ball is sampled,
-its color recorded, and the ball plus another ball of the sample color is
+its color recorded, and the ball plus another ball of the sampled ball's color is
 placed back in the urn. A sample from this stochastic process is the
 sequence of colors of balls.
 
