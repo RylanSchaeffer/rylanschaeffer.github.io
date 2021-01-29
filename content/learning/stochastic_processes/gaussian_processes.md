@@ -1,5 +1,7 @@
 # Gaussian Processes
 
+__Parent__: [Stochastic Processes](../stochastic_processes.md)
+
 A Gaussian process (GP) is a stochastic process such that any finite subset of the set 
 is distributed as a multivariate Gaussian. Specifically, the set of random variables
 $$\{f(x) : x \in X \}$$ is said to be drawn from a GP with mean function $$\mu(\cdot)$$

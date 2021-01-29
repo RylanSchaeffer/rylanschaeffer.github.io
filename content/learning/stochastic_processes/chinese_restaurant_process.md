@@ -1,5 +1,7 @@
 # Chinese Restaurant Process
 
+__Parent__: [Stochastic Processes](../stochastic_processes.md)
+
 The Chinese Restaurant Process (CRP) is a stochastic process for expressing distributions
 over partitions of your data. Consequently, the CRP is frequently used in problems involving
 clustering.

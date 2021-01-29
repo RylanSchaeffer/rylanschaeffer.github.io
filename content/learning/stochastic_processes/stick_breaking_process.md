@@ -1,5 +1,7 @@
 # Stick Breaking Process
 
+__Parent__: [Stochastic Processes](../stochastic_processes.md)
+
 Given a base distribution $$G$$ and two shape parameters $$a, b > 0$$, a 
 sample path (a draw) from $$SBP(G, a, b)$$ is a distribution defined as an infinite mixture
 of Dirac measures with mass $$\rho_k$$ located at $$x_k$$:

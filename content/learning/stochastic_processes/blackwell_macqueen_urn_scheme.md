@@ -1,5 +1,8 @@
 # Blackwell MacQueen Urn Scheme
 
+__Parent__: [Stochastic Processes](../stochastic_processes.md)
+
+
 The Blackwell-MacQueen (BM) Urn scheme describes the posterior predictive distribution of samples
 from a random distribution sampled from a [Dirichlet Process](dirichlet_process.md). Alternatively, 
 the BM Urn scheme is an infinite-color generalization of the [Polya Urn Scheme](polya_urn_scheme.md).

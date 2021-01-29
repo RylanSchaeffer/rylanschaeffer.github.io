@@ -9,9 +9,11 @@ There are many ways to describe a Dirichlet Process (DP). Some of these include:
   
 - A distribution over discrete probability distributions
 
-- A distribution whose marginal distributions are distributed as Dirichlets
+- A distribution whose marginal distributions are distributed Dirichlet
 
 ## Definition
+
+### Definition via Dirichlet Marginals
 
 Briefly, we have to cover measure theory. A __measure__ is a function that assigns
 a non-negative number to subset of a set. One additional requirement is that in
@@ -38,7 +40,10 @@ distribution. Now, if a distribution $$G$$ is described by a Dirichlet distribut
 concentration parameters are these scaled measures for all possible finite measurable
 partitions, then $$G \sim DP(\alpha, G_0)$$.
 
-One can alternatively define the DP using the
+
+### Definition via De Finetti's Theorem
+
+The DP can also be defined using the
 [Blackwell-MacQueen urn scheme](blackwell_macqueen_urn_scheme.md#defining-dirichlet-process-using-bm-urn-scheme)
 
 ## Properties
@@ -58,7 +63,7 @@ $$
 - The variance $$\mathbb{V}[G(A_k)] = G_0(A_k)(1 - G_0(A_k))/(1 + \alpha)$$. Proof:
 
 - Posterior inference: Let $$G \sim DP(\alpha, G_0)$$. Since $$G$$ is a (random) distribution,
-we can sample from it. Let $$\theta_1, ..., \theta_N \sim_{i.i.d} G$$, where $$N$ is the 
+we can sample from it. Let $$\theta_1, ..., \theta_N \sim_{i.i.d} G$$, where $$N$$ is the 
   total number of samples. Then the posterior of $$G$$ is given by:
   
 $$G | \theta_1, ..., \theta_N \sim DP \Big(\alpha + N, \frac{\alpha}{\alpha + N} G_0 +
@@ -66,8 +71,8 @@ $$G | \theta_1, ..., \theta_N \sim DP \Big(\alpha + N, \frac{\alpha}{\alpha + N}
 
 where $$\delta_{\theta_n}$$ is a Dirac measure located at $$\theta_n$$. Intuitively, the posterior's
 concentration parameter is the sum of the pseudo-observations $$\alpha$$ and the real observations
-$$N$, and the base distribution becomes a weighted average
-of the prior distribution $$G_0$$ and the empirical distribution $$\frac{1}{N}\sum_{n=1}^N \delta_{\theta_n}$$.
+$$N$$, and the base distribution becomes a weighted average
+of the prior distribution $$G_0$$ and the empirical distribution $$\frac{1}{N} \sum_{n=1}^N \delta_{\theta_n}$$.
 
 ## Relation to Other Processes
 
