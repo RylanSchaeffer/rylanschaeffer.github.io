@@ -1,6 +1,7 @@
 ---
 layout: post
-title:  The Idea Machine 
+title:  The Idea Machine
+date: 2020-05-30
 tags: idea-machine 2020 MIT Harvard
 ---
 

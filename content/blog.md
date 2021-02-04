@@ -1,6 +1,6 @@
 # Blog
 
-{% for post in site.blog_posts %}
+{% for post in site.blog_posts reversed %}
   <div class="post">
     <span class="post-title">
       <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
