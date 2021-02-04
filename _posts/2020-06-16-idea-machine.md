@@ -1,10 +1,8 @@
 ---
 layout: post
-title:  The Idea Machine 
+title:  The Idea Machine: Learning at Harvard and MIT in the Age of Artificial Intelligence
 tags: idea-machine 2020 MIT Harvard
 ---
-
-## Learning at Harvard and MIT in the Age of Artificial Intelligence
 
 
 ### Black Lives Matter
