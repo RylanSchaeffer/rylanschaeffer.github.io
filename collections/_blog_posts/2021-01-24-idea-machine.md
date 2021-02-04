@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  The Idea Machine
+date: 2021-01-24
 tags: idea-machine 2021 MIT Harvard
 ---
 
