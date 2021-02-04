@@ -8,6 +8,7 @@
     <span class="post-date">
       {{ post.date | date: '%b %-d, %Y' }}
     </span>
-    {{ post.excerpt }}
+    {{ post.excerpt }}...
+
   </div>
 {% endfor %}
