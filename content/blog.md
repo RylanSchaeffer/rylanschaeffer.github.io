@@ -1,14 +1,14 @@
 # Blog
 
-{% for post in site.blog_posts %}
+{% for post in site.blog_posts reversed %}
   <div class="post">
     <span class="post-title">
-      <a href="{{ post.url }}">{{ post.title }}</a>
+      <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
     </span><br>
     <span class="post-date">
       {{ post.date | date: '%b %-d, %Y' }}
     </span>
-    {{ post.excerpt }}...
+    {{ post.excerpt }}
 
   </div>
 {% endfor %}
