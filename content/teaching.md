@@ -1,6 +1,7 @@
 # Teaching
 
-- [Harvard 2020 Fall Applied Math 207 Bayeian Methods (Graduate)](teaching/2020_am207.md)
+- Harvard 2021 Spring Computer Science Machine Learning
+- [Harvard 2020 Fall Applied Math 207 Bayesian Methods (Graduate)](teaching/2020_am207.md)
 - [Harvard 2020 Summer Computer Science 109A Intro to Data Science](teaching/2020_cs109a.md)
 - [Harvard 2020 Spring Computer Science 10 Elements of Data Science](teaching/2020_cs10.md)
 - [UC Davis 2016 Spring Computer Science 98 Bitcoin and Cryptocurrency Technologies](teaching/2016_ecs98.md)
