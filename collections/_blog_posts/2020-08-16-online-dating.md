@@ -1,6 +1,7 @@
 ---
 layout: post
-title:  Why Online Dating is (Almost Certainly) a Waste of Your Time 
+title:  Why Online Dating is (Almost Certainly) a Waste of Your Time
+date: 2020-08-16
 tags: online-dating 2020
 ---
 

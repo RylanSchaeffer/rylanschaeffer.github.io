@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "Oh, the Places You'll Go"
+date: 2020-09-29
 tags: dr-seuss inspiration
 ---
 
