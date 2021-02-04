@@ -15,3 +15,13 @@ theme: jekyll-theme-minimal
 markdown: kramdown
 kramdown:
   math_engine: mathjax
+collections_dir: collections
+collections:
+  blog_posts:
+    output: true
+  blog_drafts:
+    output: true
+  own_research:
+    output: true
+  other_research:
+    output: true
