@@ -6,6 +6,7 @@ Disclaimer: these are intended for my personal reference. Many are woefully inco
 - [Convex Analysis](learning/analysis_convex.html)
 - [Differential Equations](learning/differential_equations.html)
 - [Dynamical Systems and Control](learning/dynamical_systems.html)
+- [Inequalities](learning/inequalities.html)
 - [Information Theory](learning/information_theory.html)
 - [Informative Non-Fiction Books](learning/informative_nonfiction.html)
 - [Kernels](learning/kernels.html)

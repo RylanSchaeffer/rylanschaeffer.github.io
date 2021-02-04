@@ -1,44 +1,45 @@
 # Probability
 
-## Distributions
+## Parametric Distributions
+
+Many common distributions depend on specific parameters. Parameters are frequently
+classified into one of several possible types:
+
+- location parameter: shifts the distribution e.g. Gaussian mean
+- scale (inverse rate): stretches/squeezes the distribution e.g. Laplace diversity
+- shape: changes the shape e.g. Beta $$\alpha, \beta$$
+
+Some common discrete, continuous and special parametric distributions are:
+
+### Discrete Distributions
+
+
+### Continuous Distributions
+- [Beta](probability/beta_distribution.md)
+- [Cauchy](probability/cauchy_distribution.md)
+- [Kumaraswamy](probability/kumaraswamy_distribution.md)
+- [Normal/Gaussian](probability/normal_distribution.md)
+
+### Special Distributions
+- [Exponential Family Distributions](probability/exponential_family_distributions.md)
 
 ## Probability Theory
-- [Probability Measures](probability/probability_measures.md)
-- [Probability Spaces](probability/probability_spaces.md)
+- [Random Variables](probability/random_variables.md)
+- [Probability Space](probability/probability_spaces.md)
+- [Probability Measure](probability/probability_measures.md)
+- [$$\sigma$$-Algebra](probability/sigma_algebra.md)
 
+## Distances and Divergences
 
+Probability distances and divergences have [commonly encountered properties](probability/distance_divergence_properties.md). 
+Some common probability distances and divergences are
 
+- [Cramer Distance](probability/cramer_distance.md)
+- Jensen-Shannon Divergence  
+- [Kullback-Leibler Divergence](probability/kullback_leibler_divergence.md)
+- Total Variation Distance
+- [Wasserstein Distance](probability/wasserstein_distance.md)
 
-## Random Variables
------
-
-At the heart of probability is the notion of a _random variable_. Intuitively, a random variable
-is a variable whose value depends on the outcome of some random process (e.g. a coin flip). 
-
-### Independence
-
-Two random variables are __independent__ if their joint probability is equal to the product
-of the marginal probabilities:
-
-$$P(A, B) = P(A) P(B)$$
-
-If $$A, B$$ are independent, then so are the following:
-
-$$
-\begin{align*}
-P(A, B^c) &= P(A) - P(A, B)\\
-&= P(A) - P(A) P(B)\\
-&= P(A)(1 - P(B))\\
-&= P(A) P(B^c)\\
-P(A^c, B) &= P(B) - P(A, B)\\
-&= P(B)(1 - P(A))\\
-&= P(B)P(A^c)\\
-P(A^c, B^c) &= P(A^c) - P(A^c, B^c)\\
-&= P(A^c) - P(A^c)P(B)\\
-&= P(A^c)(1 - P(B))\\
-&= P(A^c)P(B^c)
-\end{align*}
-$$
 
 
 ### Probability Integral Transform
@@ -60,36 +61,6 @@ P(Y \leq y) &= P(F_X(x) \leq y)\\
 
 Since only $$\mathcal{U}(0,1)$$ has a CDF $$F_Y(y) = P(Y \leq 
 y) = y$$, we conclude that $$Y$$ is distributed uniformly.
-
-</details>
-
-
-## Probability Distributions
-
-- [Cauchy](probability/cauchy_distribution.md)
-- [Kumaraswamy](probability/kumaraswamy_distribution.md)
-
-
-
-
-## Inequalities
-
-### Chebychev's Inequality
-
-Let $$X$$ be a random variable and let $$g(x)>0$$. Then $$\forall r > 0$$,
-
-$$P(g(x) \geq r) \leq \frac{\mathbb{E}_x[g(x)]}{r}$$
-
-<details>
-<summary>Proof</summary>
-$$
-\begin{align*}
-\mathbb{E}_x[g(x)] &= \int_x g(x) p(x) dx\\
-&\geq \int_{x: g(x) \geq r} g(x) p(x) dx\\
-&\geq r \int_{x: g(x) \geq r} p(x) dx\\
-&= r P(g(x) \geq r)
-\end{align*}
-$$
 
 </details>
 
@@ -135,140 +106,3 @@ $$ P(\lim_{n \rightarrow \infty} \lvert X_n - X\lvert < \epsilon) = 1 $$
 
 Convergence almost surely implies convergence in probability.
 
-## Probability Distributions
------
-
-## Parametric Probability Distributions
------
-
-Parameters are frequently classified into one of several possible types: 
-
-- location parameter: shifts the distribution e.g. Gaussian mean
-- scale (inverse rate): stretches/squeezes the distribution e.g. Laplace diversity
-- shape: changes the shape e.g. Beta $$\alpha, \beta$$
-
-### Beta Distribution
-
-The Beta distribution is a two-parameter continuous distribution over the interval $$[0, 1]$$.
-Its density is  
-
-$$p(x; \alpha, \beta) = \frac{\Gamma(\alpha + \beta)}{\Gamma(\alpha) \Gamma(\beta)} x^{\alpha-1} (1-x)^{\beta-1}$$
-
-
-
-### Dirichlet Distribution
-
-### Normal (Gaussian) Distribution
-
-Classic Form: $$p(x\lvert \mu, \Sigma) = \frac{1}{\sqrt{2 \pi \det{\Sigma}}} \exp \Big(
--\frac{1}{2}(x- \mu)^T \Sigma^{-1} (x - \mu) \Big)$$
-
-Information Form: Define $$J = \Sigma^{-1}$$ and $$h = J \mu$$. Then
-
-$$p(x\lvert \mu, \Sigma) \propto \exp \Big(-\frac{1}{2} x^T J x + x^T h \Big)$$
-
-Linear Form: $$x \sim \mathcal{N}(\mu, Sigma)$$ if $$\exists A \in \mathbb{R}^{N \times N}$$
-and $$b \in \mathbb{R}^N$$ such that $$x = Au + b$$ where $$u \sim \mathcal{N}(0, I)$$.
-Specifically, $$\mu = b$$ and $$\Sigma = A A^T$$.
-
-#### Properties
-
-Let $$(X, Y) \sim \mathcal{N}(\begin{bmatrix} \mu_x \\ \mu_y \end{bmatrix}, \begin{bmatrix}
- \Sigma_{xx} & \Sigma_{xy} \\ \Sigma_{xy} & \Sigma_{yy}\end{bmatrix})$$, or equivalently,
- $$(X, Y) \sim \mathcal{N}^{-1}(\begin{bmatrix} h_x \\ h_y \end{bmatrix}, \begin{bmatrix}
-  J_{xx} & J_{xy} \\ J_{xy} & J_{yy}\end{bmatrix})$$. Then
-
-- Closed under marginalization
-
-$$X \sim \mathcal{N}(\mu_x, \Sigma_{xx})$$
-
-- Closed under conditioning
-
-$$Y \lvert X \sim \mathcal{N}(h_y - J_{yx} x , J_{yy})$$
-
-Proof: 
-
-$$
-\begin{align*}
-p(y\lvert x) &\propto \exp \Big(-\frac{1}{2} \begin{bmatrix} x \\ y \end{bmatrix}^T J 
-\begin{bmatrix} x \\ y \end{bmatrix} + \begin{bmatrix} x \\ y \end{bmatrix}^T \begin{bmatrix} h_x \\ h_y \end{bmatrix} \Big)\\
-&\propto \exp \Big(-\frac{1}{2} y^T J_{yy} y + (h_y - J_{yx} x)^T y \Big)
-\end{align*}
-$$
-
-Note that covariance/precision doesn't depend on the conditioned variable. Also the mean is determined
-by an affine transformation of conditioned variance.
-
-- Suppose $$x_i, x_j$$ are jointly Gaussian. $$x_i \perp x_j \Leftrightarrow \Sigma_{i,j}$$.
-
-- Suppose $$x_i, x_j, x_k$$ are jointly Gaussian. In general, $$x_i \perp x_j, x_j \perp x_k$$
-does not imply $$x_i \perp x_k$$, but this does hold for Gaussians. 
-
-- $$\forall i \neq j \neq k, \quad x_i \perp x_j \lvert x_k \Leftrightarrow J_{ij} = 0$$
-
-## Exponential Family Distributions
------
-
-Many parametric distributions can be written in a similar form. This family of distributions
-is called the exponential family and has the form
-
-$$p(x, \theta) = \frac{1}{Z(\theta)} h(x) \exp(\eta(\theta)^T T(x))$$
-
-where $$\eta(\theta)$$ are the natural parameters, $$T(x)$$ are the sufficient statistics
-and $$Z(\theta)$$ is a normalization constant.
-
-
-
-## Divergence Measures
------
-
-### Kullback-Leibler Divergence
-
-$$KL(p, q) = \int dx p(x) \log \frac{p(x)}{q(x)} = - \int dx p(x) \log \frac{q(x)}{p(x)}$$ 
-
-## Distance Measures
------
-
-### Wasserstein Distance
-
-The Wasserstein distance is a way of quantifying the distance between probability distributions
-on a metric space. Suppose $$P(x), Q(x)$$ are two cumulative distributions functions of the 
-real random variable $$X$$. The Wasserstein metric is defined as 
-
-$$W_p(P,Q) = \Big(\int_0^1 du \lvert P^{-1}(u) - Q^{-1}(u)\lvert^p \Big)^{1/p}$$
-
-Visually
-
-### Cramer Distance
-
-Like the Wasserstein distance, the Cramer distance is a way of quantifying the distance 
-between probability distributions on a metric space. If $$P(x), Q(x)$$ are two cumulative
-distributions of the real random variable $$X$$, then the Cramer distance is defined as
-
-$$C_p(P, Q) = \Big(\int_{-\infty}^{\infty} \lvert P(x) - Q(x)\lvert^p \Big)^{1/p} $$
-
-When $$p=1$$, the Wasserstein distance and the Cramer distance agree. Visually, if we picture
-$$X$$ on the abscissa and the CDF on the ordinate, then the Wasserstein distance is the sum
-over horizontal slices, sweeping vertically, whereas the Cramer distance is the sum over 
-vertical slices, sweeping horizontally.
-
-## Properties for Distances / Divergences
-
-[Bellemare et al 2017](https://arxiv.org/abs/1705.10743) introduce several properties of 
-distances that might be desirable.
-
-- Scale Sensitive: A distance $$d(\cdot, \cdot)$$ is scale sensitive if $$\exists \beta >0$$
-such that $$\forall X, Y, c>0$$
-
-$$d(cX, cY) \leq \lvert c \lvert^{\beta} d(X, Y)$$
-
-Intuitively, this just means that scaling the arguments by $$c$$ scales the distance by $$c$$,
-possibly to some power.
-
-- Sum Invariant: A distance $$d(\cdot, \cdot)$$ is sum invariant if for $$A$$ independent of
-$$X, Y$$, we have
-
-$$d(X+A, Y+A) \leq d(X, Y)$$
-
-Intuitively, this means a constant shift of both $$X, Y$$ doesn't change the distance between
-them.

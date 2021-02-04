@@ -2,14 +2,14 @@
 
 __Parent__: [Probability](../probability.md)
 
-# Definition
+## Definition
 
 A probability space is a 3-tuple consisting of
 
 1. A set $$X$$ called the sample space i.e. the set of all possible outcomes
-2. A $$\sigma$$-algebra on the set $$X$$, which informally tells us all the
-   possible ways to carve
-3. A probability measure $$P$$
+2. A [$$\sigma$$-algebra](sigma_algebra.md) on the set $$X$$, which informally tells us all the
+   possible ways to think about sets of possible outcomes
+3. A [probability measure](probability_measure.md) $$P$$ 
 
 Intuitively, the sample space gives us all possible outcomeshe $$\sigm
    
@@ -21,3 +21,14 @@ called a __$$\sigma$$-algebra__ on $$X$$ if
    := X \ c \in C$$
 3. C is closed under countable unions. That is, if $$c_1, c_2, ... \in C$$, then
    $$\cup_{i=1}^{\infty} c_i \in C$$
+
+
+## Related Material
+
+A __measurable space__ (also called a Borel space) is a 2-tuple consisting of
+
+1. A set $$X$$
+2. A A [$$\sigma$$-algebra](sigma_algebra.md) on the set $$X$$
+
+When the 2-tuple measure space is equipped with a measure $$\mu$$, becoming a 3-tuple,
+the measurable space becomes a __measure space__.
