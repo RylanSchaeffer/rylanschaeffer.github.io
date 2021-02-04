@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  The Idea Machine: Learning at Harvard and MIT in the Age of Artificial Intelligence
+title:  The Idea Machine
 tags: idea-machine 2020 MIT Harvard
 ---
 
