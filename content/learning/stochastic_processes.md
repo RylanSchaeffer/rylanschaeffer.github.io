@@ -7,6 +7,7 @@ distributions over function spaces.
 
 - [Dirichlet Process](stochastic_processes/dirichlet_process.md)
 - [Gaussian Process](stochastic_processes/gaussian_processes.md)
+- [Infinite Hidden Markov Model](stochastic_processes/infinite_hidden_markov_model.md)  
 - [Polya Urn Scheme](stochastic_processes/polya_urn_scheme.md)
 - [MacQueen Urn Scheme](stochastic_processes/blackwell_macqueen_urn_scheme.md)
 - [Chinese Restaurant Process](stochastic_processes/chinese_restaurant_process.md)
