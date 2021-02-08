@@ -12,12 +12,14 @@ classified into one of several possible types:
 Some common discrete, continuous and special parametric distributions are:
 
 ### Discrete Distributions
-
+- [Logarithmic](probability/logarithmic_distribution.md)
+- Poisson
 
 ### Continuous Distributions
 - [Beta](probability/beta_distribution.md)
 - [Cauchy](probability/cauchy_distribution.md)
 - [Kumaraswamy](probability/kumaraswamy_distribution.md)
+- Gamma
 - [Normal/Gaussian](probability/normal_distribution.md)
 
 ### Special Distributions
