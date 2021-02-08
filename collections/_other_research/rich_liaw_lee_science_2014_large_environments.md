@@ -1,4 +1,11 @@
-# Rich, Liaw and Lee (Science 2014)
+---
+layout: post
+title:  Rich, Liaw and Lee (Science 2014)
+date: 2021-02-07
+tags: place-fields hippocampus CA1 negative-binomial
+---
+
+# 
 
 Title: Large environments reveal the statistical structure governing hippocampal representations
 
