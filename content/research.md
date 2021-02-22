@@ -1,19 +1,26 @@
 # Research
 
 ## Publications
+
+
 - Rylan Schaeffer, Nimrod Shaham, Gabriel Kreiman, Haim Sompolinsky.
-  Neural network model of amygdalar memory engram formation and function. Submitted, CoSyNe (2021).
+  Neural network model of amygdalar memory engram formation and function. COSYNE 2021.
 
 - Rylan Schaeffer, Mikail Khona, Leenoy Meshulam, International Brain Laboratory, Ila Rani Fiete
-[Reverse-engineering recurrent neural network solutions to a hierarchical inference task for mice. NeurIPS (2020)](research/20200605_ibl_rnn/main.html)
+[Reverse-engineering recurrent neural network solutions to a hierarchical inference task for mice. NeurIPS 2020](https://proceedings.neurips.cc/paper/2020/hash/30f0641c041f03d94e95a76b9d8bd58f-Abstract.html)
+
+## Submitted
+
+- Rylan Schaeffer, Blake Bordelon, Mikail Khona, Weiwei Pan and Ila Rani Fiete.
+  Efficient Online Inference for Nonparametric Latent Variable Time Series. UAI 2021.
 
 ## In Preparation
- 
+
+- Rylan Schaeffer, International Brain Laboratory, Ila Rani Fiete. Distributed codes for
+  hierarchical inference in the mouse brain. In preparation (2021).
+
 - Rylan Schaeffer, Aida Picatto, Ila Rani Fiete. Recovering low dimensional, interpretable mechanistic models 
 via Representations and Dynamics Distillation. In preparation (2021).
- 
-- Rylan Schaeffer, International Brain Laboratory, Ila Rani Fiete. Distributed codes for 
-hierarchical inference in the mouse brain. In preparation (2021).
 
 
 ## Rejected
