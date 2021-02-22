@@ -26,7 +26,7 @@ via Representations and Dynamics Distillation. In preparation (2021).
 ## Rejected
 
 - Rylan Schaeffer, Niki Kim, Mikail Khona, International Brain Laboratory, Ila Rani Fiete.
-  Mechanistic neural circuit models of hierarchical inference. Submitted, CoSyNe (2021).
+  Mechanistic neural circuit models of hierarchical inference. COSYNE 2021.
 
 ## Abandoned
 - Rylan Schaeffer, Nayantara Mudur, Helena Casademunt. Towards Unifying Smooth 
