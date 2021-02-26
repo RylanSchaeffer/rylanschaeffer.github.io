@@ -1,12 +1,36 @@
 # Research
 
-## Preprints
-
-### 2020
-- [Reverse-engineering recurrent neural network solutions to a hierarchical inference task for mice](research/20200605_ibl_rnn/main.html)
-- Towards Unifying Smooth Neural Codes with Adversarially Robust Representations
-
 ## Publications
+
+
+- Rylan Schaeffer, Nimrod Shaham, Gabriel Kreiman, Haim Sompolinsky.
+  Neural network model of amygdalar memory engram formation and function. COSYNE 2021.
+
+- Rylan Schaeffer, Mikail Khona, Leenoy Meshulam, International Brain Laboratory, Ila Rani Fiete
+[Reverse-engineering recurrent neural network solutions to a hierarchical inference task for mice. NeurIPS 2020](https://proceedings.neurips.cc/paper/2020/hash/30f0641c041f03d94e95a76b9d8bd58f-Abstract.html)
+
+## In Review
+
+- Rylan Schaeffer, Blake Bordelon, Mikail Khona, Weiwei Pan and Ila Rani Fiete.
+  Efficient Online Inference for Nonparametric Latent Variable Time Series. UAI 2021.
+
+## In Preparation
+
+- Rylan Schaeffer, International Brain Laboratory, Ila Rani Fiete. Distributed codes for
+  hierarchical inference in the mouse brain. In preparation (2021).
+
+- Rylan Schaeffer, Aida Picatto, Ila Rani Fiete. Recovering low dimensional, interpretable mechanistic models 
+via Representations and Dynamics Distillation. In preparation (2021).
+
+
+## Rejected
+
+- Rylan Schaeffer, Niki Kim, Mikail Khona, International Brain Laboratory, Ila Rani Fiete.
+  Mechanistic neural circuit models of hierarchical inference. COSYNE 2021.
+
+## Abandoned
+- Rylan Schaeffer, Nayantara Mudur, Helena Casademunt. Towards Unifying Smooth 
+  Neural Codes with Adversarially Robust Representations. 2019.
 
 
 ## Explanations of Others' Research

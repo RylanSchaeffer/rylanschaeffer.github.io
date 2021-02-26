@@ -1,3 +1,5 @@
+# Summaries of Others' Research
+
 {% for post in site.others_research reversed %}
   <div class="post">
     <span class="post-title">
@@ -7,6 +9,5 @@
       {{ post.date | date: '%b %-d, %Y' }}
     </span>
     {{ post.excerpt }}
-
   </div>
 {% endfor %}

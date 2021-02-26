@@ -1,8 +1,13 @@
 # Learning
 
-- [Analysis](learning/analysis.html)
+Disclaimer: these are intended for my personal reference. Many are woefully incomplete. Don't judge :)
+
+- [Calculus](learning/calculus.html)
+- [Convex Analysis](learning/analysis_convex.html)
 - [Differential Equations](learning/differential_equations.html)
 - [Dynamical Systems and Control](learning/dynamical_systems.html)
+- [Inequalities](learning/inequalities.html)
+- [Information Theory](learning/information_theory.html)
 - [Informative Non-Fiction Books](learning/informative_nonfiction.html)
 - [Kernels](learning/kernels.html)
 - [Linear Algebra](learning/linear_algebra.html)
@@ -11,5 +16,9 @@
 - [Numerical Methods](learning/numerical_methods.html)
 - [Optimization](learning/optimization.html)
 - [Probability](learning/probability.html)
+- [Probabilistic Graphical Models](learning/probabilistic_graphical_models.html)
+- [Real Analysis](learning/analysis_real.html)
+- [Signals](learning/signals.html)
 - [Statistics](learning/statistics.html)
+- [Stochastic Processes](learning/stochastic_processes.html)
 - [Reinforcement Learning](learning/reinforcement_learning.html)

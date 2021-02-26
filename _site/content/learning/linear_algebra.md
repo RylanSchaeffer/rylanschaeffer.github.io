@@ -1,5 +1,7 @@
 # Linear Algebra
 
+- [Eigenvectors and Eigenvalues](linear_algebra.md)
+
 ## Inner Product Spaces
 
 An __inner product space__ is a vector space $$V$$ equipped with an __inner product__,
@@ -24,3 +26,13 @@ Infinite sequences: the space $$l_2$$ (square summable sequences) coimprises all
 sequences $$a = (a_i)_{i \in \mathbb{N}}$$ for which
 
 $$ ||a||_{l_2}^2 = \sum_{i=1}^{\infty}a_i^2 < \infty$$
+
+
+## Unitary (Orthogonal) Matrices
+
+A square matrix is __unitary__ if its transpose is its inverse i.e. $$U^{-1} = 
+U^T$$. One key utility of unitary matrices is that they leave the dot product
+invariant i.e.
+
+$$\langle U x, U y \rangle = \langle U{-1} U x, y \rangle = \langle U^T U x, y
+\ranngle = \langle x, y \rangle$$

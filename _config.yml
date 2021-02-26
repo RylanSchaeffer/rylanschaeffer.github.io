@@ -23,5 +23,5 @@ collections:
     output: true
   own_research:
     output: true
-  other_research:
+  others_research:
     output: true
