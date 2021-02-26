@@ -12,7 +12,7 @@ a low-variance asymptotic analysis of a [Dirichlet process](content/learning/dir
 Gaussian Mixture Model (DP-GMM) yields a k-means-like clustering
 algorithm that adds new clusters when justified by the data. 
 
-## Review of K-Means
+## Review of K-Means Clustering
 
 We quickly review k-means clustering and how it can be derived from a low variance asymptotic
 approximation of expectation maximization applied to a Gaussian mixture model.
@@ -28,7 +28,7 @@ Assuming the clusters each have equal covariance $$\sigma I$$, the E step takes 
 
 $$
 \begin{align*}
-p(z_n = c | x_n) = \frac{p(x_n | z_n = c) p(z_n = c)}{p(x_n)}\\
+p(z_n = c | x_n) &= \frac{p(x_n | z_n = c) p(z_n = c)}{p(x_n)}\\
 &= \frac{\exp(-\frac{1}{2\sigma} ||x_n - \mu_c||_2^2) \pi_c}{\sum_c \exp(-\frac{1}{2\sigma} ||x_n - \mu_c||_2^2) \pi_c}
 \end{align*}$$
 
@@ -38,9 +38,10 @@ assigned to that particular cluster:
 
 $$\mu_c = \frac{1}{|X_c|} \sum_{x_n \in X_c} x_n $$
 
-where $$X_c = \{x_n : p(z_n = c | x_n) = 1 \}$$ is the set of observations assigned to the $$c$$th cluster.
+where $$X_c = \{ x_n \lvert p(z_n = c \lvert x_n) = 1 \}$$ is the set of observations assigned to the $$c$$th cluster.
 
+We can phrase this as an optimization problem with the objective function:
 
-objective function:
+$$\min_{\{\mu_c\}, \{z_n\}} \sum_{n=1}^N \mathbb{I}(z_n = c) ||x_n - \mu_c||_2^2$$ 
 
-$$min \sum_{x \in } $$
+where the cluster centroids are defined above.
