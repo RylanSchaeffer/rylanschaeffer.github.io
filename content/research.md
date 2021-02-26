@@ -9,7 +9,7 @@
 - Rylan Schaeffer, Mikail Khona, Leenoy Meshulam, International Brain Laboratory, Ila Rani Fiete
 [Reverse-engineering recurrent neural network solutions to a hierarchical inference task for mice. NeurIPS 2020](https://proceedings.neurips.cc/paper/2020/hash/30f0641c041f03d94e95a76b9d8bd58f-Abstract.html)
 
-## Submitted
+## In Review
 
 - Rylan Schaeffer, Blake Bordelon, Mikail Khona, Weiwei Pan and Ila Rani Fiete.
   Efficient Online Inference for Nonparametric Latent Variable Time Series. UAI 2021.
