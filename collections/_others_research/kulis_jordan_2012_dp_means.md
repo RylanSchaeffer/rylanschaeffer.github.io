@@ -1,11 +1,10 @@
 ---
 layout: post
-title: Kulis and Jordan (ICML 2012)
+author: Kulis and Jordan (ICML 2012)
+title: Revisiting k-means: New Algorithms via Bayesian Nonparametrics
 date: 2021-02-07
 tags: dirichlet-process k-means clustering bayesian-nonparametrics
 ---
-
-# Revisiting k-means: New Algorithms via Bayesian Nonparametrics
 
 One limitation of k-means clustering is that the number
 of clusters must be specified in advance. Here, Kulis and Jordan show that 
