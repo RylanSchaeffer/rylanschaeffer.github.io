@@ -1,6 +1,7 @@
 # Learning
 
-Disclaimer: these are intended for my personal reference. Many are woefully incomplete. Don't judge :)
+Disclaimer: these are my own notes, intended as a learning opportunity and for use as a quick reference. 
+Many notes are woefully incomplete. Don't judge :)
 
 - [Approximations, Techniques, Miscellaneous](learning/random.md)
 - [Calculus](learning/calculus.html)
