@@ -27,7 +27,7 @@ $$
 \int_a^b \exp (N f(x)) dx &\approx \int_{-\infty}^{\infty} \exp (N f(x)) dx\\
 &\approx \int_{-\infty}^{\infty} \exp (N f(x^*) + (x - x^*) \partial_x f(x^*) + \frac{1}{2}(x - x^*)^2 \partial_x^2 f(x^*)) dx\\
 &=\exp(N f(x^*)) \int_{-\infty}^{\infty} \exp (-\frac{1}{2}(x - x^*)^2 \big\lvert \partial_x^2 f(x^*) \big\lvert) dx\\
-&=\exp(N f(x^*)) \sqrt{ \Big( \frac{2 \pi}{N \big\lvert \partial_x^2 f(x^*) \big\lvert} \Big)}
+&=\exp(N f(x^*)) \sqrt{ \frac{2 \pi}{N \big\lvert \partial_x^2 f(x^*) \big\lvert} }
 \end{align*}
 $$
 
