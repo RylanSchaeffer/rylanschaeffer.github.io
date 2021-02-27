@@ -2,6 +2,7 @@
 
 Disclaimer: these are intended for my personal reference. Many are woefully incomplete. Don't judge :)
 
+- [Approximations, Techniques, Miscellaneous](learning/random.md)
 - [Calculus](learning/calculus.html)
 - [Convex Analysis](learning/analysis_convex.html)
 - [Differential Equations](learning/differential_equations.html)

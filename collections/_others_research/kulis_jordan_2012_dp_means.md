@@ -12,7 +12,7 @@ a low-variance asymptotic analysis of a [Dirichlet process](content/learning/dir
 Gaussian Mixture Model (DP-GMM) yields a k-means-like clustering
 algorithm that adds new clusters when justified by the data. 
 
-## Review of K-Means Clustering
+## K-Means as Low-Variance Approximation of Expectation Maximization in Gaussian Mixture Model 
 
 We quickly review k-means clustering and how it can be derived from a low variance asymptotic
 approximation of expectation maximization applied to a Gaussian mixture model.
@@ -38,10 +38,24 @@ assigned to that particular cluster:
 
 $$\mu_c = \frac{1}{|X_c|} \sum_{x_n \in X_c} x_n $$
 
-where $$X_c = \{ x_n \lvert p(z_n = c \lvert x_n) = 1 \}$$ is the set of observations assigned to the $$c$$th cluster.
+where $$X_c = \{ x_n \colon p(z_n = c \lvert x_n) = 1 \}$$ is the set of observations assigned to the $$c$$th cluster.
 
 We can phrase this as an optimization problem with the objective function:
 
 $$\min_{\{\mu_c\}, \{z_n\}} \sum_{n=1}^N \mathbb{I}(z_n = c) ||x_n - \mu_c||_2^2$$ 
 
 where the cluster centroids are defined above.
+
+## Low-Variance Approximation of Dirichlet Process Gaussian Mixture Model
+
+In a DP-GMM, we now have an infinite number of clusters, enabled through the Dirichlet Process.
+Specifically, we draw an infinite number of cluster centroids $$\{\mu_c \}_{c=1}^{\infty}$$
+from a base distribution $$G_0$$ and draw mixing proportions $$\{\pi_c\}_{c=1}^{\infty}$$
+from $$DP(\alpha, G_0)$$. Then, for each observation, we posit that we draw 
+
+$$
+\begin{align*}
+\mu_1, \mu_2, ... &\sim G_0
+
+\end{align*}
+$$
