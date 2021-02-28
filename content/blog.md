@@ -6,6 +6,6 @@
     <span class="post-title">
         {{ post.date | date: '%b %-d, %Y' }}
         <h4><a href="{{ post.url }}">{{ post.title }}</a></h4>
-    </span><br>
+    </span>
   </div>
 {% endfor %}

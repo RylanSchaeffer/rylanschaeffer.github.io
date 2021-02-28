@@ -1,6 +1,15 @@
+<<<<<<< Updated upstream
 To run locally
     bundle exec jekyll serve
 
+=======
+To run locally:
+    bundle exec jekyll serve
+
+Probably the best starting place if dependency is broken
+    bundle update github-pages
+
+>>>>>>> Stashed changes
 To update ruby vulnerabilities, run
     sudo gem install <library e.g. ffi>
 

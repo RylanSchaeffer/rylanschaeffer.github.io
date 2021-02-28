@@ -6,6 +6,7 @@ author:
 gems:
   - jekyll-feed
 
+<<<<<<< Updated upstream
 title: Rylan Schaeffer
 description: "'We do it because we are compelled.'"
 logo: index/profile_pic.jpg
@@ -25,3 +26,8 @@ collections:
     output: true
   others_research:
     output: true
+=======
+title: Rylan Schaefer's Blog
+google_analytics:
+theme: jekyll-theme-minimal
+>>>>>>> Stashed changes

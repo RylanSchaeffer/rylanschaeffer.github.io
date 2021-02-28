@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Stanford Knight-Hennessy Scholars Application
+author: Rylan
 date: 2020-10-14
 tags: applications Stanford 2020
 ---

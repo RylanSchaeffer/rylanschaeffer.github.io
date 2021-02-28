@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 To run locally
     bundle exec jekyll serve
 
@@ -13,3 +14,17 @@ To propagate changes to Gemfile.lock file,
     sudo bundle update
     (need to run separately inside _sites/ directory)
 
+=======
+To run locally:
+    bundle exec jekyll serve
+
+Probably the best starting place if dependency is broken
+    bundle update github-pages
+
+To update ruby vulnerabilities, run
+    sudo gem install <library e.g. ffi>
+
+To propagate changes to Gemfile.lock file,
+    sudo bundle update
+    (need to run separately inside _sites/ directory)
+>>>>>>> Stashed changes
