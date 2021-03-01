@@ -63,9 +63,23 @@ $$S(s+t) = S(t)S(s)$$
 Our strategy will be to find the survival function $$S(\cdot)$$ and use it to show that $$X$$ is
 exponential. Just by plugging in values, we can figure out a few things:
 
-- $$S(2 t) = S(t + t) = S(t)S(t) = S(t)^2$$
-- $$\forall m \in \mathbb{Z}, S(mt) = S(t)^m$$
-- $$\forall n \in \mathbb{Z}, S(t/n) = S(t)^{1/n}$$
+- First, try setting $$s=t$$. That gives us
+  
+$$S(t + t) = S(2t) = S(t)S(t) = S(t)^2$$
+
+- We may as well try plugging any integer multiple of $$t$$. That is, $$\forall m \in \mathbb{Z} $$
+  
+$$S(mt) = S(t)^m$$
+
+
+- The same holds for reciprocals of integers i.e. $$\forall n \in \mathbb{Z}$$
+  
+$$S(t/n) = S(t)^{1/n}$$
+
+- We can combine the two previous to see that the property holds for any rationals
+
+$$S(\frac{m}{n}t) = S(t)^{m/n}$$
+
 - $$\forall c \in \mathbb{R}$$, we can express $$c$$ as the limit of a sequence of rationals $$m/n$$.
  Because $$X$$ is continuous, so too is $$S(\cdot)$$, meaning that
   
