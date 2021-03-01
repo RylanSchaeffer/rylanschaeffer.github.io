@@ -66,4 +66,21 @@ exponential. Just by plugging in values, we can figure out a few things:
 - $$S(2 t) = S(t + t) = S(t)S(t) = S(t)^2$$
 - $$\forall m \in \mathbb{Z}, S(mt) = S(t)^m$$
 - $$\forall n \in \mathbb{Z}, S(t/n) = S(t)^{1/n}$$
-- $$\forall c \in \mathbb{R}$$, we cn  
+- $$\forall c \in \mathbb{R}$$, we can express $$c$$ as the limit of a sequence of rationals $$m/n$$.
+ Because $$X$$ is continuous, so too is $$S(\cdot)$$, meaning that
+  
+$$ \lim_{m/n \rightarrow c} S(\frac{m}{n}t)= S(\lim_{m/n \rightarrow c} \frac{m}{n}t) = S(t)^c$$
+
+What function obeys $$S(ct) = S(t)^c$$? Setting $$t=1$$ shows us that
+
+$$S(x) = S(1)^x = e^{x \log S(1)}$$
+
+Since $$S(1) = P(X \geq 1)$$ is a probability, $$\log S(1) < 0$$. Define $$- \lambda = \log S(1)$$
+with $$\lambda > 0$$. Then we have
+
+$$S(x) = e^{- \lambda x}$$
+
+This is exactly the survival function of the exponential. Recall that the survival function 
+was defined as $$S(x) = 1 - F(x)$$ and the CDF of an exponential is $$F(x) = 1 - e^{-\lambda x}$$.
+Consequently, we conclude that because $$X$$ has the survival function of an exponential, it has
+the CDF of an exponential and is therefore an exponential random variable.
