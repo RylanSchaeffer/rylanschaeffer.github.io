@@ -18,6 +18,7 @@ Some common discrete, continuous and special parametric distributions are:
 ### Continuous Distributions
 - [Beta](probability/beta_distribution.md)
 - [Cauchy](probability/cauchy_distribution.md)
+- [Exponential](probability/exponential_distribution.md)  
 - [Kumaraswamy](probability/kumaraswamy_distribution.md)
 - Gamma
 - [Normal/Gaussian](probability/normal_distribution.md)
