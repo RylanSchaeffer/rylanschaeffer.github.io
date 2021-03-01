@@ -5,6 +5,6 @@
     <span class="post-title">
         {{ post.author }}
         <h4><a href="{{ post.url }}">{{ post.title }}</a></h4>
-    </span><br>
+    </span>
   </div>
 {% endfor %}
