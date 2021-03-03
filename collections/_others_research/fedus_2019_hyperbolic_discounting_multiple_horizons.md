@@ -74,4 +74,7 @@ s(t) &= \int_{\lambda=0}^{\infty} p(\lambda) e^{-\lambda t} d\lambda\\
 \end{align}
 $$
 
-Other priors over the hazard rate give different discounting schemes.
+Other priors over the hazard rate give different discounting schemes. For instance, suppose
+$$p(\lambda) = \frac{1}{k}$$ i.e. uniform over $$[0, k]$$. Then 
+
+$$s(t) = \frac{1}{kt}(1 - e^{-kt})$$
