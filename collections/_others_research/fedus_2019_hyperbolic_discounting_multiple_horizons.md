@@ -12,7 +12,9 @@ Geometric discounting is ubiquitous in reinforcement learning e.g. Q-learning:
 
 $$ Q(s_t, a_t) = r_t + \gamma \max_a Q(s_{t+1}, a)$$
 
-This work discusses how 
+This work shows how geometric discounting arises from a single belief as to the 
+environment's __hazard__ rate, and how different beliefs over the hazard rate
+lead to different discounting schemes (e.g. hyperbolic).
 
 ## Correct Credit
 
