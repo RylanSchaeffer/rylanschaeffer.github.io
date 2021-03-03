@@ -30,7 +30,7 @@ where $$N_{t-1, k}$$ is the number of previous variables taking the value $$k$$,
 of customers at a Chinese restaurant that has an infinite number of tables, each with an infinite number
 of chairs. Each customer is randomly placed either at a populated table with probability proportional to
 the number of previous customers at that table, or at a new, unpopulated table with probability
-proportional to $$\alpha$$. Leting $$K_{t}$$ denote the number of non-empty tables after the $$t$$ customer
+proportional to $$\alpha$$. Letting $$K_{t}$$ denote the number of non-empty tables after the $$t$$ customer
 is seated, the CRP can be equivalently defined using indicator variables:
 
 $$
@@ -42,8 +42,8 @@ p(z_t = k|z_{<t}, \alpha) &= \frac{1}{\alpha + t -1} \sum_{t' < t} \delta{1}(z_{
 \end{equation}
 $$
 
-where $$K_t$ is given by the Chinese Restaurant Table Distribution (below). An equivalent representation (that can then be generalized to yield the 
-[distance dependence CRP](distance_dependent_chinese_restaurant_process.md))
+where $$K_t$ is given by the Chinese Restaurant Table Distribution (below). An equivalent representation (that can
+then be generalized to yield the[distance dependence CRP](distance_dependent_chinese_restaurant_process.md))
 assigns customers to one another instead of assigning customers to tables.
 
 $$p(c_i = j) \propto \begin{cases} 1 & j \neq i\\ \alpha & i = j \end{cases} $$
@@ -51,6 +51,15 @@ $$p(c_i = j) \propto \begin{cases} 1 & j \neq i\\ \alpha & i = j \end{cases} $$
 Customers that have been assigned into a connected component are then be grouped into tables.
 For instance, if $$c_2$$ sits with $$c_1$$ and $$c_3$$ sits with $$c_2$$, then all three
 are at the same table.
+
+There's no nice joint distribution for the specific customer-table assignments, but once
+customers have been assigned, there is a nice distribution for the partition of the set.
+Suppose $$K_T$$ tables are non-empty and the number of customers at the $$k$$th table is given
+by $$N_{T, k}$$. Then the probability of this partition $$\pi$$ of the set $$\{1, ..., T\} is given by
+
+$$p(\Pi = \pi) = \frac{\alpha^{K_T - 1} }{(alpha + 1)_{T-1 \uparrow 1}} \prod_{k=1}^K (N_{T, k} - 1)!$$
+
+where $$x_{M \uparrow a} = \prod_{m=0}^M (x + ma)$$ is the rising factorial. 
 
 ### Definition as Marginalizing Out DP Base Measure
 
