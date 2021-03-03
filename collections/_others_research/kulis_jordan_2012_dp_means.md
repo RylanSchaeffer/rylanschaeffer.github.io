@@ -6,6 +6,8 @@ date: 2021-02-25
 tags: dirichlet-process k-means clustering bayesian-nonparametrics
 ---
 
+## Motivation
+
 One limitation of k-means clustering is that the number
 of clusters must be specified in advance. Here, Kulis and Jordan show that 
 a low-variance asymptotic analysis of a [Dirichlet process](content/learning/dirichlet_process.md)

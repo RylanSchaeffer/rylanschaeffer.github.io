@@ -8,9 +8,12 @@ clustering. The CRP is also known as Ewens sampling formula.
 
 ## Definition
 
-## Definition as Distribution Over Partitions
+### Definition as Distribution Over Partitions
 
-The Chinese Restaurant Process (CRP; \cite{aldous_exchangeability_1985}) is a one-parameter (concentration parameter $\alpha > 0$) stochastic process that defines a discrete distribution over the partitions of a set. The CRP defines a conditional distribution for the $t$th discrete variable $z_t$ given the preceding variables:
+The Chinese Restaurant Process (CRP; \cite{aldous_exchangeability_1985}) is a 
+one-parameter (concentration parameter $\alpha > 0$) stochastic process that defines 
+a discrete distribution over the partitions of a set. The CRP defines a conditional distribution for
+the $t$th discrete variable $z_t$ given the preceding variables:
 
 $$
 \begin{equation}
@@ -23,7 +26,7 @@ P(z_t = k | z_{<t}, \alpha) = \begin{cases}
 $$
 
 where $$N_{t-1, k}$$ is the number of previous variables taking the value $$k$$, i.e. $$N_{t-1, k}
-= \sum_{t'=1}^{t-1} \mathbbm{I}(z_{t'} = k)$$. The term CRP arises from an analogy of seating a sequence
+= \sum_{t'=1}^{t-1} \delta{I}(z_{t'} = k)$$. The term CRP arises from an analogy of seating a sequence
 of customers at a Chinese restaurant that has an infinite number of tables, each with an infinite number
 of chairs. Each customer is randomly placed either at a populated table with probability proportional to
 the number of previous customers at that table, or at a new, unpopulated table with probability
@@ -33,8 +36,8 @@ is seated, the CRP can be equivalently defined using indicator variables:
 $$
 \begin{equation}
 \begin{aligned}
-p(z_t = k|z_{<t}, \alpha) &= \frac{1}{\alpha + t -1} \sum_{t' < t} \mathbbm{1}(z_{t'}=k) \mathbbm{1}(k \leq K_{t-1})\\
-&\quad \quad + \frac{\alpha}{\alpha + t -1} \mathbbm{I}(k = K_{t-1}+1)
+p(z_t = k|z_{<t}, \alpha) &= \frac{1}{\alpha + t -1} \sum_{t' < t} \delta{1}(z_{t'}=k) \delta{1}(k \leq K_{t-1})\\
+&\quad \quad + \frac{\alpha}{\alpha + t -1} \delta{I}(k = K_{t-1}+1)
 \end{aligned}
 \end{equation}
 $$
@@ -49,7 +52,7 @@ Customers that have been assigned into a connected component are then be grouped
 For instance, if $$c_2$$ sits with $$c_1$$ and $$c_3$$ sits with $$c_2$$, then all three
 are at the same table.
 
-## Definition as Marginalizing Out DP Base Measure
+### Definition as Marginalizing Out DP Base Measure
 
 Suppose we have the following generative model:
 
@@ -71,7 +74,8 @@ with the counts of each value appearing $$N_k$$:
 
 $$\theta_{M+1} | \theta_1, ..., \theta_M \sim \frac{1}{\alpha + M}(\alpha G_0 + \sum_{k=1}^K N_k \delta_{\theta_k^*})$$
 
-This is an equivalent definition of $$CRP(\alpha)$$.
+This is an equivalent definition of $$CRP(\alpha)$$. That is, the CRP is the posterior predictive
+distribution of a Dirichlet Process, marginalizing out the DP's base measure.
 
 ## Properties
 
@@ -107,7 +111,7 @@ denoted $$K_t$$, is described by the Chinese Restaurant Table (CRT) Distribution
 
 $$
 \begin{equation}
-P(K_t = k) = \frac{\Gamma(\alpha)}{\Gamma(t + \alpha)} |s(t, k)| \alpha^k \mathbbm{1}(k \leq t) \label{eq:CRT_distribution}
+P(K_t = k) = \frac{\Gamma(\alpha)}{\Gamma(t + \alpha)} |s(t, k)| \alpha^k \delta{1}(k \leq t) \label{eq:CRT_distribution}
 \end{equation}
 $$
 
