@@ -10,31 +10,43 @@ clustering. The CRP is also known as Ewens sampling formula.
 
 ## Definition as Distribution Over Partitions
 
-The name arises from imagining a queue of possibly infinitely many customers at a Chinese restaurant,
-with infinitely many tables, each table with an infinite capacity. Fix a concentration parameter $$\alpha > 0$$.
-The first customer $$z_1$$ sits at a table, which we label table 1. For
-each subsequent customer $$z_t$$, let $$K_{t-1}$$ denote the number of tables occupied by the
-preceding $$t-1$$ customers and let $$n_{t-1}^{(k)}$$ denote the number of people at the $$k$$th table
-after the $$t-1$$ customer was seated. Then the $$t$$th customer either sits at a new table with probability:
+The Chinese Restaurant Process (CRP; \cite{aldous_exchangeability_1985}) is a one-parameter (concentration parameter $\alpha > 0$) stochastic process that defines a discrete distribution over the partitions of a set. The CRP defines a conditional distribution for the $t$th discrete variable $z_t$ given the preceding variables:
 
-$$P(z_t = K_{t-1} + 1) = \frac{\alpha}{t - 1 + \alpha}$$
+$$
+\begin{equation}
+P(z_t = k | z_{<t}, \alpha) = \begin{cases}
+\frac{N_{t-1, k}}{\alpha + t - 1} & \text{if } 1 \leq k \leq K_{t-1}\\
+\frac{\alpha}{\alpha + t - 1} & \text{if } k = K_{t-1} + 1\\
+0 & \text{otherwise}
+\end{cases}
+\end{equation}
+$$
 
-or sits at table $k$ with probability:
+where $$N_{t-1, k}$$ is the number of previous variables taking the value $$k$$, i.e. $$N_{t-1, k}
+= \sum_{t'=1}^{t-1} \mathbbm{I}(z_{t'} = k)$$. The term CRP arises from an analogy of seating a sequence
+of customers at a Chinese restaurant that has an infinite number of tables, each with an infinite number
+of chairs. Each customer is randomly placed either at a populated table with probability proportional to
+the number of previous customers at that table, or at a new, unpopulated table with probability
+proportional to $$\alpha$$. Leting $$K_{t}$$ denote the number of non-empty tables after the $$t$$ customer
+is seated, the CRP can be equivalently defined using indicator variables:
 
-$$P(z_t = k) = \frac{n_{t-1}^{(k)}}{t - 1 + \alpha}$$
+$$
+\begin{equation}
+\begin{aligned}
+p(z_t = k|z_{<t}, \alpha) &= \frac{1}{\alpha + t -1} \sum_{t' < t} \mathbbm{1}(z_{t'}=k) \mathbbm{1}(k \leq K_{t-1})\\
+&\quad \quad + \frac{\alpha}{\alpha + t -1} \mathbbm{I}(k = K_{t-1}+1)
+\end{aligned}
+\end{equation}
+$$
 
-The concentration parameter $$\alpha$$ expresses how likely new customers
-are to choose a new table. Note that $$CRP(\alpha)$$ defines
-a probability distribution over partitions of $$t$$ customers.
-
-An equivalent representation (that can then be generalized to yield the 
+where $$K_t$ is given by the Chinese Restaurant Table Distribution (below). An equivalent representation (that can then be generalized to yield the 
 [distance dependence CRP](distance_dependent_chinese_restaurant_process.md))
 assigns customers to one another instead of assigning customers to tables.
 
-$$p(z_i = j) \propto \begin{cases} 1 & j < i\\ \alpha & i = j \end{cases} $$
+$$p(c_i = j) \propto \begin{cases} 1 & j \neq i\\ \alpha & i = j \end{cases} $$
 
-Customers that have been assigned can then be grouped into tables. For instance,
-if $$z_2$$ sits with $$z_1$$ and $$z_3$$ sits with $$z_2$$, then all three
+Customers that have been assigned into a connected component are then be grouped into tables.
+For instance, if $$c_2$$ sits with $$c_1$$ and $$c_3$$ sits with $$c_2$$, then all three
 are at the same table.
 
 ## Definition as Marginalizing Out DP Base Measure
@@ -87,6 +99,37 @@ $$\mathbb{V}[K | N] \approx \alpha \log (1 + \frac{N}{\alpha})$$
  of partitions for $$N$$ customers is given by the [Bell numbers](https://en.wikipedia.org/wiki/Bell_number)
   
 ## Relation to Other Stochastic Processes
+
+### Chinese Restaurant Table (CRT) Distribution
+
+The (random) number of non-empty tables after $$t$$ customers have been seated, 
+denoted $$K_t$$, is described by the Chinese Restaurant Table (CRT) Distribution:
+
+$$
+\begin{equation}
+P(K_t = k) = \frac{\Gamma(\alpha)}{\Gamma(t + \alpha)} |s(t, k)| \alpha^k \mathbbm{1}(k \leq t) \label{eq:CRT_distribution}
+\end{equation}
+$$
+
+$$|s(t, k)|$$ are unsigned Stirling numbers of the first kind. The CRT can equivalently be defined
+as a sum of independent but non-identically distributed Bernoulli random variables indicating the 
+$t$th customer was placed at a new table.
+
+$$
+\begin{equation*}
+K_t = \sum_{t'=1}^t b_{t'} \quad  \text{ where } \quad b_{t'} \sim Bernoulli \Big( \frac{\alpha}{\alpha + t' - 1} \Big)
+\end{equation*}
+$$
+
+By Le Cam's Theorem, $$K_t$$ is well approximated by a Poisson distribution with rate 
+$$\lambda = \alpha \log (1 + t/\alpha)$$, showing that the average number of tables grows
+logarithmically with $$t$$. Another, more direct proof of the expected value and variance is:
+
+$$
+\begin{align*}
+
+\end{align*}
+$$
 
 ### Blackwell-MacQueen Urn Scheme
 
