@@ -15,4 +15,3 @@ distributions over function spaces.
 - [MacQueen Urn Scheme](stochastic_processes/blackwell_macqueen_urn_scheme.md)
 - [Polya Urn Scheme](stochastic_processes/polya_urn_scheme.md)
 - [Stick Breaking Process](stochastic_processes/stick_breaking_process.md)
-g
