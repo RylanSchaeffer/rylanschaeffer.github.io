@@ -60,7 +60,10 @@ const quotations = [
     "I want a face that's fair this time<br/>" +
     "I want a spirit that is calm“",
 
-    "“Then one day you find ten years have got behind you, no one told you when to run, you missed the starting gun“",
+    "“Then one day you find<br/>" +
+    "ten years have got behind you<br/>" +
+    "no one told you when to run<br/>" +
+    "you missed the starting gun“",
 
     "“Time, it took the most of me<br/>" +
     "And left me with no key<br/>" +
@@ -137,4 +140,9 @@ const quotations = [
 
 
     "“World-class skill requires world-class discipline.“",
+
+    "“To martyr yourself to caution<br/>" +
+    "Is not gonna help at all<br/>" +
+    "Cause there'll be no safety in numbers<br/>" +
+    "When the Right One walks out of the door“",
 ];
