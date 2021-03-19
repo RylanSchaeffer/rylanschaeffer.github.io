@@ -16,8 +16,8 @@ as a student earning his Master's in Mechanical Engineering at MIT in the 1980s,
 capturing his experiences as a student and as a researcher, including his constant feelings of inadequacy.
 Forty years later, as a Master's student at Harvard conducting research in MIT's Brain and Cognitive
 Science Department, these posts are my stories, inspired by Pepper and in tribute to
-those who came before. To paraphrase my favorite quote, "If I could see \[...\] an insight,
-a new way of looking at it that would maybe, just maybe, find its way into future generations
+those who came before. To highlight my favorite quote, "If I could see \[...\] an insight,
+a new way of looking at [a problem] that would maybe, just maybe, find its way into future generations
 \[...\] In the Eiffel tower of technology, I would be a rivet."
 
 ### A Paper From Start to Finish in 2 Weeks
