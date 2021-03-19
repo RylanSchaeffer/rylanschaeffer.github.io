@@ -6,6 +6,8 @@ date: 2021-03-08
 tags: idea-machine 2021 MIT Harvard
 ---
 
+## Learning at Harvard and MIT in the Age of Artificial Intelligence
+
 ### Background
 
 One of my favorite books is <a href="https://mitpress.mit.edu/books/idea-factory">
