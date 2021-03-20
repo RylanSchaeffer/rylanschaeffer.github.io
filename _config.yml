@@ -23,6 +23,6 @@ collections:
     output: true
   own_research:
     output: true
-  others_research:
+  kernel_papers:
     output: true
 

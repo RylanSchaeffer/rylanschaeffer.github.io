@@ -1,14 +1,12 @@
 ---
 layout: post
-author: Rich, Liaw and Lee (Science 2014)
-title: Large environments reveal the statistical structure governing hippocampal representations
-date: 2021-02-07
-tags: place-fields hippocampus CA1 negative-binomial science
+author: Yosoke [...] Inokuchi (Science 2017)
+title: Overlapping memory trace indispensable for linking, but not recalling, individual memories
+date: 2021-03-21
+tags: memory-engrams science lateral-amygdala auditory-fear-conditioning conditioned-taste-aversion
 ---
 
 ## Research Questions
-
-Where are place fields created in new environments?
 
 ## Experiments
 
