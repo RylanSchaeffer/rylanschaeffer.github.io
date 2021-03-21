@@ -8,9 +8,10 @@ tags: memory-engrams amygdala auditory-fear-conditioning conditioned-taste-avers
 
 ## Research Questions
 
-Previous work ([Rashid et al. 2016 (Science)](rashid_science_2016_competition_memory_engrams.md),
-[Cai et al. 2016 (Nature)](cai_science_2016_shared_memory_engrams.md)) showed that conditioning
-two unrelated conditioned stimuli (CSes) close in time would result in an overlapping memory engram.
+Previous work ([Rashid et al. 2016](rashid_science_2016_competition_memory_engrams.md),
+[Cai et al. 2016](cai_science_2016_shared_memory_engrams.md)) showed that conditioning
+two unrelated conditioned stimuli (CSes) close in time would result in an overlapping memory engram
+(which I call an __entangled__ engram).
 
 - If two fear conditionings use separate modalities (here, taste and tone), can we entangle the memories
  through repeat co-exposure? Answer: yes.
@@ -39,7 +40,7 @@ trace interrupted the linkage without damaging the original memories."
 
 ![1EF](yokose_science_2017_overlapping_memory_engrams/1EF.png)
 
-### Exp 2 (Behavioral & Neuralg)
+### Exp 2 (Behavioral & Neural)
 
 - Perform conditioned taste aversion (CTA) and auditory fear conditioning (AFC). I could not find
   the spacing between these two conditioning events in the paper or in the supplement.
