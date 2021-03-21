@@ -1,8 +1,8 @@
 ---
 layout: post
-author: Rashid, ..., Franklin, Josselyn (Science 2016)
+author: Yiu, ..., Franklin, Josselyn (Neuron 2014)
 title: Competition between engrams influences fear memory formation and recall
-date: 2021-03-21
+date: 2021-03-20
 tags: memory-engrams lateral-amygdala auditory-fear-conditioning conditioned-taste-aversion
 ---
 

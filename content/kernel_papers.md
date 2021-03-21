@@ -1,8 +1,8 @@
 # Kernel Papers
 
-The following are succinct summaries (i.e. the kernels) of others' 
+The following are succinct summaries (kernels) of others' 
 research. These are not complete depictions; I focus on what I find
-insightful or interesting.
+insightful, interesting, surprising or novel.
 
 {% for post in site.kernel_papers reversed %}
   <div class="post">

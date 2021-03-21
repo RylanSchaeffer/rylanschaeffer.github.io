@@ -8,13 +8,15 @@ tags: memory-engrams dentate-gyrus contextual-fear-conditioning
 
 ## Research Questions
 
-"The act of memory recall increases the excitability
-of whole engram cells for about one hour."
+As background, excitability was shown to be key in determining which neurons
+are ultimately recruited to an engram ([Yiu et al. 2014](yiu_neuron_2014_neurons_recruited_memory_trace.md),
+[Rashid et al. 2016](rashid_science_2016_competition_memory_engrams.md)). Here, the 
+authors ask and answer:
 
-We found that reactivation of DG
-engram cells by contextual cues resulted in a transient enhance-
-ment of excitability, which was specific to engram cells, immedi-
-ately after recall.
+- What role does excitability play in memory recall? Memory recall
+increases excitability of engram cells for ~1 hour
+- What effect does this transient enhancement of excitability have? Short-term excitability
+  causes behavioral changes, including improved recall if primed
 
 ## Experiments
 
@@ -58,4 +60,16 @@ after exposure to A
 
 ![3CDE](pignatelli_neuron_2019_engram_excitability/3CDE.png)
 
-- Takeaway: excitability correlates with easier retrieval of fear
+- Takeaway: excitability correlates with easier retrieval of fear memory
+
+### Exp 4 (Cellular, Neural, Behavioral)
+
+- Is the previous result causal? That is, does excitability enable easier retrieval of fear memory?
+- Kir2.1 prevents this short term excitability
+- TODO: how to interpret 4D? I can't find what difference is between RFP and Kir2.1
+- Impairing short-term excitability decreased ability to recall memory (4E)
+
+![4DE](pignatelli_neuron_2019_engram_excitability/4DE.png)
+
+- Effect did not hold for different context C, displaying context-specificity
+- Takeaway: excitability allows for easier retrieval of fear memory
