@@ -8,7 +8,7 @@ tags: memory-engrams dentate-gyrus contextual-fear-conditioning
 
 ## Research Questions
 
-As background, excitability was shown to be key in determining which neurons
+Excitability was previously shown to be key in determining which neurons
 are ultimately recruited to an engram ([Yiu et al. 2014](yiu_neuron_2014_neurons_recruited_memory_trace.md),
 [Rashid et al. 2016](rashid_science_2016_competition_memory_engrams.md)). Here, the 
 authors ask and answer:
@@ -16,7 +16,7 @@ authors ask and answer:
 - What role does excitability play in memory recall? Memory recall
 increases excitability of engram cells for ~1 hour
 - What effect does this transient enhancement of excitability have? Short-term excitability
-  causes behavioral changes, including improved recall if primed
+  causes behavioral changes, including improved recall if primed on correct timescale (5min-1hr)
 
 ## Experiments
 

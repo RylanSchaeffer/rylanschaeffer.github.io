@@ -16,6 +16,17 @@ const quotations = [
 
     "“We all make choices, but in the end, our choices make us.“",
 
+    "“My strength is not in steel and fire, but in my intellect and will.”",
+
+    "“Your heart ain't cold 'cause it burns<br/>" +
+    "a desire to leave the mire“",
+
+    "“Who imprisoned me here? Who keeps me here? " +
+    "Who can release me? Who's controlling and constraining my life except...me?”",
+
+    "I shall see her again. I know that in my heart. One last time.<br/>" +
+    "Until then, I shall continue to send people to her.",
+
     "“Yet, he thought, if I can die saying 'Life is so beautiful,' then nothing else is important.“",
 
     "“I know I can<br/>" +
