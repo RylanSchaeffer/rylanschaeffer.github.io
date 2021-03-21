@@ -70,16 +70,16 @@ CTA retrieval 24 hours later (J) but did not affect AFC aversion 48 hours later 
   
 ### Exp 3 (Neural)
 
-- Optogenetically suppress AFC neurons during RCS
+- Optogenetically suppress AFC neurons during repeated coretrieval sessions
 
 ![3J](yokose_science_2017_overlapping_memory_engrams/3J.png)  
 
-- Optical silencing of AFC engram during RCS had no effect on retrieval
+- Optical silencing of AFC engram during repeated coretrieval sessions had no effect on retrieval
   of the original CTA and AFC memories
 
 ![3KL](yokose_science_2017_overlapping_memory_engrams/3KL.png)
 
-- Optical silencing of AFC engram during RCS prevented freezing in
+- Optical silencing of AFC engram during repeated coretrieval sessions prevented freezing in
 response to CTA (animal was no longer terrified of bitter water)
 
 ![3M](yokose_science_2017_overlapping_memory_engrams/3M.png)
