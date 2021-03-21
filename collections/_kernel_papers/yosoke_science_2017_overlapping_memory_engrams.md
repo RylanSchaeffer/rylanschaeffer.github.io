@@ -58,9 +58,33 @@ CTA retrieval 24 hours later (J) but did not affect AFC aversion 48 hours later 
 
 ![](yokose_science_2017_overlapping_memory_engrams/1JK.png)
 
+- Percentage of the coshared neuronal population in amygdala between CTA and AFC
+  to total ensembles activated during retrieval was 15.2% (coretrieval), 9.1% (control), 
+  and 8.2% (no-reactivation).
+
+![](yokose_science_2017_overlapping_memory_engrams/2A.png)
+
+![](yokose_science_2017_overlapping_memory_engrams/2F.png)
+
 - Takeaway: Impairing one engram only affects the other engram if the two engrams have been linked
   by co-presentation of the taste and tone stimuli
   
-### Exp 
+### Exp 3 (Neural)
 
+- Optogenetically suppress AFC neurons during RCS
 
+![](yokose_science_2017_overlapping_memory_engrams/3J.png)  
+
+- Optical silencing of AFC engram during RCS had no effect on retrieval
+  of the original CTA and AFC memories
+
+![](yokose_science_2017_overlapping_memory_engrams/3KL.png)
+
+- Optical silencing of AFC engram during RCS prevented freezing in
+response to CTA (animal was no longer terrified of bitter water)
+
+![](yokose_science_2017_overlapping_memory_engrams/3M.png)
+
+- Ratio of overlapping cells was significantly reduced by optical silencing
+
+![](yokose_science_2017_overlapping_memory_engrams/3O.png)
