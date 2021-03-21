@@ -3,23 +3,22 @@ layout: post
 author: Yokose, ..., Inokuchi (Science 2017)
 title: Overlapping memory trace indispensable for linking, but not recalling, individual memories
 date: 2021-03-21
-tags: memory-engrams amygdala auditory-fear-conditioning conditioned-taste-aversion
+tags: memory-engrams amygdala auditory-fear-conditioning conditioned-taste-aversion optogenetics
 ---
-
-## Background
-
-Previous work ([Rashid et al. 2016 (Science)](rashid_science_2016_competition_memory_engrams.md),
-[Cai et al. 2016 (Nature)](cai_science_2016_shared_memory_engrams.md)) showed that conditioning
-two unrelated conditioned stimuli (CSes) close in time would result in an overlapping memory engram. 
-
-__Disclaimer__: I found this paper very hard to read. 
 
 ## Research Questions
 
-"If one retrieves two memories around the same time, a small number of neurons will 
-become involved in both memories. Yokose et al. investigated the cellular ensemble 
-mechanisms underlying the association between two such memories. In mice, a small 
-population of neurons mediates the association. Memory traces for two independent 
+Previous work ([Rashid et al. 2016 (Science)](rashid_science_2016_competition_memory_engrams.md),
+[Cai et al. 2016 (Nature)](cai_science_2016_shared_memory_engrams.md)) showed that conditioning
+two unrelated conditioned stimuli (CSes) close in time would result in an overlapping memory engram.
+
+- If two fear conditionings use separate modalities (here, taste and tone), can we entangle the memories
+ through repeat co-exposure? Answer: yes.
+- What is the neural basis of the entangled memories? The two engrams have overlapping neurons.
+- Are the overlapping neurons necessary to retrieve either memory separately? No.
+- Are the overlapping neurons necessary to retrieve the linked memory? Yes.
+
+"Memory traces for two independent 
 emotional memories in the brain partially overlapped when the two memories were retrieved 
 synchronously to create a linkage. Suppressing the activity of the overlapping memory
 trace interrupted the linkage without damaging the original memories."
@@ -32,13 +31,13 @@ trace interrupted the linkage without damaging the original memories."
 - On Day 11, some mice had CS1 (taste) and CS2 (tone) paired during repeated coretrieval sessions (RCS)
 - Control mice did not hear tone during retrieval sessions
 
-![](yokose_science_2017_overlapping_memory_engrams/1A.png)
+![1A](yokose_science_2017_overlapping_memory_engrams/1A.png)
 
 - During subsequent CTA test, mice froze, indicating taste had become linked to fear of tone-predicting shock
 - During subsequent CTA test, control mice froze less
 - Takeaway: Co-presenting stimuli links two already-formed memory engrams
 
-![](yokose_science_2017_overlapping_memory_engrams/1EF.png)
+![1EF](yokose_science_2017_overlapping_memory_engrams/1EF.png)
 
 ### Exp 2 (Behavioral & Neuralg)
 
@@ -47,7 +46,7 @@ trace interrupted the linkage without damaging the original memories."
 - Inject protein synthesis inhibitor anisomycin (or vehicle, control)
   after Test 1 (day 12)
 
-![](yokose_science_2017_overlapping_memory_engrams/1G.png)  
+![1G](yokose_science_2017_overlapping_memory_engrams/1G.png)  
 
 - Anisomycin disrupted CTA aversion 24 hours later (H) and AFC aversion 48 hours later (I)
 
@@ -62,9 +61,9 @@ CTA retrieval 24 hours later (J) but did not affect AFC aversion 48 hours later 
   to total ensembles activated during retrieval was 15.2% (coretrieval), 9.1% (control), 
   and 8.2% (no-reactivation).
 
-![](yokose_science_2017_overlapping_memory_engrams/2A.png)
+![2A](yokose_science_2017_overlapping_memory_engrams/2A.png)
 
-![](yokose_science_2017_overlapping_memory_engrams/2F.png)
+![2F](yokose_science_2017_overlapping_memory_engrams/2F.png)
 
 - Takeaway: Impairing one engram only affects the other engram if the two engrams have been linked
   by co-presentation of the taste and tone stimuli
@@ -73,18 +72,48 @@ CTA retrieval 24 hours later (J) but did not affect AFC aversion 48 hours later 
 
 - Optogenetically suppress AFC neurons during RCS
 
-![](yokose_science_2017_overlapping_memory_engrams/3J.png)  
+![3J](yokose_science_2017_overlapping_memory_engrams/3J.png)  
 
 - Optical silencing of AFC engram during RCS had no effect on retrieval
   of the original CTA and AFC memories
 
-![](yokose_science_2017_overlapping_memory_engrams/3KL.png)
+![3KL](yokose_science_2017_overlapping_memory_engrams/3KL.png)
 
 - Optical silencing of AFC engram during RCS prevented freezing in
 response to CTA (animal was no longer terrified of bitter water)
 
-![](yokose_science_2017_overlapping_memory_engrams/3M.png)
+![3M](yokose_science_2017_overlapping_memory_engrams/3M.png)
 
 - Ratio of overlapping cells was significantly reduced by optical silencing
+- Takeaway: Optogenetic silencing of one engram while the other is acquired prevents
+the two engrams from becoming linked
 
-![](yokose_science_2017_overlapping_memory_engrams/3O.png)
+![3O](yokose_science_2017_overlapping_memory_engrams/3O.png)
+
+### Exp 4 (Neural)
+
+- Don't understand
+
+### Exp 5 (Neural)
+
+- Test whether overlapping neurons cause taste-induced freezing by silencing
+only overlapping neurons
+
+- Two groups were subjected to the CTA retrieval test with or without
+  optical silencing (CTA-paired or CTA-unpaired,
+  respectively)
+  
+- Two other groups were subjected to the AFC retrieval test
+  with or without optical silencing (AFC-paired or AFC-unpaired,
+  respectively).
+
+![4H](yokose_science_2017_overlapping_memory_engrams/4H.png)
+
+- CTA aversion unaffected by silencing overlapping neurons (J)
+- AFC freezing unaffected by silencing overlapping neurons (K)
+- Silencing overlapping neurons significantly reduced taste-induced freezing(I)
+
+![4IJK](yokose_science_2017_overlapping_memory_engrams/4IJK.png)
+
+- Takeaway: overlapping neurons link one engram (shock and freezing) to another engram
+  (taste). Silencing overlap doesn't impair either separate memory, but does impair link
