@@ -125,6 +125,28 @@ co-allocated to same engram
 
 ![7B_part2](lau_neurobiology_2020_behavioral_generation_of_false_memory/7B_part2.png)
 
+- Takeaway: persistent excitability is key for linking experiences in shared engram
 
 ### Exp 6 (Neural, Behavioral)
 
+- Group 1: Blue light before CS1 fear conditioning. CS2 exposure after 3 hours. 
+24 hours later, test retrieval to CS2 (with or without red light, inhibiting selected neurons),
+  then test retrieval to CS1 (with or without red light)
+
+![8A_part1](lau_neurobiology_2020_behavioral_generation_of_false_memory/8A_part1.png)  
+
+- Group 2: No blue light before CS  
+
+![8A_part2](lau_neurobiology_2020_behavioral_generation_of_false_memory/8A_part2.png)
+
+- Results:
+- With blue light during CS1 conditioning and no red light during CS2 retrieval, high freezing
+- With blue light during CS1 conditioning and red light during CS2 retrieval, low freezing
+- With blue light during CS1 conditioning and red light during CS1 retrieval, low freezing
+- Red light had no effect if no blue light used
+
+![8C](lau_neurobiology_2020_behavioral_generation_of_false_memory/8C.png)
+
+- Takeaway: Neutral stimulus is coallocated to the same engram as a negative stimulus if 
+separated by 3 hours
+- Freezing during red light + CS1 retrieval suggests CS1 and CS2 neurons are largely one and the same 
