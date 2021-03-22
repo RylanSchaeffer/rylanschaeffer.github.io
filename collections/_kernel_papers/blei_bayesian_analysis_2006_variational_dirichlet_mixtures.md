@@ -38,4 +38,4 @@ $$q(\underline{V}, \underline{\eta^*}, \underline{Z}) = \prod_{k=1}^{K-1} q_{\ga
 \prod_{k=1}^K q_{\tau_k}(\eta_t^*)\prod_{n=1}^N q_{\phi_n}(z_n)$$
 
 where $$K$$ is the variational truncation of the number of mixing components
-and $$\{\gamma_k\} \cup \{tau_k\} \cup \{\phi_n \}$$ are our variational parameters.
+and $$\{\gamma_k\} \cup \{\tau_k\} \cup \{\phi_n \}$$ are our variational parameters.
