@@ -3,7 +3,7 @@ layout: post
 author: Abdou, ..., Inokuchi (Science 2018)
 title: Synapse-specific representation of the identity of overlapping memory engrams
 date: 2021-03-22
-tags: memory-engrams lateral-amygdala auditory-fear-conditioning conditioned-taste-aversion
+tags: memory-engrams lateral-amygdala auditory-fear-conditioning conditioned-taste-aversion optogenetics
 ---
 
 ## Research Questions
