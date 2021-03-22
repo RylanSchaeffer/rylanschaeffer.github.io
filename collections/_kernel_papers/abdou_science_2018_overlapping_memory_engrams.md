@@ -8,8 +8,8 @@ tags: memory-engrams lateral-amygdala auditory-fear-conditioning conditioned-tas
 
 ## Research Questions
 
-Previously, [Rashid et al. 2016](rashid_science_2016_competition_memory_engrams.md)
-and [Cai et al. 2016](cai_nature_2016_shared_memory_engrams.md) showed that conditioning
+Previously, [Rashid et al. 2016](../_kernel_papers_drafts/rashid_science_2016_competition_memory_engrams.md)
+and [Cai et al. 2016](../_kernel_papers_drafts/cai_nature_2016_shared_memory_engrams.md) showed that conditioning
 close in time result in overlapping engrams, and [Yokose et al. 2017](yokose_science_2017_overlapping_memory_engrams.md)
 further showed that the overlap in neurons between engrams is responsible for linking the 
 shared experiences. This paper asks and answers:

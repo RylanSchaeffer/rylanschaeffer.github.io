@@ -9,8 +9,8 @@ tags: memory-engrams dentate-gyrus contextual-fear-conditioning
 ## Research Questions
 
 Excitability was previously shown to be key in determining which neurons
-are ultimately recruited to an engram ([Yiu et al. 2014](yiu_neuron_2014_neurons_recruited_memory_trace.md),
-[Rashid et al. 2016](rashid_science_2016_competition_memory_engrams.md)). Here, the 
+are ultimately recruited to an engram ([Yiu et al. 2014](../_kernel_papers_drafts/yiu_neuron_2014_neurons_recruited_memory_trace.md),
+[Rashid et al. 2016](../_kernel_papers_drafts/rashid_science_2016_competition_memory_engrams.md)). Here, the 
 authors ask and answer:
 
 - What role does excitability play in memory recall? Memory recall

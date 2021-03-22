@@ -8,7 +8,7 @@ tags: memory-engrams amygdala auditory-fear-conditioning conditioned-taste-avers
 
 ## Research Questions
 
-Previous work ([Rashid et al. 2016](rashid_science_2016_competition_memory_engrams.md),
+Previous work ([Rashid et al. 2016](../_kernel_papers_drafts/rashid_science_2016_competition_memory_engrams.md),
 [Cai et al. 2016](cai_science_2016_shared_memory_engrams.md)) showed that conditioning
 two unrelated conditioned stimuli (CSes) close in time would result in an overlapping memory engram
 (which I call an __entangled__ engram).
