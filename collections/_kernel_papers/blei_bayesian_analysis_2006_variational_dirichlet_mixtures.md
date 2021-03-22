@@ -20,12 +20,12 @@ modeling, see [my notes on DPs](../content/learning/stochastic_processes/dirichl
 Assuming the observable data is drawn from an exponential family distribution
 and the base distribution is the conjugate prior, we have a nice probabilistic model:
 
-1. Draw $$V_i | \alpha \sim Beta(1, \alpha)$$. Let $$\underline{V} = \{V_1, V_2, ...\}$$
-2. Draw parameters for the mixing distributions $$\eta_i^* | G_0 \sim G_0$$, where $$G_0$$ is the
+1. Draw $$V_i \lvert \alpha \sim Beta(1, \alpha)$$. Let $$\underline{V} = \{V_1, V_2, ...\}$$
+2. Draw parameters for the mixing distributions $$\eta_i^* \lvert G_0 \sim G_0$$, where $$G_0$$ is the
 base measure of the DP. Let $$\underline{\eta^*} = \{\eta_1^*, \eta_2^*, ...\}$$.
 3. For the $$n= 1, ..., N$$ data point
-    - Draw $$Z_n | \underline{V} \sim Multi(\pi(V))$$
-    - Draw $$X_n | Z_n \sim p(x_n | \eta_{z_n^*})$$
+    - Draw $$Z_n \lvert \underline{V} \sim Multi(\pi(V))$$
+    - Draw $$X_n \lvert Z_n \sim p(x_n \lvert \eta_{z_n^*})$$
 
 
 ![Figure1](blei_bayesian_analysis_2006_variational_dirichlet_mixtures/Figure1.png)
