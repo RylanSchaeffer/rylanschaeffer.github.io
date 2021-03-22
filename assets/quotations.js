@@ -144,8 +144,6 @@ const quotations = [
     "“I can feel a storm near<br/>" +
     "The dream won't go away<br/>",
 
-    "“I wanna live the stories I write“",
-
     "“You know Mr. Burns, you're the richest guy I know.“<br/>" +
     "“Ah yes, but I'd trade it all for a little more“",
 
