@@ -13,7 +13,7 @@ tags: dirichlet-process variational-inference
 ## Background
  
 For a quick primer on Dirichlet processes and their use in mixture
-modeling, see [my notes on DPs]({site.url}/content/learning/stochastic_processes/dirichlet_process.html)
+modeling, see [my notes on DPs](../content/learning/stochastic_processes/dirichlet_process.html)
 
 ## Approach
 
