@@ -15,7 +15,8 @@ further showed that the overlap in neurons between engrams is responsible for li
 shared experiences. This paper asks and answers:
 
 - How does the brain distinguish identity of particular memory amid many
-memories in the same ensemble?
+memories in the same ensemble? Answer: sensory engrams drive reactivation of the entangled
+  engram
   
 
 ## Experiments
@@ -53,3 +54,60 @@ recovers association, but Ani + tBC does not.
 - Same result if recall was tested using optogenetic activation instead of tone
 - Takeaway: Ani + tBC prevents AC and MGn synapses from activating LA engram 
 
+### Exp 2
+- Don't understand. Something about selective erasure of target memory.
+
+### Exp 3
+- Don't understand. Something about selective erasure of target memory.
+
+### Exp 4
+- What is effect of complete retrograde amnesia of one memory in shared engram ensemble?
+- Fear condition 7-kHz (event 1). Then fear condition 2-kHz (event 2)
+  either 5 hours or 24 hours later
+  
+![3B](abdou_science_2018_overlapping_memory_engrams/3B.png)
+
+- When two events were separated by 5 hours, recall for event 2 was enhanced (fig. S5),
+consistent with Rashid 2016
+  
+- Regardless of 5h or 24h, two engrams were found in auditory cortex (3E top)
+
+- Overlap in lateral amygdala was significantly larger in 5h than 24h
+
+![3E](abdou_science_2018_overlapping_memory_engrams/3E.png)
+  
+### Exp 5
+
+- Building off previous experiment, have two groups of mice go through
+  two fear conditionings separated by 5 hours
+- Group 1 has AC/MGn injected with saline after Event 1 test (Day 5), 
+  then AC/MGn injected with Ani+tBC after Event 2 test (Day 7)
+- Group 2 has AC/MGn injected with Ani+tBC after Event 1 test (Day 5),
+  then AC/MGn injected with saline after Event 2 test (Day 7)
+
+![3F](abdou_science_2018_overlapping_memory_engrams/3F.png)
+
+- Both groups correctly recall fear during first test to Tone A
+- Group 1 unaffected during second test of Tone A, but Group 2 freezes significantly
+less (suggesting erasure of Fear 1)
+- Both groups correctly recall fear during first test to Tone B
+- Group 2 unafffected during second test of Tone B, but Group 1
+freezes significantly less (suggesting erasure of Fear 2)
+
+![3GH](abdou_science_2018_overlapping_memory_engrams/3GH.png)
+
+- Cartoon demonstrating selective erasure of synapses to shared engram.
+Yellow are two overlapping engrams in lateral amygdala
+
+![3I](abdou_science_2018_overlapping_memory_engrams/3I.png)
+
+- Takeway: we can selectively erase synapses from sensory areas (auditory cortex, MGn)
+  to lateral amygdala
+- Rylan question: how do we know that Tone A fear is preserved in group 2?
+
+### Exp 6
+
+- How is each memory preserved in the shared ensemble?
+- Takeaway: sensory-engrams drive overlapping engrams, preserving uniqueness of memory
+
+TODO: maybe finish later. this was a big let down
