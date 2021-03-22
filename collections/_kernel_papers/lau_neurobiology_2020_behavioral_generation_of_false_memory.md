@@ -29,33 +29,33 @@ This paper asks and answers:
 - Day 2: Test Tone B 
 - Day 3: Test Tone A.
 
-![1A](lau_neurobiology_2020_behavioral_generation_of_false_memory/1A.png)
+![2A](lau_neurobiology_2020_behavioral_generation_of_false_memory/2A.png)
 
 - Freezing in response to Tone B during first presentation is equal between 3h and 24 hr groups
 - Freezing to Tone B during test is higher for 3h than 24 hr group
 
-![1B](lau_neurobiology_2020_behavioral_generation_of_false_memory/1B.png)
+![2B](lau_neurobiology_2020_behavioral_generation_of_false_memory/2B.png)
 
 - For control, repeat experiment with no Tone B exposure.
 
-![1C](lau_neurobiology_2020_behavioral_generation_of_false_memory/1C.png)
+![2C](lau_neurobiology_2020_behavioral_generation_of_false_memory/2C.png)
 
 - Freezing (in decreasing order): Tone A > Tone B (3 hr) > Tone B (24 hours) = No Tone B exposure
 
-![1D](lau_neurobiology_2020_behavioral_generation_of_false_memory/1D.png)
+![2D](lau_neurobiology_2020_behavioral_generation_of_false_memory/2D.png)
 
 
 ### Exp 2 (Behavior)
 
 - Repeat the same experiment, replacing the negative Tone A with negative Light A
 
-![2A](lau_neurobiology_2020_behavioral_generation_of_false_memory/2A.png)
+![3A](lau_neurobiology_2020_behavioral_generation_of_false_memory/3A.png)
 
 - Same results as before
 - Freezing in response to Tone B during first presentation is equal between 3h and 24 hr groups  
 - Freezing during test (in decreasing order): Light A > Tone B (3 hr) > Tone B (24 hr)
 
-![2B](lau_neurobiology_2020_behavioral_generation_of_false_memory/2B.png)
+![3B](lau_neurobiology_2020_behavioral_generation_of_false_memory/3B.png)
 
 ### Exp 3 (Neural)
 
