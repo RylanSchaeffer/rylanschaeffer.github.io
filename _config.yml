@@ -25,4 +25,6 @@ collections:
     output: true
   kernel_papers:
     output: true
+  kernel_papers_drafts:
+    output: false
 
