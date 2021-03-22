@@ -57,7 +57,7 @@ This paper asks and answers:
 
 ![2B](lau_neurobiology_2020_behavioral_generation_of_false_memory/2B.png)
 
-### Exp 3 (Neural, Behavioral)
+### Exp 3 (Neural)
 
 - Later experiments will need to manipulate engrams in 3 hours. This is too short for
   the typical tag-and-manipulate approach, necessitating allocate-and-manipulate approach
@@ -77,5 +77,54 @@ This paper asks and answers:
 - Result: Group 1 freeze less when red light activated
 - Takeaway: Optogenetic stimulation controllably biases which neurons are recruited to the engram
 
+### Exp 4 (Neural)
 
+- Three conditions: auditory fear condition (FC), blue light with no fear conditioning (BL), 
+ blue light with fear conditioning (BL+FC)
+- Measure c-fos+ immunohistochemistry (which I guess measures cell activity / synaptic formation)
+- In targeted neurons, highest c-fos+ expression in BL+FC, then FC, then BL
+
+![5D](lau_neurobiology_2020_behavioral_generation_of_false_memory/5D.png)
+
+- Takeaway: further suggests that blue light biases which neurons are allocated to the memory engram
+
+### Exp 5 (Neural, Behavioral)
+
+- THE BIG EXPERIMENT in this paper
+- Hypothesis: false association learnt if CS2 was presented 3 hours post conditioning because
+co-allocated to same engram
+- Group 3h-NpACY-RL: Fear condition CS1 using blue light to bias preselected neurons towards inclusion in engram. 
+  3 hours later, expose to CS2 but use Red Light (RL) to inhibit preselected neurons.
+  
+![7_3h-RL](lau_neurobiology_2020_behavioral_generation_of_false_memory/7_3h-RL.png)  
+
+- Group 3h-NpACY-BL: Fear condition CS1 using blue light to bias preselected neurons towards inclusion in engram.
+  3 hours later, expose to CS2 but use Blue Light (BL) to similarly bias preselected neurons.
+  
+![7_3h-RL](lau_neurobiology_2020_behavioral_generation_of_false_memory/7_3h-BL.png)
+
+- Group 24h-NpACY-RL: Fear condition CS1 using blue light to bias preselected neurons towards inclusion in engram.
+  24 hours later, expose to CS2 but use Red Light (RL) to inhibit preselected neurons.
+
+![7_24h-RL](lau_neurobiology_2020_behavioral_generation_of_false_memory/7_24h-RL.png)
+
+- Group 24h-NpACY-BL: Fear condition CS1 using blue light to bias preselected neurons towards inclusion in engram.
+  3 hours later, expose to CS2 but use Red Light (RL) to inhibit preselected neurons.
+
+![7_24h-RL](lau_neurobiology_2020_behavioral_generation_of_false_memory/7_24h-BL.png)  
+
+- Results 
+- 3 hours: optogenetically inhibiting, but not exciting, engram neurons impaired creation of 
+  freezing response to CS2
+- 24 hours: optogenetically exciting, but not inhibiting, engram neurons created freezing
+  response to CS2
+
+![7B_part1](lau_neurobiology_2020_behavioral_generation_of_false_memory/7B_part1.png)
+
+- 3 hour - Red light in 3 hour case impaired learning freezing response to CS1 
+
+![7B_part2](lau_neurobiology_2020_behavioral_generation_of_false_memory/7B_part2.png)
+
+
+### Exp 6 (Neural, Behavioral)
 
