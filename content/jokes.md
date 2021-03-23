@@ -2,12 +2,6 @@
 
 ## Nerdy
 
-- (Warning: Causal Inference Joke) One day at the airport, a very tiny, very petite grandmother is passing through security. As she steps up
-  to the scanner, it reveals that her winter coat is filled with explosives! A security guard asks her to
-  step inside a private room and take off her coat. “Ma’am, you can’t fly like that!” the guard says.
-  “What are you thinking??” The grandmother replies, “I read online that the probability of one bomb on a
-  flight is small, but that the probability of two bombs on a flight is even smaller!”
-
 - (This was a true story told to me by my Resident Advisor at Harvard. She = my RA) She was a 7th year
   PhD student and had been working on a paper for ~2.5 years. She and her supervisor finally submitted
   the paper on a Friday. Her supervisor says to her, "Congratulations on finally finishing that paper!
@@ -18,6 +12,20 @@
   little secret?" "Of course!" "I didn't really take the weekend off," she says. "Can I let you in
   a secret too?" her supervisor asks. "I didn't really take the weekend off either!"
 
+- At a recent real-time Java conference, the participants were given an awkward question to answer: 
+  "If you had just boarded an airliner and discovered that your team of programmers had been responsible
+  for the flight control software, how many of you would disembark immediately?" Among the forest of 
+  raised hands only one man sat motionless. When asked what he would do, he replied that he would be 
+  quite content to stay aboard. "With my team's software," he said, "the plane wouldn't make it to 
+  the runway."
+
+
+- (Warning: Causal Inference Joke) One day at the airport, a very tiny, very petite grandmother is passing through security. As she steps up
+  to the scanner, it reveals that her winter coat is filled with explosives! A security guard asks her to
+  step inside a private room and take off her coat. “Ma’am, you can’t fly like that!” the guard says.
+  “What are you thinking??” The grandmother replies, “I read online that the probability of one bomb on a
+  flight is small, but that the probability of two bombs on a flight is even smaller!”
+  
 - A man is flying in a hot air balloon and realizes he is lost. He reduces height and spots a man down below.
   He lowers the balloon further and shouts:"Excuse me, can you help me? I promised my friend. I would meet him
   half an hour ago, but I don't know where I am." The man below says, "Yes, you are in a hot air balloon, hovering approximately 30 feet above this field. You are between 40 and 42 degrees North latitude, and between 58 and 60 degrees West longitude." "You must be a programmer," says the balloonist.
@@ -26,9 +34,7 @@
   The man below says, "You must be a project manager"
   "I am," replies the balloonist, "but how did you know?"
   "Well," says the man, "you don't know where you are or where you are going. You have made a promise which you have no idea how to keep, and you expect me to solve your problem. The fact is you are in the exact same position you were in before we met, but now it is somehow my fault."
-
-- At a recent real-time Java conference, the participants were given an awkward question to answer: "If you had just boarded an airliner and discovered that your team of programmers had been responsible for the flight control software, how many of you would disembark immediately?" Among the forest of raised hands only one man sat motionless. When asked what he would do, he replied that he would be quite content to stay aboard. With his team's software, he said, the plane was unlikely to even taxi as far as the runway, let alone take off.
-
+  
 - Shlemiel gets a job as a street painter, painting the dotted lines down the middle of the road. On the first day he takes a can of paint out to the road and finishes 300 yards of the road. "That's pretty good!" says his boss, "you're a fast worker!" and pays him a kopeck.
   The next day Shlemiel only gets 150 yards done. "Well, that's not nearly as good as yesterday, but you're still a fast worker. 150 yards is respectable," and pays him a kopeck.
   The next day Shlemiel paints 30 yards of the road. "Only 30!" shouts his boss. "That's unacceptable! On the first day you did ten times that much work! What's going on?" "I can't help it," says Shlemiel. "Every day I get farther and farther away from the paint can!"
