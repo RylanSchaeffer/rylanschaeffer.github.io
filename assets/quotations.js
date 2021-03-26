@@ -18,6 +18,9 @@ const quotations = [
 
     "“My strength is not in steel and fire, but in my intellect and will.”",
 
+    "\"Against all the evil that Hell can conjure, all the wickedness that mankind can produce, " +
+    "we will send unto them... only you.\"",
+
     "“Your heart ain't cold 'cause it burns<br/>" +
     "a desire to leave the mire“",
 
