@@ -75,8 +75,8 @@ without the light stimulation (ChR2-mCherry, No light)
   
 ### Exp 5 (Neural)
 - Test the role of Basolateral Amygdala (BLA) and Central Amygdala (CeA)
-- Three groups of mice underwent experiment and were killed after testing in Context B 
-  (natural recall), Context A (false recall) or Context C (neutral context)
+- Three groups of mice underwent previous experiment and were killed after testing in B' 
+  (natural recall), A' (false recall) or C' (neutral context)
 - Significantly more cells in BLA and CeA were active during Natural Recall and Fear Recall
 than the neutral context
 
