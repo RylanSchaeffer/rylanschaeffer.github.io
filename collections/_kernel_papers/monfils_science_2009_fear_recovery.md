@@ -1,8 +1,8 @@
 ---
 layout: post
-author: Schiller, ..., LeDoux, Phelps (Nature 2010)
-title: Preventing the return of fear in humansusing reconsolidation update mechanisms
-date: 2021-03-24
+author: Monfils, ..., LeDoux (Science 2009)
+title: Extinction-Reconsolidation Boundaries: Key to Persistent Attenuation of Fear Memories
+date: 2021-03-29
 tags: fear-conditioning 
 ---
 
