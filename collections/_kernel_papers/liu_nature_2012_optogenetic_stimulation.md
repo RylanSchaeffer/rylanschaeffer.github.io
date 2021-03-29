@@ -1,7 +1,7 @@
 ---
 layout: post
 author: Liu and Ramirez, ..., Tonegawa (Nature 2012)
-title: 
+title: Optogenetic stimulation of a hippocampal engram activates fear memory recall
 date: 2021-03-29
 tags: memory-engrams contextual-fear-conditioning dentate-gyrus auditory-fear-conditioning
 ---
