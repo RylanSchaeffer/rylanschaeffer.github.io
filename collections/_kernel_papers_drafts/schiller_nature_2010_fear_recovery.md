@@ -1,9 +1,9 @@
 ---
 layout: post
-author: First, ..., Last (Venue Year)
-title: 
-date: 2021-03-21
-tags: memory-engrams lateral-amygdala auditory-fear-conditioning conditioned-taste-aversion
+author: Schiller, ..., LeDoux, Phelps (Nature 2010)
+title: Preventing the return of fear in humansusing reconsolidation update mechanisms
+date: 2021-03-24
+tags: fear-conditioning 
 ---
 
 ## Background
