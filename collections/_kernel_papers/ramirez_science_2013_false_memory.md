@@ -12,7 +12,7 @@ tags: memory-engrams basolateral-amygdala central-amygdala contextual-fear-condi
 Previously, ablating/inactivating memory engram neurons prevented
 retrieval of fear response
 
-[Previous work](liu_nature_2012_optogenetic_stimulation.md) by the Tonegawa lab showed
+[Previous work](liu_nature_2012_optogenetic_stimulation.html) by the Tonegawa lab showed
 that optogenetically activating memory engram cells (specifically in dentate gyrus (DG) during
 contextual fear conditioning) would reactive the fear memory.
 

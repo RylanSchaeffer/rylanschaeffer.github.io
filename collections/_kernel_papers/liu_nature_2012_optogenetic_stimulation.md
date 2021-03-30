@@ -32,7 +32,7 @@ c-fos is an immediate early gene often used as marker of recent neuronal
 - Optogenetic activation had no effect on freezing response (Fig 3B)
 - EYFP: same as experimental group, but no optogenetic activation in Context A (Fig 3C)
 
-![3ABCDEF](liu_nature_2012_optogenetic_stimulation/3abcdef.png)
+![3ABCDEF](liu_nature_2012_optogenetic_stimulation/3ABCDEF.png)
 
 - Freezing by experimental group is relatively small. Authors hypothesized this might
 be due to imprecision with tagging engram neurons
