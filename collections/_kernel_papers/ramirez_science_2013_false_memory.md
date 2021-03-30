@@ -1,6 +1,6 @@
 ---
 layout: post
-author: Ramirez, Liu, ..., Tonegawa (Science 2013)
+author: Ramirez and Liu, ..., Tonegawa (Science 2013)
 title: Creating a False Memory in the Hippocampus
 date: 2021-03-29
 tags: memory-engrams basolateral-amygdala central-amygdala contextual-fear-conditioning
