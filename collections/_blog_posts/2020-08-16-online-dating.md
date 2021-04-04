@@ -2,7 +2,7 @@
 layout: post
 title:  Why Online Dating is (Almost Certainly) a Waste of Your Time
 date: 2020-08-16
-tags: online-dating 2020
+tags: dating online-dating 2020
 ---
 
 A few weeks ago, I went on a hike with two friends (6 feet apart, wearing masks,
