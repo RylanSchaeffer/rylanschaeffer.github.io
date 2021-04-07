@@ -1,6 +1,7 @@
 # Book Summaries
 
 __Book__: The Shallows: What the Internet Is Doing to Our Brains 
+
 __Author__: Nicholas Carr
 
 Phil Mann, a friend of mine who's a voracious reader, recommended reading
