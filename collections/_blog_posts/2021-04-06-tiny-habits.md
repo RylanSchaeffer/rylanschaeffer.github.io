@@ -1,9 +1,9 @@
 ---
 layout: post
-title: Book Summary: Tiny Habits by BJ Fogg
-author: Rylan Schaeffer
+title: Book Summary - Tiny Habits by BJ Fogg
+author: rylanschaeffer@gmail.com
 date: 2021-04-06
-tags: book-summaries
+tags: book-summaries 2021
 ---
 
 Finished Tiny Habits by BJ Fogg! Summary 
