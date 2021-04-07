@@ -1,6 +1,7 @@
 # Book Summaries
 
-### The Shallows: What the Internet Is Doing to Our Brains By Nicholas Carr
+__Book__: The Shallows: What the Internet Is Doing to Our Brains 
+__Author__: Nicholas Carr
 
 Phil Mann, a friend of mine who's a voracious reader, recommended reading
 Nicholas Carr's The Shallows: What the Internet is Doing to Our Brains. It's
