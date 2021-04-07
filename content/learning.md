@@ -24,5 +24,5 @@ Many notes are woefully incomplete. Don't judge :)
 - [Stochastic Processes](learning/stochastic_processes.html)
 - [Reinforcement Learning](learning/reinforcement_learning.html)
 
-On less mathematical-technical topics
+On less mathematical topics
 - [Book Summaries](learning/book_summaries.html)
