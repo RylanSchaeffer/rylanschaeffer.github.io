@@ -7,4 +7,4 @@ tags: book-summaries 2021
 ---
 
 Finished Tiny Habits by BJ Fogg! Summary 
-[here](content/learning/book_summaries/fogg_tiny_habits.md).
+[here](../content/learning/book_summaries/fogg_tiny_habits.html).
