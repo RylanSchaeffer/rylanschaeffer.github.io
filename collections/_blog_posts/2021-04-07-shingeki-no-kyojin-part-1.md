@@ -12,7 +12,7 @@ r/shingekinokyojin and r/titanfolk, reading fan theories, sharing the highs and 
 disappointed with the last few chapters, but I promised myself to withhold judgement until
 the final chapter, trusting Isayama to masterfully end the story. Instead, in my opinion,
 the writing crashed and burned. I want to explain why I felt like (almost) every character
- and the story was butchered. In this Part One, I'll start with Zeke.
+ and the story were butchered. In this Part One, I'll start with Zeke.
 
 __Warning__: Major plot spoilers below for Shingeki no Kyojin.
 

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Why the ending of Shinjeki no Kyojin was abysmal (Part Two - Reiner)
-date: 2021-04-10
+date: 2021-04-11
 tags: 2021 book-summaries random
 ---
 
@@ -12,7 +12,7 @@ r/shingekinokyojin and r/titanfolk, reading fan theories, sharing the highs and 
 disappointed with the last few chapters, but I promised myself to withhold judgement until
 the final chapter, trusting Isayama to masterfully end the story. Instead, in my opinion,
 the writing crashed and burned. I want to explain why I felt like (almost) every character
- and the story was butchered. In [Part One](2021-04-07-shingeki-no-kyojin-part-1.md), I
+ and the story were butchered. In [Part One](2021-04-07-shingeki-no-kyojin-part-1.md), I
 discussed Zeke. In this Part Two, I'll cover Reiner.
 
 __Warning__: Major plot spoilers below for Shingeki no Kyojin.
