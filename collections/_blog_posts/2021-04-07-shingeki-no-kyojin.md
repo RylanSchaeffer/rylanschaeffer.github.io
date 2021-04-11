@@ -1,20 +1,20 @@
 ---
 layout: post
-title: Why the ending of Shinjeki no Kyojin was abysmal 
-author: 
-date: 2021-03-17
+title: Why the ending of Shinjeki no Kyojin was abysmal
+date: 2021-04-10
 tags: 2021 book-summaries random
 ---
 
 The final chapter of Shingeki no Kyojin was released last week, marking the end of a decade
 for me. 
-For over ten years now, I've eagerly awaited the monthly new chapter threads on 
+For over ten years now, I'd eagerly await the monthly new chapter threads on 
 r/shingekinokyojin and r/titanfolk, reading fan theories, sharing the highs and lows with others. I had been very
 disappointed with the last few chapters, but I promised myself to withhold judgement until
-the final chapter, to give Isayama time to masterfully land the story. Instead, it crashed 
-and burned. The following explains why (almost) everything was bad.
+the final chapter, to give Isayama time to masterfully land the story. Instead, in my opinion,
+the writing crashed and burned. The following explains why (almost) everything was bad.
 
-__Warning__: Major plot spoilers below for both Shingeki no Kyogin and Alan Moore's Watchmen.
+__Warning__: Major plot spoilers below for both Shingeki no Kyogin (and also Alan
+Moore's Watchmen).
 
 ### Criteria for Excellent Writing
 
@@ -86,6 +86,8 @@ up to the most basic scrutiny?" This is especially problematic because we're rep
    shown that Zeke is one of the most clever characters, and yet we're supposed
    to buy that he apparently is too stupid to reflect on his own beliefs.
 
+### 
+
 ### The Pitiful Ending of Reiner
 
 - Reiner is irrelevant and nothing happens to his character. He survives everything to do what? Say to his
@@ -131,7 +133,20 @@ ponder? I have no idea. Before t
 
 ### The Nonsensical Ending of Eren 
 
-### The Nonsensical Ending of Ymir
+### Ymir
+
+Chapter 137:
+
+"In spite of all the strength she had, she could never defy King Fritz. Why was that? For
+two thousand years, she remained here, obeying him. What was the reason?"
+
+"Yes, she did still feel attached to the world she left behind."
+
+"It's because the founder, Ymir, wants to be connected. Because she wants
+something from us."
+
+
+
 
 ### The Horseshit Hallucigenia
 
@@ -155,7 +170,11 @@ deeper issues.
   losing complete control the first time and despite all previous titan shifters
   requiring significant practice
 - Hallucigenia (which has much more serious problems) survives the explosives wrapped
-  around Eren's neck and the detonation of Armin's  
+  around Eren's neck and the detonation of Armin's
+- In Chapter 137, Gabi snipes an exceptionally agile Okapi titan, at distacne,
+  while on the back of Falco's flying titan, which has to be on par with 
+  Euron shooting one of Denaerys dragons. Also, let's not forget that Armin is
+  inside the titan's mouth and if her shot was a foot lower, she kills Armin.
   
 disappears despite functioning 
   independently. Seems to be indestructible (following
