@@ -17,7 +17,7 @@ discussed Zeke. In this Part Two, I'll cover Reiner.
 
 __Warning__: Major plot spoilers below for Shingeki no Kyojin.
 
-### Reiner
+## Reiner
 
 Regardless of how readers feel about Reiner, I think we can all agree that his plot line
 is featured prominently. Chapter after chapter, he survived

@@ -19,5 +19,27 @@ the writing crashed and burned. I want to explain why I felt like (almost) every
 
 __Warning__: Major plot spoilers below for Shingeki no Kyojin.
 
-### Levi
+## Levi
+
+1. Misunderstands and cheapens the Survey Corps
+
+"It seems that this is how it ends. That goal that you all dedicated your hearts to."
+
+Misunderstands the Survey Corps. Forgets the change in purpose to fight Marley
+
+https://attackontitan.fandom.com/wiki/Raid_on_Liberio
+
+
+https://readshingekinokyojin.com/manga/shingeki-no-kyojin-chapter-136/
+Levi realizes Survey Corps had tremendously simplified world view
+
+2. No ambiguity
+
+
+3. Levi's apparently retires event though humanity needs him
+
+
+Being pushed around in a wheelchair
+
+
 
