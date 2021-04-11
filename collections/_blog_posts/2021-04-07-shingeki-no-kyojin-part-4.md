@@ -28,7 +28,7 @@ __Warning__: Major plot spoilers below for Shingeki no Kyojin.
 
 I despise deus ex machina endings. I think a bare minimum for high quality writing
 is that the rules of the universe must be consistent. The author can set up whatever 
-rules she or he wishes, but once those rules are constructed, they stand. There can
+rules she or he wishes, but once those rules are established, they stand. There can
 be no deus ex machina. Without this constraint, anything can happen, there's no more
 predictability, and impact of whatever does happen is cheapened.
 
@@ -38,16 +38,23 @@ told throughout the entire series that titan shifters
 have specific powers, and yet somehow, Falco's __Jaws__ titan comes with the power to 
 transform into a flying titan. We've never seen a flying titan, and
 yet somehow the Jaws titan is the one that comes with wings. People will argue that
-there was foreshadowing ("Look at his name - Falco!"), in my opinion, this is just a shitty
-excuse for arbitrarily granting one titan the ability to fly in order to advance
-the plot.
+there was foreshadowing ("Look at his name - Falco!") and there's some shoddy handwaving
+by Falco ("I drank Zeke's spinal fluid so I inherited some Beast-like powers!" - if so,
+why did no one in Ragako village or Levi's squad in the forest show any beast-like qualities?).
+In my opinion, there is no justification for arbitrarily granting exactly one titan the ability to
+fly at the exact right moment necessary to advance the plot.
 
 An additional point of frustration is that Falco masters his titan shifting abilities 
-the second time he transforms. In earlier chapters, we watched how hard
-Eren worked to master control of his titan and yet somehow, Falco transitions from being
+the second time he transforms (not counting the time when he's a pure titan). 
+In earlier chapters, we watched how hard Eren worked to master control of his titan and 
+yet somehow, Falco transitions from being
 completely out of control in his first transformation (Chapter 129) to being a master
 capable of flying long distances (Chapter 135) and nimbly dodging 10 Warhammer titan
-archers (Chapter 136).
+archers (Chapter 136) on his second transformation. 
+
+
+I believe these tropes, of making material up when necessary to advance the plot and with
+no justification, are called [ass pulls](https://tvtropes.org/pmwiki/pmwiki.php/Main/AssPull).
 
 ## Gabi
 
@@ -55,37 +62,39 @@ I'll discuss Hallucigenia and the Chapter 138 titanization in a later post, so
 setting that aside for the time being, I think Gabi is handled well. I especially
 like her throw of Falco after the two are reunited.
 
-The one nit I have, similar to Falco, is how Isayama grants her godlike shooting accuracy
-to move the plot forward. I understand that she's a trained warrior candidate, and
-I'm willing to buy that she can shoot a predictably moving Eren head at five meters
+The one nit I have, similar to Falco, is how Isayama moves the plot forward by granting
+her godlike shooting accuracy . I understand that she's a trained warrior candidate, and
+I'm willing to buy that she can shoot a predictably moving Eren's head at five meters
 (Chapter 119) and can shoot a titan with her rifle down its throat
 (Chapter 124), but how the hell does she snipe the exceptionally agile Okapi 
-titan, at distance, from Falco's back in Chapter 137
-as he dodges the archer Warhammer titans? How does she have enough hands to hold onto
+titan from Falco's back in Chapter 137 as he dodges the archer Warhammer titans? 
+How does she have enough hands to hold onto
 the netting while also aim? And let's not forget that Armin is inside the titan's mouth,
-so if Gabi's shot is even a half meter too low, she will kill Armin, guaranteeing
-Eren and Ymir victory.
+so if Gabi's shot is even a half meter too low, her shot kills Armin, guaranteeing
+they will lose.
 
-In my opinion, I think this is worse than with Euron sniping one of Daenerys's dragons. 
+In my opinion, I think this is worse than Euron sniping one of Daenerys's dragons. 
 Euron at least had a stable platform and a big target with no collateral damage to 
 worry about.
 
 
 ## Pieck
 
-Again, Isayama pulls the same shit. In Chapter 104, Pieck's titan is injured. Falco
-and Gabi pull her from her titan body and she isn't able to regenerate. Falco notices, 
-asking "Her body isn't repairing itself fast enough... Why doesn't she have the power
+Again, Isayama pulls something out of nowhere as needed. In Chapter 104, Pieck's titan
+is injured. 
+Falco and Gabi pull her from her titan body, but Pieck isn't able to regenerate. Falco 
+asks, "Her body isn't repairing itself fast enough... Why doesn't she have the power
 of the titans?" Gabi replies, "The cart titan isn't as tough as some of the others. 
-It's not like the armor..." It's established that the Cart titan can't take a beating.
-Then in Chapter 136, she's able to transform as many times as she wishes, boasting
+It's not like the armor..." Ok, so we have clearly established that the Cart titan 
+can't take a beating.
+Skipping forward to Chapter 136, Pieck is now able to transform as many times as she
+wishes, boasting
 "With the Cart's endurance, so long as they don't take me out, I can fight until
 we win."
 
-Some might make a distinction, that in Chapter 104 her human form was injured whereas
+Some might make a distinction that in Chapter 104 her human form was injured whereas
 in Chapter 136 her human form is not injured, but if so, that distinction is
-just another [ass pull](https://tvtropes.org/pmwiki/pmwiki.php/Main/AssPull) for
-when the plot needed it.
+just another amazing power introduced exactly when the plot needed it.
 
 ## Connie and Jean
 
