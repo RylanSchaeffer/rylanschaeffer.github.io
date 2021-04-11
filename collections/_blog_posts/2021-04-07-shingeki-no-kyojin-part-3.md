@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Why the ending of Shinjeki no Kyojin was abysmal (Part Three - Levi)
-date: 2021-04-11
+date: 2021-04-12
 tags: 2021 book-summaries random
 ---
 

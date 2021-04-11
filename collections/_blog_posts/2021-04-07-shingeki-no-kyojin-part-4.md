@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Why the ending of Shinjeki no Kyojin was abysmal (Part Four - Falco, Gabi, Pieck, Connie, Jean)
-date: 2021-04-11
+date: 2021-04-13
 tags: 2021 book-summaries random
 ---
 
@@ -49,12 +49,13 @@ the second time he transforms (not counting the time when he's a pure titan).
 In earlier chapters, we watched how hard Eren worked to master control of his titan and 
 yet somehow, Falco transitions from being
 completely out of control in his first transformation (Chapter 129) to being a master
-capable of flying long distances (Chapter 135) and nimbly dodging 10 Warhammer titan
-archers (Chapter 136) on his second transformation. 
+capable of flying long distances (Chapter 135) and nimbly dodging at least 10
+(yes, I counted) Warhammer titan archers (Chapter 136) on his second transformation. 
 
 
-I believe these tropes, of making material up when necessary to advance the plot and with
-no justification, are called [ass pulls](https://tvtropes.org/pmwiki/pmwiki.php/Main/AssPull).
+This trope, of pulling material without justification when necessary to
+advance the plot, is called an [ass pull](https://tvtropes.org/pmwiki/pmwiki.php/Main/AssPull).
+It is not a hallmark of exceptional writing.
 
 ## Gabi
 
@@ -70,8 +71,9 @@ I'm willing to buy that she can shoot a predictably moving Eren's head at five m
 titan from Falco's back in Chapter 137 as he dodges the archer Warhammer titans? 
 How does she have enough hands to hold onto
 the netting while also aim? And let's not forget that Armin is inside the titan's mouth,
-so if Gabi's shot is even a half meter too low, her shot kills Armin, guaranteeing
-they will lose.
+so if Gabi's shot is a half meter off, she'll kill Armin, guaranteeing
+the Alliance will be unable to stop Eren and humanity will perish. Under those conditions,
+would a reasonable character risk taking the shot? Not a chance in hell.
 
 In my opinion, I think this is worse than Euron sniping one of Daenerys's dragons. 
 Euron at least had a stable platform and a big target with no collateral damage to 
@@ -88,13 +90,17 @@ of the titans?" Gabi replies, "The cart titan isn't as tough as some of the othe
 It's not like the armor..." Ok, so we have clearly established that the Cart titan 
 can't take a beating.
 Skipping forward to Chapter 136, Pieck is now able to transform as many times as she
-wishes, boasting
-"With the Cart's endurance, so long as they don't take me out, I can fight until
-we win."
+wishes, boasting "With the Cart's endurance, so long as they don't take me out, I 
+can fight until we win."
 
 Some might make a distinction that in Chapter 104 her human form was injured whereas
-in Chapter 136 her human form is not injured, but if so, that distinction is
-just another amazing power introduced exactly when the plot needed it.
+in Chapter 136 her human form is not injured. Fine, but again, I despise that this
+distinction is introduced to grant Pieck significantly more fighting power
+exactly when the plot needed it. Additionally, this new ability is inconsistent with
+her previous combat appearances. Marley uses her at long distance, with a cannon attached
+to her back. If the Cart titan really is such a powerful up-close fighter, why do they
+place it at maximum distance from the fight?
+
 
 ## Connie and Jean
 
