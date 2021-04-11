@@ -69,3 +69,8 @@ be that __in order for Zeke to accept Armin's argument, the reader must buy that
    hard to believe because we're repeatedly shown that Zeke is one of the cleverest 
    characters, and yet we're supposed to buy that he apparently is too stupid to 
    reflect on his own beliefs.
+   
+To make clear how absurd this conversation is, imagine someone asks an atheist, "How
+can there be no god if the universe exists?" and the atheist immediately replies,
+"Oh my goodness. That is such a good argument. I have never thought of that. You're
+right. There must be a god. To thank you, I'll kill myself."
