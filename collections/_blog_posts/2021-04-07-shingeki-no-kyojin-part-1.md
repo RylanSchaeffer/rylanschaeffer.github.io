@@ -16,13 +16,13 @@ the writing crashed and burned. I want to explain why I felt like (almost) every
 
 __Warning__: Major plot spoilers below for Shingeki no Kyojin.
 
-### Zeke
+## Zeke
 
-At the end of 136, our heroes are surrounded, Armin is captured and everything seems hopeless.
+At the end of Chapter 136, our heroes are surrounded, Armin is captured and everything seems hopeless.
 In the alternative Paths dimension, Armin sits down next to Zeke. Unless Armin can persuade
-Zeke to aid the heroes, everyone will die. The stakes could not be higher.
+Zeke to aid our heroes, everyone will die. The stakes could not be higher.
 
-The conversation that transpires butchers Zeke's character. To understand why, let's refresh
+The conversation that transpires ruins Zeke's character. To understand why, let's refresh
 our memories of who Zeke is. At a young age,
 Zeke was forced to betray his parents to save himself and his grandparents. He was raised
 by Tom Ksaver, and together they hatched a plan to end the Eldian race by rendering every
@@ -39,10 +39,10 @@ in the hope of escaping. This is a man so committed to his plan that he would ch
 death over failure. What could Armin say to change Zeke's mind?
 
 Armin shares with Zeke four small memories. He tells Zeke that their ability to remember
-happy past events, laden with emotional meaning, shows the value of life. If the
+happy past events, pregnant with emotional weight, shows the value of life. If the
 sole purpose is to multiply, Armin argues, then there's no need to remember events like these.
 Armin reasons that because we do have these memories, life must have more meaning than just 
-propagating itself. __Immediately, Zeke is convinced__. He returns to the world,
+propagating itself. __Zeke is immediately convinced__. He returns to the world,
 offers himself to Levi and reflects on the beauty of life before being executed.
 
 This is a pathetic treatment of Zeke's character for three reasons:
@@ -51,17 +51,21 @@ This is a pathetic treatment of Zeke's character for three reasons:
    defines him__.
 He throws away his euthanasia plan that he came up with, that he followed for his entire life,
 that he committed so many atrocities in the pursuit of achieving, faster than I can make toast.
+   
 2. __Armin's argument is terrible__. Why do social animals have warm
 memories of their family and friends? Because those memories forge social cohesion,
 increasing the chance that the tribe survives. Armin's argument feeds into Zeke's rage
 against life. Our most cherished memories are not even our own; it's just an evolutionary
 adaptation to improve our fitness. I can't buy that Zeke would find Armin's argument a
 compelling one.
+   
 3. For the sake of argument, let's assume that that Armin's argument
 is indeed persuasive to Zeke. We're forced to ask: how deeply has Zeke evaluated the
 philosophy at the core of his identity, if Armin's argument is new to him? The answer must
-be not at all. Zeke's acceptance of Armin's argument tells us that Zeke never once
-asked himself, "Is the reason why I'm killing all these people a good reason? Does it stand
-up to the most basic scrutiny?" This is especially problematic because we're repeatedly
-   shown that Zeke is one of the most clever characters, and yet we're supposed
-   to buy that he apparently is too stupid to reflect on his own beliefs.
+be that __in order for Zeke to accept Armin's argument, the reader must buy that
+   Zeke has never reflected on his own thoughts__. Zeke's acceptance of Armin's argument
+   tells us that Zeke never once asked himself, "Is the reason why I'm killing all these
+   people a good reason? Does it stand up to the most basic scrutiny?" This is especially
+   hard to believe because we're repeatedly shown that Zeke is one of the cleverest 
+   characters, and yet we're supposed to buy that he apparently is too stupid to 
+   reflect on his own beliefs.
