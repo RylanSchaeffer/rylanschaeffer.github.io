@@ -56,7 +56,9 @@ memories of their family and friends? Because those memories forge social cohesi
 increasing the chance that the tribe survives. Armin's argument feeds into Zeke's rage
 against life. Our most cherished memories are not even our own; it's just an evolutionary
 adaptation to improve our fitness. I can't buy that Zeke would find Armin's argument a
-compelling one.
+compelling one. As one redditor pointed out, "Since the Eldians' memories can be 
+   manipulated, they really can't be sure their memories are their own... which is a
+   whole other layer for that."
    
 3. For the sake of argument, let's assume that that Armin's argument
 is indeed persuasive to Zeke. We're forced to ask: how deeply has Zeke evaluated the
