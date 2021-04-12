@@ -1,18 +1,15 @@
 ---
 layout: post
-title: Why the ending of Shinjeki no Kyojin was abysmal (Part One - Zeke)
+title: My complaints with Shinjeki no Kyojin's Ending (Part One - Zeke)
 date: 2021-04-10
 tags: 2021 book-summaries random
 ---
 
-The final chapter of Shingeki no Kyojin was released last week, marking the end of a decade
-for me. 
-For over ten years now, I'd eagerly await the monthly new chapter threads on 
-r/shingekinokyojin and r/titanfolk, reading fan theories, sharing the highs and lows with others. I had been very
-disappointed with the last few chapters, but I promised myself to withhold judgement until
-the final chapter, trusting Isayama to masterfully end the story. Instead, in my opinion,
-the writing crashed and burned. I want to explain why I felt like (almost) every character
- and the story were butchered. In this Part One, I'll start with Zeke.
+The final chapter of Shingeki no Kyojin was released last week. I had been very 
+disappointed with the last few chapters, but I promised to withhold judgement until 
+the final chapter, trusting Isayama to masterfully end the story. Instead, in my 
+opinion, the writing crashed and burned. I want to explain why I felt like (almost)
+every character and the story were butchered. In this Part One, I'll start with Zeke.
 
 __Warning__: Major plot spoilers below for Shingeki no Kyojin.
 
@@ -51,6 +48,8 @@ This is a pathetic treatment of Zeke's character for three reasons:
    defines him__.
 He throws away his euthanasia plan that he came up with, that he followed for his entire life,
 that he committed so many atrocities in the pursuit of achieving, faster than I can make toast.
+   Regardless of Armin's arguments, humans rarely change their minds and convincing someone
+   to change their mind requires considerable time and energy.
    
 2. __Armin's argument is terrible__. Why do social animals have warm
 memories of their family and friends? Because those memories forge social cohesion,
@@ -68,9 +67,13 @@ be that __in order for Zeke to accept Armin's argument, the reader must buy that
    people a good reason? Does it stand up to the most basic scrutiny?" This is especially
    hard to believe because we're repeatedly shown that Zeke is one of the cleverest 
    characters, and yet we're supposed to buy that he apparently is too stupid to 
-   reflect on his own beliefs.
+   reflect on his own beliefs. To make clear how absurd this conversation is, 
+   imagine someone asks an atheist, "How can there be no god if the universe 
+   exists?" and the atheist immediately replies, "Oh my goodness. That is such 
+   a good argument. I have never thought of that. You're right. There must be a god."
    
-To make clear how absurd this conversation is, imagine someone asks an atheist, "How
-can there be no god if the universe exists?" and the atheist immediately replies,
-"Oh my goodness. That is such a good argument. I have never thought of that. You're
-right. There must be a god. To thank you, I'll kill myself."
+I don't have a problem with Isayama choosing to have Armin talk with Zeke. I think that
+done correctly, these conversations can be memorable and moving e.g. Dr. Manhattan and Silk
+Spectre's conversation on Mars. But this immediate persuasion with a terrible reason (aka
+[talk no jutsu](https://konohalibrary.fandom.com/wiki/Talk_No_Jutsu) is an unbefitting end
+to Zeke's otherwise complex and interesting character.
