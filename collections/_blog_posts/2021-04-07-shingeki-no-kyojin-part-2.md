@@ -9,7 +9,8 @@ The final chapter of Shingeki no Kyojin was released last week. I had been very
 disappointed with the last few chapters, but I promised to withhold judgement until
 the final chapter, trusting Isayama to masterfully end the story. Instead, in my
 opinion, the writing crashed and burned. I want to explain why I felt like (almost)
-every character and the story were butchered. In this Part 2, I'll cover Reiner.
+every character and the story were butchered. In this Part 2, I'll cover Reiner,
+Falco, Gabi, Pieck, Connie and Jean.
 
 - [Part 1 (Zeke)](2021-04-07-shingeki-no-kyojin-part-1.md)
 
@@ -44,7 +45,26 @@ quality of Game of Thrones Season 8's writing, being comparable to Jon Snow's
 ["I dun wan it" and "Yur mah queen."](https://www.youtube.com/watch?v=PhmGkEpkMM4)
 So much invested in developing a character that fades into irrelevance.
 
-## Falco
+One redditor defended Reiner's ending, writing, "Reiner Is portrayed as a tragic 
+character, and similar to Eren. Both began as idealists that adapted to the brutal world
+by "keep moving forward", which eventually turned them pragmatic. By a point in their arcs,
+both wished for dreams that could never be true to them [...] Reiner wished to be a hero,
+and eventually wished to die for his sins, yet he would not get either of them. It's a poetic
+tragedy that the two are destined to be nearly exact opposite s of what they desire."
+
+Yes, I agree that Reiner is set up to be an amazing foil to Eren. But you know what's missing?
+__The consequences of Reiner's failures__. Reiner is perfectly set up to be a tragic failure.
+He never gets either of his wishes (to be a hero or to die), and it turns out his failure has
+no effect on him or anyone else at the end. To be a tragic character, the ending needs to be bad.
+Jason from the Argonauts is a tragic character because after all his success, he dies abandoned and
+alone, before being killed by his rotting ship that symbolizes how everything in his life has fallen
+to pieces. Daedalus is a tragic character because his son literally dies and he contemplates killing 
+himself before going into exile. In comparison, how does Reiner handle his failure? He calls Eren a
+chad, says hi to his mom and sniffs letters. What would have made Reiner a truly tragic character? 
+Driven by his repeat failures, he falls to his knees and shoots himself in the head. Or he exiles
+himself as penance for all that he's done.
+
+## Ass-Pulling is Bad Writing
 
 I despise deus ex machina endings. I think a bare minimum for high quality writing
 is that the rules of the universe must be consistent. The author can set up whatever
@@ -54,7 +74,14 @@ predictability, and impact of whatever does happen is cheapened.
 
 The trope of pulling material without justification when necessary to
 advance the plot is called an [ass pull](https://tvtropes.org/pmwiki/pmwiki.php/Main/AssPull).
-In my opinion, ass pulls are a hallmark of lazy writing. __What Isayama does with Falco
+In my opinion, ass pulls are a hallmark of bad writing. The problem in Shingeki No Kyojin
+is that so many new rules are introduced in the final chapters. Each on its own
+might be plausible, but when so many happen back to back, and ever single one is necessary
+to reach the ending, it strains uncredulity.
+
+## Falco
+
+ __What Isayama does with Falco
 is an egregious ass pull in two different ways__. First, throughout the
 entire series, we are repeatedly taught that titan shifters
 have specific powers, and yet somehow, Falco's Jaws titan comes with the power to
@@ -99,6 +126,13 @@ I don't mean to turn this post into a comparison with Game of Thrones Season 8, 
 my opinion, Gabi's shot is less believable than Euron sniping one of Daenerys's
 dragons. Euron at least had a stable relatively platform and a big target with no
 collateral damage to worry about.
+
+Someone on Reddit is adamant that her godlike shooting accuracy is well established,
+writing "She picks up a rifle, and hits two KIAs with near perfect precision, and would
+have hit a third if it was not for Falco. This established that she has godlike accuracy,
+and is part of her character." This is horseshit. The targets she hits are at short-to-medium
+range, from a stable shooting position, with predictably moving targets (or stationary, in the
+case of Sasha) and no possibility of collateral damage. I don't agree at all.
 
 ## Pieck
 

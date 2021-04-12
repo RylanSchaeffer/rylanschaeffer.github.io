@@ -1,6 +1,6 @@
 ---
 layout: post
-title: My complaints with Shinjeki no Kyojin's Ending (Part One - Zeke)
+title: Why the ending of Shinjeki no Kyojin was abysmal (Part One - Zeke)
 date: 2021-04-10
 tags: 2021 book-summaries random
 ---
