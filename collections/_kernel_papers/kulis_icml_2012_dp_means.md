@@ -3,7 +3,7 @@ layout: post
 author: Kulis and Jordan (ICML 2012)
 title: Revisiting k-means - New Algorithms via Bayesian Nonparametrics
 date: 2021-02-25
-tags: dirichlet-process k-means clustering bayesian-nonparametrics
+tags: dirichlet-process k-means clustering bayesian-nonparametrics mixture-models
 ---
 
 ## Motivation

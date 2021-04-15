@@ -4,7 +4,7 @@ author: Blei, Jordan (Bayesian Analysis 2006)
 title: Variational Inference for Dirichlet Process Mixtures
 classes: wide
 date: 2021-03-21
-tags: dirichlet-process variational-inference
+tags: dirichlet-process variational-inference mixture-models bayesian-nonparametrics
 ---
 
 ## Research Questions
