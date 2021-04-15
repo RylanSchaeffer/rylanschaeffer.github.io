@@ -72,4 +72,4 @@ The algorithm is called the Memory Bound Variational Dirichlet Process (MB-VDP).
         is imposed in the optimization is not clear)
   - Compression phase: compute clump constraints in top-down manner
       - Data points in same clump are used to update clump sufficient statistics
-      - Stop when criterion met
+      - Stop when too much time / space (number of clump constraints) used
