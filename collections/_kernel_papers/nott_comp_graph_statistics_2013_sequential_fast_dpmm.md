@@ -37,10 +37,10 @@ cluster.
     - Answer: Use the previous time step's variational distributions to initialize all terms
     - For the new terms, $$q_t(z_t)$$ and $$q_t(\theta_t)$$, first initialize $$q_t(z_t)$$ as
 
-        $$q_t(z_t) = q_{ij} \int q_{t-1}(\theta_k) p(y_t|\theta_k) d\theta_k $$
+        $$q_t(z_t) = \underbrace{q_{ij}}_{\text{Var. Latent Prior}} \int \underbrace{q_{t-1}(\theta_k)}_{\text{Var. Param Prior}}
+      \underbrace{p(y_t|\theta_k)}_{\text{Obs. Likelihood}} d\theta_k $$
     
-    where 
-
+    where
         $$q_{ij} = \frac{1}{\alpha + t - 1} \begin{cases} \sum_{t'< t} q_{t-1}(z_{t'} = j) + \alpha T\\
         \alpha (1 - ((i-1) \carat T)/T) \end{cases}$$
         
