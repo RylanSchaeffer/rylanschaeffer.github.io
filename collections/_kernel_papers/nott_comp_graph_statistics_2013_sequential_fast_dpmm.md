@@ -27,12 +27,16 @@ cluster.
   given observations $$x_{1:t}$$
 - Idea:
     - Suppose at time $$t$$, we have an approximate posterior for the previous time step
+      
       $$p(z_{1:t-1}, \theta_{1:t-1}|x_{1:t-1}) \approx \prod_{t' < t} q_{t-1}(z_{t'}) \prod_{t'<t} q_{t-1}(\theta_{t'})$$
+      
     - In English, that means we assume we have a fully factorized variational approximation of the joint 
       posterior from the previous time step
     - We can then update the previous time step's variational posterior by assuming the current step
-      will have a similar form: $$ \prod_{t' \leq t} q_{t}(z_{t'}) \prod_{t' \leq t} q_{t}(\theta_{t'})$$
-    -
+      will have a similar form:
+      
+      $$ \prod_{t' \leq t} q_{t}(z_{t'}) \prod_{t' \leq t} q_{t}(\theta_{t'})$$
+
 - Challenge: How will we initialize the current time step's variational distribution's $$\{q_t(z_t)\}$$  and $$\{q_t(\theta_t)\}$$?
     - Answer: Use the previous time step's variational distributions to initialize all terms
     - For the new terms, $$q_t(z_t)$$ and $$q_t(\theta_t)$$, first initialize $$q_t(z_t)$$ as
@@ -40,9 +44,9 @@ cluster.
         $$q_t(z_t) = \underbrace{q_{ij}}_{\text{Var. Latent Prior}} \int \underbrace{q_{t-1}(\theta_k)}_{\text{Var. Param Prior}}
       \underbrace{p(y_t|\theta_k)}_{\text{Obs. Likelihood}} d\theta_k $$
     
-    where
+    where $$q_{ij}$$ is defined using the truncated CRP (with truncation level $$T$$)
         $$q_{ij} = \frac{1}{\alpha + t - 1} \begin{cases} \sum_{t'< t} q_{t-1}(z_{t'} = j) + \alpha T\\
-        \alpha (1 - ((i-1) \carat T)/T) \end{cases}$$
+        \alpha (1 - ((i-1) \wedge T)/T) \end{cases}$$
         
     - then update parameters using Equation 11
 
