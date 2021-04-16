@@ -42,7 +42,7 @@ cluster.
     where 
 
         $$q_{ij} = \frac{1}{\alpha + t - 1} \begin{cases} \sum_{t'< t} q_{t-1}(z_{t'} = j) + \alpha T\\
-        \alpha (1 - ((i-1) \carat T)/T)$$
+        \alpha (1 - ((i-1) \carat T)/T) \end{cases}$$
         
     - then update parameters using Equation 11
 
