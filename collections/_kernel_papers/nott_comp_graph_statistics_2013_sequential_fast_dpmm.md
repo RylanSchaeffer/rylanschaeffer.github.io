@@ -8,7 +8,7 @@ tags: mixture-models dirichlet-process bayesian-nonparametrics clustering
 
 ## Background
 
-Previously, [Wang and Dunson (2011)](wang_comp_graph_statistics_2011_fast_inference_in_dpmm.md) proposed
+Previously, [Wang and Dunson (2011)](wang_comp_graph_statistics_2011_fast_inference_in_dpmm.html) proposed
 a fast inference algorithm for Dirichlet process mixture models that could be applied in an online setting,
 fancifully called Sequential Updating and Greedy Search (SUGS). The authors actually didn't intend 
 for their algorithm to function online, recommending that to remove the dependency on observation order,
@@ -47,7 +47,8 @@ but that at least no longer requires the MAP approximation
         $$q_t(z_t) = \underbrace{q_{ij}}_{\text{Var. Latent Prior}} \int \underbrace{q_{t-1}(\theta_k)}_{\text{Var. Param Prior}}
       \underbrace{p(y_t|\theta_k)}_{\text{Obs. Likelihood}} d\theta_k $$
     
-    where $$q_{ij}$$ is defined using the truncated CRP (with truncation level $$T$$)
+    where $$q_{ij}$$ is defined using the truncated CRP (with truncation level $$T$$):
+  
         $$q_{ij} = \frac{1}{\alpha + t - 1} \begin{cases} \sum_{t'< t} q_{t-1}(z_{t'} = j) + \alpha T\\
         \alpha (1 - ((i-1) \wedge T)/T) \end{cases}$$
         
