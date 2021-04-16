@@ -16,10 +16,13 @@ one should average over random orderings of the observations. The way SUGS made 
 by taking the MAP of the latent cluster's posterior, deterministically placing the observation at a single
 cluster.
 
-## Research Questions
+## Overview
 
-- Can we design a similarly fast online inference algorithm for DP mixture models that doesn't require
+- Can we design a similarly fast inference algorithm for DP mixture models that doesn't require
   collapsing the latent variable posterior at each time step?
+- The authors propose a variational version of SUGS called VSUGS that also doesn't function online,
+but that at least no longer requires the MAP approximation
+
 
 ## Conceptual Notes
 
