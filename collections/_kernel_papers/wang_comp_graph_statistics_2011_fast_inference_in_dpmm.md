@@ -2,7 +2,7 @@
 layout: post
 author: Wang and Dunson (Journal of Computational and Graphical Statistics 2011)
 title: Fast Bayesian Inference in Dirichlet Process Mixture Models
-date: 2021-03-21
+date: 2021-04-15
 tags: mixture-models dirichlet-process bayesian-nonparametrics clustering
 ---
 
