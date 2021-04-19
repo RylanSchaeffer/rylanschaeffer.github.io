@@ -3,7 +3,7 @@ layout: post
 author: Gomes, Welling, Perona (CVPR 2008)
 title: Incremental Learning of Nonparametric Bayesian Mixture Models
 date: 2021-04-15
-tags: mixture-models dirichlet-process bayesian-nonparametrics clustering 
+tags: mixture-models dirichlet-process bayesian-nonparametrics clustering streaming online
 ---
 
 ## Research Questions
