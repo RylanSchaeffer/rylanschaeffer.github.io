@@ -27,10 +27,10 @@ Some common discrete, continuous and special parametric distributions are:
 - [Exponential Family Distributions](probability/exponential_family_distributions.md)
 
 ## Probability Theory
-- [Random Variables](probability/random_variables.md)
 - [Probability Space](probability/probability_spaces.md)
 - [Probability Measure](probability/probability_measures.md)
 - [$$\sigma$$-Algebra](probability/sigma_algebra.md)
+- [Random Variables](probability/random_variables.md)
 
 ## Distances and Divergences
 
