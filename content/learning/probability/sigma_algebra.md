@@ -25,6 +25,8 @@ is a valid $$\sigma$$-algebra. The algebra contains the original set and the emp
 the algebra is closed under complementation; the algebra is closed under countable unions.
 The most complicated is the power set of $$\Omega$$ i.e. $$F(\Omega) := P(\Omega)$$.
 
+### Limits on Valid $$\sigma$$-algebras
+
 ### Borel Sigma-Algebras
 
 The Borel $$\sigma$$-algebra $$B$$ on a topological space $$\Omega$$ is the smallest

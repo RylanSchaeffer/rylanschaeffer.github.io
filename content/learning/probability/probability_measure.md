@@ -2,6 +2,8 @@
 
 __Parent__: [Probability](../probability.md)
 
+## Definition
+
 A __measure__ is a function from a [sigma-algebra](sigma_algebra.md) to the reals $$\mu: F 
 \rightarrow \mathbb{R}$$, satisfying two properties:
 
@@ -16,9 +18,21 @@ the sample space is unity i.e. $$\mu(\Sigma) = 1$$.
 ## Immediate Consequences
 
 - Monotonicity: $$A \subset B \Rightarrow \mu(A) \leq \mu(B)$$
-- Subadditivity: $$A \subset \Bigcup_{m=1}^{\infty} A_m \Rightarrow \mu(A) \leq 
+- Subadditivity: $$A \subset \bigcup_{m=1}^{\infty} A_m \Rightarrow \mu(A) \leq 
   \sum_{m=1}^{\infty} \mu(A_m)$$
 - Continuity from below: measures of sets $$A_i$$ in increasing sequence converge to the measure
-of limit $$\Bigcup_i A_i$$
+of limit $$\bigcup_i A_i$$
 - Continuity from above: measures of sets $$A_i$$ in decreasing sequence converge to the measure
-of intersection $$\Bigcap A_i$$
+of intersection $$\bigcap A_i$$
+  
+## Constructing Measures
+
+### Constructing Measures on Reals
+
+TODO: Clarify this (18.175 Lecture 1 Page 11)
+
+__Theorem__: for each right-continuous, non-decreasing function $$F$$ tending to 0 at $$-\infty$$
+and to 1 at $$\infty$$, there exists a unique measure defined on Borel sets of $$\mathbb{R}$$:
+
+$$ P((a, b]) := F(b) - F(a)$$
+

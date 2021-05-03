@@ -4,13 +4,14 @@ __Parent__: [Probability](../probability.md)
 
 ## Definition
 
-A probability space is a 3-tuple consisting of
+A probability space is a 3-tuple (\Omega, F, P) consisting of
 
 1. A set $$\Omega$$ called the sample space i.e. the set of all possible outcomes
 2. A [$$\sigma$$-algebra](sigma_algebra.md) $$F$$ on the set $$\Omega$$, which informally specifies
    the set of all "possible" events (events are outcomes or combinations of outcomes)
 3. A [probability measure](probability_measure.md) $$P: F \rightarrow [0, 1]$$
 
+The 2-tuple $$(\Omega, F)$$ is called a __measure space__.
 
 ## Related Material
 
