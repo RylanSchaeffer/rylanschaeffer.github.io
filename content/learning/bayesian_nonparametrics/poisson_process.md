@@ -1,5 +1,17 @@
 # Poisson Point Process
 
+Picture a sample space $$\Omega$$ (e.g. $$\mathbb{R}$$), with some intensity function
+$$f: \Omega \rightarrow \mathbb{R}_{\geq 0}$$. For a given interval $$A \subset \Omega$$,
+the random number of points that fall into the interval A is distributed Poisson with parameter
+equal to the integral of the intensity over the region:
+
+$$N_A \sim Poisson(\int_A f(\omega) d\omega ) $$
+
+with the additional property that if two regions $$A, B$$ are disjoint, then $$N_A$$ and
+$$N_B$$ are disjoint. This integral $$\int_A f(\omega) d\omega$$ can be viewed 
+as a measure, which presents an equivalent view, that $$N(A) \sim Poisson(F(A))$$ is a random
+measure.
+
 ## Definitions
 
 ### Counting Definition
