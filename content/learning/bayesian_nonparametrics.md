@@ -1,4 +1,4 @@
-# Bayesian Nonparametrics
+# Bayesian Nonparametrics & Stochastic Processes
 
 Bayesian Nonparametrics (BNPs) are models that define distributions over stochastic processes, 
 a set of random variables indexed by some index set (e.g. time or integers). For instance,
@@ -10,6 +10,7 @@ unbounded number of parameters to use as appropriate. One interpretation is ther
 Bayesian Nonparametrics are distributions over function spaces, where the function maps the
 index set to the set of random variables.
 
+- [Bernoulli Process](bayesian_nonparametrics/bernoulli_process.md)
 - [Beta Process](bayesian_nonparametrics/beta_process.md)
 - [Chinese Restaurant Process](bayesian_nonparametrics/chinese_restaurant_process.md)
 - [Dirichlet Process](bayesian_nonparametrics/dirichlet_process.md)
