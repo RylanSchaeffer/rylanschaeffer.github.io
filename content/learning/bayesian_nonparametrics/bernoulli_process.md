@@ -33,8 +33,7 @@ If $$B$$ is continuous, then $$X$$ is a Poisson process with intensity $$B$$:
 
 $$X = \sum_{n=1}^N \delta_{\omega_n}$$
 
-where $$N \sim Poisson(B(\Omega))$ and $$\omega_i \sim_{i.i.d.} B/B(\Omega)$$.
-
+where $$N \sim Poisson(B(\Omega))$$ and $$\omega_i \sim_{i.i.d.} B/B(\Omega)$$. 
 If $$B$$ is discrete, of the form $$B = \sum_i p_i \delta_{\omega_i}$$, then
 
 $$X = \sum_{n=1}^N b_i \delta_{\omega_i}$$
@@ -43,3 +42,12 @@ where $$b_i \sim_{i.i.d.} Bernoulli(p_i)$$. For those familiar with the Poisson 
 the Bernoulli process is identical except it gives weight/measure 1 or 0 to each singleton.
 The intuition is that $$X$$ is an object defined by a set of binary features it possesses,
 while $$B$$ encodes the probability that $$X$$ possesses each feature.
+
+## Properties
+
+### Conjugacy with the Beta Process
+
+See [beta process](beta_process.md) for details.
+
+### Marginalizing Out Beta Process Prior
+
