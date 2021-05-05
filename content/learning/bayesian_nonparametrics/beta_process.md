@@ -4,7 +4,14 @@ The Beta process is a random measure
 
 ## Definitions
 
-The random measure $$BP(c, B_0)$$ is a Beta process
+### As a Levy Process Definition
+
+A beta process $$B \sim BP(c, B_0)$$ is a positive Levy process whose Levy measure
+depends on 2 parameters:
+
+1. $$c: \Omega \rightarrow \mathbf{R}$$ is called the concentration function; if c
+   is a constant, it is occasionally instead called the concentration parameter
+2. $$B_0$$ is a fixed measure on $$\Omega$$ called the base measure
 
 ## Properties
 
