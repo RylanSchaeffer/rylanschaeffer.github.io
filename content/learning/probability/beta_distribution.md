@@ -8,3 +8,8 @@ Its density is
 $$p(x; \alpha, \beta) = \frac{\Gamma(\alpha + \beta)}{\Gamma(\alpha) \Gamma(\beta)} x^{\alpha-1} (1-x)^{\beta-1}$$
 
 
+## Properties
+
+### Conjugacy with Bernoulli / Binomial
+
+###

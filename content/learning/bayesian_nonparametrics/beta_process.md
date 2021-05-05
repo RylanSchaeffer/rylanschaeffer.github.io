@@ -21,4 +21,8 @@ or equivalently
 
 $$ B | X_1, ..., X_N \sim BP(c+N, \frac{c}{c+n} B_0 + \frac{1}{c+n}\sum_{j} m_{Nj} \delta_{\omega_j})$$
 
-where $$m_{Nj}$$ is the number of $$\{X_n\}_{n=1}^N$$ with mass at $$\delta_{\omega_j}$$.
+where $$m_{Nj}$$ is the integer number of $$\{X_n\}_{n=1}^N$$ with Dirac measure $$\delta_{\omega_j}$$.
+
+### Marginalizing Out Beta Process Prior
+
+See [Bernoulli process](bernoulli_process.md) for details.

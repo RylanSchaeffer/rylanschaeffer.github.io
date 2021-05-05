@@ -12,19 +12,26 @@ classified into one of several possible types:
 Some common discrete, continuous and special parametric distributions are:
 
 ### Discrete Distributions
+- Bernoulli
+- Beta-Bernoulli  
+- [Binomial](probability/binomial_distribution.md)
 - [Logarithmic](probability/logarithmic_distribution.md)
-- Poisson
+- [Poisson](probability/poisson_distribution.md)
 
 ### Continuous Distributions
 - [Beta](probability/beta_distribution.md)
 - [Cauchy](probability/cauchy_distribution.md)
+- Continuous Bernoulli
 - [Exponential](probability/exponential_distribution.md)  
 - [Kumaraswamy](probability/kumaraswamy_distribution.md)
 - Gamma
 - [Normal/Gaussian](probability/normal_distribution.md)
 
-### Special Distributions
+### Classes of Distribution
+- Elliptical Distributions
 - [Exponential Family Distributions](probability/exponential_family_distributions.md)
+- Levy-Stable Distributions
+- Location-Scale Distributions
 
 ## Probability Theory
 - [Probability Space](probability/probability_space.md)

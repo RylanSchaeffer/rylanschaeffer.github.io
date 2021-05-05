@@ -6,9 +6,9 @@ process is a random measure consisting of a set of Bernoulli random variables at
 in some sample space $$\Omega$$. The number of random variables and their locations
 are determined by a probability distribution or measure on $$\Omega$$. 
 
-## Definition
+## Definitions
 
-### Point Process
+### Point Process Definition
 
 A point process is a collection of points from some space. One definition of the Bernoulli
 process is as a point process. Let $$P$$ be a probability distribution on a sample space $$\Omega$$
@@ -22,7 +22,7 @@ distribution (and the source of the name) is that for all measurable sets $$A$$,
 
 $$X(A) \sim Binomial(N, P(A))$$
 
-### As a Levy Process
+### As a Levy Process Definition
 
 Let $$B$$ be a measure on $$\Omega$$. A Bernoulli process with hazard measure $$B$$, denoted $$X \sim
 BeP(B)$$ is a [Levy process](levy_process.md) with Levy measure
@@ -51,3 +51,17 @@ See [beta process](beta_process.md) for details.
 
 ### Marginalizing Out Beta Process Prior
 
+Analogous to how the [Beta-Bernoulli Compound Distribution](../probability/beta_binomial_distribution.md)
+describes marginalizing out a Beta distribution prior over a Bernoulli / Binomial distribution's parameter,
+we can similarly place a Beta Process prior on a Bernoulli process and marginalize it out. Doing so yields
+a predictive distribution over the next Bernoulli process. That is, suppose $$B \sim BP(c, B_0)$$ is a 
+[beta process](beta_process.md) and $$X_1, ..., X_N \sim_{i.i.d.} BeP(B)$$. Then the predictive distribution
+for $$X_{N+1}$$ is given by
+
+$$X_{N+1} | X_1, ..., X_N \sim BeP(\frac{c}{c+N} B_0 + \frac{1}{c+n} \sum_{n=1}^N X_n)$$
+
+or equivalently
+
+$$X_{N+1} | X_1, ..., X_N \sim BeP(\frac{c}{c+N} B_0 + \frac{1}{c+n} \sum_j m_{N, j} \delta_{\omega_j})$$
+
+where $$m_{Nj}$$ is the integer number of $$\{X_n\}_{n=1}^N$$ with Dirac measure $$\delta_{\omega_j}$$. 
