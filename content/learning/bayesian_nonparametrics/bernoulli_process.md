@@ -1,7 +1,10 @@
 # Bernoulli Process
 
 The Bernoulli process is a tricky thing to explain because there isn't an exact
-finite-dimensional distribution.
+finite-dimensional distribution to use for analogy. Intuitively, the Bernoulli
+process is a random measure consisting of a set of Bernoulli random variables at different locations
+in some sample space $$\Omega$$. The number of random variables and their locations
+are determined by a probability distribution or measure on $$\Omega$$. 
 
 ## Definition
 
@@ -36,4 +39,7 @@ If $$B$$ is discrete, of the form $$B = \sum_i p_i \delta_{\omega_i}$$, then
 
 $$X = \sum_{n=1}^N b_i \delta_{\omega_i}$$
 
-where $$b_i \sim_{i.i.d.} Bernoulli(p_i)$$
+where $$b_i \sim_{i.i.d.} Bernoulli(p_i)$$. For those familiar with the Poisson process,
+the Bernoulli process is identical except it gives weight/measure 1 or 0 to each singleton.
+The intuition is that $$X$$ is an object defined by a set of binary features it possesses,
+while $$B$$ encodes the probability that $$X$$ possesses each feature.
