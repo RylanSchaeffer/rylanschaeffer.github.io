@@ -20,9 +20,9 @@ Many notes are woefully incomplete. Don't judge :)
 - [Probability](learning/probability.html)
 - [Probabilistic Graphical Models](learning/probabilistic_graphical_models.html)
 - [Real Analysis](learning/analysis_real.html)
+- [Reinforcement Learning](learning/reinforcement_learning.html)
 - [Signals](learning/signals.html)
 - [Statistics](learning/statistics.html)
-- [Reinforcement Learning](learning/reinforcement_learning.html)
 
 On less mathematical topics
 - [Book Summaries](learning/book_summaries.html)
