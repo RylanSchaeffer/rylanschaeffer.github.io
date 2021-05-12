@@ -1,215 +1,39 @@
 # Reinforcement Learning
 
 ## Value-Based RL
------
 
-### Rescorla-Wagner Learning Rule
+- [Recurrent Replay Distributed DQN](reinforcement_learning/r2d2.md)
+- [Rescorla-Wagner Learning Rule](reinforcement_learning/rescorla_wagner.md)
 
-The Rescorla-Wagner Learning Rule (1972) was a seminal model of associative learning
-that preceded reinforcement learning. Associative learning is the problem of learning
-how different stimuli are associated with rewards or punishments $$r_n$$, where $$n$$ indexes
-the trial number. The model considers the agent receiving a one-hot encoded stimulus vector
-$$s_n$$, where each element indicates the presence or absence of a stimulus and $$n$$ is the
-trial number, and the agent then uses a linear readout $$w_n$$ of the stimuli to predict 
-the expected reward or punishment $$v_n$$:
-
-$$ v_n = w_n^T s_n $$
-
-
-Over the course of the $N$ trials, the linear readout $w_n$ is updated using the prediction
-error, $r_n - v_n$ (occasionally denoted by $\delta_n$):
-
-$$ w_{n+1} \leftarrow w_n + \eta (r_n - v_n) s_n $$
-
-This learning rule is equivalent to online gradient descent under a mean-squared error loss
-between the actual reward and the expected reward:
-
-$$
-\begin{align*}
-L(w) &= \langle (r - v)^2 \rangle_{s} \\
-\nabla_w L(w) &= \langle  0 - 2 r s + 2 s s^T w \rangle_{s}\\
-&= 2 \langle (r - w^T s) s \rangle_{s}\\
-&\propto \langle (r - v) s \rangle_{s}
-\end{align*}
-$$
 
 ## Policy-Based RL
-
-### Policy Gradient Theorem
-
-Define an agent's trajectory $\tau$ as the sequence of states,
-actions and rewards it experiences: $s_1, a_1, r_1, s_2, ...$. Assuming
-the agent's policy $p_{\theta}(a|s)$ depends on parameters $\theta$, we
-can define the agent's expected return as the probability of a
-trajectory, which depends on the agent's policy, times the return of
-each trajectory, which depends only on the agent's policy through the
-trajectory:
-
-$$
-\begin{align}
-\mathbb{E}_{\tau \sim p_{\theta}}[R(\tau)] = \int_{\tau} R(\tau) p_{\theta}(\tau) d\tau
-\end{align}
-$$
-
-An agent that seeks to maximize its return can follow the gradient of
-its expected return with respect to its policy's parameters:
-
-
-$$
-\begin{align}
-\nabla_{\theta} \mathbb{E}_{\tau \sim p_{\theta}}[R(\tau)] &= \nabla_{\theta} \int_{\tau} R(\tau) p_{\theta}(\tau) d\tau \nonumber \\
-&= \int_{\tau} R(\tau) \nabla_{\theta} p_{\theta}(\tau) d\tau \nonumber \\
-&= \int_{\tau} R(\tau) p_{\theta}(\tau) \nabla_{\theta} \log p_{\theta}(\tau) d\tau \nonumber \\
-&= \mathbb{E}_{\tau \sim p_{\theta}}[R(\tau) \nabla_{\theta} \log p_{\theta}(\tau)]
-\end{align}
-$$
+- [Policy Gradient Theorem](reinforcement_learning/policy_gradient_theorem.md)
 
 ## Actor-Critic RL
------
+- [Overview](reinforcement_learning/actor_critic_introduction.md)
 
-### Constant Baseline
+## Hierarchical RL (HRL)
 
-Unbiased:
+### Options
+- [Options (Sutton 1999)](reinforcement_learning/options_sutton_1999.md)
+- [Options Keyboard (Barreto 2019)](reinforcement_learning/options_keyboard_barreto_2019.md)
 
-$$
-\begin{align}
-\nabla_{\theta} \mathbb{E}_{p(\tau)} [R(\tau) - b]
-&= \nabla_{\theta}  \mathbb{E}_{p(\tau)} [R(\tau)] - \nabla_{\theta} \mathbb{E}_{p(\tau)} [b]\\
-&= \nabla_{\theta} \mathbb{E}_{p(\tau)} [R(\tau)] - b \nabla_{\theta} \mathbb{E}_{p(\tau)} [1]\\
-&= \nabla_{\theta} \mathbb{E}_{p(\tau)} [R(\tau)] - b (0)\\
-&= \nabla_{\theta} \mathbb{E}_{p(\tau)} [R(\tau)]
-\end{align}
-$$
+### Feudal
+- Feudal RL (Dayan 1992)
+- Feudal Networks for HRL (Vezhnevets 2017)
 
-
-### State-Dependent Baseline: $$b(s_t)$$
-
-Unbiased:
-
-$$
-\begin{align}
-\nabla_{\theta} \mathbb{E}_{p(\tau)} [R(\tau) - b]
-&= \nabla_{\theta}  \mathbb{E}_{p(\tau)} [R(\tau)] - \nabla_{\theta} \mathbb{E}_{p(\tau)} [b]\\
-&= \nabla_{\theta} \mathbb{E}_{p(\tau)} [R(\tau)] - b \nabla_{\theta} \mathbb{E}_{p(\tau)} [1]\\
-&= \nabla_{\theta} \mathbb{E}_{p(\tau)} [R(\tau)] - b (0)\\
-&= \nabla_{\theta} \mathbb{E}_{p(\tau)} [R(\tau)]
-\end{align}
-$$
+### Bisimulation
 
 
 
 ## Distributional RL
------
 
-Classically, RL concerns maximizing the _expected_ return. Many have looked at alternative 
-pursuits (e.g. Gilbert & Weng's 2016 Quantile RL), but the field didn't take off until
-approximately 2017, when a series of papers emerged demonstrating that learning the full
-return distribution, and not just its mean, produced agents that appeared to learn faster
-and symptote to higher return.
+- [Introduction](reinforcement_learning/distributional_introduction.md)
+- [Categorical (C51)](reinforcement_learning/distributional_c51.md)
+- Expectile Regression  
+- [Quantile Regression](reinforcement_learning/distributional_quantile_regression.md)
 
-### Background
+- Connection to Neuroscience: [Dabney et al. 2020](https://www.nature.com/articles/s41586-019-1924-6)
 
-The Bellman operator, classically defined, aims to reach a self-consistent set of predictions.
-Let $$Q(s,a): \mathbb{S} \times \mathbb{A} \rightarrow \mathbb{R}$$ be the expected return of
-being in state $$s$$ and taking action $$a$$. The Bellman operator
-$$\mathcal{T}: Q \rightarrow Q$$ is:
-
-$$T Q(s,a) = \mathbb{E}_r[R(s,a)] + \gamma \mathbb{E}_{S', A'} Q(S, A)$$
-
-where state $$S'$$ is the next state with available actions $$A'$$. The Bellman operator
-is powerful because is a contraction, meaning its repeated application will converge
-to a fixed $$Q$$ function. [Bellemare, Dabney and Munos 2017](https://arxiv.org/abs/1707.06887) 
-asked whether defining a _distributional_ equivalent of the Bellman operator that is
-also a contraction is possible. We define 
-
-We start by defining the set of action-value distributions, which maps a state
-and an action to a probability distribution over the return:
-
-$$\mathcal{Z} = \{ Z : S \times A \rightarrow P(\mathbb{R}) \}$$
-
-### C51 RL
-
-Since there's no guarantee the return distribution will be nice, we need to think
-of how to allow an agent to flexibly represent distributions. C51's approach 
-was to use a categorical distribution (hence the C). 
-
-
-
-### Quantile Regression RL
-
-One contribution of C51 was showing that the distributional Bellman operator is a contraction 
-between probability distributions in the maximal Wasserstein metric, defined as the largest
-Wasserstein distance evaluate at all states and actions between two action-value distributions
-$$Z_1, Z_2$$:
-
-$$d_p (Z_1, Z_2) = \sup_{s, a} W_p (Z_1(s,a), Z_2(s,a)) $$
-
-However, a previous work [Bellemare et al 2017](https://arxiv.org/abs/1705.10743) showed that minimization of the
-Wasserstein metric leads to biased gradients. The question was now whether an online RL algorithm
-could be defined that makes use of the distributional Bellman operator as a contraction.
-[Dabney et al 2018](https://arxiv.org/abs/1710.10044) showed the answer is yes. The idea
-has two parts. First, Dabney showed that minimizing the Wasserstein metric directly can accomplished
-indirectly by minimizing an alternative loss function called _Quantile Regression_ (QR) loss.
-Second, because the QR loss does not suffer from biased gradients, minimizing the QR loss provides a 
-distributional RL algorithm that works with stochastic gradient descent.
-
-Before diving in, we need a quick primer on _quantiles_ and _quantile regression_.
-Quantiles are a generalization of the median. Let $$\tau \in (0, 1)$$. The $\tau$-th quantile of
-a random variable $$X$$ is then the value $$X_{\tau}$$ such
-that $$P(X \leq X_{\tau}) = \tau$$ and $$P(X > X_{\tau}) = 1 - \tau$$. The 
-$$\tau=0.5$$ quantile is the median. Suppose $$x_{\tau}$$ is my estimate of the $$\tau$$th quantile.
-One way to learn the $$\tau$$th quantile is by the quantile regression error, defined as
-
-$$QRE_{\tau}(x, x_{\tau})$$
- 
-If I perform gradient  
-
-
-Dabney and his co-authors note that if 
-we constrain the agent to represent the return distribution using a fixed number of 
-_quantiles_, then we can construct an alternative approach. For those unfamiliar with
-quantiles, 
-
-Let $$\mathcal{Z}_Q \subset \mathcal{Z}$$ represent the set of action-value distributions
-such that the distribution is represented using $$K$$ quantiles. Suppose we're trying to 
-learn an arbitrary action-value distribution $$Z^* \in \mathcal{Z}$$, but constrained 
-to using $$\hat{Z} \in \mathcal{Z}_Q$$. Formally, we're looking for $$\hat{Z}$$ that
-minimizes the Wasserstein distance:
-
-$$\hat{Z} = \underset{Z \in \mathcal{Z}_Q}{\operatorname{argmin}} W_1 (Z, Z^*)$$
-
-Let $$z_{\tau_1}, z_{\tau_2}, ..., z_{\tau_K}$$ denote the values of $$Z$$ corresponding to the
-$$K$$ quantiles. If we place uniform probability mass on each quantile (i.e. probability mass
-1 / $$K$$ at each $$z_{\tau_i}$$), then the Wasserstein distance can be written:
-
-$$W_1(Z, Z^*) = \sum_i^K \int_{\tau_{i-1}}^{\tau_i} |F_{Z^*}^{-1}(u) - z_{\tau_i}| du $$
-
-This becomes useful because we can find quantiles that uniquely minimize the Wasserstein distance
-and then instead of minimizing the Wasserstein distance directly, we can instead minimize something
-called the quantile regression loss (to be explained) with the newly found quantiles. This two-step
-process indirectly minimizes the Wasserstein distance but plays nicely with stochastic gradient
-descent.
-
-The quantiles that minimize the above expression can be calculated as:
-
-$$
-\begin{align*}
-0 &= \partial_{z_{\tau_i}} W_1 (Z, Z^*)\\
-&= \partial_{z_{\tau_i}} \int_{\tau_{i-1}}^{\tau_i} |F_{Z^*}^{-1}(u) - z_{\tau_i}| du\\
-&= \int_{\tau_{i-1}}^{F_(z_{\tau_i})}} -1 du + \int_{F_(z_{\tau_i})}^{\tau_{i}} + 1 du\\
-&= -F_(z_{\tau_i}) + \tau_{i-1} + \tau_{i} - F_(z_{\tau_i})\\
-F_(z_{\tau_i}) &= \frac{\tau_i + \tau_{i-1}}{2}\\
-z_{\tau_i} &= F_{Z^*}^{-1} \Big(\frac{\tau_i + \tau_{i-1}}{2} \Big)
-\end{align*}
-$$
-
-Intuitively, this says that if you want to minimize the Wasserstein loss and your
-only flexibility is where you place the quantiles, then the quantiles that minimize
-the Wasserstein loss are the quantiles that are halfway between $$z_{\tau_{i-1}}$$
-and 
-
-### Expectile Regression RL 
-
-### Connection to Neuroscience
-
-[Dabney et al. 2020](https://www.nature.com/articles/s41586-019-1924-6)
+TODO
+- https://proceedings.neurips.cc/paper/2020/file/9dd16e049becf4d5087c90a83fea403b-Paper.pdf

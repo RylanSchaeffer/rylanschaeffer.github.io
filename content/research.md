@@ -20,10 +20,7 @@
 
 - Rylan Schaeffer, International Brain Laboratory, Ila Rani Fiete. Distributed codes for
   hierarchical inference in the mouse brain. In preparation (2021).
-
-- Rylan Schaeffer, Aida Picatto, Ila Rani Fiete. Recovering low dimensional, interpretable mechanistic models 
-via Representations and Dynamics Distillation. In preparation (2021).
-
+  
 
 ## Rejected
 
@@ -31,6 +28,10 @@ via Representations and Dynamics Distillation. In preparation (2021).
   Mechanistic neural circuit models of hierarchical inference. COSYNE 2021.
 
 ## Abandoned
+
+- Rylan Schaeffer, Aida Picatto, Ila Rani Fiete. Recovering low dimensional, interpretable mechanistic models
+  via Representations and Dynamics Distillation. In preparation (2021).
+
 - Rylan Schaeffer, Nayantara Mudur, Helena Casademunt. Towards Unifying Smooth 
   Neural Codes with Adversarially Robust Representations. 2019.
 
