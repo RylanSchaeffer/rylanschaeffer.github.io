@@ -2,6 +2,8 @@
 
 ## Publications
 
+- Rylan Schaeffer, Blake Bordelon, Mikail Khona, Weiwei Pan and Ila Rani Fiete.
+  Efficient Online Inference for Nonparametric Latent Variable Time Series. UAI 2021.
 
 - Rylan Schaeffer, Nimrod Shaham, Gabriel Kreiman, Haim Sompolinsky.
   Neural network model of amygdalar memory engram formation and function. COSYNE 2021.
@@ -11,8 +13,8 @@
 
 ## In Review
 
-- Rylan Schaeffer, Blake Bordelon, Mikail Khona, Weiwei Pan and Ila Rani Fiete.
-  Efficient Online Inference for Nonparametric Latent Variable Time Series. UAI 2021.
+- Rylan Schaeffer, Mikail Khona and Ila Rani Fiete. Efficient Online Inference 
+  for Nonparametric Latent Factorial Time Series. NeurIPS (2021). 
 
 ## In Preparation
 
