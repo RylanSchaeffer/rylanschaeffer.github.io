@@ -41,6 +41,6 @@ TODO
 
 ## Distributed RL
 
-- [Ape-X](reinforcement_learning/distributed_rl/distributed_ape_x.md)
-- [IMPALA](reinforcement_learning/impala.md)
-- [R2D2](reinforcement_learning/distributed_rl/distributed_r2d2.md)
+- [Ape-X](reinforcement_learning/distributed_rl/ape_x.md)
+- [IMPALA](reinforcement_learning/distributed_rl/impala.md)
+- [R2D2 (Kapturowski 2019)](reinforcement_learning/distributed_rl/r2d2.md)
