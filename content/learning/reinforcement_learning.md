@@ -2,7 +2,6 @@
 
 ## Value-Based RL
 
-- [Recurrent Replay Distributed DQN](reinforcement_learning/r2d2.md)
 - [Rescorla-Wagner Learning Rule](reinforcement_learning/value_based/rescorla_wagner.md)
 
 
@@ -10,7 +9,7 @@
 - [Policy Gradient Theorem](reinforcement_learning/policy_based/policy_gradient_theorem.md)
 
 ## Actor-Critic RL
-- [Overview](reinforcement_learning/actor_critic_introduction.md)
+- [Introduction](reinforcement_learning/actor_critic_introduction.md)
 
 ## Hierarchical RL (HRL)
 
@@ -28,10 +27,10 @@
 
 ## Distributional RL
 
-- [Introduction](reinforcement_learning/distributional_rl/distributional_introduction.md)
-- [Categorical (C51)](reinforcement_learning/distributional_rl/distributional_c51.md)
+- [Introduction](reinforcement_learning/distributional_rl/introduction.md)
+- [Categorical (C51)](reinforcement_learning/distributional_rl/c51.md)
 - Expectile Regression  
-- [Quantile Regression](reinforcement_learning/distributional_rl/distributional_quantile_regression.md)
+- [Quantile Regression](reinforcement_learning/distributional_rl/quantile_regression.md)
 
 - Connection to Neuroscience: [Dabney et al. 2020](https://www.nature.com/articles/s41586-019-1924-6)
 
