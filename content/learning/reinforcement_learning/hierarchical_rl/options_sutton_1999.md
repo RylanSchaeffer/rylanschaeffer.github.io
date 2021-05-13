@@ -30,4 +30,7 @@ An __option__ is defined as a 3 tuple consisting of
 3. An initiation set $$\mathcal{I} \subseteq S$$
 
 We say that an option $$(\pi, \beta, \mathcal{I})$$ is __available__ in state
-$$s_t \in \mathcal{S}$$ iff $$s_t \in \mathcal{I}$$.
+$$s_t \in \mathcal{S}$$ iff $$s_t \in \mathcal{I}$$. We suppose that at every
+state $$s$$, there is a set of available options denoted $$\mathcal{O}_s$$, and
+the agent selects one. The selected option's policy is then followed until
+the option is terminated randomly, as dictated by the termination condition.
