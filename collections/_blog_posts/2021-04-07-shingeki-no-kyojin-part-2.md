@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Why the ending of Shinjeki no Kyojin was abysmal (Part Two - Reiner, Falco, Gabi, Pieck, Connie, Jean)
+title: Why the ending of Shinjeki no Kyojin was abysmal (Part Two)
 date: 2021-04-11
 tags: 2021 book-summaries random
 ---
