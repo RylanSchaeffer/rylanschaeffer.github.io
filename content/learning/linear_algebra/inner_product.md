@@ -16,6 +16,8 @@ Here, $$x, y, z \in X$$ and $$a, b \in \mathbb{C}$$.
 
 2. Conjugate Bilinear: $$\langle a x + by, z \rangle = a \langle x , z \rangle + b\langle y, z \rangle$$
 
+and $$\langle x, a y + b z \rangle = \bar{a} \langle x, y \rangle + \bar{b} \langle x, z \rangle$$
+
 3. Positive definite: $$\langle x, x \rangle \geq 0$$ and $$\langle x, x \rangle = 0 \Leftrightarrow x = 0$$
 
 An __inner product space__ is a vector space $$V$$ equipped with an __inner product__ 
