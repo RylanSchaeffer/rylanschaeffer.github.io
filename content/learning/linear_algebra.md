@@ -1,31 +1,9 @@
 # Linear Algebra
 
-- [Eigenvectors and Eigenvalues](linear_algebra.md)
-
-## Inner Product Spaces
-
-An __inner product space__ is a vector space $$V$$ equipped with an __inner product__,
-a function $$\langle \cdot, \cdot \rangle: V \times V \rightarrow \mathbb{F}$$ (where
-$$\mathbb{F}$$ is either the real numbers or the complex numbers) satisfying three properties:
-
-1. Hermitian Symmetric: $$\langle x, y \rangle = \bar{\langle y, x \rangle}$$
-
-2. Conjugate Bilinear: $$\langle a x + by, z \rangle = a \langle x , z \rangle + b\langle y, z \rangle$$
-
-and
-
-$$\langle x, a y + b z \rangle = \bar{a} \langle x, y \rangle + \bar{b} \langle x, z \rangle$$
-
-3. Positive definite: $$\langle x, x \rangle \geq 0$$ and $$\langle x, x \rangle = 0 \Leftrightarrow x = 0$$
-
-## Hilbert Spaces
-
-Inner product spaces containing limits of Cauchy Sequences
-
-Infinite sequences: the space $$l_2$$ (square summable sequences) coimprises all
-sequences $$a = (a_i)_{i \in \mathbb{N}}$$ for which
-
-$$ ||a||_{l_2}^2 = \sum_{i=1}^{\infty}a_i^2 < \infty$$
+- [Linear Space](linear_algebra/linear_space.md)
+- [Inner Products](linear_algebra/inner_product.md)
+- [Norms](linear_algebra/norm.md)
+- [Eigenvectors and Eigenvalues](linear_algebra/eigen.md)
 
 
 ## Unitary (Orthogonal) Matrices
