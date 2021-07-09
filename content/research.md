@@ -22,14 +22,19 @@
 
 ## In Review
 
-- Rylan Schaeffer, Mikail Khona and Ila Rani Fiete.  Efficient 
+- Rylan Schaeffer, Mikail Khona and Ila Rani Fiete. Efficient 
   Streaming Inference for Infinite Latent Feature Models. ICML 2021 Workshop on Theory
-  and Foundation of Continual Learning (2021). 
+  and Foundation of Continual Learning. 
 
 ## In Preparation
 
+- Rylan Schaeffer, Mikail Khona, Ila Rani Fiete. Dynamical Chinese Restaurant Process. 2021.
+- Rylan Schaeffer, Mikail Khona, Ila Rani Fiete. Efficient Streaming Inference for 
+  Infinite Latent Feature Models. 2021.
+- Rylan Schaeffer, Nimrod Shaham, Ila Rani Fiete. Memory Engrams Perform Nonparametric
+  Latent State Associative Learning. 2021.
 - Rylan Schaeffer, International Brain Laboratory, Ila Rani Fiete. Distributed codes for
-  hierarchical inference in the mouse brain. In preparation (2021).
+  hierarchical inference in the mouse brain. 2021.
   
 
 ## Rejected
