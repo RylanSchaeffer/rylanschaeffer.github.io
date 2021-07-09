@@ -9,6 +9,4 @@ three following properties for $$x_1, x_2 \in X$$ and for $$\alpha \in \mathbb{R
 
 3. Triangle inequality: $$f(x_1 + x_2) \leq f(x_2) + f(x_2)$$
 
-## Normed Vector Space
-
-A normed vector space is a vector space equipped with a norm.
+A __normed vector space__ is a vector space equipped with a norm. Freque

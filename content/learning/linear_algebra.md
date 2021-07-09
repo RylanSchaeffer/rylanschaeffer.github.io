@@ -13,4 +13,4 @@ U^T$$. One key utility of unitary matrices is that they leave the dot product
 invariant i.e.
 
 $$\langle U x, U y \rangle = \langle U{-1} U x, y \rangle = \langle U^T U x, y
-\ranngle = \langle x, y \rangle$$
+\rangle = \langle x, y \rangle$$

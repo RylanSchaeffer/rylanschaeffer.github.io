@@ -11,9 +11,22 @@ unbounded number of parameters to use as appropriate. One interpretation is ther
 Bayesian Nonparametrics are distributions over function spaces, where the function maps the
 index set to the set of random variables.
 
+Broadly, there are three approaches to using BNPs:
+
+1. [Exponential Family Conjugacy](probability/exponential_family_distributions.md),
+   which converts the integral into vector addition
+2. Size-based representations, which offers exact inference via
+   [slice sampling](bayesian_methods/slice_sampling.md)
+3. Marginalization, which integrates out the traits to create marginal processes
+   e.g. [Chinese Restaurant Process](bayesian_nonparametrics/chinese_restaurant_process.md), 
+   [Indian Buffet Process](bayesian_nonparametrics/indian_buffet_process.md)
+
+## Contents
+
 - [Bernoulli Process](bayesian_nonparametrics/bernoulli_process.md)
 - [Beta Process](bayesian_nonparametrics/beta_process.md)
 - [Chinese Restaurant Process](bayesian_nonparametrics/chinese_restaurant_process.md)
+- [Completely Random Measures](bayesian_nonparametrics/completely_random_measures.md)
 - [Dirichlet Process](bayesian_nonparametrics/dirichlet_process.md)
 - [Distance Dependent Chinese Restaurant Process](bayesian_nonparametrics/distance_dependent_chinese_restaurant_process.md)
 - [Distance Dependent Indian Buffet Process](bayesian_nonparametrics/distance_dependent_indian_buffet_process.md)
