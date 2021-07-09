@@ -12,6 +12,9 @@
   little secret?" "Of course!" "I didn't really take the weekend off," she says. "Can I let you in
   a secret too?" her supervisor asks. "I didn't really take the weekend off either!"
 
+- Happy Birthday to Henri Lebesgue! His legacy was integral to mathematics and his contributions 
+  are without measure.
+
 - At a recent real-time Java conference, the participants were given an awkward question to answer: 
   "If you had just boarded an airliner and discovered that your team of programmers had been responsible
   for the flight control software, how many of you would disembark immediately?" Among the forest of 
@@ -54,7 +57,7 @@
   The physicist makes a straight line as far as the eye can see in either direction, and says that, to all intents and purposes, it goes all the way around the world and he has fenced in half the world.
   The mathematician fences off a tiny one metre area around himself, and says "I declare myself to be on the outside".
 
--"What do we want?"
+- "What do we want?"
 "Now!"
 "When do we want it?"
 "Fewer race conditions!"
@@ -89,8 +92,7 @@
 
 ## Inspirational
 
--
-What do you call a doctor who graduated last in his class? Doctor.
+- What do you call a doctor who graduated last in his class? Doctor.
 
 ## Miscellaneous
 

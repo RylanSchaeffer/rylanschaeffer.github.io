@@ -4,17 +4,27 @@
 
 - Rylan Schaeffer, Blake Bordelon, Mikail Khona, Weiwei Pan and Ila Rani Fiete.
   Efficient Online Inference for Nonparametric Latent Variable Time Series. UAI 2021.
+  - [Paper](research/2021_uai_crp/paper.pdf)
+  - [Poster](research/2021_uai_crp/poster.pdf)
+  - [Slides](research/2021_uai_crp/slides.pdf)
+  - [Lightning Slides](research/2021_uai_crp/lightning_slides.pdf)
 
 - Rylan Schaeffer, Nimrod Shaham, Gabriel Kreiman, Haim Sompolinsky.
   Neural network model of amygdalar memory engram formation and function. COSYNE 2021.
+  - [2-Page Abstract](research/2021_cosyne_neural_network/abstract.pdf)
+  - [Poster](research/2021_cosyne_neural_network/2-082_Schaeffer_main_poster.png)
 
-- Rylan Schaeffer, Mikail Khona, Leenoy Meshulam, International Brain Laboratory, Ila Rani Fiete
-[Reverse-engineering recurrent neural network solutions to a hierarchical inference task for mice. NeurIPS 2020](https://proceedings.neurips.cc/paper/2020/hash/30f0641c041f03d94e95a76b9d8bd58f-Abstract.html)
+- Rylan Schaeffer, Mikail Khona, Leenoy Meshulam, International Brain Laboratory, Ila Rani Fiete. 
+  Reverse-engineering recurrent neural network solutions to a hierarchical inference task for 
+  mice. NeurIPS 2020.
+  - [Paper](research/2020_neurips_reverse_engineering/paper.pdf)
+  - [Poster](research/2020_neurips_reverse_engineering/poster.pdf)
 
 ## In Review
 
-- Rylan Schaeffer, Mikail Khona and Ila Rani Fiete. Efficient Online Inference 
-  for Nonparametric Latent Factorial Time Series. NeurIPS (2021). 
+- Rylan Schaeffer, Mikail Khona and Ila Rani Fiete.  Efficient 
+  Streaming Inference for Infinite Latent Feature Models. ICML 2021 Workshop on Theory
+  and Foundation of Continual Learning (2021). 
 
 ## In Preparation
 
