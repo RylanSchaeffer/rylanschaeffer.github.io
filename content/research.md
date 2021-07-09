@@ -1,6 +1,6 @@
 # Research
 
-## Publications
+## Published
 
 - Rylan Schaeffer, Blake Bordelon, Mikail Khona, Weiwei Pan and Ila Rani Fiete.
   Efficient Online Inference for Nonparametric Latent Variable Time Series. UAI 2021.
