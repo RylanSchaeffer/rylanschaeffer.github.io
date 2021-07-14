@@ -13,7 +13,7 @@ directly belong to the sample space but can be constructed from the sample space
 Formally, for a given set $$\Omega$$, the set $$F(\Omega)$$ is called a $$\sigma$$-algebra on
 $$\Omega$$ if
 
-1. $$\varnothing, \Omega$$ belong to the set i.e $$\Omega, \varnothing \in F(\omega)$$
+1. $$\varnothing, \Omega$$ both belong to the set i.e $$\Omega, \varnothing \in F(\omega)$$
 2. $$F(\Omega)$$ is closed under complementation: if $$\sigma \in F(\Omega)$$,
    then $$\overline{\sigma} := \Omega \ \sigma \in F(\Omega)$$
 3. $$F(\Omega)$$ is closed under countable unions: if $$\sigma_1, \sigma_2, ...

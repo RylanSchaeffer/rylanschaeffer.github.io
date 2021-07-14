@@ -5,12 +5,12 @@ $$f: \Omega \rightarrow \mathbb{R}_{\geq 0}$$. For a given interval $$A \subset 
 the random number of points that fall into the interval A is distributed Poisson with parameter
 equal to the integral of the intensity over the region:
 
-$$N_A \sim Poisson(\int_A f(\omega) d\omega ) $$
+$$N_A \sim Poisson(\int_{a \in A} f(a) da ) $$
 
 with the additional property that if two regions $$A, B$$ are disjoint, then $$N_A$$ and
-$$N_B$$ are disjoint. This integral $$\int_A f(\omega) d\omega$$ can be viewed 
-as a measure, which presents an equivalent view, that $$N(A) \sim Poisson(F(A))$$ is a random
-measure.
+$$N_B$$ are disjoint. This integral $$\int_A f(a) da$$ can be viewed 
+as a measure, which presents an equivalent view, that $$N(\cdot) \sim 
+Poisson(F(\cdot))$$ is a random measure.
 
 ## Definitions
 
