@@ -69,7 +69,7 @@ algorithms consider the same generative model:
 
 $$
 \begin{align*}
-Z \in {0, 1}^{N \times K} &\sim IBP(\alpha)\\ 
+Z \in \{0, 1\}^{N \times K} &\sim IBP(\alpha)\\ 
 A_k \in \mathbb{R}^{K} &\sim N(\phi_k, \Phi_k)\\
 \epsilon_n \in \mathbb{R}^{D} &\sim N(0, \sigma_x^2 I)\\ 
 X \in \mathbb{R}^{N \times D} &= Z A + \epsilon
@@ -85,21 +85,34 @@ product of multiple betas, which the authors term the "infinite" approach:
 $$\pi_k = \prod_{i=1}^k v_i \quad v_i \sim Beta(\alpha, 1)$$
 
 The nice property of the infinite approach is that it preserves the independence of the
-Beta variables $$\{v_k\}$$ when performing inference. Define the variables as
-
-$$ W := \{ \pi, Z, A\}$$
-
-and the parameters as
-
-$$\theta := \{\alpha, \sigma_A, \sigma_x^2\} $$
-
-The authors posit the following mean-field variational family:
+Beta variables $$\{v_k\}$$ when performing inference. Define the variables as $$ W := \{ \pi, Z, A\}$$
+and the parameters as $$\theta := \{\alpha, \sigma_A, \sigma_x\}$$. The authors posit 
+the following mean-field variational family:
 
 $$q(W) := q_{\tau}(\pi) q_{\phi, \Phi}(A) q_{\nu}(Z)$$
 
 where $$\tau := \{\tau_{k, 1}, \tau_{k, 2} \}_{k=1}^K, \phi := \{\phi_k\}_{k=1}^K,
 \Phi := \{\Phi_k\}_{k=1}^K, \nu := \{\nu_{n, k} \}$$ are the variational parameters. More specifically,
-this means the variational family is given by
+in the finite variational algorithm, the variational family is:
 
 $$q(W) = \Big(\prod_{k=1}^K q(\pi_k; \tau_{k, 1}, \tau_{k, 2}) \Big) \Big( \prod_{n=1}^N \prod_{k=1}^K
 q(z_{n, k}; \nu_{n, k}) \Big) \Big(\prod_{k=1}^K q(A_k| \phi_k, \Phi_k) \Big)$$
+
+whereas in the infinite variational algorithm, the variational family is:
+
+$$q(W) = \Big(\prod_{k=1}^K \underbrace{\prod_{k' \leq k} q(v_k; \tau_{k, 1}, \tau_{k, 2})}_{=\pi_k} \Big)
+\Big( \prod_{n=1}^N \prod_{k=1}^K q(z_{n, k}; \nu_{n, k}) \Big) \Big(\prod_{k=1}^K q(A_k| \phi_k, \Phi_k) \Big)$$
+
+Moving forward, I'll refer only to the infinite algorithm since the finite algorithm is very similar.
+As is usual, inference is performed by minimizing a variational lower bound on the log likelihood:
+
+$$
+\begin{align*}
+\log p(X \lvert \theta) &\leq \mathbf{E}_q[\log p(X, W \lvert \theta)] + H[q]\\
+&= H[q] + \mathbf{E}_q \Big[ \log p(\pi; \alpha) p(A | \{\phi_k, \Phi_k \}; \sigma_a)p(Z | \pi) p(X | Z, A ; \sigma_x) \Big]\\
+&= H[q] + \sum_{k=1}^K \mathbf{E}_{q(\nu_k)}[\log p(v_k|\alpha)] + 
+    \sum_{k=1}^K \mathbf{E}_{q(A_k)}[\log p(A_k|\phi_k, \Phi_k; \sigma_a)] +
+    \sum_{k=1}^K \sum_{n=1}^N \mathbf{E}_{q(v)q(Z)}[\log p(z_{nk} | v)] +
+    \sum_{n=1}^N \mathbf{E}_{q(Z) q(A)}[\log p(X_n | Z, A; \sigma_x)]
+\end{align*}
+$$
