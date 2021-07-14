@@ -79,6 +79,8 @@
 
 - "Nothing can d-separate us because we're connected"
 
+- "That distribution has a heavy tail but not compared to you"
+
 
 ## Start Ups
 
