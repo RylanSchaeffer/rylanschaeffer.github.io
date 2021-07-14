@@ -22,9 +22,6 @@
 
 ## In Review
 
-- Rylan Schaeffer, Mikail Khona and Ila Rani Fiete. Efficient 
-  Streaming Inference for Infinite Latent Feature Models. ICML 2021 Workshop on Theory
-  and Foundation of Continual Learning. 
 
 ## In Preparation
 
@@ -39,13 +36,16 @@
 
 ## Rejected
 
+- Rylan Schaeffer, Mikail Khona and Ila Rani Fiete. Efficient
+  Streaming Inference for Infinite Latent Feature Models. ICML 2021 Workshop on Theory
+  and Foundation of Continual Learning.
 - Rylan Schaeffer, Niki Kim, Mikail Khona, International Brain Laboratory, Ila Rani Fiete.
   Mechanistic neural circuit models of hierarchical inference. COSYNE 2021.
 
 ## Abandoned
 
 - Rylan Schaeffer, Aida Picatto, Ila Rani Fiete. Recovering low dimensional, interpretable mechanistic models
-  via Representations and Dynamics Distillation. In preparation (2021).
+  via Representations and Dynamics Distillation. 2021.
 
 - Rylan Schaeffer, Nayantara Mudur, Helena Casademunt. Towards Unifying Smooth 
   Neural Codes with Adversarially Robust Representations. 2019.
