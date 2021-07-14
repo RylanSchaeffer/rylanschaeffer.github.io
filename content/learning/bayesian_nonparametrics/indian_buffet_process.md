@@ -58,3 +58,48 @@ is the de Finetti mixing distribution of the [Chinese Restaurant Process](chines
 A quick recap of the .
 
 We know that 
+
+## Inference
+
+### Variational Inference for Linear Gaussian Model
+
+Doshi-Velez et al. (2009) introduced two related mean-field variational inference algorithms
+for the IBP with a linear-Gaussian likelihood. Both inference
+algorithms consider the same generative model:
+
+$$
+\begin{align*}
+Z \in {0, 1}^{N \times K} &\sim IBP(\alpha)\\ 
+A_k \in \mathbb{R}^{K} &\sim N(\phi_k, \Phi_k)\\
+\epsilon_n \in \mathbb{R}^{D} &\sim N(0, \sigma_x^2 I)\\ 
+X \in \mathbb{R}^{N \times D} &= Z A + \epsilon
+\end{align*}
+$$
+
+To approach the IBP, the authors use the IBP's stick-breaking construction, which
+means placing a prior on $$\pi_k \in (0, 1)$$ per column of $$Z$$ and then drawing 
+$$z_{n, k}| pi_k \sim Bern(\pi_k)$$. There are two ways to infer the stick lengths
+$$\{\pi_k\}$$: directly, which the authors term the "finite" approach, and as the 
+product of multiple betas, which the authors term the "infinite" approach:
+
+$$\pi_k = \prod_{i=1}^k v_i \quad v_i \sim Beta(\alpha, 1)$$
+
+The nice property of the infinite approach is that it preserves the independence of the
+Beta variables $$\{v_k\}$$ when performing inference. Define the variables as
+
+$$ W := \{ \pi, Z, A\}$$
+
+and the parameters as
+
+$$\theta := \{\alpha, \sigma_A, \sigma_x^2\} $$
+
+The authors posit the following mean-field variational family:
+
+$$q(W) := q_{\tau}(\pi) q_{\phi, \Phi}(A) q_{\nu}(Z)$$
+
+where $$\tau := \{\tau_{k, 1}, \tau_{k, 2} \}_{k=1}^K, \phi := \{\phi_k\}_{k=1}^K,
+\Phi := \{\Phi_k\}_{k=1}^K, \nu := \{\nu_{n, k} \}$$ are the variational parameters. More specifically,
+this means the variational family is given by
+
+$$q(W) = \Big(\prod_{k=1}^K q(\pi_k; \tau_{k, 1}, \tau_{k, 2}) \Big) \Big( \prod_{n=1}^N \prod_{k=1}^K
+q(z_{n, k}; \nu_{n, k}) \Big) \Big(\prod_{k=1}^K q(A_k| \phi_k, \Phi_k) \Big)$$
