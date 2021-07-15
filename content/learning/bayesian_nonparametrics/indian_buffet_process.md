@@ -132,7 +132,7 @@ $$
 
 where $$\psi(\cdot)$$ is the digamma function.
 
-The term inside the second sum is: 
+The term inside the second sum is a log Gaussian: 
 
 $$
 \begin{align*}
@@ -141,17 +141,17 @@ $$
 \end{align*}
 $$
 
-The term inside the fourth sum is:
+The term inside the fourth sum takes a bit more work:
 
 $$
 \begin{align*}
 & \mathbb{E}_{q(Z) q(A)}[\log p(X_n | Z, A; \sigma_x)] \\
 &\quad = \mathbb{E}_{q(Z) q(A)} [-\frac{D}{2} \log (2 \pi \sigma_n^2) - \frac{1}{2\sigma_n^2} (X_n - Z_n A)(X_n - Z_n A)^T ]\\
 &\quad = -\frac{D}{2} \log (2 \pi \sigma_n^2) - \frac{1}{2\sigma_n^2} (X_n X_n^T - 2X_n \mathbb{E}_{q(A)}[A^T] \mathbb{E}_{q(Z)})[Z^T]\\
-&\quad\quad + \mathbb{E}_{q(Z) q(A)}[Z_n A A^T Z_n^T])\\
+&\quad\quad\quad  + \mathbb{E}_{q(Z) q(A)}[Z_n A A^T Z_n^T])\\
 &\quad = -\frac{D}{2} \log (2 \pi \sigma_n^2) - \frac{1}{2\sigma_n^2} (X_n X_n^T\\
-&\quad \quad - 2 \nu_{n, k} X_n \phi_k^T + \mathbb{E}_{q(Z) q(A)}[(\sum_{k=1}^K Z_{nk} A_k) (\sum_{k' = 1}^K A_{k'}^T Z_{nk})])\\
-&\quad = -\frac{D}{2} \log (2 \pi \sigma_n^2) - \frac{1}{2\sigma_n^2} (X_n X_n^T - 2 \nu_{n, k} X_n \phi_k^T
-&\quad \quad  + \sum_{k=1}^K \nu_{nk} (Tr[\Phi_k] + \phi_k \phi_k^T) + \sum_{k=1}^K \sum_{k' \neq k} \nu_{nk} \nu_{nk'} \phi_k \phi_{k'}^T)
+&\quad \quad \quad - 2 \nu_{n, k} X_n \phi_k^T + \mathbb{E}_{q(Z) q(A)}[(\sum_{k=1}^K Z_{nk} A_k) (\sum_{k' = 1}^K A_{k'}^T Z_{nk})])\\
+&\quad = -\frac{D}{2} \log (2 \pi \sigma_n^2) - \frac{1}{2\sigma_n^2} (X_n X_n^T - 2 \nu_{n, k} X_n \phi_k^T\\
+&\quad \quad \quad  + \sum_{k=1}^K \nu_{nk} (Tr[\Phi_k] + \phi_k \phi_k^T) + \sum_{k=1}^K \sum_{k' \neq k} \nu_{nk} \nu_{nk'} \phi_k \phi_{k'}^T)
 \end{align*}
 $$
