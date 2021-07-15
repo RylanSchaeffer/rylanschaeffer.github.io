@@ -107,16 +107,16 @@ The key difference between the finite version and infinite version is in whether
 $$\pi_k \sim Beta(\tau_{k, 1}, \tau_{k, 2})$$ (the finite version) or whether we model
 $$v_k \sim Beta(\tau_{k, 1}, \tau_{k, 2})$$ (the infinite version). Moving forward, I'll
 refer only to the infinite algorithm since the finite algorithm is very similar.
-As is usual, inference is performed by minimizing a variational lower bound on the log likelihood:
+Since this is a variational algorithm, inference is performed by minimizing a variational lower bound on the log likelihood:
 
 $$
 \begin{align*}
 \log p(X \lvert \theta) &\leq \mathbb{E}_q[\log p(X, W \lvert \theta)] + H[q]\\
-&= H[q] + \mathbf{E}_q \Big[ \log p(\pi; \alpha) p(A | \{\phi_k, \Phi_k \}; \sigma_a) p(Z | \pi) p(X | Z, A ; \sigma_x) \Big]\\
-&= H[q] + \sum_{k=1}^K \sum_{k' \leq k} \mathbf{E}_{q(v_k)}[\log p(v_k|\alpha)] + \\ 
-&\quad    \sum_{k=1}^K \mathbf{E}_{q(A_k)}[\log p(A_k|\phi_k, \Phi_k; \sigma_a)] + \\
-&\quad    \sum_{k=1}^K \sum_{n=1}^N \mathbf{E}_{q(v)q(Z)}[\log p(z_{nk} | v)] + \\
-&\quad    \sum_{n=1}^N \mathbf{E}_{q(Z) q(A)}[\log p(X_n | Z, A; \sigma_x)]
+&= H[q] + \mathbb{E}_q \Big[ \log p(\pi; \alpha) p(A | \{\phi_k, \Phi_k \}; \sigma_a) p(Z | \pi) p(X | Z, A ; \sigma_x) \Big]\\
+&= H[q] + \sum_{k=1}^K \sum_{k' \leq k} \mathbb{E}_{q(v_k)}[\log p(v_k|\alpha)] + \\ 
+&\quad    \sum_{k=1}^K \mathbb{E}_{q(A_k)}[\log p(A_k|\phi_k, \Phi_k; \sigma_a)] + \\
+&\quad    \sum_{k=1}^K \sum_{n=1}^N \mathbb{E}_{q(v)q(Z)}[\log p(z_{nk} | v)] + \\
+&\quad    \sum_{n=1}^N \mathbb{E}_{q(Z) q(A)}[\log p(X_n | Z, A; \sigma_x)]
 \end{align*}
 $$
 
@@ -124,10 +124,11 @@ Almost every term can be written in a closed form. The term inside the first sum
 
 $$
 \begin{align*}
-\mathbf{E}_{q(v_k)}[\log p(v_k|\alpha)] &= \mathbf{E}_{q(v_k)}[\log \alpha v_k^{\alpha - 1}]\\
+\mathbb{E}_{q(v_k)}[\log p(v_k|\alpha)] &= \mathbb{E}_{q(v_k)}[\log \alpha v_k^{\alpha - 1}]\\
 &= \alpha + (\alpha - 1) \mathbb{E}_{q(v_k)}[\log v_k]\\
 &= \alpha + (\alpha - 1) (\psi(\tau_{k, 1}) - \psi(\tau_{k, 1} + \tau_{k, 2}))
 \end{align*}
+$$
 
 where $$\psi(\cdot)$$ is the digamma function.
 
@@ -135,7 +136,7 @@ The term inside the second sum is:
 
 $$
 \begin{align*}
-\mathbf{E}_{q(A_k)}[\log p(A_k|\phi_k, \Phi_k; \sigma_a)] &= 
+\mathbb{E}_{q(A_k)}[\log p(A_k|\phi_k, \Phi_k; \sigma_a)] &= 
 \end{align*}
 $$
 
