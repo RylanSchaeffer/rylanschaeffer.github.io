@@ -89,7 +89,7 @@ Beta variables $$\{v_k\}$$ when performing inference. Define the variables as $$
 and the parameters as $$\theta := \{\alpha, \sigma_A, \sigma_x\}$$. The authors posit 
 the following mean-field variational family:
 
-$$q(W) := q_{\tau}(\pi) q_{\phi, \Phi}(A) q_{\nu}(Z)$$
+$$q(W) := q(\pi; \tau) q(A; \phi, \Phi) q(Z; \nu)$$
 
 where $$\tau := \{\tau_{k, 1}, \tau_{k, 2} \}_{k=1}^K, \phi := \{\phi_k\}_{k=1}^K,
 \Phi := \{\Phi_k\}_{k=1}^K, \nu := \{\nu_{n, k} \}$$ are the variational parameters. More specifically,
@@ -103,16 +103,43 @@ whereas in the infinite variational algorithm, the variational family is:
 $$q(W) = \Big(\prod_{k=1}^K \underbrace{\prod_{k' \leq k} q(v_k; \tau_{k, 1}, \tau_{k, 2})}_{=\pi_k} \Big)
 \Big( \prod_{n=1}^N \prod_{k=1}^K q(z_{n, k}; \nu_{n, k}) \Big) \Big(\prod_{k=1}^K q(A_k| \phi_k, \Phi_k) \Big)$$
 
-Moving forward, I'll refer only to the infinite algorithm since the finite algorithm is very similar.
+The key difference between the finite version and infinite version is in whether we model
+$$\pi_k \sim Beta(\tau_{k, 1}, \tau_{k, 2})$$ (the finite version) or whether we model
+$$v_k \sim Beta(\tau_{k, 1}, \tau_{k, 2})$$ (the infinite version). Moving forward, I'll
+refer only to the infinite algorithm since the finite algorithm is very similar.
 As is usual, inference is performed by minimizing a variational lower bound on the log likelihood:
 
 $$
 \begin{align*}
-\log p(X \lvert \theta) &\leq \mathbf{E}_q[\log p(X, W \lvert \theta)] + H[q]\\
-&= H[q] + \mathbf{E}_q \Big[ \log p(\pi; \alpha) p(A | \{\phi_k, \Phi_k \}; \sigma_a)p(Z | \pi) p(X | Z, A ; \sigma_x) \Big]\\
-&= H[q] + \sum_{k=1}^K \mathbf{E}_{q(\nu_k)}[\log p(v_k|\alpha)] + 
-    \sum_{k=1}^K \mathbf{E}_{q(A_k)}[\log p(A_k|\phi_k, \Phi_k; \sigma_a)] +
-    \sum_{k=1}^K \sum_{n=1}^N \mathbf{E}_{q(v)q(Z)}[\log p(z_{nk} | v)] +
-    \sum_{n=1}^N \mathbf{E}_{q(Z) q(A)}[\log p(X_n | Z, A; \sigma_x)]
+\log p(X \lvert \theta) &\leq \mathbb{E}_q[\log p(X, W \lvert \theta)] + H[q]\\
+&= H[q] + \mathbf{E}_q \Big[ \log p(\pi; \alpha) p(A | \{\phi_k, \Phi_k \}; \sigma_a) p(Z | \pi) p(X | Z, A ; \sigma_x) \Big]\\
+&= H[q] + \sum_{k=1}^K \sum_{k' \leq k} \mathbf{E}_{q(v_k)}[\log p(v_k|\alpha)] + \\ 
+&\quad    \sum_{k=1}^K \mathbf{E}_{q(A_k)}[\log p(A_k|\phi_k, \Phi_k; \sigma_a)] + \\
+&\quad    \sum_{k=1}^K \sum_{n=1}^N \mathbf{E}_{q(v)q(Z)}[\log p(z_{nk} | v)] + \\
+&\quad    \sum_{n=1}^N \mathbf{E}_{q(Z) q(A)}[\log p(X_n | Z, A; \sigma_x)]
+\end{align*}
+$$
+
+Almost every term can be written in a closed form. The term inside the first sum is:
+
+$$
+\begin{align*}
+\mathbf{E}_{q(v_k)}[\log p(v_k|\alpha)] &= \mathbf{E}_{q(v_k)}[\log \alpha v_k^{\alpha - 1}]\\
+&= \alpha + (\alpha - 1) \mathbb{E}_{q(v_k)}[\log v_k]\\
+&= \alpha + (\alpha - 1) (\psi(\tau_{k, 1}) - \psi(\tau_{k, 1} + \tau_{k, 2}))
+\end{align*}
+
+where $$\psi(\cdot)$$ is the digamma function.
+
+The term inside the second sum is: 
+
+$$
+\begin{align*}
+\mathbf{E}_{q(A_k)}[\log p(A_k|\phi_k, \Phi_k; \sigma_a)] &= 
+\end{align*}
+$$
+
+$$
+\begin{align*}
 \end{align*}
 $$

@@ -4,7 +4,7 @@ Disclaimer: these are my own notes, intended as a learning opportunity and for u
 Many notes are woefully incomplete. Don't judge :)
 
 - [Approximations, Techniques, Miscellaneous](learning/random.md)
-- [Bayesian Nonparametrics and Stochastic Processes](learning/bayesian_nonparametrics.html)
+- [Bayesian Nonparametrics](learning/bayesian_nonparametrics.html)
 - [Calculus](learning/calculus.html)
 - [Convex Analysis](learning/analysis_convex.html)
 - [Differential Equations](learning/differential_equations.html)
@@ -23,6 +23,7 @@ Many notes are woefully incomplete. Don't judge :)
 - [Reinforcement Learning](learning/reinforcement_learning.html)
 - [Signals](learning/signals.html)
 - [Statistics](learning/statistics.html)
+- [Stochastic Processes](learning/stochastic_processes.md)
 
 On less mathematical topics
 - [Book Summaries](learning/book_summaries.html)
