@@ -113,10 +113,10 @@ $$
 \begin{align*}
 \log p(X \lvert \theta) &\leq \mathbb{E}_q[\log p(X, W \lvert \theta)] + H[q]\\
 &= H[q] + \mathbb{E}_q \Big[ \log p(\pi; \alpha) p(A | \{\phi_k, \Phi_k \}; \sigma_a) p(Z | \pi) p(X | Z, A ; \sigma_x) \Big]\\
-&= H[q] + \sum_{k=1}^K \sum_{k' \leq k} \mathbb{E}_{q(v_k)}[\log p(v_k|\alpha)] + \\ 
-&\quad    \sum_{k=1}^K \mathbb{E}_{q(A_k)}[\log p(A_k|\phi_k, \Phi_k; \sigma_a)] + \\
-&\quad    \sum_{k=1}^K \sum_{n=1}^N \mathbb{E}_{q(v)q(Z)}[\log p(z_{nk} | v)] + \\
-&\quad    \sum_{n=1}^N \mathbb{E}_{q(Z) q(A)}[\log p(X_n | Z, A; \sigma_x)]
+&= H[q] + \sum_{k=1}^K \sum_{k' \leq k} \mathbb{E}_{q(v_k)}[\log p(v_k|\alpha)]\\ 
+&\quad    + \sum_{k=1}^K \mathbb{E}_{q(A_k)}[\log p(A_k|\phi_k, \Phi_k; \sigma_a)] + \\
+&\quad    + \sum_{k=1}^K \sum_{n=1}^N \mathbb{E}_{q(v)q(Z)}[\log p(z_{nk} | v)] + \\
+&\quad    + \sum_{n=1}^N \mathbb{E}_{q(Z) q(A)}[\log p(X_n | Z, A; \sigma_x)]
 \end{align*}
 $$
 
@@ -125,8 +125,8 @@ Almost every term can be written in a closed form. The term inside the first sum
 $$
 \begin{align*}
 \mathbb{E}_{q(v_k)}[\log p(v_k|\alpha)] &= \mathbb{E}_{q(v_k)}[\log \alpha v_k^{\alpha - 1}]\\
-&= \alpha + (\alpha - 1) \mathbb{E}_{q(v_k)}[\log v_k]\\
-&= \alpha + (\alpha - 1) (\psi(\tau_{k, 1}) - \psi(\tau_{k, 1} + \tau_{k, 2}))
+&= \log \alpha + (\alpha - 1) \mathbb{E}_{q(v_k)}[\log v_k]\\
+&= \log \alpha + (\alpha - 1) (\psi(\tau_{k, 1}) - \psi(\tau_{k, 1} + \tau_{k, 2}))
 \end{align*}
 $$
 
@@ -136,11 +136,18 @@ The term inside the second sum is:
 
 $$
 \begin{align*}
-\mathbb{E}_{q(A_k)}[\log p(A_k|\phi_k, \Phi_k; \sigma_a)] &= 
+\mathbb{E}_{q(A_k)}[\log p(A_k|\phi_k, \Phi_k; \sigma_a)] &=
+- \frac{D}{2} \log (2 \pi \sigma_a^2) - \frac{1}{2\sigma_a^2} (\phi_k^T \phi_k + Tr[\Phi_k])
 \end{align*}
 $$
 
+The term inside the fourth sum is:
+
 $$
 \begin{align*}
+\mathbb{E}_{q(Z) q(A)}[\log p(X_n | Z, A; \sigma_x)]
+&= \mathbb{E}_{q(Z) q(A)}[-\frac{D}{2} \log (2 \pi \sigma_n^2) - \frac{1}{2\sigma_n^2} (X_n - Z_n A)(X_n - Z_n A)^T ]\\
+&= -\frac{D}{2} \log (2 \pi \sigma_n^2) - \frac{1}{2\sigma_n^2} (X_n X_n^T - 2X_n \mathbb{E}_{q(A)}[A^T] \mathbb{E}_{q(Z)})[Z^T] + \mathbb{E}_{q(Z) q(A)}[Z_n A A^T Z_n^T])\\
+&= 10 
 \end{align*}
 $$
