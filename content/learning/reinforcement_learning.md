@@ -1,15 +1,16 @@
 # Reinforcement Learning
 
 ## Value-Based RL
-
 - [Rescorla-Wagner Learning Rule](reinforcement_learning/value_based/rescorla_wagner.md)
-
+- Temporal Difference Learning
+- Q-Learning  
+- [Successor Representation](reinforcement_learning/successor_representation.md)
 
 ## Policy-Based RL
 - [Policy Gradient Theorem](reinforcement_learning/policy_based/policy_gradient_theorem.md)
 
 ## Actor-Critic RL
-- [Introduction](reinforcement_learning/actor_critic_introduction.md)
+- [Introduction](reinforcement_learning/actor_critic/introduction.md)
 
 ## Hierarchical RL (HRL)
 
