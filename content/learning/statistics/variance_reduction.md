@@ -16,17 +16,17 @@ The variance will then be between the estimand and our prediction,
 
 
 Suppose we want to estimate 
-the expected value of some scalar function $f(x)$ under the distribution $x \sim p(x)$:
+the expected value of some scalar function $f(x)$ under the distribution $$x \sim p(x)$$:
 
 $$\mathbb{E}_x[f(x)]$$
 
-using a Monte Carlo estimator using data $$\{x_n\}_{n=1}^N:
+using a Monte Carlo estimator using data $$\{x_n\}_{n=1}^N$$:
 
 $$\frac{1}{N} \sum_{n=1}^N f(x_n)$$
 
 The variance of this estimator is given by
 
-$$\mathbb{V}[\frac{1}{N} \sum_{n=1}^N f(x_n)] = \frac{1}{N^2} \sum_{n=1}^N \mathbb{V}[f(x_n)] = \frac{1}{N}\mathbb{V}[f(x)]$$
+$$\mathbb{V}\Big[\frac{1}{N} \sum_{n=1}^N f(x_n)\Big] = \frac{1}{N^2} \sum_{n=1}^N \mathbb{V}[f(x_n)] = \frac{1}{N}\mathbb{V}[f(x)]$$
 
 Our goal is to define a new estimator with provably lower variance. To do this, we introduce
 a new scalar function $$h(x)$$ called the __control variate__, and a scalar variable $$\beta$$.
@@ -107,7 +107,7 @@ One application of control variate estimators is with the
 [policy gradient theorem](../reinforcement_learning/policy_based/policy_gradient_theorem.md),
 which is a Monte Carlo estimator of the gradient. To reduce the variance of this estimator,
 the agent can learn a so-called "baseline" (typically, the advantage function). This
-is used in algorthms like [A3C](../reinforcement_learning/actor_critic/)
+is used in algorthms like [A3C](../reinforcement_learning/actor_critic/).
 
 ### Antithetic Variates
 
