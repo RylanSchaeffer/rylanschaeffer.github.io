@@ -2,7 +2,7 @@
 layout: post
 author: Chopra, Tessler, Goodman (CogSci 2019)
 title: The First Crank of the Cultural Ratchet
-date: 2021-08-08
+date: 2021-08-05
 tags: cultural-learning cultural-ratchet natural-language-processing
 ---
 

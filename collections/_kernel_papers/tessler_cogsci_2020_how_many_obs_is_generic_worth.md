@@ -2,7 +2,7 @@
 layout: post
 author: Tessler, Bridgers, Tenenbaum (CogSci 2020)
 title: How many observations is one generic worth?
-date: 2021-08-08
+date: 2021-08-07
 tags: cultural-learning cultural-ratchet natural-language-processing
 ---
 

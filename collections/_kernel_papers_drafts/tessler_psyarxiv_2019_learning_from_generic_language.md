@@ -2,7 +2,7 @@
 layout: post
 author: Tessler and Goodman (PsyArXiv 2019)
 title: Learning from Generic Language
-date: 2021-08-08
+date: 2021-08-06
 tags: cultural-learning cultural-ratchet natural-language-processing
 ---
 
@@ -10,7 +10,7 @@ tags: cultural-learning cultural-ratchet natural-language-processing
 
 [Previous work](../_kernel_papers/chopra_cogsci_2019_first_crank_cultural_ratchet.md) showed
 that boolean concepts can be accurately and quickly transmitted using language, and that two language
-constructs, generics and qualifiers, are dominant in transmitting such conceptual knowledge. The immediate
+constructs (generics and qualifiers) play a central role in transmitting conceptual knowledge. The immediate
 question is how generics actually work to convey information? Generics have been studied for a long time,
 and one challenge is that they appear to be too flexible. Consider the four following generics,
 which all have the same structure:
