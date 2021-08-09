@@ -10,6 +10,7 @@ tags:
 
 ## Research Questions
 
-## Experiments
+## Experiment 1
 
-### Exp 1
+### Setup 1
+

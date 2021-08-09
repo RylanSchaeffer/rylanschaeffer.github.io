@@ -77,3 +77,4 @@ Learning time is typically faster for language learning than observation learnin
  transmission
 - It's also difficult to imagine what other language choices are possible for transmitting these sorts of concepts
  through the message interface
+- None of the concepts are probabilistic; they're all deterministically true or false
