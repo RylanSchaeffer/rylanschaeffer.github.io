@@ -4,15 +4,15 @@
 
 - Rylan Schaeffer, Blake Bordelon, Mikail Khona, Weiwei Pan and Ila Rani Fiete.
   Efficient Online Inference for Nonparametric Latent Variable Time Series. UAI 2021.
-  - [Paper](research/2021_uai_crp/paper.pdf)
-  - [Poster](research/2021_uai_crp/poster.pdf)
-  - [Slides](research/2021_uai_crp/slides.pdf)
-  - [Lightning Slides](research/2021_uai_crp/lightning_slides.pdf)
+  - [Paper](research/2021_uai_streaming_crp/paper.pdf)
+  - [Poster](research/2021_uai_streaming_crp/poster.pdf)
+  - [Slides](research/2021_uai_streaming_crp/slides.pdf)
+  - [Lightning Slides](research/2021_uai_streaming_crp/lightning_slides.pdf)
 
 - Rylan Schaeffer, Nimrod Shaham, Gabriel Kreiman, Haim Sompolinsky.
   Neural network model of amygdalar memory engram formation and function. COSYNE 2021.
-  - [2-Page Abstract](research/2021_cosyne_neural_network/abstract.pdf)
-  - [Poster](research/2021_cosyne_neural_network/2-082_Schaeffer_main_poster.png)
+  - [2-Page Abstract](research/2021_cosyne_amygdalar_engram/abstract.pdf)
+  - [Poster](research/2021_cosyne_amygdalar_engram/2-082_Schaeffer_main_poster.png)
 
 - Rylan Schaeffer, Mikail Khona, Leenoy Meshulam, International Brain Laboratory, Ila Rani Fiete. 
   Reverse-engineering recurrent neural network solutions to a hierarchical inference task for 
@@ -39,8 +39,11 @@
 - Rylan Schaeffer, Mikail Khona and Ila Rani Fiete. Efficient
   Streaming Inference for Infinite Latent Feature Models. ICML 2021 Workshop on Theory
   and Foundation of Continual Learning.
+  - [Paper](research/2021_icml_streaming_ibp/paper.pdf)
+
 - Rylan Schaeffer, Niki Kim, Mikail Khona, International Brain Laboratory, Ila Rani Fiete.
   Mechanistic neural circuit models of hierarchical inference. COSYNE 2021.
+  - [2-Page Abstract](research/2021_cosyne_ibl_rnn/abstract.pdf) 
 
 ## Abandoned
 
@@ -49,6 +52,7 @@
 
 - Rylan Schaeffer, Nayantara Mudur, Helena Casademunt. Towards Unifying Smooth 
   Neural Codes with Adversarially Robust Representations. 2019.
+  - [Paper](research/2019_am226_smooth_neural_codes/paper.pdf)
 
 
 ## Explanations of Others' Research
