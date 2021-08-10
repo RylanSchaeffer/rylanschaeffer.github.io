@@ -81,6 +81,8 @@ Bri and Dad killed their father-daughter dance
 
 ![](2021-08-02-bri-wedding/father_daughter_dance.JPG)
 
-And I also co-MC'ed the two shoes game
+And I also co-MC'ed a game called Two Shoes, in which the bride and groom
+are asked comparative questions about each other (e.g. who's more likely to burn dinner)
+and have to answer without seeing the other's answer.
 
 ![](2021-08-02-bri-wedding/two_shoes.JPG)
