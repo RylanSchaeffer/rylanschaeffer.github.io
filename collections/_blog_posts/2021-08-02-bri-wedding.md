@@ -14,7 +14,7 @@ and 5 minutes:
 
 ![](2021-08-02-bri-wedding/american_marriage_ministries.jpg)
 
-My bathroom selfie with half my dad drives home the gravitas:
+My bathroom selfie with Dad half-visible underscores the gravitas:
 
 ![](2021-08-02-bri-wedding/bathroom_selfie.jpg)
 
@@ -36,7 +36,7 @@ were getting ready.
 
 ![](2021-08-02-bri-wedding/setup.jpg)
 
-Bri had her makeup done
+Bri had her makeup done:
 
 ![](2021-08-02-bri-wedding/makeup.jpg)
 
@@ -65,11 +65,11 @@ Dad peeked in on the stage wedding certificate signing:
 
 ![](2021-08-02-bri-wedding/certificate_signing.jpg)
 
-At the reception, Bri seemed to be having a good time with Mom
+At the reception, Bri had a good time with Mom:
 
 ![](2021-08-02-bri-wedding/bri_and_mom.jpg)
 
-and also with Dad
+and also had a good time with Dad:
 
 ![](2021-08-02-bri-wedding/bri_and_dad.jpg)
 
@@ -77,7 +77,7 @@ and our family friends and extended family were having a great time too
 
 ![](2021-08-02-bri-wedding/family.jpg)
 
-Bri and Dad killed their father-daughter dance
+Bri and Dad killed their father-daughter dance.
 
 ![](2021-08-02-bri-wedding/father_daughter_dance.JPG)
 
