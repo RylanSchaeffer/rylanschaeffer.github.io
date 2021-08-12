@@ -14,9 +14,17 @@ and 5 minutes:
 
 ![](2021-08-02-bri-wedding/american_marriage_ministries.jpg)
 
-My bathroom selfie with Dad half-visible underscores the gravitas:
+My bathroom selfie with Dad half-visible really communicates the gravitas
+of my ordination:
 
 ![](2021-08-02-bri-wedding/bathroom_selfie.jpg)
+
+My favorite part of that ordination letter is that it says "Rylan Schaeffer has been
+granted the full authority to perform marriage rites __and other religious services__".
+I suppose if any babies need a baptism or a circumcision, I could give it a try,
+but you may not like your results.
+
+We flew into Seattle two days before the wedding.
 
 Two nights before the wedding, we had dinner on Bri's rooftop with gorgeous
 weather and a clear view of downtown Seattle:
