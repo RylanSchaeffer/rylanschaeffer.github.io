@@ -3,7 +3,7 @@ layout: post
 title: Advice on PhD Applications
 author: Rylan Schaeffer
 date: 2021-08-10
-tags: 
+tags: graduate-school 
 ---
 
 By now, I've been asked for advice on applying to PhD programs a sufficient number of times 
