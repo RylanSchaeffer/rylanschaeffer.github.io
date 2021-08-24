@@ -38,6 +38,7 @@ Some common discrete, continuous and special parametric distributions are:
 - [Probability Measure](probability/probability_measure.md)
 - [$$\sigma$$-Algebra](probability/sigma_algebra.md)
 - [Random Variables](probability/random_variables.md)
+- [Change of variable theorem](probability/change_of_variable_theorem.md)
 
 ## Distances and Divergences
 
