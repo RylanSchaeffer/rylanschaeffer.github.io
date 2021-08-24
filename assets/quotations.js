@@ -37,6 +37,9 @@ const quotations = [
     "if I work hard at it<br/>" +
     "I'll be what I want to be.“",
 
+    "My body might collapse<br/>" +
+    "If I carry one more dream",
+
     "“For you are life, rarer than a quark and unpredictable beyond the dreams of Heisenberg.“",
 
     "“Our freedom to doubt was born of a struggle against authority in the early days of science. It was " +
@@ -111,6 +114,10 @@ const quotations = [
     " in time, not space alone.“",
 
     "“Ad majora“",
+
+    "“Why should the race always be to the swift, or the jumble to the quick-witted?" +
+    "Should they win merely because of the gifts God gave them? Well, I say cheating " +
+    "is the gift man gives himself.“",
 
     "“Remember, in the burning heart<br/>" +
     "There can never be surrender at all.“",
