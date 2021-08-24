@@ -1,4 +1,4 @@
-# About Me
+# About
 
 Based on some [good advice](https://www.ece.ucdavis.edu/~jowens/advice.html), I typically look like 
 the person on the left. Quotes that have significance to me are displayed randomly on the bottom left.
