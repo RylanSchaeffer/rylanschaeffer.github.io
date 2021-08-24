@@ -2,7 +2,7 @@
 
 ## Learning Algorithms
 - [Backpropagation]()
-- [Weight perturbation]()
+- [Weight perturbation](neural_computation/weight_perturbation.md)
 - [Node perturbation]()
 - [Comparison of Backprop, Weight Perturbation & Node Perturbation]()
 
@@ -12,7 +12,7 @@
 - Deep Linear Networks
 
 ## Nonlinear Models
-- Activation Functions
+- [Activation Functions](neural_computation/activation_fns.md)
 - Perceptron
 - 
 
