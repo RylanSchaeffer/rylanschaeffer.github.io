@@ -2,8 +2,13 @@
 
 ## Published
 
+- Rylan Schaeffer, [...], Ila Rani Fiete, International
+  Brain Laboratory. Neural population dynamics for hierarchical inference in mice performing the International Brain Lab task.
+  Society for Neuroscience 2021.
+  - [Abstract](research/2021_sfn_ibl/abstract.pdf)
+
 - Rylan Schaeffer, Blake Bordelon, Mikail Khona, Weiwei Pan and Ila Rani Fiete.
-  Efficient Online Inference for Nonparametric Latent Variable Time Series. UAI 2021.
+  Efficient Online Inference for Nonparametric Mixture Models. UAI 2021.
   - [Paper](research/2021_uai_streaming_crp/paper.pdf)
   - [Poster](research/2021_uai_streaming_crp/poster.pdf)
   - [Slides](research/2021_uai_streaming_crp/slides.pdf)
