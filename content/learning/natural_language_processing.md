@@ -1,7 +1,7 @@
 # Natural Language Processing
 
 ## Fundamentals
-- [Types of Tasks]()
+- [Types of Tasks](natural_language_processing/fundamentals/types_of_tasks.md)
 
 
 ## Datasets
@@ -14,4 +14,4 @@
 
 ## Preprocessing
 
-- [TF-IDF](natural_language_processing/)
+- [TF-IDF](natural_language_processing/preprocessing/tf_idf.md)
