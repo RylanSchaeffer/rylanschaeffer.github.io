@@ -24,15 +24,15 @@ following:
 On SQuAD (reading comprehension) and NewsQA (reading comprehension), the curriculum enables
 a trained model to perform better at the end of training
 
-![](xu_acl_2020_curriculum_learning/results_squad_newsqa.png)
+![](results_squad_newsqa.png)
 
 They make a similar claim on GLUE
 
-![](xu_acl_2020_curriculum_learning/results_glue.png)
+![](results_glue.png)
 
 I didn't see any learning curves to better understand the effect the curriculum has.
 
 Bizarrely, having even N=2 seemed to deliver almost as much benefit as N=10,
 and there was no monotonic non-decrease with N.
 
-![](xu_acl_2020_curriculum_learning/results_effect_of_n.png)
+![](results_effect_of_n.png)
