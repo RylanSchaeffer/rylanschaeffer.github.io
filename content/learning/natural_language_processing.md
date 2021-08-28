@@ -5,12 +5,19 @@
 
 
 ## Datasets
+- [GLUE](natural_language_processing/datasets/glue.md)
+- [NewsQA](natural_language_processing/datasets/newsqa.md)
+- [SQuAD](natural_language_processing/datasets/squad.md)
+- [Wikitext](natural_language_processing/datasets/wikitext.md)
 
 ## Models
 - [BERT](natural_language_processing/models/bert.md)
+- [ELMo](natural_language_processing/models/elmo.md)
+- 
 
 ## Papers
 - [Xu et al. ACL 2020. Curriculum Learning for Natural Language Understanding](natural_language_processing/papers/xu_acl_2020_curriculum_learning/summary.html)
+- [Campos. Arxiv 2021. Curriculum Learning for Language Modeling](natural_language_processing/papers/campos_arxiv_2021_curriculum_learning/summary.md)
 
 ## Preprocessing
 

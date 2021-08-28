@@ -30,9 +30,11 @@ They make a similar claim on GLUE
 
 ![](results_glue.png)
 
-I didn't see any learning curves to better understand the effect the curriculum has.
-
 Bizarrely, having even N=2 seemed to deliver almost as much benefit as N=10,
 and there was no monotonic non-decrease with N.
 
 ![](results_effect_of_n.png)
+
+## Notes
+
+- I didn't see any learning curves to better understand the effect the curriculum has.
