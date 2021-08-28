@@ -18,6 +18,7 @@
 ## Papers
 - [Xu et al. ACL 2020. Curriculum Learning for Natural Language Understanding](natural_language_processing/papers/xu_acl_2020_curriculum_learning/summary.html)
 - [Campos. Arxiv 2021. Curriculum Learning for Language Modeling](natural_language_processing/papers/campos_arxiv_2021_curriculum_learning/summary.md)
+- [Sanh et al. EMC @ NeurIPS 2019. DistilBERT, a distilled version of BERT: smaller, faster, cheaper and lighter](natural_language_processing/papers/sanh_emc_2019_distilbert/summary.md)
 
 ## Preprocessing
 
