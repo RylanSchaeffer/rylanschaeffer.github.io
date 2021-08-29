@@ -1,5 +1,8 @@
 # Natural Language Processing
 
+Disclaimer: Most of this was stolen from the HuggingFace documentation. These
+distilled notes were a learning exercise for myself.
+
 ## Fundamentals
 - [Types of Tasks](natural_language_processing/fundamentals/types_of_tasks.md)
 
@@ -11,6 +14,7 @@
 - [Wikitext](natural_language_processing/datasets/wikitext.md)
 
 ## Models
+
 - [BERT](natural_language_processing/models/bert.md)
 - [ELMo](natural_language_processing/models/elmo.md)
 - 
