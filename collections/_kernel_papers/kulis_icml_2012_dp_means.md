@@ -25,7 +25,7 @@ the $$c$$th class. The marginal distribution of an observation is:
 
 $$p(x_n) = \sum_{c=1}^C p(x_n | z_n = c) p(z_n = c) = \sum_{c=1}^C \mathcal{N}(x_n; \mu_c, \Sigma_c) \pi_c$$
 
-The cluster assignments and cluster parameters can be learnt using [Expectation Maximization](../../content/learning/probabilistic_graphical_models/expectation_maximization.md).
+The cluster assignments and cluster parameters can be learnt using [Expectation Maximization](../../content/learning/probabilistic_graphical_models/learning/expectation_maximization.md).
 Assuming the clusters each have equal covariance $$\sigma I$$, the E step takes the following form:
 
 $$
