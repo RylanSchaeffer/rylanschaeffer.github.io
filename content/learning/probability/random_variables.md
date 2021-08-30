@@ -27,3 +27,21 @@ P(A^c, B^c) &= P(A^c) - P(A^c, B^c)\\
 &= P(A^c)P(B^c)
 \end{align*}
 $$
+
+# Properties
+
+- Law of Total Expectation
+
+$$\mathbb{E}_{p(X)}[X] = \mathbb{E}_{p(Y)}[\mathbb{E}_{p(X \lvert Y)}[X]] $$
+
+Proof:
+
+$$
+\begin{align*}
+\mathbb{E}_{p(X)}[X] &= \int_{X} X p(X) dX\\
+&= \int_{X} X \int_{Y} p(X, Y) dX dY\\
+&= \int_{Y} p(Y) \int_{X} X  p(X\lvert Y) dX dY\\
+&= \int_{Y} p(Y) \mathbb{E}_{p(X \lvert Y)}[X]\\
+&\mathbb{E}_{p(Y)}[\mathbb{E}_{p(X \lvert Y)}[X]]
+\end{align*}
+$$
