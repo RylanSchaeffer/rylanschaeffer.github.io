@@ -26,13 +26,14 @@
   - [Poster](research/2020_neurips_reverse_engineering/poster.pdf)
 
 ## In Review
-
+- Rylan Schaeffer. An Algorithmic Theory of Metacognition in Minds and Machines. NeurIPS 2021 Workshop on 
+  Metacognition in the Age of AI.
+- - Rylan Schaeffer, Mikail Khona, Ila Rani Fiete. Efficient Streaming Inference for
+    Infinite Latent Feature Models. AISTATS 2021.
 
 ## In Preparation
 
 - Rylan Schaeffer, Mikail Khona, Ila Rani Fiete. Dynamical Chinese Restaurant Process. 2021.
-- Rylan Schaeffer, Mikail Khona, Ila Rani Fiete. Efficient Streaming Inference for 
-  Infinite Latent Feature Models. 2021.
 - Rylan Schaeffer, Nimrod Shaham, Ila Rani Fiete. Memory Engrams Perform Nonparametric
   Latent State Associative Learning. 2021.
 - Rylan Schaeffer, International Brain Laboratory, Ila Rani Fiete. Distributed codes for
