@@ -28,7 +28,7 @@
 ## In Review
 - Rylan Schaeffer. An Algorithmic Theory of Metacognition in Minds and Machines. NeurIPS 2021 Workshop on 
   Metacognition in the Age of AI.
-- - Rylan Schaeffer, Mikail Khona, Ila Rani Fiete. Efficient Streaming Inference for
+- Rylan Schaeffer and Ila Rani Fiete. Efficient Streaming Inference for
     Infinite Latent Feature Models. AISTATS 2021.
 
 ## In Preparation
