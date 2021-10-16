@@ -1,6 +1,12 @@
 # Research
 
-## Published
+## In Review
+- Rylan Schaeffer, Yilun Du, Gabrielle Kaili-May Liu and Ila Rani Fiete. Streaming Inference for Infinite Latent Feature Models. AISTATS 2021.
+- Rylan Schaeffer. An Algorithmic Theory of Metacognition in Minds and Machines. NeurIPS 2021 Workshop on
+  Metacognition in the Age of AI.
+
+
+## Accepted
 
 - Rylan Schaeffer, [...], Ila Rani Fiete, International
   Brain Laboratory. Neural population dynamics for hierarchical inference in mice performing the International Brain Lab task.
@@ -24,13 +30,7 @@
   mice. NeurIPS 2020.
   - [Paper](research/2020_neurips_reverse_engineering/paper.pdf)
   - [Poster](research/2020_neurips_reverse_engineering/poster.pdf)
-
-## In Review
-- Rylan Schaeffer. An Algorithmic Theory of Metacognition in Minds and Machines. NeurIPS 2021 Workshop on 
-  Metacognition in the Age of AI.
-- Rylan Schaeffer and Ila Rani Fiete. Efficient Streaming Inference for
-    Infinite Latent Feature Models. AISTATS 2021.
-
+  
 ## In Preparation
 
 - Rylan Schaeffer, Mikail Khona, Ila Rani Fiete. Dynamical Chinese Restaurant Process. 2021.
