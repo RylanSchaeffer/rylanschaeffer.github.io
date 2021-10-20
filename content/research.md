@@ -8,24 +8,17 @@
 
 ## Accepted
 
-- Schaeffer et al. Neural population dynamics for hierarchical inference in mice performing the International Brain Lab task.
+- Schaeffer et al. [Neural population dynamics for hierarchical inference in mice performing 
+the International Brain Lab task.](research/2021_sfn_ibl/main.md)
   **Society for Neuroscience 2021**.
-  - [Abstract](research/2021_sfn_ibl/abstract.pdf)
 
-- Schaeffer et al. Efficient Online Inference for Nonparametric Mixture Models. **UAI 2021**.
-  - [Paper](research/2021_uai_streaming_crp/paper.pdf)
-  - [Poster](research/2021_uai_streaming_crp/poster.pdf)
-  - [Slides](research/2021_uai_streaming_crp/slides.pdf)
-  - [Lightning Slides](research/2021_uai_streaming_crp/lightning_slides.pdf)
+- Schaeffer et al. [Efficient Online Inference for Nonparametric Mixture Models.](research/2021_uai_streaming_crp/main.md) **UAI 2021**.
 
-- Schaeffer et al. Neural network model of amygdalar memory engram formation and function. **COSYNE 2021**.
-  - [2-Page Abstract](research/2021_cosyne_amygdalar_engram/abstract.pdf)
-  - [Poster](research/2021_cosyne_amygdalar_engram/2-082_Schaeffer_main_poster.png)
+- Schaeffer et al. [Neural network model of amygdalar memory engram formation 
+  and function.](research/2021_cosyne_amygdalar_engram/main.md) **COSYNE 2021**.
 
-- Schaeffer et al. Reverse-engineering recurrent neural network solutions to a hierarchical inference task for 
-  mice. **NeurIPS 2020**.
-  - [Paper](research/2020_neurips_reverse_engineering/paper.pdf)
-  - [Poster](research/2020_neurips_reverse_engineering/poster.pdf)
+- Schaeffer et al. [Reverse-engineering recurrent neural network solutions to a hierarchical inference task for 
+  mice.](research/2020_neurips_reverse_engineering/main.md) **NeurIPS 2020**.
   
 ## In Preparation
 
