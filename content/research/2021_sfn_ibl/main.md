@@ -1,5 +1,4 @@
-# Neural population dynamics for hierarchical inference in mice performing
-the International Brain Lab task.
+# Neural population dynamics for hierarchical inference in mice performing the International Brain Lab task.
 
 Authors: **Rylan Schaeffer** et al.
 

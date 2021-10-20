@@ -9,16 +9,16 @@
 ## Accepted
 
 - Schaeffer et al. [Neural population dynamics for hierarchical inference in mice performing 
-the International Brain Lab task.](research/2021_sfn_ibl/main.md)
+the International Brain Lab task.](research/2021_sfn_ibl/main.html)
   **Society for Neuroscience 2021**.
-
-- Schaeffer et al. [Efficient Online Inference for Nonparametric Mixture Models.](research/2021_uai_streaming_crp/main.md) **UAI 2021**.
+  
+- Schaeffer et al. [Efficient Online Inference for Nonparametric Mixture Models.](research/2021_uai_streaming_crp/main.html) **UAI 2021**.
 
 - Schaeffer et al. [Neural network model of amygdalar memory engram formation 
-  and function.](research/2021_cosyne_amygdalar_engram/main.md) **COSYNE 2021**.
+  and function.](research/2021_cosyne_amygdalar_engram/main.html) **COSYNE 2021**.
 
 - Schaeffer et al. [Reverse-engineering recurrent neural network solutions to a hierarchical inference task for 
-  mice.](research/2020_neurips_reverse_engineering/main.md) **NeurIPS 2020**.
+  mice.](research/2020_neurips_reverse_engineering/main.html) **NeurIPS 2020**.
   
 ## In Preparation
 
