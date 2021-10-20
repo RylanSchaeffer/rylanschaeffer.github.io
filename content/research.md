@@ -29,10 +29,10 @@
   
 ## In Preparation
 
-- Schaeffer et al. Dynamical Chinese Restaurant Process. 2021.
-- Schaeffer et al. Memory Engrams Perform Nonparametric Latent State Associative Learning. 2021.
-- Schaeffer et al. Distributed codes for
-  hierarchical inference in the mouse brain. 2021.
+- Schaeffer et al. Streaming Inference for Infinite Non-stationary Mixture Models. 2022.
+- Schaeffer et al. Streaming Inference for Infinite Non-stationary Feature Models. 2022.
+- Schaeffer et al. Brain-wide population codes for hierarchical inference in mice. 2022.
+- Schaeffer et al. Memory Engrams Perform Nonparametric Latent State Associative Learning. 2022.
   
 
 ## Rejected
