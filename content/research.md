@@ -2,11 +2,13 @@
 
 ## Under Review
 - Schaeffer et al. Streaming Inference for Infinite Latent Feature Models. **AISTATS 2021**.
-- Schaeffer. An Algorithmic Theory of Metacognition in Minds and Machines. **NeurIPS 2021 Workshop on
-  Metacognition in the Age of AI**.
+
 
 
 ## Accepted
+
+- Schaeffer. [An Algorithmic Theory of Metacognition in Minds and Machines.](research/2021_neurips_workshop_metacognition/main.html) 
+  **NeurIPS 2021 Workshop: Metacognition in the Age of AI**.
 
 - Schaeffer et al. [Neural population dynamics for hierarchical inference in mice performing 
 the International Brain Lab task.](research/2021_sfn_ibl/main.html)
