@@ -8,7 +8,7 @@ tags:
 
 ## Background
 
-See the author's [previous paper](../_kernel_papers/caron_eccv_2019_deep_clustering.html)
+See the author's [previous paper](../kernel_papers/caron_eccv_2019_deep_clustering.html)
 which introduced DeepCluster.
 
 ## Research Goal
