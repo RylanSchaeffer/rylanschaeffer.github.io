@@ -37,8 +37,8 @@ const quotations = [
     "if I work hard at it<br/>" +
     "I'll be what I want to be.“",
 
-    "My body might collapse<br/>" +
-    "If I carry one more dream",
+    "“My body might collapse<br/>" +
+    "If I carry one more dream.“",
 
     "“For you are life, rarer than a quark and unpredictable beyond the dreams of Heisenberg.“",
 
