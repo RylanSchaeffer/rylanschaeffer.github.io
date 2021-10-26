@@ -164,4 +164,6 @@ const quotations = [
     "Is not gonna help at all<br/>" +
     "Cause there'll be no safety in numbers<br/>" +
     "When the Right One walks out of the door“",
+
+    "“I am thinking about something much more important than bombs; I am thinking about computers.“"
 ];
