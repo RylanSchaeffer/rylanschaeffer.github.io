@@ -2,8 +2,8 @@
 layout: post
 author: Wu, Xiong, Yu and Lin (CVPR 2018)
 title: Unsupervised Feature Learning via Non-Parametric Instance Discrimination
-date: 2021-03-21
-tags: unsupervised self-supervised computer-vision
+date: 2021-10-28
+tags: unsupervised self-supervised computer-vision 
 ---
 
 
