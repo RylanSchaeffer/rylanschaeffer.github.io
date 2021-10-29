@@ -1,6 +1,6 @@
 ---
 layout: post
-author: First, ..., Last (Venue Year)
+author: Caron, ..., Last (Venue Year)
 title: 
 date: 2021-03-21
 tags: 
