@@ -2,7 +2,7 @@
 layout: post
 author: Lin, Huh, Stauffer, Lim (NeurIPS 2021)
 title: Learning to Ground Multi-Agent Communication with Autoencoders
-date: 2021-03-21
+date: 2021-10-31
 tags: emergent-communication multiagent autoencoders
 ---
 
