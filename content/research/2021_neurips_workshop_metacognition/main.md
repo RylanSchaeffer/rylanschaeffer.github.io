@@ -5,6 +5,7 @@ Authors: **Rylan Schaeffer**
 Venue: [NeurIPS 2021 Workshop: Metacognition in the Age of AI](https://sites.google.com/view/metacogneurips2021) 
 
 - [Paper](paper.pdf)
+- [Poster](poster.pdf)
 
 ## Tweeprint
 
