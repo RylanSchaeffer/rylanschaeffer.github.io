@@ -18,7 +18,7 @@ problem under mean-squared error (MSE). We assume the network will be given a su
 dataset $$\{(x_n, y_n) \}_{n=1}^N$$ and will then optimize the parameters
 $$w$$ by performing gradient descent on the empiric MSE: 
 
-$$L^{tr}(w) := \frac{1}{N} \sum_{n=1}^N (y_n - w^T x_n)^2$$
+$$ L^{train}(w) := \frac{1}{N} \sum_{n=1}^N (y_n - w^T x_n)^2$$
 
 Our goal here is to characterize the learning dynamics of this shallow linear neural network. 
 
@@ -26,7 +26,33 @@ Our goal here is to characterize the learning dynamics of this shallow linear ne
 
 The overparameterized regime is defined as the setting in which the number of data $$N$$ is
 less than the number of parameters $$D$$ (or more specifically, less than the dimension
-of the span of the $$\psi_n$$). In this regime, 
+of the span of the $$\psi_n$$). In this regime, gradient descent on the empiric MSE 
+finds the solution to an alternative optimization problem:
+
+$$\arg \min_w \lvert w \lvert_2^2 + \sum_n \lambda_n (y_n - w \cdot \psi_n) $$
+
+where $$\lambda_n$$ are Lagrange multipliers enforcing that the model's predictions
+exactly match the target values. This alternative optimization problem
+arises because there are fewer points than parameters, meaning there are infinitely 
+many solutions, and e the claim here is that gradient descent finds the solution that 
+not just passes through all the points, but also achieves the smallest L2 norm. We 
+first want to show why gradient descent optimizes this, then show what solution $$w$$ converges to.
+
+To find the solution $$w$$ converges to, we take the gradient with respect to $$w$$, set equal to 0
+and solve.
+
+$$
+\begin{align*}
+\grad_w L &= \grad_w \lvert w \lvert_2^2 + \sum_n \lambda_n (y_n - w \cdot \psi_n)\\
+w &= \sum_{n} \lambda_n \psi_n\\
+\grad_{\lambda_i} L &= \grad_{\lambda_i}\lvert w \lvert_2^2 + \sum_n \lambda_n (y_n - w \cdot \psi_n)\\
+y_i &= w \cdot \psi_i\\
+y_i &=  \sum_{n} \lambda_n \psi_n \cdot \psi_i
+Y &= K \lambda \\
+\lambda &= K^{-1} Y\\
+w &= \Psi K^{-1} Y
+\end{align*}
+$$
 
 
 ### Underparameterized Regime
