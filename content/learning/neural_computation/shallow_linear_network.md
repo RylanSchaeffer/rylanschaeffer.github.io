@@ -43,11 +43,11 @@ and solve.
 
 $$
 \begin{align*}
-\grad_w L &= \grad_w \lvert w \lvert_2^2 + \sum_n \lambda_n (y_n - w \cdot \psi_n)\\
+\nabla_w L &= \nabla_w \lvert w \lvert_2^2 + \sum_n \lambda_n (y_n - w \cdot \psi_n)\\
 w &= \sum_{n} \lambda_n \psi_n\\
-\grad_{\lambda_i} L &= \grad_{\lambda_i}\lvert w \lvert_2^2 + \sum_n \lambda_n (y_n - w \cdot \psi_n)\\
+\nabla_{\lambda_i} L &= \nabla_{\lambda_i}\lvert w \lvert_2^2 + \sum_n \lambda_n (y_n - w \cdot \psi_n)\\
 y_i &= w \cdot \psi_i\\
-y_i &=  \sum_{n} \lambda_n \psi_n \cdot \psi_i
+y_i &=  \sum_{n} \lambda_n \psi_n \cdot \psi_i\\
 Y &= K \lambda \\
 \lambda &= K^{-1} Y\\
 w &= \Psi K^{-1} Y
