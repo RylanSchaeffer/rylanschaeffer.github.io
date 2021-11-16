@@ -43,14 +43,13 @@ and solve.
 
 $$
 \begin{align*}
-\nabla_w L &= \nabla_w \lvert w \lvert_2^2 + \sum_n \lambda_n (y_n - w \cdot \psi_n)\\
+0 = \nabla_w L &= \nabla_w \lvert w \lvert_2^2 +  \nabla_w \sum_n \lambda_n (y_n - w \cdot \psi_n)\\
 w &= \sum_{n} \lambda_n \psi_n\\
-\nabla_{\lambda_i} L &= \nabla_{\lambda_i}\lvert w \lvert_2^2 + \sum_n \lambda_n (y_n - w \cdot \psi_n)\\
+\nabla_{\lambda_i} L &= \nabla_{\lambda_i}\lvert w \lvert_2^2 + \nabla_{\lambda_i} \sum_n \lambda_n (y_n - w \cdot \psi_n)\\
 y_i &= w \cdot \psi_i\\
-y_i &=  \sum_{n} \lambda_n \psi_n \cdot \psi_i\\
-Y &= K \lambda \\
-\lambda &= K^{-1} Y\\
-w &= \Psi K^{-1} Y
+y &= K \lambda \\
+\lambda &= K^{-1} y\\
+w &= \psi K^{-1} y
 \end{align*}
 $$
 
