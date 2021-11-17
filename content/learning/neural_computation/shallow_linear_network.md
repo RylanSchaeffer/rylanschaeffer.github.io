@@ -60,6 +60,8 @@ $$
 ### Regularized Regime
 
 
+# Old Stuff
+
 $$
 \begin{align*}
 L^{tr}(w) := \frac{1}{N} \sum_{n=1}^N (y_n - w^T x_n)^2 = \sum_{n=1}^N Tr(y_n - w^T x_n)^2\\\\

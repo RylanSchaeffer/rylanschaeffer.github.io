@@ -1,15 +1,15 @@
 # Kernel Methods
 
 At a high level, kernel methods are a machine learning approach that works by
-first transforming data (images, songs) into (possibly infinite dimensional) feature spaces
+first transforming any data (images, songs, etc.) into (possibly infinite dimensional) feature spaces
 and then comparing the similarity of features through an inner product. Consequently,
 kernel methods are typically applicable when data is rotationally invariant.
 
 ## Background
 
-Two important prerequisites to kernels are
-[inner product spaces](/content/learning/linear_algebra.html#inner-product-spaces) and
-[Hilbert spaces](/content/learning/linear_algebra.html#hilbert-spaces).
+- [Introduction](kernel_methods/introduction.md)
+- [Inner product spaces](/content/learning/linear_algebra.html#inner-product-spaces)
+- [Hilbert spaces](/content/learning/linear_algebra.html#hilbert-spaces).
 
 ## Kernels
 
