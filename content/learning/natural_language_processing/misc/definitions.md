@@ -35,6 +35,21 @@ Idea: compute embeddings of rare words on the fly using auxiliary data i.e. word
 2. mean pooling + linear transformation
 3. LSTM
 
+### Gurlordava How to represent a word and predict it, too: Improving tied architectures for language modelling
+
+https://aclanthology.org/D18-1323.pdf
+
+Idea: We can think of last layer's matrix as being an output embedding matrix.
+Rather than explicitly restricting the input and output embeddings to be the same,
+we can define the output embedding matrix as a linear transformation of the
+input embedding matrix.
+
+Motivation: language model (LSTM) hidden state space and its dynamics may not play well
+with the embedding matrix, so give the LSTM the ability to modify its hidden state
+before running through embedding matrix.
+
+
+
 
 ### Bosc  Empirical Methods in Natural Language Processing (2018)
 
@@ -54,7 +69,7 @@ good background
 
 ### Nishida ACL Workshop on Representation Learning for NLP 2018
 
-(https://aclanthology.org/W18-3007.pdf)
+https://aclanthology.org/W18-3007.pdf
 Built off Bahdanau 2017. proposed adding attention mechanism and using definitions for all words, not just
 out-of-vocabulary words. 
 
@@ -64,21 +79,26 @@ Grounded Compositional Outputs for Adaptive Language Modeling
 
 https://arxiv.org/pdf/2009.11523.pdf
 
-Motivation: don't want predetermined vocabulary size. Propose compositional output embedding layer
-that uses info from structured lexicon (wordNet).
 
 Claim: Show that performance gains are driven by increased accuracy on low-frequency words.
 
-Idea: We can think of last layer as being "output embedding," where each row is an embedding
-for a particular word. Rather than having a fixed number of rows, we can build rows on the fly
-using our input embedding matrix combined with definitions from WordNet combined with semantically
-related words.
 
-Encoding word using character sequence + external knowledge base (structured lexicon WordNet) +
-defintiions. Train neural network to output a word's embedding.
+Idea: instantiate a network that takes in surface form of word, natural language definition
+(from a dictionary) and relationships with other words (from structured lexicon) and outputs
+embedding vector. For each sentence/sequence, use this network to dynamically construct
+an input and output embedding matrix (the output matrix is a transformation of the input
+matrix) and use both matrices for the language task.
+
 
 Hypothesized that main benefit comes from rare words in training data. Based on word frequency,
 Groc performs best on rare words.
+
+
+https://arxiv.org/pdf/2009.11523.pdf Grounded Compositional Outputs for Adaptive Language Modeling:
+
+Idea: We can think of last layer of any language model as being "output embedding," where each row is an embedding for a particular word. Rather than having a fixed number of rows, we can build rows on the fly
+using our input embedding matrix combined with definitions from WordNet combined with semantically
+related words.
 
 ### Kim and Jeong IEEE Access 2021
 
