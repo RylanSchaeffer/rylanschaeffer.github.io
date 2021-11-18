@@ -32,7 +32,7 @@ $$
 Remark: This assumes that $$(X^T X)^{-1}$$ exists. If it does, we can rewrite
 the parameters $$w$$ as 
 
-$$w = X^T X) (X^T X)^{-2} X^T y = X^T \alpha = \sum \alpha_n x_n $$
+$$w = X^T X (X^T X)^{-2} X^T y = X^T \alpha = \sum \alpha_n x_n $$
 
 which shows that the parameters $$w$$ are some linear combination of the 
 training data.
@@ -64,8 +64,8 @@ Given a new $$x$$, the model's prediction using the primal solution is:
 
 $$g(x) = \langle w, x \rangle = y^T X (X^T X + \lambda I_D)^{-1} x$$
 
-However, another expression for $$w$$ exists, called the **dual solution**. It is this
-connection that gives rise to kernel methods. In ordinary linear regression, we saw 
+However, another expression for $$w$$ exists, called the **dual solution**. The
+connection between primal and dual solutions gives rise to kernel methods. In ordinary linear regression, we saw 
 that the solution could be written as a linear combination of the training data; might 
 something similar be possible in ridge linear regression? If we assume that $$w := X^T \alpha$$
 for some $$\alpha$$, we find that:
@@ -85,14 +85,14 @@ $$
 \begin{align*}
 \lambda \alpha &= y - X w\\
 \lambda \alpha &= y - X X^T \alpha\\
-\alpha &= (X X^T + \lambda I_N)^{-1} y
+\alpha &= (X X^T + \lambda I_N)^{-1} y\\
 w &= X^T (X X^T + \lambda I_N)^{-1} y
 \end{align*}
 $$
 
 Given a new $$x$$, the model's prediction using the dual solution is:
 
-$$g(x) = \langle w, x \rangle = y^T (X X^T + \lambda I_N)^{-1} X^T x$$
+$$g(x) = \langle w, x \rangle = y^T (X X^T + \lambda I_N)^{-1} X x$$
  
 
 A few remarks:

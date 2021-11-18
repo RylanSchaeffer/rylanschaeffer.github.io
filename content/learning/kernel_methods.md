@@ -187,3 +187,7 @@ $$ \langle k(x_i, \cdot), k'(x_j, \cdot) \rangle = k(x_i, x_j) = k(x_j,x_i) = k'
 
 - By the Riesz Representation Theorem, $$\forall x' \in X, \exists \text{ a unique function of } x$$
 such that $$f(x') = \langle f(\cdot), k(\cdot, x')\rangle $$ 
+
+## Sources
+
+- [Shawe-Taylor and Cristianini Kernel Methods for Pattern Analysis](https://people.eecs.berkeley.edu/~jordan/kernels)
