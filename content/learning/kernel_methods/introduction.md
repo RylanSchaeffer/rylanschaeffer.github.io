@@ -64,10 +64,16 @@ Given a new $$x$$, the model's prediction using the primal solution is:
 
 $$g(x) = \langle w, x \rangle = y^T X (X^T X + \lambda I_D)^{-1} x$$
 
-However, another expression for $$w$$ exists, called the **dual solution**. The
-connection between primal and dual solutions gives rise to kernel methods. In ordinary linear regression, we saw 
-that the solution could be written as a linear combination of the training data; might 
-something similar be possible in ridge linear regression? If we assume that $$w := X^T \alpha$$
+However, another expression for $$w$$ exists, called the **dual solution**. This dual solution
+is given by
+
+$$w = X^T (X X^T + \lambda I_N)^{-1} y$$
+
+One way to show this is with the so-called
+[push-through identity](https://en.wikipedia.org/wiki/Woodbury_matrix_identity).
+Another way is to recall that in ordinary linear regression, we saw 
+that the solution could be written as a linear combination of the training data and try
+finding a similar form for ridge linear regression. If we assume that $$w := X^T \alpha$$
 for some $$\alpha$$, we find that:
 
 $$
@@ -93,7 +99,7 @@ $$
 Given a new $$x$$, the model's prediction using the dual solution is:
 
 $$g(x) = \langle w, x \rangle = y^T (X X^T + \lambda I_N)^{-1} X x$$
- 
+
 
 A few remarks:
 1. The two predictions are exactly the same
@@ -105,5 +111,6 @@ how the relative features co-vary with one another and co-vary with the regressi
 4. The $$\alpha$$ are called the **dual variables**
 
 The dual solution shows us that the linear model's predictions can be expressed
-solely in terms of inner products between (1) the test datum and each training datum, 
-and (2) every pair of training data.
+solely in terms of inner products between (1) the test datum and each training datum,
+and (2) every pair of training data. The equivalence between primal and dual solutions
+gives rise to kernel methods.
