@@ -1,4 +1,4 @@
-# Dot and Inner Products
+# Inner Products
 
 An inner product is a function that generalizes the dot product. Consequently, we'll 
 start by defining a dot product and then move onto the inner product.
@@ -6,7 +6,7 @@ start by defining a dot product and then move onto the inner product.
 ## Dot Product
 
 
-## Inner Product
+## Definition: Inner Product
 
 An __inner product__ is a function $$f: V \times V \rightarrow \mathbb{F}$$ (where
 $$\mathbb{F}$$ is either the real numbers or the complex numbers) satisfying three properties.
@@ -20,5 +20,8 @@ and $$\langle x, a y + b z \rangle = \bar{a} \langle x, y \rangle + \bar{b} \lan
 
 3. Positive definite: $$\langle x, x \rangle \geq 0$$ and $$\langle x, x \rangle = 0 \Leftrightarrow x = 0$$
 
+## Inner Product Space
+
 An __inner product space__ is a vector space $$V$$ equipped with an __inner product__ 
 on that linear space.
+

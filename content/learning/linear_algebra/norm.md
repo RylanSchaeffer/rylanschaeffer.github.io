@@ -1,5 +1,7 @@
 # Norm
 
+## Definition: Norm
+
 Let $$X$$ be a space. A norm is a function $$f: X \rightarrow \mathbb{R}$$ satisfying the 
 three following properties for $$x_1, x_2 \in X$$ and for $$\alpha \in \mathbb{R}$$:
 
@@ -9,4 +11,11 @@ three following properties for $$x_1, x_2 \in X$$ and for $$\alpha \in \mathbb{R
 
 3. Triangle inequality: $$f(x_1 + x_2) \leq f(x_2) + f(x_2)$$
 
-A __normed vector space__ is a vector space equipped with a norm. Freque
+## Normed Vector Space
+
+A __normed vector space__ is a vector space equipped with a norm. Frequently, if we
+are dealing with an [inner product space](inner_product.md#inner-product-space)
+(i.e. a vector space equipped with an inner product), we can define a norm as the
+square root of the inner product:
+
+$$\lvert \lvert x \lvert \lvert_2 := \sqrt{ \langle x, x \rangle } $$
