@@ -1,6 +1,6 @@
 # Information Theory
 
-## Quantities
+## Introductory Quantities
 - [Entropy](information_theory/entropy.md)
 - Cross Entropy
 - Mutual Information
@@ -11,4 +11,6 @@
   - [Gibb's Inequality](information_theory/gibbs_inequality.md)
 - Log-Sum Inequality
 
+## Advanced Quantities
+- [f-Divergence](information_theory/f_divergence.md)
 
