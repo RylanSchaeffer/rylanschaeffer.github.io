@@ -13,6 +13,7 @@ kernel methods are typically applicable when data is rotationally invariant.
 
 ## Kernels
 - [Kernels](kernel_methods/kernels.md)
+- [Nystrom Approximation](kernel_methods/nystrom_method.md)
 
 
 ## Positive Definiteness
