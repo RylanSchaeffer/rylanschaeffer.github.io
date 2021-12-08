@@ -2,17 +2,35 @@
 
 ## Kernel Functions
 
-Intuitively, a kernel function is a function that takes two elements from some space
-$$x, x' \in \mathcal{X}$$, constructs feature vectors or feature functions for each
-$$\phi(x), \phi(x')$$ and then computes an inner products of those features.
 
-
-More formally, let $$X$$ be a non-empty set. A function $$k: \mathcal{X} \times 
-\mathcal{X} \rightarrow \mathbb{R}$$ is
-a **kernel function** if there exists an $$\mathbb{R}$$-Hibert space $$H$$ and a so-called feature map $$\Phi: X
+__Definition 1__: Let $$X$$ be a non-empty set. A function $$k: \mathcal{X} \times 
+\mathcal{X} \rightarrow \mathbb{R}$$ is a **kernel function** if there exists an
+$$\mathbb{R}$$-Hibert space $$H$$ and a so-called feature map $$\Phi: X
 \rightarrow H$$ such that $$\forall x, x' \in X$$,
 
 $$ k(x, x') = \langle \Phi(x), \Phi(x') \rangle $$
+
+__Definition 2__: A p.d. kernel on set $$X$$ is a function $$K: X \times X \rightarrow \mathbb{R}$$
+that is (1) symmetric and (b) satisfies for all $$(x_1, ..., x_N)$$ and $$(a_1, ..., a_n) \in \mathbb{R}^N$$:
+
+$$\sum_{ij} a_i a_j K(x_i, x_j) \geq 0 $$
+
+Equivalently, for all $$(x_1, ..., x_N)$$, the matrix $$[K]_{ij} := K(x_i, x_j)$$ is positive semi-definite. 
+
+__Lemma__: Let $$X$$ be any set and $$\phi: X \rightarrow \mathbb{R}^D$$. Then the function 
+$$K(x_1, x_2) := \langle \phi(x_1), \phi(x_2) \rangle$$ is a kernel function. In simple terms,
+a feature map and an inner product in a Hilbert space give rise to a kernel function.
+
+Proof: Symmetry is obvious. Consider $$\sum_{ij} a_i a_j K(x_i, x_j) = \sum_{ij} a_i a_j \langle 
+\phi(x_i), \phi(x_j) \rangle = \langle \sum_i a_i \phi(x_i), \sum_j a_j \phi(x_j) \rangle = 
+\lvert \lvert \sum_i a_i \phi(x_i) \lvert \lvert_2^2 \geq 0$$
+
+__Theorem__ (Aronszajn 1950): Informally, the opposite direction is also true: a kernel function
+implies the existence of a feature map and inner product in some Hilbert space. Formally, $$K$$ is
+a PSD kernel on $$X$$ if and only if there exists a Hilbert sapce $$H$$ and mapping $$\phi: X \rightarrow H$$
+such that $$K(x_1, x_2) = \langle \phi(x_1), \phi(x_2) \rangle$$
+
+
 
 ### Example Kernels
 

@@ -1,9 +1,9 @@
 # Kernel Methods
 
 At a high level, kernel methods are a machine learning approach that works by
-first transforming any data (images, songs, etc.) into (possibly infinite dimensional) feature spaces
-and then comparing the similarity of features through an inner product. Consequently,
-kernel methods are typically applicable when data is rotationally invariant.
+first transforming any data (images, songs, etc.) into (possibly infinite dimensional) feature spaces,
+computing the pairwise similarity of each datum through inner products, and then fitting a simple
+model (i.e. a linear readout) from the feature space.
 
 ## Background
 
