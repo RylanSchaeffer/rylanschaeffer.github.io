@@ -16,6 +16,7 @@ model (i.e. a linear readout) from the feature space.
 
 ## Kernels
 - [Kernels](kernel_methods/kernels.md)
+- [Reproducing Kernels](kernel_methods/reproducing_kernels.md)
 - [Nystrom Approximation](kernel_methods/nystrom_method.md)
 
 

@@ -45,6 +45,7 @@ $$K = \sum_n \lambda_n v_n v_n^T$$ and consider its $$i, j$$th element: $$[K]_{i
 Define $$\phi(x_i) = \begin{bmatrix} \sqrt{\lambda_1} v_{1,i} \\ \vdots \\\sqrt{\lambda_1} v_{N,i} \end{bmatrix}$$.
 Then $$[K]_{ij} = \langle \phi(x_i), \phi(x_j) \rangle$$ by construction.
 
+
 ### Example Kernels
 
 - Exponential: $$k(x, x') = \exp(\langle x, x' \rangle)$$
