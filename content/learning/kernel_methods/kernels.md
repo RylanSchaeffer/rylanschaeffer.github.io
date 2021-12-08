@@ -21,9 +21,15 @@ __Lemma__: Let $$X$$ be any set and $$\phi: X \rightarrow \mathbb{R}^D$$. Then t
 $$K(x_1, x_2) := \langle \phi(x_1), \phi(x_2) \rangle$$ is a kernel function. In simple terms,
 a feature map and an inner product in a Hilbert space give rise to a kernel function.
 
-Proof: Symmetry is obvious. Consider $$\sum_{ij} a_i a_j K(x_i, x_j) = \sum_{ij} a_i a_j \langle 
-\phi(x_i), \phi(x_j) \rangle = \langle \sum_i a_i \phi(x_i), \sum_j a_j \phi(x_j) \rangle = 
-\lvert \lvert \sum_i a_i \phi(x_i) \lvert \lvert_2^2 \geq 0$$
+Proof: Symmetry is obvious. Consider
+
+$$\begin{align*}
+\sum_{ij} a_i a_j K(x_i, x_j) &= \sum_{ij} a_i a_j \langle 
+\phi(x_i), \phi(x_j) \rangle\\
+&= \langle \sum_i a_i \phi(x_i), \sum_j a_j \phi(x_j) \rangle \\
+&= \lvert \lvert \sum_i a_i \phi(x_i) \lvert \lvert_2^2 \\
+&\geq 0
+\end{align}$$
 
 __Theorem__ (Aronszajn 1950): Informally, the opposite direction is also true: a kernel function
 implies the existence of a feature map and inner product in some Hilbert space. Formally, $$K$$ is

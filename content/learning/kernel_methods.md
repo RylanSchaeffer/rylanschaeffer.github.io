@@ -5,6 +5,9 @@ first transforming any data (images, songs, etc.) into (possibly infinite dimens
 computing the pairwise similarity of each datum through inner products, and then fitting a simple
 model (i.e. a linear readout) from the feature space.
 
+![](kernel_methods/kernel_methods_diagram.pngIal)
+
+
 ## Background
 
 - [Introduction](kernel_methods/introduction.md)
