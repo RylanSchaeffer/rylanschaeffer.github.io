@@ -30,7 +30,12 @@ implies the existence of a feature map and inner product in some Hilbert space. 
 a PSD kernel on $$X$$ if and only if there exists a Hilbert sapce $$H$$ and mapping $$\phi: X \rightarrow H$$
 such that $$K(x_1, x_2) = \langle \phi(x_1), \phi(x_2) \rangle$$
 
-
+Proof (Finite Dimensions): Let $$K$$ be a PSD kernel on $$X$$. Our goal is to show that there exists
+features in some Hilbert space and an inner product. Because $$K$$ is a PSD kernel, we know that for any
+$$x_1, ..., X_N$$, the $$N \times N$$ matrix is positive semi-definite. Take its eigendecomposition
+$$K = \sum_n \lambda_n v_n v_n^T$$ and consider its $$i, j$$th element: $$[K]_{ij} = \sum_n \lambda_n [v_n]_i [v_n]_j$$.
+Define $$\phi(x_i) = \begin{bmatrix} \sqrt{\lambda_1} v_{1,i} \\ \vdots \\\sqrt{\lambda_1} v_{N,i} \end{bmatrix}$$.
+Then $$[K]_{ij} = \langle \phi(x_i), \phi(x_j) \rangle$$ by construction.
 
 ### Example Kernels
 
