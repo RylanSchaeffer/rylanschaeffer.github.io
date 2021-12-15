@@ -1,6 +1,6 @@
 # Gibb's Inequality
 
-Gibb's Inquality states that for a discrete distribution $$P$$ over $$N$ elements,
+Gibb's Inquality states that for a discrete distribution $$P$$ over $$N$$ elements,
 its entropy $$H(P) := - \sum_n p_n \log p_n $$ is upper bounded by the cross entropy
 with any other discrete distribution $$Q$$, with equality if and only if $$P = Q$$
 
