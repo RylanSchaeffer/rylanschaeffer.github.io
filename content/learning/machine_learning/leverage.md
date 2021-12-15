@@ -53,5 +53,7 @@ Let $$h_i := [H]_{ii}$$ be the leverage score of the $$i$$th datum.
  
 $$\sum_n h_n = Tr[H] = Tr[X (X^T X)^{-1} X^T]  = Tr[(X^T X)^{-1} X^T X ] = Tr[I_D] = D$$
 
+## Demo
+
 
 
