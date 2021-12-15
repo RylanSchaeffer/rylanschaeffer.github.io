@@ -2,7 +2,9 @@
 
 Gibb's Inquality states that for a discrete distribution $$P$$ over $$N$$ elements,
 its entropy $$H(P) := - \sum_n p_n \log p_n $$ is upper bounded by the cross entropy
-with any other discrete distribution $$Q$$, with equality if and only if $$P = Q$$
+with any other discrete distribution $$Q$$, with equality if and only if $$P = Q$$.
+A perhaps more intuitive statement is that a discrete distribution's entropy is smaller
+than the cross entropy under any other distribution.
 
 Proof: Our goal is to show that 
 
