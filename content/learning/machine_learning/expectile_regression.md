@@ -1,20 +1,12 @@
 # Expectile Regression
 
 The goal of expectile regression is to learn a model that predict the expectiles of a random
-variable $y$, perhaps given another random variable $x$. Suppose we want to learn the median of
+variable $y$, perhaps given another random variable $x$. Suppose we want to learn the mean of
 $y$. One way to accomplish this is via the
-[Mean-Absolute Error (MAE)](../machine_learning/loss_functions.md#mean-absolute-error)
-loss function. This is because the value of $$\hat{y}$$ that minimizes MAE is the median of $$y$$:
+[Mean-Squared Error (MSE)](../machine_learning/loss_functions.md#mean-squared-error)
+loss function. This is because the value of $$\hat{y}$$ that minimizes MSE is the mean of $$y$$:
 
-$$
-\begin{align*}
-0 &= \partial_{\hat{y}} MAE(\hat{y})\\
-&= \int_{\mathbb{R}} \partial_{\hat{y}} | y - \hat{y}| p(y) dy\\
-&= -\int_{-\infty}^{\hat{y}} p(y) dy + \int_{\hat{y}}^{\infty} p(y) dy  
-\end{align*}
-$$
 
-- Expectile Regression
 
 Just as quantile regression generalized mean absolute error, expectile regression
 generalized mean squared error. For $$\tau \in (0, 1)$$, the expectile regression loss function for the
