@@ -75,4 +75,5 @@ $$
 \langle \phi(x_1), \phi(x_2) \rangle_{l^2(\mathbb{N})}
 &= \sum_r \sqrt{\lambda_r} \psi_r(x_1) \sqrt{\lambda_r}\psi_r(x_2)\\
 &= \sum_r \lambda_r \psi_r(x_1) \psi_r(x_2)\\
-&= k(x_1, x_2)$$
+&= k(x_1, x_2)
+\end{align*}$$
