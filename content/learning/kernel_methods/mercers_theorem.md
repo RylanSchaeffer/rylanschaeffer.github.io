@@ -16,14 +16,14 @@ Mercer's Theorem is a generalization to function spaces.
 
 ## Mercer's Condition
 
-__Mercer's Condition__ is the function-space equivalent of a PSD matrix. Specifically,
+__Mercer's condition__ is the function-space equivalent of a PSD matrix. Specifically,
 let $$k: X \times X \rightarrow \mathbb{R}$$ be a [kernel function](kernels.md#kernel-functions). The kernel
 function is said to meet Mercer's condition if for all square-integrable functions i.e. $$\forall f \in L^2(X) := \{ f: \int f(i)^2 di < \infty \}$$,
 the following quantity remains non-negative:
 
 $$ \int_i \int_j f(i) k(i, j) f(j) di dj \geq 0 $$
 
-The equivalent statement in the finite dimensional case is that $$\forall x \in \mathbb{R}^D$$,
+The equivalent statement in the finite-dimensional case is that $$\forall x \in \mathbb{R}^D$$,
 
 $$ x^T K x < \infty$$
 
@@ -34,14 +34,14 @@ but for infinite dimensional functions.
 
 Let $$X \subseteq \mathbb{R}^D$$ be a compact
 set and let $$k: X \times X \rightarrow \mathbb{R}$$ be a continuous PSD [kernel function](kernels.md#kernel-functions)
-that meets Mercer's Condition. Then there exists a sequence $$(\lambda_r)_{r \geq 1}$$ and functions
+that meets Mercer's condition. Then there exists a sequence $$(\lambda_r)_{r \geq 1}$$ and functions
 $$\psi_r(\cdot) \in L^2(X)$$ such that
 
 $$k(x_1, x_2) = \sum_{r=1}^{\infty} \lambda_r \psi_r(x_1) \psi_r(x_2)$$
 
 Additionally, the functions are orthonormal i.e.
 
-$$\langle \psi_a, \psi_b \rangle_{L^2(X)} = \int \psi_a(i) \psi_b(i) = \delta_{a=b}$$
+$$\langle \psi_a, \psi_b \rangle_{L^2(X)} = \int \psi_a(i) \psi_b(i) = \delta_{ab}$$
 
 This is a generalization of the finite dimensional statement that
 
