@@ -65,9 +65,14 @@ One can use Mercer's Theorem to define a feature map using the kernel's eigenfun
 let $$l^2(\mathbb{N}) := \{ (a_r)_r : \sum_r a_r^2 < \infty \}$$ be the set of sequences that
 are square summable. Define the feature map $$\phi: X \rightarrow l^2(\mathbb{N})$$ as:
 
-$$\phi(x) = (\sqrt{\lambda_r} \psi_r(x))_{r \geq 1}$$
+$$\phi(x) = \Big(\sqrt{\lambda_r} \psi_r(x) \Big)_{r \geq 1}$$
 
 In other words, each $$x \in X$$ becomes a sequence $$\phi(x) \in l^2(\mathbb{N})$$. If we take
 the inner product in this feature space, we recover the kernel:
 
-$$\langle \phi(x_1), \phi(x_2) \rangle_{l^2(\mathbb{N})} = \sum_r \sqrt{\lambda_r} \psi_r(x_1) \sqrt{\lambda_r}\psi_r(x_2) = k(x_1, x_2)$$
+$$
+\begin{align*}
+\langle \phi(x_1), \phi(x_2) \rangle_{l^2(\mathbb{N})}
+&= \sum_r \sqrt{\lambda_r} \psi_r(x_1) \sqrt{\lambda_r}\psi_r(x_2)\\
+&= \sum_r \lambda_r \psi_r(x_1) \psi_r(x_2)\\
+&= k(x_1, x_2)$$
