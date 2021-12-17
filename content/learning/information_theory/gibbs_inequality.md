@@ -18,7 +18,7 @@ Or more specifically, that
 
 $$\sum_n p_n \log \frac{q_n}{p_n} \leq 0$$
 
-We can show this using [Jensen's Inequality](jensen_inequality.md):
+We can show this using [Jensen's Inequality](../inequalities/jensen_inequality.md):
 
 $$
 \begin{align*}

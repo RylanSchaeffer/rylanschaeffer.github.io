@@ -19,7 +19,7 @@ retroactively revised.
 Disclaimer: I change the notation slightly because I feel the authors' notation is too cumbersome.
 
 A State Space Model (SSM) consists of a sequence of latent variables $$(x_t)_{t \geq 1}$$ and
-a sequence of observable variables $$(y_)_{t \geq}$$ such that the joint distribution factorizes as
+a sequence of observable variables $$(y_t)_{t \geq}$$ such that the joint distribution factorizes as
 
 $$p(x_{1:T}, y_{1:T}) = p(x_1) p(y_1|x_1) \prod_{t=2}^{t=T} p(x_t | x_{t-1}) p(y_t | x_t)$$
 
@@ -37,7 +37,7 @@ family, which doesn't require revising, can be defined as:
 
 $$q(x_{1:T}|y_{1:T}) = \prod_{t=1}^{t=T} q(x_t | x_{t-1}, y_{\leq t})$$
 
-But then 
+But then the distribution over $$x_t$$ fails to condition on all available information at time $$T$$.
 
 ## Algorithm
 

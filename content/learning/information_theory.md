@@ -7,7 +7,7 @@
 - KL Divergence
 
 ## Inequalities
-- [Jensen's Inequality](information_theory/jensen_inequality.md)
+- [Jensen's Inequality](inequalities/jensen_inequality.md)
   - [Gibb's Inequality](information_theory/gibbs_inequality.md)
 - Log-Sum Inequality
 
