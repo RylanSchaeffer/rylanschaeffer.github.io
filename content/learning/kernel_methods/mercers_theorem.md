@@ -16,14 +16,14 @@ Mercer's Theorem is a generalization to function spaces.
 
 ## Mercer's Condition
 
-__Mercer's condition__ is the function-space equivalent of a PSD matrix. Specifically,
+__Mercer's Condition__ is the function-space equivalent of a PSD matrix. Specifically,
 let $$k: X \times X \rightarrow \mathbb{R}$$ be a [kernel function](kernels.md#kernel-functions). The kernel
 function is said to meet Mercer's condition if for all square-integrable functions i.e. $$\forall f \in L^2(X) := \{ f: \int f(i)^2 di < \infty \}$$,
 the following quantity remains non-negative:
 
 $$ \int_i \int_j f(i) k(i, j) f(j) di dj \geq 0 $$
 
-The equivalent statement in the finite-dimensional case is that $$\forall x \in \mathbb{R}^D$$,
+The equivalent statement in the finite dimensional case is that $$\forall x \in \mathbb{R}^D$$,
 
 $$ x^T K x \geq 0$$
 
