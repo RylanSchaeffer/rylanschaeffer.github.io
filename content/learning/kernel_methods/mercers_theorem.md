@@ -2,7 +2,7 @@
 
 ## Background
 
-Recall that for a PSD matrix $$K \in \mathbb{R}^{D \times D}$$, the spectral theorem tells us that the matrix can
+Recall that for a positive semi-definite (PSD) matrix $$K \in \mathbb{R}^{D \times D}$$, the spectral theorem tells us that the matrix can
 be written as 
 
 $$K = \sum_{d=1}^D \lambda_d \psi_d \psi_d^T$$
@@ -12,20 +12,22 @@ the characteristic equation:
 
 $$ K \psi = \lambda \psi$$
 
-Mercer's Theorem is a generalization to function spaces. Let $$X \subseteq \mathbb{R}^D$$ be a compact
-set and let $$k: X \times X \rightarrow \mathbb{R}$$ be a continuous PSD [kernel function](kernels.md#kernel-functions).
-In possibly infinite dimensional spaces, we need to be careful that quantities converge. __Mercer's Condition__
-is the requirement that for all square-integrable functions i.e. $$\forall f \in L^2(X) := \{ f: \int f(i)^2 di < \infty \}$$,
-the following quantity remains finite:
+Mercer's Theorem is a generalization to function spaces.
 
-$$ \int_i \int_j k(i, j)^2 di dj < \infty$$
+## Mercer's Condition
+
+__Mercer's Condition__ is the function-space equivalent of a PSD matrix. Specifically,
+let $$k: X \times X \rightarrow \mathbb{R}$$ be a [kernel function](kernels.md#kernel-functions). The kernel
+function is said to meet Mercer's condition if for all square-integrable functions i.e. $$\forall f \in L^2(X) := \{ f: \int f(i)^2 di < \infty \}$$,
+the following quantity remains non-negative:
+
+$$ \int_i \int_j f(i) k(i, j) f(j) di dj \geq 0 $$
 
 The equivalent statement in the finite dimensional case is that $$\forall x \in \mathbb{R}^D$$,
 
 $$ x^T K x < \infty$$
 
-But in the finite dimensional case, an infinite quantity is impossible, and so we have no need to add
-this condition. In the integral, I use the arguments $$i, j$$, to remind us that these are "indices" 
+In the integral, I use the arguments $$i, j$$, to remind us that these are "indices" 
 but for infinite dimensional functions.
 
 ## Definition
