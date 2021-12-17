@@ -8,15 +8,17 @@ be written as
 $$K = \sum_{d=1}^D \lambda_d \psi_d \psi_d^T$$
 
 where the eigenvalue-eigenvector pairs $$(\lambda_d, \psi_d)$$ are obtained by solving
-the characteristic equation:
+the characteristic polynomial:
 
-$$ K \psi = \lambda \psi$$
+$$ det \Big( K \psi - \lambda \psi \Big) = 0$$
 
-Mercer's Theorem is a generalization to function spaces.
+Mercer's Theorem is a generalization to function spaces. Before jumping straight to Mercer's theorem,
+we need to first define a notion of positive (semi-)definiteness in function spaces. This is called Mercer's 
+condition.
 
 ## Mercer's Condition
 
-__Mercer's Condition__ is the function-space equivalent of a PSD matrix. Specifically,
+__Mercer's condition__ is the function-space equivalent of a PSD matrix. Specifically,
 let $$k: X \times X \rightarrow \mathbb{R}$$ be a [kernel function](kernels.md#kernel-functions). The kernel
 function is said to meet Mercer's condition if for all square-integrable functions i.e. $$\forall f \in L^2(X) := \{ f: \int f(i)^2 di < \infty \}$$,
 the following quantity remains non-negative:
