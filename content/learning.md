@@ -30,3 +30,4 @@ Many notes are woefully incomplete. Don't judge :)
 
 On less mathematical topics
 - [Book Summaries](learning/book_summaries.html)
+

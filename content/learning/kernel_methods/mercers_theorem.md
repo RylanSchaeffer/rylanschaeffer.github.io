@@ -1,10 +1,71 @@
 # Mercer's Theorem
 
+## Background
+
+Recall that for a PSD matrix $$K \in \mathbb{R}^{D \times D}$$, the spectral theorem tells us that the matrix can
+be written as 
+
+$$K = \sum_{d=1}^D \lambda_d \psi_d \psi_d^T$$
+
+where the eigenvalue-eigenvector pairs $$(\lambda_d, \psi_d)$$ are obtained by solving
+the characteristic equation:
+
+$$ K \psi = \lambda \psi$$
+
+Mercer's Theorem is a generalization to function spaces. Let $$X \subseteq \mathbb{R}^D$$ be a compact
+set and let $$k: X \times X \rightarrow \mathbb{R}$$ be a continuous PSD [kernel function](kernels.md#kernel-functions).
+In possibly infinite dimensional spaces, we need to be careful that quantities converge. __Mercer's Condition__
+is the requirement that for all square-integrable functions i.e. $$\forall f \in L^2(X) := \{ f: \int f(i)^2 di < \infty \}$$,
+the following quantity remains finite:
+
+$$ \int_i \int_j k(i, j)^2 di dj < \infty$$
+
+The equivalent statement in the finite dimensional case is that $$\forall x \in \mathbb{R}^D$$,
+
+$$ x^T K x < \infty$$
+
+But in the finite dimensional case, an infinite quantity is impossible, and so we have no need to add
+this condition. In the integral, I use the arguments $$i, j$$, to remind us that these are "indices" 
+but for infinite dimensional functions.
+
+## Definition
+
+Let $$X \subseteq \mathbb{R}^D$$ be a compact
+set and let $$k: X \times X \rightarrow \mathbb{R}$$ be a continuous PSD [kernel function](kernels.md#kernel-functions)
+that meets Mercer's Condition. Then there exists a sequence $$(\lambda_r)_{r \geq 1}$$ and functions
+$$\psi_r(\cdot) \in L^2(X)$$ such that
+
+$$k(x_1, x_2) = \sum_{r=1}^{\infty} \lambda_r \psi_r(x_1) \psi_r(x_2)$$
+
+Additionally, the functions are orthonormal i.e.
+
+$$\langle \psi_a, \psi_b \rangle_{L^2(X)} = \int \psi_a(i) \psi_b(i) = \delta_{a=b}$$
+
+This is a generalization of the finite dimensional statement that
+
+$$x^T K y = x^T \Psi^T \Lambda \Psi y = \sum_{r=1}^D \lambda_r (\phi_r^T x) (\phi_r^T y)$$
+
+## Obtaining Kernel Eigenfunctions
+
+To obtain the eigenfunctions of the kernel $$k$$, one must first define the [Hilbert-Schmidt integral
+operator](../functional_analysis/hilbert_schmidt_kernel_and_int_op.md):
+
+$$T_k(f)(x) := \int k(x, y) f(y) dy$$
+
+where $$T_k: L^2(X) \rightarrow L^2(X)$$ is a linear operator, and then solve the integral equation
+
+$$T_k(f)(x) = \lambda f(x)  $$
 
 
+## Feature Map
 
-Let $$K: \mathcal{X} \times \mathcal{X} \rightarrow \mathbb{R}$$ be a [symmetric positive-semidefinite kernel](kernels.md#kernel-functions).
-For any function, we can define a new function (called a )
+One can use Mercer's Theorem to define a feature map using the kernel's eigenfunctions. Specifically,
+let $$l^2(\mathbb{N}) := \{ (a_r)_r : \sum_r a_r^2 < \infty \}$$ be the set of sequences that
+are square summable. Define the feature map $$\phi: X \rightarrow l^2(\mathbb{N})$$ as:
 
+$$\phi(x) = (\sqrt{\lambda_r} \psi_r(x))_{r \geq 1}$$
 
+In other words, each $$x \in X$$ becomes a sequence $$\phi(x) \in l^2(\mathbb{N})$$. If we take
+the inner product in this feature space, we recover the kernel:
 
+$$\langle \phi(x_1), \phi(x_2) \rangle_{l^2(\mathbb{N})} = \sum_r \sqrt{\lambda_r} \psi_r(x_1) \sqrt{\lambda_r}\psi_r(x_2) = k(x_1, x_2)$$

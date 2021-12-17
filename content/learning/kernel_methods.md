@@ -17,10 +17,9 @@ model (i.e. a linear readout) from the feature space.
 ## Kernels
 - [Kernels](kernel_methods/kernels.md)
 - [Reproducing Kernels](kernel_methods/reproducing_kernels.md)
+- [Mercer's Theorem](kernel_methods/mercers_theorem.md)
 - [Nystrom Approximation](kernel_methods/nystrom_method.md)
-
-
-- [Riesz Representation Theorem]
+- Riesz Representation Theorem
 
 
 ## Sources
