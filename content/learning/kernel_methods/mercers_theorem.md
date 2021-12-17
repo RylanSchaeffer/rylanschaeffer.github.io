@@ -25,7 +25,7 @@ $$ \int_i \int_j f(i) k(i, j) f(j) di dj \geq 0 $$
 
 The equivalent statement in the finite-dimensional case is that $$\forall x \in \mathbb{R}^D$$,
 
-$$ x^T K x < \infty$$
+$$ x^T K x \geq 0$$
 
 In the integral, I use the arguments $$i, j$$, to remind us that these are "indices" 
 but for infinite dimensional functions.
