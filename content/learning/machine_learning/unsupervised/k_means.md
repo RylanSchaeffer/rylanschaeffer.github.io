@@ -6,7 +6,8 @@ datum is assigned to the nearest centroid, which defines a cluster $$C_k$$. The 
 
 $$ \min_{\{C_k\}} L(\{C_k\}) := \min_{\{C_k\}}  \sum_{k=1}^K \sum_{x_n \in C_k} \lvert \lvert x_n - \mu_k \lvert \lvert^2$$
 
-where $$\mu_k := \frac{1}{\lvert C_k \lvert} \sum_{x_n \in C_k} x_n$$
+where the centroids $$\mu_k := \frac{1}{\lvert C_k \lvert} \sum_{x_n \in C_k} x_n$$ are the average of the data
+assigned to each cluster.
 
 ## Algorithms
 
@@ -23,7 +24,7 @@ Lloyd's algorithm repeats the two alternating steps until convergence:
 
 __Theorem 1__: Lloyd's monotonically decreases the K-Means objective until local convergence.
 
-Proof: First, note that $$L(\{C_k\}) \geq 0$$ because $$\lvert \lvertx_n - \mu_k \lvert \lvert^2 \geq 0$$
+Proof: First, note that $$L(\{C_k\}) \geq 0$$ because $$\lvert \lvert x_n - \mu_k \lvert \lvert^2 \geq 0$$
 and the sum of non-negative terms is itself non-negative. This means the objective function $$L(\{C_k\})$$
 cannot be lowered indefinitely.
 
@@ -44,11 +45,19 @@ $$L_{post} - L_{pre} < 0$$
 
 2. Update centroids: We first need to prove a lemma, that for a given set of data, the average
   of the data is the point with the smallest summed distanced to each datum. Specifically, let 
-  $$\overbar{z} := \frac{1}{N}\sum_n z_n$$ be the mean and $$z$$ be an arbitrary point. Then
+  $$\bar{z} := \frac{1}{N}\sum_n z_n$$ be the mean and $$z$$ be an arbitrary point. Then
 
-  $$\sum_n \lvert \lvert z_n - \overbar{z} \lvert \lvert^2 \leq \sum_n \lvert \lvert z_n - z \lvert \lvert^2$$
+  $$\sum_n \lvert \lvert z_n - \bar{z} \lvert \lvert^2 \leq \sum_n \lvert \lvert z_n - z \lvert \lvert^2$$
 
-Proof: 
+Proof: Per Cauchy-Schwarz,
+
+$$ \begin{align*}
+\sum_n \lvert \lvert z_n - z \lvert \lvert^2
+&= \sum_n \lvert \lvert z_n - \bar{z} + \bar{z} - z \lvert \lvert^2\\
+&= \sum_n \lvert \lvert z_n - \bar{z} \lvert \lvert^2 + \lvert \lvert \bar{z} - z \lvert \lvert^2 + 2 \sum_n\\
+&\geq \sum_n \lvert \lvert z_n - \bar{z} \lvert \lvert^2\\
+\end{align*}
+$$
 
 ### K-Means++
 
