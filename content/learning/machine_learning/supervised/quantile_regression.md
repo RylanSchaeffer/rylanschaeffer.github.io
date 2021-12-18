@@ -3,7 +3,7 @@
 The goal of quantile regression is to learn a model that predict the quantiles of a random
 variable $y$, perhaps given another random variable $x$. Suppose we want to learn the median of
 $y$. One way to accomplish this is via the
-[Mean-Absolute Error (MAE)](../machine_learning/loss_functions.md#mean-absolute-error)
+[Mean-Absolute Error (MAE)](loss_functions.md#mean-absolute-error)
 loss function. This is because the value of $$\hat{y}$$ that minimizes MAE is the median of $$y$$:
 
 $$

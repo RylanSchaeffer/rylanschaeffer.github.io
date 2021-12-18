@@ -5,14 +5,30 @@
 ## Supervised Learning 
 
 ### Regression
-- [Linear Regression](machine_learning/linear_regression.md)
-- [Leverage](machine_learning/leverage.md)
+- [Linear Regression](machine_learning/supervised/linear_regression.md)
+- [Leverage](machine_learning/supervised/leverage.md)
 - Generalized Linear Models
-- [Quantile Regression](machine_learning/quantile_regression.md)
-- [Expectile Regression](machine_learning/expectile_regression.md)
+- [Quantile Regression](machine_learning/supervised/quantile_regression.md)
+- [Expectile Regression](machine_learning/supervised/expectile_regression.md)
 
 ### Classification
 
+
+## Unsupervised Learning
+
+### Mixture Models
+
+- [K-Means](machine_learning/unsupervised/k_means.md)
+- [Gaussian Mixture Models](machine_learning/unsupervised/gaussian_mixture_models.md)
+- [K-Medoids](machine_learning/unsupervised/k_medoids.md)
+- [K-Medians](machine_learning/unsupervised/k_medians.md)
+
+### Feature Models
+
+- Principal Component Analysis
+- Factor Analysis
+- Independent Component Analysis
+- Non-negative Matrix Factorization
 
 ## Kernel Methods
 
@@ -20,3 +36,6 @@ See [Kernel methods](kernel_methods.md).
 
 ## Reinforcement Learning
 
+See [reinforcement learning](reinforcement_learning.md).
+
+## 

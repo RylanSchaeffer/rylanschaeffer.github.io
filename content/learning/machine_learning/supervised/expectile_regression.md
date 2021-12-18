@@ -3,7 +3,7 @@
 The goal of expectile regression is to learn a model that predict the expectiles of a random
 variable $y$, perhaps given another random variable $x$. Suppose we want to learn the mean of
 $y$. One way to accomplish this is via the
-[Mean-Squared Error (MSE)](../machine_learning/loss_functions.md#mean-squared-error)
+[Mean-Squared Error (MSE)](loss_functions.md#mean-squared-error)
 loss function. This is because the value of $$\hat{y}$$ that minimizes MSE is the mean of $$y$$:
 
 
