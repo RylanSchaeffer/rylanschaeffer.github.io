@@ -52,12 +52,16 @@ $$L_{post} - L_{pre} < 0$$
 Proof: Per Cauchy-Schwarz,
 
 $$ \begin{align*}
-\sum_n \lvert \lvert z_n - z \lvert \lvert^2
+&\sum_n \lvert \lvert z_n - z \lvert \lvert^2\\
 &= \sum_n \lvert \lvert z_n - \bar{z} + \bar{z} - z \lvert \lvert^2\\
-&= \sum_n \lvert \lvert z_n - \bar{z} \lvert \lvert^2 + \lvert \lvert \bar{z} - z \lvert \lvert^2 + 2 \sum_n\\
+&= \sum_n \lvert \lvert z_n - \bar{z} \lvert \lvert^2 + \lvert \lvert \bar{z} - z \lvert \lvert^2 + 2 \sum_n (z_n \bar{z} - z_n z - \bar{z}\bar{z} + \bar{z} z)\\
+&= \sum_n \lvert \lvert z_n - \bar{z} \lvert \lvert^2 + \lvert \lvert \bar{z} - z \lvert \lvert^2\\
 &\geq \sum_n \lvert \lvert z_n - \bar{z} \lvert \lvert^2\\
 \end{align*}
 $$
+
+This lemma tells us that relocated the centroids from the previously assigned points to the new points
+cannot increase the sum of squared distances. Hence, the loss is non-increasing.
 
 ### K-Means++
 
