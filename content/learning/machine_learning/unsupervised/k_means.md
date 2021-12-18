@@ -1,6 +1,6 @@
-# K-Means
+# K Means
 
-K-means is a clustering problem of finding $$K$$ points called __centroids__ (typically in Euclidean space)
+K means is a clustering problem of finding $$K$$ points called __centroids__ (typically in Euclidean space)
 that minimize the total squared distance from a set of given data $$\{x_n \}_{n=1}^N$$. Each
 datum is assigned to the nearest centroid, which defines a cluster $$C_k$$. The optimization problem is:
 
@@ -13,8 +13,8 @@ assigned to each cluster.
 
 ### Lloyd's Algorithm
 
-Lloyd's Algorithm is so ubiquitous it is often called the K-Means algorithm, although
-we should distinguish the K-Means problem from any particular algorithm used to solve it.
+Lloyd's Algorithm is so ubiquitous it is often called the K Means algorithm, although
+we should distinguish the K Means problem from any particular algorithm used to solve it.
 Lloyd's algorithm repeats the two alternating steps until convergence:
 
 1. Assign: For each datum $$x_n$$, compute the distance between the datum and the $$K$$ centroids. Assign
@@ -22,10 +22,10 @@ Lloyd's algorithm repeats the two alternating steps until convergence:
 2. Update centroids: For each cluster, set the centroid $$\mu_k = \frac{1}{|C_k|} \sum_{x_n \in C_k} x_n$$
   based on the previous assignments.
 
-__Theorem 1__: Lloyd's monotonically decreases the K-Means objective until local convergence.
+__Theorem 1__: Lloyd's monotonically decreases the K Means objective until local convergence.
 
 Proof: First, note that $$L(\{C_k\}) \geq 0$$ because $$\lvert \lvert x_n - \mu_k \lvert \lvert^2 \geq 0$$
-and the sum of non-negative terms is itself non-negative. This means the objective function $$L(\{C_k\})$$
+and the sum of nonnegative terms is itself nonnegative. This means the objective function $$L(\{C_k\})$$
 cannot be lowered indefinitely.
 
 We show that each step cannot increase the loss. 
@@ -61,11 +61,11 @@ $$ \begin{align*}
 $$
 
 This lemma tells us that relocated the centroids from the previously assigned points to the new points
-cannot increase the sum of squared distances. Hence, the loss is non-increasing.
+cannot increase the sum of squared distances. Hence, the loss is nonincreasing.
 
-### K-Means++
+### K Means++
 
 
-### DP-Means
+### DP Means
 
 Kulis and Jordan 2012 introduced a 
