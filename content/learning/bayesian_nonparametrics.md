@@ -27,6 +27,7 @@ Broadly, there are three approaches to using BNPs:
 - [Beta Process](bayesian_nonparametrics/beta_process.md)
 - [Chinese Restaurant Process](bayesian_nonparametrics/chinese_restaurant_process.md)
 - [Completely Random Measures](bayesian_nonparametrics/completely_random_measures.md)
+- [Dependent Dirichlet Process](bayesian_nonparametrics/dirichlet_process.md)
 - [Dirichlet Process](bayesian_nonparametrics/dirichlet_process.md)
 - [Distance Dependent Chinese Restaurant Process](bayesian_nonparametrics/distance_dependent_chinese_restaurant_process.md)
 - [Distance Dependent Indian Buffet Process](bayesian_nonparametrics/distance_dependent_indian_buffet_process.md)

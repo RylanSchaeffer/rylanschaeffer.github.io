@@ -49,7 +49,7 @@ $$L_{post} - L_{pre} < 0$$
 
   $$\sum_n \lvert \lvert z_n - \bar{z} \lvert \lvert^2 \leq \sum_n \lvert \lvert z_n - z \lvert \lvert^2$$
 
-Proof: Per Cauchy Schwarz,
+Proof: 
 
 $$ \begin{align*}
 &\sum_n \lvert \lvert z_n - z \lvert \lvert^2\\
