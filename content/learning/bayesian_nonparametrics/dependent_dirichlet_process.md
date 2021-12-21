@@ -1,12 +1,12 @@
 # Dependent Dirichlet Process
 
-The Dependent Dirichlet Process (DDP) is a modified version of the [Dirichlet Process (DP)](dirichlet_process.md)
-that essentially defined a Markov chain of DPs. The idea is that the paired traits and probabilities of the DP 
+The Dependent Dirichlet Process (DDP) is a modified version of the [Dirichlet Process](dirichlet_process.md)
+that essentially defines a Markov chain of DPs. The idea is that the paired traits and probabilities of the DP 
 can change over time: they can be born, move or die.
 
 ## Definition
 
-Let $$D \sim DP(\mu)$$ where $$\mu: \Omega \rightarrow \mathbb{R}_+$$ is the base measure and 
+Let $$D \sim DP(\mu)$$ where $$\mu: \Omega \rightarrow \mathbb{R}_{+}$$ is the base measure and 
 $$\alpha_{\mu} = \int_{\Omega} d\mu$$ is the concentration parameter. We can think of $$D$$ as an infinite
 sum of traits and probabilities:
 
