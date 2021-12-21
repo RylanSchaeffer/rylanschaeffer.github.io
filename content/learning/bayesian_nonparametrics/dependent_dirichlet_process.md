@@ -10,12 +10,20 @@ Let $$D \sim DP(\mu)$$ where $$\mu: \Omega \rightarrow \mathbb{R}_+$$ is the bas
 $$\alpha_{\mu} = \int_{\Omega} d\mu$$ is the concentration parameter. We can think of $$D$$ as an infinite
 sum of traits and probabilities:
 
-$$ D = \{(\theta_k, \pi_k) \}_{k=1}^{k=\infty} \subset \Omega \times \mathbb{R}$$
+$$ D = \sum_{k=1}^{\infty} \theta_k \pi_k \subset \Omega \times \mathbb{R}$$
 
 The DDP is a Markov chain of DPs $$(D_1, D_2, ...)$$ where transitions are governed by 3 stochastic operations:
 
-1. Subsampling (death): Define $$q: \Omega \rightarrow [0, 1]$$
+1. Subsampling (death): Define $$q: \Omega \rightarrow [0, 1]$$. Then, for each $$(\theta, \pi) \in D_{t-1}$$, sample
+ $$b_{\theta} \sim Bernoulli(q(\theta))$$; in English, for each trait, flip a coin with probability
+  $$q(\theta_k)$$. Keep only the traits which come up 1 (heads) and renormalize the random probability measure: 
 
-2. Transition (move):
+$$D_t^' \sim DP(q \mu_{t-1})$$
 
-3. Superposition (birth):
+where
+
+$$(q\mu)(A) = \int_A q(\theta) \mu(\theta)$$
+
+3. Transition (move):
+
+4. Superposition (birth):
