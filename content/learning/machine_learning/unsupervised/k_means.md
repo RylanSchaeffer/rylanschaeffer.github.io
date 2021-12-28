@@ -127,7 +127,7 @@ $$p(z_n = new| ...) \propto \exp(- \frac{\lambda}{2\sigma} - \frac{\lvert \lvert
 Then taking the limit as $$\sigma \rightarrow 0$$, the numerators will be dominated
 by the smallest value of:
 
-$$ \{ \lvert \lvert x_n - \mu_1 \lvert \lvert^2, ..., \lvert \lvert x_n - \mu_k \lvert \lvert^2, \lambda \}$$
+$$ \Big\{ \lvert \lvert x_n - \mu_1 \lvert \lvert^2, ..., \lvert \lvert x_n - \mu_k \lvert \lvert^2, \lambda \Big\}$$
 
 In other words, the observation will be assigned to the cluster with the smallest value
 in the above set. Either the observation is close to an existing cluster, or it's more than
