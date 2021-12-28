@@ -118,16 +118,16 @@ $$\alpha := (1 + \rho / \sigma )^{d/2} \exp(- \lambda / 2 \sigma)$$
 for a new parameter $$\lambda$$, we obtain the following probabilities for cluster
 assignments:
 
-$$p(z_n = k| ...) \propto \mathcal{N}(\mu_k, \sigma I) \sum_n \mathbbm{I}(z_n = k)$$
+$$p(z_n = k| ...) \propto \mathcal{N}(\mu_k, \sigma I) \sum_n \mathbb{I}(z_n = k)$$
 
 and
 
-$$p(z_n = new| ...) \propto \exp(- \frac{\lambda}{2\sigma} - \frac{\lvert lvert x_n \lvert \lvert^2}{2(\rho + \sigma})$$
+$$p(z_n = new| ...) \propto \exp(- \frac{\lambda}{2\sigma} - \frac{\lvert \lvert x_n \lvert \lvert^2}{2(\rho + \sigma})$$
 
 Then taking the limit as $$\sigma \rightarrow 0$$, the numerators will be dominated
 by the smallest value of:
 
-$$ \{ \lvert lvert x_n - \mu_1 \lvert \lvert^2, ..., \lvert lvert x_n - \mu_k \lvert \lvert^2, \lambda \}$$
+$$ \{ \lvert \lvert x_n - \mu_1 \lvert \lvert^2, ..., \lvert \lvert x_n - \mu_k \lvert \lvert^2, \lambda \}$$
 
 In other words, the observation will be assigned to the cluster with the smallest value
 in the above set. Either the observation is close to an existing cluster, or it's more than
@@ -135,5 +135,6 @@ $$\lambda$$ away from all existing clusters and will thus create a new cluster.
 
 This actually corresponds to a modified k-means objective function:
 
-
 $$ \min_{\{C_k\}} L(\{C_k\}) := \min_{\{C_k\}}  \sum_{k=1}^K \sum_{x_n \in C_k} \lvert \lvert x_n - \mu_k \lvert \lvert^2 + \lambda k$$
+
+where we can now see that there's a regularization term for the number of clusters.
