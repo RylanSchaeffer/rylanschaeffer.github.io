@@ -24,5 +24,23 @@ Then, K Means++ switches to Lloyd's algorithm starting with the sampled centroid
   be the loss for a set of centroids $$\mathcal{C}$$. For any data $$\mathcal{X}$$, 
   $$\mathbb{E}[\phi] \leq 8 (\log K + 2) \phi_{opt}$$.
 
-## 
+## Proof of Theorem
+
+__Lemma 1__: Let $$X$$ be a set of points, and define $$\mu = \frac{1}{\lvert X \lvert} \sum_{x \in X} x$$
+as the mean. Let $$z$$ be an arbitrary point. Then
+
+$$ \sum_x \lvert \lvert x - z  \lvert \lvert^2 - \sum_x \lvert \lvert x - z  \lvert \lvert^2 = \lvert X \lvert \lvert \lvert \mu - z  \lvert \lvert^2$$
+
+Proof: Starting with the LHS and letting $$\lvert X \lvert$$ denote the cardinality of $$X$$.
+
+$$
+\begin{align*}
+&\sum_x \lvert \lvert x - z  \lvert \lvert^2 - \sum_x \lvert \lvert x - z  \lvert \lvert^2\\
+&= \sum_x x^T x - 2x^T z + z^T z - (\sum_x x^T x - 2 x^T \mu + \mu^T \mu)\\
+&= \lvert X \lvert z^T z - \lvert X \lvert \mu^T \mu + \sum_x -2 x^T z + 2 x^T \mu\\
+&= \lvert X \lvert z^T z - \lvert X \lvert \mu^T \mu + \frac{\lvert X \lvert}{\lvert X \lvert}\sum_x -2 x^T z + 2 x^T \mu\\
+&= \lvert X \lvert (z^T z + \mu^T \mu - 2 \mu^T z)\\
+&= \lvert X \lvert \lvert \mu - z \lvert^2
+\end{align*}
+$$
 
