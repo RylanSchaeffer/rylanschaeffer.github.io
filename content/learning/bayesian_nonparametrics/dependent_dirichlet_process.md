@@ -18,7 +18,7 @@ The DDP is a Markov chain of DPs $$(D_1, D_2, ...)$$ where transitions are gover
  $$b_{\theta} \sim Bernoulli(q(\theta))$$; in English, for each trait, flip a coin with probability
   $$q(\theta_k)$$. Keep only the traits which come up 1 (heads) and renormalize the random probability measure: 
 
-$$D_t^{\prime} \sim DP(q \mu_{t-1})$$
+$$D_{t}^{\prime} \sim DP(q \mu_{t-1})$$
 
 where
 
