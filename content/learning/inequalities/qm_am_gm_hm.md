@@ -16,7 +16,7 @@ $$\mu_{QM} = \Big( \frac{1}{N} \sum_n a_n^2 \Big)^2$$
 
 $$\mu_{GM} = \Big( \prod_n a_n \Big)^N$$
 
-4Harmonic Mean:
+4. Harmonic Mean:
 
 $$\mu_{HM} = \frac{N}{\sum_n \frac{1}{a_n}}$$
 
@@ -36,4 +36,4 @@ For two powers $$k_1> k_2 > 0$$, the power mean inequality states that
 
 $$\mu_{PM}^{(k_1)} \geq \mu_{PM}^{(k_2)}$$
 
-This includes the above QM-AM relationship, since $$\mu_{QM} = \mu_{PM}^{(2)}$$ and $$\mu_{AM} \mu_{PM}^{(1)}$$.
+This includes the above QM-AM relationship, since $$\mu_{QM} = \mu_{PM}^{(2)}$$ and $$\mu_{AM} = \mu_{PM}^{(1)}$$.
