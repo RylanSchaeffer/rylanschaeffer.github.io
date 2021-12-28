@@ -16,7 +16,7 @@
 
 ## Unsupervised Learning
 
-### Mixture Models
+### Mixture Models (Clustering)
 
 - [K-Means](machine_learning/unsupervised/k_means.md)
 - [Gaussian Mixture Models](machine_learning/unsupervised/gaussian_mixture_models.md)

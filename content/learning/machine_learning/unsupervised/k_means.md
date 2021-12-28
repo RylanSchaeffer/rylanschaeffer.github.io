@@ -11,7 +11,8 @@ assigned to each cluster.
 
 ## Algorithms
 
-### Lloyd's Algorithm
+<details><summary>### Lloyd's Algorithm</summary><p>
+
 
 Lloyd's Algorithm is so ubiquitous it is often called the K Means algorithm, although
 we should distinguish the K Means problem from any particular algorithm used to solve it.
@@ -30,7 +31,7 @@ cannot be lowered indefinitely.
 
 We show that each step cannot increase the loss. 
 
-1. Assign: Note that
+- __Assign__: Note that
 
 $$L_{post} = L_{pre} - \lvert \lvert x_n - \mu_{pre} \lvert \lvert^2 + \lvert \lvert x_n - \mu_{post} \lvert \lvert^2$$
 
@@ -43,9 +44,9 @@ If the datum is assigned to a new cluster, we know that
 
 $$L_{post} - L_{pre} < 0$$
 
-2. Update centroids: We first need to prove a lemma, that for a given set of data, the average
+- __Update centroids__: We first need to prove a lemma, that for a given set of data, the average
   of the data is the point with the smallest summed distanced to each datum. Specifically, let 
-  $$\bar{z} := \frac{1}{N}\sum_n z_n$$ be the mean and $$z$$ be an arbitrary point. Then
+  $$\bar{z} := \frac{1}{N}\sum_n z_n$$ be the center and $$z$$ be an arbitrary point. Then
 
   $$\sum_n \lvert \lvert z_n - \bar{z} \lvert \lvert^2 \leq \sum_n \lvert \lvert z_n - z \lvert \lvert^2$$
 
@@ -62,6 +63,8 @@ $$
 
 This lemma tells us that relocated the centroids from the previously assigned points to the new points
 cannot increase the sum of squared distances. Hence, the loss is nonincreasing.
+
+</p></details>
 
 ### K Means++
 
@@ -91,7 +94,7 @@ for the $$n$$th data point, the probability it belongs to the $$k$$th cluster is
 $$
 \begin{align*}
 p(z_n = k|X, Z_{-n}) &\propto p(x_n|z_n = k) p(z_n = k|X_{-n}, Z_{-n})\\
-&= \mathcal{N}(\mu_k, \sigma I) \sum_n \mathbbm{I}(z_n = k)
+&= \mathcal{N}(\mu_k, \sigma I) \sum_n \mathbb{I}(z_n = k)
 \end{align*}
 $$
 
