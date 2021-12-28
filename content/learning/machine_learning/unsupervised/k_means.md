@@ -11,8 +11,9 @@ assigned to each cluster.
 
 ## Algorithms
 
-<details><summary>### Lloyd's Algorithm</summary><p>
+### Lloyd's Algorithm
 
+<details><summary>Details</summary><p>
 
 Lloyd's Algorithm is so ubiquitous it is often called the K Means algorithm, although
 we should distinguish the K Means problem from any particular algorithm used to solve it.
@@ -68,8 +69,13 @@ cannot increase the sum of squared distances. Hence, the loss is nonincreasing.
 
 ### K Means++
 
+<details><summary>Details</summary><p>
+
+</p></details>
 
 ### DP Means
+
+<details><summary>Details</summary><p>
 
 One central question for clustering is choosing the number of clusters. Kulis and Jordan 2012
 introduced a modification of Lloyd's Algorithm that allows for adding clusters dynamically.
@@ -141,3 +147,6 @@ This actually corresponds to a modified k-means objective function:
 $$ \min_{\{C_k\}} L(\{C_k\}) := \min_{\{C_k\}}  \sum_{k=1}^K \sum_{x_n \in C_k} \lvert \lvert x_n - \mu_k \lvert \lvert^2 + \lambda k$$
 
 where we can now see that there's a regularization term for the number of clusters.
+
+</p></details>
+
