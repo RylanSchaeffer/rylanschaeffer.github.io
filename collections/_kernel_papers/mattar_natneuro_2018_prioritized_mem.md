@@ -2,7 +2,7 @@
 layout: post
 author: Qian, Li and Hu (Arxiv 2020)
 title: Efficient Kernel Transfer in Knowledge Distillation
-date: 2021-12-07
+date: 2022-01-01
 tags: knowledge-distillation kernel-methods
 ---
 
