@@ -1,6 +1,6 @@
 ---
 layout: post
-author: Mattar, Daw (Nature Neuroscience Year)
+author: Mattar, Daw (Nature Neuroscience 2018)
 title: Prioritized memory access explains planning and hippocampal replay
 date: 2022-01-02
 tags: reinforcement-learning hippocampus memory replay
@@ -51,6 +51,11 @@ experience. The intuition is that the agent wants to learn about states that it 
 and it also wants to prioritize experiences that promise higher future rewards, but sometimes the two goals
 clash e.g. if an experience promises high future value (high gain), but the agent will never be in that state
 (zero need), then replaying that experience is unhelpful. 
+
+$$
+\begin{align*}
+\end{align*}
+$$
 
 ### Setup 1
 

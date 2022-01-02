@@ -10,6 +10,17 @@ const quotations = [
 
     "“If we're not in pain, we're not alive.“",
 
+    "“'O my son Absalom,' Bean said softly, knowing for the first time " +
+    "the kind of anguish that could tear such words from a man’s mouth'",
+
+    "“Remember, the enemy's gate is down.“",
+
+    "“I think it's impossible to really understand somebody, what they want, what they believe, and not love them the way they love themselves.“",
+
+    "“Human beings are free except when humanity needs them. Maybe humanity needs you. To do something. " +
+    "Maybe humanity needs me—to find out what you're good for. We might both do despicable things, " +
+    "Ender, but if humankind survives, then we were good tools.“",
+
     "“But that, that distance — that chronic sense of being an alien among your own kind — it's not entirely a bad thing.“",
 
     "“Today you... tomorrow me.“",
