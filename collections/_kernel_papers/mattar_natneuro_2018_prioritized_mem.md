@@ -22,7 +22,7 @@ first?
 Suppose the agent at time $$t$$ is in state $$S = s_t$$, and it chooses to replay some experience $$e_k$$. 
 Here, replay means perform a Bellman backup:
 
-$$Q(S = s_k, A = a_k) \leftarrow Q(S = s_k, A = a_k) + \alpha \Big(r_{k+1} + \gamma \arg \max_a Q (S = s_{k+1}, A = a) - Q(S = s_k, A = a_k) )$$
+$$Q(S = s_k, A = a_k) \leftarrow Q(S = s_k, A = a_k) + \eta \Big(r_{k+1} + \gamma \arg \max_a Q (S = s_{k+1}, A = a) - Q(S = s_k, A = a_k) )$$
 
 Before replaying that experience, the agent has some value function for its current state:
 
