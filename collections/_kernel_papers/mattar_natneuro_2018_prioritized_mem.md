@@ -2,7 +2,7 @@
 layout: post
 author: Mattar, Daw (Nature Neuroscience 2018)
 title: Prioritized memory access explains planning and hippocampal replay
-date: 2022-01-02
+date: 2022-1-2
 tags: reinforcement-learning hippocampus memory replay
 ---
 
@@ -54,6 +54,23 @@ clash e.g. if an experience promises high future value (high gain), but the agen
 
 $$
 \begin{align*}
+& V^{\pi_{new, k}}(s_t) -  V^{\pi_{old}}(s_t)\\
+&= \sum_a \pi_{new}(a | s_t) \Big( Q^{\pi_{new, k}}(s_t, a) - Q^{\pi_{old}} (s_t, a) \Big)\\
+&= \sum_a \Big( \pi_{new, k}(a | s_t) - \pi_{old}(a|s_t) \Big)  Q^{\pi_{new, k}}(s_t, a)\\
+&\quad + \sum_a \pi_{old} \Big( Q^{\pi_{new, k}}(s_t, a) - Q^{\pi_{old}}(s_t, a) \Big)
+\end{align*}
+$$
+
+where the third equality is reached by adding and subtracting
+$$\pi_{old}(a|s_t) Q^{\pi_{new, k}} (s_t, a)$$ inside the sum. We can simplify the difference between 
+the new and old Q-values, using the property that $$Q^{\pi}(s_t, a) = \sum_{s_{t+1}, a_{t+1}} p(s_{t+1}, a_{t+1})
+(r_{t+1} + \gamma V^{\pi}(s_{t+1})$$:
+
+
+$$
+\begin{align*}
+& Q^{\pi_{new, k}}(s_t, a) - Q^{\pi_{old}}(s_t, a)\\
+&= \sum_{s_{t+1}, r_{t+1}} p(s_{t+1}, r_{t+1}|s_t, a) \Big(r_{t+1} + \gamma V^{\pi_{new, k}}(s_{t+1}) - r_{t+1} - \gamma V^{\pi_{old}}(s_{t+1}) \Big)
 \end{align*}
 $$
 
