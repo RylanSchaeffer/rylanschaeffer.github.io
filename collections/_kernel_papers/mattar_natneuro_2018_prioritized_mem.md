@@ -17,14 +17,26 @@ first?
 
 ## Derivation
 
-Suppose the agent at time $$t$$ is in state $$S = s_t$$, and it chooses to replay $$e_k$$. Here, replay
-means perform a Bellman backup:
+Suppose the agent at time $$t$$ is in state $$S = s_t$$, and it chooses to replay some experience $$e_k$$. 
+Here, replay means perform a Bellman backup:
 
 $$Q(S = s_k, A = a_k) \leftarrow Q(S = s_k, A = a_k) + \alpha \Big(r_{k+1} + \gamma \arg \max_a Q (S = s_{k+1}, A = a) - Q(S = s_k, A = a_k) )$$
 
 Before replaying that experience, the agent has some value function for its current state:
 
-$$V(S = s_t) := \mathbb{E}_{\pi^{old}}[\sum_i \gamma^i R_{i+1}] $$
+$$V^{\pi_{old}}(S = s_t) := \mathbb{E}_{\pi_{old}}[\sum_{i=t}^{\infty} \gamma^i R_{i+1}] $$
+
+After replaying that experience, the agent has a new (although possibly identical) value function
+for its current state:
+
+$$V^{\pi_{new, k}}(S = s_t) := \mathbb{E}_{\pi_{new, k}}[\sum_{i=t}^{\infty} \gamma^i R_{i+1}] $$
+
+Mattar and Daw propose that the agent should choose which experience $$e_k$$ to replay based on
+which experience maximizes the increase from the old value function to the new value function.
+
+$$\arg \max_{e_k} V^{\pi_{new, k}}(S = s_t) - V^{\pi_{old}}(S = s_t)$$
+
+
 
 
 ### Setup 1
