@@ -15,7 +15,9 @@ $$ e_k := (s_k, a_k, r_{k+1}, s_{k+1})$$. Each replayed experience, also known a
 agent's policy and correspondingly, its future return. How should the agent choose which experience to replay
 first?
 
-## Derivation
+## Idea
+
+### Objective Function
 
 Suppose the agent at time $$t$$ is in state $$S = s_t$$, and it chooses to replay some experience $$e_k$$. 
 Here, replay means perform a Bellman backup:
@@ -31,13 +33,24 @@ for its current state:
 
 $$V^{\pi_{new, k}}(S = s_t) := \mathbb{E}_{\pi_{new, k}}[\sum_{i=t}^{\infty} \gamma^i R_{i+1}] $$
 
-Mattar and Daw propose that the agent should choose which experience $$e_k$$ to replay based on
-which experience maximizes the increase from the old value function to the new value function.
+Mattar and Daw propose that the agent should choose to replay the experience that maximizes the 
+the increase from the old value function to the new value function i.e. how much **more** value the
+agent will accrue moving forward.
 
 $$\arg \max_{e_k} V^{\pi_{new, k}}(S = s_t) - V^{\pi_{old}}(S = s_t)$$
 
+They term this improvement, this difference $$V^{\pi_{new, k}}(S = s_t) - V^{\pi_{old}}(S = s_t)$$, 
+the __Expected Value of Backup (EVB)__.
 
+### Decomposition of Objective Function
 
+Mattar and Daw show that the expected value of a backup can be decomposed into two terms,
+which they term __need__ and __gain__. Need refers to how likely the agent is to find itself in the $$k$$th state
+in the future, and gain refers to how much more value the agent will earn after replaying the $$k$$th
+experience. The intuition is that the agent wants to learn about states that it is likely to occupy in the future,
+and it also wants to prioritize experiences that promise higher future rewards, but sometimes the two goals
+clash e.g. if an experience promises high future value (high gain), but the agent will never be in that state
+(zero need), then replaying that experience is unhelpful. 
 
 ### Setup 1
 
