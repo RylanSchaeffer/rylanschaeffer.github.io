@@ -1,6 +1,6 @@
 ---
 layout: post
-author: Mattar and Daw (Arxiv 2020)
+author: Qian, Li and Hu (Arxiv 2020)
 title: Efficient Kernel Transfer in Knowledge Distillation
 date: 2021-12-07
 tags: knowledge-distillation kernel-methods
@@ -9,7 +9,7 @@ tags: knowledge-distillation kernel-methods
 ## Background
 
 Knowledge distillation (KD) aims to transfer the knowledge of one model (the teacher)
-into another model (the student). Typical KD works by optimizing the student to 
+into another model (the student). Typical KD works by optimizing the student to
 match the teacher's outputs.
 
 ## Research Approach
@@ -51,7 +51,7 @@ show that the kernel matrix distillation loss can be written as a standard clust
 
 ## Experiments
 
-They quantify the amount of information that has been transferred by learning via the 
+They quantify the amount of information that has been transferred by learning via the
 landmark (i.e. class centroids) points.
 
 ![img.png](qian_arxiv_2020_kernel_transfer_knowledge_distillation/3.png)
