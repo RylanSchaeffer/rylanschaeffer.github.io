@@ -54,7 +54,7 @@ chosen uniformly at random from $$A$$. Then
 
 $$\mathbb{E}[\phi(A)] = 2 \phi_{opt}(A)$$
 
-Proof: Define the optimal centroid $$\mu_A \defeq \frac{1}{\lvert A \lvert} \sum_{a \in A} a$$.
+Proof: Define the optimal centroid $$\mu_A := \frac{1}{\lvert A \lvert} \sum_{a \in A} a$$.
 
 $$
 \begin{align*}
@@ -67,3 +67,8 @@ $$
 &= 2 \phi_{opt}(A)
 \end{align*}
 $$
+
+Intuitively, this says that if you use a random point in a set as the centroid in lieu of the optimal
+centroid, then in expectation, the error is only twice the optimal error. This can be seen
+qualitatively because while some points will be closer to an arbitrary point than to the ideal centroid,
+most of the other points will be further away.
