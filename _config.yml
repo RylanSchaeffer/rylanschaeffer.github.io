@@ -20,11 +20,12 @@ collections:
   blog_posts:
     output: true
   blog_drafts:
-    output: true
+    output: false
   own_research:
     output: true
   kernel_papers:
     output: true
+    future: true
   kernel_papers_drafts:
     output: false
 
