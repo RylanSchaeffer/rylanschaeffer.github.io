@@ -2,7 +2,7 @@
 layout: post
 author: Mattar, Daw (Nature Neuroscience 2018)
 title: Prioritized memory access explains planning and hippocampal replay
-date: 2022-1-2
+date: 2022-01-02
 tags: reinforcement-learning hippocampus memory replay
 ---
 
@@ -54,10 +54,11 @@ clash e.g. if an experience promises high future value (high gain), but the agen
 
 $$
 \begin{align*}
-& V^{\pi_{new, k}}(s_t) -  V^{\pi_{old}}(s_t)\\
+& EVB(s_t, e_k)\\
+&:= V^{\pi_{new, k}}(s_t) -  V^{\pi_{old}}(s_t)\\
 &= \sum_a \pi_{new}(a | s_t) \Big( Q^{\pi_{new, k}}(s_t, a) - Q^{\pi_{old}} (s_t, a) \Big)\\
 &= \sum_a \Big( \pi_{new, k}(a | s_t) - \pi_{old}(a|s_t) \Big)  Q^{\pi_{new, k}}(s_t, a)\\
-&\quad + \sum_a \pi_{old} \Big( Q^{\pi_{new, k}}(s_t, a) - Q^{\pi_{old}}(s_t, a) \Big)
+&\quad \quad + \sum_a \pi_{old} \Big( Q^{\pi_{new, k}}(s_t, a) - Q^{\pi_{old}}(s_t, a) \Big)
 \end{align*}
 $$
 
