@@ -54,11 +54,11 @@ show that the kernel matrix distillation loss can be written as a standard clust
 They quantify the amount of information that has been transferred by learning via the 
 landmark (i.e. class centroids) points.
 
-![img.png](qian_arxiv_2020_kernel_transfer_knowledge_distillation/3.png)
+![img.png](../_kernel_papers/qian_arxiv_2020_kernel_transfer_knowledge_distillation/3.png)
 
 Using the method (Knowledge Distillation by Approximated Ker-
 nel Transfer (KDA)) on all layers with CIFAR-100 and Tiny-ImageNet yields sub-teacher improved performance
 when combined with KD. Following Tian et al. 2020's Contrastive Representation Distillation paper, maybe KDA offers
 no absolute benefit by itself (note: Tian et al. did not include KDA in their work, as far as I can tell).
 
-![img.png](qian_arxiv_2020_kernel_transfer_knowledge_distillation/table23.png)
+![img.png](../_kernel_papers/qian_arxiv_2020_kernel_transfer_knowledge_distillation/table23.png)
