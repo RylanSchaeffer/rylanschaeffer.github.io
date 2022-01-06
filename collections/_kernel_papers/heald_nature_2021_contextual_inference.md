@@ -163,6 +163,41 @@ first perturbation learning.
 ### Setup 1
 
 
+## Model
+
+Let $$c_t$$ denote the discrete context at time $$t$$. The generative model posits that 
+there are an unbounded number of discrete contexts that evolve 
+according to a Markov chain for some transition probability matrix $$\Pi$$:
+
+$$c_t | c_{t-1}, \Pi \sim Discrete(\Pi_{c_{t-1}})$$
+
+where $$\Pi_{c_{t-1}}$$ is the $$c_{t-1}$$-th column of the transition matrix. For every 
+context, $$c_k$$ is associated with a continuous latent variable $$x_t^{(k)}$$ that evolves
+according to linear-Gaussian dynamics:
+
+$$x_t^{(k)} = a^{(k)} x_{t-1}^{(k)} + d^{(k)} + w_t^{(k)}$$
+
+where $$a^{(k)}, d^{(k)}$$ are the context-specific state retention factor and drift, respectively,
+and $$w_t^{(k)} \sim \mathcal{N}(0, \sigma_q^2)$$ is the process noise. At each time step,
+a continuous variable $$y_t$$ (the state feedback) is emitted:
+
+$$y_t = x_t^{(c_t)} + v_t$$
+
+where $$v_t \sim \mathcal{N}(0, \sigma_r^2)$$ is the state feedback noise. Additionally, 
+another discrete observation (the context cue) is emitted:
+
+$$ q_t | c_t, \Phi \sim Discrete(\Phi_{c_t})$$
+
+The authors place Hierarchical Dirichlet Process (HDP) priors on the state transition probabilities
+and cue probabilities. They use a sticky variant of the HDP for the state transition probabilities
+to capture that contexts should persist across time.
+
+- Question: How is this different from an Infinite Hidden Markov Model (Beal 2006)?
+- Question: Why use Sequential Monte Carlo (SMC) for inference?
+- Question: Could SMC scale to realistic problems?
+
+
+
 ## Future Questions
 
 - What networks in the brain enable contextual inference?
@@ -170,3 +205,5 @@ first perturbation learning.
 - Suppose the agent is split on which context it's in, and each context recommends conflicting
   actions. How does the agent adjudicate?
 - 
+
+
