@@ -8,15 +8,15 @@ tags: reinforcement-learning replay memory hippocampus
 
 ## Motivation
 
-We start by considering an agent some environment. At a particular point in time $$t$$, our agent would
-like to choose which of its experiences $$\{e_0, e_1, ..., e_{t-1}\}$$ to replay, where each experience
-$$e_k$$ consists of a single step tuple of state, action, reward, next state i.e.:
+We start by considering an agent some environment. At a particular point in time $$t$$, our agent
+has collected a set of experiences $$\{e_0, e_1, ..., e_{t-1}\}$$, where each experience
+$$e_k$$ refers to a single step tuple of (state, action, reward, next state), denoted:
 
 $$e_k := (s_k, a_k, r_{k+1}, s_{k+1})$$
 
-Each replayed experience, also known as a backup, might change the
-agent's policy and correspondingly, its future return. How should the agent choose which experience to replay
-first?
+The agent would like to select an experience and propagate that experience's reward information
+so that it can change its policy and ideally obtain more rewards in the future. How should the agent
+choose which experience to "replay" first?
 
 ## Idea
 
@@ -25,11 +25,9 @@ first?
 Suppose the agent at time $$t$$ is in state $$S_t = s_t$$, and it chooses to replay some experience $$e_k$$.
 Here, replay means perform a Bellman backup:
 
-$$Q(s_k, a_k) \leftarrow Q(s_k, a_k) + \eta \Big(r_{k+1} + \gamma \arg \max_a Q (s_{k+1}, a) - Q(s_k, a_k) )$$
+$$Q(s_k, a_k) \leftarrow Q(s_k, a_k) + \eta \Big(r_{k+1} + \gamma \arg \max_a Q (s_{k+1}, a) - Q(s_k, a_k) \Big)$$
 
-with learning rate $$\eta$$.
-
-Before replaying that experience, the agent has some value function for its current state:
+with learning rate $$\eta$$. Before replaying that experience, the agent has some value function for its current state:
 
 $$V^{\pi_{old}}(S = s_t) := \mathbb{E}_{\pi_{old}}[\sum_{i=t}^{\infty} \gamma^i R_{i+1}] $$
 
@@ -143,4 +141,4 @@ $$
 \begin{align*}
 Need(s_k) &:= \sum_{t\prime = t}^{\infty} \gamma^{t\prime - t} \delta(s_{t\prime}, s_k)  p(s_{t\prime}|s_t)
 \end{align*}
-$$
+$$j
