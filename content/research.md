@@ -21,7 +21,7 @@ the International Brain Lab task.](research/2021_sfn_ibl/main.html)
 
 - Schaeffer et al. [Reverse-engineering recurrent neural network solutions to a hierarchical inference task for 
   mice.](research/2020_neurips_reverse_engineering/main.html) **NeurIPS 2020**.
-  
+
 ## In Preparation
 
 - Schaeffer et al. Streaming Inference for Infinite Non-stationary Mixture Models. 2022.
