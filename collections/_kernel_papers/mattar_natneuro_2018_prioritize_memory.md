@@ -10,12 +10,12 @@ tags: reinforcement-learning replay memory hippocampus
 
 We start by considering an agent some environment. At a particular point in time $$t$$, our agent
 has collected a set of experiences $$\{e_0, e_1, ..., e_{t-1}\}$$, where each experience
-$$e_k$$ refers to a single step tuple of (state, action, reward, next state), denoted:
+$$e_k$$ refers to a tuple of (state, action, reward, next state), denoted:
 
 $$e_k := (s_k, a_k, r_{k+1}, s_{k+1})$$
 
 The agent would like to select an experience and propagate that experience's reward information
-so that it can change its policy and ideally obtain more rewards in the future. How should the agent
+so that it can improve its policy and ideally obtain more rewards in the future. How should the agent
 choose which experience to "replay" first?
 
 ## Idea

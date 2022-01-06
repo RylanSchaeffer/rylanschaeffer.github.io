@@ -16,11 +16,9 @@ each food item might look like the following:
 
 Conventional models of motor learning typically study motor learning with a single goal
 (e.g. yellow potatoes) and thus struggle to explain the ability of motor memories
-to be adapted (what the authors term "apparent learning"). The authors hypothesize that
-the brain's strategy is to learn multiple motor memories and then infer, in a given
-context, which is most appropriate to use. 
-
-
+to be adapted (what the authors term "apparent learning") to a new task. The authors
+hypothesize that the brain's strategy is to learn multiple motor memories and then,
+in a given context, infer which is most appropriate to use.
 
 ## Idea
 
@@ -81,11 +79,35 @@ And probabilities of the relevant context adjust as more time is spent interacti
 
 ### Memory Recovery
 
-Participants try to reach a target while a robotic interface applies a perturbation $$P^+$$. To measure
-learning, on a small number of trials ("channel trials" $$P^c$$), the perturbation is omitted 
-and the authors measure the forces the participants exert to counter the perturbation. 
+Participants were told to hold a robotic interface and then move their hand from
+a starting position to an end position. On each trial, the participant might experience
+one of four possible forces (a.k.a. perturbations).
 
 ![img_2.png](heald_nature_2021_contextual_inference/img_2.png)
+
+The sequence of trials used the following perturbations. Let's call each sequence of trials
+in which the same perturbation is applied a "phase."
+
+![img.png](img.png)
+
+Humans show "spontaneous recovery," which means that after the $$P^-$$ trials, when 
+a corrective perturbation that prevents any deviation ($$P^C$$) is applied, the 
+participants show a diminished recovery of their motor memory for $$P^+$$.
+
+![img_1.png](img_1.png)
+
+
+How can COIN explain this? COIN starts with a motor memory for moving with no perturbations
+applied ($$P^0$$). In the two unidirectional perturbation phases, COIN creates new motor
+memories for correcting against the perturbations. Since $$P^+$$ was present for the most
+number of trials, the agent predicts that the most likely next context is $$P^+$$, and thus
+exerts a $$P^+$$-like adaptation.
+
+(Rylan: This should yield a prediction that $$P^-$$ should emerge if there were more
+$$P^-$$ trials. Does it?) 
+
+
+
 
 ### Savings
 
