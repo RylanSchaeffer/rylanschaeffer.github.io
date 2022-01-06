@@ -3,7 +3,7 @@ layout: post
 author: Heald, Lengyel, Wolpert (Nature 2021)
 title: Contextual inference underlies the learning of sensorimotor repertoires
 date: 2022-01-06
-tags: motor-learning motor-control neuroscience human
+tags: motor-learning motor-control human bayesian-nonparametrics
 ---
 
 ## Background

@@ -8,10 +8,13 @@ tags: reinforcement-learning replay memory hippocampus
 
 ## Motivation
 
-We start by considering an agent some environment. At a particular point in time $t$, our agent would
+We start by considering an agent some environment. At a particular point in time $$t$$, our agent would
 like to choose which of its experiences $$\{e_0, e_1, ..., e_{t-1}\}$$ to replay, where each experience
-$$e_k$$ consists of a single step tuple of state, action, reward, next state i.e.,
-$$e_k := (s_k, a_k, r_{k+1}, s_{k+1})$$. Each replayed experience, also known as a backup, might change the
+$$e_k$$ consists of a single step tuple of state, action, reward, next state i.e.:
+
+$$e_k := (s_k, a_k, r_{k+1}, s_{k+1})$$
+
+Each replayed experience, also known as a backup, might change the
 agent's policy and correspondingly, its future return. How should the agent choose which experience to replay
 first?
 
@@ -22,7 +25,9 @@ first?
 Suppose the agent at time $$t$$ is in state $$S_t = s_t$$, and it chooses to replay some experience $$e_k$$.
 Here, replay means perform a Bellman backup:
 
-$$Q(S = s_k, A = a_k) \leftarrow Q(S = s_k, A = a_k) + \eta \Big(r_{k+1} + \gamma \arg \max_a Q (S = s_{k+1}, A = a) - Q(S = s_k, A = a_k) )$$
+$$Q(s_k, a_k) \leftarrow Q(s_k, a_k) + \eta \Big(r_{k+1} + \gamma \arg \max_a Q (s_{k+1}, a) - Q(s_k, a_k) )$$
+
+with learning rate $$\eta$$.
 
 Before replaying that experience, the agent has some value function for its current state:
 
@@ -39,8 +44,9 @@ agent will accrue moving forward.
 
 $$\arg \max_{e_k} V^{\pi_{new, k}}(S = s_t) - V^{\pi_{old}}(S = s_t)$$
 
-They term this improvement, this difference $$V^{\pi_{new, k}}(S = s_t) - V^{\pi_{old}}(S = s_t)$$, 
-the __Expected Value of Backup (EVB)__.
+They term this improvement, this difference, the __Expected Value of Backup (EVB)__:
+
+$$EVB(s_t, e_k) := V^{\pi_{new, k}}(S = s_t) - V^{\pi_{old}}(S = s_t)$$
 
 ### Decomposition of Objective Function
 
