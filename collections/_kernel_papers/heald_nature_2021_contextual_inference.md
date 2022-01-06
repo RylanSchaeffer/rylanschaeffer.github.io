@@ -77,7 +77,7 @@ And probabilities of the relevant context adjust as more time is spent interacti
 
 ## Experiments
 
-### Memory Recovery
+### Spontaneous Recovery
 
 Participants were told to hold a robotic interface and then move their hand from
 a starting position to an end position. On each trial, the participant might experience
@@ -85,8 +85,7 @@ one of four possible forces (a.k.a. perturbations).
 
 ![img_2.png](heald_nature_2021_contextual_inference/img_2.png)
 
-The sequence of trials used the following perturbations. Let's call each sequence of trials
-in which the same perturbation is applied a "phase."
+The four perturbations were applied in the following sequence:
 
 ![img.png](img.png)
 
@@ -101,19 +100,65 @@ How can COIN explain this? COIN starts with a motor memory for moving with no pe
 applied ($$P^0$$). In the two unidirectional perturbation phases, COIN creates new motor
 memories for correcting against the perturbations. Since $$P^+$$ was present for the most
 number of trials, the agent predicts that the most likely next context is $$P^+$$, and thus
-exerts a $$P^+$$-like adaptation.
+exerts a $$P^+$$-like adaptation. COIN matches when $$P^+$$ phase is extended or reduced.
 
-(Rylan: This should yield a prediction that $$P^-$$ should emerge if there were more
-$$P^-$$ trials. Does it?) 
+- Question: This should yield a prediction that $$P^-$$ should emerge if there were more
+$$P^-$$ trials. Is that correct, and does the prediction empirically hold? Yes.
+- Question: Does timing matter e.g. suppose a long delay follows the $$P-$$ phase?
+
+The authors modified the previous experiment by adding two $$P^+$$ trials before starting
+the $$P^C$$ phase. COIN predicts a stronger recovery of the $$P^+$$$ behavior because the
+$$P^+$$ context is now active.
+
+![img_2.png](img_2.png)
+
+Results show that this is indeed true of participants: 
+
+![img_3.png](img_3.png)
 
 
+### Motor Memory Updating
+
+COIN posits that all contexts should be updated at all times, proportional 
+to probability that the context is active at the current time. To test this, 
+the authors tested to what extent two contexts memories are updated when 
+controlling sensory cues and state feedback. Participants first went through
+extensive training to associate two cues with two different perturbations,
+which were consistently paired:
+
+![img_4.png](img_4.png)
+
+Then, after learning, participants' trials were grouped in triplets. The first 
+trial in a triplet had a cue and a corrective perturbation, and the third trial
+in the triplet was identical. The middle trial (called the "exposure trial") 
+had one of four possibilities:
+one of the two cues was shown, and one of the two different perturbations were
+applied.
+
+![img_5.png](img_5.png)
+
+Participants showed distinct patterns depending on the middle trial: if the 
+cue matched the perturbation as well as the first trial's cue, then the
+motor movement was strengthened on the third trial, whereas if the cue matched
+the perturbation but the first trial had the opposite cue, the motor movement
+was weakened on the third trial:
+
+![img_6.png](img_6.png)
+
+The authors argue that COIN explains this because when the cue matches the perturbation,
+the agent is strongly confident in which context is active, whereas when the two
+disagree, the probability of any particular context is reduced and updated less.
 
 
-### Savings
+### Saving
 
-- Phenomenon: A motor behavior is acquired, forgotten and then relearnt. Empirically, 
-  relearning is faster than the original learning
-  - What is meant by forgotten? How can this be confirmed?
+"Savings" refers to the phenomenon where when a motor behavior is acquired, forgotten and 
+then re-learnt, relearning is faster than the original learning.
+  - Question: What is meant by forgotten? How can this be confirmed?
+
+In anterograde interference, learning a perturbation is slower if an opposite perturbation 
+has been learnt previously, with the amount of inference increasing with the length of the 
+first perturbation learning.
 
 ### Setup 1
 
