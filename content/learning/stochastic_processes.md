@@ -9,7 +9,8 @@ unbounded number of parameters to use as appropriate. One interpretation is ther
 Bayesian Nonparametrics are distributions over function spaces, where the function maps the
 index set to the set of random variables.
 
-- Markov Process
-- Markov Decision Process
+- [Markov Process](stochastic_processes/markov_process.md)
+- [Markov Reward Process](stochastic_processes/markov_reward_process.md)
+- [Markov Decision Process](stochastic_processes/markov_decision_process.md)
 - [Markov Renewal Process](stochastic_processes/markov_renewal_process.md)
 - [Semi-Markov Process](stochastic_processes/semi_markov_process.md)
