@@ -12,11 +12,12 @@ in a Boltzmann distribution.
 
 ### Internal Energy
 
-The internal energy $$U(\beta), defined below, is exactly equal to the expected energy: 
+If we consider $$\beta$$ times the free energy (called the __internal energy__), and differentiate
+with respect to the inverse temperature $$\beta$$, we discover the expected energy: 
 
 $$U(\beta) := \partial_{\beta} (\beta F(\beta))  = \langle E(x) \rangle$$
 
-The second equality stems from:
+Proof:
 
 $$
 \begin{align}
