@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Below Market Rate Ownership and Why I Quit Wyzant
+title: Below Market Rate Housing in the Bay Area
 author: Rylan Schaeffer
 date: 2021-03-17
 tags: tutoring

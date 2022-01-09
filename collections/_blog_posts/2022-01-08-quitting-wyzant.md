@@ -13,8 +13,9 @@ At first glance, it looked promising: a market with lots of tutors and tutees, w
 flexibility to set my own hours and my own rates. I signed up and started tutoring
 computer science and statistics almost right away.
 
-[101 hours later and $7534 richer](https://www.wyzant.com/match/tutor/88750667), I've decided to leave Wyzant and I want to tell others
-who are considering joining why: your take-home is $$<$$ __40%__ of your hourly rate.
+[101 hours later and $7534 richer](https://www.wyzant.com/match/tutor/88750667), 
+I've decided to leave Wyzant and I want to tell others who are considering joining
+why: your take-home is $$<$$ __40%__ of your hourly rate.
 
 How? You get hit with the following fees:
 
@@ -23,9 +24,9 @@ How? You get hit with the following fees:
   classifies its tutors as independent contractors and gives you a 1099. 
 - $$>$$ 20% goes to pay your state and federal income tax.
 
-Whether that's acceptable is up to the tutor, of course, but I have a foul taste in 
+Whether this is acceptable is up to the prospective tutor, of course, but I have a foul taste in 
 my mouth from Wyzant leading me to believe I'm earning a lot while pocketing 25% and
-passing me the check for another 15%.
+passing me the bill for another 15%.
 
 Additionally, and this is less important, Wyzant has terrible customer support. Here's
 just one example. One student rated me 1/5, the lowest possible score, even though 
