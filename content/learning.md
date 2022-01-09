@@ -25,6 +25,7 @@ Many notes are woefully incomplete. Don't judge :)
 - [Real Analysis](learning/analysis_real.html)
 - [Reinforcement Learning](learning/reinforcement_learning.html)
 - [Signals](learning/signals.html)
+- [Statistical Mechanics](learning/statistical_mechanics.md)
 - [Statistics](learning/statistics.html)
 - [Stochastic Processes](learning/stochastic_processes.md)
 
