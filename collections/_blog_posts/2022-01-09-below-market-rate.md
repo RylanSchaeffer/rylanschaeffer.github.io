@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Below Market Rate (BMR) Housing in the Bay Area
+title: Below Market Rate Housing in the Bay Area
 author: Rylan Schaeffer
 date: 2022-01-09
 tags: housing
