@@ -21,7 +21,7 @@ See [free energy](free_energy.md).
 
 - By embedding the Boltzmann distribution in a one-parameter continuum, by taking
   $$\beta \rightarrow 0$$, we get a uniform distribution and by taking $$\beta \rightarrow \infty$$
-  we get a distribution concentrated on the maximum. Very nice
+  we get a distribution concentrated on the maximum. Very nice!
 
 
 
@@ -57,7 +57,8 @@ $$E(x) = - B \delta_{x, r}$$
 
 The average value of the system (called the magnetization) is given by:
 
-$$\langle \delta_{x, r} \rangle = \sum_{x \in X} p_{\beta}(x) \delta{x, r} = p_{\beta}(r) = \frac{\exp (\beta B)}{}$$
+$$\langle \delta_{x, r} \rangle = \sum_{x \in X} p_{\beta}(x) \delta{x, r}
+= p_{\beta}(r) = \frac{\exp (\beta B)}{\exp(\beta B ) + q - 1}$$
 
 As with the Ising spin, $$T = 1/\beta >> |B| \Rightarrow $$, the magnetization is
 small, meaning the expected value is near 0. However, when the temperature is small, the
