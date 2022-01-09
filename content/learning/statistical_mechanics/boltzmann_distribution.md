@@ -30,7 +30,7 @@ See [free energy](free_energy.md).
 
 ### Binary (Ising) Spins
 
-Consider a single particle, with one of two possible spin values: $$x \in \{-1, +1}$$. 
+Consider a single particle, with one of two possible spin values: $$x \in \{-1, +1\}$$. 
 In a magnetic field $$B$$, the energy of the particle is defined as:
 
 $$E(x) = - B x$$
@@ -42,7 +42,7 @@ $$p_{\beta}(x) = \frac{1}{Z(\beta)} exp(-\beta E(x)) = \frac{1}{Z(\beta)} \exp(\
 
 The average value of the system (called the magnetization) is given by
 
-$$\langle x \rangle = \sum_{x \in X} p_{\beta}(x) x = -\exp(-\beta B) + \exp(\beta B) = \tanh(\beta B)$$
+$$\langle x \rangle = \sum_{x \in X} p_{\beta}(x) x = -\exp(-\beta B) + \exp(\beta B) = \tanh( \beta B)$$
 
 For this simple system, when the temperature $$T = 1/\beta >> |B|$$, the magnetization is
 small, meaning the expected value is near 0. However, when the temperature is small, the
