@@ -11,7 +11,7 @@ where $$\beta = 1/T > 0$$ is called the __inverse temperature__ and $$E(x)$$ is 
 energy of the configuration $$x \in X$$. The normalizing constant $$Z(\beta)$$ is
 called the __partition function__ and is defined as:
 
-$$Z(\beta) = \sum_{x \in X} \exp(-\beta E(x)) $$
+$$Z(\beta) = \sum_{x \in X} \exp \big( -\beta E(x) \big) $$
 
 ## Relation to Free Energy
 
@@ -50,7 +50,7 @@ magnetization approaches $$\pm 1$$, meaning the spin matches the magnetic field.
 
 ### Multiple (Potts) Spins
 
-Consider a single particle, with one of two several discrete spin values: $$x \in \{1, 2, ..., q}$$.
+Consider a single particle, with one of two several discrete spin values: $$x \in \{1, 2, ..., q \}$$.
 In a magnetic field $$B$$ pointing in direction $$r$$, the energy of the particle is defined as:
 
 $$E(x) = - B \delta_{x, r}$$
@@ -58,7 +58,7 @@ $$E(x) = - B \delta_{x, r}$$
 The average value of the system (called the magnetization) is given by:
 
 $$\langle \delta_{x, r} \rangle = \sum_{x \in X} p_{\beta}(x) \delta{x, r}
-= p_{\beta}(r) = \frac{\exp (\beta B)}{\exp(\beta B ) + q - 1}$$
+= p_{\beta}(r) = \frac{\exp (\beta B)}{ \exp(\beta B ) + q - 1}$$
 
 As with the Ising spin, $$T = 1/\beta >> |B| \Rightarrow $$, the magnetization is
 small, meaning the expected value is near 0. However, when the temperature is small, the
