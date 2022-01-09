@@ -42,9 +42,9 @@ including sperm donation, male escorting and [online tutoring](2022-01-08-quitti
 A month later, Ana called back to check on whether I'd successfully found a BMR
 property to apply for. I reminded her that she told me I was too low income to qualify,
 and that empirically, I had found her assessment to be correct; she said she was sure I 
-was mistaken, and suggested we look at properties together. After a half hour of looking,
-she agreed with my assessment and said it was highly unlikely I'd find anything.
+was mistaken, and suggested we look at properties together. After a half hour of searching
+together, she agreed with my assessment and said it was highly unlikely I'd find anything.
 
 Setting my own situation aside, this experience was a stark lesson that the Bay's
-social safety programs can be structured in a way that excludes the most vulnerable among us.
+social safety programs can be structured in a way that excludes those who need help the most.
 
