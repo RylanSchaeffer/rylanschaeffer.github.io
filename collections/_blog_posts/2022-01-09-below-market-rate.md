@@ -36,8 +36,8 @@ extra $10k or $15k a year?"
 
 After my incredulity faded, I started looking into alternative income streams that
 wouldn't cost me inordinate amounts of time. I tried all manner of ideas,
-including sperm donation and [online tutoring](2022-01-08-quitting-wyzant.html)
-which turns out to be far less lucrative than advertised by hosting platforms.
+including sperm donation, male escorting and [online tutoring](2022-01-08-quitting-wyzant.html)
+(which turns out to be far less lucrative than advertised by hosting platforms).
 
 A month later, Ana called back to check on whether I'd successfully found a BMR
 property to apply for. I reminded her that she told me I was too low income to qualify,
@@ -47,6 +47,4 @@ she agreed with my assessment and said it was highly unlikely I'd find anything.
 
 Setting my own situation aside, this experience was a stark lesson that the Bay's
 social safety programs can be structured in a way that excludes the most vulnerable among us.
-
-
 
