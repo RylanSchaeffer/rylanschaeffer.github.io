@@ -8,21 +8,23 @@ tags: tutoring
 
 In August 2021, the start of my PhD was rapidly approaching and I was starting to fear
 the impending poverty I knew was coming. One of my friends suggested that if I wanted
-some extra income, I might try tutoring and suggested [Wyzant](https://www.wyzant.com/).
-At first glance, it looked promising: a market with lots of tutors and tutees, with the 
-flexibility to set my own hours and my own rates. I signed up and started tutoring
-computer science and statistics almost right away.
+some extra income, I might try tutoring and suggested one platform,
+[Wyzant](https://www.wyzant.com/).
 
-[101 hours later and $7534 richer](https://www.wyzant.com/match/tutor/88750667), 
+At first glance, Wyzant looked promising: a market with lots of tutors and tutees, with the 
+flexibility to set my own hours and my own rates. I signed up and started tutoring
+in computer science and statistics almost right away.
+
+[101 hours later and $7534 richer (gross)](https://www.wyzant.com/match/tutor/88750667), 
 I've decided to leave Wyzant and I want to tell others who are considering joining
-why: your take-home is $$<$$ __40%__ of your hourly rate.
+why: your take-home is $$<40\%$$ of your hourly rate.
 
 How? You get hit with the following fees:
 
-- 25% goes to paying Wyzant. This is non-negotiable.
+- 25% goes towards paying Wyzant. This is non-negotiable.
 - 15% goes towards paying your self-employment tax, which is required since Wyzant
   classifies its tutors as independent contractors and gives you a 1099. 
-- $$>$$ 20% goes to pay your state and federal income tax.
+- $$>20\%$$ goes towards your state and federal income tax.
 
 Whether this is acceptable is up to the prospective tutor, of course, but I have a foul taste in 
 my mouth from Wyzant leading me to believe I'm earning a lot while pocketing 25% and
