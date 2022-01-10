@@ -37,7 +37,7 @@ it ends up in:
 $$e_k = (s_k, a_k, r_k, s_{k+1})$$
 
 As an agent moves through its environment, it builds a collection of these experience
-often called a __replay buffer__.
+often called a "replay buffer".
 
 
 ## Lin 1992 & Minh et al. 2015
@@ -47,26 +47,32 @@ idea of Q-Learning was when an agent obtains a new experience i.e. is in some st
 takes an action, receives a reward, and moves to the next state), it should use that experience
 to immediately perform a Bellman backup:
 
-$$Q(s_t, a_t) \leftarrow Q(s_t, a_t) + \eta (r_t + \gamma \max_a Q(s_{t+1}, a) - Q(s_t, a_t))$$
+$$Q(s_t, a_t) \leftarrow Q(s_t, a_t) + \eta_t (r_t + \gamma \max_a Q(s_{t+1}, a) - Q(s_t, a_t))$$
 
-The experience is then discarded. [In 1992, Lin introduced the idea of experience replay](https://link.springer.com/content/pdf/10.1007/BF00992699.pdf).
-The idea was that instead of discarding past experiences immediately, the agent should store those experiences
+where $$\eta_T$$ is some learning rate. The experience is then discarded. 
+[In 1992, Lin introduced the idea of experience replay](https://link.springer.com/content/pdf/10.1007/BF00992699.pdf),
+that instead of discarding past experiences immediately, the agent should store those experiences
 in its replay buffer and then uniformly sample from the buffer. This idea proved critical
 in [Minh et al.'s 2015 DQN Nature paper](https://www.nature.com/articles/nature14236).
 
 ![img_5.png](img_5.png)
 
 Many people remember the paper for showing that deep Q-Learning can surpass human performance at Atari games,
-but the authors were clear that experience replay was critical: f"Notably, the successful integration of
-reinforcement learning with deep network architectures was _critically dependent on our incorporation
-of a replay algorithm involving the storage and representation of recently experienced transitions._"
-On a subset of 5 games, removing replay eviscerated the agent's performance. 
+but the authors were clear that experience replay was critical: 
+
+<blockquote>
+"Notably, the successful integration of
+reinforcement learning with deep network architectures was critically dependent on our incorporation
+of a replay algorithm involving the storage and representation of recently experienced transitions."
+</blockquote>
+
+The specific replay mechanism was a queue (FIFO) with a capacity of 1 million experiences. that
+sampled experiences uniformly at random, on average 8 times. Note that because Q-learning is model
+free, these experiences were not used to learn a model of any environment. On the 5 games the authors
+used for prototyping, removing replay eviscerated the agent's performance.
 
 ![img_6.png](img_6.png)
 
-The specific replay mechanism was a queue (FIFO) with a capacity of 1 million experiences. that 
-sampled experiences uniformly at random, on average 8 times. Note that because Q-learning is model
-free, these experiences were not used to learn a model of any environment.
 
 ## Schaul et al. 2016
 
@@ -75,9 +81,9 @@ sampling experiences uniformly at random might be a suboptimal approach. They su
 the agent could instead prioritize certain experiences, using the heuristic of
 how wrong the agent's predictions were. Specifically, Schaul et al. suggested that when 
 sampling experiences, the agent should take into account its temporal-difference (TD)
-errors $$\deta_t$$ (also known as reward prediction errors):
+errors $$\delta_t$$ (also known as reward prediction errors):
 
-$$ \delta_t := R_t + \gamma \max_a Q(S_t, a) - Q(S_{t-1}, A_{t-1})$$
+$$ \delta_t := R_t + \gamma \max_a Q(S_{t+1}, a) - Q(S_{t}, A_{t})$$
 
 As a motivating example, the authors present the "Blind Cliffwalk" environment, in which
 there is a sequence of $$n$$ states, each state has 2 actions and in order to reach the goal state,
@@ -167,26 +173,26 @@ i.e. how much **more** value the agent will accrue moving forward. They pose the
 
 $$\arg \max_{e_k} V^{\pi_{new, k}}(S = s_t) - V^{\pi_{old}}(S = s_t)$$
 
-They term this improvement, this difference, the __Expected Value of Backup (EVB)__:
+They term this improvement, this difference, the Expected Value of Backup:
 
 $$EVB(s_t, e_k) := V^{\pi_{new, k}}(S = s_t) - V^{\pi_{old}}(S = s_t)$$
 
 Mattar and Daw then show that the expected value of a backup can be decomposed into the product of
 two terms:
 
-$$ EVB(s_t, e_k) := Need(s_t, s_k) Gain(s_k)$$
-
 1. __Need__: How likely is the agent is to find itself in $$s_k$$ in the future?
 2. __Gain__: How much more value will the agent accrue in $$s_k$$, following $$\pi_{new, k}$$ instead
  of $$\pi_{old}$$?
 
-The need is defined as:
+The need and gain are defined as:
 
-$$Need(s_t, s_k) := \sum_{t' = t}^{\infty} \gamma^{t' - t} \delta(S_{t'}, s_k) $$
-
-The gain is defined as:
-
-$$Gain(s_k) := \sum_{a \in A} Q^{\pi_{new, k}} (s_k, a) \Big(\pi_{new, k}(a|s_k) - \pi_{old}(a|s) \Big) $$
+$$
+\begin{align*}
+EVB(s_t, e_k) &:= Need(s_t, s_k) Gain(s_k)
+Need(s_t, s_k) &:= \sum_{t' = t}^{\infty} \gamma^{t' - t} \delta(S_{t'}, s_k)
+Gain(s_k) &:= \sum_{a \in A} Q^{\pi_{new, k}} (s_k, a) \Big(\pi_{new, k}(a|s_k) - \pi_{old}(a|s) \Big)
+\end{align*}
+$$
 
 In their simulations, Mattar and Daw assumes that the agent solves this optimization 
 problem by brute force i.e. computing each experience's EVB and then replaying the
