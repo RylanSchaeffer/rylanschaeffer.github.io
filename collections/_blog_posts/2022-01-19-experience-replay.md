@@ -20,6 +20,9 @@ DQN used large sliding window, sampled uniformly at random, revisited each trans
 At [ICLR 2016, Schaul et al.](https://arxiv.org/pdf/1511.05952.pdf) proposed prioritizing 
 experienced based on temporal-difference (TD) errors.
 
+$$ \delta_t := R_t + \gamma \max_a Q(S_t, a) - Q(S_{t-1}, A_{t-1})$$
+
+
 ![img_1.png](../_blog_posts_drafts/img_1.png)
 
 However, greedily prioritizing experiences with high TD errors is problematic for 2 reasons:
@@ -40,7 +43,7 @@ $$p(e_k) = \frac{p_k^{\alpha}}{\sum_{k'} p_{k'}^{\alpha}} $$
 
 They then introduce one other change: they use importance sampling weights, defined as:
 
-$$w_k := \Big(\frac{1}{N p(e_k) \Big)^{\beta}$$
+$$w_k := \Big( \frac{1}{N p(e_k)} \Big)^{\beta}$$
 
 They found that both prioritization approaches yielded similar boosts in max and average
 performance on the Atari suite of games
@@ -57,12 +60,17 @@ Looking at each game individually, they found that
 
 However, I
 
-#### Questions for Prioritized Experience Replay
+#### Prioritized Experience Replay: Questions and Details
+
+Questions
 
 - Why did they only try their sampling on Double DQN and not DQN?
 - The paper claims that the importance sampling weights are useful and offers a handwavy explanation
   for why. Are there any ablations testing the effects of not using the importance sampling weights?
+  - Fig 12 in the appendix contains such ablation tests
 
+Details
+- 
 
 ## Empirical Study
 
