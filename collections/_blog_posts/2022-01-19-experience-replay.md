@@ -17,18 +17,29 @@ DQN used large sliding window, sampled uniformly at random, revisited each trans
 
 ### Prioritized Experience Replay
 
-At [ICLR 2016, Schaul et al.](https://arxiv.org/pdf/1511.05952.pdf) proposed prioritizing 
-experienced based on temporal-difference (TD) errors.
+At [ICLR 2016, Schaul et al.](https://arxiv.org/pdf/1511.05952.pdf) proposed a different
+approach to sampling from the agent's replay buffer. Rather than sampling uniformly at random,
+the agent could instead prioritize certain experiences based on how wrong the agent's predictions
+were in those contexts. Specifically, the authors suggested that the agent should use its 
+temporal-difference (TD) errors (also known as reward prediction errors).
 
 $$ \delta_t := R_t + \gamma \max_a Q(S_t, a) - Q(S_{t-1}, A_{t-1})$$
 
+As a motivating example, the authors present the "Blind Cliffwalk" environment, in which
+there is a sequence of $$n$$ states, each state has 2 actions and in order to reach the goal state,
+the agent must choose the correct action in each state or else go back to the beginning. 
+If the agent samples uniformly over its
+experiences, it needs a massive number of samples and updates to learn to reliably reach the goal,
+whereas an oracle (which greedily selects a transition that maximimally reduces the global 
+loss) requires significantly fewer samples and updates.
 
-![img_1.png](../_blog_posts_drafts/img_1.png)
+![img_1.png](../_blog_posts/img_4.png)
 
-However, greedily prioritizing experiences with high TD errors is problematic for 2 reasons:
+However, the agent can't just greedily select the experience with the highest TD error,
+for at least 2 reasons:
 
-1. Model overfits to experiences with high TD errors because states with low TD error are never replayed
-2. If rewards are stochastic, high TD errors can be monopolized by tails of the reward distributions
+1. The agent will overfit to experiences with high TD errors because states with low TD error will never be replayed
+2. If rewards are stochastic, high TD errors will be monopolized by tails of the reward distributions
 
 Instead of greedily selecting experiences to replay, Schaul and colleagues propose that experiences should
 be sampled randomly. They propose two different ways to define the priority of the $$k$$th experience
@@ -54,23 +65,32 @@ They also found that learning was faster for the prioritized replay agents.
 
 ![img.png](img.png)
 
-Looking at each game individually, they found that 
+As a disclaimer, the authors later write "Note that mean performance is not a very reliable metric
+because a single game (Video Pinball) has a dominant contribution." If that's the case, I don't 
+understand why max score is a more reliable metric, since surely the same problem exists there?
+
+Looking at each game individually, they found that while the effect of the replay sampling
+differed depending on the game, both replay mechanisms typically offered an improvement.
 
 ![img_1.png](img_1.png)
-
-However, I
 
 #### Prioritized Experience Replay: Questions and Details
 
 Questions
 
-- Why did they only try their sampling on Double DQN and not DQN?
-- The paper claims that the importance sampling weights are useful and offers a handwavy explanation
-  for why. Are there any ablations testing the effects of not using the importance sampling weights?
-  - Fig 12 in the appendix contains such ablation tests
+- Why did they only try their sampling on Double DQN and not DQN? What impact does prioritize replay
+  have on DQN?
+- The paper claims that the importance sampling (IS) weights are useful and offers a handwavy explanation
+  for why. Are there any ablations testing the effects of not using the IS weights?
+  - Fig 12 in the appendix contains such ablation tests, but only for 4 environments and 
+    only for rank-based sampling. Honestly, this evidence seems to suggest not only that IS is not critical
+    but that uniform is indistinguishable from rank-based no IS and from rank-based IS.
 
-Details
-- 
+![img_3.png](img_3.png)
+
+## Theory
+
+https://ieeexplore.ieee.org/abstract/document/8636075
 
 ## Empirical Study
 
