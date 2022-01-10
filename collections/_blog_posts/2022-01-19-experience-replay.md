@@ -21,6 +21,12 @@ work in neuroscience and cognitive science suggests that these three questions
 are intimately related. This story begins with the second question and continues to the
 forefront of the third and first questions.
 
+Papers covered:
+- [Minh et al. 2015 Human-level control through deep reinforcement learning](https://www.nature.com/articles/nature14236)
+- [Schaul et al. 2016 Prioritized experience replay](https://arxiv.org/pdf/1511.05952.pdf)
+- [Mattar and Daw 2018 Prioritized memory access explains planning and hippocampal replay](https://www.nature.com/articles/s41593-018-0232-z)
+- [Liu et al. 2021 Experience replay is associated with efficient nonlocal learning](https://www.science.org/doi/10.1126/science.abf1357)
+
 ## Notation
 
 In reinforcement learning (RL), one common mathematical framework is to consider an agent
@@ -35,7 +41,7 @@ often called a __replay buffer__.
 
 ## Advances
 
-### Experience Replay
+### Lin 1992 & Minh et al. 2015
 
 The right place to start is with model-free value-based RL: Q learning. The original 
 idea of Q-Learning was when an agent obtains a new experience i.e. is in some state, 
@@ -63,7 +69,7 @@ The specific replay mechanism was a queue (FIFO) with a capacity of 1 million ex
 sampled experiences uniformly at random, on average 8 times. Note that because Q-learning is model
 free, these experiences were not used to learn a model of any environment.
 
-### Prioritized Experience Replay
+### Schaul et al. 2016
 
 At [ICLR 2016, Schaul et al.](https://arxiv.org/pdf/1511.05952.pdf) proposed that
 sampling experiences uniformly at random might be a suboptimal approach. They suggested that
@@ -137,7 +143,7 @@ Questions
 
 ![img_3.png](img_3.png)
 
-### Normative Prioritized Experience Replay
+### Mattar and Daw 2018
 
 In [2018, Mattar and Daw](https://www.nature.com/articles/s41593-018-0232-z) presented a beautiful
 and simple idea. Rather than proposing a heuristic for prioritizing experience, they asked: could the
@@ -222,7 +228,8 @@ backwards (i.e. gain dominates) to know how to return to the reward location.
 ![img_10.png](img_10.png)
 
 In contrast, forward replay occurs when the animal needs to figure out where
-to go.
+to go. Despite its name, forward replay produces mental trajectories that look
+like planning.
 
 ![img_11.png](img_11.png)
 
@@ -255,19 +262,17 @@ that the animal should stop running.
 
 ![img_15.png](img_15.png)
 
+### Liu, Mattar, Behrens, Daw and Dolan
 
+Mattar and Daw wanted to test their theory of how agents prioritize experiences to
+replay, and so turned to collaborate with Liu, Behrens and Dolan. They sought to test
+two hypotheses:
 
-#### Prioritized Experience Replay: Questions and Details
-
-Details
-
-- Again, one key assumption is that changing the agent's policy in one state has no effect on the agent's
-  policy in other state.
-
-Questions
-
-- 
-
+1. Does trajectory replay support non-local learning?
+    - Do people learn more about replay paths?
+2. Are learning and replay prioritized?
+    - Behaviorally, do people learn more about high (need * gain) paths?
+    - Neurally, do people preferentially replay high (need * gain) paths?
 
 ## Theory
 
