@@ -44,11 +44,10 @@ extra $10k or $15k a year?"
 After my incredulity faded, I started looking into alternative income streams that
 I could do part-time during my PhD. I explored/tried several ideas,
 including sperm donation, male escorting and [online tutoring](2022-01-08-quitting-wyzant.html)
-(which turns out to be far less lucrative than advertised) and eventually
-gave up.
+(which turns out to be far less lucrative than advertised) before giving up.
 
 A month later, Ana called back to check on whether I had successfully found a BMR
-property to apply for. I reminded her that she told me I was too low income to qualify; she said she
+property. I reminded her that she told me I was too low income to qualify; she said she
 was sure I was mistaken, and suggested we look at properties together. After a half hour of searching
 together, she agreed with my assessment and said it was highly unlikely I'd ever find anything.
 
