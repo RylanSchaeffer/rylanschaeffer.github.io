@@ -39,9 +39,8 @@ $$e_k = (s_k, a_k, r_k, s_{k+1})$$
 As an agent moves through its environment, it builds a collection of these experience
 often called a __replay buffer__.
 
-## Advances
 
-### Lin 1992 & Minh et al. 2015
+## Lin 1992 & Minh et al. 2015
 
 The right place to start is with model-free value-based RL: Q learning. The original 
 idea of Q-Learning was when an agent obtains a new experience i.e. is in some state, 
@@ -69,7 +68,7 @@ The specific replay mechanism was a queue (FIFO) with a capacity of 1 million ex
 sampled experiences uniformly at random, on average 8 times. Note that because Q-learning is model
 free, these experiences were not used to learn a model of any environment.
 
-### Schaul et al. 2016
+## Schaul et al. 2016
 
 At [ICLR 2016, Schaul et al.](https://arxiv.org/pdf/1511.05952.pdf) proposed that
 sampling experiences uniformly at random might be a suboptimal approach. They suggested that
@@ -129,7 +128,7 @@ differed depending on the game, both replay mechanisms typically offered an impr
 
 ![img_1.png](img_1.png)
 
-#### Prioritized Experience Replay: Questions and Details
+### Prioritized Experience Replay: Questions and Details
 
 Questions
 
@@ -143,7 +142,7 @@ Questions
 
 ![img_3.png](img_3.png)
 
-### Mattar and Daw 2018
+## Mattar and Daw 2018
 
 In [2018, Mattar and Daw](https://www.nature.com/articles/s41593-018-0232-z) presented a beautiful
 and simple idea. Rather than proposing a heuristic for prioritizing experience, they asked: could the
@@ -262,7 +261,16 @@ that the animal should stop running.
 
 ![img_15.png](img_15.png)
 
-### Liu, Mattar, Behrens, Daw and Dolan
+As a side note, [Daw mentioned in a talk](https://www.youtube.com/watch?v=s44bOjnKPBg) that if 
+we assume that place cell trajectories are doing mental simulation, we can learn that:
+
+- Simulation is forward (planning), backward (learning) and nonlocal
+- Simulation occurs one path at a time; thinks this is likely because hippocampus is an attractor network
+  and can only represent 1 path at a time
+- Only occurs when animal is stopped i.e. the path code can track the animal's current location
+  or an imagined location, but not both
+
+## Liu, Mattar, Behrens, Daw and Dolan
 
 Mattar and Daw wanted to test their theory of how agents prioritize experiences to
 replay, and so turned to collaborate with Liu, Behrens and Dolan. They sought to test
@@ -273,6 +281,50 @@ two hypotheses:
 2. Are learning and replay prioritized?
     - Behaviorally, do people learn more about high (need * gain) paths?
     - Neurally, do people preferentially replay high (need * gain) paths?
+
+To explain the bit about non-local learning, we need to take a step back. Daw 
+believes that RL is hard because it requires connecting actions to consequences non-locally,
+often called "temporal credit assignment." The point about non-local learning is that
+information about one location of a task may be important for a distant part of the task,
+and replay needs to connect these two components to support efficient learning.
+
+Liu and the team put humans in the following task: there were three start states (orange,
+green and blue), and 2 paths from each start state; each path ended in one of two possible
+end states, with different (drifting) probabilities of receiving a reward. 
+Along each path, humans were shown a sequence of natural pictures (e.g. a zebra at A1, a soccer ball at A2, etc.).
+
+![img_16.png](img_16.png)
+
+Non-locality is important here because some paths tell the participant about
+other paths. For instance, suppose I take path A and receive a high reward; if I understand the
+structure of the task, and I start the next trial on Green, I should take path E because I know
+X is highly rewarded. Liu et all found that behaviorally, if humans were placed back in the same
+start state (e.g. blue, followed by blue), humans were more likely to take the same path
+on the second trial if they received a reward on the first trial; more interesting, humans were 
+more likely to take an equivalent path on the second trial if rewarded on the first, providing
+behavioral evidence of non-local learning.
+
+![img_17.png](img_17.png)
+
+
+Using MEG, Liu et al. found two replay events: forward replay around ~30 ms and slow replay 
+around ~160 ms.
+
+![img_18.png](img_18.png)
+
+The forwards replay showed no preference for the local path, but the backwards replay
+showed a preference for non-local learning:
+
+![img_19.png](img_19.png)
+
+There was a strong correlation between 160 ms lag replay and task performance across subjects.
+
+![img_20.png](img_20.png)
+
+Finally, the authors confirmed their hypothesis that the model which best explains 
+the backwards replay at 160 ms was not need, not gain, but the product of need times gain (p = 0.003).
+Weirdly, the forward replay showed no preference for any of the three.
+
 
 ## Theory
 
