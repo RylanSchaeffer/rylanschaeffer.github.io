@@ -6,15 +6,13 @@ date: 2022-01-19
 tags: experience-replay reinforcement-learning
 ---
 
-# Experience Replay
-
 Experience replay is a fascinating topic spanning machine learning, neuroscience and 
 cognitive science. At the heart of replay are 3 questions, asking how an
-agent should use its past experiences
+agent should use its past experiences:
 
-1. to build a model of its world?
-2. to most efficiently propagate reward information in that model?
-3. to plan future actions using that model?
+1. to build a model of its world
+2. to most efficiently propagate reward information in that model
+3. to plan future actions using that model
 
 The machine learning literature has historically focused on the second question, but emerging
 work in neuroscience and cognitive science suggests that these three questions
@@ -30,41 +28,43 @@ Papers covered:
 ## Notation
 
 In reinforcement learning (RL), one common mathematical framework is to consider an agent
-in a Markov Decision Process (MDP). An experience is commonly defined as a 4-tuple
+in a Markov Decision Process (MDP). An experience is often defined as a 4-tuple
 of an agent's state, the action it takes, the reward it receives and the next state
 it ends up in:
 
 $$e_k = (s_k, a_k, r_k, s_{k+1})$$
 
 As an agent moves through its environment, it builds a collection of these experience
-often called a "replay buffer".
+$$E_T := \{e_1, ..., e_T\}$$  called a "replay buffer".
 
 
 ## Lin 1992 & Minh et al. 2015
 
-The right place to start is with model-free value-based RL: Q learning. The original 
-idea of Q-Learning was when an agent obtains a new experience i.e. is in some state, 
-takes an action, receives a reward, and moves to the next state), it should use that experience
+In the early days of RL, a hot topic was model-free value-based RL: Q learning. The original 
+approach to Q-Learning was when an agent obtains a new experience, it should use that experience
 to immediately perform a Bellman backup:
 
 $$Q(s_t, a_t) \leftarrow Q(s_t, a_t) + \eta_t (r_t + \gamma \max_a Q(s_{t+1}, a) - Q(s_t, a_t))$$
 
 where $$\eta_T$$ is some learning rate. The experience is then discarded. 
-[In 1992, Lin introduced the idea of experience replay](https://link.springer.com/content/pdf/10.1007/BF00992699.pdf),
+[In 1992, Lin suggested the idea of experience replay](https://link.springer.com/content/pdf/10.1007/BF00992699.pdf),
 that instead of discarding past experiences immediately, the agent should store those experiences
-in its replay buffer and then uniformly sample from the buffer. This idea proved critical
-in [Minh et al.'s 2015 DQN Nature paper](https://www.nature.com/articles/nature14236).
+in its replay buffer and then uniformly sample from the buffer. Two decades later, experience
+replay proved critical in [Minh et al.'s 2015 DQN Nature paper](https://www.nature.com/articles/nature14236)
+that kickstarted the field of deep reinforcement learning:
 
 ![img_5.png](img_5.png)
 
 Many people remember the paper for showing that deep Q-Learning can surpass human performance at Atari games,
-but the authors were clear that experience replay was critical: 
+but the authors were clear that experience replay was no less important: 
 
 <blockquote>
 "Notably, the successful integration of
 reinforcement learning with deep network architectures was critically dependent on our incorporation
 of a replay algorithm involving the storage and representation of recently experienced transitions."
 </blockquote>
+
+
 
 The specific replay mechanism was a queue (FIFO) with a capacity of 1 million experiences. that
 sampled experiences uniformly at random, on average 8 times. Note that because Q-learning is model
@@ -93,7 +93,7 @@ experiences, it needs a massive number of samples and updates to learn to reliab
 whereas an oracle (which greedily selects a transition that maximimally reduces the global 
 loss) requires significantly fewer samples and updates.
 
-![](../_blog_posts/img_4.png)
+![](img_4.png)
 
 However, the agent can't just greedily select the experience with the highest TD error,
 for at least 2 reasons:
@@ -106,7 +106,7 @@ be sampled randomly. They propose two different ways to define the priority of t
 
 1. Direct: $$p_k := \lvert \delta_k \lvert + \epsilon$$, where $$\epsilon > 0$$ is a small positive constant to
    ensure even experiences with no TD error have a chance at being replayed
-2. Indirect: $$p_k := \frac{1}{rank(k)}$$
+2. Indirect: $$p_k := \frac{1}{rank(k)}$$, where the rank is determined by the ordered TD errors
 
 and then sample experiences proportional to the priority:
 
@@ -188,8 +188,8 @@ The need and gain are defined as:
 
 $$
 \begin{align*}
-EVB(s_t, e_k) &:= Need(s_t, s_k) Gain(s_k)
-Need(s_t, s_k) &:= \sum_{t' = t}^{\infty} \gamma^{t' - t} \delta(S_{t'}, s_k)
+EVB(s_t, e_k) &:= Need(s_t, s_k) \, \, Gain(s_k)\\
+Need(s_t, s_k) &:= \sum_{t' = t}^{\infty} \gamma^{t' - t} \delta(S_{t'}, s_k)\\
 Gain(s_k) &:= \sum_{a \in A} Q^{\pi_{new, k}} (s_k, a) \Big(\pi_{new, k}(a|s_k) - \pi_{old}(a|s) \Big)
 \end{align*}
 $$
@@ -268,13 +268,15 @@ that the animal should stop running.
 ![img_15.png](img_15.png)
 
 As a side note, [Daw mentioned in a talk](https://www.youtube.com/watch?v=s44bOjnKPBg) that if 
-we assume that place cell trajectories are doing mental simulation, we can learn that:
+we assume that place cell trajectories are performing model-based simulation, we can learn that:
 
-- Simulation is forward (planning), backward (learning) and nonlocal
-- Simulation occurs one path at a time; thinks this is likely because hippocampus is an attractor network
-  and can only represent 1 path at a time
-- Only occurs when animal is stopped i.e. the path code can track the animal's current location
-  or an imagined location, but not both
+- Simulation can occur forward (planning), backward (learning) and nonlocally
+- Simulation only occurs when animal is stopped
+- Simulation occurs one path at a time
+
+Daw thinks these last two are probably because hippocampus is an attractor network
+and can only represent 1 path at a time. He thinks that the path field neural code can
+track the animal's current location or an imagined location, but not both simultaneously.
 
 ## Liu, Mattar, Behrens, Daw and Dolan
 
