@@ -1,17 +1,48 @@
 ---
 layout: post
-title: Experience Replay in Machines, Mice and Men 
+title: Experience Replay in Machines and Mammals 
 author: Rylan Schaeffer
 date: 2022-01-19
 tags: experience-replay reinforcement-learning
 ---
 
-# Experience Replay in Machines
+# Experience Replay
 
+Experience replay is a fascinating topic spanning machine learning, neuroscience and 
+cognitive science. At the heart of replay are three related questions: how should an
+agent use its past experiences ...
+
+1. to build a model of its world?
+2. to most efficiently propagate reward information in that model?
+3. to plan future actions using its model of the world?
+
+The machine learning literature has historically focused on the second question, but emerging
+work in neuroscience and cognitive science is suggesting that these three questions
+are intimately related. This story begins with the second question and continues to the
+forefront of the third and first questions
+
+## Notation
+
+In reinforcement learning (RL), when considering an agent in a Markov Decision Process,
+an experience is commonly defined as a 4-tuple:
+
+$$e_k = (s_k, a_k, r_k, s_{k+1})$$
+
+As an agent moves through its environment, it builds a collection of these experience
+often called a __replay buffer__.
+
+$$\{e_1, e_2, ..., e_T\} $$
+
+# Experience Replay in Machines
 
 ## Algorithms
 
 ### Experience Replay
+
+[In 1992, Lin introduced the idea of experience replay](https://link.springer.com/content/pdf/10.1007/BF00992699.pdf).
+As an agent traverse its environment, rather than uses its immediate experiences to update
+itself and then discarding them, Lin proposed that the agent should store the experiences
+in a replay buffer and then uniformly sample experiences from the buffer.
 
 DQN used large sliding window, sampled uniformly at random, revisited each transition ~8 times
 
@@ -33,7 +64,7 @@ experiences, it needs a massive number of samples and updates to learn to reliab
 whereas an oracle (which greedily selects a transition that maximimally reduces the global 
 loss) requires significantly fewer samples and updates.
 
-![img_1.png](../_blog_posts/img_4.png)
+![](../_blog_posts/img_4.png)
 
 However, the agent can't just greedily select the experience with the highest TD error,
 for at least 2 reasons:
@@ -59,11 +90,11 @@ $$w_k := \Big( \frac{1}{N p(e_k)} \Big)^{\beta}$$
 They found that both prioritization approaches yielded similar boosts in max and average
 performance on the Atari suite of games
 
-![img_2.png](img_2.png)
+![](img_2.png)
 
 They also found that learning was faster for the prioritized replay agents.
 
-![img.png](img.png)
+![](img.png)
 
 As a disclaimer, the authors later write "Note that mean performance is not a very reliable metric
 because a single game (Video Pinball) has a dominant contribution." If that's the case, I don't 
