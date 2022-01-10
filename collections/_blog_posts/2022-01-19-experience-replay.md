@@ -199,6 +199,62 @@ policy any other state. This is unrealistic if the agent uses function approxima
   linear in the number of experiences at each time step
 - The theory doesn't explain _when_ to replay, just _what_ to replay (although see Agrawal, Mattar, Daw and Cohen 2020)
 
+Mattar and Daw consider two abstract versions of tasks used by mouse experimentalists:
+the open field and the linear track. They show that their prioritized replay learns
+to significantly faster learning:
+
+![img_7.png](img_7.png)
+
+Two experimental phenomena that Mattar and Daw are interested in are (a) reverse replay and
+(b) reverse replay. Reverse replay refers to when a sequence of hippocampal cells fire
+starting from the animal and typically tracing the animal's path backwards, whereas
+forward replay refers to when a sequence of hippocampal
+cells fire starting from the animal's current position and tracing the path the animal
+will take. Reverse replay almost always occur at the end of a trial and forward replay
+almost always occurs at the start of a trial:
+
+![img_9.png](img_9.png)
+
+In Mattar and Daw's model, reverse replay occurs when the animal encounters
+a reward, it now wants to propagate that reward information
+backwards (i.e. gain dominates) to know how to return to the reward location.
+
+![img_10.png](img_10.png)
+
+In contrast, forward replay occurs when the animal needs to figure out where
+to go.
+
+![img_11.png](img_11.png)
+
+In the model, replay almost always starts from the animal's current position,
+matching experimental data.
+
+![img_12.png](img_12.png)
+
+Next, Mattar and Daw explain asymmetric effects of positive and negative
+prediction errors. Ambrose et al. tried increasing the reward four-fold in half 
+the trials and found that forward replay was unaffected but reverse replay
+increased. This is caused by more reverse replay for 4x reward trials and fewer
+reverse replay for 1x reward trials. 
+
+![img_13.png](img_13.png)
+
+However, when the authors tried decreasing the reward to 0 in half the trials,
+they again found no effect on forward replay, but that no reward has a
+negative effect on reverse replay, which is caused by more reverse replay for 1x 
+trials and less replay for 0x trials.
+
+![img_14.png](img_14.png)
+
+However, Wu and colleagues found a difference result if the reward is negative (i.e. a shock)
+instead of just zero: the amount of reverse replay increases. The model explains 
+this because a negative reward prediction error only matters if a better option
+is available; since the mice are running back and forth on a linear track, 1 reward or 0 reward is
+better than not running, but when the shock is introduced, 0 reward or -1 reward means
+that the animal should stop running.
+
+![img_15.png](img_15.png)
+
 
 
 #### Prioritized Experience Replay: Questions and Details
