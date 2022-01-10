@@ -22,31 +22,46 @@ experienced based on temporal-difference (TD) errors.
 
 ![img_1.png](../_blog_posts_drafts/img_1.png)
 
-However, greedily prioritizing experiences with high TD errors several problems:
+However, greedily prioritizing experiences with high TD errors is problematic for 2 reasons:
 
 1. Model overfits to experiences with high TD errors because states with low TD error are never replayed
-2. High TD errors can be driven by tails of stochastic reward distributions, so the data
-  being learnt from is not representative
+2. If rewards are stochastic, high TD errors can be monopolized by tails of the reward distributions
 
-So instead of greedily selecting experiences to replay, sample experiences randomly:
+Instead of greedily selecting experiences to replay, Schaul and colleagues propose that experiences should
+be sampled randomly. They propose two different ways to define the priority of the $$k$$th experience
+
+1. Direct: $$p_k := \lvert \delta_k \lvert + \epsilon$$, where $$\epsilon > 0$$ is a small positive constant to
+   ensure even experiences with no TD error have a chance at being replayed
+2. Indirect: $$p_k := \frac{1}{rank(k)}$$
+
+and then sample experiences proportional to the priority:
 
 $$p(e_k) = \frac{p_k^{\alpha}}{\sum_{k'} p_{k'}^{\alpha}} $$
 
-where $$p_k$$ is the prioritization of the $$k$$th experience. The authors explored 2 different
-ways of defining $$p_k$$:
+They then introduce one other change: they use importance sampling weights, defined as:
 
-1. Direct: $$p_k := |\delta_k| + \epsilon$$, where $$\epsilon > 0$$ is a small positive constant  
+$$w_k := \Big(\frac{1}{N p(e_k) \Big)^{\beta}$$
 
+They found that both prioritization approaches yielded similar boosts in max and average
+performance on the Atari suite of games
 
-[In a 2017 retrospective called Rainbow, Hessel and colleagues](https://arxiv.org/pdf/1710.02298.pdf) decided to 
-empirically test to what extent new algorithms improved performance over the original DQN paper from 
-Minh et al. 2015. What they found is the three best performing algorithms were:
+![img_2.png](img_2.png)
 
-1. Prioritized DDQN
+They also found that learning was faster for the prioritized replay agents.
 
-![img.png](../_blog_posts_drafts/img.png)
+![img.png](img.png)
 
-Rainbow: https://arxiv.org/pdf/1710.02298.pdf
+Looking at each game individually, they found that 
+
+![img_1.png](img_1.png)
+
+However, I
+
+#### Questions for Prioritized Experience Replay
+
+- Why did they only try their sampling on Double DQN and not DQN?
+- The paper claims that the importance sampling weights are useful and offers a handwavy explanation
+  for why. Are there any ablations testing the effects of not using the importance sampling weights?
 
 
 ## Empirical Study
