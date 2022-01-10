@@ -9,50 +9,68 @@ tags: experience-replay reinforcement-learning
 # Experience Replay
 
 Experience replay is a fascinating topic spanning machine learning, neuroscience and 
-cognitive science. At the heart of replay are three related questions: how should an
-agent use its past experiences ...
+cognitive science. At the heart of replay are 3 questions, asking how an
+agent should use its past experiences
 
 1. to build a model of its world?
 2. to most efficiently propagate reward information in that model?
-3. to plan future actions using its model of the world?
+3. to plan future actions using that model?
 
 The machine learning literature has historically focused on the second question, but emerging
-work in neuroscience and cognitive science is suggesting that these three questions
+work in neuroscience and cognitive science suggests that these three questions
 are intimately related. This story begins with the second question and continues to the
-forefront of the third and first questions
+forefront of the third and first questions.
 
 ## Notation
 
-In reinforcement learning (RL), when considering an agent in a Markov Decision Process,
-an experience is commonly defined as a 4-tuple:
+In reinforcement learning (RL), one common mathematical framework is to consider an agent
+in a Markov Decision Process (MDP). An experience is commonly defined as a 4-tuple
+of an agent's state, the action it takes, the reward it receives and the next state
+it ends up in:
 
 $$e_k = (s_k, a_k, r_k, s_{k+1})$$
 
 As an agent moves through its environment, it builds a collection of these experience
 often called a __replay buffer__.
 
-$$\{e_1, e_2, ..., e_T\} $$
-
-# Experience Replay in Machines
-
-## Algorithms
+## Advances
 
 ### Experience Replay
 
-[In 1992, Lin introduced the idea of experience replay](https://link.springer.com/content/pdf/10.1007/BF00992699.pdf).
-As an agent traverse its environment, rather than uses its immediate experiences to update
-itself and then discarding them, Lin proposed that the agent should store the experiences
-in a replay buffer and then uniformly sample experiences from the buffer.
+The right place to start is with model-free value-based RL: Q learning. The original 
+idea of Q-Learning was when an agent obtains a new experience i.e. is in some state, 
+takes an action, receives a reward, and moves to the next state), it should use that experience
+to immediately perform a Bellman backup:
 
-DQN used large sliding window, sampled uniformly at random, revisited each transition ~8 times
+$$Q(s_t, a_t) \leftarrow Q(s_t, a_t) + \eta (r_t + \gamma \max_a Q(s_{t+1}, a) - Q(s_t, a_t))$$
+
+The experience is then discarded. [In 1992, Lin introduced the idea of experience replay](https://link.springer.com/content/pdf/10.1007/BF00992699.pdf).
+Rather than discarding experiences immediately, Lin proposed that the agent should store the experiences
+in a replay buffer and then uniformly sample experiences from the buffer. This idea proved critical
+in [Minh et al.'s 2015 DQN Nature paper](https://www.nature.com/articles/nature14236).
+
+![img_5.png](img_5.png)
+
+Many people remember the paper for showing that deep Q-Learning can surpass human performance at Atari games,
+but the authors were clear that replay was critical: f"Notably, the successful integration of
+reinforcement learning with deep network architectures was _critically dependent on our incorporation
+of a replay algorithm involving the storage and representation of recently experienced transitions._"
+On a subset of 5 games, removing replay eviscerated the agent's performance. 
+
+![img_6.png](img_6.png)
+
+The specific replay mechanism was a queue (FIFO) with a capacity of 1 million experiences. that 
+sampled experiences uniformly at random, on average 8 times. Note that because Q-learning is model
+free, these experiences were not used to learn a model of any environment.
 
 ### Prioritized Experience Replay
 
-At [ICLR 2016, Schaul et al.](https://arxiv.org/pdf/1511.05952.pdf) proposed a different
-approach to sampling from the agent's replay buffer. Rather than sampling uniformly at random,
-the agent could instead prioritize certain experiences based on how wrong the agent's predictions
-were in those contexts. Specifically, the authors suggested that the agent should use its 
-temporal-difference (TD) errors (also known as reward prediction errors).
+At [ICLR 2016, Schaul et al.](https://arxiv.org/pdf/1511.05952.pdf) proposed that
+sampling experiences uniformly at random might not be optimal. Rather, they suggested that
+the agent could instead prioritize certain experiences, using the heuristic of
+how wrong the agent's predictions were. Specifically, the authors suggested that when 
+sampling experiences, the agent should take into account its temporal-difference (TD)
+errors $$\deta_t$$ (also known as reward prediction errors):
 
 $$ \delta_t := R_t + \gamma \max_a Q(S_t, a) - Q(S_{t-1}, A_{t-1})$$
 
