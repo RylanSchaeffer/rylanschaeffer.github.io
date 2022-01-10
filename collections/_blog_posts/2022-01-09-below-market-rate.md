@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Below Market Rate Housing in the Bay Area
+title: Bay Area housing is f***ed in more ways than you might think
 author: Rylan Schaeffer
 date: 2022-01-09
 tags: housing

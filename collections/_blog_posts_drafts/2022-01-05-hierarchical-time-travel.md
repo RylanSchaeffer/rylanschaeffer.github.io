@@ -49,7 +49,7 @@ tags: Towards mental time travel: a hierarchical memory for reinforcement learni
 - Would LSTM would get there?
 - 
 
-![img.png](img.png)
+![img.png](../_blog_posts/2022-01-05-hierarchical-time-travel/img.png)
 
 - 1 billion training steps
 
@@ -57,13 +57,13 @@ tags: Towards mental time travel: a hierarchical memory for reinforcement learni
 
 - Objects pop out of boxes, then told to find a box with an object
 
-![img_1.png](img_1.png)
+![img_1.png](../_blog_posts/2022-01-05-hierarchical-time-travel/img_1.png)
 
 ### Rapid Work Learning with distractor
 
-![img_2.png](img_2.png)
+![img_2.png](../_blog_posts/2022-01-05-hierarchical-time-travel/img_2.png)
 
-![img_3.png](img_3.png)
+![img_3.png](../_blog_posts/2022-01-05-hierarchical-time-travel/img_3.png)
 
 ## Dirty Details
   - Without self-supervised losses, agent is no better than baseline
