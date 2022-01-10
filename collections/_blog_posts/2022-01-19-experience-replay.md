@@ -188,7 +188,7 @@ problem by brute force i.e. computing each experience's EVB and then replaying t
 experience with the highest EVB. Before showing the wealth of experimental phenomena
 that this approach can explain, we should acknowledge some of its shortcomings:
 
-- This approach only works for a known, discrete state space and a known transition function $$P(s_{t+1} | s_t, a_t)$$ 
+- This approach only works for a known, discrete state space and a known transition function $$P(s_{t+1} \lvert s_t, a_t)$$ 
 - The proof assumes that changing the agent's policy in one state has no effect on the agent's
 policy any other state. This is unrealistic if the agent uses function approximation.
 - The proposed prioritization scheme is circular, in that when deciding whether to replay an experience 
