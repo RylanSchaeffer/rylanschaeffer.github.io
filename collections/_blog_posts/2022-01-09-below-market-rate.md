@@ -6,20 +6,27 @@ date: 2022-01-09
 tags: housing
 ---
 
-Before starting my PhD, I was faced with a dilemma: where should I live?
-The Bay Area is infamous for usurious rent prices, and since my PhD salary 
-is around $44k a year (pretax), I couldn't afford to live almost anywhere. To 
-give you a sense of how little $44k is, the [Bay Area's median is $113k](http://www.bayareaeconomy.org/wp-content/uploads/2021/03/Income-Inequality_3.10.21.pdf)
-so PhD students are probably around the 15th percentile. I had two choices:
 
-1. I could live on campus, in subsidized housing, paying 1/3 to 1/2 of my
-  income to the university.
-2. I could move back in with my parents, at age 28
+__TLDNR__: Everyone knows housing in the Bay Area is unaffordable. This is the story of
+how I learned PhD students are too poor to qualify for low-income housing assistance.
 
-I figured there had to be a better option, and I resolved to find it. I started looking, and that's when
+
+Before starting my PhD, I was starting to stress out about where should I live.
+The Bay Area is infamous for its usurious rent prices; to give you a sense of scale,
+the [Bay Area's median income is $113k](http://www.bayareaeconomy.org/wp-content/uploads/2021/03/Income-Inequality_3.10.21.pdf)
+and my PhD salary is $44k (pretax), probably around the 15th percentile.
+I didn't want to lose what little income I had to rent, so I had three choices:
+
+1. A cardboard box (or maybe a tent) along 280
+2. On campus, subsidized dorms, paying just under half my income to the university.
+3. Moving back in with my parents, at age 28. My mom joked that there was room in the lawnmower shed.
+
+
+I figured there had to be a better option, and when I started looking,
 I discovered several cities up and down the Peninsula offer "Below Market Rate"
-(BMR, for short) housing, designed to help low income people afford to live
-in the Bay. I applied, went through ~10 hours of required training, before I was able to meet
+(BMR, for short) housing, designed to help low income people afford to buy a place
+in the Bay. This was perfect! Instead of losing money to rent, I could build equity
+in my own property. I applied, went through ~10 hours of required training, before I was able to meet
 one-on-one with my personal advisor, Ana. After about 5 minutes of looking at my
 profile (paystubs, W2s, etc.), Ana said to me, "I'm sorry, but you don't qualify."
 
@@ -37,11 +44,11 @@ extra $10k or $15k a year?"
 After my incredulity faded, I started looking into alternative income streams that
 wouldn't cost me inordinate amounts of time. I tried all manner of ideas,
 including sperm donation, male escorting and [online tutoring](2022-01-08-quitting-wyzant.html)
-(which turns out to be far less lucrative than advertised by hosting platforms).
+(which turns out to be far less lucrative than advertised).
 
 A month later, Ana called back to check on whether I'd successfully found a BMR
 property to apply for. I reminded her that she told me I was too low income to qualify,
-and that empirically, I had found her assessment to be correct; she said she was sure I 
+and that I had found her assessment to be correct; she said she was sure I 
 was mistaken, and suggested we look at properties together. After a half hour of searching
 together, she agreed with my assessment and said it was highly unlikely I'd find anything.
 
