@@ -175,6 +175,14 @@ $$ EVB(s_t, e_k) := Need(s_t, s_k) Gain(s_k)$$
 2. __Gain__: How much more value will the agent accrue in $$s_k$$, following $$\pi_{new, k}$$ instead
  of $$\pi_{old}$$?
 
+The need is defined as:
+
+$$Need(s_t, s_k) := \sum_{t' = t}^{\infty} \gamma^{t' - t} \delta(S_{t'}, s_k) $$
+
+The gain is defined as:
+
+$$Gain(s_k) := \sum_{a \in A} Q^{\pi_{new, k}} (s_k, a) \Big(\pi_{new, k}(a|s_k) - \pi_{old}(a|s) \Big) $$
+
 The intuition is that the agent wants to learn about states that it is likely to occupy in the future,
 and it also wants to prioritize experiences that promise higher future rewards, but sometimes the two goals
 clash e.g. if an experience promises high future value (high gain), but the agent will never be in that state
