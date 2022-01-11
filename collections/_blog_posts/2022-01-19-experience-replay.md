@@ -24,6 +24,7 @@ Papers covered:
 - [Schaul et al. 2016 Prioritized experience replay](https://arxiv.org/pdf/1511.05952.pdf)
 - [Mattar and Daw 2018 Prioritized memory access explains planning and hippocampal replay](https://www.nature.com/articles/s41593-018-0232-z)
 - [Liu et al. 2021 Experience replay is associated with efficient nonlocal learning](https://www.science.org/doi/10.1126/science.abf1357)
+- A few others briefly
 
 ## Notation
 
@@ -147,6 +148,43 @@ Questions
     but that uniform is indistinguishable from rank-based no IS and from rank-based IS.
 
 ![img_3.png](img_3.png)
+
+## Other heuristics 
+
+After the Prioritized Experience Replay paper came out, other groups 
+started exploring their own heuristics for choosing how to
+prioritize experiences.
+
+### Episodic Backward Update
+
+[In 2019, Lee, Sungik and Chung](https://proceedings.neurips.cc/paper/2019/file/e6d8545daa42d5ced125a4bf747b3688-Paper.pdf) proposed "Episodic Backward Updates" (EBU),
+which uniformly samples an episode from the replay buffer, then replays state-action
+pairs in reverse order. The authors claim that agents trained using EBU are significantly more
+sample efficient, although the comparisons are spotty (in fairness, training RL agents to play
+every Atari game is really compute intensive). Here they compare their replay mechanism against
+the uniform replay sampling used by Minh et al. 2015.
+
+![img_23.png](img_23.png)
+
+### Topological Replay Experience
+For instance, [in 2021, Hong, Chen, Lin, Pajarinen and Agrawal](https://lyang36.github.io/icml2021_rltheory/camera_ready/70.pdf)
+proposed "Topological Experience Replay" (TER) which, after a high rewarding state
+has been reached, propagates backward in the graph of state-state transitions so that 
+the states which lead to the rewarding state can have their action values updated:
+
+![img_21.png](img_21.png)
+
+More specifically, if the agent has the transition function 
+$$T: S \times A \rightarrow S$$ or an accurate approximation of the 
+transition function, the agent can construct the graph of state-state transitions.
+Then, the agent performs breadth-first search, starting from each terminal
+vertex and moving backward. They also interleave Prioritized Experience Replay
+backups because they found this works better empirically (their experiments don't 
+disentangle what effect PER had). On Sokoban, the block 
+pushing game, they learn significantly faster than other replay methods:
+
+![img_22.png](img_22.png)
+
 
 ## Mattar and Daw 2018
 
@@ -278,7 +316,7 @@ Daw thinks these last two are probably because hippocampus is an attractor netwo
 and can only represent 1 path at a time. He thinks that the path field neural code can
 track the animal's current location or an imagined location, but not both simultaneously.
 
-## Liu, Mattar, Behrens, Daw and Dolan
+## Liu, Mattar, Behrens, Daw and Dolan 2021
 
 Mattar and Daw wanted to test their theory of how agents prioritize experiences to
 replay, and so turned to collaborate with Liu, Behrens and Dolan. They sought to test
