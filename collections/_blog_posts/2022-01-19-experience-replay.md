@@ -2,7 +2,7 @@
 layout: post
 title: Experience Replay in Machines and Mammals 
 author: Rylan Schaeffer
-date: 2022-01-19
+date: 2022-01-12
 tags: experience-replay reinforcement-learning
 ---
 

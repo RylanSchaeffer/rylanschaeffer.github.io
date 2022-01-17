@@ -51,9 +51,11 @@ given by
 $$\Big( \frac{r-\epsilon}{r} \Big)^D$$
 
 As $$D$$ gets larger, that fraction converges to 0 since the term being exponentiated, $$(r-\epsilon) / r$$
-is less than $$1$$. Consequently, _the fraction of the sphere in the middle goes to zero_ and the sphere
-becomes hollow! In 2D, almost all of a circle is more than $$\epsilon$$ away from its shell, but in high
+is less than $$1$$. Consequently, the fraction of the sphere in the middle goes to zero and the sphere
+becomes hollow!  In 2D, almost all of a circle is more than $$\epsilon$$ away from its shell, but in high
 dimensions, almost all of an n-sphere is within $$\epsilon$$ from its boundary.
+
+To summarize: __spheres in high dimensions become hollow__!! 
 
 So much simpler than boxes, spheres and spikes!!
 
