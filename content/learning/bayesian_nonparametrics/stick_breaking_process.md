@@ -37,7 +37,7 @@ is through the three-step __stick-breaking construction__:
 
 1. Sample $$\pi_1, \pi_2, ... \sim_{i.i.d.} SBP(1, \alpha)$$
 2. Sample $$\theta_1, \theta_2, ...$$ from the base distribution $$G_0$$
-3. Create an infinite mixture distribution $$G := \sum_{k=1}^{\infty} \pi_k \delta_{\theta_{k}}
+3. Create an infinite mixture distribution $$G := \sum_{k=1}^{\infty} \pi_k \delta_{\theta_{k}}$$
 
 This constructed $$G$$ is distributed according to $$DP(\alpha, G_0)$$, hence the name stick-breaking
 construction.
