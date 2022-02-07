@@ -26,6 +26,7 @@ Some common discrete, continuous and special parametric distributions are:
 - [Kumaraswamy](probability/kumaraswamy_distribution.md)
 - Gamma
 - [Normal/Gaussian](probability/normal_distribution.md)
+- [von Mises-Fisher](probability/vonmises_fisher_distribution.md)
 
 ### Classes of Distribution
 - Elliptical Distributions
