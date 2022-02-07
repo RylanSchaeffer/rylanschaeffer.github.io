@@ -20,7 +20,7 @@ $$U(\beta) := \partial_{\beta} (\beta F(\beta))  = \langle E(x) \rangle$$
 Proof:
 
 $$
-\begin{align}
+\begin{align*}
 &U(\beta)\\
 &:= \partial_{\beta} (\beta F(\beta))\\
 &= F(\beta) + \beta \partial_{\beta} F(\beta)\\
@@ -30,11 +30,43 @@ $$
 &= \sum_{x \in X} \frac{1}{Z(\beta)} e^{-\beta E(x)} E(x)\\
 &= \sum_{x \in X} p_{\beta}(x) E(x)\\
 &= \langle E(x) \rangle
-\end{align}
+\end{align*}
 $$
- 
+
+__High Temperature Limit__: What happens as $$\beta \rightarrow 0$$?
+
+$$
+\begin{align*}
+\lim_{\beta \rightarrow 0} U(\beta)
+&= -\sum_x p_{\beta}(x) E(x)\\
+&= \sum_x \frac{1}{Z(\beta)} e^{-\beta E(x)} E(x)\\
+&= \sum_x \frac{1}{Z(\beta)} (1 - \beta E(x) + \Theta(\beta^2))  E(x)\\
+&= \sum_x \frac{1}{Z(\beta)} E(x) - \Theta(\beta)\\
+&= \langle E(x) \rangle_{\beta=0} - \Theta(\beta)\\
+\end{align*}
+$$
+
+We find that the internal energy becomes the average of each state's energy,
+weighed uniformly.
+
+__Low Temperatuer Limit__: What happens as $$\beta \rightarrow \infty$$?
+
+
+$$
+\begin{align*}
+\lim_{\beta \rightarrow \infty} U(\beta)
+&= 
+\end{align*}
+$$
 
 ### Canonical Entropy
+
+The canonical entropy is defined as:
+
+$$S(\beta) := - \sum_x p_{\beta}(x) \log p_{beta}(x)$$
+
+
+__High Temperature Limit__: What happens as $$\beta \rightarrow 0$$?
 
 
 
