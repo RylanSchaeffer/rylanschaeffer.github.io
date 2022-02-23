@@ -20,7 +20,7 @@ smaller pieces.
 ### Griffiths-Engen-McCloskey (GEM) Distribution
 
 If the stick-breaking weights $$v_k ~ Beta(\alpha, \beta)$$ with $$\alpha = 1$$, then the 
-the infinite random vector $$\pi = (\pi_1, \pi_2, ...)$$ is said to be distributed according
+infinite random vector $$\pi = (\pi_1, \pi_2, ...)$$ is said to be distributed according
 to the so_called Griffiths-Engen-McCloskey distribution $$GEM(\beta)$$.
 
 ### Dirichlet Process

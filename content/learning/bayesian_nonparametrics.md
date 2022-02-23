@@ -1,7 +1,7 @@
 # Bayesian Nonparametrics
 
-Bayesian Nonparametrics (BNPs) are probabilistic models that define infinite dimensional distributions
-using [stochastic processes](stochastic_processes.md). Stochastic processes are 
+Bayesian Nonparametrics (BNPs) are probabilistic models that leverage infinite dimensional distributions
+based on [stochastic processes](stochastic_processes.md). Stochastic processes are 
 a set of random variables indexed by some index set (e.g. time or integers). For instance,
 a sequence of stock prices $$\{ X_t \}_{0 \leq t \leq T }$$ is a stochastic process where the
 index set is time $$t \in [0, T]$$. The utility of defining distributions over stochastic

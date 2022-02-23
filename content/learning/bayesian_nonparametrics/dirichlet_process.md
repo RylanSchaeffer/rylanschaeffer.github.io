@@ -13,10 +13,26 @@ There are many ways to describe a Dirichlet Process (DP). Some of these include:
 
 ## Definition
 
+In all the below definitions,  let $$\alpha > 0$$ be the concentration parameter and
+$$G_0$$ some probability distribution. We want to understand what people mean by
+
+$$G \sim DP(\alpha, G_0)$$
+
+### Definition via Dirac Measures
+
+When we say that $$G \sim DP(\alpha, G_0)$$, we mean that $$G$$ is a random probability measure
+that can be expressed in a certain way
+
+
+
+is a Dirichlet Process if:
+
+$$ G = \sum_{k=1}^{\infty} \beta_k \delta_{\phi_k} $$
+
 ### Definition via Dirichlet Marginals
 
 Briefly, we have to cover measure theory. A __measure__ is a function that assigns
-a non-negative number to subset of a set. One additional requirement is that in
+a non-negative number to set. One additional requirement is that in
 order to be a measure, the function must be __countably additive__,
 meaning that the measure of a subset is equal to the sum of the measure of
 smaller, disjoint subsets of that subset. A __finite measurable partition__ of a set
@@ -39,6 +55,11 @@ postive parameter $$\alpha$$, then the scaled measures could be used for a Diric
 distribution. Now, if a distribution $$G$$ is described by a Dirichlet distribute whose
 concentration parameters are these scaled measures for all possible finite measurable
 partitions, then $$G \sim DP(\alpha, G_0)$$.
+
+
+### Definition via Normalized Gamma Processes
+
+TODO
 
 
 ### Definition via De Finetti's Theorem
@@ -114,15 +135,24 @@ which in contrast has only two
 
 ### Chinese Restaurant Process
 
-### Stick Breaking Process
-
-### GEM Distribution
-
-
-
 The Dirichlet process is intimately connected with several other stochastic processes,
 including the [stick breaking process](stick_breaking_process.md) and the
 [Chinese restaurant process](chinese_restaurant_process.md).
+
+
+### Stick Breaking Construction
+
+
+
+
+### GEM Distribution
+
+The GEM distribution describes the ordered weights of the Dirichlet process.
+More specifically, given $$G \sim DP(\alpha, G_0)$$, we can write
+
+$$G := \sum_{k=1}^{\infty} \beta_k \delta_{\phi_k}$$
+
+The sequence of decreasing $$(\beta_k)_k $$ obeys a $$GEM(\alpha)$$ distribution.
 
 
 
