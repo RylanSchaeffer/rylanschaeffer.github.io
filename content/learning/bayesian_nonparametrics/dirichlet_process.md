@@ -13,10 +13,34 @@ There are many ways to describe a Dirichlet Process (DP). Some of these include:
 
 ## Definition
 
-In all the below definitions,  let $$\alpha > 0$$ be the concentration parameter and
+In all the below definitions, let $$\alpha > 0$$ be the concentration parameter and
 $$G_0$$ some probability distribution. We want to understand what people mean by
 
 $$G \sim DP(\alpha, G_0)$$
+
+The punchline is that $$G$$ is a _random discrete probability measure_. A probability 
+measure is informally probability distribution. Discrete means that $$G$$ is more specifically
+a discrete probability distribution, and random means that $$G$$ is a random quantity.
+
+### Definition via Stick Breaking Construction
+
+This is a constructive definition. First, sample a sequence of random variables 
+from the base distribution:
+
+$$\phi_1, \phi_2, ... \sim_{iid} G_0$$.
+
+Second, sample a sequence of Beta random variables:
+
+$$V_1, V_2, ... \sim_{iid} Beta(1, \alpha)$$
+
+Picture taking a stick of length 1, and breaking off $$V_1$$ from the stick, then recursing
+on the remaining stick. This yields a sequence of monotonically decreasing terms such that
+the sequence sums to 1 with probability 1. The notion of breaking a stick into smaller and smaller
+pieces is where the term stick-breaking construction comes from. More formally, define
+
+$$\pi_k := V_k \prod_{k\prime < k} (1 - V_{k\prime}) $$ 
+
+The random measure $$G := \sum_{k=1}^{\infty} \pi_k \delta_{\phi_k}$$ is distributed $$DP(\alpha, G_0)$$
 
 ### Definition via Dirac Measures
 
@@ -134,14 +158,6 @@ The Blackwell-MacQueen Urn Scheme is an infinite-color generalization of the Pol
 which in contrast has only two
 
 ### Chinese Restaurant Process
-
-The Dirichlet process is intimately connected with several other stochastic processes,
-including the [stick breaking process](stick_breaking_process.md) and the
-[Chinese restaurant process](chinese_restaurant_process.md).
-
-
-### Stick Breaking Construction
-
 
 
 
