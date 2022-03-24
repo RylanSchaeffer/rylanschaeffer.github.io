@@ -11,6 +11,7 @@
 
 ## Policy-Based RL
 - [Policy Gradient Theorem](reinforcement_learning/policy_based/policy_gradient_theorem.md)
+- [Better Policy Gradient Estimators](reinforcement_learning/policy_based/better_gradient_estimators.md)
 
 ## Actor-Critic RL
 - [Introduction](reinforcement_learning/actor_critic/introduction.md)
