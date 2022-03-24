@@ -61,3 +61,7 @@ In practice, because the distribution over trajectories is almost never known, w
 right-hand side expectation with a Monte Carlo estimate:
 
 $$\nabla_{\theta} \mathbb{E}_{\tau \sim p_{\theta}}[R(\tau)] \approx \frac{1}{N}\sum_{n} R(\tau^{(n)}) \sum_t \nabla_{\theta} \log p_{\theta}(a_t^{(n)}| s_t^{(n)}) $$
+
+## See Also
+
+- [Log derivative trick](../../random/log_derivative_trick.md)
