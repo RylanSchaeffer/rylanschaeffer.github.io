@@ -1,7 +1,7 @@
 # Policy Gradient Theorem
 
-Define an agent's trajectory $\tau$ as the sequence of states,
-actions and rewards it experiences: $s_1, a_1, r_1, s_2, ...$. Assuming
+Define an agent's trajectory $$\tau := s_1, a_1, r_1, s_2, ...$$ as the sequence of states,
+actions and rewards the agent experiences. Assumings that
 the agent's policy $p_{\theta}(a|s)$ depends on parameters $\theta$, we
 can define the agent's expected return as the probability of a
 trajectory, which depends on the agent's policy, times the return of
