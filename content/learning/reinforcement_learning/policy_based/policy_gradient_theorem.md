@@ -26,3 +26,28 @@ $$
 &= \mathbb{E}_{\tau \sim p_{\theta}}[R(\tau) \nabla_{\theta} \log p_{\theta}(\tau)]
 \end{align}
 $$
+
+The probability of a trajectory $$\tau$$ does depend on the environment's transition
+and reward functions, but the gradient of the log probability does not:
+
+$$
+\begin{align}
+p_{\theta}(\tau) &= p(s_1) p_{\theta}(a_1|s_1) p(r_1, s_2|s_1, a_1) p_{\theta}(a_2|s_2)...\\
+&= p(s_1) \prod_t p(r_{t}, s_{t+1}|s_t, a_t) p_{\theta}(a_t|s_t)\\
+\nabla_{\theta} \log p_{\theta}(\tau) &= \nabla_{\theta} \log p(s_1) \prod_t p(r_{t}, s_{t+1}|s_t, a_t) p_{\theta}(a_t|s_t)\\
+&=  \sum_t \nabla_{\theta} \log p_{\theta}(a_t | s_t)
+\end{align}
+$$
+
+Plugging back in, we reach the policy gradient theorem:
+
+$$
+\begin{equation}
+\nabla_{\theta} \mathbb{E}_{\tau \sim p_{\theta}}[R(\tau)]
+= \mathbb{E}_{\tau \sim p_{\theta}}[R(\tau) \nabla_{\theta}  \sum_t \nabla_{\theta} \log p_{\theta}(a_t | s_t)]
+\end{equation}
+$$
+
+We can approximate the right-hand side expectation with a Monte Carlo estimate:
+
+$$\frac{1}{N}\sum_{n} R(\tau^{(n)}) \sum_t \nabla_{\theta} \log p_{\theta}(a_t^{(n)}| s_t^{(n)}) $$
