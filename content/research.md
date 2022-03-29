@@ -1,14 +1,14 @@
 # Research
 
 ## Under Review
-- Schaeffer et al. Streaming Inference for Infinite Latent Feature Models. _ICML 2021_.
+- _Schaeffer_ et al. Streaming Inference for Infinite Latent Feature Models. _ICML 2021_.
 
 
 
 ## Accepted
 
-- _Schaeffer*, Liu, Du, Linderman, Fiete. Streaming Inference for Infinite Non-Stationary Clustering.
-  _ICLR 2022 Workshop: Agent Learning in Open-Endedness_
+- _Schaeffer_, Liu, Du, Linderman, Fiete. Streaming Inference for Infinite Non-Stationary Clustering.
+  _ICLR 2022 Workshop: Agent Learning in Open Endedness_.
 
 - *Schaeffer*. [An Algorithmic Theory of Metacognition in Minds and Machines.](research/2021_neurips_workshop_metacognition/main.html) 
   _NeurIPS 2021 Workshop: Metacognition in the Age of AI_.
