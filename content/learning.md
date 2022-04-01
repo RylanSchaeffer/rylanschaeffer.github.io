@@ -29,6 +29,7 @@ Many notes are woefully incomplete. Don't judge :)
 - [Statistical Mechanics](learning/statistical_mechanics.md)
 - [Statistics](learning/statistics.html)
 - [Stochastic Processes](learning/stochastic_processes.md)
+- [Theory of Computation](learning/theory_of_computation.md)
 
 On less mathematical topics
 - [Book Summaries](learning/book_summaries.html)
