@@ -51,8 +51,18 @@ $$
 \begin{align*}
 \langle \phi_n, \phi_m \rangle_{\mathcal{H}}
 &= \frac{1}{T} \int_{0}^T e^{i \frac{2 \pi n}{T} t} e^{-i \frac{2 \pi m}{T} t} dt\\
-&=\frac{1}{i 2 \pi (n-m)} e^{i \frac{2 \pi (n - m)}{T} t} \lvert_{0}^T\\
 &= \begin{cases}1 & n = m \\ 0 & n \neq m \end{cases}
 \end{align*}
 $$
 
+Once you fix a Hilbert's space's basis, any element in the Hilbert space can be equivalently
+thought of as a sequence of coefficients of the element projected onto each element of the basis:
+
+$$ f := \sum_{n=1}^{\infty} \langle f, \phi_n \rangle_H \phi_n$$
+
+with the inner product redefined as:
+
+$$ \langle f, g \rangle_H = \sum_n \langle f, \phi_n \rangle_H \langle g, \phi_n \rangle_H$$
+
+The implication of this is that once you fix a Hilbert space's basis, $$H$$ becomes equivalent
+to $$\ell_2$$ because all functions/vectors look the same: sequences of basis coefficients.
