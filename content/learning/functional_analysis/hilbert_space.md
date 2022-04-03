@@ -39,11 +39,11 @@ to construct the functional $$ F_f(g) := g(x)$$. We know that we must be able to
 as an inner product $$ \int g(t) f(t)^* dt$$, but the only function that can result in $$g(x) = \int g(t) f(t)^* dt$$
 is the Dirac delta function $$\delta(x)$$, but it doesn't belong to the Hilbert space!
 
-## Bases of Hilbert Spaces
+## Bases for Hilbert Spaces
 
-One common orthonormal basis for the Hilbert spaces $$L^2([0, T])$$ is the Fourier basis, defined as:
+One common orthonormal basis for the Hilbert space $$L^2([0, T])$$ is the Fourier basis, defined as:
 
-$$ \phi_n(t) := \frac{1}{\sqrt{T}} e^{i \frac{2 \pi n}{T} t}$$
+$$ \phi_z(t) := \frac{1}{\sqrt{T}} e^{i \frac{2 \pi z}{T} t}$$
 
 This basis is orthonormal because
 
@@ -58,11 +58,11 @@ $$
 Once you fix a Hilbert's space's basis, any element in the Hilbert space can be equivalently
 thought of as a sequence of coefficients of the element projected onto each element of the basis:
 
-$$ f := \sum_{n=1}^{\infty} \langle f, \phi_n \rangle_H \phi_n$$
+$$ f := \sum_{z=-\infty}^{\infty} \langle f, \phi_z \rangle_H \phi_z$$
 
 with the inner product redefined as:
 
-$$ \langle f, g \rangle_H = \sum_n \langle f, \phi_n \rangle_H \langle g, \phi_n \rangle_H$$
+$$ \langle f, g \rangle_H = \sum_z \langle f, \phi_z \rangle_H \langle g, \phi_z \rangle_H$$
 
 The implication of this is that once you fix a Hilbert space's basis, $$H$$ becomes equivalent
 to $$\ell_2$$ because all functions/vectors look the same: sequences of basis coefficients.
