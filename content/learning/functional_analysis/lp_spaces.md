@@ -1,4 +1,4 @@
-# Lp and lp Spaces
+# L-p and l-p Spaces
 
 $$L^p$$ spaces and $$\ell^p$$ are two related function and vector spaces,
 respectively.
