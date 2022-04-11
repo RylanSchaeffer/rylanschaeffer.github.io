@@ -40,3 +40,8 @@ Broadly, there are three approaches to using BNPs:
 - [Poisson Point Process](bayesian_nonparametrics/poisson_process.md)  
 - [Polya Urn Scheme](bayesian_nonparametrics/polya_urn_scheme.md)
 - [Stick Breaking Process](bayesian_nonparametrics/stick_breaking_process.md)
+
+## References
+
+- Peter Orbanz's 
+- Gershman and Blei's [A Tutorial on Bayesian Nonparametric Models](https://arxiv.org/abs/1106.2697)
