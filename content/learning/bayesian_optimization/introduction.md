@@ -20,3 +20,4 @@ All/most approaches to Bayesian Optimization have two components:
 
 There are a variety of different acquisition functions, but almost always, the 
 surrogate function is Gaussian Process regression.
+

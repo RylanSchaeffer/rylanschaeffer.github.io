@@ -13,7 +13,7 @@ tags: mixture-models dirichlet-process bayesian-nonparametrics clustering online
 ## Conceptual Notes
 
 - Problem: Enumerating & updating all possible partitions (hypothesized clusters)
-  requires superexponential time and space
+  requires super-exponential time and space
 - Idea: if each observation is assigned to one cluster, then the previous customers'
 table assignments are known exactly
   - For each observation  $$x_n$$, set cluster assignment to the MAP value

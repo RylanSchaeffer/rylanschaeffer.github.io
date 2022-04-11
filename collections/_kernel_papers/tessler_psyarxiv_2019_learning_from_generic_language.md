@@ -2,7 +2,7 @@
 layout: post
 author: Tessler and Goodman (PsyArXiv 2019)
 title: Learning from Generic Language
-date: 2021-08-06
+date: 2022-08-06
 tags: cultural-learning cultural-ratchet natural-language-processing
 ---
 
