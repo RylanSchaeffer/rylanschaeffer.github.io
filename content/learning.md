@@ -5,6 +5,7 @@ Many notes are woefully incomplete. Don't judge :)
 
 - [Approximations, Techniques, Miscellaneous](learning/random.md)
 - [Bayesian Nonparametrics](learning/bayesian_nonparametrics.html)
+- [Bayesian Optimization](learning/bayesian_optimization.html)
 - [Calculus](learning/calculus.html)
 - [Computer Graphics](learning/computer_graphics.html)
 - [Convex Analysis](learning/analysis_convex.html)

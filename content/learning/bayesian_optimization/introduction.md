@@ -21,3 +21,10 @@ All/most approaches to Bayesian Optimization have two components:
 There are a variety of different acquisition functions, but almost always, the 
 surrogate function is Gaussian Process regression.
 
+The psuedo-code is then:
+
+- Place a GP prior on $$f$$
+- For as many iterations as you can afford
+  - Update the posterior on $$f$$ using all available data
+  - Choose a point $$x_n$$ as the maximizer of some acquisition function
+  - Observe $$y_n = f(x_n)$$

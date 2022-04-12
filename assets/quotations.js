@@ -8,6 +8,8 @@ const quotations = [
 
     "“Humanity does not ask us to be happy. It merely asks us to be brilliant on its behalf.“",
 
+    "“Be a better friend to yourself“",
+
     "“If we're not in pain, we're not alive.“",
 
     "“'O my son Absalom,' Bean said softly, knowing for the first time " +
