@@ -62,6 +62,22 @@ right-hand side expectation with a Monte Carlo estimate:
 
 $$\nabla_{\theta} \mathbb{E}_{\tau \sim p_{\theta}}[R(\tau)] \approx \frac{1}{N}\sum_{n} R(\tau^{(n)}) \sum_t \nabla_{\theta} \log p_{\theta}(a_t^{(n)}| s_t^{(n)}) $$
 
-## See Also
+## Vanilla Policy Gradient Algorithm
+
+- For $$g = 1, 2, 3..., G$$ gradient steps:
+  - For $$n = 1, 2, 3, ..., N$$ episodes per gradient step:
+    - Have the agent complete a trajectory $$\tau^{(n)} = (s_1^{(n)}, a_1^{(n)}, r_1^{(n)}, s_2^{(n)}, a_2^{(n)}, ...)$$
+    - Compute the return $$R(\tau)^{(n)} := \sum_{t} r_t^{(n)}$$
+  - Estimate the policy gradient:
+
+    $$\frac{1}{N}\sum_{n} R(\tau^{(n)}) \sum_t \nabla_{\theta} \log p_{\theta}(a_t^{(n)}| s_t^{(n)}) $$
+
+  - Take a gradient step 
+
+## Improved Policy Gradient Algorithms
+
+See [Improved policy gradient estimators](improved_policy_gradient_estimators.md).
+
+## Related
 
 - [Log derivative trick](../../random/log_derivative_trick.md)
