@@ -33,16 +33,42 @@ If we consider the causal structure of the agent interacting with its environmen
 affect rewards from previous timesteps. We can leverage this knowledge to rearrange and drop certain
 terms:
 
-$$
-\begin{equation}
-\frac{1}{N}\sum_{n} \sum_t \nabla_{\theta} \log p_{\theta}(a_t^{(n)}| s_t^{(n)}) \Big(\sum_{t'=t}^{t'=T} r_{t'}^{(n)} \Big)\\
+$$ \begin{equation}
+\frac{1}{N}\sum_{n} \sum_t \nabla_{\theta} \log p_{\theta}(a_t^{(n)}| s_t^{(n)}) \Big(\sum_{t'=t}^{t'=T} r_{t'}^{(n)} \Big)
 \end{equation}$$
 
 This policy gradient estimator will have lower variance because fewer 
 random variables are included in its sum.
 
-## Control Variate / Baseline
+## Control Variates (a.k.a.) Baselines
 
 One well-known family of approaches for improving an estimator is [control variates](../../statistics/variance_reduction.md#control-variates),
-more commonly known as _baselines_ in RL.
+more commonly known as _baselines_ in RL. The idea is that by subtracting a particular function from
+the return (or return to go), we can further reduce the variance in the policy gradient estimator.
+Let $$b: \mathcal{S} \rightarrow \mathbb{R}$$ be a function called the _baseline_, and suppose we subtract
+that baseline at each time step:
+
+$$ \begin{equation}
+\frac{1}{N}\sum_{n} \sum_t \nabla_{\theta} \log p_{\theta}(a_t^{(n)}| s_t^{(n)}) \Big(-b(s_t^{(n)}) + \sum_{t'=t}^{t'=T} r_{t'}^{(n)} \Big)
+\end{equation}$$
+
+To understand why we do this, I claim two facts:
+
+1. Subtracting the baseline introduces no bias i.e. the expectation with and without the baseline is equal
+2. Subtracting the baseline reduces the variance in the policy gradient estimator
+
+
+Claim 1: Subtracting the baseline introduces no bias. To show this, we could show that the expectation of the estimate
+with and without the baseline is equal, but it's easier (and equivalent) to show the expectation of the baseline
+is 0:
+
+$$
+\begin{align*}
+\frac{1}{N}\sum_{n} \sum_t \nabla_{\theta} \log p_{\theta}(a_t^{(n)}| s_t^{(n)}) \Big(b(s_t^{(n)}) \Big)
+\end{align*}
+$$
+
+
+
+
 
