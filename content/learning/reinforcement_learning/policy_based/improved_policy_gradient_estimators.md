@@ -27,7 +27,7 @@ $$R(\tau) := \sum_{t=1}^{T} r_t$$
 
 Plugging this into the estimate of the policy gradient yields:
 
-$$ \frac{1}{N}\sum_{n} \Big(\sum_{t'=1}^{t'=T} r_{t'} \Big) \sum_t \nabla_{\theta} \log p_{\theta}(a_t^{(n)}| s_t^{(n)}) $$
+$$ \frac{1}{N}\sum_{n} \Big(\sum_{t'=1}^{t'=T} r_{t'}^{(n)} \Big) \sum_t \nabla_{\theta} \log p_{\theta}(a_t^{(n)}| s_t^{(n)}) $$
 
 If we consider the causal structure of the agent interacting with its environment, actions cannot
 affect rewards from previous timesteps. We can leverage this knowledge to rearrange and drop certain
@@ -35,7 +35,7 @@ terms:
 
 $$
 \begin{equation}
-\frac{1}{N}\sum_{n} \sum_t \nabla_{\theta} \log p_{\theta}(a_t^{(n)}| s_t^{(n)}) \Big(\sum_{t'=t}^{t'=T} r_{t'} \Big)\\
+\frac{1}{N}\sum_{n} \sum_t \nabla_{\theta} \log p_{\theta}(a_t^{(n)}| s_t^{(n)}) \Big(\sum_{t'=t}^{t'=T} r_{t'}^{(n)} \Big)\\
 \end{equation}$$
 
 This policy gradient estimator will have lower variance because fewer 
