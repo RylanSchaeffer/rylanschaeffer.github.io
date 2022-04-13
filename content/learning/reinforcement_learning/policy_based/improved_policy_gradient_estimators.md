@@ -5,11 +5,10 @@ provides a Monte Carlo gradient estimator that can be used for directly learning
 The policy gradient theorem states that under a policy with parameters $$\theta$$, the
 gradient of the expected return $$R(\tau)$$ (where $$\tau := s_1, a_1, r_1, s_2, ...$$ is a trjaectory)
 with respect to $$\theta$$ is:
+
 $$
-\begin{equation}
 \nabla_{\theta} \mathbb{E}_{\tau \sim p_{\theta}}[R(\tau)]
 = \mathbb{E}_{\tau \sim p_{\theta}} \Bigg[ R(\tau) \nabla_{\theta}  \sum_t \nabla_{\theta} \log p_{\theta}(a_t | s_t) \Bigg]
-\end{equation}
 $$
 
 In practice, because the distribution over trajectories is almost never known, we approximate the
@@ -39,12 +38,11 @@ $$
 \frac{1}{N}\sum_{n} \sum_t \nabla_{\theta} \log p_{\theta}(a_t^{(n)}| s_t^{(n)}) \Big(\sum_{t'=t}^{t'=T} r_{t'} \Big)\\
 \end{equation}$$
 
-This policy gradient estimator will have lower variance because random variables are included in its
-sum.
+This policy gradient estimator will have lower variance because fewer 
+random variables are included in its sum.
 
 ## Control Variate / Baseline
 
-One well-known family of approaches for improving an estimator is [reducing the variance of the
-estimator](../../statistics/variance_reduction.md). There are a couple of techniques to accomplish
-this.
+One well-known family of approaches for improving an estimator is [control variates](../../statistics/variance_reduction.md#control-variates),
+more commonly known as _baselines_ in RL.
 
