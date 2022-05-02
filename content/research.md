@@ -1,8 +1,13 @@
 # Research
 
 ## Under Review
-- _Schaeffer_ et al. Streaming Inference for Infinite Latent Feature Models. _ICML 2021_.
+- _Schaeffer_ et al. Streaming Inference for Infinite Latent Feature Models. _ICML 2022_.
 
+- _Schaeffer_, Liu, Du, Linderman, Fiete. Streaming Inference for Infinite Non-Stationary Clustering.
+  _CoLLAs 2022_.
+
+- _Schaeffer_, et al. No Free Lunch from Deep Learning in Neuroscience: A Case Study through Models 
+of the Entorhinal-Hippocampal Circuit. _NeurIPS 2022_.
 
 
 ## Accepted
@@ -10,7 +15,7 @@
 - _Schaeffer_, Liu, Du, Linderman, Fiete. Streaming Inference for Infinite Non-Stationary Clustering.
   _ICLR 2022 Workshop: Agent Learning in Open Endedness_.
 
-- *Schaeffer*. [An Algorithmic Theory of Metacognition in Minds and Machines.](research/2021_neurips_workshop_metacognition/main.html) 
+- _Schaeffer_. [An Algorithmic Theory of Metacognition in Minds and Machines.](research/2021_neurips_workshop_metacognition/main.html) 
   _NeurIPS 2021 Workshop: Metacognition in the Age of AI_.
 
 - *Schaeffer*, et al. Fiete, IBL. [Neural population dynamics for hierarchical inference in mice performing 
@@ -26,7 +31,6 @@ the International Brain Lab task.](research/2021_sfn_ibl/main.html) _Society for
 
 ## In Preparation
 
-- Schaeffer et al. Streaming Inference for Infinite Non-stationary Feature Models. 2022.
 - Schaeffer et al. Brain-wide population codes for hierarchical inference in mice. 2022.
 - Schaeffer et al. Memory Engrams Perform Nonparametric Latent State Associative Learning. 2022.
   
