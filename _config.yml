@@ -1,4 +1,11 @@
-name: "Rylan Schaeffer's Blog"
+# Most of this was copied/adapted from Erik Zelikman's blog.
+# https://github.com/ezelikman/ezelikman.github.io
+
+# -----------------------------------------------------------------------------
+# Jekyll settings
+# -----------------------------------------------------------------------------
+
+name: "Rylan Schaeffer's Website"
 author:
   name: "Rylan Schaeffer"
   email: "rylanschaeffer@gmail.com"
