@@ -11,12 +11,12 @@ of the Entorhinal-Hippocampal Circuit. _NeurIPS 2022_.
 - _Schaeffer_, Liu, Du, Linderman, Fiete. Streaming Inference for Infinite Non-Stationary Clustering.
   __CoLLAs 2022__.
 
-- _Schaeffer_, Du, Liu, Fiete. [Streaming Inference for Infinite Latent Feature Models.](research/2022_icml_streaming_ibp) __ICML 2022__.
+- _Schaeffer_, Du, Liu, Fiete. [Streaming Inference for Infinite Latent Feature Models.](research/2022_icml_streaming_ibp/main.html) __ICML 2022__.
 
 - _Schaeffer_, Khona, Fiete. [No Free Lunch from Deep Learning in Neuroscience: A Case Study through Models
-  of the Entorhinal-Hippocampal Circuit.](research/2022_icml_ai4science_no_free_lunch) __ICML 2022 Workshop: AI for Science__.
+  of the Entorhinal-Hippocampal Circuit.](research/2022_icml_ai4science_no_free_lunch/main.html) __ICML 2022 Workshop: AI for Science__.
 
-- _Schaeffer_, Liu, Du, Linderman, Fiete. Streaming Inference for Infinite Non-Stationary Clustering.
+- _Schaeffer_, Liu, Du, Linderman, Fiete. [Streaming Inference for Infinite Non-Stationary Clustering.](research/2022_iclr_workshop_aloe/main.html)
   __ICLR 2022 Workshop: Agent Learning in Open Endedness__.
 
 - _Schaeffer_. [An Algorithmic Theory of Metacognition in Minds and Machines.](research/2021_neurips_workshop_metacognition/main.html) 
