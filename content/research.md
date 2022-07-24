@@ -14,7 +14,7 @@ of the Entorhinal-Hippocampal Circuit. _NeurIPS 2022_.
 - _Schaeffer_, Du, Liu, Fiete. Streaming Inference for Infinite Latent Feature Models. _ICML 2022_.
 
 - _Schaeffer_, Khona, Fiete. [No Free Lunch from Deep Learning in Neuroscience: A Case Study through Models
-  of the Entorhinal-Hippocampal Circuit.]() _ICML 2022 Workshop: AI for Science_.
+  of the Entorhinal-Hippocampal Circuit.](research/2022_icml_ai4science_no_free_lunch) _ICML 2022 Workshop: AI for Science_.
 
 - _Schaeffer_, Liu, Du, Linderman, Fiete. Streaming Inference for Infinite Non-Stationary Clustering.
   _ICLR 2022 Workshop: Agent Learning in Open Endedness_.
@@ -35,6 +35,7 @@ the International Brain Lab task.](research/2021_sfn_ibl/main.html) _Society for
 
 ## In Preparation
 
+- Schaeffer et al. Nonsense regressions in deep learning neuroscience. 2022.
 - Schaeffer et al. Brain-wide population codes for hierarchical inference in mice. 2022.
 - Schaeffer et al. Memory Engrams Perform Nonparametric Latent State Associative Learning. 2022.
   
@@ -43,8 +44,7 @@ the International Brain Lab task.](research/2021_sfn_ibl/main.html) _Society for
 
 - _Schaeffer_ et al. Streaming Inference for Infinite Latent Feature Models. _AISTATS 2021_.
 
-- _Schaeffer_ et al. Efficient
-  Streaming Inference for Infinite Latent Feature Models. _ICML 2021 Workshop on Theory
+- _Schaeffer_ et al. Efficient Streaming Inference for Infinite Latent Feature Models. _ICML 2021 Workshop on Theory
   and Foundation of Continual Learning_.
   - [Paper](research/2021_icml_streaming_ibp/paper.pdf)
 
