@@ -2,16 +2,19 @@
 
 ## Under Review
 
-- _Schaeffer_, Liu, Du, Linderman, Fiete. Streaming Inference for Infinite Non-Stationary Clustering.
-  _CoLLAs 2022_.
-
 - _Schaeffer_, et al. No Free Lunch from Deep Learning in Neuroscience: A Case Study through Models 
 of the Entorhinal-Hippocampal Circuit. _NeurIPS 2022_.
 
 
 ## Accepted
 
+- _Schaeffer_, Liu, Du, Linderman, Fiete. Streaming Inference for Infinite Non-Stationary Clustering.
+  _CoLLAs 2022_.
+
 - _Schaeffer_, Du, Liu, Fiete. Streaming Inference for Infinite Latent Feature Models. _ICML 2022_.
+
+- _Schaeffer_, Khona, Fiete. [No Free Lunch from Deep Learning in Neuroscience: A Case Study through Models
+  of the Entorhinal-Hippocampal Circuit.]() _ICML 2022 Workshop: AI for Science_.
 
 - _Schaeffer_, Liu, Du, Linderman, Fiete. Streaming Inference for Infinite Non-Stationary Clustering.
   _ICLR 2022 Workshop: Agent Learning in Open Endedness_.
