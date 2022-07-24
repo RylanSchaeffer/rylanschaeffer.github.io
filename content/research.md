@@ -9,29 +9,29 @@ of the Entorhinal-Hippocampal Circuit. _NeurIPS 2022_.
 ## Accepted
 
 - _Schaeffer_, Liu, Du, Linderman, Fiete. Streaming Inference for Infinite Non-Stationary Clustering.
-  _CoLLAs 2022_.
+  __CoLLAs 2022__.
 
-- _Schaeffer_, Du, Liu, Fiete. Streaming Inference for Infinite Latent Feature Models. _ICML 2022_.
+- _Schaeffer_, Du, Liu, Fiete. [Streaming Inference for Infinite Latent Feature Models.](research/2022_icml_streaming_ibp) __ICML 2022__.
 
 - _Schaeffer_, Khona, Fiete. [No Free Lunch from Deep Learning in Neuroscience: A Case Study through Models
-  of the Entorhinal-Hippocampal Circuit.](research/2022_icml_ai4science_no_free_lunch) _ICML 2022 Workshop: AI for Science_.
+  of the Entorhinal-Hippocampal Circuit.](research/2022_icml_ai4science_no_free_lunch) __ICML 2022 Workshop: AI for Science__.
 
 - _Schaeffer_, Liu, Du, Linderman, Fiete. Streaming Inference for Infinite Non-Stationary Clustering.
-  _ICLR 2022 Workshop: Agent Learning in Open Endedness_.
+  __ICLR 2022 Workshop: Agent Learning in Open Endedness__.
 
 - _Schaeffer_. [An Algorithmic Theory of Metacognition in Minds and Machines.](research/2021_neurips_workshop_metacognition/main.html) 
-  _NeurIPS 2021 Workshop: Metacognition in the Age of AI_.
+  __NeurIPS 2021 Workshop: Metacognition in the Age of AI__.
 
 - *Schaeffer*, et al. Fiete, IBL. [Neural population dynamics for hierarchical inference in mice performing 
-the International Brain Lab task.](research/2021_sfn_ibl/main.html) _Society for Neuroscience 2021_.
+the International Brain Lab task.](research/2021_sfn_ibl/main.html) __Society for Neuroscience 2021__.
   
-- *Schaeffer*, Bordelon, Khona, Pan, Fiete. [Efficient Online Inference for Nonparametric Mixture Models.](research/2021_uai_streaming_crp/main.html) _UAI 2021_.
+- *Schaeffer*, Bordelon, Khona, Pan, Fiete. [Efficient Online Inference for Nonparametric Mixture Models.](research/2021_uai_streaming_crp/main.html) __UAI 2021__.
 
 - *Schaeffer*, Shaham, Kreiman, Sompolinsky. [Neural network model of amygdalar memory engram formation 
-  and function.](research/2021_cosyne_amygdalar_engram/main.html) _COSYNE 2021_.
+  and function.](research/2021_cosyne_amygdalar_engram/main.html) __COSYNE 2021__.
 
 - *Schaeffer*, Khona, Meshulam, IBL, Fiete. [Reverse-engineering recurrent neural network solutions to a hierarchical inference task for 
-  mice.](research/2020_neurips_reverse_engineering/main.html) _NeurIPS 2020_.
+  mice.](research/2020_neurips_reverse_engineering/main.html) __NeurIPS 2020__.
 
 ## In Preparation
 
@@ -42,14 +42,14 @@ the International Brain Lab task.](research/2021_sfn_ibl/main.html) _Society for
 
 ## Rejected
 
-- _Schaeffer_ et al. Streaming Inference for Infinite Latent Feature Models. _AISTATS 2021_.
+- _Schaeffer_ et al. Streaming Inference for Infinite Latent Feature Models. __AISTATS 2021__.
 
-- _Schaeffer_ et al. Efficient Streaming Inference for Infinite Latent Feature Models. _ICML 2021 Workshop on Theory
-  and Foundation of Continual Learning_.
-  - [Paper](research/2021_icml_streaming_ibp/paper.pdf)
+- _Schaeffer_ et al. Efficient Streaming Inference for Infinite Latent Feature Models. __ICML 2021 Workshop on Theory
+  and Foundation of Continual Learning__.
+  - [Paper](research/2021_icml_workshop_streaming_ibp/paper.pdf)
 
 - _Schaeffer_ et al.
-  Mechanistic neural circuit models of hierarchical inference. _COSYNE 2021_.
+  Mechanistic neural circuit models of hierarchical inference. __COSYNE 2021__.
   - [2-Page Abstract](research/2021_cosyne_ibl_rnn/abstract.pdf) 
 
 ## Abandoned
