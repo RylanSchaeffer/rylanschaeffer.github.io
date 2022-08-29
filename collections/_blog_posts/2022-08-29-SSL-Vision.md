@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Cheatsheet: Self-Supervised Learning for Vision
+title: Cheatsheet - Self-Supervised Learning for Vision
 author: Rylan Schaeffer
 date: 2022-08-29
 tags: machine-learning self-supervised-learning vision
