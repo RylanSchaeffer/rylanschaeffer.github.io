@@ -7,10 +7,10 @@ tags: machine-learning self-supervised-learning vision
 ---
 
 | Method | Latent Dim | Batch Size | Optimizer | Learning Rate | Weight Decay | Scheduler                   | Epochs | 
-|--------|------------|------------|-----------|---------------|------------|-----------------------------|--------|
-| SimCLR | 128        | 4096       | LARS      | 4.8           | 1e-6       | Linear Warmup, Cosine Decay | 100    |
-| TiCo   | 256        | 4096       | LARS      | 3.2           | 1.5e-6     | Linear Warmup, Cosine Decay | 1000   |
-| VICReg | 8192       | 2048       | LARS      | 1.6           | 1e-6       | Linear Warmup, Cosine Decay | 1000   |
+|--------|------------|------------|-----------|---------------|--------------|-----------------------------|--------|
+| SimCLR | 128        | 4096       | LARS      | 4.8           | 1e-6         | Linear Warmup, Cosine Decay | 100    |
+| TiCo   | 256        | 4096       | LARS      | 3.2           | 1.5e-6       | Linear Warmup, Cosine Decay | 1000   |
+| VICReg | 8192       | 2048       | LARS      | 1.6           | 1e-6         | Linear Warmup, Cosine Decay | 1000   |
 
 
 Figure from VICReg (ICLR 2022):
@@ -109,7 +109,8 @@ $$\ell = \frac{1}{N - 1} \sum_n (z_n - \bar{z}_n) (z_n - \bar{z}_n)^T $$
 
 - Encourages off-diagonal elements of covariance to be close to 0
 - Decorrelation at embedding level had a decorrelation effect at the representation level
-
+- Standardization of embeddings hurts performance very slightly (0.2%), but removing standardization in the
+  hidden layers hurts performance (1.2%)
 - Results:
 
 ![](2022-08-29-SSL-Vision/vicreg_results.png)
