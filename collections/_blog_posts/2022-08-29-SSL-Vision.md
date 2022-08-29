@@ -1,16 +1,22 @@
 ---
 layout: post
-title: Self-Supervised Learning for Vision Cheatsheet
+title: Cheatsheet: Self-Supervised Learning for Vision
 author: Rylan Schaeffer
 date: 2022-08-29
 tags: machine-learning self-supervised-learning vision
 ---
 
-| Method | Latent Dim | Batch Size    | Optimizer | Learning Rate | Weight Decay | Scheduler                   | Epochs | 
-|--------|------------|---------------|-----------|---------------|--------------|-----------------------------|--------|
-| SimCLR | 128        | 4096        | LARS      | 4.8           | 1e-6         | Linear Warmup, Cosine Decay | 100    |
-| TiCo   | 256        | 4096        | LARS      | 3.2           | 1.5e-6       | Linear Warmup, Cosine Decay | 1000   |
+| Method | Latent Dim | Batch Size | Optimizer | Learning Rate | Weight Decay | Scheduler                   | Epochs | 
+|--------|------------|------------|-----------|---------------|------------|-----------------------------|--------|
+| SimCLR | 128        | 4096       | LARS      | 4.8           | 1e-6       | Linear Warmup, Cosine Decay | 100    |
+| TiCo   | 256        | 4096       | LARS      | 3.2           | 1.5e-6     | Linear Warmup, Cosine Decay | 1000   |
+| VICReg | 8192       | 2048       | LARS      | 1.6           | 1e-6       | Linear Warmup, Cosine Decay | 1000   |
 
+
+Figure from VICReg (ICLR 2022):
+
+
+![](2022-08-29-SSL-Vision/all_from_vicreg_paper.png)
 
 ## CPC (Arxiv 2018)
 
@@ -52,6 +58,13 @@ $$\ell_{i, j} = -\log \frac{\exp (sim(z_i, z_j) / \tau)}{\sum_k^{2N} \mathbb{1} 
 
 - No negative sample pairs, no large batches, no momentum encoders
 
+## W-MSE
+
+- Whitening Mean-Squared Error
+
+- Criticism: matrix inversion is slow and possibly numerically unstable
+- Criticism: Whitening operator is estimated over multiple batches, and may have high variance
+
 ## TiCo (Rejected at NeurIPS 2021)
 
 ![](2022-08-29-SSL-Vision/tico.png)
@@ -74,5 +87,32 @@ $$ \ell = -\frac{1}{N} \sum_n z_n^{'} \cdot z_n^{''} + \frac{\rho}{N^2} \sum_{ij
 ![](2022-08-29-SSL-Vision/tico_results.png)
 
 ## VICReg (ICLR 2022)
+
+![](2022-08-29-SSL-Vision/vicreg.png)
+
+- VICReg = Variance-Invariance-Covariance Regularization
+- Avoids collapse by (1) maintaining variance of each embedding dimension above a threshold and (2) decorrelating each pair of variables
+- Invariance loss:
+
+$$\ell = \frac{1}{N} \sum_n ||z_n^{'} - z_{n}^{''}||^2$$
+
+- Variance regularization loss:
+
+$$\ell = \frac{1}{D} \sum_d \max(0, \gamma - S(z_d, \epsilon)) $$
+
+where $S(x, \epsilon) = \sqrt{\mathbb{V}[x] + \epsilon}$
+
+- Using the standard deviation, not the variance, is critical for ensuring the gradient isn't too small
+- Covariance regularization loss:
+
+$$\ell = \frac{1}{N - 1} \sum_n (z_n - \bar{z}_n) (z_n - \bar{z}_n)^T $$
+
+- Encourages off-diagonal elements of covariance to be close to 0
+- Decorrelation at embedding level had a decorrelation effect at the representation level
+
+- Results:
+
+![](2022-08-29-SSL-Vision/vicreg_results.png)
+
 
 ## Barlow Twins
