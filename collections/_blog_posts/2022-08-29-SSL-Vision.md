@@ -8,15 +8,14 @@ tags: machine-learning self-supervised-learning vision
 
 | Method | Latent Dim | Batch Size    | Optimizer | Learning Rate | Weight Decay | Scheduler                   | Epochs | 
 |--------|------------|---------------|-----------|---------------|--------------|-----------------------------|--------|
-| SimCLR | 128        | 4096        | LARS      | 4.8           | 10^-6        | Linear Warmup, Cosine Decay | 100    |
+| SimCLR | 128        | 4096        | LARS      | 4.8           | 1e-6         | Linear Warmup, Cosine Decay | 100    |
 
 
+## AMDIM (NeurIPS 2019)
 
-
-## MoCo 
+## MoCo (CVPR 2020)
 
 ## SimCLR (ICML 2020)
-### Chen, Kornblith, Norouzi, Hinton
 
 ![](2022-08-29-SSL-Vision/simclr.png)
 
@@ -34,3 +33,15 @@ $$l_{i, j} = -\log \frac{\exp (sim(z_i, z_j) / \tau)}{\sum_k^{2N} \mathbb{1} \ex
 
 - Paper claims that using $$h_i$$ rather than $$z_i$$ is better, but I don't see in what sense, or where the evidence is?
 - NY-Xent loss outperforms logistic loss and margin loss
+
+## SwAV (NeurIPS 2020)
+
+## BYOL (NeurIPS 2020)
+
+## SimSiam (CVPR 2021)
+
+- No negative sample pairs, no large batches, no momentum encoders
+
+## TiCo (Rejected at NeurIPS 2021)
+
+## VICReg (ICLR 2022)
