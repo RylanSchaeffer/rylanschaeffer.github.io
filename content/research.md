@@ -3,7 +3,7 @@
 ## Under Review
 
 - _Schaeffer_, et al. No Free Lunch from Deep Learning in Neuroscience: A Case Study through Models 
-of the Entorhinal-Hippocampal Circuit. _NeurIPS 2022_.
+of the Entorhinal-Hippocampal Circuit. __NeurIPS 2022__.
 
 
 ## Accepted
@@ -11,10 +11,11 @@ of the Entorhinal-Hippocampal Circuit. _NeurIPS 2022_.
 - _Schaeffer_, Liu, Du, Linderman, Fiete. Streaming Inference for Infinite Non-Stationary Clustering.
   __CoLLAs 2022__.
 
-- _Schaeffer_, Du, Liu, Fiete. [Streaming Inference for Infinite Latent Feature Models.](research/2022_icml_streaming_ibp/main.html) __ICML 2022__.
+- _Schaeffer_, Du, Liu, Fiete. [Streaming Inference for Infinite Latent 
+Feature Models.](research/2022_icml_streaming_ibp/main.html) __ICML 2022__.
 
-- _Schaeffer_, Khona, Fiete. [No Free Lunch from Deep Learning in Neuroscience: A Case Study through Models
-  of the Entorhinal-Hippocampal Circuit.](research/2022_icml_ai4science_no_free_lunch/main.html) __ICML 2022 Workshop: AI for Science__.
+- _Schaeffer_, Khona, Fiete. [No Free Lunch from Deep Learning in Neuroscience: 
+A Case Study through Models of the Entorhinal-Hippocampal Circuit.](research/2022_icml_ai4science_no_free_lunch/main.html) __ICML 2022 Workshop: AI for Science__.
 
 - _Schaeffer_, Liu, Du, Linderman, Fiete. [Streaming Inference for Infinite Non-Stationary Clustering.](research/2022_iclr_workshop_aloe/main.html)
   __ICLR 2022 Workshop: Agent Learning in Open Endedness__.

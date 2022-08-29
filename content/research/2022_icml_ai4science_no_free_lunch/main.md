@@ -1,5 +1,4 @@
-# No Free Lunch from Deep Learning in Neuroscience:
-## A Case Study through Models of the Entorhinal-Hippocampal Circuit
+# No Free Lunch from Deep Learning in Neuroscience: A Case Study through Models of the Entorhinal-Hippocampal Circuit
 
 Authors: **Rylan Schaeffer**, Mikail Khona, Ila Rani Fiete
 
