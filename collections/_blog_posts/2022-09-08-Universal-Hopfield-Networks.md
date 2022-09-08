@@ -2,7 +2,7 @@
 layout: post
 title: Paper Summary - "Universal Hopfield Networks" 
 author: Rylan Schaeffer
-date: 2022-09-09
+date: 2022-09-08
 tags: machine-learning neuro-ai memory
 ---
 
@@ -27,7 +27,7 @@ The below are my notes on Millidge et al. 2022's
   - Separation: The similarity scores are separated
   - Projection: The similarity scores are used to determine what information to retrieve
 
-![](2022-09-09-Universal-Hopfield-Networks/img.png)
+![](2022-09-08-Universal-Hopfield-Networks/img.png)
 
 ### Hopfield Networks
 
@@ -65,4 +65,4 @@ $$z = V softmax(K q) $$
 Using the dot product for similarity performs more poorly than using
  a Manhattan or Euclidean distance.  
 
-![](2022-09-09-Universal-Hopfield-Networks/img_1.png)
+![](2022-09-08-Universal-Hopfield-Networks/img_1.png)
