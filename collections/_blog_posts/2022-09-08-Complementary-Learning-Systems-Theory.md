@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "Complementary Learning Systems Theory Updated" 
+title: Paper Summary - "Complementary Learning Systems Theory Updated" 
 author: Rylan Schaeffer
 date: 2022-09-08
-tags: machine-learning neuro-ai neuroscience 
+tags: machine-learning neuro-ai neuroscience memory
 ---
 
 The below are my notes on Kumaran, Hassabis and McClelland's paper
