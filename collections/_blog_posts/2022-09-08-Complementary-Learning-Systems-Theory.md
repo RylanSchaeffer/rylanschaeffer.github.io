@@ -48,6 +48,16 @@ Systems Theory Updated](https://web.stanford.edu/~jlmcc/papers/KumaranHassabisMc
 - Replay is biased towards rewarding events, suggesting different experiences should be 
   preferentially weighted
 
-## Evidence Against Complementary Learning Systems 
+## Systems-Level Consolidation vs Within-System Consolidation
 
-- 
+- Systems-Level Consolidation refers to integration of knowledge into neocortical circuits
+- Within-System Consolidation refers to stabilization of recently formed memories within the hippocampus
+- Neocortex might mediate both systems-level consolidation and within-system consolidation
+
+## Important Modifications to Complementary Learning Systems Theory
+
+- How quickly new information is integrated in to the neocortical system depends
+  on how consistent that information with the neocortex's previous information
+  - Catastrophic forgetting isn't as much an issue if the new info is consistent with previous info
+  - Neocortex doesn't necessarily move slowly; rather, how quickly it learns depends on previous knowledge
+    and new knowledge.
