@@ -1,15 +1,13 @@
 ---
 layout: post
-title: Notes: Complementary Learning Systems Theory Updated 
+title: "Complementary Learning Systems Theory Updated" 
 author: Rylan Schaeffer
 date: 2022-09-08
 tags: machine-learning neuro-ai neuroscience 
 ---
 
 The below are my notes on Kumaran, Hassabis and McClelland's paper
-[What Learning Systems do
-Intelligent Agents Need?
-Complementary Learning
+[What Learning Systems do Intelligent Agents Need? Complementary Learning
 Systems Theory Updated](https://web.stanford.edu/~jlmcc/papers/KumaranHassabisMcC16CLSUpdate.pdf).
 
 ## Summary
