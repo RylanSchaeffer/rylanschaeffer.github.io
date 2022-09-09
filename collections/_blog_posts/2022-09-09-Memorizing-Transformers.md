@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Paper Summary - "Memorizing Transformers" 
+title: Paper Summary - "Memorizing Transformers"
 author: Rylan Schaeffer
 date: 2022-09-09
 tags: machine-learning neuro-ai memory
