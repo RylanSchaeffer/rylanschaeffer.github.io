@@ -37,9 +37,21 @@ The solution is given by the OLS estimator:
 $$\hat{\theta} = (X^T X)^+ X^T X \theta^*$$
 
 If $$N > D$$, then $$(X^T X)$$ is invertible w.h.p, and the excess error will be 0. But 
-if $$N \leq D$$, then the excess risk is:
+if $$N \leq D$$, then the expected excess risk is:
 
+$$
+\begin{align*}
+\mathbb{E}_{x, X} L(\hat{h})
+&= \mathbb{E}_{x, X} \langle x, I - (X^T X)^+ (X^T X) \theta^* \rangle\\
+&= \mathbb{E}_{X} \lvert \lvert (I - (X^T X)^+ (X^T X)) \theta^* \lvert \lvert_2^2\\
+&= (\theta^*)^T \mathbb{E}_{X} [(I - (X^T X)^+ (X^T X))] \theta^*\\
+&= (1 - \frac{N}{D}) \lvert \lvert \theta^* \lvert \lvert_2^2
+\end{align*}
+$$
 
+We actually don't need to take the expectation over the training data $$X$$. Why?
+The hat matrix $$(X^T X)^+ (X^T X)$$ will always have $$R$$ ones and $$D-R$$ zeros
+by virtue of being a [projection matrix](../machine_learning/supervised/leverage.md#hat-matrix).
 
 ## Properties
 
