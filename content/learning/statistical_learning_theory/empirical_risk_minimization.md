@@ -27,7 +27,9 @@ the empirical risk minimizer go to 0 as the number of samples $$N \rightarrow \i
 
 $$E(\hat{h}^{(N)}) = f(N)$$
 
-where $$f(N) \rightarrow 0$$ as $$N \rightarrow \infty$$.
+where $$f(N) \rightarrow 0$$ as $$N \rightarrow \infty$$. Equivalently, when does
+
+$$\lim_{N \rightarrow \infty} L(\hat{h}^{(N)}) = \argmin_{h \in \mathcal{H}} L(\theta)$$
 
 #### Example: Noiseless Linear Regression with Isotropic Gaussian Covariates
 
@@ -37,7 +39,7 @@ The solution is given by the OLS estimator:
 $$\hat{\theta} = (X^T X)^+ X^T X \theta^*$$
 
 If $$N > D$$, then $$(X^T X)$$ is invertible w.h.p, and the excess error will be 0. But 
-if $$N \leq D$$, then the expected excess risk is:
+if $$N \leq D$$, then the expected loss is:
 
 $$
 \begin{align*}
@@ -49,7 +51,7 @@ $$
 \end{align*}
 $$
 
-We actually don't need to take the expectation over the training data $$X$$. Why?
+And thus the excess risk will go to $$0$$ as $$N \rightarrow D$$. We actually don't need to take the expectation over the training data $$X$$. Why?
 The hat matrix $$(X^T X)^+ (X^T X)$$ will always have $$R$$ ones and $$D-R$$ zeros
 by virtue of being a [projection matrix](../machine_learning/supervised/leverage.md#hat-matrix).
 
