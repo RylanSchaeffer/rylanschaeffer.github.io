@@ -6,6 +6,9 @@ date: 2020-10-14
 tags: applications Stanford 2020
 ---
 
+**Disclaimer:** I did not receive an interview for the Knight-Hennessy Scholars program,
+so reading my application may not be a good use of your time.
+
 I submitted my application to Stanford's [Knight-Hennessy Scholars program](knight-hennessy.stanford.edu/)
 today. The application was truly a group effort - if you helped me and are reading this,
 thank you so much - and I had so much fun constructing my answers to the prompts, I wanted to share
