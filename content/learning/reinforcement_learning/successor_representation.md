@@ -18,7 +18,7 @@ under the policy $$\pi$$.
 
 Recall that the state-value function is defined as the expected sum of future rewards:
 
-$$V(s_t) := \mathbb{E}_{\pi}[\sum_{k=0}^{k=\infinity} \gamma^{k-1} r(s_{t + k}) \lvert S_t = s_t]$$
+$$V^{\pi}(s_t) := \mathbb{E}_{\pi}[\sum_{k=0}^{k=\infty} \gamma^{k-1} r(s_{t + k}) \lvert S_t = s_t]$$
 
 The distribution of 
 
@@ -38,4 +38,4 @@ One can learn the successor representation from samples with TD-learning. Let $$
 denote the SR after the $$n$$th update and let $$\eta$$ denote the learning rate. The Bellman
 update is:
 
-$$M_{(n+1)}^{\pi} \leftarrow M_{(n)}^{\pi} + \eta (\mathbb{I}() + \gamma M_{(n)}^{\pi} - M_{(n)}^{\pi}) 
+$$M_{(n+1)}^{\pi} \leftarrow M_{(n)}^{\pi} + \eta (\mathbb{I}() + \gamma M_{(n)}^{\pi} - M_{(n)}^{\pi})$$ 
