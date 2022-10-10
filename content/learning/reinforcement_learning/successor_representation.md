@@ -1,11 +1,11 @@
 # Successor Representation
 
-Dayan (1992) proposed an alternative formulation of the state value function $$V_{\pi}(s)$$
+Dayan (1992) proposed an alternative formulation of the state value function $$V^{\pi}(s)$$
 that enables rapidly adapting if reward probabilities or transition probabilities change.
 The idea is to separate the state value function into a product of rewards and future 
 discounted state occupancies, which Dayan termed the __successor representation (SR)__  and 
 which I denote $$M$$. Then, if either the rewards or the transitions change, recomputing 
-$$V_{\pi}(s)$$ is simple.
+$$V^{\pi}(s)$$ is simple.
 
 The successor representation $$M$$ can also be learnt using temporal difference-like algorithms.
 
@@ -20,17 +20,18 @@ Recall that the state-value function is defined as the expected sum of future re
 
 $$V^{\pi}(s_t) := \mathbb{E}_{\pi}[\sum_{k=0}^{k=\infty} \gamma^{k-1} r(s_{t + k}) \lvert S_t = s_t]$$
 
-The distribution of 
+If the state space $$\mathcal{X}$$ is discrete and the rewards are deterministic, 
+then the state value function can be written as:
 
-If the state space $$\mathcal{X}$$ is discrete, then the successor representation can be written
-as 
+$$V^{\pi}(s_t) = r^T \mathbb{E}_{\pi}[\sum_{k=0} (\gamma T^{\pi})^{k}] s$$
 
-$$ S = (I - \gamma T)^{-1} p_0$$
 
-The successor representation is a [Neumann series](../series/geometric.md#neumann-series)
+where $$r \in \mathbb{R}^{\lvert S \lvert}$$ is a vector of the reward in each state. That
+matrix, the future sum of discounted state occupancies, is called the success representation.
+It is a [Neumann series](../series/geometric.md#neumann-series)
 and can therefore be expressed as:
 
-$$M^{\pi} := \sum_{k=0}^{\infty} (\gamma T^{\pi})^k = (I - \gamma T^{\pi})^{-1}$$
+$$S^{\pi} := \sum_{k=0}^{\infty} (\gamma T^{\pi})^k = (I - \gamma T^{\pi})^{-1}$$
 
 ## Learning the Successor Representation
 
