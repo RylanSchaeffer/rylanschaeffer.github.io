@@ -2,11 +2,15 @@
 
 ## Under Review
 
-- _Schaeffer_, et al. No Free Lunch from Deep Learning in Neuroscience: A Case Study through Models 
-of the Entorhinal-Hippocampal Circuit. __NeurIPS 2022__.
 
 
 ## Accepted
+
+- _Schaeffer_*, _Khona_*, Fiete. Self-Supervised Learning of Efficient Algebraic Codes Generates Grid Cells.
+  __NeurIPS 2022 Workshops: SSL__.
+
+- _Schaeffer_, Khona, Fiete. No Free Lunch from Deep Learning in Neuroscience: A Case Study through Models
+  of the Entorhinal-Hippocampal Circuit. __NeurIPS 2022__.
 
 - _Schaeffer_, Liu, Du, Linderman, Fiete. Streaming Inference for Infinite Non-Stationary Clustering.
   __CoLLAs 2022__.
