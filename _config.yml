@@ -15,7 +15,7 @@ gems:
 
 title: Rylan Schaeffer
 description: "'We do it because we are compelled.'"
-#logo: index/profile_pic.jpg
+logo: index/profile_pic.jpg
 show_downloads: false
 google_analytics: UA-94033137-1
 theme: jekyll-theme-minimal
