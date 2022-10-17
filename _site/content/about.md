@@ -38,4 +38,5 @@ I also served as CFO and COO of [ASUCD](https://asucd.ucdavis.edu/) (overseeing 
 million annual operating budget and 20+ units) and as the undergraduate representative on the UC Davis College
 of Engineering Dean Recruitment Advisory Committee.
                 
-- won the [national Congressional debate tournament](https://ci.uky.edu/UKDebate/results-history) in high school.
+- 2011: I won the [national Congressional debate tournament](https://ci.uky.edu/UKDebate/results-history) in high school.
+- 

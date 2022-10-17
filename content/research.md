@@ -6,7 +6,7 @@
 
 ## Accepted
 
-- _Schaeffer_*, _Khona_*, Fiete. Self-Supervised Learning of Efficient Algebraic Codes Generates Grid Cells.
+- _Schaeffer_ \*, _Khona_ \*, Fiete. Self-Supervised Learning of Efficient Algebraic Codes Generates Grid Cells.
   __NeurIPS 2022 Workshops: SSL__.
 
 - _Schaeffer_, Khona, Fiete. No Free Lunch from Deep Learning in Neuroscience: A Case Study through Models
