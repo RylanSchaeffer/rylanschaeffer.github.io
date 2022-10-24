@@ -108,7 +108,7 @@ By definition of $$\delta_i$$, $$\geq 2^{i}$$ points live in $$B(x, \delta_i)$$.
 the good situation can be decomposed into the product of the probability that $$B(x, \delta_i)$$ 
 intersects with $$S$$ and the probability that $$B(y, \delta_i)$$ does not intersect with $$S$$:
 
-$$\mathbb{P}[\text{good picture}] = \mathbb{P}[B(x) \cdown S] \mathbb{P}[B(y) \not \cdown S] \geq (1 - (1 - 2^{-i}))^{2_i} (1 - 2^{-i})^{2i+1} \geq 2^{-5}$$
+$$\mathbb{P}[\text{good picture}] = \mathbb{P}[B(x) \cap S] \mathbb{P}[B(y) \not \cap S] \geq (1 - (1 - 2^{-i}))^{2_i} (1 - 2^{-i})^{2i+1} \geq 2^{-5}$$
 
 Fix $$i$$. The probability that at least $$2^{-6}$$ of the $$S_{ij}$$ have the "nice" situation is
 
@@ -132,3 +132,23 @@ $$
 Recalling that $$k = c \log^2 n$$, we have
 
 $$||f(x) - f(y) ||_1 \geq \frac{k}{3 2^t \log n} d(x, y)$$
+
+
+## Johnson-Lindenstrauss Lemma
+
+Bourgain's Embedding says we can embed _any_ metric space into $$\ell_1$$ with distortion $$O(\log n)$$.
+One naturally asks next whether a better embedding is possible. The answer is no, but for more structured
+metric spaces, the answer is yes. The Johnson-Lindenstrauss (JL) Lemma tells us that if we have $$n$$
+points that live in an $$\ell_2$$ space of dimension $$d$$, then we can embed those points into dimension
+$$O(\frac{\log n}{\epsilon^2})$$ with distortion $$1 + \epsilon$$. Formally:
+
+**Theorem:** Given $$\epsilon \in (0, 1)$$ and a set $$X \subset \mathbb{R}^d $$ with $$|X| = n$$, there exist a linear
+map $$f: \mathbb{R}^d \rightarrow \mathbb{R}^m$$ where $$m = O(\frac{\log n}{\epsilon^2})$$ that embeds
+$$(X, d_2)$$ into $$(\mathbb{R}^m, d_2)$$ with distortion $$\leq 1 + \epsilon$$.
+
+Recall, distortion means that if the distance between any two points in the original space is $$\delta$$, 
+then in the new space, the distance is $$(1 \pm \epsilon)\delta$$.
+
+Proof: Let $$A \in \mathbb{R}^{m \times d}$$ be a matrix with entries chosen i.i.i. $$\mathcal{N}(0, 1/m)$$.
+Define $$f(x)= Ax$$. WLOG, because an isotropic Gaussian is rotationally symmetric, for any two $$x, y$$,
+ we can think of $$x - y = ||x - y||_2 e_1$$, where $$e_1$$ is the first canonical basis vector.
