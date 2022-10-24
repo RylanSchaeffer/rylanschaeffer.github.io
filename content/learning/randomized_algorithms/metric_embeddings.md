@@ -89,4 +89,46 @@ $$||f(x) - f(y) ||_1 = \sum_{ij} |d(x, S_{ij}) - d(y, S_{ij}) | \leq k d(x, y) $
 
 The proof is via the triangle inequality. Because the metric $$d$$ must obey the triangle inequality,
 the distance from $$x$$ to the nearest element of $$S$$ must be less than the distance from
-$$x$$ to $$y$$, then from $$y$$ to the point in $$S$$ nearest to $$x$$.
+$$x$$ to $$y$$, then from $$y$$ to the point in $$S$$ nearest to $$x$$. Turning next to the
+lower bound, we want to show:
+
+$$\frac{k}{b \log n} d(x, y) \leq ||f(x) - f(y)||_1$$
+
+Recall, in our good situation, $$|d(x, S) - d(y, S)| \geq \Delta$$. We now choose a bunch of 
+different $$\delta$$ and show that the good situation occurs with decent probability. Fix $$x, y \in X$$.
+Choose $$0 < \delta_1 < \delta_2 < ... $$ such that $$\delta_i$$ is the smallest value such that
+$$B(x; \delta_i) := \{ z \in X : d(x, z) \leq \delta \}$$ and $$B(y; \delta_i)$$ both have $$2^i$$ points in them.
+We keep choosing $$\delta_i$$ until $$\delta_i < d(x, y) / 3$$. Let $$\delta_{i+1} = d(x, y) / 3$$.
+There are two subclaims: $$|d(x, S) - d(y, S)| \geq \delta_{i+1} - \delta_i$$, and that this is decently likely
+to produce the nice picture above.
+
+Why is the nice situation decently likely? By definition of $$\delta_{i+1}$$, either $$<2^{i+1}$$ points are
+in $$B(x, \delta_{i+1})$$ or the same for $$B(y, \delta_{i+1})$$. WLOG, assume this occurs for $$y$$.
+By definition of $$\delta_i$$, $$\geq 2^{i}$$ points live in $$B(x, \delta_i)$$. Since $$\mathbb{P}[x \in S_{ij}] = 2^{-i} \forall x \in X$$
+the good situation can be decomposed into the product of the probability that $$B(x, \delta_i)$$ 
+intersects with $$S$$ and the probability that $$B(y, \delta_i)$$ does not intersect with $$S$$:
+
+$$\mathbb{P}[\text{good picture}] = \mathbb{P}[B(x) \cdown S] \mathbb{P}[B(y) \not \cdown S] \geq (1 - (1 - 2^{-i}))^{2_i} (1 - 2^{-i})^{2i+1} \geq 2^{-5}$$
+
+Fix $$i$$. The probability that at least $$2^{-6}$$ of the $$S_{ij}$$ have the "nice" situation is
+
+$$1 - \mathbb{P}[\sum_j^{c \log n} \mathbb{I}[nice] \leq \frac{1}{2} \frac{c \log n}{2^5}] \geq 1 - \exp(-\frac{c log n}{8 2^5}) \geq 1 - n^{-3}$$
+
+if we choose $$c \geq 3 * 2^8$$. Putting it together, we showed that when our nice situation 
+occurs, $$|d(x, S) - d(y, S)| \geq \delta_{i+1} - \delta_i$$, and that for each $$i$$, 
+the probability that at least $$d \log n / 2^6$$ of the $$S_{ij}$$ have this nice situation
+is at least $$1 - n^{-3}$$. Then, by a union bound over all $$n^2$$ pairs $$(x, y)$$ and $$\leq \log n$$
+choices of $$i$$, with high probability, $$\forall i, x, y$$, $$\geq c \log n / 2^6 $$ of the $$S_{ij}$$
+have $$|d(x, S) - d(y, S)| \geq \delta_{i+1} - \delta_i$$, meaning:
+
+$$
+\begin{align*}
+||f(x) - f(y) ||_1 \geq \sum_{ij} |d(x, S_{ij}) - d(y, S_{ij})| \geq \sum_{ij} (\frac{c \log n}{2^6}) (\delta_{i+1} - \delta_i)\\
+&= \frac{c \log n}{2^6} \delta_{t+1}\\
+&= \frac{c \log n}{3 2^6} d(x, y)\\
+\end{align*}
+$$
+
+Recalling that $$k = c \log^2 n$$, we have
+
+$$||f(x) - f(y) ||_1 \geq \frac{k}{3 2^t \log n} d(x, y)$$
