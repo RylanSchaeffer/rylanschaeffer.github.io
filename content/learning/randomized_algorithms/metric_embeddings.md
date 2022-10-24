@@ -87,5 +87,6 @@ If that were true, then:
 
 $$||f(x) - f(y) ||_1 = \sum_{ij} |d(x, S_{ij}) - d(y, S_{ij}) | \leq k d(x, y) $$
 
-The proof is via the triangle inequality. Because the metric $$d$$ must obey the triangle inequality,  
-
+The proof is via the triangle inequality. Because the metric $$d$$ must obey the triangle inequality,
+the distance from $$x$$ to the nearest element of $$S$$ must be less than the distance from
+$$x$$ to $$y$$, then from $$y$$ to the point in $$S$$ nearest to $$x$$.
