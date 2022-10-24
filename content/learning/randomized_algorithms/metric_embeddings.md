@@ -12,6 +12,24 @@ is an isometric embedding iff $$\forall x, x' \in X$$:
 
 $$d_Y(f(x), f(x')) = d_X(x, x')$$
 
+Any finite metric space can always bee isometrically embedded into $$\ell_{\infty}$$.
+The embedding is as follows: Given $$(X, d)$$, with $$|X| = n$$, define $$f: X \rightarrow \mathbb{R}^n$$
+by
+
+$$f(x_i) := [d(x_1, x_i), d(x_2, x_i), ..., d(x_n, x_i)$$
+
+This is called a Frechet embedding, and has the property that $$d(x_, x_j) = d_{\infty}(f(x_i), f(x_j))$$.
+However, an isometric embedding to a target metric space doesn't always exist. For instance, a square graph (4 vertices) with edge
+weights 1 cannot be embedded into $$\ell_2$$. This raises the prospect of ""low distortion" embeddings.
+
+## Low Distortion Embeddings
+
+Given 2 metric spaces $$(X, d_X), (Y, d_Y)$$, a function $$f: X \rightarrow Y$$
+is an embedding of $$X into $$Y $$ with distortion $$\alpha$$ and scaling $$\beta$$ 
+if $$\forall x, x' \in X$$:
+
+$$\beta d_X(x, x') \leq d_Y(f(x), f(x')) \leq \alpha \beta d_X(x, x')$$
+
 ## Bourgain's Embedding
 
 Given any finite metric space $$(X, d)$$ with $$|X| = n$$, there exists an embedding of 
