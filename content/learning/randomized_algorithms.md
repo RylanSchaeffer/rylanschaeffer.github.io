@@ -25,11 +25,11 @@ Broadly, there are 2 families of randomized algorithms:
 
 ## Tools & Example Problems
 
-### Linearity of Expectation
-
 - [Colored Bipartite Graph]
 - [Empty Pigeonholes](randomized_algorithms/empty_pigeonholes.md)
-- [Coupon Collector Problem](randomized_algorithms/coupons_collector_problem.md) 
+- [Coupon Collector Problem](randomized_algorithms/coupons_collector_problem.md)
+- [Balls and Bins](randomized_algorithms/balls_and_bins.md)
+- 
 
 
 ## References

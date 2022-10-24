@@ -63,3 +63,47 @@ bound in an abstraction (recalling that abstraction means function definition). 
 
 To avoid collisions, we can always rename bound variables i.e. $$\lambda x.x$$ is the same as 
 $$lambda y.y$$. Renaming bound variables is called _alpha conversion_
+
+## How to create common programming constructs
+
+### Booleans
+
+How can we implement booleans? We need an encoding of True and False. Similar to our approach
+in the [SKI calculus](ski_calculus.md), let's define True as taking the first of two arguments
+and False as taking the second of two arguments.
+
+$$True := \lambda x.\lambda y.x$$
+$$False := \lambda x.\lambda y. y$$
+
+### Abstraction Algorithm
+
+In the [SKI calculus](ski_calculus.md#abstraction-algorithm), we saw how the abstraction
+algorithm works. The $$\lambda$$ calculus has a similar way to abstract. Suppose we want:
+$$ True x y $$ to evaluate to $$x$$. To abstract the left hand side (LHS), move the variables
+from the LHS to the RHS and wrap with $$\lambda$$:
+
+$$True := \lambda x. \lambda y. x$$
+
+Similarily for False:
+
+$$False := \lambda x. \lambda y. y$$
+
+### Pairs
+
+We want $$pair x y z$$ to become $$z x y $$. Abstracting pair yields:
+
+$$pair := \lambda x . \lambda y . \lambda z . z x y$$
+
+### Integers
+
+$$n$$ applies its first argument $$n$$ times to its second argument, meaning $$n f x$$ should
+be equal to $$f^n(x)$$. Abstracting:
+
+$$0 f x$$ should be reduced to $$x$$, and thus $$0 = \lambda f . \lambda x . x$$
+
+Succ (short for successor) should behave as $$succ n f x$$ is $$f ( n f x)$$; applying
+the abstraction algorithm yields $$succ := \lambda n . \lambda f . \lambda x . f (n f x).
+
+### Factorial
+
+
