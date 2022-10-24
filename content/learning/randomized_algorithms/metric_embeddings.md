@@ -48,4 +48,44 @@ $$d(x, S) = \min_{s \in S} d(x, s)$$
 
 ### Intuition for Bourgain's Embedding
 
+In order to show that an embedding is low-distortion, we need to show both that distances don't expand
+or contract by too much. Let's first consider expansion. Consider $$f(x) := d_S(x, S)$$ i.e.
+the distance from $$x$$ to the point in set $$S$$ nearest $$x$$. This distance has the property of being non-expanding:
+
+$$\forall x, y \in X, ||f_S(x) - f_S(y)|| \leq d(x, y)$$
+
+Thus, Bourgain's Embedding is non-expanding. Next, we argue that Bourgain's Embedding isn't too "shrinking" i.e. that
+$$|f_S(x) - f_S(y)| \geq \Delta$$. The argument is going to consist of two parts: First, we're going to assume a particular picture, and argue
+that under this particular picture, the embedding isn't too shrinking. Second, we're going to argue that
+this particular picture is highly likely.
+
+First, picture a ball around $$x$$ and another ball around $$y$$ with slightly different radii. Call the balls
+$$B_x := \{z \in X: d(z, x) \leq \delta \}$$ and $$B_y := \{z \in X: d(z, x) \leq \delta + \Delta\}$$.
+Imagine that the set $$S$$ intersects with $$B_x$$ but not with $$B_y$$. In this picture, we know that $$d(x, S) \leq \delta$$,
+since $$S$$ intersects $$B_x$$, and we know that $$d(y, S) > \delta + \Delta$$, since $$B_y$$ does not intersect
+$$S$$. Consequently:
+
+$$d(y, S)- d(x, S)\geq \delta + \Delta - \delta = \Delta$$
+
+This means that the original distances don't shrink by more than $$\Delta$$. By constructing Bourgain's Embedding 
+in the above manner, this picture will turn out to be likely with high probability. The inner loop
+over $$j$$ tries to find this good picture, while the outer loop tries to find the right density for $$S$$, 
+which depends on $$d(x,y)$$ in the data.
+
+### Formal Proof for Bourgain's Embedding
+
+**Bourgain's Theorem**: Let $$k = c \log^2 n$$ be the number of sets $$S_{ij}$$. Let $$f$$ be Bourgain's embedding.
+There exists a constant $$b$$ such that $$\forall x, y \in X$$:
+
+$$\frac{k}{b \log n} d(x, y) \leq |f(x), f(y)|_1 \leq k d(x, y)$$
+
+Proof: Starting with the upper bound, it's enough to show that for every $$S \subset X$$:
+
+$$ |d(x, S) - d(y, S)| \leq d(x, y)$$
+
+If that were true, then:
+
+$$||f(x) - f(y) ||_1 = \sum_{ij} |d(x, S_{ij}) - d(y, S_{ij}) | \leq k d(x, y) $$
+
+The proof is via the triangle inequality. Because the metric $$d$$ must obey the triangle inequality,  
 
