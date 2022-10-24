@@ -1,6 +1,6 @@
 # L-p and l-p Spaces
 
-$$L^p$$ spaces and $$\ell^p$$ are two related function and vector spaces,
+$$L^p$$ spaces and $$\ell^p$$ are two related function and vector metric spaces,
 respectively.
 
 $$L^p$$ is the function space of functions that are square integrable:
@@ -11,4 +11,4 @@ $$\ell^p$$ is the vector space of functions that are square-summable:
 
 $$\ell^p := \{v : \sum v_n^p dx < \infty \}$$
 
-
+$$\ell_1$$ is often called the Manhattan space, $$\ell_2$$ Euclidean space.
