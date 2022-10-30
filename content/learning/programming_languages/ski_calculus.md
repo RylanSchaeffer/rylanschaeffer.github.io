@@ -1,7 +1,10 @@
 # SKI Calculus
 
 The SKI Calculus is a combinator [calculus](calculus.md). A combinator
-is a function with no free variables.
+is a function with no free variables. A free variable is a variable that 
+is not bound; for instance, in the [Lambda Calculus](lambda_calculus.md), in a function like
+$$\lambda x . x y$$, $$x$$ is bound by the function whereas $$y$$ is free, meaning
+it must come from elsewhere (this "elsewhere" is called the environment).
 
 ## Definition
 
@@ -35,7 +38,8 @@ $$\rightarrow^*$$ stands for the reflexive, transitive closure of $$\rightarrow$
 
 A function only "executes" when it has enough arguments. For instance, $$K$$ is 
 a well formed program, as is $$K x$$, but once another argument is provided, 
-$$K x y$$ becomes $$x$$.
+$$K x y$$ becomes $$x$$. Until enough arguments are supplied, the function is
+called a "partially applied" function.
 
 ### Generalized Function Application
 
