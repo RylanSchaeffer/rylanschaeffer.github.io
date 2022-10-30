@@ -12,5 +12,6 @@ Typically, programming languages need to balance 3 goals:
 
 ## Content
 
+- [Calculus](programming_languages/calculus.md)
 - [SKI Calculus](programming_languages/ski_calculus.md)
 - [Lambda Calculus](programming_languages/lambda_calculus.md)
