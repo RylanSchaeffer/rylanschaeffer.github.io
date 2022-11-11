@@ -2,7 +2,7 @@
 
 ## Definition
 
-## Properties
+## Terminology
 
 - **Stationary Distribution**: A distribution $$\pi$$ is a stationary distribution of a markov chain $$P$$
   if $$\pi = P \pi$$
@@ -47,3 +47,23 @@ but we can no longer guarantee that $$\forall i \neq j$$, $$\lim_{t \rightarrow 
 To understand why, imagine a deterministic loop for the state space. The minimum time to return is also deterministic
 (the length of the loop $$\lvert S \lvert$$), so the probability of being in state $$i$$ depends on
 the number of steps taken.
+
+### Propositions
+
+#### Symmetric Transitions => Uniform Distribution
+
+Suppose $$X_0, X_1, ...$$ is an irreducible, aperiodic Markov chain in a finite state
+space. If the transition matrix $$P$$ is symmetric, then the unique stationary
+distribution is uniform.
+
+Proof: Let $$\pi_i = \frac{1}{\lvert S \lvert}$$. Then $$\pi_i = \sum_j P_{ij} \pi_j = \frac{1}{\lvert S \lvert} \sum_i P_{ij} = \frac{1}{\lvert S \lvert}$$
+
+Example: Take a deck of cards, choose 2 cards independently, then swap them. This is an aperiodic,
+irreducible Markov chain with finite state space. By the previous proposition, the unique stationary 
+distribution is uniform, meaning the deck will be equally mixed.
+
+#### Random Walk on Connected, Undirected, Non-Bipartitute Graph
+
+Let $$X_0, X_1, ...$$ be a random walk on a connected, undirected, non-bipartite graph.
+Then there exists a unique stationary distribution $$\pi$$ such that $$\forall v \ in \mathcal{V}$$,
+$$\pi_v = \frac{deg(v)}{2 \lvert E \lvert}$$.
