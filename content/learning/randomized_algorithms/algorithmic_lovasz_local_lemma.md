@@ -21,7 +21,7 @@ We introduce some notation, along with a concrete example from k-SAT
 
 ## Algorithm
 
-Given $$\mathcal{V}, \mathcal{A}$, choose a random assignment $$\sigma_v$$ for each random variable
+Given $$\mathcal{V}, \mathcal{A}$$, choose a random assignment $$\sigma_v$$ for each random variable
 $$v \in \mathcal{V}$$. While there is some $$A_i \in \mathcal{A}$$ such that $$A(\sigma) = 1$$ (i.e.
  a bad event is happening), (1) Choose an arbitrary event $$A_i$$ with $$A(\sigma) = 1$$ and (2)
 update $$\sigma$$ by reselecting/resampling $$\{\sigma_v : v \in Vbl(A_i) \}$$ randomly.
@@ -29,11 +29,11 @@ update $$\sigma$$ by reselecting/resampling $$\{\sigma_v : v \in Vbl(A_i) \}$$ r
 **Theorem (Symmetric Algorithmic LLL by Moser-Tardos 2010)**: Let $$\mathcal{A}$$ be a collection of bad events
 determined by random variables in $$\mathcal{V}$$. Suppose $$\forall A \in \mathcal{A}$$:
 
-- $$|\Gamma(A) | \leq d + 1$$ i.e. $$A$$ is independent of all but $$d$$ other events
+- $$\lvert \Gamma(A) \lvert \leq d + 1$$ i.e. $$A$$ is independent of all but $$d$$ other events
 - $$\mathbb{P}[A] \leq 1 / e (d+1)$$ i.e. the probability of bad event $$A$$ is relatively small compared to the number of dependencies $$d$$
 
 Then the given algorithm will find assignments such that no bad event in $$\mathcal{A}$$ occurs,
-and the expected number of re-randomizations is $$P(|\mathcal{A}| / (d+1))$$.
+and the expected number of re-randomizations is $$P(\lvert\mathcal{A}\lvert / (d+1))$$.
 
 **Theorem (Asymmetric Algorithmic LLL)**: Let $$\mathcal{A}$$ be a collection of bad events
 determined by random variables in $$\mathcal{V}$$. Suppose $$\exists x: \mathcal{A} \rightarrow (0, 1)$$
@@ -47,7 +47,7 @@ number of rerandomizations is $$\leq \sum_{A \in \mathcal{A}} \frac{x(A)}{1 - x(
 ### Proof of Symmetric Algorithmic LLL
 
 We can prove the symmetric algorithmic LLL via the asymmetric algorithmic LLL. Set $$x(A) = 1/(d+1)$$
-for all $$A \in \mathcal{A}$$. Suppose that $$\forall A \in \mathcal{A}, |\Gamma(A)| d + 1$$ and 
+for all $$A \in \mathcal{A}$$. Suppose that $$\forall A \in \mathcal{A}, \lvert\Gamma(A)\lvert d + 1$$ and 
 $$\mathbb{P}[A] \leq 1/e(d+1)$$. We can bound:
 
 $$x(A) \prod_{B \in \Gamma(A) \setminus \{A \}} (1 - x(B)) \geq \frac{1}{d+1}(1 - \frac{1}{d+1})^d \geq \frac{1}{e(d+1)}$$
