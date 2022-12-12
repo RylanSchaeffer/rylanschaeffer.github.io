@@ -29,7 +29,8 @@ Broadly, there are 2 families of randomized algorithms:
 - [Coupon Collector Problem](randomized_algorithms/coupons_collector_problem.md)
 - [Balls and Bins](randomized_algorithms/balls_and_bins.md)
 - [Metric Embeddings](randomized_algorithms/metric_embeddings.md)
-- [Lovazc Local Lemma](randomized_algorithms/lo)
+- [Lovazc Local Lemma](randomized_algorithms/lovasz_local_lemma.md)
+- [Algorithmic Lovazc Local Lemma](randomized_algorithms/algorithmic_lovasz_local_lemma.md)
 - [Markov Chains](randomized_algorithms/markov_chains.md)
 
 
