@@ -23,4 +23,7 @@ $$\tau_{mix} = min \{t : \Delta(t) \leq 1/2e \}$$
 
 - $$\Delta(t) := max_s ||P_s^T - \pi || \leq max_{s, s'} ||P_s^T - P_{s'}^T$$ \leq 2\Delta t$$
 
-Proof: (LHS) By the definition of stationarity, $$\pi = sum_w \pi_w P_w^T$$
+Proof: (LHS) By the definition of stationarity, $$\pi = sum_w \pi_w P_w^T \Rightarrow
+\max_s ||P_s^T - \pi|| = \max_{s} ||P_s^T - \sum_w \pi_w P_w^T|| \leq max_{s, s'} ||P_s^T - P_{s'}^T||$$
+
+(RHS) By the triangle inequality: $$||P_s^t - P_{s'}^T|| \leq ||P_s^T - \pi|| \leq ||P_{s'}^T - \pi|| \leq 2 \Delta(t)$$.

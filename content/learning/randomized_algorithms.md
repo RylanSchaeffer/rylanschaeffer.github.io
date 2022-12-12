@@ -27,6 +27,7 @@ Broadly, there are 2 families of randomized algorithms:
 
 - [Empty Pigeonholes](randomized_algorithms/empty_pigeonholes.md)
 - [Coupon Collector Problem](randomized_algorithms/coupons_collector_problem.md)
+- [Moment Generating Functions](probability/moment_generating_functions.md)
 - [Balls and Bins](randomized_algorithms/balls_and_bins.md)
 - [Metric Embeddings](randomized_algorithms/metric_embeddings.md)
 - [Lovazc Local Lemma](randomized_algorithms/lovasz_local_lemma.md)

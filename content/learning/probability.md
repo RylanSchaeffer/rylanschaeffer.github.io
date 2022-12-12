@@ -34,6 +34,9 @@ Some common discrete, continuous and special parametric distributions are:
 - Levy-Stable Distributions
 - Location-Scale Distributions
 
+### Random Variables
+- [Moment generating functions](probability/moment_generating_functions.md)
+
 ## Probability Theory
 - [Probability Space](probability/probability_space.md)
 - [Probability Measure](probability/probability_measure.md)
