@@ -14,3 +14,5 @@ $$TV(p, q) \equiv ||p - q|| := \frac{1}{2} \sum_{x \in X} |p(x) - q(x)| = max_{A
 $$||p - q|| \leq \mathbb{P}[X \neq Y] $$
 
 Furthermore, $$\exists J^*$$ such that this is an equality.
+
+**Proof**: Let $$A$$ be the subset of 

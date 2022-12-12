@@ -48,7 +48,7 @@ To understand why, imagine a deterministic loop for the state space. The minimum
 (the length of the loop $$\lvert S \lvert$$), so the probability of being in state $$i$$ depends on
 the number of steps taken.
 
-### Propositions
+### Properties
 
 #### Symmetric Transitions => Uniform Distribution
 
@@ -67,3 +67,7 @@ distribution is uniform, meaning the deck will be equally mixed.
 Let $$X_0, X_1, ...$$ be a random walk on a connected, undirected, non-bipartite graph.
 Then there exists a unique stationary distribution $$\pi$$ such that $$\forall v \ in \mathcal{V}$$,
 $$\pi_v = \frac{deg(v)}{2 \lvert E \lvert}$$.
+
+## Convergence to a stationary distribution
+
+See [Markov chain mixing times](markov_chain_mixing_time.md).
