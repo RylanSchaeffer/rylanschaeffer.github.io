@@ -30,7 +30,7 @@ update $$\sigma$$ by reselecting/resampling $$\{\sigma_v : v \in Vbl(A_i) \}$$ r
 determined by random variables in $$\mathcal{V}$$. Suppose $$\forall A \in \mathcal{A}$$:
 
 - $$|\Gamma(A) | \leq d + 1$$ i.e. $$A$$ is independent of all but $$d$$ other events
-- $$\mathbb{P}[A] \leq 1 / e (d+1)$$
+- $$\mathbb{P}[A] \leq 1 / e (d+1)$$ i.e. the probability of bad event $$A$$ is relatively small compared to the number of dependencies $$d$$
 
 Then the given algorithm will find assignments such that no bad event in $$\mathcal{A}$$ occurs,
 and the expected number of re-randomizations is $$P(|\mathcal{A}| / (d+1))$$.
@@ -44,3 +44,10 @@ $$\mathbb{P}[A] \leq x(A) \prod_{B \in \Gamma(A) \setminus \{A \}} (1 - x(B))$$
 Then algorithm will find assignment such that no event of $$\mathcal{A}$$ occurs, and the expected
 number of rerandomizations is $$\leq \sum_{A \in \mathcal{A}} \frac{x(A)}{1 - x(A)}$$.
 
+### Proof of Symmetric Algorithmic LLL
+
+We can prove the symmetric algorithmic LLL via the asymmetric algorithmic LLL. Set $$x(A) = 1/(d+1)$$
+for all $$A \in \mathcal{A}$$. Suppose that $$\forall A \in \mathcal{A}, |\Gamma(A)| d + 1$$ and 
+$$\mathbb{P}[A] \leq 1/e(d+1)$$. We can bound:
+
+$$x(A) \prod_{B \in \Gamma(A) \setminus \{A \}} (1 - x(B)) \geq \frac{1}{d+1}(1 - \frac{1}{d+1})^d \geq \frac{1}{e(d+1)}$$
