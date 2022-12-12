@@ -50,7 +50,7 @@ Some common probability distances and divergences are
 - [Cramer Distance](probability/cramer_distance.md)
 - Jensen-Shannon Divergence  
 - [Kullback-Leibler Divergence](probability/kullback_leibler_divergence.md)
-- Total Variation Distance
+- [Total Variation Distance](probability/total_variation_distance.md)
 - [Wasserstein Distance](probability/wasserstein_distance.md)
 
 
