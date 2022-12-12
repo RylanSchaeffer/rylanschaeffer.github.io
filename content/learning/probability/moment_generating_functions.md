@@ -31,3 +31,16 @@ $$M_{X+Y} = \mathbb{E}[e^{t(X+Y)}] = \mathbb{E}[e^{tX}] \mathbb{E}[e^{tY}]
 = \exp \Big( (\mu_1 + \mu_2)t + \frac{1}{2} (\sigma_1^2 + \sigma_2^2) t^2 }$$
 
 $$\Rightarrow X+ Y \sim \mathcal{N}(\mu_1 + \mu_2, \sigma_1^2 + \sigma_2^2)$$
+
+### Univariate Bernoulli
+
+Let $$X_i \sim Bernoulli(p_i)$$. Then $$M_{X_i}(t) = \mathbb{E}[e^{tX_i}] = 1 + p_i (e^t - 1)$$
+
+### Sums of Independent Bernoullis
+
+Suppose we have some set of independent but not necessarily identically distributed Bernoullis
+i.e. $$\{X_i \}$$ with corresponding $$\{p_i\}$$. Let $$X := \sum_i X_i$$. The MGF of
+$$X$$ is:
+
+$$M_{X} = \mathbb{E}[e^{t \sum_i X_i}] = \prod_i M_{x_i}(t) = \prod_i (1 + p_i (e^t - 1))$$
+
