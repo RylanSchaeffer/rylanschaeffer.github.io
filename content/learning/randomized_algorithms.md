@@ -31,6 +31,7 @@ Broadly, there are 2 families of randomized algorithms:
 - [Minimum Graph Cut (Kargar's Algorithm)](randomized_algorithms/kargars_algorithm.md)
 - [Moment Generating Functions](probability/moment_generating_functions.md)
 - [Balls and Bins](randomized_algorithms/balls_and_bins.md)
+- [Poissonization](randomized_algorithms/poissonization.md)
 - [Metric Embeddings](randomized_algorithms/metric_embeddings.md)
 - [Lovazc Local Lemma](randomized_algorithms/lovasz_local_lemma.md)
 - [Algorithmic Lovazc Local Lemma](randomized_algorithms/algorithmic_lovasz_local_lemma.md)
