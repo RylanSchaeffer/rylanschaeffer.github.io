@@ -1,10 +1,18 @@
 # Poisson Distribution
 
-TODO
-
 ## Definition
 
+Let $$X \sim Poisson(\lambda)$$. Its probability mass function is:
+
+$$\mathbb{P}[X = k] = \frac{e^{-\lambda} \lambda^k}{k!}$$
+
+
+
 ## Properties
+
+- Mean: $$\mathbb{E}[X] = \lambda$$
+- Variance: $$\mathbb{V}[X] = \lambda$$
+- $$\mathbb{P}[|X-\lambda| \geq c] \leq 2 \exp(-c^2/(2(c+\lambda)))$$
 
 ### Sum of Independent Poissons is Poisson
 
@@ -43,7 +51,17 @@ P(X=k) &=^{N \rightarrow \infty} \frac{1}{k!} \lambda^k e^{-\lambda}\\
 \end{align*}
 $$
 
+### Binomial Definition of Poisson Distribution
 
+An alternative way to define the Poisson distribution is as:
+
+$$\lim_{n \rightarrow \infty} Bin(\frac{\lambda}{n}, n)$$
+
+Why is $${n \choose k} (\lambda/n)^{k} ( 1 - \lambda/n)^{n-k}$$ the same as $$e^{-\lambda}\lambda^k/k!$$?
+
+Reorganizing the first term, per Stirling, $$\{n \choose k} \approx (en/k)^k$$, and
+$$(1-\lambda_n)^{n-k} a\approx e^{-\lambda / n}$$. Then $$(e/k)^k \lambda^k e^{-\lambda(1-k/n)}$$
+can be rewritten as $$(1/k!)\lambda^k e^{-\lambda}$$, giving us the PMF for the Poisson.
 
 ### LeCam's Theorem
 
