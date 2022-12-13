@@ -27,9 +27,8 @@ Broadly, there are 2 families of randomized algorithms:
 
 - [Empty Pigeonholes](randomized_algorithms/empty_pigeonholes.md)
 - [Coupon Collector Problem](randomized_algorithms/coupons_collector_problem.md)
-- [Markov's Inequality](randomized_algorithms/markov_inequality.md)
-- [Chebyshev's Inequality](randomized_algorithms/chebyshev_inequality.md)
-- [Chernoff Bounds](randomized_algorithms/chernoff_bounds.md)
+- [Primality Testing](randomized_algorithms/primality_testing.md)
+- [Minimum Graph Cut (Kargar's Algorithm)](randomized_algorithms/kargars_algorithm.md)
 - [Moment Generating Functions](probability/moment_generating_functions.md)
 - [Balls and Bins](randomized_algorithms/balls_and_bins.md)
 - [Metric Embeddings](randomized_algorithms/metric_embeddings.md)
@@ -37,6 +36,12 @@ Broadly, there are 2 families of randomized algorithms:
 - [Algorithmic Lovazc Local Lemma](randomized_algorithms/algorithmic_lovasz_local_lemma.md)
 - [Markov Chains](randomized_algorithms/markov_chains.md)
 
+## Useful Inequalities
+- [Markov's Inequality](inequalities/markov_inequality.md)
+- [Chebyshev's Inequality](inequalities/chebyshev_inequality.md)
+- [Chernoff Bounds](inequalities/chernoff_bounds.md)
+- [Bernstein's Inequality](inequalities/bernstein_inequality.md)
+- [Hoeffding's Inequality](inequalities/hoeffding_inequality.md)
 
 ## References
 - Mary Wootter's [Stanford CS265](https://web.stanford.edu/class/cs265/)
