@@ -16,4 +16,13 @@ such that $$\forall x \in \mathbb{Z}_n^*, x^{n-1} = 1 \mod n).
 **Theorem:** Suppose $$n$$ is composite, but not a Carmichael number. Then the probability Fermat's test
 outputs "composite" is $$\geq 1/2$$.
 
-Proof: 
+Proof:
+
+Case 1: $$gcd(n, x) \neq 1$$. Then $$x^{n-1} \neq 1 \mod n$$. Why? Because if $$x^{n-1} = 1 \mod n$$,
+then $$x^{n-1} = nc + 1$$ for some $$c$$, and $$gcd(x,n)$$ can divide the LHS and $$nc$$, but thus cannot
+divide $$nc + 1$$. Thus the algorithm will always detect $$n$$ as composite.
+
+Case 2: $$gcd(x, n) = 1$$. Then let $$H = \{ x: x\in \mathbb{Z}_n^*, x^{n-1} = 1 \mod n\}$$. Note that
+$$H \subseteq \mathbb{Z}_n^*$$ and $$H \neq \mathbb{Z}_n^*$$ since $$n$$ is not a Carmichael number. Thus per 
+[Lagrange's Theorem](../group_theory/subgroups.md), $$|H| \leq \frac{1}{2} |\mathbb{Z}_n^*|$$. Thus the probability
+$$n$$ is identified as composite is at least 0.5.

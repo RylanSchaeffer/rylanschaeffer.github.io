@@ -6,7 +6,7 @@ Randomized algorithms are algorithms that have access to a source of randomness.
 their execution path and their outputs are both random. In general, we might be interested
 in making statements like the following:
 
-1. $$\forall x \in \mathcal{X}, \mathbb{P}[Alg(x, r) \text{is correct}] \geq ...$$
+1. $\forall x \in \mathcal{X}, \mathbb{P}[Alg(x, r) \text{is correct}] \geq ...$
 2. $$\forall x \in \mathcal{X}, \mathbb{V}[Alg(x, r) \text{runtime}] \leq ...$$
 
 ## Why do we care about randomized algorithms?

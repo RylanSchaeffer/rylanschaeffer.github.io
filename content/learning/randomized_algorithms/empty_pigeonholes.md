@@ -5,7 +5,7 @@ amongst the various holes. What is the expected number of empty holes?
 
 ## Solution
 
-Define $$X = \text{number of empty holes} = \sum_{n=1}^N \mathbb{I}\text{nth hole is empty}$$ 
+Define $$X = \text{number of empty holes} = \sum_{n=1}^N \mathbb{I}\{\text{nth hole is empty} \}$$ 
 
 Then
 
