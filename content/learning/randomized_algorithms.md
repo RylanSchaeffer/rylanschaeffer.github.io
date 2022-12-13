@@ -35,6 +35,8 @@ Broadly, there are 2 families of randomized algorithms:
 - [Lovazc Local Lemma](randomized_algorithms/lovasz_local_lemma.md)
 - [Algorithmic Lovazc Local Lemma](randomized_algorithms/algorithmic_lovasz_local_lemma.md)
 - [Markov Chains](randomized_algorithms/markov_chains.md)
+- [Martingales](randomized_algorithms/martingales.md)
+- [Azuma-Hoeffding Bound](inequalities/azuma_hoeffding_bound.md)
 
 ## Useful Inequalities
 - [Markov's Inequality](inequalities/markov_inequality.md)
