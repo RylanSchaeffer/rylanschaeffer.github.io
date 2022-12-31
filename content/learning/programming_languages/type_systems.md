@@ -14,14 +14,17 @@ that certain expressions have certain types, a new expression has a known type. 
 we prove that a given expression has a particular type. Type inference has a particular syntax that is 
 precise and well-established, but takes a little time to get used to.
 
-### Symbols for Type Inference
+### Symbols & Syntax for Type Inference
 
-$$\land$$ means "and". $$X \Rightarrow Y" means "if X-then Y". $$X:T$$ means "expression x has type T".
+$$\land$$ means "and". $$X \Rightarrow Y$$ means "if X-then Y". $$X:T$$ means "expression x has type T".
 Thus, $$e_1: Int \land e_2: Int \Rightarrow e_1+e_2: Int$$ means "If e_1 and e_2 are both integers, then
-their sum is also an integer."
+their sum is also an integer."  The turnstile symbol $$\vdash$$ is used to indicate "It is provable that...".
 
-### Structure for Type Inference
+The common syntax is to place hypotheses above a broad horizontal line and its conclusions below the line,
+ typically after the turnstile symbol. For instance:
 
-$$\infer{A}{B}
+$$\infer{\vdash A}{ B}$$
+
+Means 
 
 ## Rules of Inference
