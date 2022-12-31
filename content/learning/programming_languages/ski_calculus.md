@@ -100,7 +100,23 @@ we can define $$succ := S (S (K S ) K )$$.
 
 ### Data Structures: Pairs
 
-We can define $$pair x y first \rightarrow x$$ and $$pair x y second \rightarrow y$$.
+We can define $$pair \, x y \, first \rightarrow x$$ and $$pair \, x y \, second \rightarrow y$$.
 
 ## Abstraction Algorithm
- 
+
+Oftentimes we want to define some function, but it is unclear how to do so via combinators. 
+There is a systematic approach for defining combinators called the abstraction algorithm.
+The idea is to name the function you want provided with its arguments, show its desired behavior,
+and then follow a deterministic procedure to figure out the correct definition for your desired function.
+For example, suppose we want to define a swap function:
+
+$$swap x y = y x$$
+
+The goal is to reach some combinator $$f = A (E, x)$$, where $$A( E, x) x = E$$. We say "we abstract
+$$E$$ with respect to $$x$$". The rules for doing so are simple:
+
+- $$A(x, x) = I$$
+- If $$x$$ doesn't appear in $$E$$, $$A(E, x) = K E$$
+- $$A ( E_1 E_2, x) = S A(E_1, x) A(E_2, x)$$
+
+Abstraction is systematic and yields lengthy combinators, but the combinators are correct.
