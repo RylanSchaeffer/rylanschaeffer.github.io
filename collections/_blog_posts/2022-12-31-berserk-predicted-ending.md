@@ -11,11 +11,19 @@ Warning: Chapter 371 spoilers below.
 /u/sbrockLee 's [comment](https://www.reddit.com/r/Berserk/comments/zf6lai/comment/izdohoy/?utm_source=share&utm_medium=web2x&context=3)
 in the 371 Megathread made me start thinking more about how the series will end:
 
->     All the despair is clearly a set up for Guts to face the choice of using "his" Behelit.
-
-    They're really hammering home the fact that he's deeply distraught over this, on an existential level - everything he did on his revenge trip, all the pain and sleepless nights he endured, was hoping to get a shot at Griffith and now he realizes he never will.
-
-    And this level of despair, linked to an impossible ambition, is a prerequisite for using a Behelit, as is having someone beloved to sacrifice - which could be Caska herself, or even the other party members (it's been established that Guts feels affection towards all of them, unlike his solitary Black Swordsman days).
+> All the despair is clearly a set up for Guts to
+> face the choice of using "his" Behelit. 
+> They're really hammering home the fact that he's
+> deeply distraught over this, on an existential level - everything
+> he did on his revenge trip, all the pain and sleepless nights
+> he endured, was hoping to get a shot at Griffith and now
+> he realizes he never will. 
+> And this level of despair, linked to an impossible ambition, 
+> is a prerequisite for using a Behelit, as is having someone 
+> beloved to sacrifice - which could be Caska herself, or even the
+> other party members (it's been established that Guts feels 
+> affection towards all of them, unlike his solitary Black 
+> Swordsman days).
 
 
 The authors are indeed hammering home the despair and helplessness of Guts. I agree with the argument
@@ -36,6 +44,8 @@ Evidence:
 
 Possible Rebuttals:
 - If Guts uses the Behelit, won't he be under Griffiths control? I don't think so. Ganishka was able to oppose Griffiths (although not harm him). Combine that with Guts's ability to "leap above the stream of causality" as Skeleton Knight puts it, and I think you have a winning combination.
+- Isn't it impossible to sacrifice a sacrifice i.e. Guts was already sacrificed, and we know that a person can't be sacrificed twice, right?
+  I think "sacrifice" might be an overloaded term. By sacrifice, I don't mean the brand. I mean whatever the Egg did. 
 
 
 How do I think the series will end? The Beast of Darkness will rampage through Falconia, killing everyone (humans and apostles alike), before turning on the world. Lacking any way to stop the Beast, Guts' crew will team up with the Hawk to kill the Beast, but will be unsuccessful, and in a last act of desperation, the Hawk will sacrifice himself to (somehow?) transform the Beast back to Guts, thereby partially redeeming Griffiths.
