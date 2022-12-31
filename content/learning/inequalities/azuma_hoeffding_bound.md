@@ -35,8 +35,8 @@ Then Taylor series expand exponentials, apply linearity of expectation and show 
 
 ### Azuma-Hoeffding vs Chernoff
 
-Say $$X_1, ..., X_n$$ are 0/1 fair coin flips. Note that $$|Z_i - Z_{i-1}$$ = 1/2. Thus per Azuma-Hoeffding:
+Say $$X_1, ..., X_n$$ are 0/1 fair coin flips. Note that $$\lvert Z_i - Z_{i-1} \lvert$$ = 1/2. Thus, per Azuma-Hoeffding:
 
-$$\mathbb{P}[|\sum X_i - \mathbb{\sum X_i}| \geq \lambda] \leq 2 \exp \Big( - \frac{\lambda^2}{2 \sum_i c_i^2})$$
+$$\mathbb{P}[|\sum X_i - \mathbb{\sum X_i}| \geq \lambda] \leq 2 \exp \Big( - \frac{\lambda^2}{2 \sum_i c_i^2} \Big)$$
 
 This is exactly what we should expect from Chernoff.

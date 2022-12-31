@@ -7,7 +7,7 @@ their execution path and their outputs are both random. In general, we might be 
 in making statements like the following:
 
 1. $$\forall x \in \mathcal{X}, \mathbb{P}[Alg(x, r) \text{is correct}] \geq ...$$
-2. $$\forall x \in \mathcal{X}, \mathbb{V}[Alg(x, r) \text{runtime}] \leq ...$$
+2. $$\forall x \in \mathcal{X}, \mathbb{V}[Alg(x, r) \text{'s runtime}] \leq ...$$
 
 ## Why do we care about randomized algorithms?
 
