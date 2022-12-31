@@ -137,8 +137,8 @@ $$||f(x) - f(y) ||_1 \geq \frac{k}{3 2^t \log n} d(x, y)$$
 ## Johnson-Lindenstrauss Lemma
 
 Bourgain's Embedding says we can embed _any_ metric space into $$\ell_1$$ with distortion $$O(\log n)$$.
-One naturally asks next whether a better embedding is possible. The answer is no, but for more structured
-metric spaces, the answer is yes. The Johnson-Lindenstrauss (JL) Lemma tells us that if we have $$n$$
+One naturally asks next whether a better embedding is possible. In general, the answer is no, but
+for more structured metric spaces, the answer is yes. The Johnson-Lindenstrauss (JL) Lemma tells us that if we have $$n$$
 points that live in an $$\ell_2$$ space of dimension $$d$$, then we can embed those points into dimension
 $$O(\frac{\log n}{\epsilon^2})$$ with distortion $$1 + \epsilon$$. Formally:
 
@@ -151,4 +151,14 @@ then in the new space, the distance is $$(1 \pm \epsilon)\delta$$.
 
 Proof: Let $$A \in \mathbb{R}^{m \times d}$$ be a matrix with entries chosen i.i.i. $$\mathcal{N}(0, 1/m)$$.
 Define $$f(x)= Ax$$. WLOG, because an isotropic Gaussian is rotationally symmetric, for any two $$x, y$$,
- we can think of $$x - y = ||x - y||_2 e_1$$, where $$e_1$$ is the first canonical basis vector.
+ we can think of $$x - y = ||x - y||_2 e_1$$, where $$e_1$$ is the first canonical basis vector. Our goal 
+is to show $$||A (x - y)||_2 = (1 \pm \epsilon) ||x - y|| \Leftrightarrow ||A e_1|| = (1 \pm \epsilon)$$.
+
+Now, we just need to consider the first column of $$A$$ in our rotated system. We can use a Chernoff-style claim:
+If $$Z_1, ..., Z_m \sim N(0, 1)$$, then $$\mathbb{P}[\sum Z_i^2 > (1+\epislon)m] \leq \exp(- m \epsilon^2 / 8)$$.
+Thus, for any pair $$x, y$$, the probability $$A(x -y)$$ is distorted by $$\epsilon$$ decays exponentially
+in $$\epsilon$$. By a union bound, we have:
+
+$$ \mathbb{P}[\exists x, y \in X s.t. ||A (x-y)||_2 \geq (1+\epsilon) ||x - y||_2] \leq n^2 \exp(-m\epsilon^2/8)$$
+
+Choose $$m = O(\log(n)/\epsilon^2)$$ and we're good. A similar argument holds for the lower bound $$1-\epsilon$$.
