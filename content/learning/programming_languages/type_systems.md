@@ -7,4 +7,21 @@ The consensus is that a type is a set of values. For example, `int` is the set o
 `bool` is the set of `{true, false}`. `List[int]` is the set of all lists containing integers.
 `int->int` is the set of functions mapping from integers to integers.
 
+## Type Inference
+
+One reason people are interested in type systems is to be able to definitively show that, under the assumption
+that certain expressions have certain types, a new expression has a known type. Specifically, in type systems,
+we prove that a given expression has a particular type. Type inference has a particular syntax that is 
+precise and well-established, but takes a little time to get used to.
+
+### Symbols for Type Inference
+
+$$\land$$ means "and". $$X \Rightarrow Y" means "if X-then Y". $$X:T$$ means "expression x has type T".
+Thus, $$e_1: Int \land e_2: Int \Rightarrow e_1+e_2: Int$$ means "If e_1 and e_2 are both integers, then
+their sum is also an integer."
+
+### Structure for Type Inference
+
+$$\infer{A}{B}
+
 ## Rules of Inference

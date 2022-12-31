@@ -13,7 +13,7 @@ Typically, programming languages need to balance 3 goals:
 - [Calculus](programming_languages/calculus.md)
 - [SKI Calculus](programming_languages/ski_calculus.md)
 - [Lambda Calculus](programming_languages/lambda_calculus.md)
-- [Type Systems](programming_languages/type_systems.md)
+- [Type Systems and Type Inference](programming_languages/type_systems.md)
 
 
 ## Resources
