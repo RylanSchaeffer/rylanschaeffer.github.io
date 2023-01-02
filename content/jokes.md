@@ -65,13 +65,12 @@
 - What's the difference between an introverted programmer and an extroverted programmer?
   The extroverted programmer looks at *your* shoes when he's talking to you.
 
-## Romantic
+## Pickup Lines
 
-## Puns
-
--  Al Gore may not have invented the internet, but he did come up with algorithms.
 
 ## Nerdy and Romantic Pickup Lines
+
+### Graphical Models & Inference 
 
 - "You're the other parameter in my partition function. You normalize my life."
 
@@ -79,8 +78,28 @@
 
 - "Nothing can d-separate us because we're connected"
 
+### Probability
+
 - "That distribution has a heavy tail but not compared to you"
 
+### Programming Languages Theory
+
+- I ran type inference, and learned that your type is me :)
+- Are you a BDSM monad? Because I want to bind and use you
+- Think about me as a list constructor: all I need is head and tail
+
+
+### Machine Learning
+
+- I want to be your test loss, so I can stay up all night going down on you ;)
+
+### Randomized Algorithms
+
+### Copilot Generated
+
+- I'm not a photographer, but I can picture us together.
+- I want to be your gradient descent algorithm, so I can descend on you
+- I want to be your randomized algorithm, so I can run in polynomial time with high probability
 
 ## Start Ups
 
@@ -104,3 +123,7 @@
   this is the express lane." "I know that," the student snaps. The clerk snaps back, "Then are you
   a Harvard student who can't count, or an MIT student who can't read?"
   
+
+## Puns
+
+-  Al Gore may not have invented the internet, but he did come up with al-gore-ithms.
