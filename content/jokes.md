@@ -73,10 +73,9 @@
 ### Graphical Models & Inference 
 
 - "You're the other parameter in my partition function. You normalize my life."
-
 - "I love staying up all night, passing messages with you till our beliefs converge"
-
 - "Nothing can d-separate us because we're connected"
+- Like any good Bayesian, my goal is to obtain your posterior
 
 ### Probability
 
@@ -85,21 +84,28 @@
 ### Programming Languages Theory
 
 - I ran type inference, and learned that your type is me :)
+- Did you know, the IU calculus tells that the combinators "U" and "I" are all we need to be (Turing) complete?
+- I'm a monad, and all I want is to bind you to me
 - Are you a BDSM monad? Because I want to bind and use you
 - Think about me as a list constructor: all I need is head and tail
 
-
 ### Machine Learning
-
+ 
 - I want to be your test loss, so I can stay up all night going down on you ;)
 
 ### Randomized Algorithms
 
 ### Copilot Generated
 
-- I'm not a photographer, but I can picture us together.
-- I want to be your gradient descent algorithm, so I can descend on you
-- I want to be your randomized algorithm, so I can run in polynomial time with high probability
+- "I'm a lambda calculus, and I'm not afraid to use it"
+- "I'm not a Gaussian, but I'm pretty sure I can make you happy"
+- "I'm a Bayesian. I believe in you."
+- I'm a Bayesian, and I want to model you
+- "I'm a Bayesian, and I'm here to tell you that you're the most likely to be my next girlfriend"
+- "I'm a copilot generated pickup line, and I'm here to help you find love. I'm not sure if you're the right match for me, but I'm sure you'll find someone who is. Good luck!"
+- "I'm not a photographer, but I can picture us together."
+- "I want to be your gradient descent algorithm, so I can descend on you"
+- "I want to be your randomized algorithm, so I can run in polynomial time with high probability"
 
 ## Start Ups
 
