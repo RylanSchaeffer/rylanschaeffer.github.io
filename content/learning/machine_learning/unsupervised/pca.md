@@ -6,15 +6,16 @@ ways.
 
 ## PCA as the Eigendecomposition of the Covariance
 
-Suppose we have a vector-value random variable $$\mathbf{X} \in \mathbb{R}^D$$ with
-mean $$\mathbf{\mu} \in \mathbb{R}^D$$ and covariance $$\mathbf{\Sigma} \in \mathbb{R}^{D \times D}$$.
-The covariance matrix $$\mathbf{\Sigma}$$ is a symmetric positive semi-definite matrix, meaning
+Suppose we have a vector-value random variable $$X \in \mathbb{R}^D$$ with
+mean $$\mu \in \mathbb{R}^D$$ and covariance $$\Sigma \in \mathbb{R}^{D \times D}$$.
+The covariance matrix $$\Sigma$$ is a symmetric positive semi-definite matrix, meaning
 it admits an eigendecomposition:
 
-$$\mathbf{\Sigma} = U \Lambda U^T$$
+$$\Sigma = U \Lambda U^T$$
 
-where $$\mathbf{U} \in \mathbb{R}^{D \times D}$$ is an orthogonal matrix of eigenvectors, and 
-$$\Lambda \in \mathbb{R}^{D \times D}$$ is a diagonal matrix of eigenvalues $$\lambda_1, \lambda_2, ..., \lambda_D$$.
+where $$U \in \mathbb{R}^{D \times D}$$ is an orthogonal matrix of eigenvectors, and 
+$$\Lambda \in \mathbb{R}^{D \times D}$$ is a diagonal matrix of eigenvalues
+$$\lambda_1 \geq \lambda_2 \geq ... \geq \lambda_D \geq 0$$.
 The eigenvectors $$\{v_n\}$$ are orthonormal, meaning they point along different orthogonal 
 directions with length (norm) 1. The eigenvalues are the lengths of the different directions, 
 and correspond to the variance the data displays in those directions. That is, $$\lambda_n$$ is the
@@ -27,7 +28,7 @@ $$X \in \mathbb{R}^{D \times N}$$
 
 We subtract the mean to center the data:
 
-$$\bar{X} := X - \mathbb{1} \Big( \frac{1}{N} \sum_n x_n \Big)^T  $$
+$$\bar{X} := X - \Big( \frac{1}{N} \sum_n x_n \Big)\mathbf{1}^T  $$
 
 The empirical covariance matrix is defined as:
 
