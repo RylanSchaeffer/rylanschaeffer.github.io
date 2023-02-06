@@ -41,7 +41,7 @@ the International Brain Lab task.](research/2021_sfn_ibl/main.html) __Society fo
 
 ## In Progress
 
-- Liu, Schaeffer et al. Brain-wide population codes for hierarchical inference in mice. 2022.
+- Liu, Schaeffer et al. Brain-wide population codes for hierarchical inference in mice. 2023.
   
 
 ## Rejected
