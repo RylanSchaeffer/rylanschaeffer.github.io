@@ -3,11 +3,12 @@
 ## In Preparation
 
 - _Schaeffer_, et al. An Introductory Tutorial on Double Descent: What Double Descent Is and Why It Occurs. 2023.
+
 - _Schaeffer_ \*, _Khona_ \*, Fiete. Self-Supervised Learning of Efficient Algebraic Codes Generates Grid Cells. 2023.
 
 ## Under Review
 
-- Bricken, _Schaeffer_, Olshausen, Kreiman. [Emergence of Sparse Representations from Noise] __ICML 2023__.
+- Bricken, _Schaeffer_, Olshausen, Kreiman. Emergence of Sparse Representations from Noise. __ICML 2023__.
 
 ## Accepted
 
