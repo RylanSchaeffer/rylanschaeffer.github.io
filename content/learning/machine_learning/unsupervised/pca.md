@@ -6,7 +6,7 @@ ways.
 
 ## PCA as the Eigendecomposition of the Covariance
 
-Suppose we have a vector-value random variable $$\mathbf{X} \in \mathbb{R}^D$ with
+Suppose we have a vector-value random variable $$\mathbf{X} \in \mathbb{R}^D$$ with
 mean $$\mathbf{\mu} \in \mathbb{R}^D$$ and covariance $$\mathbf{\Sigma} \in \mathbb{R}^{D \times D}$$.
 The covariance matrix $$\mathbf{\Sigma}$$ is a symmetric positive semi-definite matrix, meaning
 it admits an eigendecomposition:

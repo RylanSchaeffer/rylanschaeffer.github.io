@@ -29,6 +29,7 @@
 - Factor Analysis
 - Independent Component Analysis
 - Non-negative Matrix Factorization
+- [Linear Gaussian](machine_learning/unsupervised/linear_gaussian.md)
 
 ## Kernel Methods
 
