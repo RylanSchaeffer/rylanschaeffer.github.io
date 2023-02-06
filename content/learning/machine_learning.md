@@ -25,7 +25,7 @@
 
 ### Feature Models
 
-- Principal Component Analysis
+- [Principal Component Analysis](machine_learning/unsupervised/pca.md)
 - Factor Analysis
 - Independent Component Analysis
 - Non-negative Matrix Factorization

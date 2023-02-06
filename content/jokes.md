@@ -95,6 +95,11 @@ Fewer race conditions!
 
 ### Randomized Algorithms
 
+### Measure Theory
+
+- I need help with a problem. I think I've identified the right measure for you,
+  but when I do the calculation, your total measure evaluates to everything that matters to me
+
 ### Copilot Generated
 
 - I want to be your randomized algorithm, so I can run in polynomial time with high probability
