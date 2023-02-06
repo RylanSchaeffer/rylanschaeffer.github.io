@@ -1,13 +1,14 @@
 # Research
 
+## In Preparation
+
+- _Schaeffer_ \*, _Khona_ \*, Fiete. Self-Supervised Learning of Efficient Algebraic Codes Generates Grid Cells. 2023.
+
 ## Under Review
 
-
+- Bricken, _Schaeffer_, Olshausen, Kreiman. [Emergence of Sparse Representations from Noise] __ICML 2023__.
 
 ## Accepted
-
-- _Schaeffer_ \*, _Khona_ \*, Fiete. Self-Supervised Learning of Efficient Algebraic Codes Generates Grid Cells.
-  __NeurIPS 2022 Workshops: SSL__.
 
 - _Schaeffer_, Khona, Fiete. No Free Lunch from Deep Learning in Neuroscience: A Case Study through Models
   of the Entorhinal-Hippocampal Circuit. __NeurIPS 2022__.
@@ -38,11 +39,9 @@ the International Brain Lab task.](research/2021_sfn_ibl/main.html) __Society fo
 - *Schaeffer*, Khona, Meshulam, IBL, Fiete. [Reverse-engineering recurrent neural network solutions to a hierarchical inference task for 
   mice.](research/2020_neurips_reverse_engineering/main.html) __NeurIPS 2020__.
 
-## In Preparation
+## In Progress
 
-- Schaeffer et al. Nonsense regressions in deep learning neuroscience. 2022.
-- Schaeffer et al. Brain-wide population codes for hierarchical inference in mice. 2022.
-- Schaeffer et al. Memory Engrams Perform Nonparametric Latent State Associative Learning. 2022.
+- Liu, Schaeffer et al. Brain-wide population codes for hierarchical inference in mice. 2022.
   
 
 ## Rejected
@@ -57,10 +56,14 @@ the International Brain Lab task.](research/2021_sfn_ibl/main.html) __Society fo
   Mechanistic neural circuit models of hierarchical inference. __COSYNE 2021__.
   - [2-Page Abstract](research/2021_cosyne_ibl_rnn/abstract.pdf) 
 
-## Abandoned
+## One Day
+
+- Schaeffer et al. Memory Engrams Perform Nonparametric Latent State Associative Learning. 2022.
 
 - Schaeffer et al. Recovering low dimensional, interpretable mechanistic models
   via Representations and Dynamics Distillation. 2021.
+
+## Abandoned
 
 - Schaeffer et al. Towards Unifying Smooth 
   Neural Codes with Adversarially Robust Representations. 2019.
