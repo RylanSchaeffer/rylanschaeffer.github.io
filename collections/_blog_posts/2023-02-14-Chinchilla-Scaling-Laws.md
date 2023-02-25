@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Chinchilla Scaling Laws
+title: Chinchilla Scaling Laws (Paper Notes)
 author: Rylan Schaeffer
 date: 2023-02-14
 tags: machine-learning scaling-laws 2023
