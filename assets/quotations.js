@@ -6,6 +6,8 @@ const quotations = [
 
     "“We have to go. I'm almost happy here. I've lived too long with pain. I won’t know who I am without it.“",
 
+    "“Both convey different types of pain. One is the pain of a person who feels they are beyond redemption. The other is the pain of a man who hopes he is not beyond redemption.“",
+
     "“Humanity does not ask us to be happy. It merely asks us to be brilliant on its behalf.“",
 
     "“Be a better friend to yourself“",
