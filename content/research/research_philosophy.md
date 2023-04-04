@@ -13,9 +13,11 @@ Research is an emotionally tough but rewarding journey. It requires struggling, 
 
 ## Why Do Research?
 
+TODO
+
 ## Approaching Research
 
-### Identify possible research goals
+### Step 1: Identify possible research goals
 
 Research is fundamentally about advancing humanity’s collective knowledge. Every research project should begin by attempting to identify an goal motivated by at least one of the three following questions (or some subset thereof):
 
@@ -31,7 +33,7 @@ These three questions correspond to the three intellectual lineages that researc
 
 Every project we work on together should begin by attempting to clearly identify the goal of the project. Oftentimes, the goal will be unclear at the outset and will evolve as we iteratively sharpen our understanding - this is great! But I personally believe that even the most exploratory projects should be goal-directed.
 
-### Evaluating research goals
+### Step 2: Evaluate research goals
 
 Once you have a set of possible research goals, it’s time to prioritize and choose one (or
 however many you have bandwidth for). There are many considerations when evaluating possible research goals. 

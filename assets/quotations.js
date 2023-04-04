@@ -129,7 +129,7 @@ const quotations = [
 
     "“Ad majora“",
 
-    "“Why should the race always be to the swift, or the jumble to the quick-witted?" +
+    "“Why should the race always be to the swift, or the jumble to the quick-witted? " +
     "Should they win merely because of the gifts God gave them? Well, I say cheating " +
     "is the gift man gives himself.“",
 
