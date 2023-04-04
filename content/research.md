@@ -1,16 +1,28 @@
 # Research
 
-## In Preparation
+## Collaboration Requests
 
-- _Schaeffer_, et al. An Introductory Tutorial on Double Descent: What Double Descent Is and Why It Occurs. 2023.
+If you're interested in collaborating, email me at rylanschaeffer@gmail.com. I've posted
+a (work-in-progress) [summary of my research approach](research/research_philosophy.md).
+
+## Publications
+
+### In Preparation
+
+- _Schaeffer_, et al. Are Emergent Abilities of Large Language Models a Mirage? 2023.
 
 - _Schaeffer_ \*, _Khona_ \*, Fiete. Self-Supervised Learning of Efficient Algebraic Codes Generates Grid Cells. 2023.
 
-## Under Review
+### Preprint
+
+- _Schaeffer_, et al. An Introductory Tutorial on Double Descent: What Double Descent Is and Why It Occurs. 2023.
+
+
+### Under Review
 
 - Bricken, _Schaeffer_, Olshausen, Kreiman. Emergence of Sparse Representations from Noise. __ICML 2023__.
 
-## Accepted
+### Accepted
 
 - _Schaeffer_, Khona, Fiete. No Free Lunch from Deep Learning in Neuroscience: A Case Study through Models
   of the Entorhinal-Hippocampal Circuit. __NeurIPS 2022__.
@@ -41,7 +53,7 @@ the International Brain Lab task.](research/2021_sfn_ibl/main.html) __Society fo
 - *Schaeffer*, Khona, Meshulam, IBL, Fiete. [Reverse-engineering recurrent neural network solutions to a hierarchical inference task for 
   mice.](research/2020_neurips_reverse_engineering/main.html) __NeurIPS 2020__.
 
-## In Progress
+### In Progress
 
 - Liu, Schaeffer et al. Brain-wide population codes for hierarchical inference in mice. 2023.
   
@@ -58,14 +70,14 @@ the International Brain Lab task.](research/2021_sfn_ibl/main.html) __Society fo
   Mechanistic neural circuit models of hierarchical inference. __COSYNE 2021__.
   - [2-Page Abstract](research/2021_cosyne_ibl_rnn/abstract.pdf) 
 
-## One Day
+### One Day
 
 - Schaeffer et al. Memory Engrams Perform Nonparametric Latent State Associative Learning. 2022.
 
 - Schaeffer et al. Recovering low dimensional, interpretable mechanistic models
   via Representations and Dynamics Distillation. 2021.
 
-## Abandoned
+### Abandoned
 
 - Schaeffer et al. Towards Unifying Smooth 
   Neural Codes with Adversarially Robust Representations. 2019.
@@ -73,6 +85,7 @@ the International Brain Lab task.](research/2021_sfn_ibl/main.html) __Society fo
 
 
 ## Explanations of Others' Research
+
 - [Neural Turing Machines](research/neural_turing_machine/main.html)
 - [One-shot Learning with Memory-Augmented Neural Networks](research/one_shot_learning_with_memory_augmented_nn/main.html)
 - [Neural Episodic Control](research/neural_episodic_control/main.html)
