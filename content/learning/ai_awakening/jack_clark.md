@@ -93,6 +93,21 @@ I went on holiday last week - terribly signed! Anthropic didn't sign for a few r
 4. The underlying problem is trust between company-company and company-public
 5. It's hard to see a world with joint stops.
 
+In 2015, I went to the White House and told Google that they were going to kill people with self-driving
+cars. In 2023, I was totally wrong. 
+
+> Question: We're talking about the centralization of power via these models. The architecture and data
+> isn't private. How do we prevent misuse from bad actors? Should we be worried about proliferation
+> rather than centralization?
+
+We have a team trying to understand harm. We don't have a good measure for harmful capabilities.
+
+> Follow-Up Question: Should we be worried about machine-generated misinformations with agendas?
+
+In America, we currently allow very diverse free speech. The law treats corporations as people who have
+free speech. How will this be any different? The society-wide answer is that we let things ride.
+Here, speed is different & scale is different?
+
 > Question: What are your AGI timelines, and what do you think P(extinction | AGI ) is?
 
 

@@ -1,5 +1,5 @@
-# AI Awakening
-## Implications for the Economy & Society
+# Stanford Econ 295 / CS 323 Spring 2023
+# AI Awakening: Implications for the Economy & Society
 
 These are notes from Stanford's Spring 2023 course Econ 295 / CS323
 AI Awakening taught by [Erik Brynjolfsson](https://www.brynjolfsson.com/) and 
