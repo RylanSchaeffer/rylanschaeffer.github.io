@@ -12,7 +12,7 @@ For other speakers, [pop up a level](../ai_awakening.html).
 - Scaling laws are everywhere
 - Better to look at these models as _aliens_ than as _tools_
 - Think about AIs as a tool that you _grow_
-
+- Example: Claude refuses to tell user how to make rabies airborne
 
 ## Q&A
 
@@ -51,4 +51,18 @@ Unclear currently. Having 1-2 big models open one up to fragility. Probably want
 Answer: You'll probably want the thing that causes the last harm. Claude's answer is much more detailed
 and nuanced: "In the end, there is no easy or universal answer here."
 
+> Question: There's a paper about how to make rabies airborne. I found it within < 1 minute of Googling. Is that evil?
+
+Answer: There's still a sequence of steps that need to be taken to make it happen. Being buried in the back
+of a highly technical paper is very different than providing a novice with exact steps to cause damage.
+
+> Follow-Up Question: What is "unsafe" about AI?
+
+A small set of private actors are making private decisions about how to use AI.
+
+> Follow-Up Question: So your company's censorship is the problem?
+
+There's a distinction between what's happening now and what you want to happen. 
+
+> Question: You were asking about Theory of Mind
 
