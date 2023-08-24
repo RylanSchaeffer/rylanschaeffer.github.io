@@ -27,6 +27,15 @@ const quotations = [
     "“'O my son Absalom,' Bean said softly, knowing for the first time " +
     "the kind of anguish that could tear such words from a man’s mouth'",
 
+    "“Sometimes</br>" +
+    "The sound of goodbye</br>" +
+    "Is louder</br>" +
+    "Than any drumbeat.“",
+
+    "“There is a love in me raging“",
+
+    "“We turn capital into compute into intelligence into capital.“",
+
     "“Remember, the enemy's gate is down.“",
 
     "“I think it's impossible to really understand somebody, what they want, what they believe, and not love them the way they love themselves.“",
