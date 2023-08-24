@@ -1,16 +1,19 @@
 # Jokes
 
+**DISCLAIMER: SOME OF THESE JOKE MIGHT BE VIEWED BY SOME AS OFFENSIVE. I PERSONALLY DON'T THINK SO BUT REASONABLE PEOPLE CAN DISAGREE. YOU HAVE BEEN WARNED.**
+
+
 ## Nerdy
 
 - (This was a true story told to me by my Resident Advisor at Harvard. She = my RA) She was a 7th year
   PhD student and had been working on a paper for ~2.5 years. She and her supervisor finally submitted
-  the paper on a Friday. Her supervisor says to her, Congratulations on finally finishing that paper!
-  You've been working so hard. I think you should treat yourself and take the weekend off. She replied
-  to her supervisor, No - thank you for all your support! You've been so helpful. I think you should
-  treat yourself and take the weekend off. Oh, I intend to! her supervisor replied. On Monday, they
-  reconvened to discuss new potential projects. My RA said to her supervisor, Can I let you in on a
-  little secret? Of course! I didn't really take the weekend off, she says. Can I let you in
-  a secret too? her supervisor asks. I didn't really take the weekend off either!
+  the paper on a Friday. Her supervisor says to her, "Congratulations on finally finishing that paper!
+  You've been working so hard. I think you should treat yourself and take the weekend off." She replied
+  to her supervisor, "No - thank you for all your support! You've been so helpful. I think you should
+  treat yourself and take the weekend off." "Oh, I intend to!" her supervisor replied. On Monday, they
+  reconvened to discuss new potential projects. My RA said to her supervisor, "Can I let you in on a
+  little secret?" "Of course!" "I didn't really take the weekend off" "Can I let you in
+  a secret too?" her supervisor asks. "I didn't really take the weekend off either!"
 
 - Happy Birthday to Henri Lebesgue! His legacy was integral to mathematics and his contributions 
   are without measure.
