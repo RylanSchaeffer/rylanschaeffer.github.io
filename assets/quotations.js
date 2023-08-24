@@ -4,13 +4,23 @@ const quotations = [
     "our memories can be compromised, the connectivity of our brains can be split or fragmented, " +
     "and our bodies can be broken apart and rebuilt. What then am I?“",
 
+    "“Why did we tell you then<br/>" +
+    "You were always the golden boy then<br/>" +
+    "And that you'd never lose that light in your eyes?“",
+
     "“We have to go. I'm almost happy here. I've lived too long with pain. I won’t know who I am without it.“",
 
-    "“Both convey different types of pain. One is the pain of a person who feels they are beyond redemption. The other is the pain of a man who hopes he is not beyond redemption.“",
+    "“Both convey different types of pain. One is the pain of a person who feels they are beyond redemption. The other is the pain of a man who hopes they are not.“",
 
     "“Humanity does not ask us to be happy. It merely asks us to be brilliant on its behalf.“",
 
     "“Be a better friend to yourself“",
+
+    "“When people tell you something is wrong, they're usually right. When they tell you how to fix it, they're usually wrong.“",
+
+    "“I'd still be mad at the world even if it apologized to me.“",
+
+    "“There comes a time in every life when the past recedes and the future opens. Some will turn back to what they already know. Some will walk straight ahead into uncertainty. I can’t tell you which one is right. But I can tell you which one is more fun.“",
 
     "“If we're not in pain, we're not alive.“",
 

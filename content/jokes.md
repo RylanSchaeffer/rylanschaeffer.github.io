@@ -79,9 +79,11 @@ Fewer race conditions!
 - What do you call a doctor who graduated last in his class? Doctor.
 
 
-## Technical Pickup Lines
+## Pickup Lines
 
 WARNING: THESE MIGHT BE OFFENSIVE TO SOME. YOU HAVE BEEN WARNED.
+
+Some of these are based on technical concepts.
 
 ### Graphical Models & Inference 
 
@@ -128,6 +130,10 @@ WARNING: THESE MIGHT BE OFFENSIVE TO SOME. YOU HAVE BEEN WARNED.
 - I'm not a photographer, but I can picture us together.
 - I want to be your gradient descent algorithm, so I can descend on you
 
+### Publishing Process
+
+- I want to fuck you till you make less sense than Reviewer 2
+
 ## Inappropriate
 
 - (This one was told to me by my research supervisor, who was told this joke herself during her PhD)
@@ -141,8 +147,12 @@ WARNING: THESE MIGHT BE OFFENSIVE TO SOME. YOU HAVE BEEN WARNED.
   other customers start to grumble, so a store clerk comes over to talk to the student. Excuse me,
   this is the express lane. I know that, the student snaps. The clerk snaps back, Then are you
   a Harvard student who can't count, or an MIT student who can't read?
-  
+
 
 ## Puns
 
 -  Al Gore may not have invented the internet, but he did come up with al-gore-ithms.
+
+
+## Dirty
+
