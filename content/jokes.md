@@ -1,7 +1,9 @@
 # Jokes
 
-**DISCLAIMER: SOME OF THESE JOKE MIGHT BE VIEWED BY SOME AS OFFENSIVE. I PERSONALLY DON'T THINK SO BUT REASONABLE PEOPLE CAN DISAGREE. YOU HAVE BEEN WARNED.**
+**Disclaimers**:
 
+1. Some of these jokes might be offensive. I personally don't think so but reasonable people can disagree. You have been warned.
+2. I'm always on the lookout for new jokes. If you have any, please send them my way!
 
 ## Nerdy
 
@@ -68,10 +70,18 @@ Fewer race conditions!
 - What's the difference between an introverted programmer and an extroverted programmer?
   The extroverted programmer looks at *your* shoes when he's talking to you.
 
-## Pickup Lines
+## Start Ups
+
+- We lose a little money on every customer, but we make it up on volume.
+
+## Inspirational
+
+- What do you call a doctor who graduated last in his class? Doctor.
 
 
-## Nerdy and Romantic Pickup Lines
+## Technical Pickup Lines
+
+WARNING: THESE MIGHT BE OFFENSIVE TO SOME. YOU HAVE BEEN WARNED.
 
 ### Graphical Models & Inference 
 
@@ -98,13 +108,17 @@ Fewer race conditions!
 
 ### Randomized Algorithms
 
+- If you're looking for tight bounds, I have shibari rope in my room
+- If you're looking for tight lower and upper bounds, have you tried my bed and me?
+
 ### Measure Theory
 
 - I need help with a problem. I think I've identified the right measure for you,
   but when I do the calculation, your total measure evaluates to everything that matters to me
 
-### Copilot Generated
+### GitHub Copilot Generated
 
+- The only thing I want to overfit to is you
 - I want to be your randomized algorithm, so I can run in polynomial time with high probability
 - I'm a lambda calculus, and I'm not afraid to use it
 - I'm not a Gaussian, but I'm pretty sure I can make you happy
@@ -114,19 +128,11 @@ Fewer race conditions!
 - I'm not a photographer, but I can picture us together.
 - I want to be your gradient descent algorithm, so I can descend on you
 
-## Start Ups
-
-- We lose a little money on every customer, but we make it up on volume.
-
 ## Inappropriate
 
 - (This one was told to me by my research supervisor, who was told this joke herself during her PhD)
   If you really want to succeed in life, get a wife and a mistress. Then, when you really need to get your
   work done, you can tell the mistress you’re with the wife, and tell the wife you’re with the mistress.
-
-## Inspirational
-
-- What do you call a doctor who graduated last in his class? Doctor.
 
 ## Miscellaneous
 
