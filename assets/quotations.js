@@ -51,8 +51,13 @@ const quotations = [
     "“Who imprisoned me here? Who keeps me here? " +
     "Who can release me? Who's controlling and constraining my life except...me?”",
 
-    "I shall see her again. I know that in my heart. One last time.<br/>" +
-    "Until then, I shall continue to send people to her.",
+    "“I shall see her again. I know that in my heart. One last time.<br/>" +
+    "Until then, I shall continue to send people to her.“",
+
+    "“I didn't want a Death who agonised over her role, or who took a grim delight in her job, " +
+    "or who didn't care. I wanted a Death I'd like to meet, in the end. Someone who would care.“",
+
+    "“Happiness is the most insidious prison of all.“",
 
     "“Yet, he thought, if I can die saying 'Life is so beautiful,' then nothing else is important.“",
 
@@ -180,7 +185,6 @@ const quotations = [
 
     "“You know Mr. Burns, you're the richest guy I know.“<br/>" +
     "“Ah yes, but I'd trade it all for a little more“",
-
 
     "“World-class skill requires world-class discipline.“",
 

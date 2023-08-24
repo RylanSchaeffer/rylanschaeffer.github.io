@@ -1,8 +1,8 @@
 # Jokes
 
-**Disclaimers**:
+Disclaimers:
 
-1. Some of these jokes might be offensive. I personally don't think so but reasonable people can disagree. You have been warned.
+1. **Some of these jokes might be offensive.** I personally don't think so but reasonable people can disagree. **You have been warned.**
 2. I'm always on the lookout for new jokes. If you have any, please send them my way!
 
 ## Nerdy
