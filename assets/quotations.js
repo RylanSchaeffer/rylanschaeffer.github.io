@@ -48,9 +48,11 @@ const quotations = [
 
     "“Today you... tomorrow me.“",
 
+    "“I sleep with two bicycles that I drew taped above my bed to remind myself there are heroes in this story.“",
+
     "“We all make choices, but in the end, our choices make us.“",
 
-    "“My strength is not in steel and fire, but in my intellect and will.”",
+    "“My strength is not in steel and fire, but in intellect and will.”",
 
     "”Now that you don't have to be perfect, you can be good.”",
 
@@ -138,8 +140,8 @@ const quotations = [
     "“Because everything here must still be accomplished. It depends only on him to " +
     "participate in this privileged act of creation.“",
 
-    "\"Lonely? You have yourself. Your infinite selves. " +
-    "It's a nonstop party where all the guests are the only person we like.\"",
+    "“Lonely? You have yourself. Your infinite selves. " +
+    "It's a nonstop party where all the guests are the only person we like.“",
 
     "“Structurally, there's no discernible difference. Life and death are " +
     "unquantifiable abstracts. Why should I be concerned?“",
