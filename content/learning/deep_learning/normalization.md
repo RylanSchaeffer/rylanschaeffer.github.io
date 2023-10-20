@@ -6,9 +6,9 @@
 be a $$D$$-dimensional vector of activations. Layer normalization first computes the mean and standard deviation across
 the $$D$$ dimensions:
 
-$$\mathbf{\mu} = \frac{1}{D} \sum_{d=1}^D a_d$$
+$$\mathbf{\mu} = \frac{1}{D} \sum_{d=1}^D \mathbf{a}_d$$
 
-$$\sigma = \sqrt{\frac{1}{D} \sum_{d=1}^D (a_d - \mu)^2 + \epsilon}$$
+$$\sigma = \sqrt{\frac{1}{D} \sum_{d=1}^D (\mathbf{a}_d - \mu)^2 + \epsilon}$$
 
 where $$\epsilon > 0$$ is a small constant to avoid division by zero. Then, Layer normalization normalizes the activations:
 
@@ -26,7 +26,7 @@ where $$\odot$$ denotes elementwise multiplication.
 Rather than centering, RMS Layer Norm normalizes the activations by their root mean square. Let $$\mathbf{a} \in \mathbb{R}^D$$
 be a vector of activations. RMS Layer Norm first calculates the root mean square:
 
-$$RMS(\mathbf{a}) = \sqrt{\frac{1}{D} \sum_d a_d^2} $$
+$$RMS(\mathbf{a}) = \sqrt{\frac{1}{D} \sum_d \mathbf{a}_d^2} $$
 
 RMS Layer Norm then normalizes the activations:
 
@@ -34,9 +34,9 @@ $$\frac{\mathbf{a}}{RMS(\mathbf{a})} $$
 
 One can optionally introduce learnable parameters $$\mathbf{\gamma} \in \mathbb{R}^D$$ to scale the normalized activations:
 
-$$\mathbf{\gamma} \odot \frac{a}{RMS(\mathbf{a})} $$
+$$\mathbf{\gamma} \odot \frac{\mathbf{a}}{RMS(\mathbf{a})} $$
 
-This forces the vectors on a $$\sqrt{D}$$-scaled hypersphere.
+This forces the vectors to lie on a $$\sqrt{D}$$-scaled hypersphere.
 
 ### Batch Normalization
 
