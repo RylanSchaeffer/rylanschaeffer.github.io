@@ -19,7 +19,7 @@ a (work-in-progress) [summary of my research approach](research/research_philoso
 
 - _Schaeffer_, et al. Associative Memory Under the Probabilistic Lens: Improved Transformers & Dynamic Memory Creation.
 
-### Accepted
+### Accepted (Conferences)
 
 - _Schaeffer_, Mirando, Koyejo. Are Emergent Abilities of Large Language Models a Mirage? __NeurIPS 2023 (Oral)__.
 
@@ -27,27 +27,13 @@ a (work-in-progress) [summary of my research approach](research/research_philoso
   
 - Bricken, _Schaeffer_, Olshausen, Kreiman. Emergence of Sparse Representations from Noise. __ICML 2023__.
 
-- _Schaeffer_, Khona, Fiete. No Free Lunch from Deep Learning in Neuroscience: A Case Study through Models
-  of the Entorhinal-Hippocampal Circuit. __NeurIPS 2022__.
+- _Schaeffer_, Khona, Fiete. No Free Lunch from Deep Learning in Neuroscience: A Case Study through Models of the Entorhinal-Hippocampal Circuit. __NeurIPS 2022__.
 
-- _Schaeffer_, Liu, Du, Linderman, Fiete. Streaming Inference for Infinite Non-Stationary Clustering.
-  __CoLLAs 2022__.
+- _Schaeffer_, Liu, Du, Linderman, Fiete. Streaming Inference for Infinite Non-Stationary Clustering. __CoLLAs 2022__.
 
 - _Schaeffer_, Du, Liu, Fiete. [Streaming Inference for Infinite Latent 
 Feature Models.](research/2022_icml_streaming_ibp/main.html) __ICML 2022__.
-
-- _Schaeffer_, Khona, Fiete. [No Free Lunch from Deep Learning in Neuroscience: 
-A Case Study through Models of the Entorhinal-Hippocampal Circuit.](research/2022_icml_ai4science_no_free_lunch/main.html) __ICML 2022 Workshop: AI for Science__.
-
-- _Schaeffer_, Liu, Du, Linderman, Fiete. [Streaming Inference for Infinite Non-Stationary Clustering.](research/2022_iclr_workshop_aloe/main.html)
-  __ICLR 2022 Workshop: Agent Learning in Open Endedness__.
-
-- _Schaeffer_. [An Algorithmic Theory of Metacognition in Minds and Machines.](research/2021_neurips_workshop_metacognition/main.html) 
-  __NeurIPS 2021 Workshop: Metacognition in the Age of AI__.
-
-- _Schaeffer_, et al. Fiete, IBL. [Neural population dynamics for hierarchical inference in mice performing 
-the International Brain Lab task.](research/2021_sfn_ibl/main.html) __Society for Neuroscience 2021__.
-  
+ 
 - _Schaeffer_, Bordelon, Khona, Pan, Fiete. [Efficient Online Inference for Nonparametric Mixture Models.](research/2021_uai_streaming_crp/main.html) __UAI 2021__.
 
 - _Schaeffer_, Shaham, Kreiman, Sompolinsky. [Neural network model of amygdalar memory engram formation 
@@ -56,14 +42,43 @@ the International Brain Lab task.](research/2021_sfn_ibl/main.html) __Society fo
 - _Schaeffer_, Khona, Meshulam, IBL, Fiete. [Reverse-engineering recurrent neural network solutions to a hierarchical inference task for 
   mice.](research/2020_neurips_reverse_engineering/main.html) __NeurIPS 2020__.
 
+### Accepted (Workshops)
+
+- _Schaeffer_, Pistunova, Khanna, Consul, Koyejo. Invalid Logic, Equivalent Gains: The Bizarreness of Reasoning in Language Model Prompting. __ICML 2023 Workshop: Knowledge and Logical Reasoning in the Era of Data-driven Learning__.
+
+- Carranza, Pai, _Schaeffer_, Tandon, Koyejo. Deceptive Alignment Monitoring. __ICML 2023 AdvML Workshop (Blue Sky Oral)__.
+
+- Pai, Carranza, _Schaeffer_, Tandon, Koyejo. FACADE: A Framework for Adversarial Circuit Anomaly Detection and Evaluation. __ICML 2023 AdvML Workshop__.
+
+- _Schaeffer_, Khona, Fiete. [No Free Lunch from Deep Learning in Neuroscience:
+  A Case Study through Models of the Entorhinal-Hippocampal Circuit.](research/2022_icml_ai4science_no_free_lunch/main.html) __ICML 2022 Workshop: AI for Science__.
+
+- _Schaeffer_, Liu, Du, Linderman, Fiete. [Streaming Inference for Infinite Non-Stationary Clustering.](research/2022_iclr_workshop_aloe/main.html)
+  __ICLR 2022 Workshop: Agent Learning in Open Endedness__.
+
+- _Schaeffer_. [An Algorithmic Theory of Metacognition in Minds and Machines.](research/2021_neurips_workshop_metacognition/main.html)
+  __NeurIPS 2021 Workshop: Metacognition in the Age of AI__.
+
+- _Schaeffer_, et al. Fiete, IBL. [Neural population dynamics for hierarchical inference in mice performing
+  the International Brain Lab task.](research/2021_sfn_ibl/main.html) __Society for Neuroscience 2021__.
+
+### Accepted (Journals)
+
+### Contributions to Large Scale Collaborations
+
+- Brain-wide representations of prior information in mouse decision-making.  __bioRxiv 2023__.
+
+- A Brain-Wide Map of Neural Activity during Complex Behaviour. __bioRxiv 2023__.
+
+- DecodingTrust: A Comprehensive Assessment of Trustworthiness in GPT Models. __NeurIPS 2023__.
+
 ### In Progress
 
 - Liu, Schaeffer et al. Brain-wide population codes for hierarchical inference in mice. 2023.
-  
 
 ## Rejected
 
-- _Schaeffer_ et al. Double Descent Demystified: . __NeurIPS 2023__.
+- _Schaeffer_ et al. Double Descent Demystified: Identifying, Interpreting & Ablating the Sources of a Deep Learning Puzzle. __NeurIPS 2023__.
 
 - _Schaeffer_ et al. Streaming Inference for Infinite Latent Feature Models. __AISTATS 2021__.
 
