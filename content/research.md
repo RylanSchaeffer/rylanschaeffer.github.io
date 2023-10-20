@@ -7,12 +7,17 @@ a (work-in-progress) [summary of my research approach](research/research_philoso
 
 ## Publications
 
-### Preprint
-
-- _Schaeffer_, et al. An Introductory Tutorial on Double Descent: What Double Descent Is and Why It Occurs. Arxiv 2023.
-
-
 ### Under Review
+
+- _Schaeffer_, et al. Testing Assumptions Underlying a Unified Theory for the Origin of Grid Cells.
+
+- _Schaeffer_, et al. Beyond Expectations: Model-Driven Amplification of Dataset Biases in Data Feedback Loops.
+
+- _Schaeffer_, et al. Divergence at the Interpolation Threshold: Identifying, Interpreting & Ablating the Sources of a Deep Learning Puzzle.
+
+- _Schaeffer_, et al. An Information-Theoretic Understanding of Maximum Manifold Capacity Representations.
+
+- _Schaeffer_, et al. Associative Memory Under the Probabilistic Lens: Improved Transformers & Dynamic Memory Creation.
 
 ### Accepted
 
