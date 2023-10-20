@@ -10,11 +10,11 @@ $$\mathbf{\mu} = \frac{1}{D} \sum_{d=1}^D a_d$$
 
 $$\sigma = \sqrt{\frac{1}{D} \sum_{d=1}^D (a_d - \mu)^2 + \epsilon}$$
 
-where $\epsilon$ is a small constant to avoid division by zero. Then, Layer normalization normalizes the activations:
+where $$\epsilon > 0$$ is a small constant to avoid division by zero. Then, Layer normalization normalizes the activations:
 
 $$ \frac{ \mathbf{a} - \mathbf{\mu}}{\sigma} $$
 
-One can optionally introduce learnable parameters $\mathbf{\gamma}$ and $\mathbf{\beta}$ to scale and shift the normalized activations:
+One can optionally introduce learnable parameters $$\mathbf{\gamma}, \mathbf{\beta} \in \mathbb{R}^D$$ to scale and shift the normalized activations:
 
 $$\mathbf{\gamma} \odot \frac{ \mathbf{a} - \mathbf{\mu}}{\sigma} + \mathbf{\beta}$$
 
@@ -32,11 +32,11 @@ RMS Layer Norm then normalizes the activations:
 
 $$\frac{\mathbf{a}}{RMS(\mathbf{a})} $$
 
-One can optionally introduce leanable parameters $\mathbf{\gamma}$ to scale the normalized activations:
+One can optionally introduce learnable parameters $$\mathbf{\gamma} \in \mathbb{R}^D$$ to scale the normalized activations:
 
-$$\mathbf{\gamma} \frac{a}{RMS(\mathbf{a})} $$
+$$\mathbf{\gamma} \odot \frac{a}{RMS(\mathbf{a})} $$
 
-This forces the vectors on a $\sqrt{D}$-scaled hypersphere.
+This forces the vectors on a $$\sqrt{D}$$-scaled hypersphere.
 
 ### Batch Normalization
 
