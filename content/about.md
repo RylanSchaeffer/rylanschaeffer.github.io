@@ -4,7 +4,7 @@ Based on some [good advice](https://www.ece.ucdavis.edu/~jowens/advice.html), I 
 the person on the left. Quotes that have significance to me are displayed randomly on the bottom left.
 My life's trajectory is summarized below:
 
-- 2019 Fall - Present: I'm earning my Masters of Engineering in Computer Science Engineering at Harvard
+- 2019 Fall - 2021 Winter: I'm earning my Masters of Engineering in Computer Science Engineering at Harvard
 University. I am currently conducting research with [Professor Ila Fiete in MIT BCS](https://fietelab.mit.edu/)
 as well as [Professor Cengiz Pehlvan in Harvard Applied Math](https://pehlevan.seas.harvard.edu/) and 
 [Dr. Nimrod Shaham in Harvard Center for Brain Science](https://cbmm.mit.edu/about/people/shaham). 

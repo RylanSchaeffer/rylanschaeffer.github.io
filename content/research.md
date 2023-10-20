@@ -7,22 +7,20 @@ a (work-in-progress) [summary of my research approach](research/research_philoso
 
 ## Publications
 
-### In Preparation
-
-- _Schaeffer_, et al. Are Emergent Abilities of Large Language Models a Mirage? 2023.
-
-- _Schaeffer_ \*, _Khona_ \*, Fiete. Self-Supervised Learning of Efficient Algebraic Codes Generates Grid Cells. 2023.
-
 ### Preprint
 
-- _Schaeffer_, et al. An Introductory Tutorial on Double Descent: What Double Descent Is and Why It Occurs. 2023.
+- _Schaeffer_, et al. An Introductory Tutorial on Double Descent: What Double Descent Is and Why It Occurs. Arxiv 2023.
 
 
 ### Under Review
 
-- Bricken, _Schaeffer_, Olshausen, Kreiman. Emergence of Sparse Representations from Noise. __ICML 2023__.
-
 ### Accepted
+
+- _Schaeffer_, Mirando, Koyejo. Are Emergent Abilities of Large Language Models a Mirage? __NeurIPS 2023 (Oral)__.
+
+- _Schaeffer_, _Khona_, Ma, Eyzaguirre, Koyejo, Fiete. Self-Supervised Learning of Representations for Space Generates Multi-Modular Grid Cells. __NeurIPS 2023__. 
+  
+- Bricken, _Schaeffer_, Olshausen, Kreiman. Emergence of Sparse Representations from Noise. __ICML 2023__.
 
 - _Schaeffer_, Khona, Fiete. No Free Lunch from Deep Learning in Neuroscience: A Case Study through Models
   of the Entorhinal-Hippocampal Circuit. __NeurIPS 2022__.
@@ -42,15 +40,15 @@ A Case Study through Models of the Entorhinal-Hippocampal Circuit.](research/202
 - _Schaeffer_. [An Algorithmic Theory of Metacognition in Minds and Machines.](research/2021_neurips_workshop_metacognition/main.html) 
   __NeurIPS 2021 Workshop: Metacognition in the Age of AI__.
 
-- *Schaeffer*, et al. Fiete, IBL. [Neural population dynamics for hierarchical inference in mice performing 
+- _Schaeffer_, et al. Fiete, IBL. [Neural population dynamics for hierarchical inference in mice performing 
 the International Brain Lab task.](research/2021_sfn_ibl/main.html) __Society for Neuroscience 2021__.
   
-- *Schaeffer*, Bordelon, Khona, Pan, Fiete. [Efficient Online Inference for Nonparametric Mixture Models.](research/2021_uai_streaming_crp/main.html) __UAI 2021__.
+- _Schaeffer_, Bordelon, Khona, Pan, Fiete. [Efficient Online Inference for Nonparametric Mixture Models.](research/2021_uai_streaming_crp/main.html) __UAI 2021__.
 
-- *Schaeffer*, Shaham, Kreiman, Sompolinsky. [Neural network model of amygdalar memory engram formation 
+- _Schaeffer_, Shaham, Kreiman, Sompolinsky. [Neural network model of amygdalar memory engram formation 
   and function.](research/2021_cosyne_amygdalar_engram/main.html) __COSYNE 2021__.
 
-- *Schaeffer*, Khona, Meshulam, IBL, Fiete. [Reverse-engineering recurrent neural network solutions to a hierarchical inference task for 
+- _Schaeffer_, Khona, Meshulam, IBL, Fiete. [Reverse-engineering recurrent neural network solutions to a hierarchical inference task for 
   mice.](research/2020_neurips_reverse_engineering/main.html) __NeurIPS 2020__.
 
 ### In Progress
@@ -59,6 +57,8 @@ the International Brain Lab task.](research/2021_sfn_ibl/main.html) __Society fo
   
 
 ## Rejected
+
+- _Schaeffer_ et al. Double Descent Demystified: . __NeurIPS 2023__.
 
 - _Schaeffer_ et al. Streaming Inference for Infinite Latent Feature Models. __AISTATS 2021__.
 
