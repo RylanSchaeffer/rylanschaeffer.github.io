@@ -16,6 +16,8 @@ a (work-in-progress) [summary of my research approach](research/research_philoso
 
 ### Under Review
 
+- _Schaeffer_, et al. Divergence at the Interpolation Threshold: Identifying, Interpreting & Ablating the Sources of a Deep Learning Puzzle. __Under Review at ICLR 2024__.
+
 ### Accepted (Conferences)
 
 - _Schaeffer_, Mirando, Koyejo. Are Emergent Abilities of Large Language Models a Mirage? __NeurIPS 2023 (Oral)__.
@@ -41,7 +43,7 @@ Feature Models.](research/2022_icml_streaming_ibp/main.html) __ICML 2022__.
 
 ### Accepted (Workshops)
 
-- _Schaeffer_, et al. Divergence at the Interpolation Threshold: Identifying, Interpreting & Ablating the Sources of a Deep Learning Puzzle.
+- _Schaeffer_, et al. Divergence at the Interpolation Threshold: Identifying, Interpreting & Ablating the Sources of a Deep Learning Puzzle. __NeurIPS 2023 Workshops: ATTRIB, Mathematics of Modern Machine Learning__.
 
 - _Schaeffer_, et al. An Information-Theoretic Understanding of Maximum Manifold Capacity Representations. __NeurIPS Workshops: NeurReps (Oral), InfoCog (Spotlight, UniReps, SSL__. 
 
