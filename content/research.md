@@ -7,17 +7,14 @@ a (work-in-progress) [summary of my research approach](research/research_philoso
 
 ## Publications
 
+### In Preparation
+
+- _Schaeffer_ et al. Disentangling Fact from Grid Cell Fiction in Trained Deep Path Integrators. 2023.
+
+- Liu, _Schaeffer_ et al. Brain-wide population codes for hierarchical inference in mice. 2024.
+
+
 ### Under Review
-
-- _Schaeffer_, et al. Testing Assumptions Underlying a Unified Theory for the Origin of Grid Cells.
-
-- _Schaeffer_, et al. Beyond Expectations: Model-Driven Amplification of Dataset Biases in Data Feedback Loops.
-
-- _Schaeffer_, et al. Divergence at the Interpolation Threshold: Identifying, Interpreting & Ablating the Sources of a Deep Learning Puzzle.
-
-- _Schaeffer_, et al. An Information-Theoretic Understanding of Maximum Manifold Capacity Representations.
-
-- _Schaeffer_, et al. Associative Memory Under the Probabilistic Lens: Improved Transformers & Dynamic Memory Creation.
 
 ### Accepted (Conferences)
 
@@ -43,6 +40,16 @@ Feature Models.](research/2022_icml_streaming_ibp/main.html) __ICML 2022__.
   mice.](research/2020_neurips_reverse_engineering/main.html) __NeurIPS 2020__.
 
 ### Accepted (Workshops)
+
+- _Schaeffer_, et al. Divergence at the Interpolation Threshold: Identifying, Interpreting & Ablating the Sources of a Deep Learning Puzzle.
+
+- _Schaeffer_, et al. An Information-Theoretic Understanding of Maximum Manifold Capacity Representations. __NeurIPS Workshops: NeurReps (Oral), InfoCog (Spotlight, UniReps, SSL__. 
+
+- _Schaeffer_, Khona, Zahedi, Fiete, Gromov, Koyejo. Associative Memory Under the Probabilistic Lens: Improved Transformers & Dynamic Memory Creation. __NeurIPS 2023 Workshop: Associative Memories & Hopfield Networks__.
+
+- _Schaeffer_ & Koyejo. Beyond Expectations: Model-Driven Amplification of Dataset Biases in Data Feedback Loops. __NeurIPS 2023 Workshop: Algorithmic Fairness through the Lens of Time__.
+
+- _Schaeffer_, Khona, Bertagnoli, Koyejo, Fiete. Testing Assumptions Underlying a Unified Theory for the Origin of Grid Cells.  __NeurIPS 2023 Workshops: UniReps, NeurReps, AI4Science__.
 
 - _Schaeffer_, Pistunova, Khanna, Consul, Koyejo. Invalid Logic, Equivalent Gains: The Bizarreness of Reasoning in Language Model Prompting. __ICML 2023 Workshop: Knowledge and Logical Reasoning in the Era of Data-driven Learning__.
 
@@ -71,10 +78,6 @@ Feature Models.](research/2022_icml_streaming_ibp/main.html) __ICML 2022__.
 - A Brain-Wide Map of Neural Activity during Complex Behaviour. __bioRxiv 2023__.
 
 - DecodingTrust: A Comprehensive Assessment of Trustworthiness in GPT Models. __NeurIPS 2023__.
-
-### In Progress
-
-- Liu, Schaeffer et al. Brain-wide population codes for hierarchical inference in mice. 2023.
 
 ## Rejected
 
