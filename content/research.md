@@ -45,7 +45,7 @@ Feature Models.](research/2022_icml_streaming_ibp/main.html) __ICML 2022__.
 
 - _Schaeffer_, et al. Divergence at the Interpolation Threshold: Identifying, Interpreting & Ablating the Sources of a Deep Learning Puzzle. __NeurIPS 2023 Workshops: ATTRIB, Mathematics of Modern Machine Learning__.
 
-- _Schaeffer_, et al. An Information-Theoretic Understanding of Maximum Manifold Capacity Representations. __NeurIPS Workshops: NeurReps (Oral), InfoCog (Spotlight, UniReps, SSL__. 
+- _Schaeffer_, et al. An Information-Theoretic Understanding of Maximum Manifold Capacity Representations. __NeurIPS Workshops: NeurReps (Oral), InfoCog (Spotlight), UniReps, SSL__. 
 
 - _Schaeffer_, Khona, Zahedi, Fiete, Gromov, Koyejo. Associative Memory Under the Probabilistic Lens: Improved Transformers & Dynamic Memory Creation. __NeurIPS 2023 Workshop: Associative Memories & Hopfield Networks__.
 
