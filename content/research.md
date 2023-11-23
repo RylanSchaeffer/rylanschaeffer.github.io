@@ -10,26 +10,28 @@ a (work-in-progress) [summary of my research approach](research/research_philoso
 ### Accepted (Conferences)
 
 __Schaeffer__, Mirando, Koyejo. Are Emergent Abilities of Large Language Models a Mirage? __NeurIPS 2023 (Oral)__.
-  - [Tweeprint](research/2023_neurips_llm_emergent_abilities_mirage/main.md)
+  - [Summary](research/2023_neurips_llm_emergent_abilities_mirage/main.md)
   - [Paper](research/2023_neurips_llm_emergent_abilities_mirage/paper.pdf)
   - [OpenReview](https://openreview.net/forum?id=ITw9edRDlD)
+  - [Tweeprint](https://twitter.com/RylanSchaeffer/status/1653141214110322688)
 
 __Schaeffer__, _Khona_, Ma, Eyzaguirre, Koyejo, Fiete. Self-Supervised Learning of Representations for Space Generates Multi-Modular Grid Cells. __NeurIPS 2023__.
   - [Paper](research/2023_neurips_ssl_gc/paper.pdf)
   - [OpenReview](https://openreview.net/forum?id=8ox2vrQiTF)
 
 Bricken, __Schaeffer__, Olshausen, Kreiman. Emergence of Sparse Representations from Noise. __ICML 2023__.
-  - [Tweeprint](research/2023_icml_noise_sparse_coding/main.md)
+  - [Summary](research/2023_icml_noise_sparse_coding/main.md)
   - [Paper](research/2023_icml_noise_sparse_coding/paper.pdf)
   - [Poster](research/2023_icml_noise_sparse_coding/poster.pdf)
   - [OpenReview](https://openreview.net/forum?id=cxYaBAXVKg)
+  - [Tweeprint](https://twitter.com/RylanSchaeffer/status/1683654126977314816)
 
 - __Schaeffer__, Khona, Fiete. No Free Lunch from Deep Learning in Neuroscience: A Case Study through Models of the Entorhinal-Hippocampal Circuit. __NeurIPS 2022__.
-  - [Tweeprint]()
   - [Recorde Talk](https://slideslive.com/38990695/no-free-lunch-from-deep-learning-in-neuroscience)
   - [Paper](research/2022_neurips_no_free_lunch/paper.pdf)
   - [Poster](research/2022_neurips_no_free_lunch/poster.pdf)
   - [Slides]()
+  - Tweeprint
   - [OpenReview](https://openreview.net/forum?id=syU-XvinTI1)
 
 - __Schaeffer__, Liu, Du, Linderman, Fiete. Streaming Inference for Infinite Non-Stationary Clustering. __CoLLAs 2022__.
@@ -60,7 +62,7 @@ Feature Models.](research/2022_icml_streaming_ibp/main.html) __ICML 2022__.
 
 - __Schaeffer__, Khona, Meshulam, IBL, Fiete. [Reverse-engineering recurrent neural network solutions to a hierarchical inference task for 
   mice.](research/2020_neurips_reverse_engineering/main.html) __NeurIPS 2020__.
-  - [Tweeprint](research/2020_neurips_reverse_engineering/main.html)
+  - [Summary](research/2020_neurips_reverse_engineering/main.html)
   - [Recorded Talk](https://slideslive.com/38937686/reverseengineering-recurrent-neural-network-solutions-to-a-hierarchical-inference-task-for-mice)
   - [Paper](research/2020_neurips_reverse_engineering/paper.pdf)
   - [Poster](research/2020_neurips_reverse_engineering/poster.pdf)
@@ -183,7 +185,8 @@ Feature Models.](research/2022_icml_streaming_ibp/main.html) __ICML 2022__.
 
 ### Under Review
 
-- __Schaeffer__, et al. Divergence at the Interpolation Threshold: Identifying, Interpreting & Ablating the Sources of a Deep Learning Puzzle. __Under Review at ICLR 2024__.
+__Schaeffer__, et al. Divergence at the Interpolation Threshold: Identifying, Interpreting & Ablating the Sources of a Deep Learning Puzzle. __Under Review at ICLR 2024 Blog Track__.
+  - [Tweeprint](https://twitter.com/RylanSchaeffer/status/1640762626987925505)
 
 ### Satire
 
