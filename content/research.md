@@ -79,11 +79,12 @@ __Schaeffer__, et al. Divergence at the Interpolation Threshold: Identifying, In
   - OpenReview
 
 __Schaeffer__, et al. An Information-Theoretic Understanding of Maximum Manifold Capacity Representations. __NeurIPS Workshops: NeurReps (Oral), UniReps (Oral), InfoCog (Spotlight), SSL__.
+  - [Summary](research/2023_neurips_workshop_mmcr_infotheory/main.md)
   - Tweeprint
-  - Paper
+  - [Paper](research/2023_neurips_workshop_mmcr_infotheory/paper.pdf)
   - Poster
   - Slides
-  - OpenReview
+  - OpenReview 1
   
 __Schaeffer__, Khona, Zahedi, Fiete, Gromov, Koyejo. Associative Memory Under the Probabilistic Lens: Improved Transformers & Dynamic Memory Creation. __NeurIPS 2023 Workshop: Associative Memories & Hopfield Networks__.  - Tweeprint
   - Tweeprint
@@ -148,11 +149,10 @@ __Schaeffer__, Liu, Du, Linderman, Fiete. [Streaming Inference for Infinite Non-
 
 __Schaeffer__. [An Algorithmic Theory of Metacognition in Minds and Machines.](research/2021_neurips_workshop_metacognition/main.html)
   __NeurIPS 2021 Workshop: Metacognition in the Age of AI__.
-  - Tweeprint
-  - Paper
-  - Poster
-  - Slides
-  - OpenReview
+  - [Summary](research/2021_neurips_workshop_metacognition/main.html)
+  - [Tweeprint](https://twitter.com/RylanSchaeffer/status/1451556091100209154)
+  - [Paper](research/2021_neurips_workshop_metacognition/paper.pdf)
+  - [Poster](research/2021_neurips_workshop_metacognition/poster.pdf)
 
 __Schaeffer__, et al. Fiete, IBL. [Neural population dynamics for hierarchical inference in mice performing
   the International Brain Lab task.](research/2021_sfn_ibl/main.html) __Society for Neuroscience 2021__.
