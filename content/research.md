@@ -77,63 +77,63 @@ __Schaeffer__, Shaham, Kreiman, Sompolinsky. [Neural network model of amygdalar 
 
 ### Accepted (Workshops)
 
-- __Schaeffer__, et al. Divergence at the Interpolation Threshold: Identifying, Interpreting & Ablating the Sources of a Deep Learning Puzzle. __NeurIPS 2023 Workshops: ATTRIB, Mathematics of Modern Machine Learning__.
+__Schaeffer__, et al. Divergence at the Interpolation Threshold: Identifying, Interpreting & Ablating the Sources of a Deep Learning Puzzle. __NeurIPS 2023 Workshops: ATTRIB, Mathematics of Modern Machine Learning__.
   - Tweeprint
   - Paper
   - Poster
   - Slides
   - OpenReview
 
-- __Schaeffer__, et al. An Information-Theoretic Understanding of Maximum Manifold Capacity Representations. __NeurIPS Workshops: NeurReps (Oral), UniReps (Oral), InfoCog (Spotlight), SSL__.
+__Schaeffer__, et al. An Information-Theoretic Understanding of Maximum Manifold Capacity Representations. __NeurIPS Workshops: NeurReps (Oral), UniReps (Oral), InfoCog (Spotlight), SSL__.
   - Tweeprint
   - Paper
   - Poster
   - Slides
   - OpenReview
   
-- __Schaeffer__, Khona, Zahedi, Fiete, Gromov, Koyejo. Associative Memory Under the Probabilistic Lens: Improved Transformers & Dynamic Memory Creation. __NeurIPS 2023 Workshop: Associative Memories & Hopfield Networks__.  - Tweeprint
+__Schaeffer__, Khona, Zahedi, Fiete, Gromov, Koyejo. Associative Memory Under the Probabilistic Lens: Improved Transformers & Dynamic Memory Creation. __NeurIPS 2023 Workshop: Associative Memories & Hopfield Networks__.  - Tweeprint
   - Tweeprint
   - Paper
   - Poster
   - Slides
   - OpenReview
 
-- __Schaeffer__, Khona, Bertagnoli, Koyejo, Fiete. Testing Assumptions Underlying a Unified Theory for the Origin of Grid Cells.  __NeurIPS 2023 Workshops: UniReps, NeurReps, AI4Science__.
+__Schaeffer__, Khona, Bertagnoli, Koyejo, Fiete. Testing Assumptions Underlying a Unified Theory for the Origin of Grid Cells.  __NeurIPS 2023 Workshops: UniReps, NeurReps, AI4Science__.
   - Tweeprint
   - Paper
   - Poster
   - Slides
   - OpenReview
 
-- __Schaeffer__ & Koyejo. Beyond Expectations: Model-Driven Amplification of Dataset Biases in Data Feedback Loops. __NeurIPS 2023 Workshop: Algorithmic Fairness through the Lens of Time__.
+__Schaeffer__ & Koyejo. Beyond Expectations: Model-Driven Amplification of Dataset Biases in Data Feedback Loops. __NeurIPS 2023 Workshop: Algorithmic Fairness through the Lens of Time__.
   - Tweeprint
   - Paper
   - Poster
   - Slides
   - OpenReview
 
-- __Schaeffer__, Pistunova, Khanna, Consul, Koyejo. Invalid Logic, Equivalent Gains: The Bizarreness of Reasoning in Language Model Prompting. __ICML 2023 Workshop: Knowledge and Logical Reasoning in the Era of Data-driven Learning__.
+__Schaeffer__, Pistunova, Khanna, Consul, Koyejo. Invalid Logic, Equivalent Gains: The Bizarreness of Reasoning in Language Model Prompting. __ICML 2023 Workshop: Knowledge and Logical Reasoning in the Era of Data-driven Learning__.
   - Tweeprint
   - Paper
   - Poster
   - Slides
   - OpenReview
-  - 
-- Carranza, Pai, __Schaeffer__, Tandon, Koyejo. Deceptive Alignment Monitoring. __ICML 2023 AdvML Workshop (Blue Sky Oral)__.
+
+Carranza, Pai, __Schaeffer__, Tandon, Koyejo. Deceptive Alignment Monitoring. __ICML 2023 AdvML Workshop (Blue Sky Oral)__.
   - Tweeprint
   - Paper
   - Poster
   - Slides
   - OpenReview
   
-- Pai, Carranza, __Schaeffer__, Tandon, Koyejo. FACADE: A Framework for Adversarial Circuit Anomaly Detection and Evaluation. __ICML 2023 AdvML Workshop__.
+Pai, Carranza, __Schaeffer__, Tandon, Koyejo. FACADE: A Framework for Adversarial Circuit Anomaly Detection and Evaluation. __ICML 2023 AdvML Workshop__.
   - Tweeprint
   - Paper
   - Poster
   - Slides
   - OpenReview
 
-- __Schaeffer__, Khona, Fiete. No Free Lunch from Deep Learning in Neuroscience:
+__Schaeffer__, Khona, Fiete. No Free Lunch from Deep Learning in Neuroscience:
   A Case Study through Models of the Entorhinal-Hippocampal Circuit. __ICML 2022 Workshop: AI for Science__.
   - [Summary](research/2022_icml_workshop_no_free_lunch/main.md)
   - [Recorded Talk](https://slideslive.com/38986158/no-free-lunch-from-deep-learning-in-neuroscience-a-case-study-through-models-of-the-entorhinalhippocampal-circuit?ref=search-presentations-No+Free+Lunch+from+Deep+Learning+in+Neuroscience)
@@ -143,7 +143,7 @@ __Schaeffer__, Shaham, Kreiman, Sompolinsky. [Neural network model of amygdalar 
   - [Tweeprint](https://twitter.com/RylanSchaeffer/status/1550854303824355328)
   - [OpenReview](https://openreview.net/forum?id=mxi1xKzNFrb)
 
-- __Schaeffer__, Liu, Du, Linderman, Fiete. [Streaming Inference for Infinite Non-Stationary Clustering.](research/2022_iclr_workshop_aloe/main.html)
+__Schaeffer__, Liu, Du, Linderman, Fiete. [Streaming Inference for Infinite Non-Stationary Clustering.](research/2022_iclr_workshop_aloe/main.html)
   __ICLR 2022 Workshop: Agent Learning in Open Endedness__.
   - Tweeprint
   - Paper
@@ -151,7 +151,7 @@ __Schaeffer__, Shaham, Kreiman, Sompolinsky. [Neural network model of amygdalar 
   - Slides
   - OpenReview
 
-- __Schaeffer__. [An Algorithmic Theory of Metacognition in Minds and Machines.](research/2021_neurips_workshop_metacognition/main.html)
+__Schaeffer__. [An Algorithmic Theory of Metacognition in Minds and Machines.](research/2021_neurips_workshop_metacognition/main.html)
   __NeurIPS 2021 Workshop: Metacognition in the Age of AI__.
   - Tweeprint
   - Paper
@@ -159,7 +159,7 @@ __Schaeffer__, Shaham, Kreiman, Sompolinsky. [Neural network model of amygdalar 
   - Slides
   - OpenReview
 
-- __Schaeffer__, et al. Fiete, IBL. [Neural population dynamics for hierarchical inference in mice performing
+__Schaeffer__, et al. Fiete, IBL. [Neural population dynamics for hierarchical inference in mice performing
   the International Brain Lab task.](research/2021_sfn_ibl/main.html) __Society for Neuroscience 2021__.
   - Tweeprint
   - Paper
@@ -171,24 +171,23 @@ __Schaeffer__, Shaham, Kreiman, Sompolinsky. [Neural network model of amygdalar 
 
 ### Contributions to Large Scale Collaborations
 
-- Liu, __Schaeffer__ et al. Brain-wide population codes for hierarchical inference in mice. __In Preparation__.
+Liu, __Schaeffer__ et al. Brain-wide population codes for hierarchical inference in mice. __In Preparation__.
 
-- Brain-wide representations of prior information in mouse decision-making.  __bioRxiv 2023__.
+International Brain Lab. Brain-wide representations of prior information in mouse decision-making.  __bioRxiv 2023__.
 
-- A Brain-Wide Map of Neural Activity during Complex Behaviour. __bioRxiv 2023__.
+International Brain Lab. A Brain-Wide Map of Neural Activity during Complex Behaviour. __bioRxiv 2023__.
 
-- DecodingTrust: A Comprehensive Assessment of Trustworthiness in GPT Models. __NeurIPS 2023__.
+DecodingTrust: A Comprehensive Assessment of Trustworthiness in GPT Models. __NeurIPS 2023__.
 
 ### In Preparation
 
-- __Schaeffer__, et al. An Information-Theoretic Understanding of Maximum Manifold Capacity Representations.
+__Schaeffer__, et al. An Information-Theoretic Understanding of Maximum Manifold Capacity Representations.
 
-- __Schaeffer__, et al. Associative Memory Under the Probabilistic Lens: Improved Transformers & Dynamic Memory Creation.
+__Schaeffer__, et al. Associative Memory Under the Probabilistic Lens: Improved Transformers & Dynamic Memory Creation.
 
-- __Schaeffer__, et al. Testing Assumptions Underlying a Unified Theory for the Origin of Grid Cells.
+__Schaeffer__, et al. Testing Assumptions Underlying a Unified Theory for the Origin of Grid Cells.
 
-- __Schaeffer__ et al. Disentangling Fact from Grid Cell Fiction in Trained Deep Path Integrators.
-
+__Schaeffer__ et al. Disentangling Fact from Grid Cell Fiction in Trained Deep Path Integrators.
 
 
 ### Under Review
@@ -198,19 +197,19 @@ __Schaeffer__, et al. Divergence at the Interpolation Threshold: Identifying, In
 
 ### Satire
 
-- __Schaeffer__. Pretraining on the Test Set Is All You Need. __Arxiv 2023__.
+__Schaeffer__. Pretraining on the Test Set Is All You Need. __Arxiv 2023__.
   - [Tweeprint](research/2023_arxiv_pretraining_on_test_set/main.md)
   - [Paper](research/2023_arxiv_pretraining_on_test_set/paper.pdf)
 
 ### One Day
 
-- __Schaeffer__ et al. Memory Engrams Perform Nonparametric Latent State Associative Learning.
+__Schaeffer__ et al. Memory Engrams Perform Nonparametric Latent State Associative Learning.
 
-- __Schaeffer__ et al. Recovering low dimensional, interpretable mechanistic models via Representations and Dynamics Distillation (RADD).
+__Schaeffer__ et al. Recovering low dimensional, interpretable mechanistic models via Representations and Dynamics Distillation (RADD).
 
 ### Unpublished Papers
 
-- __Schaeffer__, et al. Towards Unifying Smooth Neural Codes with Adversarially Robust Representations. 2019.
+__Schaeffer__, et al. Towards Unifying Smooth Neural Codes with Adversarially Robust Representations. 2019.
   - [Paper](research/2019_am226_smooth_neural_codes/paper.pdf)
 
 
