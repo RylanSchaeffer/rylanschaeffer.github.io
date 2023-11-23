@@ -1,10 +1,5 @@
 # Research
 
-## Collaboration Requests
-
-If you're interested in collaborating, email me at rylanschaeffer@gmail.com. I've posted
-a (work-in-progress) [summary of my research approach](research/research_philosophy.md).
-
 ## Publications
 
 ### Accepted (Conferences)
@@ -67,8 +62,7 @@ __Schaeffer__, Shaham, Kreiman, Sompolinsky. [Neural network model of amygdalar 
   - Slides
   - OpenReview
 
-- __Schaeffer__, Khona, Meshulam, IBL, Fiete. [Reverse-engineering recurrent neural network solutions to a hierarchical inference task for 
-  mice.](research/2020_neurips_reverse_engineering/main.html) __NeurIPS 2020__.
+__Schaeffer__, Khona, Meshulam, IBL, Fiete. [Reverse-engineering recurrent neural network solutions to a hierarchical inference task for mice.](research/2020_neurips_reverse_engineering/main.html) __NeurIPS 2020__.
   - [Summary](research/2020_neurips_reverse_engineering/main.html)
   - [Recorded Talk](https://slideslive.com/38937686/reverseengineering-recurrent-neural-network-solutions-to-a-hierarchical-inference-task-for-mice)
   - [Paper](research/2020_neurips_reverse_engineering/paper.pdf)
@@ -78,10 +72,11 @@ __Schaeffer__, Shaham, Kreiman, Sompolinsky. [Neural network model of amygdalar 
 ### Accepted (Workshops)
 
 __Schaeffer__, et al. Divergence at the Interpolation Threshold: Identifying, Interpreting & Ablating the Sources of a Deep Learning Puzzle. __NeurIPS 2023 Workshops: ATTRIB, Mathematics of Modern Machine Learning__.
-  - Tweeprint
+  - [Summary](research/2023_neurips_workshop_double_descent/main.md)
   - Paper
   - Poster
   - Slides
+  - Tweeprint
   - OpenReview
 
 __Schaeffer__, et al. An Information-Theoretic Understanding of Maximum Manifold Capacity Representations. __NeurIPS Workshops: NeurReps (Oral), UniReps (Oral), InfoCog (Spotlight), SSL__.
@@ -98,7 +93,8 @@ __Schaeffer__, Khona, Zahedi, Fiete, Gromov, Koyejo. Associative Memory Under th
   - Slides
   - OpenReview
 
-__Schaeffer__, Khona, Bertagnoli, Koyejo, Fiete. Testing Assumptions Underlying a Unified Theory for the Origin of Grid Cells.  __NeurIPS 2023 Workshops: UniReps, NeurReps, AI4Science__.
+__Schaeffer__, _Khona_, Bertagnoli, Koyejo, Fiete. Testing Assumptions Underlying a Unified Theory for the Origin of Grid Cells.  __NeurIPS 2023 Workshops: UniReps, NeurReps, AI4Science__.
+  - [Summary](research/2023_neurips_workshop_unified_theory_assumptions/main.md)
   - Tweeprint
   - Paper
   - Poster
@@ -113,14 +109,14 @@ __Schaeffer__ & Koyejo. Beyond Expectations: Model-Driven Amplification of Datas
   - OpenReview
 
 __Schaeffer__, Pistunova, Khanna, Consul, Koyejo. Invalid Logic, Equivalent Gains: The Bizarreness of Reasoning in Language Model Prompting. __ICML 2023 Workshop: Knowledge and Logical Reasoning in the Era of Data-driven Learning__.
-  - Tweeprint
-  - Paper
-  - Poster
-  - Slides
-  - OpenReview
+  - Summary
+  - [Paper](research/2023_icml_workshop_logically_invalid_chain_of_thought/paper.pdf)
+  - [Poster](research/2023_icml_workshop_logically_invalid_chain_of_thought/poster.pdf)
+  - [Tweeprint](https://twitter.com/RylanSchaeffer/status/1684701838661332997)
 
 Carranza, Pai, __Schaeffer__, Tandon, Koyejo. Deceptive Alignment Monitoring. __ICML 2023 AdvML Workshop (Blue Sky Oral)__.
   - Tweeprint
+  - [Recorded Talk](https://slideslive.com/39006212/deceptive-alignment-monitoring)
   - Paper
   - Poster
   - Slides
@@ -212,6 +208,11 @@ __Schaeffer__ et al. Recovering low dimensional, interpretable mechanistic model
 __Schaeffer__, et al. Towards Unifying Smooth Neural Codes with Adversarially Robust Representations. 2019.
   - [Paper](research/2019_am226_smooth_neural_codes/paper.pdf)
 
+
+## Collaboration Requests
+
+If you're interested in collaborating, email me at rylanschaeffer@gmail.com. I've posted
+a (work-in-progress) [summary of my research approach](research/research_philosophy.md).
 
 ## Explanations of Others' Research
 
