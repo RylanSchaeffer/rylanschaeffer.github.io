@@ -39,9 +39,8 @@ __Schaeffer__, Liu, Du, Linderman, Fiete. Streaming Inference for Infinite Non-S
   - Slides
   - OpenReview
 
-__Schaeffer__, Du, Liu, Fiete. [Streaming Inference for Infinite Latent 
-Feature Models.](research/2022_icml_streaming_ibp/main.html) __ICML 2022__.
-  - Tweeprint
+__Schaeffer__, Du, Liu, Fiete. [Streaming Inference for Infinite Latent Feature Models.](research/2022_icml_streaming_ibp/main.html) __ICML 2022__.
+  - [Tweeprint](https://twitter.com/RylanSchaeffer/status/1549738599431684096)
   - Paper
   - Poster
   - Slides
