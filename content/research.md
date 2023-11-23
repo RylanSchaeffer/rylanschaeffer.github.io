@@ -9,20 +9,20 @@ a (work-in-progress) [summary of my research approach](research/research_philoso
 
 ### Accepted (Conferences)
 
-- __Schaeffer__, Mirando, Koyejo. Are Emergent Abilities of Large Language Models a Mirage? __NeurIPS 2023 (Oral)__.
+__Schaeffer__, Mirando, Koyejo. Are Emergent Abilities of Large Language Models a Mirage? __NeurIPS 2023 (Oral)__.
   - [Tweeprint](research/2023_neurips_llm_emergent_abilities_mirage/main.md)
   - [Paper](research/2023_neurips_llm_emergent_abilities_mirage/paper.pdf)
   - [OpenReview](https://openreview.net/forum?id=ITw9edRDlD)
 
-- __Schaeffer__, _Khona_, Ma, Eyzaguirre, Koyejo, Fiete. Self-Supervised Learning of Representations for Space Generates Multi-Modular Grid Cells. __NeurIPS 2023__.
+__Schaeffer__, _Khona_, Ma, Eyzaguirre, Koyejo, Fiete. Self-Supervised Learning of Representations for Space Generates Multi-Modular Grid Cells. __NeurIPS 2023__.
   - [Paper](research/2023_neurips_ssl_gc/paper.pdf)
   - [OpenReview](https://openreview.net/forum?id=8ox2vrQiTF)
 
-- Bricken, __Schaeffer__, Olshausen, Kreiman. Emergence of Sparse Representations from Noise. __ICML 2023__.
-  - [Tweeprint]()
-  - [Paper]()
-  - [Poster]()
-  - [Slides]()
+Bricken, __Schaeffer__, Olshausen, Kreiman. Emergence of Sparse Representations from Noise. __ICML 2023__.
+  - [Tweeprint](research/2023_icml_noise_sparse_coding/main.md)
+  - [Paper](research/2023_icml_noise_sparse_coding/paper.pdf)
+  - [Poster](research/2023_icml_noise_sparse_coding/poster.pdf)
+  - [OpenReview](https://openreview.net/forum?id=cxYaBAXVKg)
 
 - __Schaeffer__, Khona, Fiete. No Free Lunch from Deep Learning in Neuroscience: A Case Study through Models of the Entorhinal-Hippocampal Circuit. __NeurIPS 2022__.
   - [Tweeprint]()
@@ -69,52 +69,60 @@ Feature Models.](research/2022_icml_streaming_ibp/main.html) __ICML 2022__.
 ### Accepted (Workshops)
 
 - __Schaeffer__, et al. Divergence at the Interpolation Threshold: Identifying, Interpreting & Ablating the Sources of a Deep Learning Puzzle. __NeurIPS 2023 Workshops: ATTRIB, Mathematics of Modern Machine Learning__.
-  - [Tweeprint]()
-  - [Paper]()
-  - [Poster]()
-  - [Slides]()
+  - Tweeprint
+  - Paper
+  - Poster
+  - Slides
+  - OpenReview
 
 - __Schaeffer__, et al. An Information-Theoretic Understanding of Maximum Manifold Capacity Representations. __NeurIPS Workshops: NeurReps (Oral), UniReps (Oral), InfoCog (Spotlight), SSL__.
-  - [Tweeprint]()
-  - [Paper]()
-  - [Poster]()
-  - [Slides]()
+  - Tweeprint
+  - Paper
+  - Poster
+  - Slides
+  - OpenReview
   
-- __Schaeffer__, Khona, Zahedi, Fiete, Gromov, Koyejo. Associative Memory Under the Probabilistic Lens: Improved Transformers & Dynamic Memory Creation. __NeurIPS 2023 Workshop: Associative Memories & Hopfield Networks__.
-  - [Tweeprint]()
-  - [Paper]()
-  - [Poster]()
-  - [Slides]()
+- __Schaeffer__, Khona, Zahedi, Fiete, Gromov, Koyejo. Associative Memory Under the Probabilistic Lens: Improved Transformers & Dynamic Memory Creation. __NeurIPS 2023 Workshop: Associative Memories & Hopfield Networks__.  - Tweeprint
+  - Tweeprint
+  - Paper
+  - Poster
+  - Slides
+  - OpenReview
 
 - __Schaeffer__, Khona, Bertagnoli, Koyejo, Fiete. Testing Assumptions Underlying a Unified Theory for the Origin of Grid Cells.  __NeurIPS 2023 Workshops: UniReps, NeurReps, AI4Science__.
-  - [Tweeprint]()
-  - [Paper]()
-  - [Poster]()
-  - [Slides]()
+  - Tweeprint
+  - Paper
+  - Poster
+  - Slides
+  - OpenReview
 
 - __Schaeffer__ & Koyejo. Beyond Expectations: Model-Driven Amplification of Dataset Biases in Data Feedback Loops. __NeurIPS 2023 Workshop: Algorithmic Fairness through the Lens of Time__.
-  - [Tweeprint]()
-  - [Paper]()
-  - [Poster]()
-  - [Slides]()
+  - Tweeprint
+  - Paper
+  - Poster
+  - Slides
+  - OpenReview
 
 - __Schaeffer__, Pistunova, Khanna, Consul, Koyejo. Invalid Logic, Equivalent Gains: The Bizarreness of Reasoning in Language Model Prompting. __ICML 2023 Workshop: Knowledge and Logical Reasoning in the Era of Data-driven Learning__.
-  - [Tweeprint]()
-  - [Paper]()
-  - [Poster]()
-  - [Slides]()
-
+  - Tweeprint
+  - Paper
+  - Poster
+  - Slides
+  - OpenReview
+  - 
 - Carranza, Pai, __Schaeffer__, Tandon, Koyejo. Deceptive Alignment Monitoring. __ICML 2023 AdvML Workshop (Blue Sky Oral)__.
-  - [Tweeprint]()
-  - [Paper]()
-  - [Poster]()
-  - [Slides]()
-
+  - Tweeprint
+  - Paper
+  - Poster
+  - Slides
+  - OpenReview
+  
 - Pai, Carranza, __Schaeffer__, Tandon, Koyejo. FACADE: A Framework for Adversarial Circuit Anomaly Detection and Evaluation. __ICML 2023 AdvML Workshop__.
-  - [Tweeprint]()
-  - [Paper]()
-  - [Poster]()
-  - [Slides]()
+  - Tweeprint
+  - Paper
+  - Poster
+  - Slides
+  - OpenReview
 
 - __Schaeffer__, Khona, Fiete. No Free Lunch from Deep Learning in Neuroscience:
   A Case Study through Models of the Entorhinal-Hippocampal Circuit. __ICML 2022 Workshop: AI for Science__.
@@ -127,24 +135,27 @@ Feature Models.](research/2022_icml_streaming_ibp/main.html) __ICML 2022__.
 
 - __Schaeffer__, Liu, Du, Linderman, Fiete. [Streaming Inference for Infinite Non-Stationary Clustering.](research/2022_iclr_workshop_aloe/main.html)
   __ICLR 2022 Workshop: Agent Learning in Open Endedness__.
-  - [Tweeprint]()
-  - [Paper]()
-  - [Poster]()
-  - [Slides]()
+  - Tweeprint
+  - Paper
+  - Poster
+  - Slides
+  - OpenReview
 
 - __Schaeffer__. [An Algorithmic Theory of Metacognition in Minds and Machines.](research/2021_neurips_workshop_metacognition/main.html)
   __NeurIPS 2021 Workshop: Metacognition in the Age of AI__.
-  - [Tweeprint]()
-  - [Paper]()
-  - [Poster]()
-  - [Slides]()
+  - Tweeprint
+  - Paper
+  - Poster
+  - Slides
+  - OpenReview
 
 - __Schaeffer__, et al. Fiete, IBL. [Neural population dynamics for hierarchical inference in mice performing
   the International Brain Lab task.](research/2021_sfn_ibl/main.html) __Society for Neuroscience 2021__.
-  - [Tweeprint]()
-  - [Paper]()
-  - [Poster]()
-  - [Slides]()
+  - Tweeprint
+  - Paper
+  - Poster
+  - Slides
+  - OpenReview
 
 ### Accepted (Journals)
 
