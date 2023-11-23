@@ -31,5 +31,6 @@ Appearing @ Associative Memory & Hopfield Networks workshop !
 
 1/N
 
+@Bishwajit_Sahab @DimaKrotov @mj_zaki @p_ram_p
 
-@p_ram_p 
+https://twitter.com/Bishwajit_Sahab/status/1669374707374669824

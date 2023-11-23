@@ -1,12 +1,10 @@
 # Research
 
-## Accepted
-
 -----
 
-### ML Conferences (Accepted)
+## ML Conferences (Accepted)
 
-Schaeffer, Mirando, Koyejo. Are Emergent Abilities of Large Language Models a Mirage? __NeurIPS 2023 (Oral)__.
+Are Emergent Abilities of Large Language Models a Mirage? __NeurIPS 2023 (Oral)__. Schaeffer, Mirando, Koyejo.
   - [Summary](research/2023_neurips_llm_emergent_abilities_mirage/main.md)
   - [Paper](research/2023_neurips_llm_emergent_abilities_mirage/paper.pdf)
   - [OpenReview](https://openreview.net/forum?id=ITw9edRDlD)
@@ -17,11 +15,11 @@ Schaeffer, Mirando, Koyejo. Are Emergent Abilities of Large Language Models a Mi
 DecodingTrust: A Comprehensive Assessment of Trustworthiness in GPT Models. __NeurIPS 2023 Benchmark Track__.
 
 
-Schaeffer, Khona, Ma, Eyzaguirre, Koyejo, Fiete. Self-Supervised Learning of Representations for Space Generates Multi-Modular Grid Cells. __NeurIPS 2023__.
+Self-Supervised Learning of Representations for Space Generates Multi-Modular Grid Cells. __NeurIPS 2023__. Schaeffer, Khona, Ma, Eyzaguirre, Koyejo, Fiete.
   - [Paper](research/2023_neurips_ssl_gc/paper.pdf)
   - [OpenReview](https://openreview.net/forum?id=8ox2vrQiTF)
 
-Bricken, Schaeffer, Olshausen, Kreiman. Emergence of Sparse Representations from Noise. __ICML 2023__.
+Emergence of Sparse Representations from Noise. __ICML 2023__. Bricken, Schaeffer, Olshausen, Kreiman.
   - [Summary](research/2023_icml_noise_sparse_coding/main.md)
   - [Paper](research/2023_icml_noise_sparse_coding/paper.pdf)
   - [Poster](research/2023_icml_noise_sparse_coding/poster.pdf)
@@ -30,7 +28,7 @@ Bricken, Schaeffer, Olshausen, Kreiman. Emergence of Sparse Representations from
 
 ![](research/2023_icml_noise_sparse_coding/img_4.jpeg)
 
-Schaeffer, Khona, Fiete. No Free Lunch from Deep Learning in Neuroscience: A Case Study through Models of the Entorhinal-Hippocampal Circuit. __NeurIPS 2022__.
+No Free Lunch from Deep Learning in Neuroscience: A Case Study through Models of the Entorhinal-Hippocampal Circuit. __NeurIPS 2022__. Schaeffer, Khona, Fiete.
   - [Summary](research/2022_neurips_no_free_lunch/main.md)
   - [Recorded Talk](https://slideslive.com/38990695/no-free-lunch-from-deep-learning-in-neuroscience)
   - [Paper](research/2022_neurips_no_free_lunch/paper.pdf)
@@ -44,37 +42,39 @@ Schaeffer, Khona, Fiete. No Free Lunch from Deep Learning in Neuroscience: A Cas
 ![](research/2022_neurips_no_free_lunch/img_02.jpeg)
 ![](research/2022_neurips_no_free_lunch/img_03.jpeg)
 
-Schaeffer, Liu, Du, Linderman, Fiete. Streaming Inference for Infinite Non-Stationary Clustering. __CoLLAs 2022__.
+Streaming Inference for Infinite Non-Stationary Clustering. __CoLLAs 2022__. Schaeffer, Liu, Du, Linderman, Fiete.
   - Tweeprint
   - Paper
   - Poster
   - Slides
   - OpenReview
 
-Schaeffer, Du, Liu, Fiete. [Streaming Inference for Infinite Latent Feature Models.](research/2022_icml_streaming_ibp/main.html) __ICML 2022__.
+Streaming Inference for Infinite Latent Feature Models. __ICML 2022__. Schaeffer, Du, Liu, Fiete.
+  - [Summary](research/2022_icml_streaming_ibp/main.md)
   - [Tweeprint](https://twitter.com/RylanSchaeffer/status/1549738599431684096)
   - Paper
   - Poster
   - Slides
   - OpenReview 
 
-Schaeffer, Bordelon, Khona, Pan, Fiete. [Efficient Online Inference for Nonparametric Mixture Models.](research/2021_uai_streaming_crp/main.html) __UAI 2021__.
+Efficient Online Inference for Nonparametric Mixture Models. __UAI 2021__. Schaeffer, Bordelon, Khona, Pan, Fiete.
+  - [Summary](research/2021_uai_streaming_crp/main.md)
   - Tweeprint
   - Paper
   - Poster
   - Slides
   - OpenReview
 
-Schaeffer, Shaham, Kreiman, Sompolinsky. [Neural network model of amygdalar memory engram formation 
-  and function.](research/2021_cosyne_amygdalar_engram/main.html) __COSYNE 2021__.
+Neural network model of amygdalar memory engram formation and function. __COSYNE 2021__. Schaeffer, Shaham, Kreiman, Sompolinsky.
+  - [Summary](research/2021_cosyne_amygdalar_engram/main.md)
   - Tweeprint
   - Paper
   - Poster
   - Slides
   - OpenReview
 
-Schaeffer, Khona, Meshulam, IBL, Fiete. [Reverse-engineering recurrent neural network solutions to a hierarchical inference task for mice.](research/2020_neurips_reverse_engineering/main.html) __NeurIPS 2020__.
-  - [Summary](research/2020_neurips_reverse_engineering/main.html)
+Reverse-engineering recurrent neural network solutions to a hierarchical inference task for mice. __NeurIPS 2020__. Schaeffer, Khona, Meshulam, IBL, Fiete.
+  - [Summary](research/2020_neurips_reverse_engineering/main.md)
   - [Recorded Talk](https://slideslive.com/38937686/reverseengineering-recurrent-neural-network-solutions-to-a-hierarchical-inference-task-for-mice)
   - [Paper](research/2020_neurips_reverse_engineering/paper.pdf)
   - [Poster](research/2020_neurips_reverse_engineering/poster.pdf)
@@ -83,7 +83,7 @@ Schaeffer, Khona, Meshulam, IBL, Fiete. [Reverse-engineering recurrent neural ne
 
 -----
 
-### Workshops (Accepted)
+## Workshops (Accepted)
 
 Schaeffer, et al. Divergence at the Interpolation Threshold: Identifying, Interpreting & Ablating the Sources of a Deep Learning Puzzle. __NeurIPS 2023 Workshops: ATTRIB, Mathematics of Modern Machine Learning__.
   - [Summary](research/2023_neurips_workshop_double_descent/main.md)
@@ -201,7 +201,7 @@ International Brain Lab. A Brain-Wide Map of Neural Activity during Complex Beha
 
 -----
 
-### Preprints
+## Preprints
 
 Schaeffer et al. Disentangling Fact from Grid Cell Fiction in Trained Deep Path Integrators. __Biorxiv 2023__.
 
@@ -215,7 +215,7 @@ Schaeffer. Pretraining on the Test Set Is All You Need. __Arxiv 2023__.
 
 -----
 
-### In Preparation
+## In Preparation
 
 Schaeffer, et al. An Information-Theoretic Understanding of Maximum Manifold Capacity Representations.
 
@@ -226,7 +226,7 @@ Schaeffer, et al. Testing Assumptions Underlying a Unified Theory for the Origin
 
 -----
 
-### One Day
+## One Day
 
 Schaeffer et al. Memory Engrams Perform Nonparametric Latent State Associative Learning.
 
@@ -234,7 +234,7 @@ Schaeffer et al. Recovering low dimensional, interpretable mechanistic models vi
 
 -----
 
-### Unpublished Papers
+## Unpublished Papers
 
 Schaeffer, et al. Towards Unifying Smooth Neural Codes with Adversarially Robust Representations. 2019.
   - [Paper](research/2019_am226_smooth_neural_codes/paper.pdf)
