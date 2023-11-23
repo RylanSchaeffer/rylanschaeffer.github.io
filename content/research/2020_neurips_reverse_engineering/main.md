@@ -6,3 +6,4 @@ Venue: **NeurIPS 2020**.
 
 - [Paper](paper.pdf)
 - [Poster](poster.pdf)
+- [Slides](slides.pdf)

@@ -3,13 +3,11 @@ from add_books import add_books
 
 def create_book_tiles_content(books):
     # The HTML content for this section of the page
-    content = ''
+    content = ""
     for title, goodreads_url, cover_url in books:
         # Append the tile for the book with its content filled in
         content += book_tile_content.format(
-            book_title=title,
-            book_goodreads_url=goodreads_url,
-            book_cover_url=cover_url
+            book_title=title, book_goodreads_url=goodreads_url, book_cover_url=cover_url
         )
     return content
 
@@ -21,10 +19,12 @@ def main():
 
 def open_books_page(books):
     # Create or overwrite the output file
-    output_file = open('books.html', 'w')
+    output_file = open("books.html", "w")
 
     # Replace the placeholder for the book tiles with the actual dynamically generated content
-    rendered_content = main_page_content.format(book_tiles=create_book_tiles_content(books))
+    rendered_content = main_page_content.format(
+        book_tiles=create_book_tiles_content(books)
+    )
 
     # Output the file
     output_file.write(main_page_head + rendered_content)
@@ -32,7 +32,7 @@ def open_books_page(books):
 
 
 # Styles and scripting for the page
-main_page_head = '''
+main_page_head = """
 <head>
     <meta charset="utf-8">
     <title>Rylan's Read Books</title>
@@ -83,10 +83,10 @@ main_page_head = '''
         });
     </script>
 </head>
-'''
+"""
 
 # The main page layout and title bar
-main_page_content = '''
+main_page_content = """
 <!DOCTYPE html>
 <html lang="en">
   <body>
@@ -105,16 +105,16 @@ main_page_content = '''
     </div>
   </body>
 </html>
-'''
+"""
 
 # A single book entry html template
-book_tile_content = '''
+book_tile_content = """
 <div class="col-sm-2 col-sm-2 col-sm-2 col-sm-2 col-sm-2 col-sm-2 book-tile text-center">
     <a href="{book_goodreads_url}"><img src="{book_cover_url}" width="200" height="311"></a>
     <h2>{book_title}</h2>
 </div>
-'''
+"""
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

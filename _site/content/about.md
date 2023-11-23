@@ -1,10 +1,10 @@
-# About Me
+# About
 
 Based on some [good advice](https://www.ece.ucdavis.edu/~jowens/advice.html), I typically look like 
 the person on the left. Quotes that have significance to me are displayed randomly on the bottom left.
-My life's trajectory is succinctly summarized below:
+My life's trajectory is summarized below:
 
-- 2019 Fall - Present: I'm earning my Masters of Engineering in Computer Science Engineering at Harvard
+- 2019 Fall - 2021 Winter: I'm earning my Masters of Engineering in Computer Science Engineering at Harvard
 University. I am currently conducting research with [Professor Ila Fiete in MIT BCS](https://fietelab.mit.edu/)
 as well as [Professor Cengiz Pehlvan in Harvard Applied Math](https://pehlevan.seas.harvard.edu/) and 
 [Dr. Nimrod Shaham in Harvard Center for Brain Science](https://cbmm.mit.edu/about/people/shaham). 
@@ -13,7 +13,7 @@ as well as [Professor Cengiz Pehlvan in Harvard Applied Math](https://pehlevan.s
 as a Data Scientist on the Intelligent Decision Systems team. We specialized in time-series 
 forecasting and anomaly detection. My teammates [Calvin](https://www.linkedin.com/in/cworsnup/),
 [Yuxi](https://www.linkedin.com/in/yuxipanucla/) and [Roy](https://www.linkedin.com/in/roy-yajia-yang-b1b76a64/)
-and I placed third in Uber's multi-week internal machine learning hackathon out of 50+ teams.
+and I placed 3rd in Uber's company-wide, multi-week machine learning hackathon out of 50+ teams.
 
 - 2017 Fall - 2018 Fall: I earned my Master of Research in Cognitive Neuroscience at 
 [University College London's Institute of Cognitive Neuroscience](http://www.ucl.ac.uk/icn)
@@ -38,5 +38,4 @@ I also served as CFO and COO of [ASUCD](https://asucd.ucdavis.edu/) (overseeing 
 million annual operating budget and 20+ units) and as the undergraduate representative on the UC Davis College
 of Engineering Dean Recruitment Advisory Committee.
                 
-- 2011: I won the [national Congressional debate tournament](https://ci.uky.edu/UKDebate/results-history) in high school.
-- 
+- won the [national Congressional debate tournament](https://ci.uky.edu/UKDebate/results-history) in high school.

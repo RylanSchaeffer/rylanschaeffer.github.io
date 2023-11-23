@@ -4,17 +4,71 @@ const quotations = [
     "our memories can be compromised, the connectivity of our brains can be split or fragmented, " +
     "and our bodies can be broken apart and rebuilt. What then am I?“",
 
+    "“Why did we tell you then<br/>" +
+    "You were always the golden boy then<br/>" +
+    "And that you'd never lose that light in your eyes?“",
+
     "“We have to go. I'm almost happy here. I've lived too long with pain. I won’t know who I am without it.“",
+
+    "“Both convey different types of pain. One is the pain of a person who feels they are beyond redemption. The other is the pain of a man who hopes they are not.“",
 
     "“Humanity does not ask us to be happy. It merely asks us to be brilliant on its behalf.“",
 
+    "“Be a better friend to yourself“",
+
+    "“When people tell you something is wrong, they're usually right. When they tell you how to fix it, they're usually wrong.“",
+
+    "“I'd still be mad at the world even if it apologized to me.“",
+
+    "“There comes a time in every life when the past recedes and the future opens. Some will turn back to what they already know. Some will walk straight ahead into uncertainty. I can’t tell you which one is right. But I can tell you which one is more fun.“",
+
     "“If we're not in pain, we're not alive.“",
+
+    "“'O my son Absalom,' Bean said softly, knowing for the first time " +
+    "the kind of anguish that could tear such words from a man’s mouth'",
+
+    "“Sometimes</br>" +
+    "The sound of goodbye</br>" +
+    "Is louder</br>" +
+    "Than any drumbeat.“",
+
+    "“There is a love in me raging“",
+
+    "“We turn capital into compute into intelligence into capital.“",
+
+    "“Remember, the enemy's gate is down.“",
+
+    "“I think it's impossible to really understand somebody, what they want, what they believe, and not love them the way they love themselves.“",
+
+    "“Human beings are free except when humanity needs them. Maybe humanity needs you. To do something. " +
+    "Maybe humanity needs me—to find out what you're good for. We might both do despicable things, " +
+    "Ender, but if humankind survives, then we were good tools.“",
 
     "“But that, that distance — that chronic sense of being an alien among your own kind — it's not entirely a bad thing.“",
 
     "“Today you... tomorrow me.“",
 
+    "“I sleep with two bicycles that I drew taped above my bed to remind myself there are heroes in this story.“",
+
     "“We all make choices, but in the end, our choices make us.“",
+
+    "“My strength is not in steel and fire, but in intellect and will.”",
+
+    "”Now that you don't have to be perfect, you can be good.”",
+
+    "“Your heart ain't cold 'cause it burns<br/>" +
+    "a desire to leave the mire“",
+
+    "“Who imprisoned me here? Who keeps me here? " +
+    "Who can release me? Who's controlling and constraining my life except...me?”",
+
+    "“I shall see her again. I know that in my heart. One last time.<br/>" +
+    "Until then, I shall continue to send people to her.“",
+
+    "“I didn't want a Death who agonised over her role, or who took a grim delight in her job, " +
+    "or who didn't care. I wanted a Death I'd like to meet, in the end. Someone who would care.“",
+
+    "“Happiness is the most insidious prison of all.“",
 
     "“Yet, he thought, if I can die saying 'Life is so beautiful,' then nothing else is important.“",
 
@@ -22,6 +76,9 @@ const quotations = [
     "be what I want to be<br/>" +
     "if I work hard at it<br/>" +
     "I'll be what I want to be.“",
+
+    "“My body might collapse<br/>" +
+    "If I carry one more dream.“",
 
     "“For you are life, rarer than a quark and unpredictable beyond the dreams of Heisenberg.“",
 
@@ -60,7 +117,10 @@ const quotations = [
     "I want a face that's fair this time<br/>" +
     "I want a spirit that is calm“",
 
-    "“Then one day you find ten years have got behind you, no one told you when to run, you missed the starting gun“",
+    "“Then one day you find<br/>" +
+    "ten years have got behind you<br/>" +
+    "no one told you when to run<br/>" +
+    "you missed the starting gun“",
 
     "“Time, it took the most of me<br/>" +
     "And left me with no key<br/>" +
@@ -80,8 +140,8 @@ const quotations = [
     "“Because everything here must still be accomplished. It depends only on him to " +
     "participate in this privileged act of creation.“",
 
-    "\"Lonely? You have yourself. Your infinite selves. " +
-    "It's a nonstop party where all the guests are the only person we like.\"",
+    "“Lonely? You have yourself. Your infinite selves. " +
+    "It's a nonstop party where all the guests are the only person we like.“",
 
     "“Structurally, there's no discernible difference. Life and death are " +
     "unquantifiable abstracts. Why should I be concerned?“",
@@ -94,6 +154,10 @@ const quotations = [
     " in time, not space alone.“",
 
     "“Ad majora“",
+
+    "“Why should the race always be to the swift, or the jumble to the quick-witted? " +
+    "Should they win merely because of the gifts God gave them? Well, I say cheating " +
+    "is the gift man gives himself.“",
 
     "“Remember, in the burning heart<br/>" +
     "There can never be surrender at all.“",
@@ -130,11 +194,15 @@ const quotations = [
     "“I can feel a storm near<br/>" +
     "The dream won't go away<br/>",
 
-    "“I wanna live the stories I write“",
-
     "“You know Mr. Burns, you're the richest guy I know.“<br/>" +
     "“Ah yes, but I'd trade it all for a little more“",
 
-
     "“World-class skill requires world-class discipline.“",
+
+    "“To martyr yourself to caution<br/>" +
+    "Is not gonna help at all<br/>" +
+    "Cause there'll be no safety in numbers<br/>" +
+    "When the Right One walks out of the door“",
+
+    "“I am thinking about something much more important than bombs; I am thinking about computers.“"
 ];

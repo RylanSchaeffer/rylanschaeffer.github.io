@@ -60,10 +60,10 @@ Feature Models.](research/2022_icml_streaming_ibp/main.html) __ICML 2022__.
 
 - __Schaeffer__, Khona, Meshulam, IBL, Fiete. [Reverse-engineering recurrent neural network solutions to a hierarchical inference task for 
   mice.](research/2020_neurips_reverse_engineering/main.html) __NeurIPS 2020__.
-  - [Tweeprint]()
-  - [Paper]()
-  - [Poster]()
-  - [Slides]()
+  - [Tweeprint](research/2020_neurips_reverse_engineering/main.html)
+  - [Paper](research/2020_neurips_reverse_engineering/paper.pdf)
+  - [Poster](research/2020_neurips_reverse_engineering/poster.pdf)
+  - [Slides](research/2020_neurips_reverse_engineering/slides.pdf)
 
 ### Accepted (Workshops)
 
