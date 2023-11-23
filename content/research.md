@@ -68,32 +68,82 @@ Feature Models.](research/2022_icml_streaming_ibp/main.html) __ICML 2022__.
 ### Accepted (Workshops)
 
 - __Schaeffer__, et al. Divergence at the Interpolation Threshold: Identifying, Interpreting & Ablating the Sources of a Deep Learning Puzzle. __NeurIPS 2023 Workshops: ATTRIB, Mathematics of Modern Machine Learning__.
+  - [Tweeprint]()
+  - [Paper]()
+  - [Poster]()
+  - [Slides]()
 
-- __Schaeffer__, et al. An Information-Theoretic Understanding of Maximum Manifold Capacity Representations. __NeurIPS Workshops: NeurReps (Oral), UniReps (Oral), InfoCog (Spotlight), SSL__. 
+- __Schaeffer__, et al. An Information-Theoretic Understanding of Maximum Manifold Capacity Representations. __NeurIPS Workshops: NeurReps (Oral), UniReps (Oral), InfoCog (Spotlight), SSL__.
+  - [Tweeprint]()
+  - [Paper]()
+  - [Poster]()
+  - [Slides]()
   
 - __Schaeffer__, Khona, Zahedi, Fiete, Gromov, Koyejo. Associative Memory Under the Probabilistic Lens: Improved Transformers & Dynamic Memory Creation. __NeurIPS 2023 Workshop: Associative Memories & Hopfield Networks__.
+  - [Tweeprint]()
+  - [Paper]()
+  - [Poster]()
+  - [Slides]()
 
 - __Schaeffer__, Khona, Bertagnoli, Koyejo, Fiete. Testing Assumptions Underlying a Unified Theory for the Origin of Grid Cells.  __NeurIPS 2023 Workshops: UniReps, NeurReps, AI4Science__.
+  - [Tweeprint]()
+  - [Paper]()
+  - [Poster]()
+  - [Slides]()
 
 - __Schaeffer__ & Koyejo. Beyond Expectations: Model-Driven Amplification of Dataset Biases in Data Feedback Loops. __NeurIPS 2023 Workshop: Algorithmic Fairness through the Lens of Time__.
+  - [Tweeprint]()
+  - [Paper]()
+  - [Poster]()
+  - [Slides]()
 
 - __Schaeffer__, Pistunova, Khanna, Consul, Koyejo. Invalid Logic, Equivalent Gains: The Bizarreness of Reasoning in Language Model Prompting. __ICML 2023 Workshop: Knowledge and Logical Reasoning in the Era of Data-driven Learning__.
+  - [Tweeprint]()
+  - [Paper]()
+  - [Poster]()
+  - [Slides]()
 
 - Carranza, Pai, __Schaeffer__, Tandon, Koyejo. Deceptive Alignment Monitoring. __ICML 2023 AdvML Workshop (Blue Sky Oral)__.
+  - [Tweeprint]()
+  - [Paper]()
+  - [Poster]()
+  - [Slides]()
 
 - Pai, Carranza, __Schaeffer__, Tandon, Koyejo. FACADE: A Framework for Adversarial Circuit Anomaly Detection and Evaluation. __ICML 2023 AdvML Workshop__.
+  - [Tweeprint]()
+  - [Paper]()
+  - [Poster]()
+  - [Slides]()
 
-- __Schaeffer__, Khona, Fiete. [No Free Lunch from Deep Learning in Neuroscience:
-  A Case Study through Models of the Entorhinal-Hippocampal Circuit.](research/2022_icml_ai4science_no_free_lunch/main.html) __ICML 2022 Workshop: AI for Science__.
+- __Schaeffer__, Khona, Fiete. No Free Lunch from Deep Learning in Neuroscience:
+  A Case Study through Models of the Entorhinal-Hippocampal Circuit. __ICML 2022 Workshop: AI for Science__.
+  - [Tweeprint](research/2022_icml_workshop_no_free_lunch/main.md)
+  - [Recorded Talk](https://slideslive.com/38986158/no-free-lunch-from-deep-learning-in-neuroscience-a-case-study-through-models-of-the-entorhinalhippocampal-circuit?ref=search-presentations-No+Free+Lunch+from+Deep+Learning+in+Neuroscience)
+  - [Paper]()
+  - [Poster]()
+  - Slides
+  - [OpenReview](https://openreview.net/forum?id=mxi1xKzNFrb)
 
 - __Schaeffer__, Liu, Du, Linderman, Fiete. [Streaming Inference for Infinite Non-Stationary Clustering.](research/2022_iclr_workshop_aloe/main.html)
   __ICLR 2022 Workshop: Agent Learning in Open Endedness__.
+  - [Tweeprint]()
+  - [Paper]()
+  - [Poster]()
+  - [Slides]()
 
 - __Schaeffer__. [An Algorithmic Theory of Metacognition in Minds and Machines.](research/2021_neurips_workshop_metacognition/main.html)
   __NeurIPS 2021 Workshop: Metacognition in the Age of AI__.
+  - [Tweeprint]()
+  - [Paper]()
+  - [Poster]()
+  - [Slides]()
 
 - __Schaeffer__, et al. Fiete, IBL. [Neural population dynamics for hierarchical inference in mice performing
   the International Brain Lab task.](research/2021_sfn_ibl/main.html) __Society for Neuroscience 2021__.
+  - [Tweeprint]()
+  - [Paper]()
+  - [Poster]()
+  - [Slides]()
 
 ### Accepted (Journals)
 
@@ -131,10 +181,9 @@ Feature Models.](research/2022_icml_streaming_ibp/main.html) __ICML 2022__.
 
 ### One Day
 
-- __Schaeffer__ et al. Memory Engrams Perform Nonparametric Latent State Associative Learning. 2022.
+- __Schaeffer__ et al. Memory Engrams Perform Nonparametric Latent State Associative Learning.
 
-- __Schaeffer__ et al. Recovering low dimensional, interpretable mechanistic models
-  via Representations and Dynamics Distillation. 2021.
+- __Schaeffer__ et al. Recovering low dimensional, interpretable mechanistic models via Representations and Dynamics Distillation (RADD).
 
 ### Unpublished Papers
 
