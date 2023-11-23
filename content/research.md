@@ -123,6 +123,12 @@ Feature Models.](research/2022_icml_streaming_ibp/main.html) __ICML 2022__.
 
 - __Schaeffer__, et al. Divergence at the Interpolation Threshold: Identifying, Interpreting & Ablating the Sources of a Deep Learning Puzzle. __Under Review at ICLR 2024__.
 
+### Satire
+
+- __Schaeffer__. Pretraining on the Test Set Is All You Need. __Arxiv 2023__.
+  - [Tweeprint](research/2023_arxiv_pretraining_on_test_set/main.md)
+  - [Paper](research/2023_arxiv_pretraining_on_test_set/paper.pdf)
+
 ### One Day
 
 - __Schaeffer__ et al. Memory Engrams Perform Nonparametric Latent State Associative Learning. 2022.
