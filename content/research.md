@@ -86,12 +86,13 @@ __Schaeffer__, et al. An Information-Theoretic Understanding of Maximum Manifold
   - Slides
   - OpenReview 1
   
-__Schaeffer__, Khona, Zahedi, Fiete, Gromov, Koyejo. Associative Memory Under the Probabilistic Lens: Improved Transformers & Dynamic Memory Creation. __NeurIPS 2023 Workshop: Associative Memories & Hopfield Networks__.  - Tweeprint
+__Schaeffer__, Khona, Zahedi, Fiete, Gromov, Koyejo. Associative Memory Under the Probabilistic Lens: Improved Transformers & Dynamic Memory Creation. __NeurIPS 2023 Workshop: Associative Memories & Hopfield Networks__.
+  - [Summary](research/2023_neurips_workshop_infinite_associative_memory/main.md)
   - Tweeprint
   - Paper
   - Poster
   - Slides
-  - OpenReview
+  - [OpenReview](https://openreview.net/forum?id=lO61aZlteS)
 
 __Schaeffer__, _Khona_, Bertagnoli, Koyejo, Fiete. Testing Assumptions Underlying a Unified Theory for the Origin of Grid Cells.  __NeurIPS 2023 Workshops: UniReps, NeurReps, AI4Science__.
   - [Summary](research/2023_neurips_workshop_unified_theory_assumptions/main.md)
