@@ -27,12 +27,14 @@ Bricken, __Schaeffer__, Olshausen, Kreiman. Emergence of Sparse Representations 
   - [Tweeprint](https://twitter.com/RylanSchaeffer/status/1683654126977314816)
 
 - __Schaeffer__, Khona, Fiete. No Free Lunch from Deep Learning in Neuroscience: A Case Study through Models of the Entorhinal-Hippocampal Circuit. __NeurIPS 2022__.
-  - [Recorde Talk](https://slideslive.com/38990695/no-free-lunch-from-deep-learning-in-neuroscience)
+  - [Summary](research/2022_neurips_no_free_lunch/main.md)
+  - [Recorded Talk](https://slideslive.com/38990695/no-free-lunch-from-deep-learning-in-neuroscience)
   - [Paper](research/2022_neurips_no_free_lunch/paper.pdf)
   - [Poster](research/2022_neurips_no_free_lunch/poster.pdf)
-  - [Slides]()
-  - Tweeprint
+  - [Slides](research/2022_neurips_no_free_lunch/slides.pdf)
+  - [Tweeprint](https://twitter.com/RylanSchaeffer/status/1587454396257796096)
   - [OpenReview](https://openreview.net/forum?id=syU-XvinTI1)
+  - [Code](https://github.com/FieteLab/FieteLab-No-Free-Lunch)
 
 - __Schaeffer__, Liu, Du, Linderman, Fiete. Streaming Inference for Infinite Non-Stationary Clustering. __CoLLAs 2022__.
   - [Tweeprint]()
