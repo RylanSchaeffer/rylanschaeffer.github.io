@@ -165,7 +165,7 @@ __Schaeffer__, et al. Fiete, IBL. [Neural population dynamics for hierarchical i
 
 ### Accepted (Journals)
 
-### Contributions to Large Scale Collaborations
+### Large Scale Collaborations
 
 Liu, __Schaeffer__ et al. Brain-wide population codes for hierarchical inference in mice. __In Preparation__.
 
@@ -175,6 +175,16 @@ International Brain Lab. A Brain-Wide Map of Neural Activity during Complex Beha
 
 DecodingTrust: A Comprehensive Assessment of Trustworthiness in GPT Models. __NeurIPS 2023__.
 
+### Under Review
+
+__Schaeffer__, et al. Divergence at the Interpolation Threshold: Identifying, Interpreting & Ablating the Sources of a Deep Learning Puzzle. __Under Review at ICLR 2024 Blog Track__.
+- [Tweeprint](https://twitter.com/RylanSchaeffer/status/1640762626987925505)
+
+
+### Preprints
+
+__Schaeffer__ et al. Disentangling Fact from Grid Cell Fiction in Trained Deep Path Integrators. __Biorxiv 2023__.
+
 ### In Preparation
 
 __Schaeffer__, et al. An Information-Theoretic Understanding of Maximum Manifold Capacity Representations.
@@ -183,13 +193,7 @@ __Schaeffer__, et al. Associative Memory Under the Probabilistic Lens: Improved 
 
 __Schaeffer__, et al. Testing Assumptions Underlying a Unified Theory for the Origin of Grid Cells.
 
-__Schaeffer__ et al. Disentangling Fact from Grid Cell Fiction in Trained Deep Path Integrators.
 
-
-### Under Review
-
-__Schaeffer__, et al. Divergence at the Interpolation Threshold: Identifying, Interpreting & Ablating the Sources of a Deep Learning Puzzle. __Under Review at ICLR 2024 Blog Track__.
-  - [Tweeprint](https://twitter.com/RylanSchaeffer/status/1640762626987925505)
 
 ### Satire
 

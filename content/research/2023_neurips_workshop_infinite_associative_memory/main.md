@@ -16,15 +16,16 @@ Venue: NeurIPS 2023 Workshops
 
 ## Summary
 
-Stoked to begin announcing our #NeurIPS2023 conference & workshops works, starting with:
+Second on our list of #NeurIPS2023 conference & workshops papers:
 
-🔥🔥Testing Assumptions Underlying a Unified Theory for the Origin of Grid Cells🔥🔥
+🔥🔥 Associative Memory Under the Probabilistic Lens 🔥🔥
 
-Joint @KhonaMikail @sanmikoyejo @FieteGroup
+Joint w/ @Andr3yGR @KhonaMikail @neurostrow @FieteGroup @sanmikoyejo
 
-Appearing @ NeurReps, UniReps & AI4Science
-
+Appearing @ Associative Memory & Hopfield Networks workshop !
 🧠🧵👇
+
+![](img.png)
 
 1/N
 

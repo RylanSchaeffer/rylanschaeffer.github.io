@@ -16,7 +16,7 @@ Venue: NeurIPS 2023 Workshops:
 
 ## Summary
 
-Stoked to begin announcing our #NeurIPS2023 conference & workshops works, starting with:
+Stoked to begin announcing our #NeurIPS2023 conference & workshops papers, starting with 1/?:
 
 🔥🔥Testing Assumptions Underlying a Unified Theory for the Origin of Grid Cells🔥🔥
 
