@@ -189,9 +189,8 @@ Schaeffer, et al. Fiete, IBL. [Neural population dynamics for hierarchical infer
 
 ## Under Review
 
-Schaeffer, et al. Divergence at the Interpolation Threshold: Identifying, Interpreting & Ablating the Sources of a Deep Learning Puzzle. __Under Review at ICLR 2024 Blog Track__.
+Divergence at the Interpolation Threshold: Identifying, Interpreting & Ablating the Sources of a Deep Learning Puzzle. __Under Review at ICLR 2024 Blog Track__. Schaeffer, et al.
 - [Tweeprint](https://twitter.com/RylanSchaeffer/status/1640762626987925505)
-
 
 Liu, Schaeffer et al. Brain-wide population codes for hierarchical inference in mice. __In Preparation__.
 
@@ -203,8 +202,8 @@ International Brain Lab. A Brain-Wide Map of Neural Activity during Complex Beha
 
 ## Preprints
 
-Schaeffer et al. Disentangling Fact from Grid Cell Fiction in Trained Deep Path Integrators. __Biorxiv 2023__.
-
+Disentangling Fact from Grid Cell Fiction in Trained Deep Path Integrators. __Biorxiv 2023__. Schaeffer et al.
+- [Summary](research/2023_biorxiv_disentangling_fact_from_grid_cell_fiction/main.md)
 
 Schaeffer. Pretraining on the Test Set Is All You Need. __Arxiv 2023__.
 - [Summary](research/2023_arxiv_pretraining_on_test_set/main.md)
