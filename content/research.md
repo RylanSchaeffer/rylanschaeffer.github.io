@@ -119,9 +119,9 @@ Feature Models.](research/2022_icml_streaming_ibp/main.html) __ICML 2022__.
   A Case Study through Models of the Entorhinal-Hippocampal Circuit. __ICML 2022 Workshop: AI for Science__.
   - [Tweeprint](research/2022_icml_workshop_no_free_lunch/main.md)
   - [Recorded Talk](https://slideslive.com/38986158/no-free-lunch-from-deep-learning-in-neuroscience-a-case-study-through-models-of-the-entorhinalhippocampal-circuit?ref=search-presentations-No+Free+Lunch+from+Deep+Learning+in+Neuroscience)
-  - [Paper]()
-  - [Poster]()
-  - Slides
+  - [Paper](research/2022_icml_workshop_no_free_lunch/paper.pdf)
+  - [Poster](research/2022_icml_workshop_no_free_lunch/poster.pdf)
+  - [Slides](research/2022_icml_workshop_no_free_lunch/slides.pdf)
   - [OpenReview](https://openreview.net/forum?id=mxi1xKzNFrb)
 
 - __Schaeffer__, Liu, Du, Linderman, Fiete. [Streaming Inference for Infinite Non-Stationary Clustering.](research/2022_iclr_workshop_aloe/main.html)
