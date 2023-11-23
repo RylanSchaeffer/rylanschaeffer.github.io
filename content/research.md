@@ -26,7 +26,7 @@ Bricken, __Schaeffer__, Olshausen, Kreiman. Emergence of Sparse Representations 
   - [OpenReview](https://openreview.net/forum?id=cxYaBAXVKg)
   - [Tweeprint](https://twitter.com/RylanSchaeffer/status/1683654126977314816)
 
-- __Schaeffer__, Khona, Fiete. No Free Lunch from Deep Learning in Neuroscience: A Case Study through Models of the Entorhinal-Hippocampal Circuit. __NeurIPS 2022__.
+__Schaeffer__, Khona, Fiete. No Free Lunch from Deep Learning in Neuroscience: A Case Study through Models of the Entorhinal-Hippocampal Circuit. __NeurIPS 2022__.
   - [Summary](research/2022_neurips_no_free_lunch/main.md)
   - [Recorded Talk](https://slideslive.com/38990695/no-free-lunch-from-deep-learning-in-neuroscience)
   - [Paper](research/2022_neurips_no_free_lunch/paper.pdf)
@@ -37,31 +37,35 @@ Bricken, __Schaeffer__, Olshausen, Kreiman. Emergence of Sparse Representations 
   - [OpenReview](https://openreview.net/forum?id=syU-XvinTI1)
   - [Code](https://github.com/FieteLab/FieteLab-No-Free-Lunch)
 
-- __Schaeffer__, Liu, Du, Linderman, Fiete. Streaming Inference for Infinite Non-Stationary Clustering. __CoLLAs 2022__.
-  - [Tweeprint]()
-  - [Paper]()
-  - [Poster]()
-  - [Slides]()
+__Schaeffer__, Liu, Du, Linderman, Fiete. Streaming Inference for Infinite Non-Stationary Clustering. __CoLLAs 2022__.
+  - Tweeprint
+  - Paper
+  - Poster
+  - Slides
+  - OpenReview
 
-- __Schaeffer__, Du, Liu, Fiete. [Streaming Inference for Infinite Latent 
+__Schaeffer__, Du, Liu, Fiete. [Streaming Inference for Infinite Latent 
 Feature Models.](research/2022_icml_streaming_ibp/main.html) __ICML 2022__.
-  - [Tweeprint]()
-  - [Paper]()
-  - [Poster]()
-  - [Slides]() 
+  - Tweeprint
+  - Paper
+  - Poster
+  - Slides
+  - OpenReview 
 
-- __Schaeffer__, Bordelon, Khona, Pan, Fiete. [Efficient Online Inference for Nonparametric Mixture Models.](research/2021_uai_streaming_crp/main.html) __UAI 2021__.
-  - [Tweeprint]()
-  - [Paper]()
-  - [Poster]()
-  - [Slides]()
+__Schaeffer__, Bordelon, Khona, Pan, Fiete. [Efficient Online Inference for Nonparametric Mixture Models.](research/2021_uai_streaming_crp/main.html) __UAI 2021__.
+  - Tweeprint
+  - Paper
+  - Poster
+  - Slides
+  - OpenReview
 
-- __Schaeffer__, Shaham, Kreiman, Sompolinsky. [Neural network model of amygdalar memory engram formation 
+__Schaeffer__, Shaham, Kreiman, Sompolinsky. [Neural network model of amygdalar memory engram formation 
   and function.](research/2021_cosyne_amygdalar_engram/main.html) __COSYNE 2021__.
-  - [Tweeprint]()
-  - [Paper]()
-  - [Poster]()
-  - [Slides]()
+  - Tweeprint
+  - Paper
+  - Poster
+  - Slides
+  - OpenReview
 
 - __Schaeffer__, Khona, Meshulam, IBL, Fiete. [Reverse-engineering recurrent neural network solutions to a hierarchical inference task for 
   mice.](research/2020_neurips_reverse_engineering/main.html) __NeurIPS 2020__.
@@ -131,11 +135,12 @@ Feature Models.](research/2022_icml_streaming_ibp/main.html) __ICML 2022__.
 
 - __Schaeffer__, Khona, Fiete. No Free Lunch from Deep Learning in Neuroscience:
   A Case Study through Models of the Entorhinal-Hippocampal Circuit. __ICML 2022 Workshop: AI for Science__.
-  - [Tweeprint](research/2022_icml_workshop_no_free_lunch/main.md)
+  - [Summary](research/2022_icml_workshop_no_free_lunch/main.md)
   - [Recorded Talk](https://slideslive.com/38986158/no-free-lunch-from-deep-learning-in-neuroscience-a-case-study-through-models-of-the-entorhinalhippocampal-circuit?ref=search-presentations-No+Free+Lunch+from+Deep+Learning+in+Neuroscience)
   - [Paper](research/2022_icml_workshop_no_free_lunch/paper.pdf)
   - [Poster](research/2022_icml_workshop_no_free_lunch/poster.pdf)
   - [Slides](research/2022_icml_workshop_no_free_lunch/slides.pdf)
+  - [Tweeprint](https://twitter.com/RylanSchaeffer/status/1550854303824355328)
   - [OpenReview](https://openreview.net/forum?id=mxi1xKzNFrb)
 
 - __Schaeffer__, Liu, Du, Linderman, Fiete. [Streaming Inference for Infinite Non-Stationary Clustering.](research/2022_iclr_workshop_aloe/main.html)
