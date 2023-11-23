@@ -11,6 +11,8 @@ Venue: ICML 2023
 - [Poster](poster.pdf)
 - [OpenReview](https://openreview.net/forum?id=cxYaBAXVKg)
 
+-----
+
 ## Summary
 
 Excited to share our #ICML #ICML2023 paper **Emergence of Sparse Representations from Noise** led by @TrentonBricken
@@ -46,6 +48,8 @@ We would love to chat more about sparsity and its wonderful advantages 🔥
 Paper: http://proceedings.mlr.press/v202/bricken23a/bricken23a.pdf 7/8
 
 Thanks to a number of people for their invaluable feedback, discussions and inspiration including: @BerenMillidge, @FHKPetersen , Fritz Sommer, and Jamie Simon
+
+-----
 
 ## Photos from ICML 2023
 

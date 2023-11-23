@@ -1,6 +1,10 @@
 # Research
 
+-----
+
 ## Publications
+
+-----
 
 ### Accepted (Conferences)
 
@@ -67,6 +71,8 @@ __Schaeffer__, Khona, Meshulam, IBL, Fiete. [Reverse-engineering recurrent neura
   - [Paper](research/2020_neurips_reverse_engineering/paper.pdf)
   - [Poster](research/2020_neurips_reverse_engineering/poster.pdf)
   - [Slides](research/2020_neurips_reverse_engineering/slides.pdf)
+
+-----
 
 ### Accepted (Workshops)
 
@@ -163,7 +169,11 @@ __Schaeffer__, et al. Fiete, IBL. [Neural population dynamics for hierarchical i
   - Slides
   - OpenReview
 
+-----
+
 ### Accepted (Journals)
+
+-----
 
 ### Large Scale Collaborations
 
@@ -175,15 +185,25 @@ International Brain Lab. A Brain-Wide Map of Neural Activity during Complex Beha
 
 DecodingTrust: A Comprehensive Assessment of Trustworthiness in GPT Models. __NeurIPS 2023__.
 
+-----
+
 ### Under Review
 
 __Schaeffer__, et al. Divergence at the Interpolation Threshold: Identifying, Interpreting & Ablating the Sources of a Deep Learning Puzzle. __Under Review at ICLR 2024 Blog Track__.
 - [Tweeprint](https://twitter.com/RylanSchaeffer/status/1640762626987925505)
 
+-----
 
 ### Preprints
 
 __Schaeffer__ et al. Disentangling Fact from Grid Cell Fiction in Trained Deep Path Integrators. __Biorxiv 2023__.
+
+__Schaeffer__. Pretraining on the Test Set Is All You Need. __Arxiv 2023__.
+- [Tweeprint](research/2023_arxiv_pretraining_on_test_set/main.md)
+- [Paper](research/2023_arxiv_pretraining_on_test_set/paper.pdf)
+
+
+-----
 
 ### In Preparation
 
@@ -194,12 +214,7 @@ __Schaeffer__, et al. Associative Memory Under the Probabilistic Lens: Improved 
 __Schaeffer__, et al. Testing Assumptions Underlying a Unified Theory for the Origin of Grid Cells.
 
 
-
-### Satire
-
-__Schaeffer__. Pretraining on the Test Set Is All You Need. __Arxiv 2023__.
-  - [Tweeprint](research/2023_arxiv_pretraining_on_test_set/main.md)
-  - [Paper](research/2023_arxiv_pretraining_on_test_set/paper.pdf)
+-----
 
 ### One Day
 
@@ -207,16 +222,21 @@ __Schaeffer__ et al. Memory Engrams Perform Nonparametric Latent State Associati
 
 __Schaeffer__ et al. Recovering low dimensional, interpretable mechanistic models via Representations and Dynamics Distillation (RADD).
 
+-----
+
 ### Unpublished Papers
 
 __Schaeffer__, et al. Towards Unifying Smooth Neural Codes with Adversarially Robust Representations. 2019.
   - [Paper](research/2019_am226_smooth_neural_codes/paper.pdf)
 
+-----
 
 ## Collaboration Requests
 
 If you're interested in collaborating, email me at rylanschaeffer@gmail.com. I've posted
 a (work-in-progress) [summary of my research approach](research/research_philosophy.md).
+
+-----
 
 ## Explanations of Others' Research
 

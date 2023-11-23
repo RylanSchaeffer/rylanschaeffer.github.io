@@ -2,7 +2,15 @@
 
 Authors: **Rylan Schaeffer**, Brando Miranda, Sanmi Koyejo
 
-Venue: [Arxiv 2023](https://arxiv.org/abs/2304.15004)
+Venue: NeurIPS 2023 (Oral)
+
+## Quick Links
+
+- [Paper](research/2023_neurips_llm_emergent_abilities_mirage/paper.pdf)
+- [OpenReview](https://openreview.net/forum?id=ITw9edRDlD)
+- [Tweeprint](https://twitter.com/RylanSchaeffer/status/1653141214110322688)
+
+-----
 
 ## Summary
 

@@ -7,9 +7,9 @@ Venue(s): NeurIPS 2022
 ## Quick Links
 
 - [Recorded Talk](https://slideslive.com/38990695/no-free-lunch-from-deep-learning-in-neuroscience)
-- [Paper](research/2022_neurips_no_free_lunch/paper.pdf)
-- [Poster](research/2022_neurips_no_free_lunch/poster.pdf)
-- [Slides](research/2022_neurips_no_free_lunch/slides.pdf)
+- [Paper](paper.pdf)
+- [Poster](poster.pdf)
+- [Slides](slides.pdf)
 - [Tweeprint 1](https://twitter.com/RylanSchaeffer/status/1587454396257796096)
 - [Tweeprint 2](https://twitter.com/RylanSchaeffer/status/1597606723308879872)
 - [OpenReview](https://openreview.net/forum?id=syU-XvinTI1)

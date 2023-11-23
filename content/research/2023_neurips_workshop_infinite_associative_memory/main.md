@@ -14,6 +14,8 @@ Venue: NeurIPS 2023 Workshops
 - [OpenReview](https://openreview.net/forum?id=lO61aZlteS)
 - Slides
 
+-----
+
 ## Summary
 
 Second on our list of #NeurIPS2023 conference & workshops papers:

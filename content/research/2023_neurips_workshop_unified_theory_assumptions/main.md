@@ -14,6 +14,8 @@ Venue: NeurIPS 2023 Workshops:
 - Recorded Talk
 - [Slides](slides.pdf)
 
+-----
+
 ## Summary
 
 Stoked to begin announcing our #NeurIPS2023 conference & workshops papers, starting with 1/?:
