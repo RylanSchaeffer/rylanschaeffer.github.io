@@ -75,9 +75,11 @@ We dig through the literature to also discover place cell intracellular potentia
 
 This assumption also appears biologically unlikely ❌
 
+![](img_5.png)
+
 6/7
 
-![](img_5.png)
+Together, this casts doubt on the Unified Theory's relevance to bio grid cells 🤔
 
 OpenReviews:
 UniReps: https://openreview.net/forum?id=vYixJUwAD4
