@@ -1,8 +1,8 @@
 # Title
 
-Authors: **Rylan Schaeffer**, 
+Authors: Trenton Bricken, **Rylan Schaeffer**, 
 
-Venue: 
+Venue: ICML 2023
 
 ## Quick Links
 

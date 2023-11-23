@@ -26,9 +26,11 @@ a (work-in-progress) [summary of my research approach](research/research_philoso
 
 - __Schaeffer__, Khona, Fiete. No Free Lunch from Deep Learning in Neuroscience: A Case Study through Models of the Entorhinal-Hippocampal Circuit. __NeurIPS 2022__.
   - [Tweeprint]()
-  - [Paper]()
-  - [Poster]()
+  - [Recorde Talk](https://slideslive.com/38990695/no-free-lunch-from-deep-learning-in-neuroscience)
+  - [Paper](research/2022_neurips_no_free_lunch/paper.pdf)
+  - [Poster](research/2022_neurips_no_free_lunch/poster.pdf)
   - [Slides]()
+  - [OpenReview](https://openreview.net/forum?id=syU-XvinTI1)
 
 - __Schaeffer__, Liu, Du, Linderman, Fiete. Streaming Inference for Infinite Non-Stationary Clustering. __CoLLAs 2022__.
   - [Tweeprint]()
@@ -59,6 +61,7 @@ Feature Models.](research/2022_icml_streaming_ibp/main.html) __ICML 2022__.
 - __Schaeffer__, Khona, Meshulam, IBL, Fiete. [Reverse-engineering recurrent neural network solutions to a hierarchical inference task for 
   mice.](research/2020_neurips_reverse_engineering/main.html) __NeurIPS 2020__.
   - [Tweeprint](research/2020_neurips_reverse_engineering/main.html)
+  - [Recorded Talk](https://slideslive.com/38937686/reverseengineering-recurrent-neural-network-solutions-to-a-hierarchical-inference-task-for-mice)
   - [Paper](research/2020_neurips_reverse_engineering/paper.pdf)
   - [Poster](research/2020_neurips_reverse_engineering/poster.pdf)
   - [Slides](research/2020_neurips_reverse_engineering/slides.pdf)
