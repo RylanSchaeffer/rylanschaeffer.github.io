@@ -12,13 +12,11 @@ a (work-in-progress) [summary of my research approach](research/research_philoso
 - __Schaeffer__, Mirando, Koyejo. Are Emergent Abilities of Large Language Models a Mirage? __NeurIPS 2023 (Oral)__.
   - [Tweeprint](research/2023_neurips_llm_emergent_abilities_mirage/main.md)
   - [Paper](research/2023_neurips_llm_emergent_abilities_mirage/paper.pdf)
-  - Slides
+  - [OpenReview](https://openreview.net/forum?id=ITw9edRDlD)
 
-- __Schaeffer__, _Khona_, Ma, Eyzaguirre, Koyejo, Fiete. Self-Supervised Learning of Representations for Space Generates Multi-Modular Grid Cells. __NeurIPS 2023__. 
-  - [Tweeprint]()
-  - [Paper]()
-  - [Poster]()
-  - [Slides]()
+- __Schaeffer__, _Khona_, Ma, Eyzaguirre, Koyejo, Fiete. Self-Supervised Learning of Representations for Space Generates Multi-Modular Grid Cells. __NeurIPS 2023__.
+  - [Paper](research/2023_neurips_ssl_gc/paper.pdf)
+  - [OpenReview](https://openreview.net/forum?id=8ox2vrQiTF)
 
 - Bricken, __Schaeffer__, Olshausen, Kreiman. Emergence of Sparse Representations from Noise. __ICML 2023__.
   - [Tweeprint]()
