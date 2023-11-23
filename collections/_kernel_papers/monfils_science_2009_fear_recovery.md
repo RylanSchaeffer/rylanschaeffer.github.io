@@ -1,7 +1,7 @@
 ---
 layout: post
 author: Monfils, ..., LeDoux (Science 2009)
-title: Extinction-Reconsolidation Boundaries: Key to Persistent Attenuation of Fear Memories
+title: Extinction-Reconsolidation Boundaries -  Key to Persistent Attenuation of Fear Memories
 date: 2021-03-29
 tags: fear-conditioning 
 ---
