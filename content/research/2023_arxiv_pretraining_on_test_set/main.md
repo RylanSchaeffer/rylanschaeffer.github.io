@@ -7,6 +7,7 @@ Venue: [Arxiv 2023](https://arxiv.org/abs/2309.08632)
 ## Quick Links
 
 - [Paper](paper.pdf)
+- [Tweeprint](https://twitter.com/RylanSchaeffer/status/1702346986329108703)
 
 ## Summary
 
