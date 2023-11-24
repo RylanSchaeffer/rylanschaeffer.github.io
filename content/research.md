@@ -12,11 +12,14 @@
 
 DecodingTrust: A Comprehensive Assessment of Trustworthiness in GPT Models. __NeurIPS 2023 Benchmark Track__.
 
+![](research/2023_neurips_decoding_trust/img.png)
+
 -----
 
 [Self-Supervised Learning of Representations for Space Generates Multi-Modular Grid Cells.](research/2023_neurips_ssl_gc/main.md) __NeurIPS 2023__.
 
-
+![](research/2023_neurips_ssl_gc/ssl_3losses_framework.png)
+![](research/2023_neurips_ssl_gc/ssl_grids_results_modules.png)
 
 -----
 
@@ -38,6 +41,9 @@ Streaming Inference for Infinite Non-Stationary Clustering. __CoLLAs 2022__.
 -----
 
 [Streaming Inference for Infinite Latent Feature Models.](research/2022_icml_streaming_ibp/main.md) __ICML 2022__.
+
+![](research/2022_icml_streaming_ibp/img_2.png)
+![](research/2022_icml_streaming_ibp/img_4.png)
 
 -----
 
