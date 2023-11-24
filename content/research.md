@@ -65,6 +65,8 @@ Streaming Inference for Infinite Non-Stationary Clustering. __CoLLAs 2022__.
 
 ## Under Review
 
+-----
+
 Divergence at the Interpolation Threshold: Identifying, Interpreting & Ablating the Sources of a Deep Learning Puzzle. __Under Review at ICLR 2024 Blog Track__.
 - [Tweeprint](https://twitter.com/RylanSchaeffer/status/1640762626987925505)
 
@@ -77,6 +79,7 @@ A Brain-Wide Map of Neural Activity during Complex Behaviour. __bioRxiv 2023__.
 
 ## Preprints
 
+-----
 
 [Disentangling Fact from Grid Cell Fiction in Trained Deep Path Integrators.](research/2023_biorxiv_disentangling_fact_from_grid_cell_fiction/main.md) __Biorxiv 2023__.
 
@@ -85,6 +88,8 @@ A Brain-Wide Map of Neural Activity during Complex Behaviour. __bioRxiv 2023__.
 
 
 ## In Preparation
+
+-----
 
 An Information-Theoretic Understanding of Maximum Manifold Capacity Representations.
 
@@ -95,17 +100,23 @@ Testing Assumptions Underlying a Unified Theory for the Origin of Grid Cells.
 
 ## Class Projects
 
+-----
+
 Schaeffer, et al. Towards Unifying Smooth Neural Codes with Adversarially Robust Representations. 2019.
   - [Paper](research/2019_am226_smooth_neural_codes/paper.pdf)
 
 ## One Day
 
-Memory Engrams Perform Nonparametric Latent State Associative Learning.
+-----
+
+Memory engrams perform nonparametric non-stationary latent state associative learning.
 
 Recovering low dimensional, interpretable mechanistic models via Representations and Dynamics Distillation (RADD).
 
 
 ## Collaboration Requests
+
+-----
 
 If you're interested in collaborating, email me at rylanschaeffer@gmail.com. I've posted
 a (work-in-progress) [summary of my research approach](research/research_philosophy.md).
