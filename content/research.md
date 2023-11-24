@@ -1,6 +1,6 @@
 # Research
 
-Note: This page is ~chronologically ordered.
+This page is ~chronologically ordered.
 
 ## Accepted
 
@@ -29,19 +29,17 @@ DecodingTrust: A Comprehensive Assessment of Trustworthiness in GPT Models. __Ne
 
 Beyond Expectations: Model-Driven Amplification of Dataset Biases in Data Feedback Loops. __NeurIPS 2023 Workshop: Algorithmic Fairness through the Lens of Time__.
 
-
 [Emergence of Sparse Representations from Noise.](research/2023_icml_noise_sparse_coding/main.md) __ICML 2023__.
 
 [Invalid Logic, Equivalent Gains: The Bizarreness of Reasoning in Language Model Prompting.](research/2023_icml_workshop_logically_invalid_chain_of_thought/main.md) __ICML 2023 Workshop: Knowledge and Logical Reasoning in the Era of Data-driven Learning__.
 
-Carranza, Pai, Schaeffer, Tandon, Koyejo. Deceptive Alignment Monitoring. __ICML 2023 AdvML Workshop (Blue Sky Oral)__.
-- [Recorded Talk](https://slideslive.com/39006212/deceptive-alignment-monitoring)
+[Deceptive Alignment Monitoring.](research/2023_icml_workshop_deceptive_alignment_monitoring/main.md) __ICML 2023 AdvML Workshop (Blue Sky Oral)__.
 
-Pai, Carranza, Schaeffer, Tandon, Koyejo. FACADE: A Framework for Adversarial Circuit Anomaly Detection and Evaluation. __ICML 2023 AdvML Workshop__.
+
+[FACADE: A Framework for Adversarial Circuit Anomaly Detection and Evaluation.](research/2023_icml_workshop_facade/main.md) __ICML 2023 AdvML Workshop__.
 
 
 [No Free Lunch from Deep Learning in Neuroscience: A Case Study through Models of the Entorhinal-Hippocampal Circuit.](research/2022_neurips_no_free_lunch/main.md) __NeurIPS 2022__.
-
 
 Streaming Inference for Infinite Non-Stationary Clustering. __CoLLAs 2022__.
 

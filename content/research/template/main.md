@@ -1,17 +1,16 @@
 # Title
 
-Authors: **Rylan Schaeffer**, 
+Authors:   
 
 Venue: 
 
 ## Quick Links
 
-- [Tweeprint](https://twitter.com/RylanSchaeffer/status/)
 - [Paper](paper.pdf)
 - [Poster](poster.pdf)
 - [Recorded Talk]()
 - [Slides](slides.pdf)
+- [Tweeprint]()
 
------
 
 ## Summary
