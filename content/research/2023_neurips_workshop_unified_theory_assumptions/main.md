@@ -18,20 +18,20 @@ Venue: NeurIPS 2023 Workshops:
 
 ## Summary
 
-Stoked to begin announcing our #NeurIPS2023 conference & workshops papers, starting with 1/?:
+Excited to begin announcing our #NeurIPS2023 conference & workshop papers (1/10)!!
 
 🔥🔥Testing Assumptions Underlying a Unified Theory for the Origin of Grid Cells🔥🔥
 
-Joint @KhonaMikail @sanmikoyejo @FieteGroup
+w/ @KhonaMikail @sanmikoyejo @FieteGroup
 
-Appearing @ NeurReps, UniReps & AI4Science
+Appearing @ @neur_reps , @unireps & @AI_for_Science
 
 🧠🧵👇
 
 ![](img_0.png)
 
 
-1/7
+1/8
 
 Grid cells are a Nobel-prize winning 🏆🏆🏆 neural representation found in the mammalian brain 🧠, that play a fundamental role in spatial navigation 🚶 🛣️
 
@@ -40,62 +40,70 @@ Where do these representations come from ⁉️ 🔎
 ![](img_1.png)
 
 
-2/7
+2/8
 
 
-One leading theory is the so-called "Unified theory for the origin of grid cells"
+One leading theory is the so-called "Unified theory for the origin of grid cells" by @SuryaGanguli
 
 The Unified Theory posits that grid cells arise due to predicting place cells, another type of neural representation 🧠
-
 
 ![](img_2.png)
 
 
-3/7
+3/8
 
-We rigorously test the Unified Theory's applicability to biological grid cells.
-
-We identify 2 critical mathematical assumptions:
+We identify 2 critical mathematical assumptions that the Unified Theory rests upon:
 
 1) Place cells, as a population, must be translationally invariant
 
 2) Place cells, individually, must have center-surround tuning
 
+Is either assumption biologically valid? 🤔🤔
+
+Let's test ! 👨‍🔬
+
 ![](img_3.png)
 
-4/7
+4/8
 
 
 
-Using 320 recording sessions, we propose 2 ways to quantify whether place cells are translationally invariant
+Using 320 place cell recording sessions, we propose 2 ways to quantify whether place cells are translationally invariant
 
-Under both metrics, this assumption appears biologically unlikely ❌
+Conclusion? Assumption 1 appears biologically unlikely ❌
 
-Also, spatial autocorrelation matrices don't display the constant-diagonal structure required
+Also, spatial autocorrelation matrices don't display the assumed constant-diagonal structure
+
+
 
 ![](img_4.png)
 
-5/7
+5/8
 
 
+Extracellularly, place cells don't exhibit center-surround tuning.
 
-Extracellularly, place cells don't exhibit center-surround tuning (left). 
+We dig through the literature 📜 to discover place cell subthreshold voltages also do not exhibit center surround tuning (right)
 
-We dig through the literature to also discover place cell intracellular potentials, which also do not exhibit center surround tuning (right)
+Conclusion? Assumption 2 also appears biologically unlikely ❌
 
-This assumption also appears biologically unlikely ❌
 
 ![](img_5.png)
 
-6/7
+6/8
 
-Together, this casts doubt on the Unified Theory's relevance to bio grid cells 🤔
+Together, this casts doubt on Unified Theory's relevance to bio grid cells  @unireps: https://openreview.net/forum?id=vYixJUwAD4
 
-OpenReviews:
-UniReps: https://openreview.net/forum?id=vYixJUwAD4
-NeurReps: https://openreview.net/forum?id=CwJIpWzgDP
-AI4Science https://openreview.net/forum?id=vYixJUwAD4
+@neur_reps: https://openreview.net/forum?id=CwJIpWzgDP
 
-@mitbrainandcog @mcgovernmit @stai_research  @StanfordAILab @StanfordData
+@AI_for_Science: https://openreview.net/forum?id=vYixJUwAD4
 
-7/7
+Work done @
+@mitbrainandcog @mcgovernmit @stai_research @StanfordAILab @StanfordData
+
+
+7/8
+
+Tune in tomorrow for more work appearing at #NeurIPS2023 !
+
+8/8

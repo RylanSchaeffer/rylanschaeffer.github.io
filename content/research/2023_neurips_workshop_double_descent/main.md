@@ -28,6 +28,11 @@ Another #NeurIPS2023 workshop paper
 
 1/N
 
+![img.png](img.png)
+
+2/N
+
+
 Factor 1: 
 
 2/N

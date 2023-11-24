@@ -65,7 +65,7 @@ Streaming Inference for Infinite Non-Stationary Clustering. __CoLLAs 2022__.
 
 -----
 
-Divergence at the Interpolation Threshold: Identifying, Interpreting & Ablating the Sources of a Deep Learning Puzzle. __Under Review at ICLR 2024 Blog Track__.
+Double Descent Demystified: Identifying, Interpreting & Ablating the Sources of a Deep Learning Puzzle. __Under Review at ICLR 2024 Blog Track__.
 - [Tweeprint](https://twitter.com/RylanSchaeffer/status/1640762626987925505)
 
 Brain-wide population codes for hierarchical inference in mice. __SfN 2024__.
@@ -100,7 +100,7 @@ Testing Assumptions Underlying a Unified Theory for the Origin of Grid Cells.
 
 -----
 
-Schaeffer, et al. Towards Unifying Smooth Neural Codes with Adversarially Robust Representations. 2019.
+Towards Unifying Smooth Neural Codes with Adversarially Robust Representations. 2019.
   - [Paper](research/2019_am226_smooth_neural_codes/paper.pdf)
 
 ## One Day
