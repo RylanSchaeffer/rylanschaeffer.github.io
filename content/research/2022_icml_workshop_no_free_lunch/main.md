@@ -6,11 +6,13 @@ Venue(s): [ICML 2022 Workshop: AI for Science](http://www.ai4science.net/icml22/
 
 ## Quick Links
 
-- [Tweeprint](https://twitter.com/RylanSchaeffer/status/1550854303824355328)
 - [Recorded Talk](https://slideslive.com/38986158/no-free-lunch-from-deep-learning-in-neuroscience-a-case-study-through-models-of-the-entorhinalhippocampal-circuit?ref=search-presentations-No+Free+Lunch+from+Deep+Learning+in+Neuroscience)
-- [Paper](paper.pdf)
-- [Poster](poster.pdf)
+- [Paper](research/2022_icml_workshop_no_free_lunch/paper.pdf)
+- [Poster](research/2022_icml_workshop_no_free_lunch/poster.pdf)
+- [Slides](research/2022_icml_workshop_no_free_lunch/slides.pdf)
+- [Tweeprint](https://twitter.com/RylanSchaeffer/status/1550854303824355328)
 - [OpenReview](https://openreview.net/forum?id=mxi1xKzNFrb)
+
 
 ## Summary
 

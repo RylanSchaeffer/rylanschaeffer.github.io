@@ -2,7 +2,9 @@
 
 Authors: **Rylan Schaeffer**, 
 
-Venue: 
+Venue: NeurIPS 2023 Workshops
+- [ATTRIB](https://attrib-workshop.cc/)
+- [Mathematics of Modern Machine Learning](https://sites.google.com/view/m3l-2023)
 
 ## Quick Links
 

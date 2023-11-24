@@ -4,6 +4,10 @@ Authors: **Rylan Schaeffer**, Mikail Khona, Leenoy Meshulam, International Brain
 
 Venue: **NeurIPS 2020**.
 
+## Quick Links
+
 - [Paper](paper.pdf)
 - [Poster](poster.pdf)
 - [Slides](slides.pdf)
+
+## Summary

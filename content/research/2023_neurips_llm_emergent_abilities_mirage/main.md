@@ -2,7 +2,7 @@
 
 Authors: **Rylan Schaeffer**, Brando Miranda, Sanmi Koyejo
 
-Venue: NeurIPS 2023 (Oral)
+Venue: NeurIPS 2023 (Oral).
 
 ## Quick Links
 
