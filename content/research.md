@@ -6,33 +6,22 @@
 
 [Are Emergent Abilities of Large Language Models a Mirage?](research/2023_neurips_llm_emergent_abilities_mirage/main.md) __NeurIPS 2023 (Oral)__.
 
-![](research/2023_neurips_llm_emergent_abilities_mirage/img.jpg)
 
 -----
 
 DecodingTrust: A Comprehensive Assessment of Trustworthiness in GPT Models. __NeurIPS 2023 Benchmark Track__.
 
-![](research/2023_neurips_decoding_trust/img.png)
-
 -----
 
 [Self-Supervised Learning of Representations for Space Generates Multi-Modular Grid Cells.](research/2023_neurips_ssl_gc/main.md) __NeurIPS 2023__.
-
-![](research/2023_neurips_ssl_gc/ssl_3losses_framework.png)
-![](research/2023_neurips_ssl_gc/ssl_grids_results_modules.png)
 
 -----
 
 [Emergence of Sparse Representations from Noise.](research/2023_icml_noise_sparse_coding/main.md) __ICML 2023__.
 
-![](research/2023_icml_noise_sparse_coding/img_4.jpeg)
-
 -----
 
 [No Free Lunch from Deep Learning in Neuroscience: A Case Study through Models of the Entorhinal-Hippocampal Circuit.](research/2022_neurips_no_free_lunch/main.md) __NeurIPS 2022__.
-
-![](research/2022_neurips_no_free_lunch/img_02.jpeg)
-![](research/2022_neurips_no_free_lunch/img_03.jpeg)
 
 -----
 
@@ -42,9 +31,6 @@ Streaming Inference for Infinite Non-Stationary Clustering. __CoLLAs 2022__.
 
 [Streaming Inference for Infinite Latent Feature Models.](research/2022_icml_streaming_ibp/main.md) __ICML 2022__.
 
-![](research/2022_icml_streaming_ibp/img_2.png)
-![](research/2022_icml_streaming_ibp/img_4.png)
-
 -----
 
 [Efficient Online Inference for Nonparametric Mixture Models.](research/2021_uai_streaming_crp/main.md) __UAI 2021__.
@@ -52,6 +38,7 @@ Streaming Inference for Infinite Non-Stationary Clustering. __CoLLAs 2022__.
 -----
 
 [Neural network model of amygdalar memory engram formation and function.](research/2021_cosyne_amygdalar_engram/main.md) __COSYNE 2021__.
+
 -----
 
 [Reverse-engineering recurrent neural network solutions to a hierarchical inference task for mice.](research/2020_neurips_reverse_engineering/main.md) __NeurIPS 2020__.
@@ -67,6 +54,7 @@ Streaming Inference for Infinite Non-Stationary Clustering. __CoLLAs 2022__.
 -----
 
 [An Information-Theoretic Understanding of Maximum Manifold Capacity Representations.](research/2023_neurips_workshop_mmcr_infotheory/main.md) __NeurIPS Workshops: NeurReps (Oral), UniReps (Oral), InfoCog (Spotlight), SSL__.
+
 
 -----
 
@@ -107,8 +95,6 @@ Pai, Carranza, Schaeffer, Tandon, Koyejo. FACADE: A Framework for Adversarial Ci
 -----
 
 [An Algorithmic Theory of Metacognition in Minds and Machines.](research/2021_neurips_workshop_metacognition/main.html) __NeurIPS 2021 Workshop: Metacognition in the Age of AI__.
-
-![](research/2021_neurips_workshop_metacognition/img.png)
 
 -----
 
@@ -152,10 +138,6 @@ International Brain Lab. A Brain-Wide Map of Neural Activity during Complex Beha
 -----
 
 [Pretraining on the Test Set Is All You Need.](research/2023_arxiv_pretraining_on_test_set/main.md) __Arxiv 2023__.
-
-![](research/2023_arxiv_pretraining_on_test_set/img_0.jpeg)
-
------
 
 -----
 

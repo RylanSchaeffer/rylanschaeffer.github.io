@@ -17,3 +17,6 @@ Venue: NeurIPS 2023 Workshops:
 -----
 
 ## Summary
+
+![](uniform_distribution_nuclear_norm_percent_err_vs_D_by_N.png)
+![](uniform_distribution_nuclear_norm_percent_err_vs_N_by_D.png)
