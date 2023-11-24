@@ -1,6 +1,6 @@
 # Title
 
-Authors: **Rylan Schaeffer**, 
+Authors: **Rylan Schaeffer**, Zachary Robertson, Akhilan Boopathy, Mikail Khona, Ila R Fiete, Andrey Gromov, Sanmi Koyejo
 
 Venue: NeurIPS 2023 Workshops
 - [ATTRIB](https://attrib-workshop.cc/)
@@ -17,3 +17,5 @@ Venue: NeurIPS 2023 Workshops
 -----
 
 ## Summary
+
+Another #NeurIPS2023 workshop paper
