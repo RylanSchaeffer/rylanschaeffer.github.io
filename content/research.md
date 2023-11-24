@@ -32,8 +32,7 @@ Beyond Expectations: Model-Driven Amplification of Dataset Biases in Data Feedba
 
 [Emergence of Sparse Representations from Noise.](research/2023_icml_noise_sparse_coding/main.md) __ICML 2023__.
 
-
-Invalid Logic, Equivalent Gains: The Bizarreness of Reasoning in Language Model Prompting. __ICML 2023 Workshop: Knowledge and Logical Reasoning in the Era of Data-driven Learning__.
+[Invalid Logic, Equivalent Gains: The Bizarreness of Reasoning in Language Model Prompting.](research/2023_icml_workshop_logically_invalid_chain_of_thought/main.md) __ICML 2023 Workshop: Knowledge and Logical Reasoning in the Era of Data-driven Learning__.
 
 Carranza, Pai, Schaeffer, Tandon, Koyejo. Deceptive Alignment Monitoring. __ICML 2023 AdvML Workshop (Blue Sky Oral)__.
 - [Recorded Talk](https://slideslive.com/39006212/deceptive-alignment-monitoring)
