@@ -70,9 +70,13 @@ Takeaways:
  
 5/N
 
-1. The Response concedes NFL's point: Unified Theory is not a theory of path integration, deep recurrent neural networks, learning dynamics of deep RNNs trained to path integrate.
+1. Unified Theory: "We forge a link between the problem of path integration and the existence of hexagonal grids"
 
-The Unified Theory is a theory of designing supervised targets to produce the desired outcome
+Actually:
+
+- Unified Theory designs supervised targets to induce grid-like tuning
+- Targets don't affect path integration
+- Targets biologically unlikely
 
 ![](img_04.png)
 
