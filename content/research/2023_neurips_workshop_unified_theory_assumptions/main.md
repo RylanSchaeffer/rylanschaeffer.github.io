@@ -22,23 +22,21 @@ Announcing #3 in our #NeurIPS2023 workshop & conference papers series (3/10)!!
 
 🔎🧠Testing Assumptions Underlying a Unified Theory for the Origin of Grid Cells🔎🧠
 
-w @KhonaMikail @sanmikoyejo @FieteGroup Adrian Bertagnoli
+w @KhonaMikail @FieteGroup @sanmikoyejo & Adrian Bertagnoli
 
-Appearing @neur_reps @unireps  @AI_for_Science
+Appearing @neur_reps @unireps @AI_for_Science
 
 🧵👇
 
-
-1/N
-
 ![](img_0.png)
-
 
 1/8
 
-Grid cells are a Nobel-prize winning 🏆🏆🏆 neural representation found in the mammalian brain 🧠, that play a fundamental role in spatial navigation 🚶 🛣️
+Grid cells are a Nobel-prize winning 🏆🏆🏆 neural representation found in the mammalian brain 🧠, that play a fundamental role in spatial navigation 🚶 🛣️ 🧭
 
 Where do these representations come from ⁉️ 🔎
+
+
 
 ![](img_1.png)
 
@@ -46,7 +44,7 @@ Where do these representations come from ⁉️ 🔎
 2/8
 
 
-One leading theory is the so-called "Unified theory for the origin of grid cells" by @SuryaGanguli Ben Sorscher & Gabe Mel
+One leading theory in #NeuroAI is the so-called "Unified theory for the origin of grid cells" by @SuryaGanguli Ben Sorscher & Gabe Mel
 
 The Unified Theory posits that grid cells arise due to predicting place cells, another type of neural representation 🧠
 
@@ -102,6 +100,8 @@ Work done @ @mitbrainandcog @mcgovernmit @stai_research @StanfordData @StanfordA
 
 7/8
 
-Tune in tomorrow for more work appearing at #NeurIPS2023 !
+What are your thoughts on these findings? Join the conversation at #NeurIPS2023 !
+
+
 
 8/8

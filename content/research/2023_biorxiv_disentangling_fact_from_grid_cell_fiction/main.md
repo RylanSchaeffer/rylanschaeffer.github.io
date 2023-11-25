@@ -1,6 +1,6 @@
 # Disentangling Fact from Grid Cell Fiction in Trained Deep Path Integrators
 
-Authors: **Rylan Schaeffer**, **Mikail Khona**, Adrian Bertagnoli, Ila Rani Fiete
+Authors: **Rylan Schaeffer**, **Mikail Khona**, Adrian Bertagnoli, Sanmi Koyejo, Ila Rani Fiete
 
 Venue: Biorxiv 2023
 
