@@ -98,9 +98,9 @@ https://twitter.com/daniela_witten/status/1292293102103748609
 
 8/N
 
-We also clarify several misconceptions:
+We also clarify misconceptions:
 
-1. "Memorization" and "Generalization" isn't the right dichotomy. Memorizing solutions **can** generalize, and often do!
+1. "Memorization" and "Generalization" isn't the right dichotomy. Memorizing solutions *can* generalize, and often do!
 
 2. Noise/random is NOT necessary for double descent - what's necessary is errors by the best possible model in the model class
 

@@ -10,6 +10,4 @@ Venue: NeurIPS 2023.
 - [Paper](paper.pdf)
 - [Recorded Talk]()
 
------
-
 ## Summary

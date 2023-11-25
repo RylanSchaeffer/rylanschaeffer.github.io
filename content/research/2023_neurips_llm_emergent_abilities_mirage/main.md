@@ -10,8 +10,6 @@ Venue: NeurIPS 2023 (Oral).
 - [OpenReview](https://openreview.net/forum?id=ITw9edRDlD)
 - [Tweeprint](https://twitter.com/RylanSchaeffer/status/1653141214110322688)
 
------
-
 ## Summary
 
 We had meant to keep this under wraps for a couple weeks, but it seems that the cat is out of the bag.

@@ -9,7 +9,7 @@ This page is ~chronologically ordered.
 [Are Emergent Abilities of Large Language Models a Mirage?](research/2023_neurips_llm_emergent_abilities_mirage/main.md) __NeurIPS 2023 (Oral)__.
 
 
-DecodingTrust: A Comprehensive Assessment of Trustworthiness in GPT Models. __NeurIPS 2023 Benchmark Track__.
+[DecodingTrust: A Comprehensive Assessment of Trustworthiness in GPT Models.](research/2023_neurips_decoding_trust/main.md) __NeurIPS 2023 Benchmark Track__.
 
 
 [Self-Supervised Learning of Representations for Space Generates Multi-Modular Grid Cells.](research/2023_neurips_ssl_gc/main.md) __NeurIPS 2023__.
