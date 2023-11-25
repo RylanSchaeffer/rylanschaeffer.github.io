@@ -88,18 +88,23 @@ We also use this viewpoint to construct adversarial *training data* that destroy
 ![](who_life_expectancy/adversarial_train_data.png)
 
 7/N
-
-This work was directly motivated by @AnthropicAI's work on superposition & double descent by  Tom Henighan, @shancarter , @trishume , @nelhage & @ch402
+This work was motivated by @AnthropicAI's work on superposition & double descent by  Tom Henighan, @shancarter , @trishume , @nelhage & @ch402
 
 https://twitter.com/AnthropicAI/status/1611045993516249088
+
+& by @daniela_witten's beautiful explanation of double descent via splines
+https://twitter.com/daniela_witten/status/1292293102103748609
+
 
 8/N
 
 We also clarify several misconceptions:
 
-1. Noise/random is NOT necessary for double descent - what's necessary is errors by the best possible model in the model class
+1. "Memorization" and "Generalization" isn't the right dichotomy. Memorizing solutions **can** generalize, and often do!
 
-2. "Memorization" and "Generalization" isn't the right dichotomy. Memorizing solutions **can** generalize.
+2. Noise/random is NOT necessary for double descent - what's necessary is errors by the best possible model in the model class
+
+![](overparameterized_generalization.png)
 
 9/N
 
@@ -111,6 +116,6 @@ We really hope this material will be included in undergrad ML curricula as its s
 
 This work was made possible by Jason W. Rocks and done by several not on Twitter: Zach Robertson, Akhilan Boopathy
 
-@stai_research @StanfordData @StanfordAILab @mitbrainandcog @mcgovernmit
+Collaborators from multiple wonderful places including @stai_research @StanfordData @StanfordAILab @mitbrainandcog @mcgovernmit
 
 11/N
