@@ -18,11 +18,13 @@ Venue: NeurIPS 2023 Workshops:
 
 Excited to begin announcing our #NeurIPS2023 workshop & conference papers (1/10)!
 
-🔥🚀An Information-Theoretic Understanding of Maximum Manifold Capacity Representations🔥🚀
+🔥🚀An Information-Theoretic Understanding of Maximum Manifold Capacity Representations🚀🔥
 
-w/ amazing cast @vclecomte @BerivanISIK @sanmikoyejo  @ziv_ravid @Andr3yGR @KhonaMikail @ylecun
+w/ amazing cast @vclecomte @BerivanISIK @sanmikoyejo @ziv_ravid @Andr3yGR @KhonaMikail @ylecun
 
 ![](MMCR_sphere_20231124_2117.jpg)
+
+![img_7.png](img_7.png)
 
 1/N
 

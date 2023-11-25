@@ -32,10 +32,9 @@ Appearing @neur_reps @unireps @AI_for_Science
 
 1/8
 
-Grid cells are a Nobel-prize winning 🏆🏆🏆 neural representation found in the mammalian brain 🧠, that play a fundamental role in spatial navigation 🚶 🛣️ 🧭
+Grid cells are a Nobel-prize winning neural representation found in the mammalian brain, that play a fundamental role in spatial navigation
 
-Where do these representations come from ⁉️ 🔎
-
+Where do these representations come from
 
 
 ![](img_1.png)
@@ -46,7 +45,7 @@ Where do these representations come from ⁉️ 🔎
 
 One leading theory in #NeuroAI is the so-called "Unified theory for the origin of grid cells" by @SuryaGanguli Ben Sorscher & Gabe Mel
 
-The Unified Theory posits that grid cells arise due to predicting place cells, another type of neural representation 🧠
+The Unified Theory posits that grid cells arise due to predicting place cells, another type of neural representation 
 
 ![](img_2.png)
 
@@ -59,9 +58,9 @@ We identify 2 critical mathematical assumptions that the Unified Theory rests up
 
 2) Place cells, individually, must have center-surround tuning
 
-Is either assumption biologically valid? 🤔🤔
+Is either assumption biologically valid? 
 
-Let's test ! 👨‍🔬
+Let's test !
 
 ![](img_3.png)
 
@@ -80,7 +79,7 @@ Conclusion: Place cells unlikely to be translationally invariant ❌
 
 Extracellularly, place cells don't exhibit center-surround tuning.
 
-We dig ⛏️ through the literature 📜 to discover place cell subthreshold voltages also do not exhibit center surround tuning (right)
+We dig through the literature to discover place cell subthreshold voltages also do not exhibit center surround tuning (right)
 
 Conclusion: Place cells unlikely to have center surround tuning ❌
 
@@ -101,7 +100,6 @@ Work done @ @mitbrainandcog @mcgovernmit @stai_research @StanfordData @StanfordA
 7/8
 
 What are your thoughts on these findings? Join the conversation at #NeurIPS2023 !
-
 
 
 8/8
