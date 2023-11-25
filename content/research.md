@@ -18,7 +18,7 @@ DecodingTrust: A Comprehensive Assessment of Trustworthiness in GPT Models. __Ne
 [Divergence at the Interpolation Threshold: Identifying, Interpreting & Ablating the Sources of a Deep Learning Puzzle.](research/2023_neurips_workshop_double_descent/main.md) __NeurIPS 2023 Workshops: ATTRIB, Mathematics of Modern Machine Learning__.
 
 
-[An Information-Theoretic Understanding of Maximum Manifold Capacity Representations.](research/2023_neurips_workshop_mmcr_infotheory/main.md) __NeurIPS Workshops: NeurReps (Oral), UniReps (Oral), InfoCog (Spotlight), SSL__.
+[An Information-Theoretic Understanding of Maximum Manifold Capacity Representations.](research/2023_neurips_workshop_mmcr_infotheory/main.md) __NeurIPS Workshops: UniReps (Oral), InfoCog (Spotlight), NeurReps, SSL__.
 
 
 [Associative Memory Under the Probabilistic Lens: Improved Transformers & Dynamic Memory Creation.](research/2023_neurips_workshop_infinite_associative_memory/main.md) __NeurIPS 2023 Workshop: Associative Memories & Hopfield Networks__.
