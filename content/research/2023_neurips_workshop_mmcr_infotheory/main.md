@@ -40,7 +40,7 @@ MMCR originates from stat mech characterization of the geometry of linear separa
 
 But many SSL methods originate from (or relate to) information theory! How can we connect these?
 
-![]()
+![](img_1.png)
 
 3/N
 
@@ -77,8 +77,8 @@ Appearing @ 4 workshops: @neur_reps (oral) @unireps (oral) InfoCog (spotlight) a
 
 Work done with amazing collaborators across powerhouse institutions @stai_research @StanfordAILab @StanfordData @AIatMeta @NYUDataScience @mitbrainandcog @mcgovernmit
 
-
 ❤️‍🔥❤️‍🔥❤️‍🔥
 
+& stay tuned!
 
 
