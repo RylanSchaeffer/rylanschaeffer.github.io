@@ -18,15 +18,18 @@ Venue: NeurIPS 2023 Workshops:
 
 ## Summary
 
-Excited to begin announcing our #NeurIPS2023 conference & workshop papers (1/10)!!
+Announcing #3 in our #NeurIPS2023 workshop & conference papers series (3/10)!!
 
-🔥🔥Testing Assumptions Underlying a Unified Theory for the Origin of Grid Cells🔥🔥
+🔎🧠Testing Assumptions Underlying a Unified Theory for the Origin of Grid Cells🔎🧠
 
-w/ @KhonaMikail @sanmikoyejo @FieteGroup
+w @KhonaMikail @sanmikoyejo @FieteGroup Adrian Bertagnoli
 
-Appearing @ @neur_reps , @unireps & @AI_for_Science
+Appearing @neur_reps @unireps  @AI_for_Science
 
-🧠🧵👇
+🧵👇
+
+
+1/N
 
 ![](img_0.png)
 
@@ -43,7 +46,7 @@ Where do these representations come from ⁉️ 🔎
 2/8
 
 
-One leading theory is the so-called "Unified theory for the origin of grid cells" by @SuryaGanguli
+One leading theory is the so-called "Unified theory for the origin of grid cells" by @SuryaGanguli Ben Sorscher & Gabe Mel
 
 The Unified Theory posits that grid cells arise due to predicting place cells, another type of neural representation 🧠
 
@@ -67,12 +70,9 @@ Let's test ! 👨‍🔬
 4/8
 
 
+Using 320 place cell recording sessions, we propose 2 ways to quantify whether place cells are translationally invariant and also qualitatively visualize their spatial autocorrelations
 
-Using 320 place cell recording sessions, we propose 2 ways to quantify whether place cells are translationally invariant
-
-Conclusion? Assumption 1 appears biologically unlikely ❌
-
-Also, spatial autocorrelation matrices don't display the assumed constant-diagonal structure
+Conclusion: Place cells unlikely to be translationally invariant ❌
 
 
 
@@ -80,26 +80,24 @@ Also, spatial autocorrelation matrices don't display the assumed constant-diagon
 
 5/8
 
-
 Extracellularly, place cells don't exhibit center-surround tuning.
 
-We dig through the literature 📜 to discover place cell subthreshold voltages also do not exhibit center surround tuning (right)
+We dig ⛏️ through the literature 📜 to discover place cell subthreshold voltages also do not exhibit center surround tuning (right)
 
-Conclusion? Assumption 2 also appears biologically unlikely ❌
+Conclusion: Place cells unlikely to have center surround tuning ❌
 
 
 ![](img_5.png)
 
 6/8
 
-Together, this casts doubt on Unified Theory's relevance to bio grid cells  @unireps: https://openreview.net/forum?id=vYixJUwAD4
+Together, these cast doubt on Unified Theory's relevance to bio grid cells  @unireps: https://openreview.net/forum?id=vYixJUwAD4
 
 @neur_reps: https://openreview.net/forum?id=CwJIpWzgDP
 
 @AI_for_Science: https://openreview.net/forum?id=vYixJUwAD4
 
-Work done @
-@mitbrainandcog @mcgovernmit @stai_research @StanfordAILab @StanfordData
+Work done @ @mitbrainandcog @mcgovernmit @stai_research @StanfordData @StanfordAILab 
 
 
 7/8
