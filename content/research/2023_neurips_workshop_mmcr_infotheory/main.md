@@ -18,7 +18,7 @@ Venue: NeurIPS 2023 Workshops:
 
 Excited to begin announcing our #NeurIPS2023 workshop & conference papers (1/10)!
 
-🔥🔥An Information-Theoretic Understanding of Maximum Manifold Capacity Representations🔥🔥
+🔥🚀An Information-Theoretic Understanding of Maximum Manifold Capacity Representations🔥🚀
 
 w/ amazing cast @vclecomte @BerivanISIK @sanmikoyejo  @ziv_ravid @Andr3yGR  @KhonaMikail @ylecun
 
@@ -70,9 +70,9 @@ Numerical simulations confirm our maths, showing that the gap between MMCR's opt
 6/N
 
 
-Appearing @ 4 workshops: @neur_reps (oral) @unireps (oral) InfoCog (spotlight) and SSL !!
+Appearing @ 4 workshops: @unireps (oral) InfoCog (spotlight) @neur_reps SSL  !!
 
-Work done with amazing collaborators across many institutions @stai_research @StanfordAILab @StanfordData @AIatMeta @NYUDataScience @mitbrainandcog @mcgovernmit
+Work done with amazing collaborators across many institutions @stai_research @StanfordData @StanfordAILab @NYUDataScience @mitbrainandcog @mcgovernmit @AIatMeta
 
 ❤️‍🔥❤️‍🔥❤️‍🔥
 
