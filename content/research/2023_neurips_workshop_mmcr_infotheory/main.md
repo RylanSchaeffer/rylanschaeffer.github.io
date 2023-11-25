@@ -20,23 +20,21 @@ Excited to begin announcing our #NeurIPS2023 workshop & conference papers (1/10)
 
 🔥🔥An Information-Theoretic Understanding of Maximum Manifold Capacity Representations🔥🔥
 
-w/ amazing cast @vclecomte @BerivanISIK @sanmikoyejo  @ziv_ravid @Andr3yGR @ylecun @KhonaMikail
+w/ amazing cast @vclecomte @BerivanISIK @sanmikoyejo  @ziv_ravid @Andr3yGR  @KhonaMikail @ylecun
 
 ![](MMCR_sphere_20231124_2117.jpg)
 
 1/N
 
-What is MMCR? MMCR is a new high-performing self-supervised learning method at #NeurIPS2023 by @tedyerxa @s_y_chung @KuangYilun @EeroSimoncelli that SLAYS at ImageNet1k 🚀🚀🚀
+MMCR is a new high-performing self-supervised learning method at #NeurIPS2023 by @tedyerxa @s_y_chung @KuangYilun @EeroSimoncelli that SLAYS at ImageNet1k 🚀🚀🚀
 
-How does it work?
-
-Data -> Transform -> Embed -> Average over views/transforms -> Max nuclear norm
+MMCR: Data -> K transforms per datum -> Embed -> Average over K transforms -> Minimize negative nuclear norm
 
 ![](img.png)
 
 2/N
 
-MMCR originates from stat mech characterization of the geometry of linear separability of manifolds, building off foundational work by @s_y_chung @UriCohen42 @HSompolinsky
+MMCR originates from the statistical mechanical characterization of the linear separability of manifolds, building off foundational work by @s_y_chung @UriCohen42 @HSompolinsky
 
 But many SSL methods originate from (or relate to) information theory! How can we connect these?
 
@@ -45,17 +43,17 @@ But many SSL methods originate from (or relate to) information theory! How can w
 3/N
 
 
-We leverage tools from high dim prob & info theory to demonstrate that optimal solution to MMCR's nuclear norm loss function is the same optimal solution that maximizes well-known lower bound on MI between views
+We leverage tools from high dimensional prob & info theory to demonstrate that optimal solution to MMCR's nuclear norm loss is the same optimal solution that maximizes lower bound on mutual info btwn views
 
-Specifically, we show that MMCR's loss has a lower bound, then
+Specifically, we show that MMCR's loss has a lower bound, then...
 
 ![](img_2.png)
 
 4/N
 
-prove that a network with (1) perfect invariance and (2) perfect uniformity achieves this loss lower bound with high probability
+prove that a network with (1) perfect reconstruction (i.e. invariance) and (2) perfect uniformity achieves this loss lower bound with high probability
 
-This configuration of embeddings maximizes a well-known lower bound on the mutual information between  multiple views
+This configuration of embeddings maximizes a well-known lower bound on the mutual information between multiple views
 
 ![](img_3.png)
 
@@ -65,8 +63,7 @@ This configuration of embeddings maximizes a well-known lower bound on the mutua
 
 5/N
 
-Numerical simulations confirm our maths, showing power law scaling of the gap between MMCR's optimal loss and uniform embeddings with the number of manifolds and the ambient dimension 
-
+Numerical simulations confirm our maths, showing that the gap between MMCR's optimal loss and the loss achieved by invariant & uniform embeddings falls as a power in the number of manifolds (N) and in the ambient dimension (D), peaking at the N=D threshold
 ![](uniform_distribution_nuclear_norm_percent_err_vs_D_by_N.png)
 ![](uniform_distribution_nuclear_norm_percent_err_vs_N_by_D.png)
 
@@ -75,7 +72,7 @@ Numerical simulations confirm our maths, showing power law scaling of the gap be
 
 Appearing @ 4 workshops: @neur_reps (oral) @unireps (oral) InfoCog (spotlight) and SSL !!
 
-Work done with amazing collaborators across powerhouse institutions @stai_research @StanfordAILab @StanfordData @AIatMeta @NYUDataScience @mitbrainandcog @mcgovernmit
+Work done with amazing collaborators across many institutions @stai_research @StanfordAILab @StanfordData @AIatMeta @NYUDataScience @mitbrainandcog @mcgovernmit
 
 ❤️‍🔥❤️‍🔥❤️‍🔥
 
