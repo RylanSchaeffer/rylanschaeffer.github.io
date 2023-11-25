@@ -82,7 +82,7 @@ Actually:
 
 6/N
 
-2. The Unified Theory is occasionally suggestive at best.
+2. The Unified Theory is at best occasionally suggestive 
 
 2a) Even with Fourier annulus, grid-like tuning emerges inconsistently, the "Difference of Softmaxes" supervised target provides critical boost not captured by theory, and grid-like tuning is highly seed dependent
 
@@ -90,13 +90,13 @@ Actually:
 
 7/N
 
-2b) Gaussian supervised targets do not generically produce grid-like tuning. New code by Response achieves grids via unstated implementation details: high dropout = 0.5, large learning rate ~ 0.1, specific optimizers) drive grid-like tuning, not path integration.
+2b) Gaussian supervised targets do not generically produce grid-like tuning. New code by Response achieves grids via unstated implementation details: high dropout = 0.5, large learning rate ~ 0.1, specific optimizers drive grid-like tuning, not path integration
 
 ![](img_06.png)
 
 8/N
 
-2b) Densely sweeping hyperparameters using original code by @nayebi_aran @dyamins @SuryaGanguli @lisa_giocomo again shows no grid-like tuning
+2b) Densely sweeping recommended hyperparameters using original code by @nayebi_aran @dyamins @SuryaGanguli @lisa_giocomo again shows no grid-like tuning from Gaussian targets
 
 ![](img_07.png)
 ![](img_08.png)
