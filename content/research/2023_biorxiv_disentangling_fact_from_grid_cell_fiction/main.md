@@ -56,13 +56,15 @@ https://www.biorxiv.org/content/10.1101/2022.11.14.516537v1
 
 4/N
 
-Our new preprint: 
+Takeaways:
 
-1. explains how the Response concedes NFL
+1. Path integration insufficient to produce grid cells
 
-2. evaluates the Unified Theory & show it is _at best_ “occasionally suggestive” of deep path integrators
+2. Unified Theory is at best occasionally suggestive
 
-3. questions why neural regressions reached the wrong conclusion
+3. Neural regressions methodology should be investigated
+
+4. For more promising alternative of grid cells, check back in a day 😉
 
 <TODO: Link Biorxiv preprint>
  
@@ -130,15 +132,9 @@ competitors simply by providing higher dimensional, richer basis functions
 
 13/N
 
-Takeaways:
+Preprint: <TODO: Link preprint>
 
-1. Path integration insufficient to produce grid cells
+This work was done at & financially supported by @stai_research @StanfordData @StanfordAILab @mitbrainandcog @mcgovernmit
 
-2. Unified Theory is at best occasionally suggestive
-
-3. Neural regressions methodology should be investigated
-
-4. For more promising alternative of grid cells, check back in a day 😉
-
-14/N
+15/N
 
