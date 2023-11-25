@@ -26,11 +26,11 @@ w/ amazing cast @vclecomte @BerivanISIK @sanmikoyejo  @ziv_ravid @Andr3yGR @Khon
 
 1/N
 
-MMCR is a new high-performing self-supervised learning method at #NeurIPS2023 by @tedyerxa @s_y_chung @KuangYilun @EeroSimoncelli that SLAYS at ImageNet1k 🚀🚀🚀
+MMCR is a new high-performing self-supervised learning method at #NeurIPS2023 by @tedyerxa @s_y_chung @KuangYilun @EeroSimoncelli that SLAYS 🚀🚀🚀
 
 MMCR: Data -> K transforms per datum -> Embed -> Average over K transforms -> Minimize negative nuclear norm
 
-![](img.png)
+![](img_6.png)
 
 2/N
 
