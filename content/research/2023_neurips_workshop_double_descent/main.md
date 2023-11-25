@@ -1,4 +1,4 @@
-# Title
+# Divergence at the Interpolation Threshold: Identifying, Interpreting & Ablating the Sources of a Deep Learning Puzzle
 
 Authors: **Rylan Schaeffer**, Zachary Robertson, Akhilan Boopathy, Mikail Khona, Ila R Fiete, Andrey Gromov, Sanmi Koyejo
 
@@ -113,6 +113,8 @@ This work requires only linear regression and SVD (no random matrix theory, no r
 We really hope this material will be included in undergrad ML curricula as its so foundational!
 
 10/N
+
+Appearing at ATTRIB and M3L workshops #NeurIPS2023
 
 This work was made possible by Jason W. Rocks and done by several not on Twitter: Zach Robertson, Akhilan Boopathy
 
