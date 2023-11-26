@@ -18,18 +18,20 @@ Venue: NeurIPS 2023 Workshops
 
 ## Summary
 
-Announcing #4 in our #NeurIPS2023 workshop & conference papers series (4/10)!
+Announcing #1 in our #NeurIPS2023 workshop & conference papers series (1/8)!
 
 🔎 Associative Memory Under the Probabilistic Lens 🔍
 
-Joint w/ @sanmikoyejo @KhonaMikail @Andr3yGR  @neurostrow @FieteGroup 
+w Nika Zahedi @KhonaMikail @Andr3yGR @sanmikoyejo @neurostrow @FieteGroup
 
-Appearing @ Associative Memory & Hopfield Networks workshop https://amhn.vizhub.ai/  !
-🧠🧵👇
+Appearing @ Associative Memory & Hopfield Networks Workshop !
+
+🧵👇
+
 
 ![](img.png)
 
-1/N
+1/7
 
 At #ICML2023 , @Bishwajit_Sahab @DimaKrotov @mj_zaki @p_ram_p showed that modern associative memory networks can be used for clustering via a particular energy function and dynamics
 
@@ -37,7 +39,7 @@ https://twitter.com/Bishwajit_Sahab/status/1669374707374669824
 
 ![img_1.png](img_1.png)
 
-2/N
+2/7
 
 In our work, we mathematically show that the associative memory (AM) clustering corresponds to generalized
 expectation maximization via gradient ascent in a homogeneous isotropic Gaussian mixture model, 
@@ -45,13 +47,13 @@ with fixed points that correspond to the posterior-weighted memories
 
 ![img_2.png](img_2.png)
 
-3/N 
+3/7 
 
 Based on connection between self-attention and associative memory networks by @HRamses2 @DimaKrotov @BerenMillidge ,  we can re-interpret pre-norm + self-attention in transformers as clustering on hypersphere with inhomogeneous von Mises-Fisher mixture model (not yet tested)
 
 ![img_3.png](img_3.png)
 
-4/N
+4/7
 
 We also propose a "dual" AM network to @Bishwajit_Sahab 's #ICML2023 AM network
 
@@ -64,15 +66,15 @@ Also exhibits self-excitation & mutual inhibition dynamics (long-standing theme 
 ![](dataset_vs_score_by_algorithm_split_unsupervised_metric.png)
 
 
-5/N
+5/7
 
-Based on probabilistic connections, we propose a new associative memory network with the ability to dynamically create new memories in its forward dynamics as necessitated by the data
+We also propose a NEW associative memory network with ability to dynamically create new memories in its forward dynamics, as necessitated by the data
 
-To do this, we draw on combinatorial stochastic processes from Bayesian nonparametrics
+To do this, we use combinatorial stochastic processes from Bayesian nonparametrics to define new energy function & dynamics
 
 ![](img_5.png)
 
-6/N
+6/7
 
 Very excited to push this work forward. There are exciting insights towards #NeuroAI as well
 
@@ -82,4 +84,4 @@ Work done w amazing collaborators @stai_research @StanfordData @StanfordAILab @m
 
 ❤️‍🔥❤️‍🔥❤️‍🔥
 
-7/N
+7/7
