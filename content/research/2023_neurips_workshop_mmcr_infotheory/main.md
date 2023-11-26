@@ -24,7 +24,6 @@ w/ amazing cast @vclecomte @BerivanISIK @sanmikoyejo @ziv_ravid @Andr3yGR @Khona
 
 ![](MMCR_sphere_20231124_2117.jpg)
 
-![img_7.png](img_7.png)
 
 1/N
 
@@ -38,7 +37,7 @@ MMCR: Data -> K transforms per datum -> Embed -> Average over K transforms -> Mi
 
 MMCR originates from the statistical mechanical characterization of the linear separability of manifolds, building off foundational work by @s_y_chung @UriCohen42 @HSompolinsky
 
-But many SSL methods originate from (or relate to) information theory! How can we connect these?
+But what is this MMCR computational graph actually doing?
 
 ![](img_1.png)
 
