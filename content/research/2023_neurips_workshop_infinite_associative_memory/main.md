@@ -57,7 +57,7 @@ Based on connection between self-attention and associative memory networks by @H
 
 We also propose a "dual" AM network to @Bishwajit_Sahab 's #ICML2023 AM network
 
-Novel energy & dynamics => Faster runtime & computation of cluster assignment posteriors
+Novel energy & dynamics => Faster if K < D & computation of cluster assignment posteriors
 
 Also exhibits self-excitation & mutual inhibition dynamics (long-standing theme in neuro)
 
@@ -68,7 +68,7 @@ Also exhibits self-excitation & mutual inhibition dynamics (long-standing theme 
 
 5/7
 
-We also propose a NEW associative memory network with ability to dynamically create new memories in its forward dynamics, as necessitated by the data
+We also propose a NEW associative memory network with ability to dynamically CREATE NEW MEMORIES in its forward dynamics, as necessitated by the data
 
 To do this, we use combinatorial stochastic processes from Bayesian nonparametrics to define new energy function & dynamics
 
