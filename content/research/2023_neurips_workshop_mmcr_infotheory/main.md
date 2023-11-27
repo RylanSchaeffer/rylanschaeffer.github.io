@@ -1,6 +1,6 @@
 # An Information-Theoretic Understanding of Maximum Manifold Capacity Representations
 
-Authors: **Rylan Schaeffer**, Berivan Isik, Victor Lecomte, Mikail Khona, Yann LeCun, Andrey Gromov, Ravid Ziv-Schwarz, Sanmi Koyejo
+Authors: **Rylan Schaeffer**, Berivan Isik, Victor Lecomte, Mikail Khona, Yann LeCun, Andrey Gromov, Ravid Shwartz-Ziv, Sanmi Koyejo
 
 Venue: NeurIPS 2023 Workshops:
 - [Symmetry and Geometry in Neural Representations)](https://www.neurreps.org/) **Oral**
