@@ -9,7 +9,7 @@ Venue: NeurIPS 2023 Workshops:
 
 ## Quick Links
 
-- Tweeprint
+- [Tweeprint](https://twitter.com/RylanSchaeffer/status/1729528957392015547)
 - [Paper](paper.pdf)
 - Recorded Talk
 - [Slides](slides.pdf)
@@ -18,13 +18,15 @@ Venue: NeurIPS 2023 Workshops:
 
 ## Summary
 
-Announcing #3 in our #NeurIPS2023 workshop & conference papers series (3/10)!!
+Announcing #2 in our #NeurIPS2023 workshop & conference papers series (2/10)!!
 
 🔎🧠Testing Assumptions Underlying a Unified Theory for the Origin of Grid Cells🔎🧠
 
 w @KhonaMikail @FieteGroup @sanmikoyejo & Adrian Bertagnoli
 
 Appearing @neur_reps @unireps @AI_for_Science
+
+https://openreview.net/forum?id=vYixJUwAD4
 
 🧵👇
 
@@ -34,7 +36,7 @@ Appearing @neur_reps @unireps @AI_for_Science
 
 Grid cells are a Nobel-prize winning neural representation found in the mammalian brain, that play a fundamental role in spatial navigation
 
-Where do these representations come from
+Where do these representations come from? 
 
 
 ![](img_1.png)
