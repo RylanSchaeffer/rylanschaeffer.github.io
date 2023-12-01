@@ -7,7 +7,7 @@ Venue: NeurIPS 2023 Workshops
 
 ## Quick Links
 
-- Tweeprint
+- [Tweeprint](https://twitter.com/RylanSchaeffer/status/1730650682510770636)
 - [Paper](paper.pdf)
 - Poster
 - Recorded Talk
@@ -18,13 +18,12 @@ Venue: NeurIPS 2023 Workshops
 
 ## Summary
 
-Announcing #1 in our #NeurIPS2023 workshop & conference papers series (1/8)!
 
 🔎 Associative Memory Under the Probabilistic Lens 🔍
 
-w Nika Zahedi @KhonaMikail @Andr3yGR @sanmikoyejo @neurostrow @FieteGroup
+w @KhonaMikail @Andr3yGR @sanmikoyejo @FieteGroup & Nika Zahedi
 
-Appearing @ Associative Memory & Hopfield Networks Workshop !
+Appearing @ #NeurIPS2023 Associative Memory & Hopfield Networks Workshop !
 
 🧵👇
 
