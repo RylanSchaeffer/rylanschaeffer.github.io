@@ -1,5 +1,7 @@
 # Binary Discrete-Time Hopfield Networks
 
+[Up](../associative_memory.md)
+
 ## +1/-1 Hopfield Networks
 
 Consider a recurrent neural network with binary states $x \in \{-1, +1\}$ and discrete-time dynamics:
@@ -17,6 +19,16 @@ $N$ is the number of memories to store and $y_n$ is the $n$th memory. One way to
 $$W = \sum_{n=1}^N y_n y_n^T$$
 
 and then set $W_{ii} = 0$.
+
+### Convergence
+
+The dynamics converge to a local minimum of $E(x)$, which is a fixed point of the dynamics.
+
+
+### Capacity
+
+
+
 
 
 ## +1/0 Hopfield Networks

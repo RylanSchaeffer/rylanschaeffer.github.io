@@ -1,7 +1,8 @@
 # Associative Memory
 
-
-
-- [Binary Discrete-Time Hopfield Networks](associative_memory/binary_discrete_time_hopfield_networks.md)
-- [Dense Associative Memory](associative_memory/dense_associative_memory.md)
-- [Continuous Modern Hopfield Networks](associative_memory/continuous_modern_hopfield_networks.md)
+- [Classical Hopfield Networks](associative_memory/classical_hopfield_network.html)
+- [Modern (Discrete) Hopfield Network](associative_memory/discrete_modern_hopfield_network.html)
+- [Modern Continuous Hopfield Networks](associative_memory/continuous_modern_hopfield_networks.html)
+- Bipartite Expander Hopfield Networks
+- Memory Scaffold with Heteroassociation (MESH)
+- Vector Hippocampal Scaffolded Heteroassociative Memory (Vector-HaSH)
