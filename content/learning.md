@@ -4,6 +4,7 @@ Disclaimer: these are my own notes, intended as a learning opportunity and for u
 Many notes are woefully incomplete. Don't judge :)
 
 - [Approximations, Techniques, Miscellaneous](learning/random.md)
+- [Associative Memory](learning/associative_memory.html)
 - [Bayesian Nonparametrics](learning/bayesian_nonparametrics.html)
 - [Bayesian Optimization](learning/bayesian_optimization.html)
 - [Calculus](learning/calculus.html)
