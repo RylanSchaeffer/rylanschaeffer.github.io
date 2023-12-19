@@ -1,6 +1,4 @@
-## Modern Discrete Hopfield Network
-
-[Up](../associative_memory.md)
+# Modern Discrete Hopfield Network [Up](../associative_memory.md)
 
 In this article, we consider Hopfield networks with discrete states $$x \in \{-1, +1\}^D$$.
 
