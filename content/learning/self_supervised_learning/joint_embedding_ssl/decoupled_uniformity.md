@@ -19,4 +19,12 @@ $$\mathcal{L}_{\text{DU}} = \log \mathbb{E}\Big[\exp (- \lvert \lvert \mu_n \mu_
 One problem with [InfoNCE](info_nce.html) and other methods like [Alignment & Uniformity](alignment_and_uniformity.html) 
 is the so-called "Negative-Positive Coupling" (NPC) problem. Because the uniformity losses incentivize making
 all the embeddings uniform, this hurts the alignment loss. [Decoupled Constrastive Learning](decoupled_contrastive_learning.html)
-proposed removing positive pairs from the InfoNCE 
+proposed removing positive pairs from the InfoNCE.
+
+Consider the gradient of the Decoupled Uniformity loss with respect to the embedding $$z_n^{(k)}$$:
+
+
+$$
+\begin{align*}
+\end{align*}
+$$
