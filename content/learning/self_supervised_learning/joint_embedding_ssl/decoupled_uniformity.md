@@ -12,7 +12,7 @@ $$\mu_n = \frac{1}{K} \sum_{k=1}^K f_{\theta}(x_n^{(k)})$$
 
 The Decoupled Uniformity loss then incentivizes uniformity of the means:
 
-$$\mathcal{L}_{\text{DU}} = \log \mathbb{E}\Big[\exp (- \lvert \lvert \mu_n \mu_{n'} \lvert \lvert_2^2 ) \Big]$$
+$$\mathcal{L}_{DU} = \log \mathbb{E}\Big[\exp (- \lvert \lvert \mu_n -  \mu_{n'} \lvert \lvert_2^2 ) \Big]$$
 
 ## Negative Positive Coupling
 
@@ -23,8 +23,10 @@ proposed removing positive pairs from the InfoNCE.
 
 Consider the gradient of the Decoupled Uniformity loss with respect to the embedding $$z_n^{(k)}$$:
 
+$$
+\nabla_{z_n^{(k)}} \mathcal{L}_{DU} &= -4 \sum_{n \neq j} w_{n, j} (\mu_n - \mu_j)
+$$
 
-$$
-\begin{align*}
-\end{align*}
-$$
+where $$w_{n,j} := \exp(- \lvert \lvert \mu_n -  \mu_j \lvert \lvert_2^2) / \Big(\sum_{n(n-1)} \sum_{i \neq j} \exp(- \lvert \lvert \mu_i -  \mu_j \lvert \lvert_2^2) \Big)$$.
+
+
