@@ -1,7 +1,7 @@
 # Associative Memory and Diffusion Models
 
-[Ambrogioni Arxiv 2023](https://arxiv.org/abs/2309.17290) showed that associative memory models and diffusion models
-can be linked. 
+Two concurrently released works [Ambrogioni (Arxiv 2023)](https://arxiv.org/abs/2309.17290) and [Hoover et al. (Arxiv 2023)](https://arxiv.org/abs/2309.16750)
+ showed that associative memory models and diffusion models can be linked. 
 
 ## Background
 
@@ -46,11 +46,11 @@ $$\nabla_x \log p_t(x) \approx - \sigma^{-1} s(x(t), t; \theta)$$
 
 ## Connecting Continuous Modern Hopfield Network to Diffusion Models
 
-## Illustrative Example: Exploding Variance Diffusion Models
+### Illustrative Example: Exploding Variance Diffusion Models
 
 Define the diffusion model energy function as:
 
-$$E(x, t) = -\sigma^2 \log p_t(x) = - \sigma^2 \log \mathbb{E}_{y \sim \phi(y)} \Big[ \exp( -\frac{\lvert \lvert x - y \lvert \lvert_2^2}{2(T-t)\sigma^2}) \Big]$$
+$$E(x, t) = -\sigma^2 \log p_t(x) = - \sigma^2 \log \mathbb{E}_{y \sim \phi(y)} \Big[ \exp( -\frac{\lvert \lvert x - y \lvert \lvert_2^2}{2(T-t)\sigma^2}) \Big] + c$$
 
 We replace the distribution $$\phi(y)$$ with a set of memories $$\{y_1, \dots, y_N\}$$ and define the energy function:
 
@@ -74,3 +74,27 @@ Key differences:
 
 Ambrogioni points out that these two effects cancel because the divergence of $$\beta(t)$$ suppresses the stochastic fluctuations.
 In experiments, there is no meaningful difference for large $$\beta$$.
+
+## General Case
+
+[Ambrogioni (Arxiv 2023)](https://arxiv.org/abs/2309.17290) also introduces a more general case that works 
+for any differentiable scalar potential function $$v(x)$$. We define the diffusion model's
+dynamics as:
+
+$$x(t - dt) = x(t) + \nabla_x v(x)dt + \sigma(t) \sqrt{dt} \delta(t)  $$
+
+This excludes non-conservative dynamics and state-dependent noise models. The generative dynamics are:
+
+$$x(t + dt) = x(t) +  (\sigma(t)^2 \nabla \log p_t(x) - \nabla_x v(x) ) dt + \sigma(t) \sqrt{dt} \delta(t), $$
+
+and the conditional marginal distribution $$p_t(x)$$ is:
+
+$$p_t(x) = \mathbb{E}_{y \sim \phi(y)}[k (x(t), t; y , T)] $$
+
+For this general case, Ambrogioni says that no analytical solution exists. Define the log of the solution kernel:
+
+$$ \psi (x, t; y, T) := \log k (x, t; y , T) $$
+
+Then, the diffusion model's energy function is:
+
+$$ E(x, t) = - \sigma^2 \log \Big(\sum_{n=1}^N \exp(\psi(x, t; y_n, T)) \Big) + v(x)$$
