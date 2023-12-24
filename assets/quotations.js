@@ -8,6 +8,20 @@ const quotations = [
     "You were always the golden boy then<br/>" +
     "And that you'd never lose that light in your eyes?“",
 
+    "“Perhaps that might be the way to write this book – to open the page and to let the stories crawl in by themselves.“",
+
+    "“If a story is not about the hearer he will not listen. And here I make a rule - a great and interesting story is about everyone or it will not last.“",
+
+    "“There is in him a strain of grim humour which, to some extent, redeems his often cruel and crude motif. His sympathies always go out to the oppressed, to the misfits and the distressed; he likes to contrast the simple joy of life with the brutal and cynical craving for money. But in him we find the American temperament also in his great feeling for nature, for the tilled soil, the wasteland, the mountains, and the ocean coasts, all an inexhaustible source of inspiration to Steinbeck in the midst of, and beyond, the world of human beings.“",
+
+    "“Having too many things they spend their hours and their money on the couch searching for a soul“",
+
+    "“John, to his everlasting glory and our ever lasting respect, would take the foreign correspondent badge off his arm“",
+
+    "“I want them to know how it was, I want to tell them directly, and perhaps by speaking directly to them I shall speak directly to other people“",
+
+    "“I think I would like to write the story of this whole valley“",
+
     "“We have to go. I'm almost happy here. I've lived too long with pain. I won’t know who I am without it.“",
 
     "“Both convey different types of pain. One is the pain of a person who feels they are beyond redemption. The other is the pain of a man who hopes they are not.“",

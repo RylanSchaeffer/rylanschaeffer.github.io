@@ -12,6 +12,7 @@
 - ReLICv2 
 - [SimCLR](self_supervised_learning/joint_embedding_ssl/simclr.html)
 
+- [Connection to Information Theory](self_supervised_learning/joint_embedding_ssl/connection_to_info_theory.html)
 
 ## Language
 
