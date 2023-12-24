@@ -24,9 +24,10 @@ proposed removing positive pairs from the InfoNCE.
 
 Consider the gradient of the Decoupled Uniformity loss with respect to the embedding $$z_n^{(k)}$$:
 
-$$ \nabla_{z_n^{(k)}} \mathcal{L}_{DU} = -4 \sum_{n \neq j} w_{n, j} (\mu_n - \mu_j) $$
+$$ \nabla_{z_n^{(k)}} \mathcal{L}_{DU} = -2 \sum_{n \neq j} w_{n, j} (\mu_n - \mu_j) $$
 
-where $$w_{n,j} := \exp(- \lvert \lvert \mu_n -  \mu_j \lvert \lvert_2^2) / \Big(\frac{1}{n(n-1)} \sum_{i \neq j} \exp(- \lvert \lvert \mu_i -  \mu_j \lvert \lvert_2^2) \Big)$$.
+where $$w_{n,j} := \exp(- \lvert \lvert \mu_n -  \mu_j \lvert \lvert_2^2) / \Big(\frac{1}{n(n-1)} \sum_{i \neq j} \exp(- \lvert \lvert \mu_i -  \mu_j \lvert \lvert_2^2) \Big)$$
+and the prefactor is $$2$$ rather than $$4$$ because $$\mu_n := 0.5 \sum_{k=1}^2 z_n^{(k)}$$ in their derivation. 
 
 The overall sum of the weights $$\sum_{n \neq j} w_{n, j}$$ quantifies whether $$\mu_n$$ is close to other samples
 in the batch, while the individual weights $$w_{n, j}$$ quantify whether the negative means $$\{\mu_j\}_{j \neq n}$$
