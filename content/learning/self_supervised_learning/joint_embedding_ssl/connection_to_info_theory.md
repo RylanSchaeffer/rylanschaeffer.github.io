@@ -30,7 +30,32 @@ InfoNCE is maximized by $$f^*(x, y) = \log p(y| x)$$ and NJW is maximized by $$f
 
 ### Evidence 1: Bijective Encoders Fix Mutual Information But Improve Downstream Classification
 
-### Evidence 2: 
+Experiment:
+- Learn representations for top half of MNIST images (similar results for CIFAR10)
+- Network is RealNVP with 30 coupling layers
+- Train a linear classifier on the representations: 89% accuracy
+- Baseline: 
+  - Linear classifier on pixel space: 85% accuracy
+  - Supervised MLP / ConvNet: 94% accuracy
+
+![img.png](img.png)
+
+Rylan's comments:
+- The main result (a network constrained such that MI must be constant for all parameters but achieves better downstream linear classification accuracy) is correct
+- But the experimental methodology seems odd
+  - This top half/bottom half data augmentation seems quite different from the standard JESSL setup
+  - Using MNIST and one architecture (RealNVP) makes it difficult to generalize to other datasets, architectures and augmentations
+  - Accuracy is a metric I generally try to avoid
+  - The accuracy is barely better than a linear classifier on pixel space
+  - The y axis scaling for $$I_{EST}$$ might not be linear. 
+
+Maybe the takeaway from this result is that this particular top half/bottom half augmentation doesn't correspond to 
+
+### Evidence 2: Maximizing Mutual Information Can Hurt Downstream Classification
+
+Experiment:
+- Train a bijective representation to maximize MI and minimize downstream linear classification (trained adversarially)
+- 
 
 ### Evidence 3:
 
