@@ -69,8 +69,8 @@ contrastive divergence loss:
 
 $$\begin{align*}
 \mathcal{L}_{Full} &= \mathcal{L}_{CD} + \mathcal{L}_{KL}\\
-\mathcal{L}_{CD} &= \mathbb{E}_{x^+ \sim p_{\mathcal{D}}}[E(x^+;\theta)] - \mathbb{E}_{stop_grad(x^- \sim q_k(x))}[E(x^-;\theta)] \\
-\mathcal{L}_{KL} &= \mathbb{E}_{x^- \sim q_k(x)}[E(x^-; stop_grad(\theta))] + \mathbb{E}_{x^- \sim q_k(x)}[\log q_k(x;\theta)]
+\mathcal{L}_{CD} &= \mathbb{E}_{x^+ \sim p_{\mathcal{D}}}[E(x^+;\theta)] - \mathbb{E}_{stopgrad(x^- \sim q_k(x))}[E(x^-;\theta)] \\
+\mathcal{L}_{KL} &= \mathbb{E}_{x^- \sim q_k(x)}[E(x^-; stopgrad(\theta))] + \mathbb{E}_{x^- \sim q_k(x)}[\log q_k(x;\theta)]
 \end{align*}$$
 
 The stop-gradient operators are necessary to ensure the correctness of the gradients. The authors note that
