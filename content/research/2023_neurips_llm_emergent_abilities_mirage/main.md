@@ -2,13 +2,16 @@
 
 Authors: **Rylan Schaeffer**, Brando Miranda, Sanmi Koyejo
 
-Venue: NeurIPS 2023 (Oral).
+Venue: NeurIPS 2023 (Outstanding Paper Award).
 
 ## Quick Links
 
-- [Paper](research/2023_neurips_llm_emergent_abilities_mirage/paper.pdf)
+- [Paper](paper.pdf)
+- [Poster](poster.png)
 - [OpenReview](https://openreview.net/forum?id=ITw9edRDlD)
 - [Tweeprint](https://twitter.com/RylanSchaeffer/status/1653141214110322688)
+- [Coverage in Nature](https://www.nature.com/articles/d41586-023-04094-z)
+- [Citation by US House Committee on Science, Space, and Technology](2023-12-14_AISI%20scientific%20merit_final-signed-republicans.pdf)
 
 ## Summary
 

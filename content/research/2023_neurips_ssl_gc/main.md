@@ -8,6 +8,11 @@ Venue: NeurIPS 2023.
 
 - [Tweeprint](https://twitter.com/RylanSchaeffer/status/)
 - [Paper](paper.pdf)
+- [Poster](poster.png)
 - [Recorded Talk]()
+
+![](poster.png)
+
+
 
 ## Summary

@@ -12,7 +12,10 @@ Venue: NeurIPS 2023 Workshops:
 
 - [Tweeprint](https://twitter.com/RylanSchaeffer/status/1729173604678660433)
 - [Paper](paper.pdf)
+- [Poster](poster.png)
 - Recorded Talk
+
+![](poster.png)
 
 ## Summary
 
