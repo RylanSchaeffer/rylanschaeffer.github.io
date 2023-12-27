@@ -18,7 +18,7 @@ $$x^k \leftarrow x^{k-1} - \frac{\lambda}{2} \nabla_x E(x; \theta) + \omega^k $$
 
 where $$\omega^k \sim \mathcal{N}(0, \lambda)$$ is Gaussian noise. [Welling & Yeh (ICML 2011)](https://www.stats.ox.ac.uk/~teh/research/compstats/WelTeh2011a.pdf)
 showed that if we define $$x^k \sim q_k(x)$$, then as $$k \rightarrow \infty$$ and $$\lambda \rightarrow 0$$,
-$$q(x) \rightarrow p(x;\theta)$$.
+$$q_k(x) \rightarrow p(x;\theta)$$.
 
 ## Learning the Energy Function
 
@@ -41,7 +41,7 @@ $$\begin{align*}
 &= \sum_n \nabla_{\theta} \log \frac{\exp(-E(x_n;\theta))}{Z(\theta)} \\
 &= \sum_n \frac{1}{Z(\theta)} \nabla_{\theta} Z(\theta) - \nabla_{\theta} E(x_n;\theta) \\
 &= \sum -\frac{1}{Z(\theta)} \int x \nabla_{\theta} E(x;\theta) \exp(-E(x;\theta)) dx - \nabla_{\theta} E(x_n;\theta) \\
-&= N \mathbb{E}_{x^- \sim q(x)}[\nabla_{\theta} E(x^-;\theta)] - N \mathbb{E}_{x^+ \sim p_{\mathcal{D}}}[\nabla_{\theta} E(x^+;\theta)]
+&= N \mathbb{E}_{x^- \sim q_k(x)}[\nabla_{\theta} E(x^-;\theta)] - N \mathbb{E}_{x^+ \sim p_{\mathcal{D}}}[\nabla_{\theta} E(x^+;\theta)]
 \end{align*}$$
 
 What intuitively does this contrastive divergence mean? The gradient of the log likelihood is the difference
@@ -62,9 +62,9 @@ quality of generated data:
 actually approximates the true CD loss, since the true CD loss prescribes taking infinitely many MCMC
 steps but in practice, only finitely many steps are taken. The authors propose a new loss:
 
-$$\nabla_{\theta} \mathcal{L}(\theta) = \mathbb{E}_{x^+ \sim p_{\mathcal{D}}}[\nabla_{\theta} E(x^+;\theta)] - \mathbb{E}_{x^- \sim q(x)}[\nabla_{\theta} E(x^-;\theta)] + \nabla_{\theta} q(x; \theta) \partial_{q(x; \theta)} KL(q_k(x; \theta)|| q_{\infty}(x;\theta))$$
+$$\nabla_{\theta} \mathcal{L}(\theta) = \mathbb{E}_{x^+ \sim p_{\mathcal{D}}}[\nabla_{\theta} E(x^+;\theta)] - \mathbb{E}_{x^- \sim q_k(x)}[\nabla_{\theta} E(x^-;\theta)] + \nabla_{\theta} q_k(x; \theta) \partial_{q_k(x; \theta)} KL(q_k(x; \theta)|| q_{\infty}(x;\theta))$$
 
-where $$q_{\infty}(x;\theta)$$ is the stationary distribution of the MCMC chain. Du & colleagus propose a full
+where $$q_{\infty}(x;\theta)$$ is the stationary distribution of the MCMC chain. Du & colleagues propose a full
 contrastive divergence loss:
 
 $$\begin{align*}
