@@ -57,6 +57,8 @@ $$ \tau \frac{dx_A}{dt} = - \frac{\partial E}{\partial g_A}$$
 
 where $$\tau$$ is a time constant and $$g_A$$ is the layer-normalized version of the token embedding.
 
+![](hoover_neurips_2023_energy_transformer/github.jpeg)
+
 ### Learning
 
 The Energy Transformer Block is run recurrently for $$T$$ steps. The token representations are then passed
