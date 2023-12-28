@@ -105,6 +105,10 @@ yields the same or slightly worse downstream performance. However, the networks 
 
 ![](connection_to_info_theory/rodriguez-galvez_icml_2023_tab2.png)
 
+The below plot from Rodriguez-Galvez et al. ICML 2023 bites into the Tschannen et al. ICLR 2020 paper. Specifically,
+there is no clear relationship between reconstruction, entropy and downstream linear classification performance.
+
+![](connection_to_info_theory/rodriguez-galvez_icml_2023_fig2.png)
 
 
 
