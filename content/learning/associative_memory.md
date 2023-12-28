@@ -8,6 +8,7 @@
 - Bipartite Expander Hopfield Networks
 - Memory Scaffold with Heteroassociation (MESH)
 - Vector Hippocampal Scaffolded Heteroassociative Memory (Vector-HaSH)
+- [Energy Transformer](associative_memory/energy_transformer.html)
 
 ## Connections to Other Topics
 

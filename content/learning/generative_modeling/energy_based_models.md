@@ -37,17 +37,17 @@ where $$x^+ \sim p_{\mathcal{D}}$$ and $$x^- \sim q_k(x)$$ are sampled using the
 of this can be found in [Richard Turner's 2005 notes](http://www.gatsby.ucl.ac.uk/~turner/Notes/ContrastiveDivergence/CDv3.pdf?ref=inference.vc)"
 
 $$\begin{align*}
-\nabla_{\theta} \mathcal{L}(\theta) &= \sum_n \nabla_{\theta} \log p(x_n;\theta) \\
-&= \sum_n \nabla_{\theta} \log \frac{\exp(-E(x_n;\theta))}{Z(\theta)} \\
-&= \sum_n \frac{1}{Z(\theta)} \nabla_{\theta} Z(\theta) - \nabla_{\theta} E(x_n;\theta) \\
-&= \sum -\frac{1}{Z(\theta)} \int x \nabla_{\theta} E(x;\theta) \exp(-E(x;\theta)) dx - \nabla_{\theta} E(x_n;\theta) \\
-&= N \mathbb{E}_{x^- \sim q_k(x)}[\nabla_{\theta} E(x^-;\theta)] - N \mathbb{E}_{x^+ \sim p_{\mathcal{D}}}[\nabla_{\theta} E(x^+;\theta)]
+\nabla_{\theta} \mathcal{L}(\theta) &= \frac{1}{N}\sum_n \nabla_{\theta} \log p(x_n;\theta) \\
+&= \frac{1}{N}\sum_n \nabla_{\theta} \log \frac{\exp(-E(x_n;\theta))}{Z(\theta)} \\
+&= \frac{1}{N}\sum_n \frac{1}{Z(\theta)} \nabla_{\theta} Z(\theta) - \nabla_{\theta} E(x_n;\theta) \\
+&= \frac{1}{N}\sum -\frac{1}{Z(\theta)} \int x \nabla_{\theta} E(x;\theta) \exp(-E(x;\theta)) dx - \nabla_{\theta} E(x_n;\theta) \\
+&= \mathbb{E}_{x^- \sim q_k(x)}[\nabla_{\theta} E(x^-;\theta)] - \mathbb{E}_{x^+ \sim p_{\mathcal{D}}}[\nabla_{\theta} E(x^+;\theta)]
 \end{align*}$$
 
 What intuitively does this contrastive divergence mean? The gradient of the log likelihood is the difference
 between the gradient of the energy function at the real data and the gradient of the energy function at the model's
-generated data. Turner's notes have a beautiful quote: "The algorithm coverges when the ‘dreams’ of the model match ‘re-
-ality’. If the ‘dreams’ do not match reality, the parameters are altered so that the next round of dreams will 
+generated data. Turner's notes have a beautiful quote: "The algorithm coverges when the ‘dreams’ of the model match ‘reality’.
+If the ‘dreams’ do not match reality, the parameters are altered so that the next round of dreams will 
 be more like reality."
 
 Note: Hinton found that only a few steps of gradient ascent were necessary to get good results.
