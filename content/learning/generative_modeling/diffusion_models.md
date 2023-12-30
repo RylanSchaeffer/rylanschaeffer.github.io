@@ -31,7 +31,7 @@ the noise.
 
 #### Denoising Score Matching
 
-Vincent 2010
+TODO: Vincent 2010
 
 #### Sliced Score Matching
 
@@ -45,6 +45,24 @@ TODO
 
 https://deepgenerativemodels.github.io/assets/slides/cs236_lecture12.pdf
 
+## Guidance a.k.a. Controllable Generation
+
+### Classifier Guidance
+
+Diffusion models can be "guided" after training by combining the diffusion model $$p_{\theta}(x)$$ with a
+predictive model $$p_{\theta}(y|x)$$ to generate samples from $$p_{\theta}(x|y)$$. TODO: cite  (Sohl-Dickstein et al.,
+2015; Dhariwal & Nichol, 2021
+
+### Classifier-Free Guidance
+
+TOOD: Ho & Salimans, 2022
+
+## Composition of Diffusion Models
+
+[Du et al. (ICML 2023)](https://arxiv.org/abs/2302.11552) studied how to reuse and compose diffusion models with 
+one another, correcting previously not fully correct methods and suggesting a new [energy-based](energy_based_models.html)
+parameterization for diffusion models.
+
 
 ## Retrieval-Augmented Diffusion Models 
 
@@ -54,10 +72,8 @@ with a separate image database and a retrieval strategy. During training, nearby
 then the model is conditioned on these informative examples. The database can then be swapped out at test time 
 in a manner that transfers well to new tasks e.g., class-conditional synthethesis, zero-shot stylization or
 text-to-image synthesis. The authors use [CLIP](../self_supervised_learning/joint_embedding_ssl/clip.html)
-to embed images and text for retrieval.
-
-To feed the retrieved CLIP-embedded data into the diffusion or autoregressive network, the authors use a 
-cross-attention mechanism.
+to embed images and text for retrieval. To feed the retrieved CLIP-embedded data into the diffusion or autoregressive
+network, the authors use a cross-attention mechanism.
 
 
 ## Connections to Other Topics
