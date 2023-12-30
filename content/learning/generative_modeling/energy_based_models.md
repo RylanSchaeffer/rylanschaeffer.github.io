@@ -78,3 +78,35 @@ without the KL loss term, the optimization process leads to an "adversarial" sam
 the network learns an energy function that makes sampling difficult, but the KL divergence term counteracts
 this effect. The authors found this second loss terms improves the stability of training, the generality of
 different architectures and the quality of generated samples.
+
+## Compositional Energy-Based Models
+
+[Du, Li & Mordatch (NeurIPS 2020)](https://proceedings.neurips.cc/paper/2020/hash/49856ed476ad01fcff881d57e161d73f-Abstract.html)
+propose learning compositional representations with energy-based models. The idea is that each factor will be 
+represented by an individual energy function that is low when the factor is present and high when the factor is absent.
+Then, one can apply base operators (logical conjunction, disjunction or negation) to flexibly and recursively
+combine multiple energy functions.
+
+![](energy_based_models/du_neurips_2020_compositional_ebm/fig1.png)
+
+For different factors (now renamed by the authors as "concept codes" $$c_1, c_2, ...$$), one can combine energy functions:
+
+- Conjunction: Given independent concepts $$c_1, c_2, ..., c_N$$:
+
+$$p(x | c_1 \wedge c_2 \wedge ... \wedge c_N) = \prod_n p(x | c_n) \propto \exp (- \sum_n E(x|c_n) )$$
+
+- Disjunction: Under the assumption that all partition functions $$Z(c_n)$$ are equal:
+
+$$\sum_n p(x|c_n) \propto \sum_n \exp(- E(x | c_n)) = \exp(\log \sum_n \exp(-E(x| c_n))) $$
+
+- Negation: The authors ground "not" by adding another concept by arguing that "not c" is too ambiguious by itself.
+
+$$p(x| \neg c_1 \wedge c_2) \propto \frac{p(x|c_2)}{p(x|c_1)^{\alpha}} \propto \exp(\alpha E(x|c_1) - E(x|c_2)) $$
+
+How do the authors actually extract the factors i.e. concept codes? The answers either (a) the data is generated 
+with known factors of variation or (b) the dataset was annotated with concepts (e.g. Male $\wedge$ Smiling).
+
+The authors also study cross-product extrapolation i.e. can the model generate combinations of factors
+that were not included in the training data?
+
+![](energy_based_models/du_neurips_2020_compositional_ebm/fig9.png)
