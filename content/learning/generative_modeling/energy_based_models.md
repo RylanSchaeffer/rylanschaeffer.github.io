@@ -142,3 +142,28 @@ as well as the marginal $$p(x)$$:
 $$p(x) = \sum_y p_{\theta}(x, y) = \frac{\sum_y \exp(f_{\theta}(x)[y])}{Z(\theta)}$$
 
 Consequently, the authors call the classifier a "Joint Energy-based Model" (JEM).
+
+### Training
+
+The joint likelihood can be factored as:
+
+$$\log p_{\theta}(x, y) = \log p_{\theta}(y|x) + \log p_{\theta}(x)$$
+
+The authors propose training the network using standard cross entropy for $$p(y|x)$$ and optimize $$p_{\theta}(x)$$ using
+Stochastic Gradient Lengevin Dynamics on the following energy function:
+
+$$E_{\theta}(x) = - \log \sum_y \exp(f_{\theta}(x)[y]) $$
+
+The authors note that alternative factorings of $$p(x, y)$$ yield worse performance.
+
+### Results
+
+CIFAR10 accuracy increases and generate samples are high quality:
+
+![](energy_based_models/grathwohl_iclr_2020_classifier_is_ebm/fig2.png)
+
+CIFAR100 is better calibrated than a standard classifier:
+
+![](energy_based_models/grathwohl_iclr_2020_classifier_is_ebm/fig4.png)
+
+The authors show that this approach also improves out-of-distribution detection and yields more robust classifiers.
