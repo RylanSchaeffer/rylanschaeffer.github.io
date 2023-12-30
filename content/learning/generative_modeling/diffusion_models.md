@@ -48,6 +48,18 @@ https://deepgenerativemodels.github.io/assets/slides/cs236_lecture12.pdf
 
 ## Retrieval-Augmented Diffusion Models 
 
+[Blattmann, Rombach et al. (NeurIPS 2022)](https://proceedings.neurips.cc/paper_files/paper/2022/hash/62868cc2fc1eb5cdf321d05b4b88510c-Abstract-Conference.html)
+proposed Retrieval-Augmented Diffusion Models. The idea is to combine relatively small diffusion or autoregressive models
+with a separate image database and a retrieval strategy. During training, nearby neighbors are retrieved from the database,
+then the model is conditioned on these informative examples. The database can then be swapped out at test time 
+in a manner that transfers well to new tasks e.g., class-conditional synthethesis, zero-shot stylization or
+text-to-image synthesis. The authors use [CLIP](../self_supervised_learning/joint_embedding_ssl/clip.html)
+to embed images and text for retrieval.
+
+To feed the retrieved CLIP-embedded data into the diffusion or autoregressive network, the authors use a 
+cross-attention mechanism.
+
+
 ## Connections to Other Topics
 
 - [Connection to Associative Memory](associative_memory/associative_memory_and_diffusion_models.html)
