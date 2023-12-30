@@ -119,3 +119,26 @@ The authors also study cross-product extrapolation i.e. can the model generate c
 that were not included in the training data?
 
 ![](energy_based_models/du_neurips_2020_compositional_ebm/fig9.png)
+
+## Converting a Classifier Into an Energy Based Model
+
+[Grathwohl et al (ICLR 2020)](https://arxiv.org/abs/1912.03263) argue that a standard discriminative classifier
+$$p(y|x)$$ can be reinterpreted as an EBM for the joint distribution $$p(x, y)$$, and show that 
+energy-based training of the joint distribution improves calibration, robustness and out-of-distribution detection,
+while also enabling sampmling of $$x$$ with quality rivaling recent GANs.
+
+![](energy_based_models/grathwohl_iclr_2020_classifier_is_ebm/fig1.png)
+
+Classifiers are typically a softmax applied to the logits output by a model (e.g., a neural network):
+
+$$p_{\theta}(y|x) = \frac{\exp(f_{\theta}(x)[y])}{\sum_{y'} \exp(f_{\theta}(x)[y'])}$$
+
+One can reinterpret the logits obtained from the model $$f_{\theta}$$ to define the joint $$p(x, y)$$:
+
+$$p(x, y) = \frac{\exp(f_{\theta}(x)[y])}{Z(\theta)}$$
+
+as well as the marginal $$p(x)$$:
+
+$$p(x) = \sum_y p_{\theta}(x, y) = \frac{\sum_y \exp(f_{\theta}(x)[y])}{Z(\theta)}$$
+
+Consequently, the authors call the classifier a "Joint Energy-based Model" (JEM).
