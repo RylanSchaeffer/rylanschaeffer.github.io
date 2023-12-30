@@ -8,10 +8,14 @@ for some energy function $$E(x;\theta)$$ and partition function $$Z(\theta) := \
 The partition function is typically difficult to work with (if not impossible), so the approach in
 energy-based models is to train a model to learn the energy function $$E(x;\theta)$$.
 
-## Generating Data
+## Generating (Sampling) Data
 
-One can sample data from $$p(x;\theta)$$ by sampling from some initial distribution
-and then performing gradient ascent using the gradient of the learned energy function, e.g.,
+Once one has the energy function, one can sample data from $$p(x;\theta)$$ by sampling $$x$$ from
+some initial distribution and then performing gradient ascent using the gradient of the learned energy function.
+Some specific ways to do this are Metropolis-Hastings MCMC and Unadjusted Langevin MCMC. 
+
+### Unadjusted Langevin MCMC
+
 using Langevin dynamics:
 
 $$x^k \leftarrow x^{k-1} - \frac{\lambda}{2} \nabla_x E(x; \theta) + \omega^k $$
@@ -19,6 +23,11 @@ $$x^k \leftarrow x^{k-1} - \frac{\lambda}{2} \nabla_x E(x; \theta) + \omega^k $$
 where $$\omega^k \sim \mathcal{N}(0, \lambda)$$ is Gaussian noise. [Welling & Yeh (ICML 2011)](https://www.stats.ox.ac.uk/~teh/research/compstats/WelTeh2011a.pdf)
 showed that if we define $$x^k \sim q_k(x)$$, then as $$k \rightarrow \infty$$ and $$\lambda \rightarrow 0$$,
 $$q_k(x) \rightarrow p(x;\theta)$$.
+
+### Metropolis-Hastings MCMC
+
+TODO: https://deepgenerativemodels.github.io/assets/slides/cs236_lecture12.pdf
+
 
 ## Learning the Energy Function
 
