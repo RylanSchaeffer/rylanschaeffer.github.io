@@ -4,7 +4,7 @@
 - [Inner Products](linear_algebra/inner_product.md)
 - [Norms](linear_algebra/norm.md)
 - [Eigenvectors and Eigenvalues](linear_algebra/eigen.md)
-
+- [Moore-Penrose Psuedoinverse](linear_algebra/psuedoinverse.md)
 
 ## Unitary (Orthogonal) Matrices
 
