@@ -106,7 +106,7 @@ dloss_dW = np.mean(
   np.einsum(
     "bij,bjjk->bjk",
     dloss_dyhat,
-    dyhat_dW),
+    dyhat_dW),  # Shape: (B, output_dim, input_dim)
   axis=0,
   keepdims=True)  # Shape: (1, output_dim, input_dim)
 ```
@@ -114,7 +114,11 @@ dloss_dW = np.mean(
 - Note: In the final calculation, we average over the batch dimension to compute the average gradient across the batch.
 - Note: All we did was apply the chain rule. The key is to get the dimensions right.
 
-### Gradient of Elementwise Nonlinearity Applied to Vector w.r.t. Vector
+- Note: We had to use the eye because einsum doesn't directly support adding a dimension in this context.
+
+## Gradients for Common Quantities
+
+### Sigmoid
 
 - Motivating Example: $$a = \phi(h)$$ for vectors $$a, h \in \mathbb{R}^n$$, where $$\phi$$ is an elementwise nonlinearity.
 - Goal: Compute $$\nabla_{h} a$$
@@ -134,4 +138,65 @@ da_dh = np.einsum(
 )  # Shape: (B, D, D)
 ```
 
-- Note: We had to use the eye because einsum doesn't directly support adding a dimension in this context.
+### Softmax
+
+- Motivating Example: $$q = \text{softmax}(v)$$ for vectors $$q, v \in \mathbb{R}^n$$.
+- Goal: Compute $$\nabla_{v} q$$
+- Shape Analysis: $$q$$ is a $$n$$-dimensional vector, and $$v$$ is a $$n$$-dimensional vector, so we expect the gradient's shape to be `(n, n)`.
+- Code:
+
+```python
+B, D = 256, 10
+v = np.random.randn(B, D)
+exp_v = np.exp(v)  # Shape: (B, D)
+q = exp_v / np.sum(exp_v, axis=1, keepdims=True)  # Shape: (B, D)
+dq_dv = np.subtract(
+  np.einsum(  # Shape: (B, D, D)
+    "bi,ij->bij", q,np.eye(D)
+    ),
+  np.einsum(
+  "bi,bj->bij", q, q
+  ) # Shape: (B, D, D)
+)
+```
+
+### Log Softmax
+
+### Log Sum Exponential
+
+### Cross Entropy
+
+- Motivating Example: $$L(p, \hat{p}) = p^T \log \hat{p}$$ for vectors $$p, \hat{p} \in \Delta^n$$.
+- Goal: Compute $$\nabla_{\hat{p}} L(p, \hat{p})$$
+- Shape Analysis: $$L(p, \hat{p})$$ is a scalar, and $$\hat{p}$$ is a $$n$$-dimensional vector, so we expect the gradient's shape to be `(1, n)`.
+- Code:
+
+```python
+B, N = 256, 10
+p = np.random.randn(B, N)
+p = p / np.sum(p, axis=1, keepdims=True)  # Shape: (B, N)
+phat = np.random.randn(B, N)
+phat = phat / np.sum(phat, axis=1, keepdims=True)  # Shape: (B, N)
+loss = np.einsum("bi,bi->b", p, np.log(phat))  # Shape: (B, 1)
+dloss_dphat = np.einsum(  # Shape: (B, 1, N)
+  "i,bj->bij",
+  np.ones(N),
+  p / phat,
+)
+```
+
+## Complete Examples
+
+### Gradients for a Deep Linear Feedforward Neural Network
+
+We consider a deep affine network with $$L$$ layers:
+
+$$\hat{y} = W_L W_{L-1} ... W_1 x$$
+
+where $$W_i \in \mathbb{R}^{n_i \times n_{i-1}}$$ and $$x \in \mathbb{R}^{n_0}$$.
+
+
+### Gradients for a Deep Affine Feedforward Neural Network
+
+
+### Gradients for a Deep Nonlinear Feedforward Neural Network
