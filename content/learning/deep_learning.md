@@ -1,5 +1,7 @@
 # Deep Learning
 
+[Gradients in Math and Code](deep_learning/gradients.md)
+
 ## Normalization in Deep Learning
 
 - [Layer Normalization](deep_learning/normalization.md#layer-normalization)
