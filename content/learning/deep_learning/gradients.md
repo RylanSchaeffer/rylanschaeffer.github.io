@@ -56,17 +56,17 @@ dloss_dyhat = -np.einsum("i,bj->bij", np.ones(1), y - yhat)  # Shape: (B, 1, D)
 
 ### Gradient of Vector w.r.t. Matrix
 
-- Motivating Example: $$y = W x$$ with $$y \in \mathbb{R}^n$$, $$W \in \mathbb{R}^{n \times m}$$, and $$x \in \mathbb{R}^m$$.
-- Goal: Compute $$\nabla_{W} y$$
-- Shape Analysis: $$ y$$ is a $$n$$-dimensional vector, and $$W$$ is an $$n \times m$$ matrix, so we expect the gradient's shape to be `(n, n, m)`.
+- Motivating Example: $$\hat{y} = W x$$ with $$\hat{y} \in \mathbb{R}^n$$, $$W \in \mathbb{R}^{n \times m}$$, and $$x \in \mathbb{R}^m$$.
+- Goal: Compute $$\nabla_{W} \hat{y}$$
+- Shape Analysis: $$\hat{y}$$ is a $$n$$-dimensional vector, and $$W$$ is an $$n \times m$$ matrix, so we expect the gradient's shape to be `(n, n, m)`.
 - Code:
 
 ```python
 B, output_dim, input_dim = 256, 10, 20
 W = np.random.randn(output_dim, input_dim)
 x = np.random.randn(B, input_dim)
-y = np.einsum("ij,bj->bi", W, x)  # Shape: (B, output_dim)
-dy_dW = np.einsum("ij,bk->bijk", np.eye(output_dim), x)  # Shape: (B, output_dim, output_dim, input_dim)
+yhat = np.einsum("ij,bj->bi", W, x)  # Shape: (B, output_dim)
+dyhat_dW = np.einsum("ij,bk->bijk", np.eye(output_dim), x)  # Shape: (B, output_dim, output_dim, input_dim)
 ```
 
 ### Gradient of Scalar w.r.t. Matrix
@@ -83,6 +83,9 @@ W = np.random.randn(output_dim, input_dim)
 x = np.random.randn(B, input_dim)
 diff = y - np.einsum("rc,bc->br", W, x)  # Shape: (B, output_dim)
 loss = 0.5 * np.square(np.linalg.norm(diff, axis=1, keepdims=1))  # Shape: (B, 1)
-dloss_dyhat = -np.einsum("i,bj->bij", np.ones(1), y - yhat)  # Shape: (B, 1, D)
-dyhat
+dloss_dyhat = -np.einsum("i,bj->bij", np.ones(1), diff)  # Shape: (B, 1, output_dim)
+dyhat_dW = np.einsum("ij,bk->bijk", np.eye(output_dim), x)  # Shape: (B, output_dim, output_dim, input_dim)
+dloss_dW = np.mean(np.einsum("bij,bjjk->bjk", dloss_dyhat, dyhat_dW), axis=0, keepdims=True)  # Shape: (1, output_dim, input_dim)
 ```
+
+- Note: All we did was apply the chain rule. The key is to get the dimensions right.
