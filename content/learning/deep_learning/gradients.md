@@ -11,29 +11,49 @@ one needs to specify how each output element varies as each input element varies
 
 ## Examples
 
+Notes:
+- Almost all these examples were drawn from neural networks but the principles should generally hold
+- Because we often have a batch dimension in deep learning, I'll assume that each derivative with respect to network 
+  inputs has a batch dimensions of size $$B$$
+
 ### Gradient of Scalar w.r.t. Scalar
 
-Example: $$L(y, \hat{y}) = \frac{1}{2} (y - \hat{y})^2$$ with $$y, \hat{y} \in \mathbb{R}$$.
+- Motivating Example: $$L(y, \hat{y}) = \frac{1}{2} (y - \hat{y})^2$$ with $$y, \hat{y} \in \mathbb{R}$$.
 
-Goal: Compute $$\frac{d}{d\hat{y}} L(y, \hat{y})$$
+- Goal: Compute $$\frac{d}{d\hat{y}} L(y, \hat{y})$$
 
-Shape Analysis: The output is a scalar, and the gradient is with respect to another scalar, so we expect
+- Shape Analysis: The output is a scalar, and the gradient is with respect to another scalar, so we expect
 the gradient's shape to be `(output shape, input shape) = (1, 1)`.
 
-Code:
+- Code:
 
+```python
+B, D = 256, 1
+y = np.random.randn(B, 1)
+yhat = np.random.randn(B, 1)
+loss = 0.5 * np.square(y - yhat)  # Shape: (B, 1)
+dloss_dyhat = -np.einsum("i,bj->bij", np.ones(1), y - yhat)  # Shape: (B, 1, 1)
+```
 
 ### Gradient of Scalar w.r.t. Vector
 
-Example: $$L(y, \hat{y}) = \frac{1}{2} \lvert \lvert y - \hat{y} \lvert \lvert_2^2$$ with $$\hat{y} \in \mathbb{R}^n$$.
+- Motivating Example: $$L(y, \hat{y}) = \frac{1}{2} \lvert \lvert y - \hat{y} \lvert \lvert_2^2$$ with $$\hat{y} \in \mathbb{R}^n$$.
 
-Goal: Compute $$\nabla_{\hat{y}} L(y, \hat{y})$$
+- Goal: Compute $$\nabla_{\hat{y}} L(y, \hat{y})$$
 
-Shape Analysis: $$ L(y, \hat{y})$$ is a scalar, and $$\hat{y}$$ is a $$n$$-dimensional vector, so we expect the gradient's 
+- Shape Analysis: $$ L(y, \hat{y})$$ is a scalar, and $$\hat{y}$$ is a $$n$$-dimensional vector, so we expect the gradient's 
 shape to be `(output shape, input shape) = (1, n)`.
 
-Code:
+- Code:
 
 ```python
-y_minus_yhat 
+B, D = 256, 10
+y = np.random.randn(B, D)
+yhat = np.random.randn(B, D)
+loss = 0.5 * np.square(y - yhat)  # Shape: (B, D)
+dloss_dyhat = -np.einsum("i,bj->bij", np.ones(1), y - yhat)  # Shape: (B, 1, D)
 ```
+
+### Gradient of Vector w.r.t. Scalar
+
+Example: 
