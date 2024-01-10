@@ -53,7 +53,7 @@ shape to be `(output shape, input shape) = (1, n)`.
 B, D = 256, 10
 y = np.random.randn(B, D)
 yhat = np.random.randn(B, D)
-loss = 0.5 * np.square(y - yhat)  # Shape: (B, D)
+loss = 0.5 * np.square(y - yhat)  # Shape: (B, 1)
 dloss_dyhat = -np.einsum(
   "i,bj->bij", 
   np.ones(1),
@@ -113,3 +113,25 @@ dloss_dW = np.mean(
 
 - Note: In the final calculation, we average over the batch dimension to compute the average gradient across the batch.
 - Note: All we did was apply the chain rule. The key is to get the dimensions right.
+
+### Gradient of Elementwise Nonlinearity Applied to Vector w.r.t. Vector
+
+- Motivating Example: $$a = \phi(h)$$ for vectors $$a, h \in \mathbb{R}^n$$, where $$\phi$$ is an elementwise nonlinearity.
+- Goal: Compute $$\nabla_{h} a$$
+- Shape Analysis: $$a$$ is a $$n$$-dimensional vector, and $$h$$ is a $$n$$-dimensional vector, so we expect the gradient's shape to be `(n, n)`.
+- Code:
+
+```python
+B, D = 256, 10
+h = np.random.randn(B, D)
+sigmoid = lambda x: 1 / (1 + np.exp(-x))
+a = sigmoid(h)  # Shape: (B, D)
+dsigmoid_dargument = lambda x: sigmoid(x) * (1 - sigmoid(x))
+da_dh = np.einsum(
+  "bi,ij->bij",
+  dsigmoid_dargument(h),
+  np.eye(D),
+)  # Shape: (B, D, D)
+```
+
+- Note: We had to use the eye because einsum doesn't directly support adding a dimension in this context.
