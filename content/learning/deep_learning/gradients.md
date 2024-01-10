@@ -29,10 +29,13 @@ the gradient's shape to be `(output shape, input shape) = (1, 1)`.
 
 ```python
 B, D = 256, 1
-y = np.random.randn(B, 1)
-yhat = np.random.randn(B, 1)
+y = np.random.randn(B, D)
+yhat = np.random.randn(B, D)
 loss = 0.5 * np.square(y - yhat)  # Shape: (B, 1)
-dloss_dyhat = -np.einsum("i,bj->bij", np.ones(1), y - yhat)  # Shape: (B, 1, 1)
+dloss_dyhat = -np.einsum(
+  "i,bj->bij",
+  np.ones(1),
+  y - yhat)  # Shape: (B, 1, 1)
 ```
 
 ### Gradient of Scalar w.r.t. Vector
@@ -51,7 +54,10 @@ B, D = 256, 10
 y = np.random.randn(B, D)
 yhat = np.random.randn(B, D)
 loss = 0.5 * np.square(y - yhat)  # Shape: (B, D)
-dloss_dyhat = -np.einsum("i,bj->bij", np.ones(1), y - yhat)  # Shape: (B, 1, D)
+dloss_dyhat = -np.einsum(
+  "i,bj->bij", 
+  np.ones(1),
+  y - yhat)  # Shape: (B, 1, D)
 ```
 
 ### Gradient of Vector w.r.t. Matrix
@@ -66,7 +72,10 @@ B, output_dim, input_dim = 256, 10, 20
 W = np.random.randn(output_dim, input_dim)
 x = np.random.randn(B, input_dim)
 yhat = np.einsum("ij,bj->bi", W, x)  # Shape: (B, output_dim)
-dyhat_dW = np.einsum("ij,bk->bijk", np.eye(output_dim), x)  # Shape: (B, output_dim, output_dim, input_dim)
+dyhat_dW = np.einsum(
+  "ij,bk->bijk",
+  np.eye(output_dim),
+  x)  # Shape: (B, output_dim, output_dim, input_dim)
 ```
 
 ### Gradient of Scalar w.r.t. Matrix
@@ -82,10 +91,25 @@ y = np.random.randn(B, output_dim)
 W = np.random.randn(output_dim, input_dim)
 x = np.random.randn(B, input_dim)
 diff = y - np.einsum("rc,bc->br", W, x)  # Shape: (B, output_dim)
-loss = 0.5 * np.square(np.linalg.norm(diff, axis=1, keepdims=1))  # Shape: (B, 1)
-dloss_dyhat = -np.einsum("i,bj->bij", np.ones(1), diff)  # Shape: (B, 1, output_dim)
-dyhat_dW = np.einsum("ij,bk->bijk", np.eye(output_dim), x)  # Shape: (B, output_dim, output_dim, input_dim)
-dloss_dW = np.mean(np.einsum("bij,bjjk->bjk", dloss_dyhat, dyhat_dW), axis=0, keepdims=True)  # Shape: (1, output_dim, input_dim)
+loss = 0.5 * np.square(
+  np.linalg.norm(diff, axis=1, keepdims=1)
+)  # Shape: (B, 1)
+dloss_dyhat = -np.einsum(
+  "i,bj->bij",
+  np.ones(1),
+  diff)  # Shape: (B, 1, output_dim)
+dyhat_dW = np.einsum(
+  "ij,bk->bijk",
+  np.eye(output_dim),
+  x)  # Shape: (B, output_dim, output_dim, input_dim)
+dloss_dW = np.mean(
+  np.einsum(
+    "bij,bjjk->bjk",
+    dloss_dyhat,
+    dyhat_dW),
+  axis=0,
+  keepdims=True)  # Shape: (1, output_dim, input_dim)
 ```
 
+- Note: In the final calculation, we average over the batch dimension to compute the average gradient across the batch.
 - Note: All we did was apply the chain rule. The key is to get the dimensions right.
