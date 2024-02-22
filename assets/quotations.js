@@ -18,6 +18,10 @@ const quotations = [
 
     "“John, to his everlasting glory and our ever lasting respect, would take the foreign correspondent badge off his arm“",
 
+    "“With no relation to social status, class background, whether it suits them or not, people yearn for a dream." +
+    "Sustained by a dream, hurt by a dream, revived by a dream, killed by a dream...\n" +
+    "And even after being abandoned by a dream, it continues to smolder from the bottom of one's heart...“",
+
     "“I want them to know how it was, I want to tell them directly, and perhaps by speaking directly to them I shall speak directly to other people“",
 
     "“I think I would like to write the story of this whole valley“",
