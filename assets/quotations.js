@@ -18,9 +18,19 @@ const quotations = [
 
     "“John, to his everlasting glory and our ever lasting respect, would take the foreign correspondent badge off his arm“",
 
+    "“His life has fallen apart. He sits in this little room, contemplating death; but he lacks even the courage for that." +
+    "Life has hurt him. What can you do, with your little dreams, to redeem him?“",
+
+    "“The Magnificient Steiner appeared, didn't he?“<br>"+
+    "“No... He never showed up...“",
+
     "“With no relation to social status, class background, whether it suits them or not, people yearn for a dream." +
-    "Sustained by a dream, hurt by a dream, revived by a dream, killed by a dream...\n" +
+    "Sustained by a dream, hurt by a dream, revived by a dream, killed by a dream..." +
     "And even after being abandoned by a dream, it continues to smolder from the bottom of one's heart...“",
+
+    "“Struggle. Keep struggling and struggling until the end of ends, then struggle some more.“",
+
+    "“Thank you. It's the worst I ever feel.“",
 
     "“I want them to know how it was, I want to tell them directly, and perhaps by speaking directly to them I shall speak directly to other people“",
 

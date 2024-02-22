@@ -30,7 +30,8 @@ def compute_dating_distribution(N, K, p):
                 np.arange(len(probabilities)),
                 size=num_old_men,
                 p=probabilities,
-                replace=False)
+                replace=False,
+            )
             for overlapping_man in overlapping_men:
                 men_matches[overlapping_man] += 1
 
@@ -40,8 +41,9 @@ def compute_dating_distribution(N, K, p):
 
         man_index = i
 
-    sorted_men_matches = {k: v / woman for k, v in
-                          sorted(men_matches.items(), key=lambda item: -item[1])}
+    sorted_men_matches = {
+        k: v / woman for k, v in sorted(men_matches.items(), key=lambda item: -item[1])
+    }
 
     return sorted_men_matches
 
@@ -50,13 +52,15 @@ for N in Ns:
     for K in Ks:
         N, K = int(N), int(K)
         fig, ax = plt.subplots()
-        ax.set_title(f'N={N}, K={K}')
-        ax.set_xlabel('Man (index)')
-        ax.set_ylabel('Proportion of Interested Women')
+        ax.set_title(f"N={N}, K={K}")
+        ax.set_xlabel("Man (index)")
+        ax.set_ylabel("Proportion of Interested Women")
         for p in Ps:
             sorted_men_matches = compute_dating_distribution(N, K, p=p)
-            ax.loglog(np.arange(len(sorted_men_matches)),
-                      list(sorted_men_matches.values()),
-                      label=f'p={p}')
+            ax.loglog(
+                np.arange(len(sorted_men_matches)),
+                list(sorted_men_matches.values()),
+                label=f"p={p}",
+            )
             ax.legend()
-            plt.savefig(f'dating, N={N}, K={K}.png')
+            plt.savefig(f"dating, N={N}, K={K}.png")
