@@ -89,7 +89,6 @@ A Brain-Wide Map of Neural Activity during Complex Behaviour. __bioRxiv 2023__.
 
 [Disentangling Fact from Grid Cell Fiction in Trained Deep Path Integrators.](research/2023_biorxiv_disentangling_fact_from_grid_cell_fiction/main.md) __Biorxiv 2023__.
 
-
 [Pretraining on the Test Set Is All You Need.](research/2023_arxiv_pretraining_on_test_set/main.md) __Arxiv 2023__.
 
 

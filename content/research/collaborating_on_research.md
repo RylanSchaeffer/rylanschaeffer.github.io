@@ -21,3 +21,7 @@ out of date, depending on how reviews went.
 [relentlessly resourceful](https://www.paulgraham.com/relres.html). Because this trait is not easily evaluated from a resume,
 I will likely suggest a trial period of working together. I will be more willing to skip a trial period if you show me
 preliminary evidence of work that you've already done.
+
+If this page makes me sound curmudgeonly, I promise I am not like that whatsoever in person! The goal of this
+papge is to deter unserious inquiries and to make sure that serious inquiries are as efficient as possible. I'm excited to hear
+from you! Please email me at rylanschaeffer@gmail.com.
