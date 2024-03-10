@@ -1,6 +1,14 @@
 # Research
 
-This page is ~chronologically ordered.
+If you're interested in collaborating, please email me at rylanschaeffer@gmail.com
+[following my instructions](research/collaborating_on_research.md). For those curious, I've posted a (work-in-progress)
+[summary of my research approach](research/research_philosophy.md).
+
+
+
+
+This page is ~chronologically ordered. See my [Google Scholar](https://scholar.google.com/citations?user=6tMEGz8AAAAJ&hl=en)
+for a complementary view.
 
 ## Accepted
 
@@ -112,12 +120,6 @@ Memory engrams perform nonparametric non-stationary latent state associative lea
 Recovering low dimensional, interpretable mechanistic models via Representations and Dynamics Distillation (RADD).
 
 
-## Collaboration Requests
-
------
-
-If you're interested in collaborating, email me at rylanschaeffer@gmail.com. I've posted
-a (work-in-progress) [summary of my research approach](research/research_philosophy.md).
 
 
 ## Explanations of Others' Research
