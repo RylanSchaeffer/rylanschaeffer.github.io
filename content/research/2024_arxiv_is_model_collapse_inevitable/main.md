@@ -1,8 +1,10 @@
 # Is Model Collapse Is Model Collapse Inevitable? Breaking the Curse of Recursion by Accumulating Real and Synthetic Data
 
-Authors: Matthias Gerstgrasser$$^1$$, Rylan Schaeffer$$^1$$, Apratim Dey$$^1$$, Rafael Rafailov$$^1$$, Henry Sleight, John Hughes, Tomasz Korbak, Rajashree Agrawal, Dhruv Pai, Andrey Gromov, Daniel A. Roberts, Diyi Yang, David L. Donoho, Sanmi Koyejo
+Authors: Matthias Gerstgrasser$$^1$$, Rylan Schaeffer$$^1$$, Apratim Dey$$^1$$, Rafael Rafailov$$^1$$, Tomasz Korbak$$^2$$, Rajashree Agrawal$$^2$$, Henry Sleight$$^2$$, John Hughes$$^2$$, Dhruv Pai, Andrey Gromov, Daniel A. Roberts, Diyi Yang, David L. Donoho, Sanmi Koyejo.
 
-(1) denotes co-first authorship.
+$$\cdot^{1}$$ denotes co-first authorship.
+$$\cdot^{2}$$ denotes equal contribution.
+
 
 Venue: Arxiv 2024
 
