@@ -13,7 +13,7 @@ for a complementary view.
 
 -----
 
-[Is Model Collapse Is Model Collapse Inevitable? Breaking the Curse of Recursion by Accumulating Real and Synthetic Data.](research/2024_arxiv_is_model_collapse_inevitable/main.md) __Arxiv 2024__.
+[Is Model Collapse Inevitable? Breaking the Curse of Recursion by Accumulating Real and Synthetic Data.](research/2024_arxiv_is_model_collapse_inevitable/main.md) __Arxiv 2024__.
 
 
 [Many-shot Jailbreaking.](research/2024_arxiv_many_shot_jailbreaking/main.md) __Arxiv 2024__.
