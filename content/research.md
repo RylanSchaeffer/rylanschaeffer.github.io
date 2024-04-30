@@ -31,6 +31,10 @@ Towards an Improved Understanding and Utilization of Maximum Manifold Capacity R
 What Causes Polysemanticity? An Alternative Origin Story of Mixed Selectivity from Incidental Causes. Under Review.
 
 
+[Double Descent Demystified: Identifying, Interpreting & Ablating the Sources of a Deep Learning Puzzle.](https://iclr-blogposts.github.io/2024/blog/double-descent-demystified/#adversarial-training-data) __ICLR 2024 (Blog Track)__.
+
+
+
 [Does Data Contamination Make a Difference? Insights from Intentionally Contaminating Pre-training Data for Language Models.](research/2024_arxiv_data_contamination_pretraining/main.md) Under Review.
 
 
@@ -38,10 +42,6 @@ What Causes Polysemanticity? An Alternative Origin Story of Mixed Selectivity fr
 
 
 [Pretraining on the Test Set Is All You Need.](research/2023_arxiv_pretraining_on_test_set/main.md) __Arxiv 2023__.
-
-
-Double Descent Demystified: Identifying, Interpreting & Ablating the Sources of a Deep Learning Puzzle. __Under Review at ICLR 2024 Blog Track__.
-- [Tweeprint](https://twitter.com/RylanSchaeffer/status/1640762626987925505)
 
 
 Testing Assumptions Underlying a Unified Theory for the Origin of Grid Cells.

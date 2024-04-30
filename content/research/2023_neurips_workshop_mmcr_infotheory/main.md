@@ -84,4 +84,9 @@ Work done with amazing collaborators across many institutions @stai_research @St
 
 7/7
 
+## At NeurIPS 2024 Workshops
+
+![](neurips_unireps.jpeg)
+
+https://twitter.com/unireps/status/1735709274444066937/photo/1
 
