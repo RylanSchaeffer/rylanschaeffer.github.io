@@ -102,3 +102,4 @@ Questions like: "What causes bread to rise when baked?"
 ## Can models accurately estimate whether they'll be able to answer a given question correctly?
 
 ![](2023-02-25-LMs-Mostly-Know-What-They-Know/kadavath_2022_fig2.png)
+

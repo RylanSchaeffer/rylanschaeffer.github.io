@@ -2,7 +2,7 @@
 
 Authors: **Rylan Schaeffer**, Brando Miranda, Sanmi Koyejo
 
-Venue: NeurIPS 2023 (Outstanding Paper Award).
+Venue: NeurIPS 2023 (Outstanding Paper).
 
 ## Quick Links
 

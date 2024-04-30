@@ -6,7 +6,6 @@ If you're interested in collaborating, please email me at rylanschaeffer@gmail.c
 
 
 
-
 This page is ~chronologically ordered. See my [Google Scholar](https://scholar.google.com/citations?user=6tMEGz8AAAAJ&hl=en)
 for a complementary view.
 
@@ -14,7 +13,10 @@ for a complementary view.
 
 -----
 
-[Are Emergent Abilities of Large Language Models a Mirage?](research/2023_neurips_llm_emergent_abilities_mirage/main.md) __NeurIPS 2023 (Oral)__.
+[Is Model Collapse Is Model Collapse Inevitable? Breaking the Curse of Recursion by Accumulating Real and Synthetic Data.](research/2024_arxiv_is_model_collapse_inevitable/main.md) __Arxiv 2024__.
+
+
+[Are Emergent Abilities of Large Language Models a Mirage?](research/2023_neurips_llm_emergent_abilities_mirage/main.md) __NeurIPS 2023 (Outstanding Paper)__.
 
 
 [DecodingTrust: A Comprehensive Assessment of Trustworthiness in GPT Models.](research/2023_neurips_decoding_trust/main.md) __NeurIPS 2023 Benchmark Track__.
