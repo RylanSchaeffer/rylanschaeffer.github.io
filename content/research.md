@@ -16,6 +16,9 @@ for a complementary view.
 [Is Model Collapse Is Model Collapse Inevitable? Breaking the Curse of Recursion by Accumulating Real and Synthetic Data.](research/2024_arxiv_is_model_collapse_inevitable/main.md) __Arxiv 2024__.
 
 
+[Many-shot Jailbreaking.](research/2024_arxiv_many_shot_jailbreaking/main.md) __Arxiv 2024__.
+
+
 [Are Emergent Abilities of Large Language Models a Mirage?](research/2023_neurips_llm_emergent_abilities_mirage/main.md) __NeurIPS 2023 (Outstanding Paper)__.
 
 
