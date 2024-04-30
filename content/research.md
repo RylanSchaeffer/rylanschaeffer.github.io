@@ -19,6 +19,21 @@ for a complementary view.
 [Many-shot Jailbreaking.](research/2024_arxiv_many_shot_jailbreaking/main.md) __Arxiv 2024__.
 
 
+Correlating and Predicting Human Evaluations of Language Models from Natural Language Processing Benchmarks. Under Review.
+
+
+Bridging Associative Memory and Probabilistic Modeling. Under Review.
+
+
+Towards an Improved Understanding and Utilization of Maximum Manifold Capacity Representations. Under Review.
+
+
+What Causes Polysemanticity?\\An Alternative Origin Story of Mixed Selectivity from Incidental Causes. Under Review.
+
+
+Does Data Contamination Make a Difference? Insights from Intentionally Contaminating Pre-training Data for Language Models. Under Review.
+
+
 [Are Emergent Abilities of Large Language Models a Mirage?](research/2023_neurips_llm_emergent_abilities_mirage/main.md) __NeurIPS 2023 (Outstanding Paper)__.
 
 
@@ -42,9 +57,12 @@ for a complementary view.
 
 Beyond Expectations: Model-Driven Amplification of Dataset Biases in Data Feedback Loops. __NeurIPS 2023 Workshop: Algorithmic Fairness through the Lens of Time__.
 
+
 [Emergence of Sparse Representations from Noise.](research/2023_icml_noise_sparse_coding/main.md) __ICML 2023__.
 
+
 [Invalid Logic, Equivalent Gains: The Bizarreness of Reasoning in Language Model Prompting.](research/2023_icml_workshop_logically_invalid_chain_of_thought/main.md) __ICML 2023 Workshop: Knowledge and Logical Reasoning in the Era of Data-driven Learning__.
+
 
 [Deceptive Alignment Monitoring.](research/2023_icml_workshop_deceptive_alignment_monitoring/main.md) __ICML 2023 AdvML Workshop (Blue Sky Oral)__.
 
@@ -54,21 +72,30 @@ Beyond Expectations: Model-Driven Amplification of Dataset Biases in Data Feedba
 
 [No Free Lunch from Deep Learning in Neuroscience: A Case Study through Models of the Entorhinal-Hippocampal Circuit.](research/2022_neurips_no_free_lunch/main.md) __NeurIPS 2022__.
 
+
 Streaming Inference for Infinite Non-Stationary Clustering. __CoLLAs 2022__.
+
 
 [Streaming Inference for Infinite Latent Feature Models.](research/2022_icml_streaming_ibp/main.md) __ICML 2022__.
 
+
 [No Free Lunch from Deep Learning in Neuroscience: A Case Study through Models of the Entorhinal-Hippocampal Circuit.](research/2022_icml_workshop_no_free_lunch/main.md) __ICML 2022 Workshop: AI for Science__.
+
 
 [Streaming Inference for Infinite Non-Stationary Clustering.](research/2022_iclr_workshop_aloe/main.md) __ICLR 2022 Workshop: Agent Learning in Open Endedness__.
 
+
 [An Algorithmic Theory of Metacognition in Minds and Machines.](research/2021_neurips_workshop_metacognition/main.html) __NeurIPS 2021 Workshop: Metacognition in the Age of AI__.
+
 
 [Efficient Online Inference for Nonparametric Mixture Models.](research/2021_uai_streaming_crp/main.md) __UAI 2021__.
 
+
 [Neural population dynamics for hierarchical inference in mice performing the International Brain Lab task.](research/2021_sfn_ibl/main.md) __Society for Neuroscience 2021__.
 
+
 [Neural network model of amygdalar memory engram formation and function.](research/2021_cosyne_amygdalar_engram/main.md) __COSYNE 2021__.
+
 
 [Reverse-engineering recurrent neural network solutions to a hierarchical inference task for mice.](research/2020_neurips_reverse_engineering/main.md) __NeurIPS 2020__.
 
