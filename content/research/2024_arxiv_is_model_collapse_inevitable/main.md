@@ -1,9 +1,9 @@
-# Is Model Collapse Is Model Collapse Inevitable? Breaking the Curse of Recursion by Accumulating Real and Synthetic Data
+# Is Model Collapse Inevitable? Breaking the Curse of Recursion by Accumulating Real and Synthetic Data
 
 Authors: Matthias Gerstgrasser$$^1$$, Rylan Schaeffer$$^1$$, Apratim Dey$$^1$$, Rafael Rafailov$$^1$$, Tomasz Korbak$$^2$$, Rajashree Agrawal$$^2$$, Henry Sleight$$^2$$, John Hughes$$^2$$, Dhruv Pai, Andrey Gromov, Daniel A. Roberts, Diyi Yang, David L. Donoho, Sanmi Koyejo.
 
-$$\cdot^{1}$$ denotes co-first authorship.
-$$\cdot^{2}$$ denotes equal contribution.
+- $$\cdot^{1}$$ denotes co-first authorship.
+- $$\cdot^{2}$$ denotes equal contribution.
 
 
 Venue: Arxiv 2024
@@ -18,7 +18,7 @@ Venue: Arxiv 2024
 
 What happens when generative models are trained on their own outputs?
 
-Prior works foretold of a catastrophic feedback loop, a curse of recursion, of models descending into madness. Is democratizing access to models polluting the very data necessary to train future models?
+Prior works foretold of a catastrophic feedback loop, a curse of recursion, of models descending into madness as they consume their own outputs. Is democratizing access to models poisoning the very data necessary to train future models?
 
 ![img.png](img.png)
 
@@ -77,8 +77,8 @@ Borat Gif
 
 8/N
 
-This was such a fun collaboration w/ others including @___rajashree___ @tomekkorbak @sleight_henry @McHughes288 @dhruv31415
+This was such a fun collaboration w/ @___rajashree___ @tomekkorbak @sleight_henry @McHughes288 @dhruv31415
 
-Work done at @stai_research @StanfordAILab @AIatMeta @MIT @sequoia w/ appreciation to funders @StanfordData @OpenAI
+Work done at @stai_research @StanfordAILab @AIatMeta @MIT @sequoia w/ 🙏🙏🙏 to @StanfordData @OpenAI Superalignment @NSF @SloanFoundation @GoogleAI
 
 9/N
