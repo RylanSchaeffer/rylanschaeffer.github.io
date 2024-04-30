@@ -10,8 +10,11 @@ Venue: NeurIPS 2023 (Outstanding Paper).
 - [Poster](poster.png)
 - [OpenReview](https://openreview.net/forum?id=ITw9edRDlD)
 - [Tweeprint](https://twitter.com/RylanSchaeffer/status/1653141214110322688)
-- [Coverage in Nature](https://www.nature.com/articles/d41586-023-04094-z)
-- [Citation by US House Committee on Science, Space, and Technology](2023-12-14_AISI%20scientific%20merit_final-signed-republicans.pdf)
+- Awards:
+    - NeurIPS 2023 Outstanding Paper
+- Media Coverage:
+  - [Nature](https://www.nature.com/articles/d41586-023-04094-z)
+  - [US House Committee on Science, Space, and Technology](2023-12-14_AISI%20scientific%20merit_final-signed-republicans.pdf)
 
 ## Summary
 

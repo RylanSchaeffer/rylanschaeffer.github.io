@@ -28,10 +28,23 @@ Bridging Associative Memory and Probabilistic Modeling. Under Review.
 Towards an Improved Understanding and Utilization of Maximum Manifold Capacity Representations. Under Review.
 
 
-What Causes Polysemanticity?\\An Alternative Origin Story of Mixed Selectivity from Incidental Causes. Under Review.
+What Causes Polysemanticity? An Alternative Origin Story of Mixed Selectivity from Incidental Causes. Under Review.
 
 
-Does Data Contamination Make a Difference? Insights from Intentionally Contaminating Pre-training Data for Language Models. Under Review.
+[Does Data Contamination Make a Difference? Insights from Intentionally Contaminating Pre-training Data for Language Models.](research/2024_arxiv_data_contamination_pretraining/main.md) Under Review.
+
+
+[Disentangling Fact from Grid Cell Fiction in Trained Deep Path Integrators.](research/2023_biorxiv_disentangling_fact_from_grid_cell_fiction/main.md) __Biorxiv 2023__.
+
+
+[Pretraining on the Test Set Is All You Need.](research/2023_arxiv_pretraining_on_test_set/main.md) __Arxiv 2023__.
+
+
+Double Descent Demystified: Identifying, Interpreting & Ablating the Sources of a Deep Learning Puzzle. __Under Review at ICLR 2024 Blog Track__.
+- [Tweeprint](https://twitter.com/RylanSchaeffer/status/1640762626987925505)
+
+
+Testing Assumptions Underlying a Unified Theory for the Origin of Grid Cells.
 
 
 [Are Emergent Abilities of Large Language Models a Mirage?](research/2023_neurips_llm_emergent_abilities_mirage/main.md) __NeurIPS 2023 (Outstanding Paper)__.
@@ -105,34 +118,12 @@ Streaming Inference for Infinite Non-Stationary Clustering. __CoLLAs 2022__.
 
 -----
 
-Double Descent Demystified: Identifying, Interpreting & Ablating the Sources of a Deep Learning Puzzle. __Under Review at ICLR 2024 Blog Track__.
-- [Tweeprint](https://twitter.com/RylanSchaeffer/status/1640762626987925505)
-
 Brain-wide population codes for hierarchical inference in mice. __SfN 2024__.
 
 Brain-wide representations of prior information in mouse decision-making.  __bioRxiv 2023__.
 
 A Brain-Wide Map of Neural Activity during Complex Behaviour. __bioRxiv 2023__.
 
-
-## Preprints
-
------
-
-[Disentangling Fact from Grid Cell Fiction in Trained Deep Path Integrators.](research/2023_biorxiv_disentangling_fact_from_grid_cell_fiction/main.md) __Biorxiv 2023__.
-
-[Pretraining on the Test Set Is All You Need.](research/2023_arxiv_pretraining_on_test_set/main.md) __Arxiv 2023__.
-
-
-## In Preparation
-
------
-
-An Information-Theoretic Understanding of Maximum Manifold Capacity Representations.
-
-Associative Memory Under the Probabilistic Lens: Improved Transformers & Dynamic Memory Creation.
-
-Testing Assumptions Underlying a Unified Theory for the Origin of Grid Cells.
 
 
 ## Class Projects

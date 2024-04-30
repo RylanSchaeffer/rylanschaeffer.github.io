@@ -6,23 +6,22 @@ Venue: Biorxiv 2023
 
 ## Quick Links
 
-- Tweeprint
-- Paper
-- Poster
-- Recorded Talk
-- Slides
-
------
+- [Tweeprint](https://twitter.com/RylanSchaeffer/status/1736893432143237490)
+- [Paper](paper.pdf)
 
 ## Summary
 
-If you thought our #NeurIPS 2022 paper was spicy, our newest preprint brings twice the heat 🌶️🌶️
+Are grid cells in deep path integrating neural networks a creation of path integration ? 🤔
 
-🤔🧠 Disentangling Fact from Grid Cell Fiction in Trained Deep Path Integrators 🤔🧠
 
-Joint / @KhonaMikail @FieteGroup @mitbrainandcog @mcgovernmit
+Discover the answer in our preprint challenging popular misconceptions in #NeuroAI #neuroscience !  🧠💻
 
-🧵👇
+Work w/ @KhonaMikail
+@sanmikoyejo
+@FieteGroup
+
+
+https://arxiv.org/abs/2312.03954
 
 1/N
 
