@@ -85,8 +85,13 @@ Borat Gif
 
 This was such a fun collaboration w/ @___rajashree___ @tomekkorbak @sleight_henry @McHughes288 @dhruv31415
 
-Work done at @stai_research @StanfordAILab @AIatMeta @MIT @sequoia
+Work done at @stai_research @StanfordAILab @UofMaryland @MIT @sequoia
 
 w/ 🙏🙏🙏 to @StanfordData @OpenAI Superalignment @NSF @SloanFoundation @GoogleAI
 
 9/N
+
+As a nuance, to be very explicit, when we say accumulating synthetic data does not hurt AI systems, we do not mean
+that synthetic data is broadly good for AI systems
+
+10/N
