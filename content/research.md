@@ -118,6 +118,8 @@ Streaming Inference for Infinite Non-Stationary Clustering. __CoLLAs 2022__.
 
 -----
 
+[Why Has Predicting Downstream Capabilities of Frontier AI Models with Scale Remained Elusive?](research/2024_arxiv_downstream_predictability_elusive) __NeurIPS 2024 (Datasets & Benchmarks Track)__.
+
 Brain-wide population codes for hierarchical inference in mice. __SfN 2024__.
 
 Brain-wide representations of prior information in mouse decision-making.  __bioRxiv 2023__.
