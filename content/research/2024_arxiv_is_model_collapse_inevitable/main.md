@@ -91,7 +91,7 @@ w/ 🙏🙏🙏 to @StanfordData @OpenAI Superalignment @NSF @SloanFoundation @G
 
 9/N
 
-As a nuance, to be very explicit, when we say accumulating synthetic data does not hurt AI systems, we do not mean
+As a caveat, to be very explicit, when we say accumulating synthetic data does not hurt AI systems, we do not mean
 that synthetic data is broadly good for AI systems
 
 10/N
