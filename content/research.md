@@ -9,26 +9,28 @@ If you're interested in collaborating, please email me at rylanschaeffer@gmail.c
 This page is ~chronologically ordered. See my [Google Scholar](https://scholar.google.com/citations?user=6tMEGz8AAAAJ&hl=en)
 for a complementary view.
 
-## Accepted
+## Under Review
 
 -----
 
-[Is Model Collapse Inevitable? Breaking the Curse of Recursion by Accumulating Real and Synthetic Data.](research/2024_arxiv_is_model_collapse_inevitable/main.md) __Arxiv 2024__.
+[Why Has Predicting Downstream Capabilities of Frontier AI Models with Scale Remained Elusive?](research/2024_arxiv_downstream_predictability_elusive/main.md) __NeurIPS 2024 (Datasets & Benchmarks Track)__.
 
+[Is Model Collapse Inevitable? Breaking the Curse of Recursion by Accumulating Real and Synthetic Data.](research/2024_arxiv_is_model_collapse_inevitable/main.md) __Arxiv 2024__.
 
 [Many-shot Jailbreaking.](research/2024_arxiv_many_shot_jailbreaking/main.md) __Arxiv 2024__.
 
-
 Correlating and Predicting Human Evaluations of Language Models from Natural Language Processing Benchmarks. Under Review.
-
 
 Bridging Associative Memory and Probabilistic Modeling. Under Review.
 
-
 Towards an Improved Understanding and Utilization of Maximum Manifold Capacity Representations. Under Review.
 
-
 What Causes Polysemanticity? An Alternative Origin Story of Mixed Selectivity from Incidental Causes. Under Review.
+
+
+## Accepted
+
+-----
 
 
 [Double Descent Demystified: Identifying, Interpreting & Ablating the Sources of a Deep Learning Puzzle.](https://iclr-blogposts.github.io/2024/blog/double-descent-demystified/#adversarial-training-data) __ICLR 2024 (Blog Track)__.
