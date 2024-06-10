@@ -66,7 +66,7 @@ In log probability space, we find that scores are highly correlated with compute
 5/N
 
 But as we transform scores into probabilities, and then mask based on the **incorrect** choices, the correlations between
-scores and pretraining compute drops. These correlations falls further for Accuracy.
+scores and pretraining compute drops. These correlations fall further for Accuracy.
 
 ![img_6.png](img_6.png)
 
@@ -95,7 +95,9 @@ This is why predicting downstream capabilities from scale has remained elusive!
 
 9/N
 
-Work done at @stai_research @StanfordAILab @AiEleuther
+Work done at @stai_research @StanfordAILab @AiEleuther @CambridgeMLG @Mila_Quebec
+
+Gratitude to feedback from @tamaybes @clefourrier @geoffreyirving @everysum @@lintangsutawika
 
 w/ 🙏🙏🙏 to support from @StanfordData @OpenAI Superalignment @NSF @SloanFoundation @GoogleAI
  
